@@ -1,0 +1,11 @@
+"braze.push.action.accept" = "bằng lòng";
+"braze.push.action.decline" = "từ chối";
+"braze.push.action.confirm" = "xác nhận";
+"braze.push.action.cancel" = "hủy bỏ";
+"braze.push.action.yes" = "vâng";
+"braze.push.action.no" = "không";
+"braze.push.action.more" = "thêm nửa";
+"braze.push.action.next" = "Tiếp theo";
+"braze.push.action.gotoapp" = "Mở Ứng dụng";
+
+"braze.webview.no-connection" = "Không thể thiết lập kết nối mạng. Vui lòng thử lại sau.";

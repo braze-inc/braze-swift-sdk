@@ -1,0 +1,11 @@
+"braze.push.action.accept" = "Akseptere";
+"braze.push.action.decline" = "Avslå";
+"braze.push.action.confirm" = "Bekrefte";
+"braze.push.action.cancel" = "Kansellere";
+"braze.push.action.yes" = "Ja";
+"braze.push.action.no" = "Nej";
+"braze.push.action.more" = "Mer";
+"braze.push.action.next" = "Next";
+"braze.push.action.gotoapp" = "Go To App";
+
+"braze.webview.no-connection" = "Kan ikke etablere nettverkstilkobling. Vennligst prøv igjen senere.";

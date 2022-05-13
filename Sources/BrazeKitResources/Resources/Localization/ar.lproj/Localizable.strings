@@ -1,0 +1,11 @@
+"braze.push.action.accept" = "قبول";
+"braze.push.action.decline" = "رفض";
+"braze.push.action.confirm" = "تم";
+"braze.push.action.cancel" = "إلغاء";
+"braze.push.action.yes" = "نعم";
+"braze.push.action.no" = "لا";
+"braze.push.action.more" = "المزيد";
+"braze.push.action.next" = "التالي";
+"braze.push.action.gotoapp" = "الذهاب الى التطبيق";
+
+"braze.webview.no-connection" = "لا يمكن إجراء الاتصال بالشبكة. يرجى تكرار المحاولة لاحقا.";

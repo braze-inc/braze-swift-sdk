@@ -1,0 +1,11 @@
+"braze.push.action.accept" = "接受";
+"braze.push.action.decline" = "謝絕";
+"braze.push.action.confirm" = "確認";
+"braze.push.action.cancel" = "取消";
+"braze.push.action.yes" = "是";
+"braze.push.action.no" = "否";
+"braze.push.action.more" = "更多";
+"braze.push.action.next" = "下一個";
+"braze.push.action.gotoapp" = "打開程式";
+
+"braze.webview.no-connection" = "無法建立網路連線。請稍候再試。";

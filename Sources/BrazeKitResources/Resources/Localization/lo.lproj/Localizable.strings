@@ -1,0 +1,11 @@
+"braze.push.action.accept" = "ຍອມ​ຮັບ";
+"braze.push.action.decline" = "ປະຕິເສດ";
+"braze.push.action.confirm" = "ຢືນຢັນ";
+"braze.push.action.cancel" = "ຍົກເລີກ";
+"braze.push.action.yes" = "ແມ່ນ";
+"braze.push.action.no" = "ບໍ່";
+"braze.push.action.more" = "ເພີ່ມເຕີມ";
+"braze.push.action.next" = "ຕໍ່ໄປ";
+"braze.push.action.gotoapp" = "ເຂົ້າສູ່ແອັບ";
+
+"braze.webview.no-connection" = "ບໍ່​ສາ​ມາດ​ຕັ້ງ​ການ​ເຊື່ອມ​ຕໍ່​ເຄືອ​ຂ່າຍ​ໄດ້. ກະ​ລຸ​ນາ​ລອງ​ໃໝ່​ພາຍ​ຫຼັງ.";

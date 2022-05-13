@@ -1,0 +1,11 @@
+"braze.push.action.accept" = "קבל";
+"braze.push.action.decline" = "סרב";
+"braze.push.action.confirm" = "אשר";
+"braze.push.action.cancel" = "בטל";
+"braze.push.action.yes" = "כן";
+"braze.push.action.no" = "לא";
+"braze.push.action.more" = "עוד";
+"braze.push.action.next" = "הבא";
+"braze.push.action.gotoapp" = "עבור אל האפליקציה";
+
+"braze.webview.no-connection" = ".לא ניתן לקבוע חיבור רשת.בבקשה נסה שוב בקרוב";

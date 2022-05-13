@@ -1,0 +1,11 @@
+"braze.push.action.accept" = "Aanvaarden";
+"braze.push.action.decline" = "Weigeren";
+"braze.push.action.confirm" = "Bevestigen";
+"braze.push.action.cancel" = "Annuleren";
+"braze.push.action.yes" = "Ja";
+"braze.push.action.no" = "Nee";
+"braze.push.action.more" = "Meer";
+"braze.push.action.next" = "Volgende";
+"braze.push.action.gotoapp" = "Naar de app gaan";
+
+"braze.webview.no-connection" = "Kan geen netwerkverbinding maken. Probeer het later opnieuw.";

@@ -1,0 +1,11 @@
+"braze.push.action.accept" = "Hyväksya";
+"braze.push.action.decline" = "Peruuttaa";
+"braze.push.action.confirm" = "Hyväksya";
+"braze.push.action.cancel" = "Peruuttaa";
+"braze.push.action.yes" = "Kyllä";
+"braze.push.action.no" = "Ei";
+"braze.push.action.more" = "Lisää";
+"braze.push.action.next" = "Seuraava";
+"braze.push.action.gotoapp" = "Siirry sovellukseen";
+
+"braze.webview.no-connection" = "Verkkoyhteyttä ei voida luoda. Yritä myöhemmin uudelleen.";

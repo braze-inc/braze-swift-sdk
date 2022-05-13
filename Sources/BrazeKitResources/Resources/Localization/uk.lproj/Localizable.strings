@@ -1,0 +1,11 @@
+"braze.push.action.accept" = "згоден";
+"braze.push.action.decline" = "відхилити";
+"braze.push.action.confirm" = "стверджувати";
+"braze.push.action.cancel" = "скасувати";
+"braze.push.action.yes" = "та";
+"braze.push.action.no" = "ні";
+"braze.push.action.more" = "ще";
+"braze.push.action.next" = "наступний";
+"braze.push.action.gotoapp" = "відкрити програму";
+
+"braze.webview.no-connection" = "Не вдається встановити підключення до мережі. Будь-ласка спробуйте пізніше.";

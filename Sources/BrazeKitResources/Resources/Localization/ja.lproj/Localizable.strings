@@ -1,0 +1,11 @@
+"braze.push.action.accept" = "承認";
+"braze.push.action.decline" = "拒否";
+"braze.push.action.confirm" = "確認";
+"braze.push.action.cancel" = "キャンセル";
+"braze.push.action.yes" = "はい";
+"braze.push.action.no" = "いいえ";
+"braze.push.action.more" = "もっと見る";
+"braze.push.action.next" = "次へ";
+"braze.push.action.gotoapp" = "アプリを開く";
+
+"braze.webview.no-connection" = "ネットワークに接続できません。後でもう一度試してください。";

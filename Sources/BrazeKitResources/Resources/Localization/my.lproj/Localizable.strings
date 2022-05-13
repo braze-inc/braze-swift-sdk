@@ -1,0 +1,11 @@
+"braze.push.action.accept" = "လက္ခံရယူသည္";
+"braze.push.action.decline" = "ျငင္းဆိုသည္";
+"braze.push.action.confirm" = "အတည္ျပဳသည္";
+"braze.push.action.cancel" = "ဖ်က္သိမ္းသည္";
+"braze.push.action.yes" = "ဟုတ္ပါသည္";
+"braze.push.action.no" = "မဟုတ္ပါ";
+"braze.push.action.more" = "ထပ္မံ၍။ ေနာက္ထပ္";
+"braze.push.action.next" = "နောက်သို့";
+"braze.push.action.gotoapp" = "အထူးအက်ပ်";
+
+"braze.webview.no-connection" = "ကြန္ယက္ဆက္သြယ္ျခင္း မျပဳလုပ္ႏိုင္ပါ။. ေက်းဇူးျပဳ၍ ထပ္မံၾကိဳးစားၾကည္႕ပါ။.";

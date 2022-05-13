@@ -1,0 +1,11 @@
+"braze.push.action.accept" = "ยอมรับ";
+"braze.push.action.decline" = "ปฏิเสธ";
+"braze.push.action.confirm" = "ยืนยัน";
+"braze.push.action.cancel" = "ยกเลิก";
+"braze.push.action.yes" = "ใช่";
+"braze.push.action.no" = "ไม่ใช่";
+"braze.push.action.more" = "เพิ่มเติม";
+"braze.push.action.next" = "ถัดไป";
+"braze.push.action.gotoapp" = "ไปยังแอป";
+
+"braze.webview.no-connection" = "ไม่สามารถสร้างการเชื่อมต่อเครือข่าย. กรุณาลองใหม่ภายหลัง.";

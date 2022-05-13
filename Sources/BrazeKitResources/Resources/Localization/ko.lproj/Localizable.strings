@@ -1,0 +1,11 @@
+"braze.push.action.accept" = "승인";
+"braze.push.action.decline" = "거절";
+"braze.push.action.confirm" = "확인";
+"braze.push.action.cancel" = "취소";
+"braze.push.action.yes" = "네";
+"braze.push.action.no" = "아니오";
+"braze.push.action.more" = "더보기";
+"braze.push.action.next" = "다음";
+"braze.push.action.gotoapp" = "앱으로 이동";
+
+"braze.webview.no-connection" = "네트워크 연결을 할 수 없습니다. 나중에 다시 시도해 주십시오.";

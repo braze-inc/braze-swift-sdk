@@ -1,0 +1,11 @@
+"braze.push.action.accept" = "Tanggapin";
+"braze.push.action.decline" = "Tanggihan";
+"braze.push.action.confirm" = "Kumpirmahin";
+"braze.push.action.cancel" = "Kanselahin";
+"braze.push.action.yes" = "Oo";
+"braze.push.action.no" = "Hindi";
+"braze.push.action.more" = "Higit Pa";
+"braze.push.action.next" = "Susunod";
+"braze.push.action.gotoapp" = "Magpunta Sa App";
+
+"braze.webview.no-connection" = "Hindi makapagtatag ng koneksyon sa network. angyaring subukan muli mamaya.";

@@ -1,0 +1,11 @@
+"braze.push.action.accept" = "согласен";
+"braze.push.action.decline" = "отклонить";
+"braze.push.action.confirm" = "утверждать";
+"braze.push.action.cancel" = "отменить";
+"braze.push.action.yes" = "да";
+"braze.push.action.no" = "нет";
+"braze.push.action.more" = "ещё";
+"braze.push.action.next" = "следующий";
+"braze.push.action.gotoapp" = "открыть приложение";
+
+"braze.webview.no-connection" = "Невозможно установить сетевое подключение. Пожалуйста, повторите попытку позже.";

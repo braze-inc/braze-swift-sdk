@@ -1,0 +1,11 @@
+"braze.push.action.accept" = "Terima";
+"braze.push.action.decline" = "No";
+"braze.push.action.confirm" = "Pasti";
+"braze.push.action.cancel" = "Batal";
+"braze.push.action.yes" = "Ya";
+"braze.push.action.no" = "Tiada";
+"braze.push.action.more" = "Lebih";
+"braze.push.action.next" = "Berikut";
+"braze.push.action.gotoapp" = "Pergi ke app";
+
+"braze.webview.no-connection" = "Tidak boleh membuat sambungan rangkaian. Sila cuba kemudian.";

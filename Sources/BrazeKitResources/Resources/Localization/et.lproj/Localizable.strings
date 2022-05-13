@@ -1,0 +1,11 @@
+"braze.push.action.accept" = "Nõustu";
+"braze.push.action.decline" = "Keeldu";
+"braze.push.action.confirm" = "Kinnita";
+"braze.push.action.cancel" = "Tühista";
+"braze.push.action.yes" = "Jah";
+"braze.push.action.no" = "Ei";
+"braze.push.action.more" = "Veel";
+"braze.push.action.next" = "Järgmine";
+"braze.push.action.gotoapp" = "Mine rakendusse";
+
+"braze.webview.no-connection" = "Võrguühenduse loomine ebaõnnestus. Palun proovige hiljem uuesti.";

@@ -1,0 +1,11 @@
+"braze.push.action.accept" = "Godkänna";
+"braze.push.action.decline" = "Avböja";
+"braze.push.action.confirm" = "Bekräfta";
+"braze.push.action.cancel" = "Avbryt";
+"braze.push.action.yes" = "Ja";
+"braze.push.action.no" = "Nej";
+"braze.push.action.more" = "Mer";
+"braze.push.action.next" = "Nästa";
+"braze.push.action.gotoapp" = "Gå till appen";
+
+"braze.webview.no-connection" = "Det gick inte att skapa en nätverksanslutning. Försök igen senare.";

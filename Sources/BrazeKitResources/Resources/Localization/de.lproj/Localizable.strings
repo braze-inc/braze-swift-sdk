@@ -1,0 +1,11 @@
+"braze.push.action.accept" = "Zustimmen";
+"braze.push.action.decline" = "Ablehnen";
+"braze.push.action.confirm" = "Bestätigen";
+"braze.push.action.cancel" = "Abbrechen";
+"braze.push.action.yes" = "Ja";
+"braze.push.action.no" = "Nein";
+"braze.push.action.more" = "Mehr";
+"braze.push.action.next" = "Weiter";
+"braze.push.action.gotoapp" = "Zur App";
+
+"braze.webview.no-connection" = "Netzwerkverbindung kann nicht aufgebaut werden. Bitte später noch einmal versuchen.";

@@ -1,0 +1,11 @@
+"braze.push.action.accept" = "Přijmout";
+"braze.push.action.decline" = "Odmítnout";
+"braze.push.action.confirm" = "Potvrdit";
+"braze.push.action.cancel" = "Zrušit";
+"braze.push.action.yes" = "Ano";
+"braze.push.action.no" = "Ne";
+"braze.push.action.more" = "Víc";
+"braze.push.action.next" = "Další";
+"braze.push.action.gotoapp" = "Přejít do aplikace";
+
+"braze.webview.no-connection" = "Nelze navázat síťové připojení. Prosím zkuste to znovu později.";

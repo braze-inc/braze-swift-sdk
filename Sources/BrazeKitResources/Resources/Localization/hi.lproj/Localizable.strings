@@ -1,0 +1,11 @@
+"braze.push.action.accept" = "स्वीकार करें";
+"braze.push.action.decline" = "अस्वीकार करें";
+"braze.push.action.confirm" = "पुष्टि करें";
+"braze.push.action.cancel" = "रद्द करें";
+"braze.push.action.yes" = "हाँ";
+"braze.push.action.no" = "नहीं";
+"braze.push.action.more" = "अधिक";
+"braze.push.action.next" = "अगला";
+"braze.push.action.gotoapp" = "ऐप पर जाएं";
+
+"braze.webview.no-connection" = "नेटवर्क कनेक्शन स्थापित नहीं हो रहा है।. कृपया बाद में दोबारा प्रयास करें।.";

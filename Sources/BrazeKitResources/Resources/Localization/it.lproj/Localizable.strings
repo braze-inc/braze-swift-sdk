@@ -1,0 +1,11 @@
+"braze.push.action.accept" = "Accetta";
+"braze.push.action.decline" = "Rifiuta";
+"braze.push.action.confirm" = "Conferma";
+"braze.push.action.cancel" = "Annulla";
+"braze.push.action.yes" = "Sì";
+"braze.push.action.no" = "No";
+"braze.push.action.more" = "Altro";
+"braze.push.action.next" = "Avanti";
+"braze.push.action.gotoapp" = "Vai all'app";
+
+"braze.webview.no-connection" = "Impossibile stabilire una connessione di rete. Riprovare più tardi.";

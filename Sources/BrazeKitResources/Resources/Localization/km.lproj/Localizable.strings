@@ -1,0 +1,11 @@
+"braze.push.action.accept" = "ព្រមទទួល";
+"braze.push.action.decline" = "បដិសេធ";
+"braze.push.action.confirm" = "បញ្ជាក់អះអាង";
+"braze.push.action.cancel" = "បោះបង់";
+"braze.push.action.yes" = "បាទ";
+"braze.push.action.no" = "ទេ";
+"braze.push.action.more" = "ច្រើនបន្ថែមទៀត";
+"braze.push.action.next" = "បន្ទាប់";
+"braze.push.action.gotoapp" = "ចូលទៅកូនកម្មវិធី";
+
+"braze.webview.no-connection" = "មិនអាចបង្កើតបណ្តាញតភ្ជាប់បានទេ. សូមព្យាយាមម្តងទៀតនៅពេលក្រោយ.";
