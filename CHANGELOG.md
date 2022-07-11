@@ -1,3 +1,9 @@
+## 5.0.1
+
+##### Fixed
+- Fixes a race condition when retrieving the user's notification settings.
+- Fixes an issue where duplicate data could be recorded after force quitting the application.
+
 ## 5.0.0 (Early Access)
 
 We are excited to announce the initial release of the Braze Swift SDK!
