@@ -40,7 +40,7 @@ Explore our [examples project](/Examples) which showcases multiple features' int
 
 ## `appboy-ios-sdk`
 
-The `appboy-ios-sdk` (Objective-C) SDK is now in maintenance mode, which means only critical bug fixes, and security updates will be made. No new features or minor bug fixes will be added to that library. 
+The [`appboy-ios-sdk`](https://github.com/Appboy/appboy-ios-sdk) (Objective-C) SDK is in maintenance mode, which means only critical bug fixes, and security updates will be made. No new features or minor bug fixes will be added to that library. 
 
 Later in 2022 we will announce our official deprecation and support policy for `appboy-ios-sdk`. For this reason, we encourage you to migrate to our new `braze-swift-sdk` as soon as possible.
 
