@@ -102,7 +102,7 @@ open class BrazeInAppMessageUI: NSObject, BrazeInAppMessagePresenter {
       preferredOrientation: Braze.UIUtils.interfaceOrientation,
       statusBarHideBehavior: .auto,
       windowLevel: .normal,
-      preferencesProxy: Braze.UIUtils.activeRootViewController?.topmost
+      preferencesProxy: Braze.UIUtils.activeTopmostViewController
     )
     if #available(iOS 13.0, tvOS 13.0, *) {
       context.windowScene = Braze.UIUtils.activeWindowScene
@@ -230,7 +230,7 @@ open class BrazeInAppMessageUI: NSObject, BrazeInAppMessagePresenter {
   }
 
   func validateOrientation(for message: Braze.InAppMessage) -> Bool {
-    let traits = Braze.UIUtils.activeRootViewController?.traitCollection
+    let traits = Braze.UIUtils.activeTopmostViewController?.traitCollection
     guard message.orientation.supported(by: traits) else {
       stack.removeAll { $0 == message }
       message.context?.discard()

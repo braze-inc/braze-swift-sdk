@@ -5,7 +5,10 @@ import PackageDescription
 let package = Package(
   name: "braze-swift-sdk",
   defaultLocalization: "en",
-  platforms: [.iOS(.v10)],
+  platforms: [
+    .iOS(.v10), 
+    .tvOS(.v10),
+  ],
   products: [
     .library(
       name: "BrazeKit",
@@ -23,8 +26,8 @@ let package = Package(
   targets: [
     .binaryTarget(
       name: "BrazeKit",
-      url: "https://github.com/braze-inc/braze-swift-sdk/releases/download/5.0.1/BrazeKit.zip",
-      checksum: "c71cb83398f626b2684d3f6224b31c7485b43b3075d5b27b3b7765915058288e"
+      url: "https://github.com/braze-inc/braze-swift-sdk/releases/download/5.1.0/BrazeKit.zip",
+      checksum: "714560e8157832e72c1378a66d3a7700a9ceb3de8da0f30b80dfcc24df980049"
     ),
     .target(
       name: "BrazeKitResources",
@@ -39,18 +42,18 @@ let package = Package(
     ),
     .binaryTarget(
       name: "BrazeLocation",
-      url: "https://github.com/braze-inc/braze-swift-sdk/releases/download/5.0.1/BrazeLocation.zip",
-      checksum: "8aa54a909d3d1f799f0e979a237165bb2e05f1e8feeb144c3f81194da6511dfa"
+      url: "https://github.com/braze-inc/braze-swift-sdk/releases/download/5.1.0/BrazeLocation.zip",
+      checksum: "1c97c98bde84ce28ef398ad5a738bba874cfe76b7d149480db234ff6099381c1"
     ),
     .binaryTarget(
       name: "BrazeNotificationService",
-      url: "https://github.com/braze-inc/braze-swift-sdk/releases/download/5.0.1/BrazeNotificationService.zip",
-      checksum: "b697c8735de6f3bfc4a47b74fe3c3441163be78d626a344d1fce9e41a0775d5b"
+      url: "https://github.com/braze-inc/braze-swift-sdk/releases/download/5.1.0/BrazeNotificationService.zip",
+      checksum: "75eae3528ae3b0c4a520b4f93195e68989c84487e3a8fe4a9cd0fd67bf49b743"
     ),
     .binaryTarget(
       name: "BrazePushStory",
-      url: "https://github.com/braze-inc/braze-swift-sdk/releases/download/5.0.1/BrazePushStory.zip",
-      checksum: "8427de1ffab1fff49004546d9ec3a4fd4589391a99b7e8d4d9f0cf4ddf2b7ab4"
+      url: "https://github.com/braze-inc/braze-swift-sdk/releases/download/5.1.0/BrazePushStory.zip",
+      checksum: "f41bd5d00391c914609e67a2119c47bcbbb02de1573f56bb152dcd0755b7406d"
     ),
   ]
 )

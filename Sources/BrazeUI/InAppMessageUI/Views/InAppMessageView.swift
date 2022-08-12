@@ -105,7 +105,7 @@ extension InAppMessageView {
     }
     ui.window = nil
 
-    Braze.UIUtils.activeRootViewController?.setNeedsStatusBarAppearanceUpdate()
+    Braze.UIUtils.activeTopmostViewController?.setNeedsStatusBarAppearanceUpdate()
 
     ui.delegate?.inAppMessage(ui, didDismiss: controller.message, view: self)
   }

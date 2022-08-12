@@ -132,7 +132,7 @@ extension BrazeInAppMessageUI {
       guard UIFont(name: "FontAwesome", size: 30) == nil else {
         return true
       }
-      guard let url = Bundle.module.url(forResource: "FontAwesome", withExtension: "otf"),
+      guard let url = resourcesBundle?.url(forResource: "FontAwesome", withExtension: "otf"),
         let data = try? Data(contentsOf: url),
         let dataProvider = CGDataProvider(data: data as CFData),
         let font = CGFont(dataProvider)

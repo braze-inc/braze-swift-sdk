@@ -85,19 +85,6 @@ extension UIResponder {
 
 }
 
-extension UIViewController {
-
-  /// The "topmost" presented view controller.
-  var topmost: UIViewController? {
-    var controller = self
-    while let presented = controller.presentedViewController {
-      controller = presented
-    }
-    return controller
-  }
-
-}
-
 extension String {
 
   func attributed(_ setup: (NSMutableParagraphStyle) -> Void) -> NSAttributedString {
