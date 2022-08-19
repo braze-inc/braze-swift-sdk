@@ -154,7 +154,7 @@ extension BrazeInAppMessageUIDelegate {
     message: Braze.InAppMessage,
     view: InAppMessageView
   ) -> Bool {
-    return true
+    true
   }
 
 }

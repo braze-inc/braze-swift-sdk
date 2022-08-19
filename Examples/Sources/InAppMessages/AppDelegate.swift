@@ -1,6 +1,6 @@
-import UIKit
 import BrazeKit
 import BrazeUI
+import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,8 +17,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let braze = Braze(configuration: configuration)
     AppDelegate.braze = braze
 
-    // - InAppMessage UI
+    // - GIF support
     BrazeUI.gifViewProvider = .sdWebImage
+
+    // - InAppMessage UI
     let inAppMessageUI = BrazeInAppMessageUI()
     inAppMessageUI.delegate = self
     braze.inAppMessagePresenter = inAppMessageUI
@@ -58,4 +60,3 @@ extension AppDelegate: BrazeInAppMessageUIDelegate {
   }
 
 }
-

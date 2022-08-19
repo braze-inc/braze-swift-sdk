@@ -12,6 +12,11 @@ import Foundation
       message: "Cupcake ipsum dolor sit amet. Topping dessert muffin fruitcake."
     )
 
+    public static let mockText = Self(
+      data: .mockNoClickAction,
+      message: "Cupcake ipsum dolor sit amet. Topping dessert muffin fruitcake."
+    )
+
     public static let mockShortText = Self(
       data: .mock,
       message: "Short"
@@ -32,6 +37,11 @@ import Foundation
       data: .mock,
       graphic: .image(.mockImage(width: 150, height: 150, textSize: 30)),
       message: "Cupcake ipsum dolor sit amet. Topping dessert muffin fruitcake."
+    )
+
+    public static let mockShort = Self(
+      data: .init(),
+      message: "abc"
     )
 
     public static let mockLong = Self(
@@ -433,6 +443,8 @@ import Foundation
     public static let mock = Self(
       clickAction: .mock
     )
+
+    public static let mockNoClickAction = Self()
 
   }
 

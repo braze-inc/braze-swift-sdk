@@ -1,20 +1,20 @@
 import UIKit
 
-/// The gif view provider used for all BrazeUI components.
+/// The GIF view provider used for all BrazeUI components.
 ///
-/// By default, Braze displays animated gifs as static images.
-/// See ``GIFViewProvider-swift.struct`` for details about how to add support for animated gifs.
+/// By default, Braze displays animated GIFs as static images.
+/// See ``GIFViewProvider-swift.struct`` for details about how to add support for animated GIFs.
 public var gifViewProvider: GIFViewProvider = .default
 
-/// A type providing methods to create and update views supporting animated gif images.
+/// A type providing methods to create and update views supporting animated GIF images.
 ///
-/// Braze does not provide animated gif support out of the box. Support can be added by wrapping a
+/// Braze does not provide animated GIF support out of the box. Support can be added by wrapping a
 /// third party or your own view in an instance of `GIFViewProvider`.
 ///
 /// Sample implementations for popular third party libraries are provided in
-/// <doc:gif-support>.
+/// <doc:gif-support-integrations>.
 ///
-/// Adding any of those libraries to your project allows you to enable animated gif support in
+/// Adding any of those libraries to your project allows you to enable animated GIF support in
 /// Braze's UI components.
 /// For instance, a project including SDWebImage and using the compatible sample code can do:
 /// ```swift
@@ -22,7 +22,7 @@ public var gifViewProvider: GIFViewProvider = .default
 /// ```
 public struct GIFViewProvider {
 
-  /// Creates a view able to display static and animated gif images.
+  /// Creates a view able to display static and animated GIF images.
   /// - Parameters:
   ///   - url: The local file url for the image.
   public var view: (_ url: URL?) -> UIView
@@ -33,7 +33,7 @@ public struct GIFViewProvider {
   ///   - url: The local file url for the image.
   public var updateView: (_ view: UIView, _ url: URL?) -> Void
 
-  /// Creates a gif view provider.
+  /// Creates a GIF view provider.
   /// - Parameters:
   ///   - view: See ``view``.
   ///   - updateView: See ``updateView``.

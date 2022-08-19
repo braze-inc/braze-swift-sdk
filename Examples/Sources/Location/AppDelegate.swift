@@ -1,6 +1,6 @@
-import UIKit
 import BrazeKit
 import BrazeLocation
+import UIKit
 
 // MARK: - Configure Braze
 

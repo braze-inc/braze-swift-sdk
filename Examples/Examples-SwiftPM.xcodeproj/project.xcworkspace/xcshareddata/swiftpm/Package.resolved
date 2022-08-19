@@ -1,14 +1,70 @@
 {
-  "pins" : [
-    {
-      "identity" : "sdwebimage",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/SDWebImage/SDWebImage",
-      "state" : {
-        "revision" : "3e48cb68d8e668d146dc59c73fb98cb628616236",
-        "version" : "5.13.2"
+  "object": {
+    "pins": [
+      {
+        "package": "SDWebImage",
+        "repositoryURL": "https://github.com/SDWebImage/SDWebImage",
+        "state": {
+          "branch": null,
+          "revision": "3e48cb68d8e668d146dc59c73fb98cb628616236",
+          "version": "5.13.2"
+        }
+      },
+      {
+        "package": "BrazeArchitecture",
+        "repositoryURL": "git@github.com:braze-inc/swift-architecture.git",
+        "state": {
+          "branch": "29aa1d2",
+          "revision": "29aa1d2db79affcc2d43b25a3ecfb9f63e1c8044",
+          "version": null
+        }
+      },
+      {
+        "package": "swift-argument-parser",
+        "repositoryURL": "https://github.com/apple/swift-argument-parser",
+        "state": {
+          "branch": null,
+          "revision": "df9ee6676cd5b3bf5b330ec7568a5644f547201b",
+          "version": "1.1.3"
+        }
+      },
+      {
+        "package": "SnapshotTesting",
+        "repositoryURL": "https://github.com/braze-inc/swift-snapshot-testing.git",
+        "state": {
+          "branch": "braze-changes",
+          "revision": "2b099d50fa337cf88d7b3d9c65880d0f905976fb",
+          "version": null
+        }
+      },
+      {
+        "package": "swift-tools-support-core",
+        "repositoryURL": "https://github.com/apple/swift-tools-support-core",
+        "state": {
+          "branch": "swift-5.5.2-RELEASE",
+          "revision": "3b586ce12865db205081acdcea79fe5509b28152",
+          "version": null
+        }
+      },
+      {
+        "package": "SwiftSoup",
+        "repositoryURL": "https://github.com/scinfu/SwiftSoup.git",
+        "state": {
+          "branch": null,
+          "revision": "6778575285177365cbad3e5b8a72f2a20583cfec",
+          "version": "2.4.3"
+        }
+      },
+      {
+        "package": "VideoKit",
+        "repositoryURL": "https://github.com/lowip/VideoKit",
+        "state": {
+          "branch": null,
+          "revision": "615653151c8fa7f7c191cd49939e0f69daf5aff8",
+          "version": "0.1.4"
+        }
       }
-    }
-  ],
-  "version" : 2
+    ]
+  },
+  "version": 1
 }

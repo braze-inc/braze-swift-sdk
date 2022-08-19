@@ -2,7 +2,7 @@ import Foundation
 
 enum LocalizationSet: String {
   case inAppMessage = "InAppMessageLocalizable"
-  case contentCard
+  case contentCard = "ContentCardsLocalizable"
   case newsFeed
 }
 
@@ -13,5 +13,6 @@ func localize(_ key: String, for localizationSet: LocalizationSet) -> String {
     return override
   }
 
-  return resourcesBundle?.localizedString(forKey: key, value: nil, table: localizationSet.rawValue) ?? key
+  return resourcesBundle?.localizedString(forKey: key, value: nil, table: localizationSet.rawValue)
+    ?? key
 }

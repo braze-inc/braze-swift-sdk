@@ -7,7 +7,8 @@ import UIKit
 /// Assign an instance of this class to `braze.inAppMessagePresenter` to enable the presentation of
 /// in-app messages to the user.
 ///
-/// To add gif support to the in-app message UI components, set a valid ``gifViewProvider``.
+/// To add GIF support to the in-app message UI components, set a valid
+/// ``gifViewProvider-swift.var``.
 @objc
 open class BrazeInAppMessageUI: NSObject, BrazeInAppMessagePresenter {
 

@@ -33,7 +33,7 @@ extension BrazeInAppMessageUI {
       public var cornerRadius = 8.0
 
       /// The content view shadow.
-      public var shadow: Shadow? = Shadow.default
+      public var shadow: Shadow? = Shadow.inAppMessage
 
       /// The minimum width (used when displayed as modal).
       public var minWidth = 320.0

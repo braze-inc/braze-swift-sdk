@@ -33,7 +33,7 @@ extension BrazeInAppMessageUI {
       public var cornerRadius = 8.0
 
       /// The content view shadow.
-      public var shadow: Shadow? = Shadow.default
+      public var shadow: Shadow? = Shadow.inAppMessage
 
       /// The minimum width.
       public var minWidth = 320.0
@@ -81,10 +81,11 @@ extension BrazeInAppMessageUI {
       buttonsContainer?.layoutMargins = attributes.padding
 
       // Corner radius
+      shadowView.layer.cornerRadius = attributes.cornerRadius
       contentView.layer.cornerRadius = attributes.cornerRadius
 
       // Shadow
-      contentView.shadow = attributes.shadow
+      shadowView.shadow = attributes.shadow
 
       // Dimensions
       minWidthConstraint.constant = attributes.minWidth
@@ -152,6 +153,8 @@ extension BrazeInAppMessageUI {
       return button
     }()
 
+    public lazy var shadowView = ShadowView(.inAppMessage)
+
     public lazy var contentView: UIView = {
       let view = UIView()
       view.addSubview(imageContainerView)
@@ -178,6 +181,7 @@ extension BrazeInAppMessageUI {
 
       super.init(frame: .zero)
 
+      addSubview(shadowView)
       addSubview(contentView)
       installInternalConstraints()
 
@@ -227,7 +231,6 @@ extension BrazeInAppMessageUI {
     open override func layoutSubviews() {
       super.layoutSubviews()
       installPresentationConstraintsIfNeeded()
-      contentView.updateShadow()
       attributes.onLayout?(self)
     }
 
@@ -276,6 +279,9 @@ extension BrazeInAppMessageUI {
         contentPositionConstraints =
           contentView.anchors.edges.lessThanOrEqual(layoutMarginsGuide)
           + contentView.anchors.center.align()
+
+        // Shadow view
+        shadowView.anchors.edges.pin(to: contentView)
       }
     }
 

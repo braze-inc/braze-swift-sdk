@@ -45,7 +45,7 @@ extension BrazeInAppMessageUI {
       public var cornerRadius = 15.0
 
       /// The content view shadow.
-      public var shadow: Shadow? = .default
+      public var shadow: Shadow? = .inAppMessage
 
       /// The minimum height.
       public var minHeight = 60.0
@@ -96,10 +96,11 @@ extension BrazeInAppMessageUI {
       messageLabel.font = attributes.font
 
       // Corner radius
+      shadowView.layer.cornerRadius = attributes.cornerRadius
       contentView.layer.cornerRadius = attributes.cornerRadius
 
       // Shadow
-      contentView.shadow = attributes.shadow
+      shadowView.shadow = attributes.shadow
 
       // Dimensions
       maxWidthConstraints.forEach { $0.constant = attributes.maxWidth }
@@ -163,6 +164,8 @@ extension BrazeInAppMessageUI {
       return view
     }()
 
+    open lazy var shadowView = ShadowView(.inAppMessage)
+
     open lazy var contentView: StackView = {
       let view = StackView(
         arrangedSubviews: [
@@ -193,6 +196,7 @@ extension BrazeInAppMessageUI {
 
       super.init(frame: .zero)
 
+      addSubview(shadowView)
       addSubview(contentView)
       installInternalConstraints()
 
@@ -240,7 +244,6 @@ extension BrazeInAppMessageUI {
     open override func layoutSubviews() {
       super.layoutSubviews()
       installPresentationConstraintsIfNeeded()
-      contentView.updateShadow()
       attributes.onLayout?(self)
     }
 
@@ -270,6 +273,9 @@ extension BrazeInAppMessageUI {
         // - position
         contentView.anchors.centerX.align()
         contentView.anchors.edges.lessThanOrEqual(layoutMarginsGuide)
+
+        // Shadow view
+        shadowView.anchors.edges.pin(to: contentView)
       }
     }
 
@@ -475,7 +481,7 @@ extension BrazeInAppMessageUI {
 
     @ViewBuilder
     static var variationPreviews: some View {
-      SlideupView(message: .mock)
+      SlideupView(message: .mockText)
         .preview(center: .required)
         .frame(maxHeight: 120)
         .previewDisplayName("Var. | Text")
@@ -494,6 +500,11 @@ extension BrazeInAppMessageUI {
         .preview(center: .required)
         .frame(maxHeight: 120)
         .previewDisplayName("Var. | Image")
+
+      SlideupView(message: .mockShort)
+        .preview(center: .required)
+        .frame(maxHeight: 120)
+        .previewDisplayName("Var. | Short")
 
       SlideupView(message: .mockLong)
         .preview(center: .required)
@@ -567,26 +578,24 @@ extension BrazeInAppMessageUI {
       attributes.padding.right = 15
       attributes.cornerRadius = 0
       attributes.onPresent = {
-        let backgroundView = UIView()
-        $0.addSubview(backgroundView)
+        let backgroundView = ShadowView(.inAppMessage)
+        $0.insertSubview(backgroundView, at: 0)
         switch $0.message.slideFrom {
         case .top:
-          backgroundView.anchors.bottom.equal($0.anchors.top)
+          backgroundView.anchors.bottom.equal($0.anchors.bottom)
         case .bottom:
-          backgroundView.anchors.top.equal($0.anchors.bottom)
+          backgroundView.anchors.top.equal($0.anchors.top)
+        @unknown default:
+          backgroundView.anchors.top.equal($0.anchors.top)
         }
         backgroundView.anchors.edges.pin(axis: .horizontal)
         backgroundView.anchors.height.equal(1000)
         backgroundView.backgroundColor = $0.contentView.backgroundColor
-        $0.shadow = $0.contentView.shadow
-        $0.contentView.shadow = nil
-      }
-      attributes.onLayout = {
-        $0.updateShadow()
+        backgroundView.shadow = $0.shadowView.shadow
+        $0.shadowView.shadow = nil
       }
       attributes.onTheme = {
-        $0.backgroundColor = $0.contentView.backgroundColor
-        $0.subviews.last?.backgroundColor = $0.contentView.backgroundColor
+        $0.subviews.first?.backgroundColor = $0.contentView.backgroundColor
       }
       return attributes
     }()

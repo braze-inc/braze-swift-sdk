@@ -53,7 +53,7 @@ func createCheckoutViewController() -> (UINavigationController, CheckoutViewCont
   let productsIds = [
     UUID().uuidString,
     UUID().uuidString,
-    UUID().uuidString
+    UUID().uuidString,
   ]
 
   let checkoutViewController = CheckoutViewController()

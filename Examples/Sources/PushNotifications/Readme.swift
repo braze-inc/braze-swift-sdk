@@ -1,4 +1,3 @@
-
 let readme =
   """
   This sample presents a complete push notification integration supporting:
@@ -10,7 +9,7 @@ let readme =
       - Display push notifications when app is already open
 
   - PushNotificationsServiceExtension:
-    - Rich push notification support (image, gif, audio, video)
+    - Rich push notification support (image, GIF, audio, video)
 
   - PushNotificationsContentExtension:
     - Braze Push Story implementation

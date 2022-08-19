@@ -1,5 +1,5 @@
-import UIKit
 import BrazeKit
+import UIKit
 
 let readme =
   """
@@ -9,7 +9,7 @@ let readme =
     - In-app message UI configuration
     - In-app message UI delegate
   - SDWebImageGIFViewProvider.swift:
-    - Use SDWebImage to provide gif support to the in-app message UI
+    - Use SDWebImage to provide GIF support to the Braze UI components
   """
 
 let actions: [(String, String, (ReadmeViewController) -> Void)] = [
@@ -22,7 +22,7 @@ let actions: [(String, String, (ReadmeViewController) -> Void)] = [
     "Present local modal in-app message",
     "",
     localModal
-  )
+  ),
 ]
 
 // MARK: - Internal
@@ -47,4 +47,3 @@ func localModal(_ viewController: ReadmeViewController) {
   )
   AppDelegate.braze?.inAppMessagePresenter?.present(message: modal)
 }
-

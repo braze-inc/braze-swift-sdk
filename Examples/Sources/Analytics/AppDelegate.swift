@@ -1,5 +1,5 @@
-import UIKit
 import BrazeKit
+import UIKit
 
 // MARK: - Configure Braze
 

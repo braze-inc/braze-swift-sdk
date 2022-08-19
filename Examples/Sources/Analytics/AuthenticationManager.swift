@@ -1,5 +1,5 @@
-import Foundation
 import BrazeKit
+import Foundation
 
 class AuthenticationManager {
 

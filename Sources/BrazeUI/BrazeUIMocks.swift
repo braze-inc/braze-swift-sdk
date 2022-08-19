@@ -17,6 +17,7 @@ import UIKit
     public static func mockImage(
       width: CGFloat,
       height: CGFloat,
+      text: String? = nil,
       textSize: CGFloat? = nil,
       textColor: UIColor = .white,
       backgroundColor: UIColor = .systemBlue
@@ -25,6 +26,7 @@ import UIKit
       let textSize = textSize ?? min(floor(height / 6), floor(width / 12))
       let lineWidth = max(width / 50, 8)
       let cornerLength = width / 20
+      let text = text ?? "\(Int(width))x\(Int(height))"
 
       // Draw image to png data
       let format = UIGraphicsImageRendererFormat.default()
@@ -64,15 +66,15 @@ import UIKit
         let style = NSMutableParagraphStyle()
         style.alignment = .center
         style.minimumLineHeight = frame.height / 2 + textSize / 2
-        let text = NSAttributedString(
-          string: "\(Int(width))x\(Int(height))",
+        let attributedText = NSAttributedString(
+          string: text,
           attributes: [
             .font: font,
             .foregroundColor: textColor,
             .paragraphStyle: style,
           ]
         )
-        text.draw(in: frame)
+        attributedText.draw(in: frame)
       }
 
       // Write to temporary cache
@@ -82,7 +84,7 @@ import UIKit
         appropriateFor: nil,
         create: false
       )
-      let imageUrl = cacheUrl.appendingPathComponent("\(Int(width))x\(Int(height)).png")
+      let imageUrl = cacheUrl.appendingPathComponent("\(text).png")
       try! data.write(to: imageUrl)
 
       return imageUrl

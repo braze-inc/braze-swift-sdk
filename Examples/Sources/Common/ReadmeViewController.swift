@@ -16,7 +16,8 @@ final class ReadmeViewController: UITableViewController {
         textView.font = .monospacedSystemFont(ofSize: 12, weight: .regular)
       }
     #elseif os(tvOS)
-      textView.textContainerInset = UIEdgeInsets(top: 0, left: 16 * 6, bottom: 16 * 4, right: 16 * 6)
+      textView.textContainerInset = UIEdgeInsets(
+        top: 0, left: 16 * 6, bottom: 16 * 4, right: 16 * 6)
       if #available(tvOS 13.0, *) {
         textView.font = .monospacedSystemFont(ofSize: 30, weight: .regular)
       }
@@ -28,6 +29,9 @@ final class ReadmeViewController: UITableViewController {
   init(readme: String, actions: [(String, String, (ReadmeViewController) -> Void)]) {
     self.actions = actions
     super.init(style: .grouped)
+
+    // Set title
+    title = Bundle.main.object(forInfoDictionaryKey: kCFBundleNameKey as String) as? String
 
     // Set readme text
     readmeTextView.text =
@@ -52,7 +56,8 @@ final class ReadmeViewController: UITableViewController {
   override func viewWillLayoutSubviews() {
     super.viewWillLayoutSubviews()
 
-    let size = readmeTextView.systemLayoutSizeFitting(.init(width: tableView.bounds.width, height: 0))
+    let size = readmeTextView.systemLayoutSizeFitting(
+      .init(width: tableView.bounds.width, height: 0))
     if readmeTextView.frame.height != size.height {
       readmeTextView.frame.size.height = size.height
     }
@@ -64,7 +69,8 @@ final class ReadmeViewController: UITableViewController {
     actions.count
   }
 
-  override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+  override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String?
+  {
     "Actions"
   }
 
@@ -73,7 +79,8 @@ final class ReadmeViewController: UITableViewController {
     cellForRowAt indexPath: IndexPath
   ) -> UITableViewCell {
     let identifier = "cellIdentifier"
-    let cell = tableView.dequeueReusableCell(withIdentifier: identifier)
+    let cell =
+      tableView.dequeueReusableCell(withIdentifier: identifier)
       ?? UITableViewCell(style: .subtitle, reuseIdentifier: identifier)
     cell.textLabel?.text = actions[indexPath.row].0
     cell.detailTextLabel?.text = actions[indexPath.row].1
@@ -92,8 +99,11 @@ final class ReadmeViewController: UITableViewController {
 // MARK: - AutoReadme
 
 private var _window: UIWindow? = {
+  let readmeViewController = ReadmeViewController(readme: readme, actions: actions)
+  let navigationController = UINavigationController(rootViewController: readmeViewController)
+
   let window = UIWindow(frame: UIScreen.main.bounds)
-  window.rootViewController = ReadmeViewController(readme: readme, actions: actions)
+  window.rootViewController = navigationController
   return window
 }()
 

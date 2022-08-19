@@ -1,3 +1,14 @@
+## 5.2.0
+
+##### Added
+
+- Adds [Content Cards](https://www.braze.com/docs/user_guide/message_building_by_channel/content_cards) support.
+  - See the [_Content Cards UI_](https://braze-inc.github.io/braze-swift-sdk/tutorials/braze/c2-contentcardsui) tutorial to get started.
+
+##### Changed
+
+- Raises `BrazeUI` minimum deployment target to iOS 11.0 to allow providing SwiftUI compatible Views.
+
 ## 5.1.0
 
 ##### Fixed

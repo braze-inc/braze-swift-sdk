@@ -68,4 +68,31 @@
 
   }
 
+  extension UIViewController {
+
+    @available(iOS 13.0, *)
+    func preview() -> some View {
+      struct Wrapper: UIViewControllerRepresentable {
+        typealias UIViewControllerType = UIViewController
+
+        let viewController: UIViewController
+
+        init(viewController: UIViewController) {
+          self.viewController = viewController
+        }
+
+        func makeUIViewController(context: Context) -> UIViewController {
+          viewController
+        }
+
+        func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
+
+        }
+      }
+      return Wrapper(viewController: self)
+        .edgesIgnoringSafeArea(.all)
+    }
+
+  }
+
 #endif

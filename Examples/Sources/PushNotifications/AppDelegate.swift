@@ -1,6 +1,6 @@
+import BrazeKit
 import UIKit
 import UserNotifications
-import BrazeKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -47,13 +47,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(
     _ application: UIApplication,
-    didReceiveRemoteNotification userInfo: [AnyHashable : Any],
+    didReceiveRemoteNotification userInfo: [AnyHashable: Any],
     fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void
   ) {
-    if let braze = AppDelegate.braze, braze.notifications.handleBackgroundNotification(
-      userInfo: userInfo,
-      fetchCompletionHandler: completionHandler
-    ) {
+    if let braze = AppDelegate.braze,
+      braze.notifications.handleBackgroundNotification(
+        userInfo: userInfo,
+        fetchCompletionHandler: completionHandler
+      )
+    {
       return
     }
     completionHandler(.noData)
@@ -70,10 +72,12 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     didReceive response: UNNotificationResponse,
     withCompletionHandler completionHandler: @escaping () -> Void
   ) {
-    if let braze = AppDelegate.braze, braze.notifications.handleUserNotification(
-      response: response,
-      withCompletionHandler: completionHandler
-    ) {
+    if let braze = AppDelegate.braze,
+      braze.notifications.handleUserNotification(
+        response: response,
+        withCompletionHandler: completionHandler
+      )
+    {
       return
     }
     completionHandler()
