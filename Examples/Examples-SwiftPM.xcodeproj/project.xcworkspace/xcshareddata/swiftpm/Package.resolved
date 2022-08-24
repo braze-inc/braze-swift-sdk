@@ -54,15 +54,6 @@
           "revision": "6778575285177365cbad3e5b8a72f2a20583cfec",
           "version": "2.4.3"
         }
-      },
-      {
-        "package": "VideoKit",
-        "repositoryURL": "https://github.com/lowip/VideoKit",
-        "state": {
-          "branch": null,
-          "revision": "615653151c8fa7f7c191cd49939e0f69daf5aff8",
-          "version": "0.1.4"
-        }
       }
     ]
   },

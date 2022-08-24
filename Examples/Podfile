@@ -2,13 +2,18 @@ source 'https://cdn.cocoapods.org/'
 
 project 'Examples-CocoaPods'
 
-target 'Analytics' do
+target 'Analytics-iOS' do
   platform :ios, '10.0'
   pod 'BrazeKit'
 end
 
+target 'Analytics-tvOS' do
+  platform :tvos, '10.0'
+  pod 'BrazeKit'
+end
+
 target 'InAppMessages' do
-  platform :ios, '10.0'
+  platform :ios, '11.0'
   pod 'BrazeKit'
   pod 'BrazeUI'
   # SDWebImage is optional. BrazeUI requires a third party library to display GIF images.
@@ -17,7 +22,7 @@ target 'InAppMessages' do
 end
 
 target 'ContentCards' do
-  platform :ios, '10.0'
+  platform :ios, '11.0'
   pod 'BrazeKit'
   pod 'BrazeUI'
   # SDWebImage is optional. BrazeUI requires a third party library to display GIF images. 
@@ -25,8 +30,14 @@ target 'ContentCards' do
   pod 'SDWebImage', :modular_headers => true
 end
 
-target 'Location' do
+target 'Location-iOS' do
   platform :ios, '10.0'
+  pod 'BrazeKit'
+  pod 'BrazeLocation'
+end
+
+target 'Location-tvOS' do
+  platform :tvos, '10.0'
   pod 'BrazeKit'
   pod 'BrazeLocation'
 end

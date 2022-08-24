@@ -1,3 +1,10 @@
+## 5.3.0
+
+##### Added
+
+- Adds support for tvOS.
+  - See the schemes _Analytics-tvOS_ and _Location-tvOS_ in the [Examples](Examples/) project.
+
 ## 5.2.0
 
 ##### Added
@@ -7,7 +14,7 @@
 
 ##### Changed
 
-- Raises `BrazeUI` minimum deployment target to iOS 11.0 to allow providing SwiftUI compatible Views.
+- Raises `BrazeUI` minimum deployment target to iOS 11.0 when integrating via CocoaPods to allow providing SwiftUI compatible Views.
 
 ## 5.1.0
 
@@ -46,6 +53,8 @@ The Braze Swift SDK is set to replace the [current Braze iOS SDK](https://github
 
 The following features are not supported yet:
 - Objective-C integration
-- tvOS integration
+- ~~tvOS integration~~
+  - Added in [5.3.0](#530)
 - News Feed
-- Content Cards
+- ~~Content Cards~~
+  - Added in [5.2.0](#520)
