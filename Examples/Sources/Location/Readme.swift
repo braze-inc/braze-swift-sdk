@@ -2,7 +2,7 @@ import CoreLocation
 
 let readme =
   """
-  This sample presents a complete BrazeLocation integration.
+  This sample presents a complete BrazeLocation integration which enables location tracking and geofence monitoring.
 
   - AppDelegate.swift:
     - Configure the braze instance with BrazeLocation

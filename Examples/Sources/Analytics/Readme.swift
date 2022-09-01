@@ -2,7 +2,7 @@ import UIKit
 
 let readme =
   """
-  This sample presents how to use the analytics features of the SDK.
+  This sample demonstrates how to use the analytics features of the SDK.
 
   See files:
   - AppDelegate.swift

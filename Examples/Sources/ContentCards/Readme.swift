@@ -3,7 +3,7 @@ import UIKit
 
 let readme =
   """
-  This sample presents how to use the Braze provided content cards UI:
+  This sample demonstrates how to use the Braze provided Content Cards UI:
 
   - AppDelegate.swift:
     - Content cards UI presentation

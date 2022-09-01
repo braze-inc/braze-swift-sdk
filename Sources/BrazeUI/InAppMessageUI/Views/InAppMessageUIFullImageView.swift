@@ -39,9 +39,13 @@ extension BrazeInAppMessageUI {
       public var minWidth = 320.0
 
       /// The maximum width (used when displayed as modal).
+      ///
+      /// The maximum width is swapped with the maximum height for large UIs (e.g. iPad).
       public var maxWidth = 450.0
 
       /// The maximum height (used when displayed as modal).
+      ///
+      /// The maximum height is swapped with the maximum width for large UIs (e.g. iPad).
       public var maxHeight = 720.0
 
       /// Specify whether the full image in-app message view displays the image in a scroll view
@@ -212,8 +216,8 @@ extension BrazeInAppMessageUI {
     static var previews: some View {
       Group {
         variationFullPreviews
-        variationModalPreviews
-        dimensionsPreviews
+        //        variationModalPreviews
+        //        dimensionsPreviews
         //        customPreviews
       }
     }
@@ -223,17 +227,38 @@ extension BrazeInAppMessageUI {
       FullImageView(message: .mock, presented: true)
         .preview(center: .required)
         .frame(maxHeight: 800)
-        .previewDisplayName("Var. Full | Default")
+        .previewDisplayName("Var. Full | Portrait")
 
       FullImageView(message: .mockOneButton, presented: true)
         .preview(center: .required)
         .frame(maxHeight: 800)
-        .previewDisplayName("Var. Full | 1 Button")
+        .previewDisplayName("Var. Full | 1 Button Portrait")
 
       FullImageView(message: .mockTwoButtons, presented: true)
         .preview(center: .required)
         .frame(maxHeight: 800)
-        .previewDisplayName("Var. Full | 2 Buttons")
+        .previewDisplayName("Var. Full | 2 Buttons Portrait")
+
+      FullImageView(message: .mockLandscape, presented: true)
+        .preview(center: .required)
+        .frame(width: 850, height: 510)
+        .environment(\.horizontalSizeClass, .compact)
+        .environment(\.verticalSizeClass, .compact)
+        .previewDisplayName("Var. Full | Landcape")
+
+      FullImageView(message: .mockLandscapeOneButton, presented: true)
+        .preview(center: .required)
+        .frame(width: 850, height: 510)
+        .environment(\.horizontalSizeClass, .compact)
+        .environment(\.verticalSizeClass, .compact)
+        .previewDisplayName("Var. Full | 1 Button Landscape")
+
+      FullImageView(message: .mockLandscapeTwoButtons, presented: true)
+        .preview(center: .required)
+        .frame(width: 850, height: 510)
+        .environment(\.horizontalSizeClass, .compact)
+        .environment(\.verticalSizeClass, .compact)
+        .previewDisplayName("Var. Full | 2 Buttons Landscape")
     }
 
     @ViewBuilder
@@ -242,7 +267,7 @@ extension BrazeInAppMessageUI {
         .preview(center: .required)
         .frame(maxHeight: 800)
         .environment(\.horizontalSizeClass, .regular)
-        .previewDisplayName("Var. Modal | Default")
+        .previewDisplayName("Var. Modal | Portrait")
 
       FullImageView(message: .mockOneButton, presented: true)
         .preview(center: .required)
@@ -255,6 +280,27 @@ extension BrazeInAppMessageUI {
         .frame(maxHeight: 800)
         .environment(\.horizontalSizeClass, .regular)
         .previewDisplayName("Var. Modal | 2 Buttons")
+
+      FullImageView(message: .mockLandscape, presented: true)
+        .preview(center: .required)
+        .frame(width: 850, height: 510)
+        .environment(\.horizontalSizeClass, .regular)
+        .environment(\.verticalSizeClass, .regular)
+        .previewDisplayName("Var. Full | Landcape")
+
+      FullImageView(message: .mockLandscapeOneButton, presented: true)
+        .preview(center: .required)
+        .frame(width: 850, height: 510)
+        .environment(\.horizontalSizeClass, .regular)
+        .environment(\.verticalSizeClass, .regular)
+        .previewDisplayName("Var. Full | 1 Button Landscape")
+
+      FullImageView(message: .mockLandscapeTwoButtons, presented: true)
+        .preview(center: .required)
+        .frame(width: 850, height: 510)
+        .environment(\.horizontalSizeClass, .regular)
+        .environment(\.verticalSizeClass, .regular)
+        .previewDisplayName("Var. Full | 2 Buttons Landscape")
     }
 
     @ViewBuilder

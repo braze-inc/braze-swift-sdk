@@ -304,10 +304,12 @@ extension BrazeInAppMessageUI.HtmlView: WKNavigationDelegate {
     let isIframeLoad =
       navigationAction.targetFrame != nil
       && navigationAction.sourceFrame != navigationAction.targetFrame
+    let isIframeNavigation = navigationAction.targetFrame?.isMainFrame == false
 
     guard let url = navigationAction.request.url,
       url.isFileURL == false,
-      isIframeLoad == false
+      isIframeLoad == false,
+      isIframeNavigation == false
     else {
       decisionHandler(.allow)
       return

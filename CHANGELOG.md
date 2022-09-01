@@ -1,3 +1,24 @@
+## 5.3.1
+
+##### Fixed
+
+- Fixes an HTML in-app message issue where clicking a link in an iFrame would launch a separate webview and close the message, instead of redirecting within the iFrame.
+- Fixes the rounding of In-App Message modal view top corners.
+- Fixes the display of modals and full screen in-app messages on iPads in landscape mode.
+
+##### Added
+
+- Adds two Example schemes:
+  - InAppMessage-Custom-UI:
+    - Demonstrates how to implement your own custom In-App Message UI.
+    - Available on iOS and tvOS.
+  - ContentCards-Custom-UI:
+    - Demonstrates how to implement your own custom Content Card UI.
+    - Available on iOS and tvOS.
+- Adds [`Braze.InAppMessage.ClickAction.uri`](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/inappmessage/clickaction/uri) for direct access.
+- Adds [`Braze.ContentCard.ClickAction.uri`](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/contentcard/clickaction/uri/) for direct access.
+- Adds [`Braze.deviceId(queue:completion:)`](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/brazekit/braze/deviceid(queue:completion:)) to retrieve the device identifier used by Braze.
+  
 ## 5.3.0
 
 ##### Added

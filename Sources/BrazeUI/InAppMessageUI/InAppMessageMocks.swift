@@ -292,6 +292,35 @@ import Foundation
       ]
     )
 
+    public static let mockLandscape = Self(
+      data: .mock,
+      imageUri: .mockImage(width: 2000, height: 600),
+      header: "Hello world!",
+      message:
+        "Cupcake ipsum dolor sit amet topping. Cookie candy chupa chups jujubes pastry soufflé. Danish cake cheesecake liquorice wafer marshmallow macaroon."
+    )
+
+    public static let mockLandscapeOneButton = Self(
+      data: .mock,
+      imageUri: .mockImage(width: 2000, height: 600),
+      header: "Hello world!",
+      message:
+        "Cupcake ipsum dolor sit amet topping. Cookie candy chupa chups jujubes pastry soufflé. Danish cake cheesecake liquorice wafer marshmallow macaroon.",
+      buttons: [.mockPrimary]
+    )
+
+    public static let mockLandscapeTwoButtons = Self(
+      data: .mock,
+      imageUri: .mockImage(width: 2000, height: 600),
+      header: "Hello world!",
+      message:
+        "Cupcake ipsum dolor sit amet topping. Cookie candy chupa chups jujubes pastry soufflé. Danish cake cheesecake liquorice wafer marshmallow macaroon.",
+      buttons: [
+        .mockSecondary,
+        .mockPrimary,
+      ]
+    )
+
     public static let mockLeadingAligned = Self(
       data: .mock,
       imageUri: .mockImage(width: 1200, height: 1000),
@@ -361,6 +390,26 @@ import Foundation
     public static let mockTwoButtons = Self(
       data: .mock,
       imageUri: .mockImage(width: 1200, height: 2000),
+      buttons: [
+        .mockSecondary,
+        .mockPrimary,
+      ]
+    )
+
+    public static let mockLandscape = Self(
+      data: .mock,
+      imageUri: .mockImage(width: 2000, height: 1200)
+    )
+
+    public static let mockLandscapeOneButton = Self(
+      data: .mock,
+      imageUri: .mockImage(width: 2000, height: 1200),
+      buttons: [.mockPrimary]
+    )
+
+    public static let mockLandscapeTwoButtons = Self(
+      data: .mock,
+      imageUri: .mockImage(width: 2000, height: 1200),
       buttons: [
         .mockSecondary,
         .mockPrimary,

@@ -3,13 +3,12 @@ import UIKit
 
 let readme =
   """
-  This sample demonstrates how to use the Braze provided In-App Message UI:
+  This sample demonstrates how to implement your own custom In-App Message UI:
 
   - AppDelegate.swift:
-    - In-app message UI configuration
-    - In-app message UI delegate
-  - SDWebImageGIFViewProvider.swift:
-    - Use SDWebImage to provide GIF support to the Braze UI components
+    - Sets the custom in-app message presenter
+  - CustomInAppMessagePresenter.swift:
+    - Explains how to use the `Braze.InAppMessage` data model and present the message in a custom view controller.
   """
 
 let actions: [(String, String, (ReadmeViewController) -> Void)] = [
@@ -30,6 +29,10 @@ let actions: [(String, String, (ReadmeViewController) -> Void)] = [
 func localSlideup(_ viewController: ReadmeViewController) {
   let slideup: Braze.InAppMessage = .slideup(
     .init(
+      data: .init(
+        clickAction: .uri(URL(string: "https://example.com")!, useWebView: true),
+        extras: ["key1": "value1", "key2": "value2"]
+      ),
       graphic: .icon(""),
       message: "Local slideup in-app message"
     )
@@ -40,6 +43,10 @@ func localSlideup(_ viewController: ReadmeViewController) {
 func localModal(_ viewController: ReadmeViewController) {
   let modal: Braze.InAppMessage = .modal(
     .init(
+      data: .init(
+        clickAction: .uri(URL(string: "https://example.com")!, useWebView: true),
+        extras: ["key1": "value1", "key2": "value2"]
+      ),
       graphic: .icon(""),
       header: "Header text",
       message: "Local modal in-app message"

@@ -39,9 +39,13 @@ extension BrazeInAppMessageUI {
       public var minWidth = 320.0
 
       /// The maximum width.
+      ///
+      /// The maximum width is swapped with the maximum height for large UIs (e.g. iPad).
       public var maxWidth = 450.0
 
       /// The maximum height.
+      ///
+      /// The maximum height is swapped with the maximum width for large UIs (e.g. iPad).
       public var maxHeight = 720.0
 
       /// Specify whether the modal image in-app message view displays the image in a scroll view
@@ -88,9 +92,11 @@ extension BrazeInAppMessageUI {
       shadowView.shadow = attributes.shadow
 
       // Dimensions
+      let maxWidth = isLargeLandscape ? attributes.maxHeight : attributes.maxWidth
+      let maxHeight = isLargeLandscape ? attributes.maxWidth : attributes.maxHeight
       minWidthConstraint.constant = attributes.minWidth
-      maxWidthConstraint.constant = attributes.maxWidth
-      maxHeightConstraint.constant = attributes.maxHeight
+      maxWidthConstraint.constant = maxWidth
+      maxHeightConstraint.constant = maxHeight
 
       // Scroll large image
       imageContainerView.isScrollEnabled = attributes.scrollLargeImages
@@ -215,6 +221,7 @@ extension BrazeInAppMessageUI {
       _ previousTraitCollection: UITraitCollection?
     ) {
       super.traitCollectionDidChange(previousTraitCollection)
+      applyAttributes()
       applyTheme()
     }
 

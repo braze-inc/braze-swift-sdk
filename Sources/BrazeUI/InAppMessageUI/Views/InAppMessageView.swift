@@ -177,4 +177,12 @@ extension InAppMessageView {
     window?.makeKey()
   }
 
+  /// Specifies whether the UI is being displayed with both regular size classes in landscape.
+  public var isLargeLandscape: Bool {
+    guard let parentSize = controller?.view.bounds.size else { return false }
+    return traitCollection.horizontalSizeClass == .regular
+      && traitCollection.verticalSizeClass == .regular
+      && parentSize.width > parentSize.height
+  }
+
 }

@@ -50,9 +50,13 @@ extension BrazeInAppMessageUI {
       public var minWidth = 320.0
 
       /// The maximum width (used when displayed as modal).
+      ///
+      /// The maximum width is swapped with the maximum height for large UIs (e.g. iPad).
       public var maxWidth = 450.0
 
       /// The maximum height (used when displayed as modal).
+      ///
+      /// The maximum height is swapped with the maximum width for large UIs (e.g. iPad).
       public var maxHeight = 720.0
 
       /// Specify whether the full in-app message view can be dismissed from a tap with the
@@ -278,17 +282,38 @@ extension BrazeInAppMessageUI {
       FullView(message: .mock, presented: true)
         .preview()
         .frame(maxHeight: 800)
-        .previewDisplayName("Var. Full | Default")
+        .previewDisplayName("Var. Full | Portrait")
 
       FullView(message: .mockOneButton, presented: true)
         .preview()
         .frame(maxHeight: 800)
-        .previewDisplayName("Var. Full | 1 Button")
+        .previewDisplayName("Var. Full | 1 Button Portrait")
 
       FullView(message: .mockTwoButtons, presented: true)
         .preview()
         .frame(maxHeight: 800)
-        .previewDisplayName("Var. Full | 2 Buttons")
+        .previewDisplayName("Var. Full | 2 Buttons Portrait")
+
+      FullView(message: .mockLandscape, presented: true)
+        .preview(center: .required)
+        .frame(width: 850, height: 510)
+        .environment(\.horizontalSizeClass, .compact)
+        .environment(\.verticalSizeClass, .compact)
+        .previewDisplayName("Var. Full | Landcape")
+
+      FullView(message: .mockLandscapeOneButton, presented: true)
+        .preview(center: .required)
+        .frame(width: 850, height: 510)
+        .environment(\.horizontalSizeClass, .compact)
+        .environment(\.verticalSizeClass, .compact)
+        .previewDisplayName("Var. Full | 1 Button Landscape")
+
+      FullView(message: .mockLandscapeTwoButtons, presented: true)
+        .preview(center: .required)
+        .frame(width: 850, height: 510)
+        .environment(\.horizontalSizeClass, .compact)
+        .environment(\.verticalSizeClass, .compact)
+        .previewDisplayName("Var. Full | 2 Buttons Landscape")
 
       FullView(message: .mockLeadingAligned, presented: true)
         .preview()
@@ -307,19 +332,40 @@ extension BrazeInAppMessageUI {
         .preview()
         .frame(width: 540, height: 820)
         .environment(\.horizontalSizeClass, .regular)
-        .previewDisplayName("Var. Modal | Default")
+        .previewDisplayName("Var. Modal | Portrait")
 
       FullView(message: .mockOneButton, presented: true)
         .preview()
         .frame(width: 540, height: 820)
         .environment(\.horizontalSizeClass, .regular)
-        .previewDisplayName("Var. Modal | 1 Button")
+        .previewDisplayName("Var. Modal | 1 Button Portrait")
 
       FullView(message: .mockTwoButtons, presented: true)
         .preview()
         .frame(width: 540, height: 820)
         .environment(\.horizontalSizeClass, .regular)
-        .previewDisplayName("Var. Modal | 2 Buttons")
+        .previewDisplayName("Var. Modal | 2 Buttons Portrait")
+
+      FullView(message: .mockLandscape, presented: true)
+        .preview(center: .required)
+        .frame(width: 850, height: 510)
+        .environment(\.horizontalSizeClass, .regular)
+        .environment(\.verticalSizeClass, .regular)
+        .previewDisplayName("Var. Full | Landcape")
+
+      FullView(message: .mockLandscapeOneButton, presented: true)
+        .preview(center: .required)
+        .frame(width: 850, height: 510)
+        .environment(\.horizontalSizeClass, .regular)
+        .environment(\.verticalSizeClass, .regular)
+        .previewDisplayName("Var. Full | 1 Button Landscape")
+
+      FullView(message: .mockLandscapeTwoButtons, presented: true)
+        .preview(center: .required)
+        .frame(width: 850, height: 510)
+        .environment(\.horizontalSizeClass, .regular)
+        .environment(\.verticalSizeClass, .regular)
+        .previewDisplayName("Var. Full | 2 Buttons Landscape")
 
       FullView(message: .mockLeadingAligned, presented: true)
         .preview()

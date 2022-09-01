@@ -129,6 +129,32 @@ extension BrazeInAppMessageUI {
       }
     }
 
+    open override func viewWillTransition(
+      to size: CGSize,
+      with coordinator: UIViewControllerTransitionCoordinator
+    ) {
+      super.viewWillTransition(to: size, with: coordinator)
+
+      // Hide shadow view during modal / full rotation animation
+      let modalShadowView =
+        (self.messageView as? ModalView)?.shadowView
+        ?? (self.messageView as? ModalImageView)?.shadowView
+      // Apply attributes during animation so that modals / fulls can adapt to the size changes
+      let modalApplyAttributes =
+        (self.messageView as? ModalView)?.applyAttributes
+        ?? (self.messageView as? ModalImageView)?.applyAttributes
+
+      coordinator.animate(
+        alongsideTransition: { context in
+          modalShadowView?.isHidden = true
+          modalApplyAttributes?()
+        },
+        completion: { context in
+          modalShadowView?.isHidden = false
+        }
+      )
+    }
+
     // MARK: - Preferences
 
     open override var prefersStatusBarHidden: Bool {
