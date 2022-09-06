@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name              = 'BrazeUI'
-  s.version           = '5.3.1'
+  s.version           = '5.3.2'
   s.summary           = 'Braze-provided user interface library for In-App Messages.'
 
   s.homepage          = 'https://braze.com'
@@ -8,14 +8,14 @@ Pod::Spec.new do |s|
   s.license           = { :type => 'Commercial' }
   s.authors           = 'Braze, Inc.'
 
-  s.source            = { :git => 'https://github.com/braze-inc/braze-swift-sdk.git', :tag => '5.3.1' }
+  s.source            = { :git => 'https://github.com/braze-inc/braze-swift-sdk.git', :tag => '5.3.2' }
 
   s.swift_version           = '5.0'
-  s.ios.deployment_target   = '11.0'
+  s.ios.deployment_target   = '10.0'
   s.static_framework        = true
 
   s.source_files            = 'Sources/BrazeUI/**/*.swift'
   s.resource_bundles        = { 'BrazeUI' => 'Sources/BrazeUI/Resources/**/*' }
 
-  s.dependency 'BrazeKit', '5.3.1'
+  s.dependency 'BrazeKit', '5.3.2'
 end

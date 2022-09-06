@@ -1,6 +1,9 @@
-// Disable SwiftUI features for `arch(arm)` (armv7) as it doesn't have SwiftUI symbols:
+// Disable SwiftUI features for:
+// - `arch(arm)` (armv7 - 32 bit arm)
+// - `arch(i386)` (32 bit intel simlulator)
+// Those architectures do not ship with SwiftUI symbols
 // See: https://archive.ph/eMbWT (FB7431741)
-#if canImport(SwiftUI) && !arch(arm)
+#if canImport(SwiftUI) && !arch(arm) && !arch(i386)
 
   import BrazeKit
   import SwiftUI

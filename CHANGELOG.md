@@ -1,3 +1,10 @@
+## 5.3.2
+
+##### Fixed
+
+- Fixes an issue preventing compilation when importing `BrazeUI` via SwiftPM in specific cases.
+- Lowers `BrazeUI` minimum deployment target to iOS 10.0.
+
 ## 5.3.1
 
 ##### Fixed
