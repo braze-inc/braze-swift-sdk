@@ -1,20 +1,25 @@
+## 5.4.0
+
+##### Fixed
+- Fixes an issue where `brazeBridge.logClick(button_id)` would incorrectly accept invalid `button_id` values like `""`, `[]`, or `{}`.
+
+##### Added
+- Adds support for Braze Action Deeplink Click Actions.
+
 ## 5.3.2
 
 ##### Fixed
-
 - Fixes an issue preventing compilation when importing `BrazeUI` via SwiftPM in specific cases.
 - Lowers `BrazeUI` minimum deployment target to iOS 10.0.
 
 ## 5.3.1
 
 ##### Fixed
-
 - Fixes an HTML in-app message issue where clicking a link in an iFrame would launch a separate webview and close the message, instead of redirecting within the iFrame.
 - Fixes the rounding of In-App Message modal view top corners.
 - Fixes the display of modals and full screen in-app messages on iPads in landscape mode.
 
 ##### Added
-
 - Adds two Example schemes:
   - InAppMessage-Custom-UI:
     - Demonstrates how to implement your own custom In-App Message UI.
@@ -25,36 +30,31 @@
 - Adds [`Braze.InAppMessage.ClickAction.uri`](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/inappmessage/clickaction/uri) for direct access.
 - Adds [`Braze.ContentCard.ClickAction.uri`](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/contentcard/clickaction/uri/) for direct access.
 - Adds [`Braze.deviceId(queue:completion:)`](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/brazekit/braze/deviceid(queue:completion:)) to retrieve the device identifier used by Braze.
-  
+
 ## 5.3.0
 
 ##### Added
-
 - Adds support for tvOS.
   - See the schemes _Analytics-tvOS_ and _Location-tvOS_ in the [Examples](Examples/) project.
 
 ## 5.2.0
 
 ##### Added
-
 - Adds [Content Cards](https://www.braze.com/docs/user_guide/message_building_by_channel/content_cards) support.
   - See the [_Content Cards UI_](https://braze-inc.github.io/braze-swift-sdk/tutorials/braze/c2-contentcardsui) tutorial to get started.
 
 ##### Changed
-
-- Raises `BrazeUI` minimum deployment target to iOS 11.0 when integrating via CocoaPods to allow providing SwiftUI compatible Views.
+- Raises `BrazeUI` minimum deployment target to iOS 11.0 to allow providing SwiftUI compatible Views.
 
 ## 5.1.0
 
 ##### Fixed
-
 - Fixes an issue where the SDK would be unable to present a webview when the application was already presenting a modal view controller.
 - Fixes an issue preventing a full device data update after changing the identified user.
 - Fixes an issue preventing events and user attributes from being flushed automatically under certain conditions.
 - Fixes an issue delaying updates to push notifications settings.
 
 ##### Added
-
 - Adds CocoaPods support.
   - Pods:
     - [BrazeKit](https://cocoapods.org/pods/BrazeKit)

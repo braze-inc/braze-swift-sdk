@@ -499,7 +499,7 @@ import Foundation
 
   extension Braze.InAppMessage.ClickAction {
 
-    public static let mock: Self = .uri(URL(string: "https://example.com")!, useWebView: false)
+    public static let mock = Self.uri(URL(string: "https://example.com")!, useWebView: false)
 
   }
 
