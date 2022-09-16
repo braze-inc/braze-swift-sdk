@@ -25,7 +25,6 @@ The following features are planned for development. To request new Swift SDK fea
 
 | Feature | Estimated Release |
 |---|---|
-| No-code Push Primers, Events, and Attributes | September, 2022 |
 | Objective-C Migration Library | October, 2022 |
 
 ## Libraries
