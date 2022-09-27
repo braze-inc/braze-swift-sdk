@@ -8,6 +8,8 @@ extension BrazeInAppMessageUI {
     case noContextProcessClickAction
     case invalidBrazeActions
 
+    case rawToTypedConversion(Braze.ErrorString)
+
     case noMainThread
     case noMessageView
     case noAppRootViewController
@@ -18,7 +20,7 @@ extension BrazeInAppMessageUI {
     case messageContextDiscarded
     case messageContextInvalid
 
-    case htmlNoBaseUrl
+    case htmlNoBaseURL
     case webViewNavigation(Braze.ErrorString)
     case webViewScript(Braze.WebViewBridge.ScriptMessageHandler.Error)
     case webViewScheme(Braze.WebViewBridge.SchemeHandler.Error)
@@ -41,6 +43,14 @@ extension BrazeInAppMessageUI.Error {
       return "Cannot process click action for non-braze in-app message."
     case .invalidBrazeActions:
       return "Invalid Braze Actions found in click action. Skipping display."
+
+    case .rawToTypedConversion(let error):
+      return
+        """
+        Cannot convert raw in-app message to typed in-app message, error:
+        - description: \(error.localizedDescription)
+        - error: \(error)
+        """
 
     case .noMainThread:
       return
@@ -66,7 +76,7 @@ extension BrazeInAppMessageUI.Error {
       return
         "Unable to present message - message context is invalid. The message has been discarded and removed from the stack."
 
-    case .htmlNoBaseUrl:
+    case .htmlNoBaseURL:
       return "Unable to present html in-app message - no base url."
     case .webViewNavigation(let error):
       return "Unable to load html in web view - \(error.logDescription)"

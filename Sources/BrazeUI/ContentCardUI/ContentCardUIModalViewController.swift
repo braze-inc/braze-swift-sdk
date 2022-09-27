@@ -5,10 +5,12 @@ extension BrazeContentCardUI {
 
   /// Wraps ``ViewController`` in a `UINavigationController` with a _Done_ button. Use this class
   /// for presenting the content cards modally.
+  @objc(BRZContentCardUIModalViewController)
   open class ModalViewController: UINavigationController {
 
     // MARK: - Properties
 
+    @objc
     public let viewController: ViewController
 
     // MARK: - Initialization
@@ -20,7 +22,7 @@ extension BrazeContentCardUI {
     ///   - braze: The Braze instance.
     ///   - attributes: An attributes struct allowing customization of the table view controller
     ///                 and its cells.
-    ///   - title: The navigation bar title (default: `""`)
+    ///   - title: The navigation bar title (default: `""`).
     public init(
       braze: Braze,
       attributes: ViewController.Attributes = .defaults,
@@ -41,6 +43,7 @@ extension BrazeContentCardUI {
     ///              refresh.
     ///   - subscribe: An optional closure implementing the subscription to new cards logic. `nil`
     ///                disables automatic updates.
+    ///   - lastUpdate: The last time the content cards were updated.
     ///   - attributes: An attributes struct allowing customization of the table view controller
     ///                 and its cells.
     ///   - title: The navigation bar title (default: `""`)
@@ -48,6 +51,7 @@ extension BrazeContentCardUI {
       initialCards: [Braze.ContentCard],
       refresh: ((@escaping (Result<[Braze.ContentCard], Error>) -> Void) -> Void)? = nil,
       subscribe: ((@escaping ([Braze.ContentCard]) -> Void) -> Braze.Cancellable)? = nil,
+      lastUpdate: Date? = nil,
       attributes: ViewController.Attributes = .defaults,
       title: String = ""
     ) {
@@ -55,15 +59,25 @@ extension BrazeContentCardUI {
         initialCards: initialCards,
         refresh: refresh,
         subscribe: subscribe,
+        lastUpdate: lastUpdate,
         attributes: attributes
       )
       viewController.title = title
       super.init(rootViewController: viewController)
     }
 
+    /// Does not support interface-builder / storyboards.
     @available(*, unavailable)
     required public init?(coder: NSCoder) {
       fatalError("init(coder:) has not been implemented")
+    }
+
+    /// See ``init(braze:attributes:title:)``.
+    @objc
+    @available(*, unavailable)
+    public init() {
+      // This init exists only to override the ObjC `NSObject.init` and disable it.
+      fatalError("init is not available")
     }
 
     // MARK: - LifeCycle

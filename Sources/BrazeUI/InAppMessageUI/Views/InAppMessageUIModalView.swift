@@ -257,7 +257,7 @@ extension BrazeInAppMessageUI {
     public init(
       message: Braze.InAppMessage.Modal,
       attributes: Attributes = .defaults,
-      gifViewProvider: GIFViewProvider = .default,
+      gifViewProvider: GIFViewProvider = .nonAnimating,
       presented: Bool = false
     ) {
       self.message = message

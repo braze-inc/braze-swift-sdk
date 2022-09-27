@@ -116,7 +116,7 @@ extension BrazeInAppMessageUI {
     let gifViewProvider: GIFViewProvider
 
     public lazy var imageView: UIView = {
-      let imageView = gifViewProvider.view(message.imageUri)
+      let imageView = gifViewProvider.view(message.imageURL)
       imageView.contentMode = .scaleAspectFill
       return imageView
     }()
@@ -177,7 +177,7 @@ extension BrazeInAppMessageUI {
     public init(
       message: Braze.InAppMessage.ModalImage,
       attributes: Attributes = .defaults,
-      gifViewProvider: GIFViewProvider = .default,
+      gifViewProvider: GIFViewProvider = .nonAnimating,
       presented: Bool = false
     ) {
       self.message = message
@@ -246,7 +246,7 @@ extension BrazeInAppMessageUI {
       frame = CGRect(x: 0, y: 0, width: 500, height: 500)
       Constraints {
         // ImageView
-        if let imageSize = imageSize(url: message.imageUri) {
+        if let imageSize = imageSize(url: message.imageURL) {
           let aspectRatio = imageSize.width / imageSize.height
           imageAspectRatioConstraint = imageView.anchors.width.equal(
             imageView.anchors.height.multiplied(by: aspectRatio)

@@ -158,7 +158,7 @@ extension InAppMessageView {
 
   public func logError(_ error: BrazeInAppMessageUI.Error) {
     controller?.message.context?.logError(flattened: error.logDescription)
-      ?? print(error.logDescription)
+      ?? print("[BrazeUI]", error.logDescription)
   }
 
   /// The controller currently displaying the in-app message view.

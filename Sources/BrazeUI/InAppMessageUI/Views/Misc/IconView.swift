@@ -3,9 +3,9 @@ import UIKit
 
 extension BrazeInAppMessageUI {
 
-  /// View displaying a [FontAwesome v4.3] icon.
+  /// View displaying a [FontAwesome v4.3][1] icon.
   ///
-  /// [FontAwesome v4.3]: https://fontawesome.com/v4.7/cheatsheet/
+  /// [1]: https://fontawesome.com/v4.7/cheatsheet/
   open class IconView: UIView {
 
     /// FontAwesome symbol to display.

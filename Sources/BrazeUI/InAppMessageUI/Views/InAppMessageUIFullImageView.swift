@@ -150,7 +150,7 @@ extension BrazeInAppMessageUI {
     public init(
       message: Braze.InAppMessage.FullImage,
       attributes: Attributes = .defaults,
-      gifViewProvider: GIFViewProvider = .default,
+      gifViewProvider: GIFViewProvider = .nonAnimating,
       presented: Bool = false
     ) {
       var modalImageAttrs = ModalImageView.Attributes()
@@ -174,7 +174,7 @@ extension BrazeInAppMessageUI {
       super.init(
         message: .init(
           data: message.data,
-          imageUri: message.imageUri,
+          imageURL: message.imageURL,
           buttons: message.buttons,
           themes: message.themes
         ),

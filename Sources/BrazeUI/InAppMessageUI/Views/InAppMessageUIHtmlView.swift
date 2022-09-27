@@ -166,6 +166,7 @@ extension BrazeInAppMessageUI {
           yConstraint = webView?.anchors.top.pin()
           webView?.anchors.top.equal(anchors.bottom).priority = .defaultHigh
         case .auto, .fade:
+          webView?.anchors.center.align()
           break
         }
       }
@@ -266,8 +267,8 @@ extension BrazeInAppMessageUI {
     }
 
     open func loadMessage() {
-      guard let baseUrl = message.baseUrl else {
-        logError(.htmlNoBaseUrl)
+      guard let baseURL = message.baseURL else {
+        logError(.htmlNoBaseURL)
         message.animateOut = false
         dismiss()
         return
@@ -275,17 +276,17 @@ extension BrazeInAppMessageUI {
 
       // Create directory if needed
       try? FileManager.default.createDirectory(
-        at: baseUrl,
+        at: baseURL,
         withIntermediateDirectories: true,
         attributes: nil
       )
 
       // Write index.html
-      let index = baseUrl.appendingPathComponent("index.html")
+      let index = baseURL.appendingPathComponent("index.html")
       try? message.message.write(to: index, atomically: true, encoding: .utf8)
 
       // Load
-      webView?.loadFileURL(index, allowingReadAccessTo: baseUrl)
+      webView?.loadFileURL(index, allowingReadAccessTo: baseURL)
     }
 
   }

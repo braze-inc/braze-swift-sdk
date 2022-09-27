@@ -41,6 +41,9 @@ extension BrazeInAppMessageUI {
       /// The image size.
       public var imageSize = CGSize(width: 50, height: 50)
 
+      /// The chevron visibility.
+      public var chevronVisibility: ChevronVisibility = .auto
+
       /// The content view corner radius.
       public var cornerRadius = 15.0
 
@@ -70,6 +73,19 @@ extension BrazeInAppMessageUI {
 
     }
 
+    /// Visibility options supported for the chevron.
+    public enum ChevronVisibility {
+
+      /// Visible when the message has a click action, hidden otherwise.
+      case auto
+
+      /// Always hidden.
+      case hidden
+
+      /// Always visible.
+      case visible
+    }
+
     /// The view attributes. See ``Attributes-swift.struct``.
     public var attributes: Attributes {
       didSet { applyAttributes() }
@@ -94,6 +110,11 @@ extension BrazeInAppMessageUI {
 
       // Fonts
       messageLabel.font = attributes.font
+
+      // Chevron
+      chevronView.isHidden =
+        attributes.chevronVisibility == .hidden
+        || (attributes.chevronVisibility == .auto && message.clickAction == .none)
 
       // Corner radius
       shadowView.layer.cornerRadius = attributes.cornerRadius
@@ -186,7 +207,7 @@ extension BrazeInAppMessageUI {
     public init(
       message: Braze.InAppMessage.Slideup,
       attributes: Attributes = .defaults,
-      gifViewProvider: GIFViewProvider = .default,
+      gifViewProvider: GIFViewProvider = .nonAnimating,
       presented: Bool = false
     ) {
       self.message = message

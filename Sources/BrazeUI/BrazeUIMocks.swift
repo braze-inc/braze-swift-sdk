@@ -78,16 +78,16 @@ import UIKit
       }
 
       // Write to temporary cache
-      let cacheUrl = try! FileManager.default.url(
+      let cacheURL = try! FileManager.default.url(
         for: .cachesDirectory,
         in: .userDomainMask,
         appropriateFor: nil,
         create: false
       )
-      let imageUrl = cacheUrl.appendingPathComponent("\(text).png")
-      try! data.write(to: imageUrl)
+      let imageURL = cacheURL.appendingPathComponent("\(text).png")
+      try! data.write(to: imageURL)
 
-      return imageUrl
+      return imageURL
     }
 
   }

@@ -77,7 +77,7 @@ open class AsyncImageView: UIView {
   }
 
   public let imageView: UIView = {
-    let view = gifViewProvider.view(nil)
+    let view = GIFViewProvider.shared.view(nil)
     view.contentMode = .scaleAspectFit
     return view
   }()
@@ -96,7 +96,7 @@ open class AsyncImageView: UIView {
   private func updateImage() {
     // Reset
     activityIndicator.stopAnimating()
-    gifViewProvider.updateView(imageView, nil)
+    GIFViewProvider.shared.updateView(imageView, nil)
     retryButton.isHidden = true
 
     switch imageLoad {
@@ -108,7 +108,7 @@ open class AsyncImageView: UIView {
       retryButton.isHidden = retry == nil
     case .success(let url, let size):
       aspectRatio = size.width / size.height
-      gifViewProvider.updateView(imageView, url)
+      GIFViewProvider.shared.updateView(imageView, url)
       updateImageCornerRadius()
     }
   }

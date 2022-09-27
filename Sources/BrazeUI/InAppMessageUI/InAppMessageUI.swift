@@ -9,8 +9,12 @@ import UIKit
 ///
 /// To add GIF support to the in-app message UI components, set a valid
 /// ``gifViewProvider-swift.var``.
-@objc
-open class BrazeInAppMessageUI: NSObject, BrazeInAppMessagePresenter {
+@objc(BrazeInAppMessageUI)
+open class BrazeInAppMessageUI:
+  NSObject,
+  BrazeInAppMessagePresenter,
+  _OBJC_BrazeInAppMessagePresenter
+{
 
   // MARK: - Properties
 
@@ -71,7 +75,18 @@ open class BrazeInAppMessageUI: NSObject, BrazeInAppMessagePresenter {
 
   }
 
+  @objc
+  public func present(message: Braze.InAppMessageRaw) {
+    do {
+      let message = try Braze.InAppMessage(message)
+      present(message: message)
+    } catch {
+      logError(for: message.context, error: .rawToTypedConversion(.init(error)))
+    }
+  }
+
   /// Presents the next in-app message in the stack if any.
+  @objc
   public func presentNext() {
     // We use `last` instead of `popLast()` to avoid potentially modifying `stack` from a non
     // main thread. The message is removed from the stack in `presentNow`.
@@ -117,7 +132,7 @@ open class BrazeInAppMessageUI: NSObject, BrazeInAppMessagePresenter {
       ?? createMessageView(
         for: context.message,
         attributes: context.attributes,
-        gifViewProvider: gifViewProvider
+        gifViewProvider: GIFViewProvider.shared
       )
     guard let messageView = optMessageView else {
       message.context?.discard()
@@ -172,20 +187,21 @@ open class BrazeInAppMessageUI: NSObject, BrazeInAppMessagePresenter {
   /// Dismisses the current in-app message view.
   /// - Parameter completion: Executed once the in-app message view has been dismissed or directly
   ///                         when no in-app message view is currently presented.
+  @objc
   public func dismiss(completion: (() -> Void)? = nil) {
     messageView?.dismiss(completion: completion) ?? completion?()
   }
 
   // MARK: - Utils
 
-  func logError(for message: Braze.InAppMessage, error: Error) {
-    message.context?.logError(flattened: error.logDescription) ?? print(error.logDescription)
+  func logError(for context: Braze.InAppMessage.Context?, error: Error) {
+    context?.logError(flattened: error.logDescription) ?? print(error.logDescription)
   }
 
   func validateMainThread(for message: Braze.InAppMessage) -> Bool {
     guard Thread.isMainThread else {
       DispatchQueue.main.sync {
-        logError(for: message, error: .noMainThread)
+        logError(for: message.context, error: .noMainThread)
       }
       return false
     }
@@ -200,7 +216,7 @@ open class BrazeInAppMessageUI: NSObject, BrazeInAppMessagePresenter {
     }
 
     if Braze.UIUtils.activeRootViewController == nil {
-      logError(for: message, error: .noAppRootViewController)
+      logError(for: message.context, error: .noAppRootViewController)
       return false
     }
 
@@ -215,7 +231,7 @@ open class BrazeInAppMessageUI: NSObject, BrazeInAppMessagePresenter {
         stack.append(message)
       }
 
-      logError(for: message, error: .otherMessagePresented(push: push))
+      logError(for: message.context, error: .otherMessagePresented(push: push))
       return false
     }
     return true
@@ -224,7 +240,7 @@ open class BrazeInAppMessageUI: NSObject, BrazeInAppMessagePresenter {
   // Always return true, font-awesome missing is not a breaking error
   func validateFontAwesome(for message: Braze.InAppMessage) -> Bool {
     guard IconView.registerFontAwesomeIfNeeded() else {
-      logError(for: message, error: .noFontAwesome)
+      logError(for: message.context, error: .noFontAwesome)
       return true
     }
     return true
@@ -235,7 +251,7 @@ open class BrazeInAppMessageUI: NSObject, BrazeInAppMessagePresenter {
     guard message.orientation.supported(by: traits) else {
       stack.removeAll { $0 == message }
       message.context?.discard()
-      logError(for: message, error: .noMatchingOrientation)
+      logError(for: message.context, error: .noMatchingOrientation)
       return false
     }
     return true
@@ -249,14 +265,14 @@ open class BrazeInAppMessageUI: NSObject, BrazeInAppMessagePresenter {
 
     guard context.discarded == false else {
       stack.removeAll { $0 == message }
-      logError(for: message, error: .messageContextDiscarded)
+      logError(for: message.context, error: .messageContextDiscarded)
       return false
     }
 
     guard context.valid else {
       stack.removeAll { $0 == message }
       context.discard()
-      logError(for: message, error: .messageContextInvalid)
+      logError(for: message.context, error: .messageContextInvalid)
       return false
     }
 

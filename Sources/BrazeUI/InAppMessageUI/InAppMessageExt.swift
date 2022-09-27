@@ -52,11 +52,6 @@ extension Braze.InAppMessage.Button {
 
 extension Braze.InAppMessage.Color {
 
-  /// The `UIColor` representation of the in-app message color.
-  public var uiColor: UIColor {
-    UIColor(red: r, green: g, blue: b, alpha: a)
-  }
-
   /// A 1x1 pt image of the color.
   public var image: UIImage {
     let rect = CGRect(x: 0, y: 0, width: 1, height: 1)

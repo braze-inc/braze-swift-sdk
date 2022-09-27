@@ -1,3 +1,23 @@
+## 5.5.0
+
+##### Added
+- Adds support for host apps written in Objective-C.
+  - Braze Objective-C types start either with `BRZ` or `Braze`, e.g.:
+    - `Braze`
+    - `BrazeDelegate`
+    - `BRZContentCardRaw`
+  - See our Objective-C [Examples](Examples/) project.
+- Adds [`BrazeDelegate.braze(_:noMatchingTriggerForEvent:)`](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/brazedelegate/braze(_:nomatchingtriggerforevent:)-8rt7y) which is called if no Braze in-app message is triggered for a given event.
+
+##### Changed
+- In `Braze.Configuration.Api`:
+  - Renamed `SdkMetadata` to `SDKMetadata`.
+  - Renamed `addSdkMetadata(_:)` to `addSDKMetadata(_:)`.
+- In `Braze.InAppMessage`:
+  - Renamed `Themes.default` to `Themes.defaults`.
+  - Renamed `ClickAction.uri` to `ClickAction.url`.
+  - Renamed `ClickAction.uri(_:useWebView:)` to `ClickAction.url(_:useWebView:)`.
+
 ## 5.4.0
 
 ##### Fixed
@@ -29,7 +49,7 @@
     - Available on iOS and tvOS.
 - Adds [`Braze.InAppMessage.ClickAction.uri`](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/inappmessage/clickaction/uri) for direct access.
 - Adds [`Braze.ContentCard.ClickAction.uri`](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/contentcard/clickaction/uri/) for direct access.
-- Adds [`Braze.deviceId(queue:completion:)`](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/brazekit/braze/deviceid(queue:completion:)) to retrieve the device identifier used by Braze.
+- Adds [`Braze.deviceId(queue:completion:)`](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/deviceid(queue:completion:)) to retrieve the device identifier used by Braze.
 
 ## 5.3.0
 
@@ -80,7 +100,8 @@ The Braze Swift SDK is set to replace the [current Braze iOS SDK](https://github
 ### Current limitations
 
 The following features are not supported yet:
-- Objective-C integration
+- ~~Objective-C integration~~
+  - Added in [5.5.0](#550)
 - ~~tvOS integration~~
   - Added in [5.3.0](#530)
 - News Feed

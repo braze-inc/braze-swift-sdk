@@ -1,0 +1,78 @@
+source 'https://cdn.cocoapods.org/'
+
+project 'Examples-CocoaPods'
+
+target 'Analytics-iOS' do
+  platform :ios, '10.0'
+  pod 'BrazeKit'
+end
+
+target 'Analytics-tvOS' do
+  platform :tvos, '10.0'
+  pod 'BrazeKit'
+end
+
+target 'InAppMessages' do
+  platform :ios, '11.0'
+  pod 'BrazeKit'
+  pod 'BrazeUI'
+  # SDWebImage is optional. BrazeUI requires a third party library to display GIF images.
+  # See https://braze-inc.github.io/braze-swift-sdk/documentation/braze/gif-support-integrations
+  pod 'SDWebImage', :modular_headers => true
+end
+
+target 'InAppMessages-Custom-UI-iOS' do
+  platform :ios, '10.0'
+  pod 'BrazeKit'
+end
+
+target 'InAppMessages-Custom-UI-tvOS' do
+  platform :tvos, '10.0'
+  pod 'BrazeKit'
+end
+
+target 'ContentCards' do
+  platform :ios, '11.0'
+  pod 'BrazeKit'
+  pod 'BrazeUI'
+  # SDWebImage is optional. BrazeUI requires a third party library to display GIF images. 
+  # See https://braze-inc.github.io/braze-swift-sdk/documentation/braze/gif-support-integrations
+  pod 'SDWebImage', :modular_headers => true
+end
+
+target 'ContentCards-Custom-UI-iOS' do
+  platform :ios, '10.0'
+  pod 'BrazeKit'
+end
+
+target 'ContentCards-Custom-UI-tvOS' do
+  platform :tvos, '10.0'
+  pod 'BrazeKit'
+end
+
+target 'Location-iOS' do
+  platform :ios, '10.0'
+  pod 'BrazeKit'
+  pod 'BrazeLocation'
+end
+
+target 'Location-tvOS' do
+  platform :tvos, '10.0'
+  pod 'BrazeKit'
+  pod 'BrazeLocation'
+end
+
+target 'PushNotifications' do
+  platform :ios, '10.0'
+  pod 'BrazeKit'
+end
+
+target 'PushNotificationsServiceExtension' do
+  platform :ios, '10.0'
+  pod 'BrazeNotificationService'
+end
+
+target 'PushNotificationsContentExtension' do
+  platform :ios, '10.0'
+  pod 'BrazePushStory'
+end

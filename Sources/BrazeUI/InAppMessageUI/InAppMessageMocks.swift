@@ -201,7 +201,7 @@ import Foundation
 
     public static let mock = Self(
       data: .mock,
-      imageUri: .mockImage(width: 600, height: 600),
+      imageURL: .mockImage(width: 600, height: 600),
       buttons: [
         .mockSecondary,
         .mockPrimary,
@@ -210,7 +210,7 @@ import Foundation
 
     public static let mockLargeImage = Self(
       data: .mock,
-      imageUri: .mockImage(width: 1200, height: 2000),
+      imageURL: .mockImage(width: 1200, height: 2000),
       buttons: [
         .mockSecondary,
         .mockPrimary,
@@ -219,7 +219,7 @@ import Foundation
 
     public static let mockExtraLargeImage = Self(
       data: .mock,
-      imageUri: .mockImage(width: 1200, height: 4000),
+      imageURL: .mockImage(width: 1200, height: 4000),
       buttons: [
         .mockSecondary,
         .mockPrimary,
@@ -228,13 +228,13 @@ import Foundation
 
     public static let mockNoButtons = Self(
       data: .mock,
-      imageUri: .mockImage(width: 600, height: 600),
+      imageURL: .mockImage(width: 600, height: 600),
       buttons: []
     )
 
     public static let mockOneButton = Self(
       data: .mock,
-      imageUri: .mockImage(width: 600, height: 600),
+      imageURL: .mockImage(width: 600, height: 600),
       buttons: [
         .mockPrimary
       ]
@@ -242,7 +242,7 @@ import Foundation
 
     public static let mockThemed = Self(
       data: .mock,
-      imageUri: .mockImage(width: 600, height: 600),
+      imageURL: .mockImage(width: 600, height: 600),
       buttons: [
         .mockSecondary,
         .mockPrimaryThemed,
@@ -263,7 +263,7 @@ import Foundation
 
     public static let mock = Self(
       data: .mock,
-      imageUri: .mockImage(width: 1200, height: 1000),
+      imageURL: .mockImage(width: 1200, height: 1000),
       header: "Hello world!",
       message:
         "Cupcake ipsum dolor sit amet topping. Cookie candy chupa chups jujubes pastry soufflé. Danish cake cheesecake liquorice wafer marshmallow macaroon."
@@ -271,7 +271,7 @@ import Foundation
 
     public static let mockOneButton = Self(
       data: .mock,
-      imageUri: .mockImage(width: 1200, height: 1000),
+      imageURL: .mockImage(width: 1200, height: 1000),
       header: "Hello world!",
       message:
         "Cupcake ipsum dolor sit amet topping. Cookie candy chupa chups jujubes pastry soufflé. Danish cake cheesecake liquorice wafer marshmallow macaroon.",
@@ -282,7 +282,7 @@ import Foundation
 
     public static let mockTwoButtons = Self(
       data: .mock,
-      imageUri: .mockImage(width: 1200, height: 1000),
+      imageURL: .mockImage(width: 1200, height: 1000),
       header: "Hello world!",
       message:
         "Cupcake ipsum dolor sit amet topping. Cookie candy chupa chups jujubes pastry soufflé. Danish cake cheesecake liquorice wafer marshmallow macaroon.",
@@ -294,7 +294,7 @@ import Foundation
 
     public static let mockLandscape = Self(
       data: .mock,
-      imageUri: .mockImage(width: 2000, height: 600),
+      imageURL: .mockImage(width: 2000, height: 600),
       header: "Hello world!",
       message:
         "Cupcake ipsum dolor sit amet topping. Cookie candy chupa chups jujubes pastry soufflé. Danish cake cheesecake liquorice wafer marshmallow macaroon."
@@ -302,7 +302,7 @@ import Foundation
 
     public static let mockLandscapeOneButton = Self(
       data: .mock,
-      imageUri: .mockImage(width: 2000, height: 600),
+      imageURL: .mockImage(width: 2000, height: 600),
       header: "Hello world!",
       message:
         "Cupcake ipsum dolor sit amet topping. Cookie candy chupa chups jujubes pastry soufflé. Danish cake cheesecake liquorice wafer marshmallow macaroon.",
@@ -311,7 +311,7 @@ import Foundation
 
     public static let mockLandscapeTwoButtons = Self(
       data: .mock,
-      imageUri: .mockImage(width: 2000, height: 600),
+      imageURL: .mockImage(width: 2000, height: 600),
       header: "Hello world!",
       message:
         "Cupcake ipsum dolor sit amet topping. Cookie candy chupa chups jujubes pastry soufflé. Danish cake cheesecake liquorice wafer marshmallow macaroon.",
@@ -323,7 +323,7 @@ import Foundation
 
     public static let mockLeadingAligned = Self(
       data: .mock,
-      imageUri: .mockImage(width: 1200, height: 1000),
+      imageURL: .mockImage(width: 1200, height: 1000),
       header: "Hello world!",
       headerTextAlignment: .leading,
       message:
@@ -337,7 +337,7 @@ import Foundation
 
     public static let mockLong = Self(
       data: .mock,
-      imageUri: .mockImage(width: 1200, height: 1000),
+      imageURL: .mockImage(width: 1200, height: 1000),
       header: "Hello world!",
       message:
         """
@@ -353,7 +353,7 @@ import Foundation
 
     public static let mockThemed = Self(
       data: .mock,
-      imageUri: .mockImage(width: 1200, height: 1000),
+      imageURL: .mockImage(width: 1200, height: 1000),
       header: "Hello world!",
       message:
         "Cupcake ipsum dolor sit amet topping. Cookie candy chupa chups jujubes pastry soufflé. Danish cake cheesecake liquorice wafer marshmallow macaroon.",
@@ -378,18 +378,18 @@ import Foundation
 
     public static let mock = Self(
       data: .mock,
-      imageUri: .mockImage(width: 1200, height: 2000)
+      imageURL: .mockImage(width: 1200, height: 2000)
     )
 
     public static let mockOneButton = Self(
       data: .mock,
-      imageUri: .mockImage(width: 1200, height: 2000),
+      imageURL: .mockImage(width: 1200, height: 2000),
       buttons: [.mockPrimary]
     )
 
     public static let mockTwoButtons = Self(
       data: .mock,
-      imageUri: .mockImage(width: 1200, height: 2000),
+      imageURL: .mockImage(width: 1200, height: 2000),
       buttons: [
         .mockSecondary,
         .mockPrimary,
@@ -398,18 +398,18 @@ import Foundation
 
     public static let mockLandscape = Self(
       data: .mock,
-      imageUri: .mockImage(width: 2000, height: 1200)
+      imageURL: .mockImage(width: 2000, height: 1200)
     )
 
     public static let mockLandscapeOneButton = Self(
       data: .mock,
-      imageUri: .mockImage(width: 2000, height: 1200),
+      imageURL: .mockImage(width: 2000, height: 1200),
       buttons: [.mockPrimary]
     )
 
     public static let mockLandscapeTwoButtons = Self(
       data: .mock,
-      imageUri: .mockImage(width: 2000, height: 1200),
+      imageURL: .mockImage(width: 2000, height: 1200),
       buttons: [
         .mockSecondary,
         .mockPrimary,
@@ -418,7 +418,7 @@ import Foundation
 
     public static let mockMinRecommendedSize = Self(
       data: .mock,
-      imageUri: .mockImage(width: 600, height: 1000),
+      imageURL: .mockImage(width: 600, height: 1000),
       buttons: [
         .mockSecondary,
         .mockPrimary,
@@ -429,7 +429,7 @@ import Foundation
 
     public static let mockNonRecommendedSize = Self(
       data: .mock,
-      imageUri: .mockImage(width: 1200, height: 4000),
+      imageURL: .mockImage(width: 1200, height: 4000),
       buttons: [
         .mockSecondary,
         .mockPrimary,
@@ -438,7 +438,7 @@ import Foundation
 
     public static let mockThemed = Self(
       data: .mock,
-      imageUri: .mockImage(width: 1200, height: 2000),
+      imageURL: .mockImage(width: 1200, height: 2000),
       themes: [
         "light": .init(
           backgroundColor: 0xFF2D_3436,
@@ -499,7 +499,7 @@ import Foundation
 
   extension Braze.InAppMessage.ClickAction {
 
-    public static let mock = Self.uri(URL(string: "https://example.com")!, useWebView: false)
+    public static let mock = Self.url(URL(string: "https://example.com")!, useWebView: false)
 
   }
 

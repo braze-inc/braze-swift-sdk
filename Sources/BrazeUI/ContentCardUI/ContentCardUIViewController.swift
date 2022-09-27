@@ -4,6 +4,7 @@ import UIKit
 extension BrazeContentCardUI {
 
   /// A view controller which displays Braze Content Cards.
+  @objc(BRZContentCardUIViewController)
   open class ViewController: UITableViewController, UITableViewDataSourcePrefetching {
 
     /// The content cards currently displayed.
@@ -159,6 +160,7 @@ extension BrazeContentCardUI {
     ///              refresh.
     ///   - subscribe: An optional closure implementing the subscription to new cards logic. `nil`
     ///                disables automatic updates.
+    ///   - lastUpdate: The last time the content cards were updated.
     ///   - attributes: An attributes struct allowing customization of the table view controller
     ///                 and its cells.
     public init(
@@ -180,6 +182,14 @@ extension BrazeContentCardUI {
     @available(*, unavailable)
     required public init?(coder: NSCoder) {
       fatalError("init(coder:) has not been implemented")
+    }
+
+    /// See ``init(braze:attributes:)``.
+    @objc
+    @available(*, unavailable)
+    public init() {
+      // This init exists only to override the ObjC `NSObject.init` and disable it.
+      fatalError("init is not available")
     }
 
     // MARK: - LifeCycle
