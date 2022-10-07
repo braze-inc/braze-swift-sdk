@@ -1,3 +1,8 @@
+## 5.5.1
+
+##### Fixed
+- Fixes an issue where content cards would not be properly removed when stopping a content card campaign on the dashboard and selecting the option _Remove card after the next sync (e.g. session start)_.
+
 ## 5.5.0
 
 ##### Added
