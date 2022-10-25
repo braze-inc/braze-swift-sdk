@@ -26,7 +26,7 @@ extension BrazeContentCardUI {
       container.bringSubviewToFront(unviewedIndicator)
 
       installInternalConstraints()
-      applyAttributes()
+      applyAttributes(attributes)
     }
 
     /// Does not support interface-builder / storyboards.
@@ -80,8 +80,8 @@ extension BrazeContentCardUI {
       highlightable = card.clickAction != .none
     }
 
-    open override func applyAttributes() {
-      super.applyAttributes()
+    open override func applyAttributes(_ attributes: Attributes) {
+      super.applyAttributes(attributes)
 
       let padding = attributes.padding
       textContainerContraints[0].constant = padding.left

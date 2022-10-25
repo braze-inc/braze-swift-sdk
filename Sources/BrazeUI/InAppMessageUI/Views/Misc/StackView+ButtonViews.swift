@@ -14,6 +14,7 @@ extension BrazeInAppMessageUI.StackView {
   ///   - context: An optional context, used to log and process button clicks.
   public convenience init?(
     buttons: [Braze.InAppMessage.Button],
+    attributes: BrazeInAppMessageUI.ButtonView.Attributes = .defaults,
     onClick: @escaping (Braze.InAppMessage.Button) -> Void
   ) {
     if buttons.isEmpty { return nil }

@@ -43,6 +43,14 @@ extension BrazeInAppMessageUI {
       /// The content view corner radius.
       public var cornerRadius = 8.0
 
+      /// The content view corner curve.
+      @available(iOS 13.0, *)
+      public var cornerCurve: CALayerCornerCurve {
+        get { CALayerCornerCurve(rawValue: _cornerCurve) }
+        set { _cornerCurve = newValue.rawValue }
+      }
+      var _cornerCurve: String = "circular"
+
       /// The content view shadow.
       public var shadow: Shadow? = Shadow.inAppMessage
 
@@ -62,6 +70,9 @@ extension BrazeInAppMessageUI {
       /// Specify whether the full in-app message view can be dismissed from a tap with the
       /// view's background.
       public var dismissOnBackgroundTap = false
+
+      /// The buttons attributes.
+      public var buttonsAttributes = ButtonView.Attributes.defaults
 
       /// Specify the preferred display mode. See
       /// ``BrazeInAppMessageUI/FullView/DisplayMode-swift.enum``.
@@ -192,7 +203,7 @@ extension BrazeInAppMessageUI {
     public init(
       message: Braze.InAppMessage.Full,
       attributes: Attributes = .defaults,
-      gifViewProvider: GIFViewProvider = .nonAnimating,
+      gifViewProvider: GIFViewProvider = .shared,
       presented: Bool = false
     ) {
       var modalViewAttrs = ModalView.Attributes()
@@ -203,11 +214,15 @@ extension BrazeInAppMessageUI {
       modalViewAttrs.headerFont = attributes.headerFont
       modalViewAttrs.messageFont = attributes.messageFont
       modalViewAttrs.cornerRadius = attributes.cornerRadius
+      if #available(iOS 13.0, *) {
+        modalViewAttrs.cornerCurve = attributes.cornerCurve
+      }
       modalViewAttrs.shadow = attributes.shadow
       modalViewAttrs.minWidth = attributes.minWidth
       modalViewAttrs.maxWidth = attributes.maxWidth
       modalViewAttrs.maxHeight = attributes.maxHeight
       modalViewAttrs.dismissOnBackgroundTap = attributes.dismissOnBackgroundTap
+      modalViewAttrs.buttonsAttributes = attributes.buttonsAttributes
       modalViewAttrs.onPresent = { attributes.onPresent?($0 as! FullView) }
       modalViewAttrs.onLayout = { attributes.onLayout?($0 as! FullView) }
       modalViewAttrs.onTheme = { attributes.onTheme?($0 as! FullView) }

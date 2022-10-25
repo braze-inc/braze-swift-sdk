@@ -8,27 +8,31 @@
 
 /* Begin PBXBuildFile section */
 		01B00D06564F5BC3CC2CDD91 /* CardsInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5634FD53344A83FD267AB580 /* CardsInfoViewController.m */; };
-		02C558571508A77542FBC26C /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 0D08CDAB0AE57DFC38F9B590 /* SDWebImage */; };
+		04ABB1F6B9F73AAAC87714B4 /* Credentials.m in Sources */ = {isa = PBXBuildFile; fileRef = A900B781B2DFE220B129E338 /* Credentials.m */; };
+		0660D42F760AE4E46AD69562 /* BrazeKit in Frameworks */ = {isa = PBXBuildFile; productRef = B886221109B13C767819BA7C /* BrazeKit */; };
 		06F87FDA5F0E0E87D405F0BB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BC5EE8BE3BAD32DB6D66AC70 /* AppDelegate.m */; };
+		07995DC0FD113700D297A5AA /* ReadmeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA72C16B9A189DE9D4D7A58 /* ReadmeViewController.m */; };
 		07DD9E6B75B3C3E0B7B93FF9 /* Credentials.m in Sources */ = {isa = PBXBuildFile; fileRef = A900B781B2DFE220B129E338 /* Credentials.m */; };
 		0D0836D2DE975E4BF0F3D051 /* Readme.m in Sources */ = {isa = PBXBuildFile; fileRef = 75CC1E79A9D6815B60835BA2 /* Readme.m */; };
 		0E4B45AF1E749BA1333419FA /* AuthenticationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF7AC51A554A71CFA452B84 /* AuthenticationManager.m */; };
-		0EA9500525189479BEEA2579 /* ReadmeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA72C16B9A189DE9D4D7A58 /* ReadmeViewController.m */; };
-		0F7C946151DE727574B396A6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6459ADE015D6A93F4DDEF4D8 /* main.m */; };
+		123944DA228A07A27CA8FE20 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA022D2664E917AB6DF910C /* AppDelegate.m */; };
 		140EBDD7D126C0DB7E24563C /* Credentials.m in Sources */ = {isa = PBXBuildFile; fileRef = A900B781B2DFE220B129E338 /* Credentials.m */; };
 		14174CD7F71ACF6F4F3E3808 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FCD17EEF41713F18F4CA702 /* Assets.xcassets */; };
-		176536B39FED72ECC2028BFC /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 0BF370808D2F5C21870331A0 /* SDWebImage */; };
 		17B09479DD77FD4EEFFF95E8 /* ReadmeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA72C16B9A189DE9D4D7A58 /* ReadmeViewController.m */; };
 		18ED90A49FD6D7527CB90B7E /* Credentials.m in Sources */ = {isa = PBXBuildFile; fileRef = A900B781B2DFE220B129E338 /* Credentials.m */; };
+		19D922BB530AB0C688C2EA4E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 415A55D2760CB84A0CC3A13B /* LaunchScreen.storyboard */; };
 		1A810C7DA64E86D3A828A920 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 415A55D2760CB84A0CC3A13B /* LaunchScreen.storyboard */; };
 		1A93472F1D5EF8BE86567BE6 /* Readme.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFCA5A7A3B8EF9BFE4BF145 /* Readme.m */; };
+		1DA9FEF369A4E15D2B76215A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BE6866047868E31857FEB14 /* AppDelegate.m */; };
 		23FF6692F5A6D268DC355315 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F65978FE19A988D7A5454A3 /* LaunchScreen.storyboard */; };
-		241F4F1F41D820C55156841D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FCD17EEF41713F18F4CA702 /* Assets.xcassets */; };
 		24400D6B97710B109BDD8A60 /* BrazePushStory in Frameworks */ = {isa = PBXBuildFile; productRef = 5133F5A2D91882A4AE649D4D /* BrazePushStory */; };
+		2553ED24C2112991F382CF3A /* BrazeUI in Frameworks */ = {isa = PBXBuildFile; productRef = 5FDBAD51FF3A992AEB226099 /* BrazeUI */; };
+		27ECC4ED9EABA2405DF780CC /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 64EAC9A16C6BB0EA49C9157A /* SDWebImage */; };
 		28C5F7A47286B0D4233CFD93 /* Readme.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D56D9CC866EB37EFC5EFD4 /* Readme.m */; };
 		2A160FCCE45E4690E694D46A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F7D912E013554F7C8A41F0ED /* AppDelegate.m */; };
 		2C47D73C2D8F2F68DF83612B /* BrazeNotificationService in Frameworks */ = {isa = PBXBuildFile; productRef = 47F3E12B1114B00B4CB70C60 /* BrazeNotificationService */; };
 		2D4560AC04CE0BEC2BB8749B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FCD17EEF41713F18F4CA702 /* Assets.xcassets */; };
+		2E1DF7C49B03F38BCE5285E7 /* BrazeUI in Frameworks */ = {isa = PBXBuildFile; productRef = 0891F7D29EA51A994793513D /* BrazeUI */; };
 		2E68CB6DC13AC6CB1441D20B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F65978FE19A988D7A5454A3 /* LaunchScreen.storyboard */; };
 		2EB145FE4832264DD7ACC3F3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 971900217FE69BE4658FE8B2 /* AppDelegate.m */; };
 		2F8F5E0C5161968068CC2A05 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6459ADE015D6A93F4DDEF4D8 /* main.m */; };
@@ -38,7 +42,8 @@
 		365EF0CD30923A1254130722 /* BrazeKit in Frameworks */ = {isa = PBXBuildFile; productRef = F68192C4A0D4928F78762878 /* BrazeKit */; };
 		3B3CDE3FA9E39EE3140F5421 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FCD17EEF41713F18F4CA702 /* Assets.xcassets */; };
 		3B90DD85782F3701AD557A6A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F65978FE19A988D7A5454A3 /* LaunchScreen.storyboard */; };
-		3CF570CEA985E07B3DBFBBBE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5ECFB24E396F30D56AC2C5 /* AppDelegate.m */; };
+		3E6D81E2DD6BA6B5F8E30BAE /* ReadmeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA72C16B9A189DE9D4D7A58 /* ReadmeViewController.m */; };
+		41CFC07655CF0A3FB6E2ADE2 /* NotAvailableInObjC.m in Sources */ = {isa = PBXBuildFile; fileRef = EF84C935C8D4200A2401B6E1 /* NotAvailableInObjC.m */; };
 		432AF81580216BC7FECF3E0A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6459ADE015D6A93F4DDEF4D8 /* main.m */; };
 		437AA7B38193226049B72FBE /* BrazeKit in Frameworks */ = {isa = PBXBuildFile; productRef = 74D6487EFD8114F6B61637AB /* BrazeKit */; };
 		4484E207BCFD002822F2BB7D /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE00D10FF658213E5A00188D /* NotificationViewController.swift */; };
@@ -48,51 +53,57 @@
 		4EFDEFD372D670CB56731D3E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6459ADE015D6A93F4DDEF4D8 /* main.m */; };
 		4FCC18D09440113FCC444C49 /* PushNotificationsContentExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A7B092ACAEC915379923328F /* PushNotificationsContentExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		51E6A2F0C6E2C992A51F5F20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FCD17EEF41713F18F4CA702 /* Assets.xcassets */; };
+		54E8D58237B1B94EEBF67682 /* BRZGIFViewProvider+SDWebImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A6F4B2BEAD3CC7A8F9250E8 /* BRZGIFViewProvider+SDWebImage.m */; };
 		55343C252FC045A6B70D521D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6459ADE015D6A93F4DDEF4D8 /* main.m */; };
 		59DE5747C69E47CB456FDA44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FCD17EEF41713F18F4CA702 /* Assets.xcassets */; };
-		5C0D56998D46869E0617E5A4 /* BrazeUI in Frameworks */ = {isa = PBXBuildFile; productRef = 9AF0AF048F752A5C62317470 /* BrazeUI */; };
 		5C506223F8E16936EFF1ECAA /* Readme.m in Sources */ = {isa = PBXBuildFile; fileRef = 75CC1E79A9D6815B60835BA2 /* Readme.m */; };
+		5D3DC164C01F1693AB940603 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6459ADE015D6A93F4DDEF4D8 /* main.m */; };
+		5DF2674CA83F6ECC633EDA99 /* Credentials.m in Sources */ = {isa = PBXBuildFile; fileRef = A900B781B2DFE220B129E338 /* Credentials.m */; };
 		60A6EE4C2AF712684F1045C5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6459ADE015D6A93F4DDEF4D8 /* main.m */; };
 		627920814F95860FB73D560F /* ReadmeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA72C16B9A189DE9D4D7A58 /* ReadmeViewController.m */; };
 		6859B8749DCA922A8E670008 /* Credentials.m in Sources */ = {isa = PBXBuildFile; fileRef = A900B781B2DFE220B129E338 /* Credentials.m */; };
-		693EE86FDDA758DF36715F51 /* Readme.m in Sources */ = {isa = PBXBuildFile; fileRef = 90388C63B5CA3065EB14C5E7 /* Readme.m */; };
 		69765CD7313717A7FF7B4C30 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F7D912E013554F7C8A41F0ED /* AppDelegate.m */; };
 		6CE3551AF54503A3FA2E7853 /* BrazeKit in Frameworks */ = {isa = PBXBuildFile; productRef = 046845029FE9235B46B84104 /* BrazeKit */; };
+		6D37F619E60F577AF2FB208D /* BrazeKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9720FE32CFB77D7E0319A501 /* BrazeKit */; };
 		6D91E6B536F0C7585E809607 /* BrazeKit in Frameworks */ = {isa = PBXBuildFile; productRef = 17D80570112755DC2EEEF450 /* BrazeKit */; };
 		6DA15916A0F0F7ECF3968E42 /* PushNotificationsServiceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = B5666DA142189EEEDFAFB41F /* PushNotificationsServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		6E358B236135C54CF185EEDC /* ReadmeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA72C16B9A189DE9D4D7A58 /* ReadmeViewController.m */; };
-		6FAFF3BA371E41638E044127 /* BrazeKit in Frameworks */ = {isa = PBXBuildFile; productRef = 89598718421C181B57346379 /* BrazeKit */; };
-		75D4A5808678A333BC37FD62 /* Credentials.m in Sources */ = {isa = PBXBuildFile; fileRef = A900B781B2DFE220B129E338 /* Credentials.m */; };
-		78D5F4892287E2A080AFD065 /* Credentials.m in Sources */ = {isa = PBXBuildFile; fileRef = A900B781B2DFE220B129E338 /* Credentials.m */; };
 		7CCE66927CDCF27343C8A19F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6459ADE015D6A93F4DDEF4D8 /* main.m */; };
 		7F8916648BED7D17A1F5F6D4 /* Readme.m in Sources */ = {isa = PBXBuildFile; fileRef = 40B1FA52497F602A50792867 /* Readme.m */; };
-		80D345EAA814805B7B762A4E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 415A55D2760CB84A0CC3A13B /* LaunchScreen.storyboard */; };
+		850853B18B7DB34ADBCB56D2 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 6406D8C02D350722AE48DE31 /* SDWebImage */; };
 		85EBAD10002EFE00116C0892 /* ReadmeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA72C16B9A189DE9D4D7A58 /* ReadmeViewController.m */; };
 		87824C15AAA2003EC964C107 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08CE7C19F258AF40B394B358 /* UserNotifications.framework */; };
 		8992304A2D2955D1BA1A6F32 /* ReadmeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA72C16B9A189DE9D4D7A58 /* ReadmeViewController.m */; };
 		89CC79B20BACB82640928264 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 415A55D2760CB84A0CC3A13B /* LaunchScreen.storyboard */; };
 		8A8EC9A9DB4F12593F3BA68F /* Readme.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFCA5A7A3B8EF9BFE4BF145 /* Readme.m */; };
-		8EC99177B84C2FD480B24D33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FCD17EEF41713F18F4CA702 /* Assets.xcassets */; };
+		8B971E3E345CD1B722FDBE40 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 415A55D2760CB84A0CC3A13B /* LaunchScreen.storyboard */; };
+		93F56B30055D001DF05356A5 /* BrazeUI in Frameworks */ = {isa = PBXBuildFile; productRef = 624AA955B2621EE8B5A153AE /* BrazeUI */; };
+		949F18A735AE80D5213E51A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FCD17EEF41713F18F4CA702 /* Assets.xcassets */; };
+		94C35C34017333F3767E58FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 415A55D2760CB84A0CC3A13B /* LaunchScreen.storyboard */; };
+		970E129EDC8F2E439C0C0823 /* Readme.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F278DD5EBF9747004183C8F /* Readme.m */; };
+		97403331CA7F887B935DBC01 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6459ADE015D6A93F4DDEF4D8 /* main.m */; };
 		99DA0F0635AE21C1096495B9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8783B6A324D425D55615AFD9 /* AppDelegate.m */; };
 		99EF7BD971D6D5849078F00F /* Credentials.m in Sources */ = {isa = PBXBuildFile; fileRef = A900B781B2DFE220B129E338 /* Credentials.m */; };
-		9CE6B2D9DC0F3B277094AEB9 /* BrazeUI in Frameworks */ = {isa = PBXBuildFile; productRef = 26C11D75220DCD8456AEAA39 /* BrazeUI */; };
 		9D70D60D63C3590056AE7BE9 /* CustomInAppMessagePresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A8584CCE6D9BBC4C2F634BB /* CustomInAppMessagePresenter.m */; };
 		9EC27A7D337A4DF0A2F94484 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FCD17EEF41713F18F4CA702 /* Assets.xcassets */; };
 		A47F4EBAA7A0D8D9694CDBED /* BrazeKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9F5A50D1AF8D80AC6C465155 /* BrazeKit */; };
 		A4BD0CF594F83266F2C9DFB1 /* CardsInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5634FD53344A83FD267AB580 /* CardsInfoViewController.m */; };
 		A725268792A6C2039D9C402B /* CheckoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFCDF89427142AC55571D3A4 /* CheckoutViewController.m */; };
-		AD0FB326BFA4C3E7A64469FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 415A55D2760CB84A0CC3A13B /* LaunchScreen.storyboard */; };
+		A7D7689D324CFB54651FC94D /* ReadmeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA72C16B9A189DE9D4D7A58 /* ReadmeViewController.m */; };
 		ADBC780DCB0B446D08B01BD7 /* InAppMessageInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF02C869BF9AFF144C7C90DF /* InAppMessageInfoViewController.m */; };
 		AE9B5583963142DD6C7E2B7F /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63F498CAD1B487B718A6064 /* NotificationService.swift */; };
 		AF2CC1B40270C6B61BCB36F3 /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0D325AE1E7E717D151B9B6B /* UserNotificationsUI.framework */; };
 		B17B4317A4822F6631A83E7B /* Readme.m in Sources */ = {isa = PBXBuildFile; fileRef = 7509FFDD2664F798C716F648 /* Readme.m */; };
-		B1EA445BF1E43473B3F7A9EF /* Readme.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B01598D5924C3065B7D516B /* Readme.m */; };
+		B36AD5F91B9F069E042F3CB5 /* Credentials.m in Sources */ = {isa = PBXBuildFile; fileRef = A900B781B2DFE220B129E338 /* Credentials.m */; };
+		B3BDA4F943A5C0AD2DEF5A7C /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 2DFFD8844A474098D6408946 /* SDWebImage */; };
 		B4AC1050912335DCAFDA50DC /* ReadmeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA72C16B9A189DE9D4D7A58 /* ReadmeViewController.m */; };
 		B596113707879825CDA4F233 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 971900217FE69BE4658FE8B2 /* AppDelegate.m */; };
 		B8FC11110451BE51D3352A0D /* ReadmeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA72C16B9A189DE9D4D7A58 /* ReadmeViewController.m */; };
+		B9FD0579C0BD5CB2E1C11C6D /* Credentials.m in Sources */ = {isa = PBXBuildFile; fileRef = A900B781B2DFE220B129E338 /* Credentials.m */; };
 		BA93CBED2945FD7B06611823 /* InAppMessageInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF02C869BF9AFF144C7C90DF /* InAppMessageInfoViewController.m */; };
 		BD418D0ABB09B10266CCEB9A /* BrazeKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7793FD8C8DE601EC38DD8DD7 /* BrazeKit */; };
 		BD7243FA7D8B321F7E1B5BBF /* Credentials.m in Sources */ = {isa = PBXBuildFile; fileRef = A900B781B2DFE220B129E338 /* Credentials.m */; };
+		C20761A80E31DE7D15ADE19C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6459ADE015D6A93F4DDEF4D8 /* main.m */; };
 		C412D2A3E605123FE5CBFAB2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 415A55D2760CB84A0CC3A13B /* LaunchScreen.storyboard */; };
 		C81EA3048E9D8CED3B3EDD97 /* BrazeLocation in Frameworks */ = {isa = PBXBuildFile; productRef = 2C4994F9E91F986F0629979F /* BrazeLocation */; };
 		C871120C2B04423F52FA3E92 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 415A55D2760CB84A0CC3A13B /* LaunchScreen.storyboard */; };
@@ -102,26 +113,33 @@
 		D02EBC8DF2A796ED2C9CEFC0 /* Readme.m in Sources */ = {isa = PBXBuildFile; fileRef = 7509FFDD2664F798C716F648 /* Readme.m */; };
 		D0680AB119405ED4AD4AB35A /* ReadmeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA72C16B9A189DE9D4D7A58 /* ReadmeViewController.m */; };
 		D0FB8791620F800C7485E52B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F65978FE19A988D7A5454A3 /* LaunchScreen.storyboard */; };
+		D117EDCFC5FADDCD2F3C475F /* NotAvailableInObjC.m in Sources */ = {isa = PBXBuildFile; fileRef = 71CF9250418324FDD933C503 /* NotAvailableInObjC.m */; };
 		D24015C9E60BC0AB214C4F83 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BC5EE8BE3BAD32DB6D66AC70 /* AppDelegate.m */; };
 		D2A2CF406EE7D523247B45DD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6459ADE015D6A93F4DDEF4D8 /* main.m */; };
-		DB84622E0C40467BD20C3779 /* BRZGIFViewProvider+SDWebImage.m in Sources */ = {isa = PBXBuildFile; fileRef = FBA572CA696173DD712458AD /* BRZGIFViewProvider+SDWebImage.m */; };
+		D9C6A59CE85BAB7EFE4861B0 /* ReadmeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA72C16B9A189DE9D4D7A58 /* ReadmeViewController.m */; };
+		DB13431FC72E0BCD34A86902 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 77C32D8D5EBCD917A23EE382 /* SDWebImage */; };
 		DBC0B617306F2A138194200C /* BrazeKit in Frameworks */ = {isa = PBXBuildFile; productRef = 80661DB9711EFD43546E249C /* BrazeKit */; };
 		DD69D41758F99D463763675A /* Credentials.m in Sources */ = {isa = PBXBuildFile; fileRef = A900B781B2DFE220B129E338 /* Credentials.m */; };
-		DE22594DD1123178B1CC7771 /* ReadmeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA72C16B9A189DE9D4D7A58 /* ReadmeViewController.m */; };
+		DD969931CFCDB9CABFA30F85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 415A55D2760CB84A0CC3A13B /* LaunchScreen.storyboard */; };
+		DE620D05A5DCCA569EE55A19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FCD17EEF41713F18F4CA702 /* Assets.xcassets */; };
 		DF5F3076246E4D156FA5A3F8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6459ADE015D6A93F4DDEF4D8 /* main.m */; };
 		DFB6A101BCD151F5B9651D82 /* AuthenticationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF7AC51A554A71CFA452B84 /* AuthenticationManager.m */; };
+		E2498F93471B3ED7DCF4F798 /* BrazeKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1587AFA62763A9B75CA01C6C /* BrazeKit */; };
+		E2E95C34F86FA357D6BCAE54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FCD17EEF41713F18F4CA702 /* Assets.xcassets */; };
+		E57EF4D623F7C39F800DF8CB /* Readme.m in Sources */ = {isa = PBXBuildFile; fileRef = 742A9C4C4D1368BA62472F8B /* Readme.m */; };
 		E743EAE4518F62189A4D3C8A /* BrazeKit in Frameworks */ = {isa = PBXBuildFile; productRef = F173FCAB52D0340802119A34 /* BrazeKit */; };
 		E7996808D67A3A1A043A0731 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8783B6A324D425D55615AFD9 /* AppDelegate.m */; };
-		EA8ED23E897565712389CE3F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EE7DAF62AE545D7087BB7032 /* AppDelegate.m */; };
+		EAC53BC784BF380F8205F01F /* BrazeKit in Frameworks */ = {isa = PBXBuildFile; productRef = E045FE65756A230024955AD5 /* BrazeKit */; };
 		EC57F25FE46BBD05EA33C939 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08CE7C19F258AF40B394B358 /* UserNotifications.framework */; };
-		ED42AFACDCE40F3510BCCB65 /* BRZGIFViewProvider+SDWebImage.m in Sources */ = {isa = PBXBuildFile; fileRef = A372FC98EA508F503CE11C30 /* BRZGIFViewProvider+SDWebImage.m */; };
+		ECF4EB3AB84967F7DBDB8452 /* BrazeUI in Frameworks */ = {isa = PBXBuildFile; productRef = 96F76CB78E3FFBBBCDE87EBD /* BrazeUI */; };
 		EEDF56D9E060B1301014A6B0 /* CheckoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFCDF89427142AC55571D3A4 /* CheckoutViewController.m */; };
 		EF5ED1AD6790AA461DC0B2C6 /* Credentials.m in Sources */ = {isa = PBXBuildFile; fileRef = A900B781B2DFE220B129E338 /* Credentials.m */; };
-		EF5EF251D34064B14F500469 /* BrazeKit in Frameworks */ = {isa = PBXBuildFile; productRef = 09701E67CAE64FCE46458059 /* BrazeKit */; };
 		F658BE141364C2F62F7866D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 415A55D2760CB84A0CC3A13B /* LaunchScreen.storyboard */; };
 		F85EF5BC8A69B68633529B36 /* Credentials.m in Sources */ = {isa = PBXBuildFile; fileRef = A900B781B2DFE220B129E338 /* Credentials.m */; };
 		F95AE350417AB5ED6CEDECCB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FCD17EEF41713F18F4CA702 /* Assets.xcassets */; };
-		FF9046579962F0EBB98DB78C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6459ADE015D6A93F4DDEF4D8 /* main.m */; };
+		F97087EBFD4931AA7C9F3463 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FCD17EEF41713F18F4CA702 /* Assets.xcassets */; };
+		FD9823DF369C66F24A265598 /* BRZGIFViewProvider+SDWebImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD7D38FC280085F402924CA /* BRZGIFViewProvider+SDWebImage.m */; };
+		FF4835E6FE65B5459E0B9BE0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6459ADE015D6A93F4DDEF4D8 /* main.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -164,59 +182,63 @@
 		12036F06D0B199D8445FCB1B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		142C43EBD6AA34841D26163C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		16F703E30F0CDB139F4DBC8E /* ContentCards-Custom-UI.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "ContentCards-Custom-UI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A008F2386666F587E975D0D /* InAppMessageUI.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = InAppMessageUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EA72C16B9A189DE9D4D7A58 /* ReadmeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReadmeViewController.m; sourceTree = "<group>"; };
 		220432BEC0EA7628608EA5BA /* braze-swift-sdk */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "braze-swift-sdk"; path = ../..; sourceTree = SOURCE_ROOT; };
-		31F63E82703CC19F27872526 /* BRZGIFViewProvider+SDWebImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BRZGIFViewProvider+SDWebImage.h"; sourceTree = "<group>"; };
+		2BE6866047868E31857FEB14 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		324D8E917E21EC25C2E0EC7C /* AuthenticationManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AuthenticationManager.h; sourceTree = "<group>"; };
 		34BD000896FB64DC78BBF177 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		35A0BE5C8816D747CCA37863 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3A8584CCE6D9BBC4C2F634BB /* CustomInAppMessagePresenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomInAppMessagePresenter.m; sourceTree = "<group>"; };
 		3BF7AC51A554A71CFA452B84 /* AuthenticationManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AuthenticationManager.m; sourceTree = "<group>"; };
+		3F278DD5EBF9747004183C8F /* Readme.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Readme.m; sourceTree = "<group>"; };
 		40B1FA52497F602A50792867 /* Readme.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Readme.m; sourceTree = "<group>"; };
+		43898C005AA33A7630288625 /* ContentCardUI.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = ContentCardUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A6F4B2BEAD3CC7A8F9250E8 /* BRZGIFViewProvider+SDWebImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "BRZGIFViewProvider+SDWebImage.m"; sourceTree = "<group>"; };
+		4C9D744C8C6CD3ECD092712A /* BRZGIFViewProvider+SDWebImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BRZGIFViewProvider+SDWebImage.h"; sourceTree = "<group>"; };
+		4CD7D38FC280085F402924CA /* BRZGIFViewProvider+SDWebImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "BRZGIFViewProvider+SDWebImage.m"; sourceTree = "<group>"; };
 		54B2132B425902ECA87672DE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5634FD53344A83FD267AB580 /* CardsInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CardsInfoViewController.m; sourceTree = "<group>"; };
-		5B01598D5924C3065B7D516B /* Readme.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Readme.m; sourceTree = "<group>"; };
+		5DA022D2664E917AB6DF910C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		5DFFFE740A88297EE59DB98F /* Location.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Location.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FFCA5A7A3B8EF9BFE4BF145 /* Readme.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Readme.m; sourceTree = "<group>"; };
 		631AC4EE3B6D81ACA0DBEFBE /* CardsInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CardsInfoViewController.h; sourceTree = "<group>"; };
 		6459ADE015D6A93F4DDEF4D8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		64B22ACFDEB977C9F3B3B67E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		65785E585247CC7A8661ED6B /* InAppMessages.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = InAppMessages.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A76DADC444C28D2653F471B /* InAppMessageUI-Customization.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "InAppMessageUI-Customization.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		71CF9250418324FDD933C503 /* NotAvailableInObjC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotAvailableInObjC.m; sourceTree = "<group>"; };
+		742A9C4C4D1368BA62472F8B /* Readme.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Readme.m; sourceTree = "<group>"; };
 		7509FFDD2664F798C716F648 /* Readme.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Readme.m; sourceTree = "<group>"; };
 		75CC1E79A9D6815B60835BA2 /* Readme.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Readme.m; sourceTree = "<group>"; };
-		7D76AFE44929AD2F889183E3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		84D56D9CC866EB37EFC5EFD4 /* Readme.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Readme.m; sourceTree = "<group>"; };
 		85EB91B2555C84CBD26F79F6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		870B27433E30991ABA197CD2 /* ContentCards-Custom-UI.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "ContentCards-Custom-UI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8783B6A324D425D55615AFD9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		8D441B5B5424C3E129B2DA54 /* PushNotifications.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = PushNotifications.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		90388C63B5CA3065EB14C5E7 /* Readme.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Readme.m; sourceTree = "<group>"; };
 		971900217FE69BE4658FE8B2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		9A5ECFB24E396F30D56AC2C5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		9EDFB6B6D9E65C9BFD47EA17 /* Analytics.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Analytics.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A372FC98EA508F503CE11C30 /* BRZGIFViewProvider+SDWebImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "BRZGIFViewProvider+SDWebImage.m"; sourceTree = "<group>"; };
 		A7B092ACAEC915379923328F /* PushNotificationsContentExtension.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = PushNotificationsContentExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		A900B781B2DFE220B129E338 /* Credentials.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Credentials.m; sourceTree = "<group>"; };
 		AF02C869BF9AFF144C7C90DF /* InAppMessageInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InAppMessageInfoViewController.m; sourceTree = "<group>"; };
 		B0D325AE1E7E717D151B9B6B /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
+		B29D192E53C1405628200101 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B558422CCA055B4615F43572 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B5666DA142189EEEDFAFB41F /* PushNotificationsServiceExtension.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = PushNotificationsServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		B7F06535E19BAEA9F5B73F86 /* ContentCards.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = ContentCards.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BAE951BE8F753A9864D29D6C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BC5EE8BE3BAD32DB6D66AC70 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		C1B822E14D6196E0BDCC531E /* ReadmeAction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReadmeAction.h; sourceTree = "<group>"; };
-		C79CCF16B994DB3DCD63BE74 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CE00D10FF658213E5A00188D /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		CF2BBB04F875FF5FA863FC82 /* CustomInAppMessagePresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomInAppMessagePresenter.h; sourceTree = "<group>"; };
 		CFCDF89427142AC55571D3A4 /* CheckoutViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CheckoutViewController.m; sourceTree = "<group>"; };
 		D63F498CAD1B487B718A6064 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		D65F1DF14BBFB716FC3B8EA8 /* ContentCardUI-Customization.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "ContentCardUI-Customization.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E10D62519894CE82ED94A20E /* BRZGIFViewProvider+SDWebImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BRZGIFViewProvider+SDWebImage.h"; sourceTree = "<group>"; };
 		E5F704300A66AB9522AA5F94 /* CheckoutViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CheckoutViewController.h; sourceTree = "<group>"; };
-		E86CD93FBF04F90F0ADCF89D /* BRZGIFViewProvider+SDWebImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BRZGIFViewProvider+SDWebImage.h"; sourceTree = "<group>"; };
 		ECA5D86743A8F050AB493312 /* InAppMessages-Custom-UI.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "InAppMessages-Custom-UI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE631F5EEEEB707468BF265A /* Location.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Location.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE718585DF8925CE6290EB8E /* ReadmeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReadmeViewController.h; sourceTree = "<group>"; };
-		EE7DAF62AE545D7087BB7032 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		EF84C935C8D4200A2401B6E1 /* NotAvailableInObjC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotAvailableInObjC.m; sourceTree = "<group>"; };
 		F7D912E013554F7C8A41F0ED /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		FBA572CA696173DD712458AD /* BRZGIFViewProvider+SDWebImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "BRZGIFViewProvider+SDWebImage.m"; sourceTree = "<group>"; };
 		FF31C634A18224DB9ED02834 /* InAppMessages-Custom-UI.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "InAppMessages-Custom-UI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -229,6 +251,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0352C484CD82DC90EE02F469 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2498F93471B3ED7DCF4F798 /* BrazeKit in Frameworks */,
+				2E1DF7C49B03F38BCE5285E7 /* BrazeUI in Frameworks */,
+				850853B18B7DB34ADBCB56D2 /* SDWebImage in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		183E99B0677A3CBB42A80754 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -238,21 +270,31 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1F87FC703AE08051B48A9038 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0660D42F760AE4E46AD69562 /* BrazeKit in Frameworks */,
+				93F56B30055D001DF05356A5 /* BrazeUI in Frameworks */,
+				27ECC4ED9EABA2405DF780CC /* SDWebImage in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		237BB517A826BB290757249B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EAC53BC784BF380F8205F01F /* BrazeKit in Frameworks */,
+				2553ED24C2112991F382CF3A /* BrazeUI in Frameworks */,
+				B3BDA4F943A5C0AD2DEF5A7C /* SDWebImage in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		324CB6E38E7D86E327812A17 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				DBC0B617306F2A138194200C /* BrazeKit in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3FE4CCA5EE34D160D3BA7E65 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				EF5EF251D34064B14F500469 /* BrazeKit in Frameworks */,
-				5C0D56998D46869E0617E5A4 /* BrazeUI in Frameworks */,
-				176536B39FED72ECC2028BFC /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,16 +321,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A47F4EBAA7A0D8D9694CDBED /* BrazeKit in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6E70CCCD8CEE5D68B1E92800 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6FAFF3BA371E41638E044127 /* BrazeKit in Frameworks */,
-				9CE6B2D9DC0F3B277094AEB9 /* BrazeUI in Frameworks */,
-				02C558571508A77542FBC26C /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,6 +358,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C911032532647ABBD19356F1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D37F619E60F577AF2FB208D /* BrazeKit in Frameworks */,
+				ECF4EB3AB84967F7DBDB8452 /* BrazeUI in Frameworks */,
+				DB13431FC72E0BCD34A86902 /* SDWebImage in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EFAF41E4C424F1D471C539B5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -358,19 +400,6 @@
 			path = "Sources/ContentCards-Custom-UI";
 			sourceTree = "<group>";
 		};
-		234FC0FDE1EB1D2B1EE92CDA /* ContentCards */ = {
-			isa = PBXGroup;
-			children = (
-				C79CCF16B994DB3DCD63BE74 /* AppDelegate.h */,
-				EE7DAF62AE545D7087BB7032 /* AppDelegate.m */,
-				E86CD93FBF04F90F0ADCF89D /* BRZGIFViewProvider+SDWebImage.h */,
-				A372FC98EA508F503CE11C30 /* BRZGIFViewProvider+SDWebImage.m */,
-				90388C63B5CA3065EB14C5E7 /* Readme.m */,
-			);
-			name = ContentCards;
-			path = Sources/ContentCards;
-			sourceTree = "<group>";
-		};
 		256C64FD5A9C547C95ED205A /* Location */ = {
 			isa = PBXGroup;
 			children = (
@@ -395,6 +424,28 @@
 			);
 			name = Analytics;
 			path = Sources/Analytics;
+			sourceTree = "<group>";
+		};
+		4A8610F6DB5D3BD5353159BF /* InAppMessageUI-Customization */ = {
+			isa = PBXGroup;
+			children = (
+				EF84C935C8D4200A2401B6E1 /* NotAvailableInObjC.m */,
+			);
+			name = "InAppMessageUI-Customization";
+			path = "Sources/InAppMessageUI-Customization";
+			sourceTree = "<group>";
+		};
+		518A861147034CC7C7A6F886 /* ContentCardUI */ = {
+			isa = PBXGroup;
+			children = (
+				B29D192E53C1405628200101 /* AppDelegate.h */,
+				2BE6866047868E31857FEB14 /* AppDelegate.m */,
+				4C9D744C8C6CD3ECD092712A /* BRZGIFViewProvider+SDWebImage.h */,
+				4CD7D38FC280085F402924CA /* BRZGIFViewProvider+SDWebImage.m */,
+				742A9C4C4D1368BA62472F8B /* Readme.m */,
+			);
+			name = ContentCardUI;
+			path = Sources/ContentCardUI;
 			sourceTree = "<group>";
 		};
 		602D317DF9E1FCBC46B4F176 /* PushNotificationsContentExtension */ = {
@@ -440,19 +491,6 @@
 			path = "Sources/InAppMessages-Custom-UI";
 			sourceTree = "<group>";
 		};
-		A3A2735A5DC208B24378D437 /* InAppMessages */ = {
-			isa = PBXGroup;
-			children = (
-				7D76AFE44929AD2F889183E3 /* AppDelegate.h */,
-				9A5ECFB24E396F30D56AC2C5 /* AppDelegate.m */,
-				31F63E82703CC19F27872526 /* BRZGIFViewProvider+SDWebImage.h */,
-				FBA572CA696173DD712458AD /* BRZGIFViewProvider+SDWebImage.m */,
-				5B01598D5924C3065B7D516B /* Readme.m */,
-			);
-			name = InAppMessages;
-			path = Sources/InAppMessages;
-			sourceTree = "<group>";
-		};
 		AD1929AE02C13E7023AE1CA4 /* PushNotificationsServiceExtension */ = {
 			isa = PBXGroup;
 			children = (
@@ -478,6 +516,19 @@
 			path = Sources/Common;
 			sourceTree = "<group>";
 		};
+		BE255BA36238D9A1B4530C95 /* InAppMessageUI */ = {
+			isa = PBXGroup;
+			children = (
+				BAE951BE8F753A9864D29D6C /* AppDelegate.h */,
+				5DA022D2664E917AB6DF910C /* AppDelegate.m */,
+				E10D62519894CE82ED94A20E /* BRZGIFViewProvider+SDWebImage.h */,
+				4A6F4B2BEAD3CC7A8F9250E8 /* BRZGIFViewProvider+SDWebImage.m */,
+				3F278DD5EBF9747004183C8F /* Readme.m */,
+			);
+			name = InAppMessageUI;
+			path = Sources/InAppMessageUI;
+			sourceTree = "<group>";
+		};
 		CD535985A50FFC8EDE928813 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -485,10 +536,12 @@
 				0B3605C45690205D4A58D1C3 /* Analytics.app */,
 				870B27433E30991ABA197CD2 /* ContentCards-Custom-UI.app */,
 				16F703E30F0CDB139F4DBC8E /* ContentCards-Custom-UI.app */,
-				B7F06535E19BAEA9F5B73F86 /* ContentCards.app */,
+				D65F1DF14BBFB716FC3B8EA8 /* ContentCardUI-Customization.app */,
+				43898C005AA33A7630288625 /* ContentCardUI.app */,
 				FF31C634A18224DB9ED02834 /* InAppMessages-Custom-UI.app */,
 				ECA5D86743A8F050AB493312 /* InAppMessages-Custom-UI.app */,
-				65785E585247CC7A8661ED6B /* InAppMessages.app */,
+				6A76DADC444C28D2653F471B /* InAppMessageUI-Customization.app */,
+				1A008F2386666F587E975D0D /* InAppMessageUI.app */,
 				EE631F5EEEEB707468BF265A /* Location.app */,
 				5DFFFE740A88297EE59DB98F /* Location.app */,
 				8D441B5B5424C3E129B2DA54 /* PushNotifications.app */,
@@ -498,16 +551,27 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		D03146EA39AB44D97182A5DF /* ContentCardUI-Customization */ = {
+			isa = PBXGroup;
+			children = (
+				71CF9250418324FDD933C503 /* NotAvailableInObjC.m */,
+			);
+			name = "ContentCardUI-Customization";
+			path = "Sources/ContentCardUI-Customization";
+			sourceTree = "<group>";
+		};
 		D8CC2266D736859D7DD9A8FF = {
 			isa = PBXGroup;
 			children = (
 				E3AF9F206199B993ACB3E63D /* Packages */,
 				B4F25C051708E808116165D4 /* Common */,
 				258F28BC46EE3F2D3E079C37 /* Analytics */,
-				234FC0FDE1EB1D2B1EE92CDA /* ContentCards */,
 				119FF3F930BD1BF66DEB0B47 /* ContentCards-Custom-UI */,
-				A3A2735A5DC208B24378D437 /* InAppMessages */,
+				518A861147034CC7C7A6F886 /* ContentCardUI */,
+				D03146EA39AB44D97182A5DF /* ContentCardUI-Customization */,
 				6E715B0CD6028EAEB53373C9 /* InAppMessages-Custom-UI */,
+				BE255BA36238D9A1B4530C95 /* InAppMessageUI */,
+				4A8610F6DB5D3BD5353159BF /* InAppMessageUI-Customization */,
 				256C64FD5A9C547C95ED205A /* Location */,
 				67175574AAFF46A4632B42DA /* PushNotifications */,
 				602D317DF9E1FCBC46B4F176 /* PushNotificationsContentExtension */,
@@ -537,6 +601,50 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		0A1211FC31CA5DD9A5E1D18E /* ContentCardUI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5181AF8DDEA182DF10C54652 /* Build configuration list for PBXNativeTarget "ContentCardUI" */;
+			buildPhases = (
+				FB5C5DB7F3CC52A66733B1D4 /* Sources */,
+				6EDCC3D6A15F3C94C51FCD3D /* Resources */,
+				1F87FC703AE08051B48A9038 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ContentCardUI;
+			packageProductDependencies = (
+				B886221109B13C767819BA7C /* BrazeKit */,
+				624AA955B2621EE8B5A153AE /* BrazeUI */,
+				64EAC9A16C6BB0EA49C9157A /* SDWebImage */,
+			);
+			productName = ContentCardUI;
+			productReference = 43898C005AA33A7630288625 /* ContentCardUI.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1BB9C370026C39B3DBE54065 /* InAppMessageUI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4C19E16B15D4B729583F0D3A /* Build configuration list for PBXNativeTarget "InAppMessageUI" */;
+			buildPhases = (
+				EEF022E2C366440FCCF362C0 /* Sources */,
+				865BE7921091ADCB20B8EBC2 /* Resources */,
+				237BB517A826BB290757249B /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = InAppMessageUI;
+			packageProductDependencies = (
+				E045FE65756A230024955AD5 /* BrazeKit */,
+				5FDBAD51FF3A992AEB226099 /* BrazeUI */,
+				2DFFD8844A474098D6408946 /* SDWebImage */,
+			);
+			productName = InAppMessageUI;
+			productReference = 1A008F2386666F587E975D0D /* InAppMessageUI.app */;
+			productType = "com.apple.product-type.application";
+		};
 		3AA5E6D1B97103DC27376A6D /* Analytics-tvOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E00B5C25BE5714D67E69A3EF /* Build configuration list for PBXNativeTarget "Analytics-tvOS" */;
@@ -575,28 +683,6 @@
 			);
 			productName = "Analytics-iOS";
 			productReference = 9EDFB6B6D9E65C9BFD47EA17 /* Analytics.app */;
-			productType = "com.apple.product-type.application";
-		};
-		5BE2DFC918DF0CC5E69FE387 /* InAppMessages */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F76B079D8771880EE7A2C01D /* Build configuration list for PBXNativeTarget "InAppMessages" */;
-			buildPhases = (
-				629101DE070207860B0FF0B5 /* Sources */,
-				3D8D07DBB7AF1C865DA26D8E /* Resources */,
-				3FE4CCA5EE34D160D3BA7E65 /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = InAppMessages;
-			packageProductDependencies = (
-				09701E67CAE64FCE46458059 /* BrazeKit */,
-				9AF0AF048F752A5C62317470 /* BrazeUI */,
-				0BF370808D2F5C21870331A0 /* SDWebImage */,
-			);
-			productName = InAppMessages;
-			productReference = 65785E585247CC7A8661ED6B /* InAppMessages.app */;
 			productType = "com.apple.product-type.application";
 		};
 		6EC91F0D0FFF467CD90FB0D3 /* InAppMessages-Custom-UI-tvOS */ = {
@@ -743,26 +829,48 @@
 			productReference = 16F703E30F0CDB139F4DBC8E /* ContentCards-Custom-UI.app */;
 			productType = "com.apple.product-type.application";
 		};
-		DEE99E05C6F822DC78AEE272 /* ContentCards */ = {
+		BF81DFAFE8B8E3CB74955E60 /* InAppMessageUI-Customization */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DAC0A7E698E628D993F35934 /* Build configuration list for PBXNativeTarget "ContentCards" */;
+			buildConfigurationList = A6A1E4C76F43C48C764BB3A6 /* Build configuration list for PBXNativeTarget "InAppMessageUI-Customization" */;
 			buildPhases = (
-				6089EE24E3EFFEC175CB9A6A /* Sources */,
-				1F3BD016FE47788CA94B7A4A /* Resources */,
-				6E70CCCD8CEE5D68B1E92800 /* Frameworks */,
+				CEC03848E365E8C4311060A8 /* Sources */,
+				61024293B1BC6D12325B3AEB /* Resources */,
+				0352C484CD82DC90EE02F469 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = ContentCards;
+			name = "InAppMessageUI-Customization";
 			packageProductDependencies = (
-				89598718421C181B57346379 /* BrazeKit */,
-				26C11D75220DCD8456AEAA39 /* BrazeUI */,
-				0D08CDAB0AE57DFC38F9B590 /* SDWebImage */,
+				1587AFA62763A9B75CA01C6C /* BrazeKit */,
+				0891F7D29EA51A994793513D /* BrazeUI */,
+				6406D8C02D350722AE48DE31 /* SDWebImage */,
 			);
-			productName = ContentCards;
-			productReference = B7F06535E19BAEA9F5B73F86 /* ContentCards.app */;
+			productName = "InAppMessageUI-Customization";
+			productReference = 6A76DADC444C28D2653F471B /* InAppMessageUI-Customization.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C86DEA9CD6ED7E7E75358AD0 /* ContentCardUI-Customization */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4F7E20F26C98E081CA9378CE /* Build configuration list for PBXNativeTarget "ContentCardUI-Customization" */;
+			buildPhases = (
+				2DE3C693088803AF76B02FC7 /* Sources */,
+				B8FC3F5D81CD320A55B54135 /* Resources */,
+				C911032532647ABBD19356F1 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ContentCardUI-Customization";
+			packageProductDependencies = (
+				9720FE32CFB77D7E0319A501 /* BrazeKit */,
+				96F76CB78E3FFBBBCDE87EBD /* BrazeUI */,
+				77C32D8D5EBCD917A23EE382 /* SDWebImage */,
+			);
+			productName = "ContentCardUI-Customization";
+			productReference = D65F1DF14BBFB716FC3B8EA8 /* ContentCardUI-Customization.app */;
 			productType = "com.apple.product-type.application";
 		};
 		E59DB4201FEAE1A212979375 /* PushNotificationsContentExtension */ = {
@@ -831,10 +939,12 @@
 			targets = (
 				4B98C28FD93E5AD15DE94535 /* Analytics-iOS */,
 				3AA5E6D1B97103DC27376A6D /* Analytics-tvOS */,
-				DEE99E05C6F822DC78AEE272 /* ContentCards */,
+				0A1211FC31CA5DD9A5E1D18E /* ContentCardUI */,
+				C86DEA9CD6ED7E7E75358AD0 /* ContentCardUI-Customization */,
 				960C133F6A6AD264A11DD8D9 /* ContentCards-Custom-UI-iOS */,
 				BE02E0C55FAEA6294D129A38 /* ContentCards-Custom-UI-tvOS */,
-				5BE2DFC918DF0CC5E69FE387 /* InAppMessages */,
+				1BB9C370026C39B3DBE54065 /* InAppMessageUI */,
+				BF81DFAFE8B8E3CB74955E60 /* InAppMessageUI-Customization */,
 				FD2447C0C6527F1CB2BEC9A6 /* InAppMessages-Custom-UI-iOS */,
 				6EC91F0D0FFF467CD90FB0D3 /* InAppMessages-Custom-UI-tvOS */,
 				9B3876462D904A1496AF569D /* Location-iOS */,
@@ -883,15 +993,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1F3BD016FE47788CA94B7A4A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				241F4F1F41D820C55156841D /* Assets.xcassets in Resources */,
-				AD0FB326BFA4C3E7A64469FA /* LaunchScreen.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		2524C2C4AECF5FA40FF674F8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -910,12 +1011,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3D8D07DBB7AF1C865DA26D8E /* Resources */ = {
+		61024293B1BC6D12325B3AEB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8EC99177B84C2FD480B24D33 /* Assets.xcassets in Resources */,
-				80D345EAA814805B7B762A4E /* LaunchScreen.storyboard in Resources */,
+				949F18A735AE80D5213E51A1 /* Assets.xcassets in Resources */,
+				94C35C34017333F3767E58FE /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -934,6 +1035,33 @@
 			files = (
 				3B3CDE3FA9E39EE3140F5421 /* Assets.xcassets in Resources */,
 				1A810C7DA64E86D3A828A920 /* LaunchScreen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6EDCC3D6A15F3C94C51FCD3D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2E95C34F86FA357D6BCAE54 /* Assets.xcassets in Resources */,
+				DD969931CFCDB9CABFA30F85 /* LaunchScreen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		865BE7921091ADCB20B8EBC2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F97087EBFD4931AA7C9F3463 /* Assets.xcassets in Resources */,
+				19D922BB530AB0C688C2EA4E /* LaunchScreen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B8FC3F5D81CD320A55B54135 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE620D05A5DCCA569EE55A19 /* Assets.xcassets in Resources */,
+				8B971E3E345CD1B722FDBE40 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -996,6 +1124,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2DE3C693088803AF76B02FC7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B9FD0579C0BD5CB2E1C11C6D /* Credentials.m in Sources */,
+				D117EDCFC5FADDCD2F3C475F /* NotAvailableInObjC.m in Sources */,
+				3E6D81E2DD6BA6B5F8E30BAE /* ReadmeViewController.m in Sources */,
+				C20761A80E31DE7D15ADE19C /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4D9E50A78216959662CAD320 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1005,32 +1144,6 @@
 				28C5F7A47286B0D4233CFD93 /* Readme.m in Sources */,
 				D0680AB119405ED4AD4AB35A /* ReadmeViewController.m in Sources */,
 				DF5F3076246E4D156FA5A3F8 /* main.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6089EE24E3EFFEC175CB9A6A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				EA8ED23E897565712389CE3F /* AppDelegate.m in Sources */,
-				ED42AFACDCE40F3510BCCB65 /* BRZGIFViewProvider+SDWebImage.m in Sources */,
-				75D4A5808678A333BC37FD62 /* Credentials.m in Sources */,
-				693EE86FDDA758DF36715F51 /* Readme.m in Sources */,
-				0EA9500525189479BEEA2579 /* ReadmeViewController.m in Sources */,
-				FF9046579962F0EBB98DB78C /* main.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		629101DE070207860B0FF0B5 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3CF570CEA985E07B3DBFBBBE /* AppDelegate.m in Sources */,
-				DB84622E0C40467BD20C3779 /* BRZGIFViewProvider+SDWebImage.m in Sources */,
-				78D5F4892287E2A080AFD065 /* Credentials.m in Sources */,
-				B1EA445BF1E43473B3F7A9EF /* Readme.m in Sources */,
-				DE22594DD1123178B1CC7771 /* ReadmeViewController.m in Sources */,
-				0F7C946151DE727574B396A6 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1070,6 +1183,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CEC03848E365E8C4311060A8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5DF2674CA83F6ECC633EDA99 /* Credentials.m in Sources */,
+				41CFC07655CF0A3FB6E2ADE2 /* NotAvailableInObjC.m in Sources */,
+				D9C6A59CE85BAB7EFE4861B0 /* ReadmeViewController.m in Sources */,
+				97403331CA7F887B935DBC01 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DADCD7F86B712F9D6A7C1EB7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1106,6 +1230,32 @@
 				1A93472F1D5EF8BE86567BE6 /* Readme.m in Sources */,
 				627920814F95860FB73D560F /* ReadmeViewController.m in Sources */,
 				432AF81580216BC7FECF3E0A /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EEF022E2C366440FCCF362C0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				123944DA228A07A27CA8FE20 /* AppDelegate.m in Sources */,
+				54E8D58237B1B94EEBF67682 /* BRZGIFViewProvider+SDWebImage.m in Sources */,
+				04ABB1F6B9F73AAAC87714B4 /* Credentials.m in Sources */,
+				970E129EDC8F2E439C0C0823 /* Readme.m in Sources */,
+				A7D7689D324CFB54651FC94D /* ReadmeViewController.m in Sources */,
+				5D3DC164C01F1693AB940603 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB5C5DB7F3CC52A66733B1D4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1DA9FEF369A4E15D2B76215A /* AppDelegate.m in Sources */,
+				FD9823DF369C66F24A265598 /* BRZGIFViewProvider+SDWebImage.m in Sources */,
+				B36AD5F91B9F069E042F3CB5 /* Credentials.m in Sources */,
+				E57EF4D623F7C39F800DF8CB /* Readme.m in Sources */,
+				07995DC0FD113700D297A5AA /* ReadmeViewController.m in Sources */,
+				FF4835E6FE65B5459E0B9BE0 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1213,23 +1363,6 @@
 			};
 			name = Debug;
 		};
-		338E775FC51FCA458B2B4AFB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				INFOPLIST_FILE = Sources/ContentCards/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.braze.ContentCards;
-				PRODUCT_NAME = ContentCards;
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
 		35E8D78DF517B11959723F4D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1293,39 +1426,22 @@
 			};
 			name = Debug;
 		};
-		4C1CEEB16B22B01668229861 /* Release */ = {
+		4A132652A20295B00590B16B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				INFOPLIST_FILE = Sources/ContentCards/Info.plist;
+				INFOPLIST_FILE = Sources/InAppMessageUI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.braze.ContentCards;
-				PRODUCT_NAME = ContentCards;
+				PRODUCT_BUNDLE_IDENTIFIER = com.braze.InAppMessageUI;
+				PRODUCT_NAME = InAppMessageUI;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
-		};
-		56FADC974A57962ED605AB39 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				INFOPLIST_FILE = Sources/InAppMessages/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.braze.InAppMessages;
-				PRODUCT_NAME = InAppMessages;
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
 		};
 		582C70DAA75E87B5B1B59BCC /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -1433,6 +1549,23 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
+		};
+		6C12E2EAE507160B54525A5E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = Sources/InAppMessageUI/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.braze.InAppMessageUI;
+				PRODUCT_NAME = InAppMessageUI;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
 		};
 		71303405F07C56DBF2524662 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -1553,6 +1686,23 @@
 			};
 			name = Release;
 		};
+		9D9A0BDA997D036EBEA9221C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "Sources/ContentCardUI-Customization/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.ContentCardUI-Customization";
+				PRODUCT_NAME = "ContentCardUI-Customization";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
 		9E13FBC998B0A5499C68208A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1567,6 +1717,57 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
+		};
+		A6A715219F3001A92D10FDCE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "Sources/ContentCardUI-Customization/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.ContentCardUI-Customization";
+				PRODUCT_NAME = "ContentCardUI-Customization";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		B2A94D46C4928B86BDB1F2AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "Sources/InAppMessageUI-Customization/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.InAppMessageUI-Customization";
+				PRODUCT_NAME = "InAppMessageUI-Customization";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B436B532CD385795FBD8A905 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = Sources/ContentCardUI/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.braze.ContentCardUI;
+				PRODUCT_NAME = ContentCardUI;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
 		};
 		B9FD2D94FC2BF1DFA9DDA644 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -1634,6 +1835,23 @@
 			};
 			name = Debug;
 		};
+		C2A7EEE09BB48F72633D6BEB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = Sources/ContentCardUI/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.braze.ContentCardUI;
+				PRODUCT_NAME = ContentCardUI;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		DB1B706F4301DC478A0A4D4B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1652,23 +1870,6 @@
 			};
 			name = Debug;
 		};
-		F3C477DD3FBDBF3AB5B2FA92 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				INFOPLIST_FILE = Sources/InAppMessages/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.braze.InAppMessages;
-				PRODUCT_NAME = InAppMessages;
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 		F83B82D7A7E5DB678B6196A6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1683,6 +1884,23 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
+		};
+		FDF551A632AD9FFB676FAA4D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "Sources/InAppMessageUI-Customization/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.InAppMessageUI-Customization";
+				PRODUCT_NAME = "InAppMessageUI-Customization";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
 		};
 		FF5221A5B39619377D55A14C /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -1740,6 +1958,33 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
+		4C19E16B15D4B729583F0D3A /* Build configuration list for PBXNativeTarget "InAppMessageUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6C12E2EAE507160B54525A5E /* Debug */,
+				4A132652A20295B00590B16B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		4F7E20F26C98E081CA9378CE /* Build configuration list for PBXNativeTarget "ContentCardUI-Customization" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9D9A0BDA997D036EBEA9221C /* Debug */,
+				A6A715219F3001A92D10FDCE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		5181AF8DDEA182DF10C54652 /* Build configuration list for PBXNativeTarget "ContentCardUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B436B532CD385795FBD8A905 /* Debug */,
+				C2A7EEE09BB48F72633D6BEB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
 		52115E4788F114BD9F51C612 /* Build configuration list for PBXNativeTarget "ContentCards-Custom-UI-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1785,11 +2030,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		DAC0A7E698E628D993F35934 /* Build configuration list for PBXNativeTarget "ContentCards" */ = {
+		A6A1E4C76F43C48C764BB3A6 /* Build configuration list for PBXNativeTarget "InAppMessageUI-Customization" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				338E775FC51FCA458B2B4AFB /* Debug */,
-				4C1CEEB16B22B01668229861 /* Release */,
+				B2A94D46C4928B86BDB1F2AF /* Debug */,
+				FDF551A632AD9FFB676FAA4D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
@@ -1808,15 +2053,6 @@
 			buildConfigurations = (
 				97B315CB44E7F16916F9865E /* Debug */,
 				71303405F07C56DBF2524662 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
-		};
-		F76B079D8771880EE7A2C01D /* Build configuration list for PBXNativeTarget "InAppMessages" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				56FADC974A57962ED605AB39 /* Debug */,
-				F3C477DD3FBDBF3AB5B2FA92 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
@@ -1848,31 +2084,26 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = BrazeKit;
 		};
-		09701E67CAE64FCE46458059 /* BrazeKit */ = {
+		0891F7D29EA51A994793513D /* BrazeUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = BrazeUI;
+		};
+		1587AFA62763A9B75CA01C6C /* BrazeKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = BrazeKit;
-		};
-		0BF370808D2F5C21870331A0 /* SDWebImage */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 9928D5150C45879A982BA1C6 /* XCRemoteSwiftPackageReference "SDWebImage" */;
-			productName = SDWebImage;
-		};
-		0D08CDAB0AE57DFC38F9B590 /* SDWebImage */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 9928D5150C45879A982BA1C6 /* XCRemoteSwiftPackageReference "SDWebImage" */;
-			productName = SDWebImage;
 		};
 		17D80570112755DC2EEEF450 /* BrazeKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = BrazeKit;
 		};
-		26C11D75220DCD8456AEAA39 /* BrazeUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = BrazeUI;
-		};
 		2C4994F9E91F986F0629979F /* BrazeLocation */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = BrazeLocation;
+		};
+		2DFFD8844A474098D6408946 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9928D5150C45879A982BA1C6 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
 		};
 		47F3E12B1114B00B4CB70C60 /* BrazeNotificationService */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -1882,6 +2113,24 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = BrazePushStory;
 		};
+		5FDBAD51FF3A992AEB226099 /* BrazeUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = BrazeUI;
+		};
+		624AA955B2621EE8B5A153AE /* BrazeUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = BrazeUI;
+		};
+		6406D8C02D350722AE48DE31 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9928D5150C45879A982BA1C6 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+		64EAC9A16C6BB0EA49C9157A /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9928D5150C45879A982BA1C6 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
 		74D6487EFD8114F6B61637AB /* BrazeKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = BrazeKit;
@@ -1890,17 +2139,22 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = BrazeKit;
 		};
+		77C32D8D5EBCD917A23EE382 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9928D5150C45879A982BA1C6 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
 		80661DB9711EFD43546E249C /* BrazeKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = BrazeKit;
 		};
-		89598718421C181B57346379 /* BrazeKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = BrazeKit;
-		};
-		9AF0AF048F752A5C62317470 /* BrazeUI */ = {
+		96F76CB78E3FFBBBCDE87EBD /* BrazeUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = BrazeUI;
+		};
+		9720FE32CFB77D7E0319A501 /* BrazeKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = BrazeKit;
 		};
 		9F5A50D1AF8D80AC6C465155 /* BrazeKit */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -1909,6 +2163,14 @@
 		A2D57BF9CEBB2DC10A5B3AE6 /* BrazeLocation */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = BrazeLocation;
+		};
+		B886221109B13C767819BA7C /* BrazeKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = BrazeKit;
+		};
+		E045FE65756A230024955AD5 /* BrazeKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = BrazeKit;
 		};
 		F173FCAB52D0340802119A34 /* BrazeKit */ = {
 			isa = XCSwiftPackageProductDependency;

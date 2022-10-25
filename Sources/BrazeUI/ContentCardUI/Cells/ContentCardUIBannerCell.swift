@@ -21,7 +21,7 @@ extension BrazeContentCardUI {
       container.bringSubviewToFront(unviewedIndicator)
 
       installInternalConstraints()
-      applyAttributes()
+      applyAttributes(attributes)
     }
 
     /// Does not support interface-builder / storyboards.

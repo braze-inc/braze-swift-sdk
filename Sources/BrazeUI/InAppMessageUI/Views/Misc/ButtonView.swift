@@ -15,7 +15,7 @@ extension BrazeInAppMessageUI {
     ///   - attributes: A high-level customization struct.
     public init(
       button: Braze.InAppMessage.Button,
-      attributes: Attributes = .init()
+      attributes: Attributes = .defaults
     ) {
       self.button = button
       self.attributes = attributes
@@ -77,8 +77,11 @@ extension BrazeInAppMessageUI {
       /// Default: `44pt.`
       public var maxHeight: Double = 44
 
-      /// Default initializer
-      public init() {}
+      /// The defaults button view attributes.
+      ///
+      /// Modify this value directly to apply the customizations to all in-app message buttons
+      /// presented by the SDK.
+      public static var defaults = Self()
     }
 
     /// The high-level customization struct.

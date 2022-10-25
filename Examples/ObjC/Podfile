@@ -12,7 +12,16 @@ target 'Analytics-tvOS' do
   pod 'BrazeKit'
 end
 
-target 'InAppMessages' do
+target 'InAppMessageUI' do
+  platform :ios, '11.0'
+  pod 'BrazeKit'
+  pod 'BrazeUI'
+  # SDWebImage is optional. BrazeUI requires a third party library to display GIF images.
+  # See https://braze-inc.github.io/braze-swift-sdk/documentation/braze/gif-support-integrations
+  pod 'SDWebImage', :modular_headers => true
+end
+
+target 'InAppMessageUI-Customization' do
   platform :ios, '11.0'
   pod 'BrazeKit'
   pod 'BrazeUI'
@@ -31,7 +40,16 @@ target 'InAppMessages-Custom-UI-tvOS' do
   pod 'BrazeKit'
 end
 
-target 'ContentCards' do
+target 'ContentCardUI' do
+  platform :ios, '11.0'
+  pod 'BrazeKit'
+  pod 'BrazeUI'
+  # SDWebImage is optional. BrazeUI requires a third party library to display GIF images. 
+  # See https://braze-inc.github.io/braze-swift-sdk/documentation/braze/gif-support-integrations
+  pod 'SDWebImage', :modular_headers => true
+end
+
+target 'ContentCardUI-Customization' do
   platform :ios, '11.0'
   pod 'BrazeKit'
   pod 'BrazeUI'

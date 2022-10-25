@@ -32,6 +32,14 @@ extension BrazeInAppMessageUI {
       /// The content view corner radius.
       public var cornerRadius = 8.0
 
+      /// The content view corner curve.
+      @available(iOS 13.0, *)
+      public var cornerCurve: CALayerCornerCurve {
+        get { CALayerCornerCurve(rawValue: _cornerCurve) }
+        set { _cornerCurve = newValue.rawValue }
+      }
+      var _cornerCurve: String = "circular"
+
       /// The content view shadow.
       public var shadow: Shadow? = Shadow.inAppMessage
 
@@ -55,6 +63,9 @@ extension BrazeInAppMessageUI {
       /// Specify whether the full image in-app message view can be dismissed from a tap with the
       /// view's background.
       public var dismissOnBackgroundTap = false
+
+      /// The buttons attributes.
+      public var buttonsAttributes = ButtonView.Attributes.defaults
 
       /// Specify the preferred display mode. See
       /// ``BrazeInAppMessageUI/FullImageView/DisplayMode-swift.enum``.
@@ -150,19 +161,23 @@ extension BrazeInAppMessageUI {
     public init(
       message: Braze.InAppMessage.FullImage,
       attributes: Attributes = .defaults,
-      gifViewProvider: GIFViewProvider = .nonAnimating,
+      gifViewProvider: GIFViewProvider = .shared,
       presented: Bool = false
     ) {
       var modalImageAttrs = ModalImageView.Attributes()
       modalImageAttrs.margin = attributes.margin
       modalImageAttrs.padding = attributes.padding
       modalImageAttrs.cornerRadius = attributes.cornerRadius
+      if #available(iOS 13.0, *) {
+        modalImageAttrs.cornerCurve = attributes.cornerCurve
+      }
       modalImageAttrs.shadow = attributes.shadow
       modalImageAttrs.minWidth = attributes.minWidth
       modalImageAttrs.maxWidth = attributes.maxWidth
       modalImageAttrs.maxHeight = attributes.maxHeight
       modalImageAttrs.scrollLargeImages = attributes.scrollLargeImages
       modalImageAttrs.dismissOnBackgroundTap = attributes.dismissOnBackgroundTap
+      modalImageAttrs.buttonsAttributes = attributes.buttonsAttributes
       modalImageAttrs.onPresent = { attributes.onPresent?($0 as! FullImageView) }
       modalImageAttrs.onLayout = { attributes.onLayout?($0 as! FullImageView) }
       modalImageAttrs.onTheme = { attributes.onTheme?($0 as! FullImageView) }

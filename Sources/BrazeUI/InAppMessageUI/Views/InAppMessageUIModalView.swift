@@ -44,6 +44,14 @@ extension BrazeInAppMessageUI {
       /// The content view corner radius.
       public var cornerRadius = 8.0
 
+      /// The content view corner curve.
+      @available(iOS 13.0, *)
+      public var cornerCurve: CALayerCornerCurve {
+        get { CALayerCornerCurve(rawValue: _cornerCurve) }
+        set { _cornerCurve = newValue.rawValue }
+      }
+      var _cornerCurve: String = "circular"
+
       /// The content view shadow.
       public var shadow: Shadow? = Shadow.inAppMessage
 
@@ -63,6 +71,9 @@ extension BrazeInAppMessageUI {
       /// Specify whether the modal in-app message view can be dismissed from a tap with the
       /// view's background.
       public var dismissOnBackgroundTap = false
+
+      /// The buttons attributes.
+      public var buttonsAttributes = ButtonView.Attributes.defaults
 
       /// Closure allowing further customization, executed when the view is about to be presented.
       public var onPresent: ((ModalView) -> Void)?
@@ -128,6 +139,12 @@ extension BrazeInAppMessageUI {
       shadowView.layer.cornerRadius = attributes.cornerRadius
       contentView.layer.cornerRadius = attributes.cornerRadius
 
+      // Corner curve
+      if #available(iOS 13.0, *) {
+        shadowView.layer.cornerCurve = attributes.cornerCurve
+        contentView.layer.cornerCurve = attributes.cornerCurve
+      }
+
       // Shadow
       shadowView.shadow = attributes.shadow
 
@@ -140,6 +157,9 @@ extension BrazeInAppMessageUI {
 
       // User interactions
       tapBackgroundGesture.isEnabled = attributes.dismissOnBackgroundTap
+
+      // Buttons
+      buttons.forEach { $0.attributes = attributes.buttonsAttributes }
 
       setNeedsLayout()
       layoutIfNeeded()
@@ -221,6 +241,13 @@ extension BrazeInAppMessageUI {
       return container
     }()
 
+    public var buttons: [ButtonView] {
+      buttonsContainer?.stack.arrangedSubviews.compactMap {
+        ($0 as? ButtonView)
+          ?? $0.bfsSubviews.lazy.compactMap { $0 as? ButtonView }.first { _ in true }
+      } ?? []
+    }
+
     public lazy var shadowView = ShadowView(.inAppMessage)
 
     public lazy var contentView: StackView = {
@@ -257,7 +284,7 @@ extension BrazeInAppMessageUI {
     public init(
       message: Braze.InAppMessage.Modal,
       attributes: Attributes = .defaults,
-      gifViewProvider: GIFViewProvider = .nonAnimating,
+      gifViewProvider: GIFViewProvider = .shared,
       presented: Bool = false
     ) {
       self.message = message

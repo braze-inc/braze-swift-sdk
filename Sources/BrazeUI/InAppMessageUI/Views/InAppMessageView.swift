@@ -186,3 +186,42 @@ extension InAppMessageView {
   }
 
 }
+
+extension InAppMessageView {
+
+  /// The view unwrapped as a `SlideupView`.
+  public var slideup: BrazeInAppMessageUI.SlideupView? {
+    self as? BrazeInAppMessageUI.SlideupView
+  }
+
+  /// The view unwrapped as a `ModalView`.
+  public var modal: BrazeInAppMessageUI.ModalView? {
+    self as? BrazeInAppMessageUI.ModalView
+  }
+
+  /// The view unwrapped as a `ModalImageView`.
+  public var modalImage: BrazeInAppMessageUI.ModalImageView? {
+    self as? BrazeInAppMessageUI.ModalImageView
+  }
+
+  /// The view unwrapped as a `FullView`.
+  public var full: BrazeInAppMessageUI.FullView? {
+    self as? BrazeInAppMessageUI.FullView
+  }
+
+  /// The view unwrapped as a `FullImageView`.
+  public var fullImage: BrazeInAppMessageUI.FullImageView? {
+    self as? BrazeInAppMessageUI.FullImageView
+  }
+
+  /// The view unwrapped as a `HtmlView`.
+  public var html: BrazeInAppMessageUI.HtmlView? {
+    self as? BrazeInAppMessageUI.HtmlView
+  }
+
+  /// The view unwrapped as a `ControlView`.
+  public var control: BrazeInAppMessageUI.ControlView? {
+    self as? BrazeInAppMessageUI.ControlView
+  }
+
+}

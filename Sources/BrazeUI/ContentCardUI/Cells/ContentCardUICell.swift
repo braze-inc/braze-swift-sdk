@@ -123,12 +123,12 @@ extension BrazeContentCardUI {
     open var attributes: Attributes = .init() {
       didSet {
         guard attributes != oldValue else { return }
-        applyAttributes()
+        applyAttributes(attributes)
       }
     }
 
     /// Apply the current attributes.
-    open func applyAttributes() {
+    open func applyAttributes(_ attributes: Attributes) {
       // Margin
       switch attributes.margin {
       case .layoutMargins(let insets):
@@ -328,13 +328,13 @@ extension BrazeContentCardUI {
     /// See [`traitCollectionDidChange(_:)`](https://developer.apple.com/documentation/uikit/uitraitenvironment/1623516-traitcollectiondidchange)
     open override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
       super.traitCollectionDidChange(previousTraitCollection)
-      applyAttributes()
+      applyAttributes(attributes)
     }
 
     /// See [`tintColorDidChange()`](https://developer.apple.com/documentation/uikit/uiview/1622620-tintcolordidchange)
     open override func tintColorDidChange() {
       super.tintColorDidChange()
-      applyAttributes()
+      applyAttributes(attributes)
     }
 
     // MARK: - User Interactions

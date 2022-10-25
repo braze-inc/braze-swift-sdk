@@ -1,3 +1,44 @@
+## 5.6.0
+
+##### Fixed
+- The modal webview controller presented after a click now correctly handles non-HTTP(S) URLs (e.g. App Store URLs).
+- Fixes an issue preventing some test HTML in-app messages from displaying images.
+
+##### Added
+- Learn how to easily customize `BrazeUI` in-app message and content cards UI components with the following documentation and example code:
+  - [In-App Message UI Customization] article
+  - [Content Cards UI Customization] article
+  - `InAppMessageUI-Customization` example scheme
+  - `ContentCardUI-Customization` example scheme
+- Adds new attributes to `BrazeUI` in-app message UI components:
+  - `cornerCurve` to change the [`cornerCurve`]
+  - `buttonsAttributes` to change the font, spacing and corner radius of the buttons
+  - `imageCornerRadius` to change the image corner radius for slideups
+  - `imageCornerCurve` to change the image [`cornerCurve`] for slideups
+  - `dismissible` to change whether slideups can be interactively dismissed
+- Adds direct accessors to the in-app message view subclass on the [`BrazeInAppMessageUI.messageView`] property.
+  - [`slideup`], [`modal`], [`modalImage`], [`full`], [`fullImage`], [`html`], [`control`].
+- Adds direct accessors to the content card `title`, `description` and `domain` when available.
+- Adds `Braze.Notifications.isInternalNotification` to check if a push notification was sent by Braze for an internal feature.
+- Adds [`brazeBridge.changeUser()`] to the HTML in-app messages JavaScript bridge.
+
+[In-App Message UI Customization]: https://braze-inc.github.io/braze-swift-sdk/documentation/braze/in-app-message-customization
+[Content Cards UI Customization]: https://braze-inc.github.io/braze-swift-sdk/documentation/braze/content-cards-customization
+[`cornerCurve`]: https://developer.apple.com/documentation/quartzcore/calayer/3152596-cornercurve
+[`BrazeInAppMessageUI.messageView`]: https://braze-inc.github.io/braze-swift-sdk/documentation/brazeui/brazeinappmessageui/messageview
+[`brazeBridge.changeUser()`]: https://www.braze.com/docs/user_guide/message_building_by_channel/in-app_messages/customize/html_in-app_messages/#bridge
+[`slideup`]: https://braze-inc.github.io/braze-swift-sdk/documentation/brazeui/inappmessageview/slideup
+[`modal`]: https://braze-inc.github.io/braze-swift-sdk/documentation/brazeui/inappmessageview/modal
+[`modalImage`]: https://braze-inc.github.io/braze-swift-sdk/documentation/brazeui/inappmessageview/modalimage
+[`full`]: https://braze-inc.github.io/braze-swift-sdk/documentation/brazeui/inappmessageview/full
+[`fullImage`]: https://braze-inc.github.io/braze-swift-sdk/documentation/brazeui/inappmessageview/fullimage
+[`html`]: https://braze-inc.github.io/braze-swift-sdk/documentation/brazeui/inappmessageview/html
+[`control`]: https://braze-inc.github.io/braze-swift-sdk/documentation/brazeui/inappmessageview/control
+
+##### Changed
+
+- The `applyAttributes()` method for `BrazeContentCardUI` views now take the `attributes` explicitly as a parameter.
+
 ## 5.5.1
 
 ##### Fixed

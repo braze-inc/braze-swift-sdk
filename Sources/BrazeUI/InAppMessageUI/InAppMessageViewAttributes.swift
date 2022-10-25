@@ -16,7 +16,7 @@ extension BrazeInAppMessageUI {
         return slideup
       }
       set {
-        guard let slideup = newValue else { return }
+        guard let slideup = newValue, case .slideup = self else { return }
         self = .slideup(slideup)
       }
     }
@@ -27,7 +27,7 @@ extension BrazeInAppMessageUI {
         return modal
       }
       set {
-        guard let modal = newValue else { return }
+        guard let modal = newValue, case .modal = self else { return }
         self = .modal(modal)
       }
     }
@@ -38,7 +38,7 @@ extension BrazeInAppMessageUI {
         return modalImage
       }
       set {
-        guard let modalImage = newValue else { return }
+        guard let modalImage = newValue, case .modalImage = self else { return }
         self = .modalImage(modalImage)
       }
     }
@@ -49,7 +49,7 @@ extension BrazeInAppMessageUI {
         return full
       }
       set {
-        guard let full = newValue else { return }
+        guard let full = newValue, case .full = self else { return }
         self = .full(full)
       }
     }
@@ -60,7 +60,7 @@ extension BrazeInAppMessageUI {
         return fullImage
       }
       set {
-        guard let fullImage = newValue else { return }
+        guard let fullImage = newValue, case .fullImage = self else { return }
         self = .fullImage(fullImage)
       }
     }
@@ -71,7 +71,7 @@ extension BrazeInAppMessageUI {
         return html
       }
       set {
-        guard let html = newValue else { return }
+        guard let html = newValue, case .html = self else { return }
         self = .html(html)
       }
     }

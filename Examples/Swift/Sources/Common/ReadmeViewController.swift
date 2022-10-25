@@ -84,6 +84,7 @@ final class ReadmeViewController: UITableViewController {
       ?? UITableViewCell(style: .subtitle, reuseIdentifier: identifier)
     cell.textLabel?.text = actions[indexPath.row].0
     cell.detailTextLabel?.text = actions[indexPath.row].1
+    cell.detailTextLabel?.numberOfLines = 0
     return cell
   }
 

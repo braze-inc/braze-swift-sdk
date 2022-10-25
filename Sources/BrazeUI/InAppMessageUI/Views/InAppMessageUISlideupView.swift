@@ -41,11 +41,33 @@ extension BrazeInAppMessageUI {
       /// The image size.
       public var imageSize = CGSize(width: 50, height: 50)
 
+      /// The image view corner radius.
+      public var imageCornerRadius = 0.0
+
+      /// The image view corner curve.
+      @available(iOS 13.0, *)
+      public var imageCornerCurve: CALayerCornerCurve {
+        get { CALayerCornerCurve(rawValue: _imageCornerCurve) }
+        set { _imageCornerCurve = newValue.rawValue }
+      }
+      var _imageCornerCurve: String = "circular"
+
       /// The chevron visibility.
       public var chevronVisibility: ChevronVisibility = .auto
 
       /// The content view corner radius.
       public var cornerRadius = 15.0
+
+      /// The content view corner curve.
+      @available(iOS 13.0, *)
+      public var cornerCurve: CALayerCornerCurve {
+        get { CALayerCornerCurve(rawValue: _cornerCurve) }
+        set { _cornerCurve = newValue.rawValue }
+      }
+      var _cornerCurve: String = "circular"
+
+      /// Specifies whether the slideup can be dismissed by the user.
+      public var dismissible = true
 
       /// The content view shadow.
       public var shadow: Shadow? = .inAppMessage
@@ -111,6 +133,10 @@ extension BrazeInAppMessageUI {
       // Fonts
       messageLabel.font = attributes.font
 
+      // Image size
+      imageWidthConstraint?.constant = attributes.imageSize.width
+      imageHeightConstraint?.constant = attributes.imageSize.height
+
       // Chevron
       chevronView.isHidden =
         attributes.chevronVisibility == .hidden
@@ -120,12 +146,28 @@ extension BrazeInAppMessageUI {
       shadowView.layer.cornerRadius = attributes.cornerRadius
       contentView.layer.cornerRadius = attributes.cornerRadius
 
+      // Corner curve
+      if #available(iOS 13.0, *) {
+        shadowView.layer.cornerCurve = attributes.cornerCurve
+        contentView.layer.cornerCurve = attributes.cornerCurve
+      }
+
       // Shadow
       shadowView.shadow = attributes.shadow
 
       // Dimensions
       maxWidthConstraints.forEach { $0.constant = attributes.maxWidth }
       minHeightConstraint.constant = attributes.minHeight
+
+      // Image
+      if case .image = message.graphic {
+        graphicView?.layer.cornerRadius = attributes.imageCornerRadius
+      } else {
+        graphicView?.layer.cornerRadius = 0
+      }
+      if #available(iOS 13.0, *) {
+        graphicView?.layer.cornerCurve = attributes.imageCornerCurve
+      }
 
       setNeedsLayout()
       layoutIfNeeded()
@@ -153,6 +195,7 @@ extension BrazeInAppMessageUI {
       case .image(let url):
         let imageView = self.gifViewProvider.view(url)
         imageView.contentMode = .scaleAspectFit
+        imageView.layer.masksToBounds = true
         return imageView
       default:
         return nil
@@ -207,7 +250,7 @@ extension BrazeInAppMessageUI {
     public init(
       message: Braze.InAppMessage.Slideup,
       attributes: Attributes = .defaults,
-      gifViewProvider: GIFViewProvider = .nonAnimating,
+      gifViewProvider: GIFViewProvider = .shared,
       presented: Bool = false
     ) {
       self.message = message
@@ -414,17 +457,19 @@ extension BrazeInAppMessageUI {
     @objc
     func pan(_ gesture: UIPanGestureRecognizer) {
       guard let superview = gesture.view?.superview else { return }
+      let dismissible = attributes.dismissible
       var dy = gesture.translation(in: superview).y
 
       switch gesture.state {
       case .changed:
-        if abs(dy) >= 5 { pressGesture.isEnabled = false }
+        if abs(dy) >= 5 { pressGesture.cancel() }
         switch message.slideFrom {
         case .top where dy > 0:
           dy = dy * 0.095
           outerYConstraint.constant = dy
           innerYConstraint.constant = 0
         case .top where dy <= 0:
+          if !dismissible { dy = dy * 0.095 }
           outerYConstraint.constant = 0
           innerYConstraint.constant = dy
         case .bottom where dy < 0:
@@ -432,19 +477,19 @@ extension BrazeInAppMessageUI {
           outerYConstraint.constant = dy
           innerYConstraint.constant = 0
         case .bottom where dy >= 0:
+          if !dismissible { dy = dy * 0.095 }
           outerYConstraint.constant = 0
           innerYConstraint.constant = dy
         default:
           break
         }
       case .ended:
-        pressGesture.isEnabled = true
         let vy = gesture.velocity(in: superview).y
 
         switch message.slideFrom {
-        case .top where vy <= -60 || dy < -25:
+        case .top where (vy <= -60 || dy < -25) && dismissible:
           dismiss()
-        case .bottom where vy >= 60 || dy > 25:
+        case .bottom where (vy >= 60 || dy > 25) && dismissible:
           dismiss()
         default:
           outerYConstraint.constant = 0
@@ -461,11 +506,21 @@ extension BrazeInAppMessageUI {
 
     @objc
     func press(_ gesture: UILongPressGestureRecognizer) {
-      guard gesture.view != nil else { return }
+      guard let gestureView = gesture.view else { return }
+      let hitView = gestureView.hitTest(gesture.location(in: gestureView), with: nil)
 
       switch gesture.state {
-      case .began, .changed:
+      case .began:
+        if hitView is UIControl {
+          gesture.cancel()
+          return
+        }
         highlighted = true
+      case .changed:
+        guard hitView?.isDescendant(of: gestureView) == true else {
+          gesture.cancel()
+          return
+        }
       case .ended:
         highlighted = false
         logClick()

@@ -25,31 +25,47 @@ Follow the instructions below for your preferred package manager to get started.
 - Demonstrates how to use the analytics features of the SDK.
 - Related tutorial: [Analytics](https://braze-inc.github.io/braze-swift-sdk/tutorials/braze/a3-analytics).
 
-#### ContentCards
+#### ContentCardUI
 
 - iOS only.
 - Swift, Objective-C.
 - Demonstrates how to use the Braze provided Content Cards UI.
 - Related tutorial: [Content Cards UI](https://braze-inc.github.io/braze-swift-sdk/tutorials/braze/c2-contentcardsui).
 
+#### ContentCardUI-Customization
+
+- iOS only.
+- Swift, Objective-C.
+- Demonstrates how to customize the Braze provided Content Cards UI.
+- Related article: [Content Cards UI Customization](https://braze-inc.github.io/braze-swift-sdk/documentation/braze/content-cards-customization).
+
 #### ContentCards-Custom-UI
 
 - iOS, tvOS.
 - Swift, Objective-C.
 - Demonstrates how to implement your own custom Content Cards UI.
+- Related article: [Content Cards UI Customization](https://braze-inc.github.io/braze-swift-sdk/documentation/braze/content-cards-customization).
 
-#### InAppMessages
+#### InAppMessageUI
 
 - iOS only.
 - Swift, Objective-C.
 - Demonstrates how to use the Braze provided In-App Message UI.
 - Related tutorial: [In-App Messages](https://braze-inc.github.io/braze-swift-sdk/tutorials/braze/c1-inappmessageui).
 
+#### InAppMessageUI-Customization
+
+- iOS only.
+- Swift only.
+- Demonstrates how to customize the Braze provided In-App Message UI.
+- Related article: [In-App Message UI Customization](https://braze-inc.github.io/braze-swift-sdk/documentation/braze/in-app-message-customization)
+
 #### InAppMessages-Custom-UI
 
 - iOS, tvOS.
 - Swift, Objective-C.
 - Demonstrates how to implement your own custom In-App Message UI.
+- Related article: [In-App Message UI Customization](https://braze-inc.github.io/braze-swift-sdk/documentation/braze/in-app-message-customization)
 
 #### Location
 

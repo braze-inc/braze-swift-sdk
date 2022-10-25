@@ -20,7 +20,8 @@ import UIKit
       text: String? = nil,
       textSize: CGFloat? = nil,
       textColor: UIColor = .white,
-      backgroundColor: UIColor = .systemBlue
+      backgroundColor: UIColor = .systemBlue,
+      drawCorners: Bool = true
     ) -> URL {
       let frame = CGRect(x: 0, y: 0, width: width, height: height)
       let textSize = textSize ?? min(floor(height / 6), floor(width / 12))
@@ -51,10 +52,12 @@ import UIKit
           ctx.cgContext.addLine(to: pos)
           ctx.cgContext.drawPath(using: .fillStroke)
         }
-        drawCorner(at: .init(x: frame.minX, y: frame.minY))
-        drawCorner(at: .init(x: frame.minX, y: frame.maxY))
-        drawCorner(at: .init(x: frame.maxX, y: frame.minY))
-        drawCorner(at: .init(x: frame.maxX, y: frame.maxY))
+        if drawCorners {
+          drawCorner(at: .init(x: frame.minX, y: frame.minY))
+          drawCorner(at: .init(x: frame.minX, y: frame.maxY))
+          drawCorner(at: .init(x: frame.maxX, y: frame.minY))
+          drawCorner(at: .init(x: frame.maxX, y: frame.maxY))
+        }
 
         // Draw text
         let font: UIFont
@@ -84,7 +87,7 @@ import UIKit
         appropriateFor: nil,
         create: false
       )
-      let imageURL = cacheURL.appendingPathComponent("\(text).png")
+      let imageURL = cacheURL.appendingPathComponent("\(text)-\(Int(width))x\(Int(height)).png")
       try! data.write(to: imageURL)
 
       return imageURL

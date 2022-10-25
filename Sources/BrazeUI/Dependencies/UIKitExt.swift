@@ -199,3 +199,14 @@ extension CGColor {
   }
 
 }
+
+extension UIGestureRecognizer {
+
+  /// Cancels the gesture recognizer.
+  func cancel() {
+    guard isEnabled else { return }
+    isEnabled = false
+    isEnabled = true
+  }
+
+}
