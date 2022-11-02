@@ -1,6 +1,8 @@
 import UIKit
 import BrazeKit
 
+let performClickAction = "Perform click action"
+
 final class InAppMessageInfoViewController: UITableViewController {
 
   // Represents an in-app message property
@@ -19,10 +21,12 @@ final class InAppMessageInfoViewController: UITableViewController {
   // MARK: - Properties
 
   let sections: [Section]
+  let message: Braze.InAppMessage
 
   // MARK: - Initialization
 
   init(message: Braze.InAppMessage) {
+    self.message = message
     sections = Self.messageSections(from: message) + Self.dataSections(from: message)
     super.init(style: .grouped)
     title = "In-App Message Info"
@@ -79,13 +83,38 @@ final class InAppMessageInfoViewController: UITableViewController {
     return cell
   }
 
-  // MARK: - UITableViewDelegate
-
   override func tableView(
     _ tableView: UITableView,
     titleForHeaderInSection section: Int
   ) -> String? {
     sections[section].name
+  }
+
+  // MARK: - UITableViewDelegate
+
+  override func tableView(
+    _ tableView: UITableView,
+    didSelectRowAt indexPath: IndexPath
+  ) {
+    guard let braze = AppDelegate.braze else { return }
+    let field = sections[indexPath.section].fields[indexPath.row]
+
+    if field.name == performClickAction {
+      // Trigger click action with custom UI
+      let context = Braze.InAppMessage.Context(message: message, using: braze)
+      context.logClick()
+      context.processClickAction(.url(URL(string: "https://www.braze.com")!, useWebView: false))
+    }
+  }
+
+  override func tableView(
+    _ tableView: UITableView,
+    willDisplay cell: UITableViewCell,
+    forRowAt indexPath: IndexPath
+  ) {
+    guard let braze = AppDelegate.braze else { return }
+    let context = Braze.InAppMessage.Context(message: message, using: braze)
+    context.logImpression()
   }
 
   // MARK: - Helpers
@@ -156,6 +185,9 @@ final class InAppMessageInfoViewController: UITableViewController {
     @unknown default:
       break
     }
+
+    section.fields += [Field(name: performClickAction, value: "")]
+
     return [section, buttonsSection, themesSection].compactMap { $0 }
   }
 

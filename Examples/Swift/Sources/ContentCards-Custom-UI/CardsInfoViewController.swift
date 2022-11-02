@@ -79,8 +79,6 @@ final class CardsInfoViewController: UITableViewController {
     return cell
   }
 
-  // MARK: - UITableViewDelegate
-
   override func tableView(
     _ tableView: UITableView,
     titleForHeaderInSection section: Int

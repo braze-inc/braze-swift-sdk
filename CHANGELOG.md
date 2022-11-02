@@ -1,3 +1,8 @@
+## 5.6.1
+
+##### Added
+- Adds the public initializers `Braze.ContentCard.Context(card:using:)` and `Braze.InAppMessage.Context(message:using:)`.
+
 ## 5.6.0
 
 ##### Fixed
