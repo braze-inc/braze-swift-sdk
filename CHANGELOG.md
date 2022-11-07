@@ -1,3 +1,8 @@
+## 5.6.2
+
+##### Changed
+- Corrected the version number from the previous release.
+
 ## 5.6.1
 
 ##### Added
