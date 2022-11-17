@@ -1,3 +1,12 @@
+## 5.6.3
+
+##### Fixed
+- Fixes the `InAppMessageRaw` to `InAppMessage` conversion to properly take into account the `extras` dictionary and the `duration`.
+- Fixes an issue preventing the execution of the [`braze(_:sdkAuthenticationFailedWithError:)`](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/brazedelegate/braze(_:sdkauthenticationfailedwitherror:)-505pz) delegate method in case of an authentication error.
+
+##### Changed
+- Improves error logging descriptions for HTTP requests and responses.
+	
 ## 5.6.2
 
 ##### Changed
