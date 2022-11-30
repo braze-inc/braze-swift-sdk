@@ -26,7 +26,10 @@ open class BrazeInAppMessageUI:
   /// The stack of in-app messages awaiting display.
   ///
   /// When the conditions to display a message are not met at trigger time, the message is pushed
-  /// onto the stack.
+  /// onto the stack (which is the end of this array).
+  ///
+  /// If an in-app message is already in the stack and fails to display again, it is moved to the top
+  /// of the stack.
   public internal(set) var stack: [Braze.InAppMessage] = []
 
   /// The object that act as the delegate for the in-app message UI.
@@ -228,6 +231,8 @@ open class BrazeInAppMessageUI:
   {
     guard messageView == nil else {
       if push {
+        // Remove message from stack (if present) and place on top
+        stack.removeAll { $0.data.id == message.data.id }
         stack.append(message)
       }
 

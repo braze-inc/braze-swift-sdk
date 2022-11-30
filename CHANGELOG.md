@@ -1,3 +1,25 @@
+## 5.6.4
+
+##### Fixed
+- Fixes an issue preventing the execution of `BrazeDelegate` methods when setting the delegate using Objective-C.
+- Fixes an issue where triggering an in-app message twice with the same event did not place the message on the in-app message stack under certain conditions.
+
+##### Added
+- Adds the public `id` field to `Braze.InAppMessage.Data`.
+- Adds `logImpression(using:)` and `logClick(buttonId:using:)` to both in-app messages and content cards, and adds `logDismissed(using:)` to content cards.
+  - It is recommended to continue using the associated `Context` to log impressions, clicks, and dismissals for the majority of use cases.
+- Adds Swift concurrency to support async/await versions of the following public methods. These methods can be used as alternatives to their corresponding counterparts that use completion handlers:
+  - [`Braze.User.id()`]
+  - [`Braze.deviceId()`]
+  - [`ContentCards.requestRefresh()`]
+  - [`ContentCards.cardsStream`] as an alternative to [`ContentCards.subscribeToUpdates(_:)`]
+  
+[`Braze.User.id()`]: https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/user-swift.class/id()
+[`Braze.deviceId()`]: https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/deviceid()
+[`ContentCards.requestRefresh()`]: https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/contentcards-swift.class/requestrefresh()
+[`ContentCards.cardsStream`]: https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/contentcards-swift.class/cardsStream
+[`ContentCards.subscribeToUpdates(_:)`]: https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/contentcards-swift.class/subscribetoupdates(_:) 
+
 ## 5.6.3
 
 ##### Fixed
@@ -6,7 +28,7 @@
 
 ##### Changed
 - Improves error logging descriptions for HTTP requests and responses.
-	
+
 ## 5.6.2
 
 ##### Changed
