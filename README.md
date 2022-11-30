@@ -41,7 +41,7 @@ The following features are planned for development. To request new Swift SDK fea
 
 | Feature | Estimated Release |
 |---|---|
-| Objective-C Migration Library | November, 2022 |
+| Objective-C Migration Library | December, 2022 |
 
 ## Libraries
 
