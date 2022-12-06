@@ -44,17 +44,17 @@ extension BrazeInAppMessageUI {
       public var shadow: Shadow? = Shadow.inAppMessage
 
       /// The minimum width (used when displayed as modal).
-      public var minWidth = 320.0
+      public var minWidth: ViewDimension = 320.0
 
       /// The maximum width (used when displayed as modal).
       ///
       /// The maximum width is swapped with the maximum height for large UIs (e.g. iPad).
-      public var maxWidth = 450.0
+      public var maxWidth: ViewDimension = .init(regular: 450.0, large: 720.0)
 
       /// The maximum height (used when displayed as modal).
       ///
       /// The maximum height is swapped with the maximum width for large UIs (e.g. iPad).
-      public var maxHeight = 720.0
+      public var maxHeight: ViewDimension = .init(regular: 720.0, large: 450.0)
 
       /// Specify whether the full image in-app message view displays the image in a scroll view
       /// for large images.
@@ -111,7 +111,7 @@ extension BrazeInAppMessageUI {
     }
 
     var modalMargin: UIEdgeInsets
-    var modalMaxHeight: Double
+    var modalMaxHeight: ViewDimension
     var modalCornerRadius: Double
 
     open override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {

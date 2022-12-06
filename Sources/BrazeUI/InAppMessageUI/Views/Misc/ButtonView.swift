@@ -30,7 +30,9 @@ extension BrazeInAppMessageUI {
       setContentCompressionResistancePriority(.required, for: .vertical)
 
       minWidthConstraint = anchors.width.greaterThanOrEqual(0)
+      minWidthConstraint.priority = .defaultHigh
       maxHeightContraint = anchors.height.lessThanOrEqual(0)
+      maxHeightContraint.priority = .defaultHigh
 
       applyTheme()
       applyAttributes()

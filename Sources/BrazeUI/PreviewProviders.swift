@@ -19,13 +19,18 @@
       flex: Bool = false,
       layout: @escaping (UIView) -> Void = { _ in }
     ) -> some View {
-      final class Wrapper: UIViewRepresentable {
+
+      class PreviewCoordinator {
+        var setup = false
+      }
+
+      struct Wrapper: UIViewRepresentable {
+
         let view: UIView
         let pin: UILayoutPriority?
         let center: UILayoutPriority?
         let flex: Bool
         let layout: (UIView) -> Void
-        var setup = false
 
         init(
           view: UIView,
@@ -42,8 +47,8 @@
         }
 
         func updateUIView(_ view: UIView, context: Context) {
-          guard !setup else { return }
-          setup = true
+          guard !context.coordinator.setup else { return }
+          context.coordinator.setup = true
           if let pin = pin {
             view.anchors.edges.pin().forEach { $0.priority = pin }
           }
@@ -59,6 +64,10 @@
         }
         func makeUIView(context: Context) -> UIView {
           return view
+        }
+
+        func makeCoordinator() -> PreviewCoordinator {
+          .init()
         }
       }
 

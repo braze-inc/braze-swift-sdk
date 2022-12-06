@@ -56,17 +56,17 @@ extension BrazeInAppMessageUI {
       public var shadow: Shadow? = Shadow.inAppMessage
 
       /// The minimum width.
-      public var minWidth = 320.0
+      public var minWidth: ViewDimension = 320.0
 
       /// The maximum width.
       ///
       /// The maximum width is swapped with the maximum height for large UIs (e.g. iPad).
-      public var maxWidth = 450.0
+      public var maxWidth: ViewDimension = .init(regular: 450.0, large: 720.0)
 
       /// The maximum height.
       ///
       /// The maximum height is swapped with the maximum width for large UIs (e.g. iPad).
-      public var maxHeight = 720.0
+      public var maxHeight: ViewDimension = .init(regular: 720.0, large: 450.0)
 
       /// Specify whether the modal in-app message view can be dismissed from a tap with the
       /// view's background.
@@ -149,9 +149,10 @@ extension BrazeInAppMessageUI {
       shadowView.shadow = attributes.shadow
 
       // Dimensions
-      let maxWidth = isLargeLandscape ? attributes.maxHeight : attributes.maxWidth
-      let maxHeight = isLargeLandscape ? attributes.maxWidth : attributes.maxHeight
-      minWidthConstraint.constant = attributes.minWidth
+      let minWidth = isLargeLandscape ? attributes.minWidth.large : attributes.minWidth.regular
+      let maxWidth = isLargeLandscape ? attributes.maxWidth.large : attributes.maxWidth.regular
+      let maxHeight = isLargeLandscape ? attributes.maxHeight.large : attributes.maxHeight.regular
+      minWidthConstraint.constant = minWidth
       maxWidthConstraint.constant = maxWidth
       maxHeightConstraint.constant = maxHeight
 
@@ -384,10 +385,12 @@ extension BrazeInAppMessageUI {
 
         // Content view
         // - dimensions
-        minWidthConstraint = contentView.anchors.width.greaterThanOrEqual(attributes.minWidth)
+        minWidthConstraint = contentView.anchors.width.greaterThanOrEqual(
+          attributes.minWidth.regular)
         minWidthConstraint.priority = .defaultHigh
-        maxWidthConstraint = contentView.anchors.width.lessThanOrEqual(attributes.maxWidth)
-        maxHeightConstraint = contentView.anchors.height.lessThanOrEqual(attributes.maxHeight)
+        maxWidthConstraint = contentView.anchors.width.lessThanOrEqual(attributes.maxWidth.regular)
+        maxHeightConstraint = contentView.anchors.height.lessThanOrEqual(
+          attributes.maxHeight.regular)
         // - position
         let bottom = contentView.anchors.bottom.lessThanOrEqual(layoutMarginsGuide.anchors.bottom)
         bottom.priority = .defaultHigh

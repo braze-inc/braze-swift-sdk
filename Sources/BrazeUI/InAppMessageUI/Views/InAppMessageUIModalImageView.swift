@@ -44,17 +44,17 @@ extension BrazeInAppMessageUI {
       public var shadow: Shadow? = Shadow.inAppMessage
 
       /// The minimum width.
-      public var minWidth = 320.0
+      public var minWidth: ViewDimension = 320.0
 
       /// The maximum width.
       ///
       /// The maximum width is swapped with the maximum height for large UIs (e.g. iPad).
-      public var maxWidth = 450.0
+      public var maxWidth: ViewDimension = .init(regular: 450.0, large: 720.0)
 
       /// The maximum height.
       ///
       /// The maximum height is swapped with the maximum width for large UIs (e.g. iPad).
-      public var maxHeight = 720.0
+      public var maxHeight: ViewDimension = .init(regular: 720.0, large: 450.0)
 
       /// Specify whether the modal image in-app message view displays the image in a scroll view
       /// for large images.
@@ -109,9 +109,10 @@ extension BrazeInAppMessageUI {
       shadowView.shadow = attributes.shadow
 
       // Dimensions
-      let maxWidth = isLargeLandscape ? attributes.maxHeight : attributes.maxWidth
-      let maxHeight = isLargeLandscape ? attributes.maxWidth : attributes.maxHeight
-      minWidthConstraint.constant = attributes.minWidth
+      let minWidth = isLargeLandscape ? attributes.minWidth.large : attributes.minWidth.regular
+      let maxWidth = isLargeLandscape ? attributes.maxHeight.large : attributes.maxWidth.regular
+      let maxHeight = isLargeLandscape ? attributes.maxWidth.large : attributes.maxHeight.regular
+      minWidthConstraint.constant = minWidth
       maxWidthConstraint.constant = maxWidth
       maxHeightConstraint.constant = maxHeight
 
@@ -278,7 +279,7 @@ extension BrazeInAppMessageUI {
           imageAspectRatioConstraint = imageView.anchors.width.equal(
             imageView.anchors.height.multiplied(by: aspectRatio)
           )
-          imageAspectRatioConstraint.priority = .defaultHigh
+          imageAspectRatioConstraint.priority = .defaultHigh + 1
         }
         imageView.anchors.edges.pin()
         imageView.anchors.width.equal(imageContainerView.anchors.width)
@@ -289,11 +290,14 @@ extension BrazeInAppMessageUI {
         imageContainerView.anchors.edges.pin()
         // - dimensions
         minWidthConstraint = imageContainerView.anchors.width.greaterThanOrEqual(
-          attributes.minWidth)
+          attributes.minWidth.regular)
         minWidthConstraint.priority = .defaultHigh
-        maxWidthConstraint = imageContainerView.anchors.width.lessThanOrEqual(attributes.maxWidth)
+        maxWidthConstraint = imageContainerView.anchors.width.lessThanOrEqual(
+          attributes.maxWidth.regular
+        )
         maxHeightConstraint = imageContainerView.anchors.height.lessThanOrEqual(
-          attributes.maxHeight)
+          attributes.maxHeight.regular
+        )
 
         // Buttons
         buttonsContainer?.anchors.edges.pin(
@@ -309,9 +313,15 @@ extension BrazeInAppMessageUI {
         )
 
         // Content view
-        contentView.anchors.height.equal(imageContainerView.anchors.height)
+        let verticalEdges = contentView.anchors.edges.pin(to: layoutMarginsGuide, axis: .vertical)
+        verticalEdges.forEach { $0.priority = .defaultHigh }
+        let horizontalEdges = contentView.anchors.edges.pin(
+          to: layoutMarginsGuide, axis: .horizontal)
+        horizontalEdges.forEach { $0.priority = .defaultHigh + 1 }
         contentPositionConstraints =
-          contentView.anchors.edges.lessThanOrEqual(layoutMarginsGuide)
+          verticalEdges
+          + horizontalEdges
+          + contentView.anchors.edges.lessThanOrEqual(layoutMarginsGuide)
           + contentView.anchors.center.align()
 
         // Shadow view
@@ -452,4 +462,10 @@ extension BrazeInAppMessageUI {
     }
 
   }
+
+  /// Typealiases to help Xcode build previews
+  extension BrazeInAppMessageUI.ModalImageView {
+    public typealias ButtonView = BrazeInAppMessageUI.ButtonView
+  }
+
 #endif
