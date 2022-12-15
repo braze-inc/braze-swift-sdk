@@ -69,7 +69,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     // A wrapper / compatibility representation of the card is accessible via `.json()`
     if let jsonData = card.json(),
-       let jsonString = String(data: jsonData, encoding: .utf8) {
+      let jsonString = String(data: jsonData, encoding: .utf8)
+    {
       print(jsonString)
     }
 
@@ -109,7 +110,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     // A wrapper / compatibility representation of the card is accessible via `.json()`
     if let jsonData = cardRaw.json(),
-       let jsonString = String(data: jsonData, encoding: .utf8) {
+      let jsonString = String(data: jsonData, encoding: .utf8)
+    {
       print(jsonString)
     }
 

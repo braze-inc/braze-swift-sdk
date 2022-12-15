@@ -1,3 +1,18 @@
+## 5.8.0
+
+To help migrate your app from the Appboy-iOS-SDK to our Swift SDK, this release includes the `Appboy-iOS-SDK` [migration guide]:
+- Follow step-by-step instructions to migrate each feature to the new APIs.
+- Includes instructions for a minimal migration scenario via our compatibility libraries.
+
+##### Added
+- Adds compatibility libraries `BrazeKitCompat` and `BrazeUICompat`:
+  - Provides all the old APIs from `Appboy-iOS-SDK` to easily start migrating to the Swift SDK.
+  - See the [migration guide] for more details.
+- Adds support for [News Feed](https://www.braze.com/docs/user_guide/engagement_tools/news_feed) data models and analytics.
+  - News Feed UI is not supported by the Swift SDK. See the [migration guide] for instructions on using the compatibility UI.
+
+[migration guide]: https://braze-inc.github.io/braze-swift-sdk/documentation/braze/appboy-migration-guide
+
 ## 5.7.0
 
 ##### Fixed
@@ -14,6 +29,17 @@
 
 ## 5.6.4
 
+##### End of early access phase / Migration Guide / Compatibility Libraries
+
+This release marks the end of the early access phase for the Braze Swift SDK. `Appboy-iOS-SDK` is now deprecated and support will cease on <INSERT DATE HERE>. 
+
+To help with your migration process, this release includes:
+- [Appboy-iOS-SDK: Migration guide]:
+  - Follow step-by-step instructions to migrate each feature to the new APIs.
+  - Includes instructions for minimal migration scenario via our compatibility libraries.
+- Compatibility libraries `BrazeKitCompat` and `BrazeUICompat`:
+  - Provides all the old APIs from `Appboy-iOS-SDK` to easily start migrating to the Swift SDK.
+
 ##### Fixed
 - Fixes an issue preventing the execution of `BrazeDelegate` methods when setting the delegate using Objective-C.
 - Fixes an issue where triggering an in-app message twice with the same event did not place the message on the in-app message stack under certain conditions.
@@ -27,7 +53,8 @@
   - [`Braze.deviceId()`]
   - [`ContentCards.requestRefresh()`]
   - [`ContentCards.cardsStream`] as an alternative to [`ContentCards.subscribeToUpdates(_:)`]
-  
+
+[Appboy-iOS-SDK: Migration guide]: https://braze-inc.github.io/braze-swift-sdk/documentation/braze/appboy-migration-guide
 [`Braze.User.id()`]: https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/user-swift.class/id()
 [`Braze.deviceId()`]: https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/deviceid()
 [`ContentCards.requestRefresh()`]: https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/contentcards-swift.class/requestrefresh()
@@ -205,6 +232,7 @@ The following features are not supported yet:
   - Added in [5.5.0](#550)
 - ~~tvOS integration~~
   - Added in [5.3.0](#530)
-- News Feed
+- ~~News Feed~~
+  - Added in [5.7.0](#570)
 - ~~Content Cards~~
   - Added in [5.2.0](#520)

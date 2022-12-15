@@ -43,7 +43,8 @@ struct CustomInAppMessagePresenter: BrazeInAppMessagePresenter {
 
     // A wrapper / compatibility representation of the in-app message is accessible via `.json()`
     if let jsonData = message.json(),
-       let jsonString = String(data: jsonData, encoding: .utf8) {
+      let jsonString = String(data: jsonData, encoding: .utf8)
+    {
       print(jsonString)
     }
 

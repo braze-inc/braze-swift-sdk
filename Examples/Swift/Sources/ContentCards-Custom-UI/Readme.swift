@@ -70,4 +70,3 @@ func cancelContentCardsUpdatesSubscription(_ viewController: ReadmeViewControlle
 func presentContentCardsInfoViewController(_ viewController: ReadmeViewController) {
   (UIApplication.shared.delegate as? AppDelegate)?.presentContentCardsInfoViewController()
 }
-

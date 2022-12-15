@@ -105,7 +105,8 @@ extension AppDelegate: BrazeInAppMessageUIDelegate {
 
     // Modal - Custom button font
     if customization == "modal-button-font" {
-      context.attributes?.modal?.buttonsAttributes.font = UIFont(name: "AmericanTypewriter-Bold", size: 17)!
+      context.attributes?.modal?.buttonsAttributes.font = UIFont(
+        name: "AmericanTypewriter-Bold", size: 17)!
     }
 
     // ModalImage - Attributes
@@ -157,5 +158,3 @@ extension AppDelegate: BrazeInAppMessageUIDelegate {
   }
 
 }
-
-

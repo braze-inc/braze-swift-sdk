@@ -1,5 +1,5 @@
-import UIKit
 import BrazeKit
+import UIKit
 
 final class CardsInfoViewController: UITableViewController {
 
@@ -26,7 +26,8 @@ final class CardsInfoViewController: UITableViewController {
     sections = cards.enumerated().map { Self.cardSection(from: $1, index: $0) }
     super.init(style: .grouped)
     title = "Content Cards Info"
-    let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissModal))
+    let doneButton = UIBarButtonItem(
+      barButtonSystemItem: .done, target: self, action: #selector(dismissModal))
     navigationItem.setRightBarButton(doneButton, animated: false)
 
     tableView.rowHeight = UITableView.automaticDimension
@@ -62,7 +63,8 @@ final class CardsInfoViewController: UITableViewController {
     _ tableView: UITableView,
     cellForRowAt indexPath: IndexPath
   ) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: "cellIdentifier")
+    let cell =
+      tableView.dequeueReusableCell(withIdentifier: "cellIdentifier")
       ?? UITableViewCell(style: .value1, reuseIdentifier: "cellIdentifier")
 
     let field = sections[indexPath.section].fields[indexPath.row]
@@ -162,7 +164,7 @@ final class CardsInfoViewController: UITableViewController {
       header.value = "url"
       fields = [
         Field(name: "url", value: url, indentation: indentation + 1),
-        Field(name: "useWebView", value: useWebView, indentation: indentation + 1)
+        Field(name: "useWebView", value: useWebView, indentation: indentation + 1),
       ]
     @unknown default:
       break
@@ -170,6 +172,5 @@ final class CardsInfoViewController: UITableViewController {
 
     return [header] + fields
   }
-
 
 }

@@ -1,6 +1,6 @@
-import UIKit
 import BrazeKit
 import BrazeUI
+import UIKit
 
 /// A ClassicImageCell subclass which move the image to the trailing part of the cell, make it take
 /// the full height of the cell.
@@ -29,7 +29,8 @@ class CustomClassicImageCell: BrazeContentCardUI.ClassicImageCell {
 
     // Use the original left padding for the text stack + support RTL languages
     textStack?.isLayoutMarginsRelativeArrangement = true
-    let isRightToLeft = UIView.userInterfaceLayoutDirection(for: semanticContentAttribute) == .rightToLeft
+    let isRightToLeft =
+      UIView.userInterfaceLayoutDirection(for: semanticContentAttribute) == .rightToLeft
     textStack?.layoutMargins = UIEdgeInsets(
       top: 0,
       left: isRightToLeft ? 0 : attributes.padding.left,

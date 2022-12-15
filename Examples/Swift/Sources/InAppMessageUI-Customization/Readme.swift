@@ -100,39 +100,53 @@ let actions: [(String, String, (ReadmeViewController) -> Void)] = [
 
 let slideup: Braze.InAppMessage = .slideup(
   .init(
-    graphic: .image(.mockImage(width: 200, height: 200, text: "🧁", textSize: 128, backgroundColor: .systemBlue, drawCorners: false)),
+    graphic: .image(
+      .mockImage(
+        width: 200, height: 200, text: "🧁", textSize: 128, backgroundColor: .systemBlue,
+        drawCorners: false)),
     message: "Cupcake ipsum dolor sit amet. Topping dessert muffin fruitcake."
   )
 )
 
 let modal: Braze.InAppMessage = .modal(
   .init(
-    graphic: .image(.mockImage(width: 1450, height: 500, text: "🧁", textSize: 256, backgroundColor: .systemBlue, drawCorners: false)),
+    graphic: .image(
+      .mockImage(
+        width: 1450, height: 500, text: "🧁", textSize: 256, backgroundColor: .systemBlue,
+        drawCorners: false)),
     header: "Hello world!",
-    message: "Cupcake ipsum dolor sit amet topping. Cookie candy chupa chups jujubes pastry soufflé. Danish cake cheesecake liquorice wafer marshmallow macaroon.",
+    message:
+      "Cupcake ipsum dolor sit amet topping. Cookie candy chupa chups jujubes pastry soufflé. Danish cake cheesecake liquorice wafer marshmallow macaroon.",
     buttons: [.init(id: 0, text: "OK", clickAction: .none, themes: ["light": .primary])]
   )
 )
 
 let modalImage: Braze.InAppMessage = .modalImage(
   .init(
-    imageURL: .mockImage(width: 1200, height: 1200, text: "🧁", textSize: 512, backgroundColor: .systemBlue, drawCorners: false),
+    imageURL: .mockImage(
+      width: 1200, height: 1200, text: "🧁", textSize: 512, backgroundColor: .systemBlue,
+      drawCorners: false),
     buttons: [.init(id: 0, text: "OK", clickAction: .none, themes: ["light": .primary])]
   )
 )
 
 let full: Braze.InAppMessage = .full(
   .init(
-    imageURL: .mockImage(width: 1200, height: 1000, text: "🧁", textSize: 512, backgroundColor: .systemBlue, drawCorners: false),
+    imageURL: .mockImage(
+      width: 1200, height: 1000, text: "🧁", textSize: 512, backgroundColor: .systemBlue,
+      drawCorners: false),
     header: "Hello world!",
-    message: "Cupcake ipsum dolor sit amet topping. Cookie candy chupa chups jujubes pastry soufflé. Danish cake cheesecake liquorice wafer marshmallow macaroon.",
+    message:
+      "Cupcake ipsum dolor sit amet topping. Cookie candy chupa chups jujubes pastry soufflé. Danish cake cheesecake liquorice wafer marshmallow macaroon.",
     buttons: [.init(id: 0, text: "OK", clickAction: .none, themes: ["light": .primary])]
   )
 )
 
 let fullImage: Braze.InAppMessage = .fullImage(
   .init(
-    imageURL: .mockImage(width: 1200, height: 2000, text: "🧁", textSize: 512, backgroundColor: .systemBlue, drawCorners: false),
+    imageURL: .mockImage(
+      width: 1200, height: 2000, text: "🧁", textSize: 512, backgroundColor: .systemBlue,
+      drawCorners: false),
     buttons: [.init(id: 0, text: "OK", clickAction: .none, themes: ["light": .primary])]
   )
 )

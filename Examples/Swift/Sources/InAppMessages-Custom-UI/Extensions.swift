@@ -1,5 +1,5 @@
-import Foundation
 import BrazeKit
+import Foundation
 
 // MARK: - Braze
 
@@ -27,7 +27,8 @@ extension Encodable {
     }
 
     guard let data = try? encoder.encode(self),
-          let prettyPrinted = String(data: data, encoding: .utf8) else {
+      let prettyPrinted = String(data: data, encoding: .utf8)
+    else {
       return "\(self)"
     }
 
@@ -48,7 +49,8 @@ extension Dictionary where Key == String, Value == Any {
     }
 
     guard let data = try? JSONSerialization.data(withJSONObject: self, options: options),
-          let prettyPrinted = String(data: data, encoding: .utf8) else {
+      let prettyPrinted = String(data: data, encoding: .utf8)
+    else {
       return "\(self)"
     }
 

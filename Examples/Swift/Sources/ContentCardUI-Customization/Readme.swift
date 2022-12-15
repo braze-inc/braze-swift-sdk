@@ -56,7 +56,8 @@ let actions: [(String, String, (ReadmeViewController) -> Void)] = [
 let classicPinned: Braze.ContentCard = withContext(
   .classic(
     .init(
-      data: .init(clickAction: .url(URL(string: "https://example.com")!, useWebView: true), pinned: true),
+      data: .init(
+        clickAction: .url(URL(string: "https://example.com")!, useWebView: true), pinned: true),
       title: "Classic (pinned)",
       description: "Cupcake ipsum dolor sit amet. Topping dessert muffin fruitcake.",
       domain: "example.com"

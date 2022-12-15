@@ -1,5 +1,5 @@
-import UIKit
 import BrazeKit
+import UIKit
 
 final class InAppMessageInfoViewController: UITableViewController {
 
@@ -26,7 +26,8 @@ final class InAppMessageInfoViewController: UITableViewController {
     sections = Self.messageSections(from: message) + Self.dataSections(from: message)
     super.init(style: .grouped)
     title = "In-App Message Info"
-    let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissModal))
+    let doneButton = UIBarButtonItem(
+      barButtonSystemItem: .done, target: self, action: #selector(dismissModal))
     navigationItem.setRightBarButton(doneButton, animated: false)
 
     tableView.rowHeight = UITableView.automaticDimension
@@ -62,7 +63,8 @@ final class InAppMessageInfoViewController: UITableViewController {
     _ tableView: UITableView,
     cellForRowAt indexPath: IndexPath
   ) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: "cellIdentifier")
+    let cell =
+      tableView.dequeueReusableCell(withIdentifier: "cellIdentifier")
       ?? UITableViewCell(style: .value1, reuseIdentifier: "cellIdentifier")
 
     let field = sections[indexPath.section].fields[indexPath.row]
@@ -95,20 +97,25 @@ final class InAppMessageInfoViewController: UITableViewController {
     var themesSection: Section?
     switch message {
     case .slideup(let slideup):
-      section.fields = [
-        Field(name: "type", value: "slideup"),
-        Field(name: "message", value: slideup.message, indentation: 1),
-        Field(name: "slideFrom", value: slideup.slideFrom.rawValue, indentation: 1)
-      ] + fields(from: slideup.graphic, indentation: 1)
+      section.fields =
+        [
+          Field(name: "type", value: "slideup"),
+          Field(name: "message", value: slideup.message, indentation: 1),
+          Field(name: "slideFrom", value: slideup.slideFrom.rawValue, indentation: 1),
+        ] + fields(from: slideup.graphic, indentation: 1)
       themesSection = self.themesSection(from: slideup.themes)
     case .modal(let modal):
-      section.fields = [
-        Field(name: "type", value: "modal"),
-        Field(name: "header", value: modal.header, indentation: 1),
-        Field(name: "message", value: modal.message, indentation: 1),
-        Field(name: "headerTextAlignment", value: modal.headerTextAlignment.rawValue, indentation: 1),
-        Field(name: "messageTextAlignment", value: modal.messageTextAlignment.rawValue, indentation: 1),
-      ] + fields(from: modal.graphic, indentation: 1)
+      section.fields =
+        [
+          Field(name: "type", value: "modal"),
+          Field(name: "header", value: modal.header, indentation: 1),
+          Field(name: "message", value: modal.message, indentation: 1),
+          Field(
+            name: "headerTextAlignment", value: modal.headerTextAlignment.rawValue, indentation: 1),
+          Field(
+            name: "messageTextAlignment", value: modal.messageTextAlignment.rawValue, indentation: 1
+          ),
+        ] + fields(from: modal.graphic, indentation: 1)
       buttonsSection = self.buttonsSection(from: modal.buttons)
       themesSection = self.themesSection(from: modal.themes)
     case .modalImage(let modalImage):
@@ -169,7 +176,8 @@ final class InAppMessageInfoViewController: UITableViewController {
         Field(name: "headerTextColor", value: theme.headerTextColor.hexString, indentation: 1),
         Field(name: "closeButtonColor", value: theme.closeButtonColor.hexString, indentation: 1),
         Field(name: "iconColor", value: theme.iconColor.hexString, indentation: 1),
-        Field(name: "iconBackgroundColor", value: theme.iconBackgroundColor.hexString, indentation: 1),
+        Field(
+          name: "iconBackgroundColor", value: theme.iconBackgroundColor.hexString, indentation: 1),
         Field(name: "backgroundColor", value: theme.backgroundColor.hexString, indentation: 1),
         Field(name: "frameColor", value: theme.frameColor.hexString, indentation: 1),
       ]
@@ -217,7 +225,7 @@ final class InAppMessageInfoViewController: UITableViewController {
     // Extras
     section.fields += [
       Field(name: "extras", value: ""),
-      Field(name: message.extras.prettyPrint(), value: "", indentation: 1)
+      Field(name: message.extras.prettyPrint(), value: "", indentation: 1),
     ]
 
     return [section]
@@ -237,11 +245,11 @@ final class InAppMessageInfoViewController: UITableViewController {
       header.value = "none"
     case .newsFeed:
       header.value = "newsFeed"
-    case .url(let url, useWebView: let useWebView):
+    case .url(let url, let useWebView):
       header.value = "url"
       fields = [
         Field(name: "url", value: url, indentation: indentation + 1),
-        Field(name: "useWebView", value: useWebView, indentation: indentation + 1)
+        Field(name: "useWebView", value: useWebView, indentation: indentation + 1),
       ]
     @unknown default:
       break
@@ -286,7 +294,9 @@ final class InAppMessageInfoViewController: UITableViewController {
     case .icon(let icon):
       header.value = "icon"
       fields = [
-        Field(name: "icon (FontAwesome, may not render correctly here)", value: icon, indentation: indentation + 1)
+        Field(
+          name: "icon (FontAwesome, may not render correctly here)", value: icon,
+          indentation: indentation + 1)
       ]
     case .image(let url):
       header.value = "image"
@@ -308,8 +318,11 @@ final class InAppMessageInfoViewController: UITableViewController {
       fields += [
         Field(name: "theme", value: name, indentation: indentation),
         Field(name: "textColor", value: theme.textColor.hexString, indentation: indentation + 1),
-        Field(name: "backgroundColor", value: theme.backgroundColor.hexString, indentation: indentation + 1),
-        Field(name: "borderColor", value: theme.borderColor.hexString, indentation: indentation + 1),
+        Field(
+          name: "backgroundColor", value: theme.backgroundColor.hexString,
+          indentation: indentation + 1),
+        Field(
+          name: "borderColor", value: theme.borderColor.hexString, indentation: indentation + 1),
       ]
     }
 
@@ -317,4 +330,3 @@ final class InAppMessageInfoViewController: UITableViewController {
   }
 
 }
-

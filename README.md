@@ -5,7 +5,7 @@
 
 <p align="center">
   <a href="https://github.com/braze-inc/braze-swift-sdk/releases">
-    <img src="https://badgen.net/badge/version/5.7.0/blue" alt="Version: 5.7.0">
+    <img src="https://badgen.net/badge/version/5.8.0/blue" alt="Version: 5.8.0">
   </a>
   <a href="#">
     <img src="https://badgen.net/badge/platforms/iOS%20%7C%20tvOS%20%7C%20Mac%20Catalyst/orange"
@@ -19,10 +19,11 @@
   </a>
 </p>
 
-# Braze Swift SDK (Early Access)
+# Braze Swift SDK
 
 - [Braze User Guide](https://www.braze.com/docs/user_guide/introduction/ "Braze User Guide")
 - [Braze Swift SDK Documentation](https://braze-inc.github.io/braze-swift-sdk)
+- [Appboy-iOS-SDK: Migration guide](https://braze-inc.github.io/braze-swift-sdk/documentation/braze/appboy-migration-guide)
 
 ## Version Information
 - The Braze Swift SDK supports
@@ -34,14 +35,6 @@
 ## Package Managers
 - Swift Package Manager
 - CocoaPods
-
-## Upcoming Feature Roadmap
-
-The following features are planned for development. To request new Swift SDK features, please open a [Feature Request](https://github.com/braze-inc/braze-swift-sdk/issues).
-
-| Feature | Estimated Release |
-|---|---|
-| Objective-C Migration Library | December, 2022 |
 
 ## Libraries
 
@@ -70,12 +63,13 @@ The following features are planned for development. To request new Swift SDK fea
 
 Explore our [examples project](/Examples) which showcases multiple features' integrations.
 
-## `appboy-ios-sdk`
+## `Appboy-iOS-SDK`
 
-The `appboy-ios-sdk` (Objective-C) SDK is now in maintenance mode, which means only critical bug fixes, and security updates will be made. No new features or minor bug fixes will be added to that library. 
+As of version 5.8.0, the Braze Swift SDK provides all the features available in the `Appboy-iOS-SDK`.
 
-Later in 2022 we will announce our official deprecation and support policy for `appboy-ios-sdk`. For this reason, we encourage you to migrate to our new `braze-swift-sdk` as soon as possible.
+We recommend all users to migrate to the Braze Swift SDK. For more information, please refer to our [migration guide](https://braze-inc.github.io/braze-swift-sdk/documentation/braze/appboy-migration-guide).
 
+The `Appboy-iOS-SDK` (Objective-C) SDK is now in maintenance mode, which means only critical bug fixes, and security updates will be made. No new features or minor bug fixes will be added to that library.
 
 ## Questions?
 

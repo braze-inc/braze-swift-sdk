@@ -284,4 +284,15 @@ open class BrazeInAppMessageUI:
     return true
   }
 
+  // ***** COMPAT *****
+
+  /// Provided for compatibility purposes.
+  @objc(_compat_tryPushOnStack:)
+  @available(swift, obsoleted: 0.0.1)
+  public func _compat_tryPushOnStack(message: Braze.InAppMessageRaw) {
+    guard let message = try? Braze.InAppMessage(message) else { return }
+    stack.append(message)
+  }
+
+  // ******************
 }

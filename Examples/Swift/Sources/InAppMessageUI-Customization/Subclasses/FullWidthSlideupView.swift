@@ -43,7 +43,7 @@ class FullWidthSlideupView: BrazeInAppMessageUI.SlideupView {
       verticalConstraint,
       backgroundView.leadingAnchor.constraint(equalTo: leadingAnchor),
       backgroundView.trailingAnchor.constraint(equalTo: trailingAnchor),
-      backgroundView.heightAnchor.constraint(equalToConstant: 1000)
+      backgroundView.heightAnchor.constraint(equalToConstant: 1000),
     ])
 
     applyTheme()
