@@ -31,7 +31,7 @@ NSString *const readme =
     @"This sample presents a complete BrazeLocation integration.\n"
     @"\n"
     @"- AppDelegate.{h,m}:\n"
-    @"  - Configure the braze instance with BrazeLocation";
+    @"  - Configure the braze instance with BrazeLocationProvider";
 
 #if TARGET_OS_IOS
 

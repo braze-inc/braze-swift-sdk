@@ -332,9 +332,9 @@ static NSString *const ABKPersistentDataPlistEndpointKey = @"Endpoint";
   configuration.location.automaticGeofenceRequests =
       !disableAutomaticGeofencesRequest;
 
-  // Automatically add BrazeLocation when needed
+  // Automatically add BrazeLocationProvider when needed
   if (automaticLocationCollection || enableGeofences) {
-    configuration.location.brazeLocation = [[BrazeLocation alloc] init];
+    configuration.location.brazeLocationProvider = [[BrazeLocationProvider alloc] init];
   }
 
   // Endpoint

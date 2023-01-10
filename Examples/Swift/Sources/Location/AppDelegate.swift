@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // Setup Braze
     let configuration = Braze.Configuration(apiKey: brazeApiKey, endpoint: brazeEndpoint)
     configuration.logger.level = .info
-    configuration.location.brazeLocation = BrazeLocation()
+    configuration.location.brazeLocationProvider = BrazeLocationProvider()
     configuration.location.automaticLocationCollection = true
     configuration.location.geofencesEnabled = true
     configuration.location.automaticGeofenceRequests = true

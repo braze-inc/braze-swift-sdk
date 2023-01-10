@@ -14,7 +14,7 @@
       [[BRZConfiguration alloc] initWithApiKey:brazeApiKey
                                       endpoint:brazeEndpoint];
   configuration.logger.level = BRZLoggerLevelInfo;
-  configuration.location.brazeLocation = [[BrazeLocation alloc] init];
+  configuration.location.brazeLocationProvider = [[BrazeLocationProvider alloc] init];
   configuration.location.automaticLocationCollection = YES;
   configuration.location.geofencesEnabled = YES;
   configuration.location.automaticGeofenceRequests = YES;

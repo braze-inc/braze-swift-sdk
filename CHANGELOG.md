@@ -1,3 +1,13 @@
+## 5.8.1
+
+##### Fixed
+- Fixes a conflict with the shared instance of [`ProcessInfo`], allowing low power mode notifications to trigger correctly, along with usages of other [`ProcessInfo`] members.
+
+##### Changed
+- Renames the `BrazeLocation` class to `BrazeLocationProvider` to avoid shadowing the module of the same name ([SR-14195](https://bugs.swift.org/browse/SR-14195)).
+
+[`ProcessInfo`]: https://developer.apple.com/documentation/foundation/processinfo
+
 ## 5.8.0
 
 To help migrate your app from the Appboy-iOS-SDK to our Swift SDK, this release includes the `Appboy-iOS-SDK` [migration guide]:
