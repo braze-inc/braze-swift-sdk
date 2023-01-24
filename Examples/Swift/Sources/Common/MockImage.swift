@@ -1,7 +1,6 @@
-import Foundation
-import UIKit
-
-#if DEBUG
+#if canImport(BrazeUI)
+  import Foundation
+  import UIKit
 
   extension URL {
 
@@ -14,7 +13,7 @@ import UIKit
     ///   - textColor: The text color.
     ///   - backgroundColor: The background color.
     /// - Returns: An url for a mock image.
-    static func mockImage(
+    public static func mockImage(
       width: CGFloat,
       height: CGFloat,
       text: String? = nil,

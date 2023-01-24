@@ -5,7 +5,7 @@
 
 <p align="center">
   <a href="https://github.com/braze-inc/braze-swift-sdk/releases">
-    <img src="https://badgen.net/badge/version/5.8.1/blue" alt="Version: 5.8.1">
+    <img src="https://badgen.net/badge/version/5.9.0/blue" alt="Version: 5.9.0">
   </a>
   <a href="#">
     <img src="https://badgen.net/badge/platforms/iOS%20%7C%20tvOS%20%7C%20Mac%20Catalyst/orange"
@@ -27,10 +27,10 @@
 
 ## Version Information
 - The Braze Swift SDK supports
-  - iOS 10.0+
+  - iOS 11.0+
   - Mac Catalyst 13.0+
-  - tvOS 10.0+
-- Xcode 13.2.1 (13C100) or newer
+  - tvOS 11.0+
+- Xcode 14.1 (14B47b) or newer
 
 ## Package Managers
 - Swift Package Manager

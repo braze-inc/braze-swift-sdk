@@ -8,6 +8,14 @@ class CheckoutViewController: UIViewController {
   /// The list of identifiers for the products to checkout
   var productIds: [String] = []
 
+  override func viewDidLoad() {
+    super.viewDidLoad()
+
+    self.navigationItem.leftBarButtonItem = UIBarButtonItem(
+      barButtonSystemItem: .done, target: self, action: #selector(doneButtonSelected)
+    )
+  }
+
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
     AppDelegate.braze?.logCustomEvent(
@@ -17,6 +25,10 @@ class CheckoutViewController: UIViewController {
         "product_ids": productIds,
       ]
     )
+  }
+
+  @objc func doneButtonSelected() {
+    self.dismiss(animated: true)
   }
 
   func userDidPurchase(productId: String) {

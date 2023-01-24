@@ -1,7 +1,31 @@
+## 5.9.0
+
+##### Breaking
+- Raises the minimum deployment target to iOS 11.0 and tvOS 11.0.
+- Raises the Xcode version to 14.1 (14B47b).
+
+##### Fixed
+- Fixes an issue where the post-click webview would close automatically in some cases.
+- Fixes a behavior where the current user messaging data would not be directly available after initializing the SDK or calling `changeUser(userId:)`.
+- Fixes an issue preventing News Feed data models from being available offline.
+- Fixes an issue where the release binaries could emit warnings when generating dSYMs.
+
+##### Changed
+- SwiftPM and CocoaPods now use the same release assets.
+
+##### Added
+- Adds support for the upcoming Braze Feature Flags product.
+- Adds the `braze-swift-sdk-prebuilt.zip` archive to the release assets.
+  - This archive contains the prebuilt xcframeworks and their associated resource bundles.
+  - The content of this archive can be used to manually integrate the SDK.
+- Adds the `Examples-Manual.xcodeproj` showcasing how to integrate the SDK using the prebuilt release assets.
+- Adds support for Mac Catalyst for example applications, available at [Support/Examples/](./Support/Examples/README.md)
+- Adds support to convert from `Data` into an in-app message, content card, or news feed card via `decoding(json:)`.
+
 ## 5.8.1
 
 ##### Fixed
-- Fixes a conflict with the shared instance of [`ProcessInfo`], allowing low power mode notifications to trigger correctly, along with usages of other [`ProcessInfo`] members.
+- Fixes a conflict with the shared instance of [`ProcessInfo`], allowing low power mode notifications to trigger correctly.
 
 ##### Changed
 - Renames the `BrazeLocation` class to `BrazeLocationProvider` to avoid shadowing the module of the same name ([SR-14195](https://bugs.swift.org/browse/SR-14195)).
@@ -41,7 +65,7 @@ To help migrate your app from the Appboy-iOS-SDK to our Swift SDK, this release 
 
 ##### End of early access phase / Migration Guide / Compatibility Libraries
 
-This release marks the end of the early access phase for the Braze Swift SDK. `Appboy-iOS-SDK` is now deprecated and support will cease on <INSERT DATE HERE>. 
+This release marks the end of the early access phase for the Braze Swift SDK. `Appboy-iOS-SDK` is now deprecated and support will cease on <INSERT DATE HERE>.
 
 To help with your migration process, this release includes:
 - [Appboy-iOS-SDK: Migration guide]:

@@ -39,6 +39,7 @@
 #import "ABKInAppMessageUIControlling.h"
 #import "ABKInAppMessageDarkTheme.h"
 #import "ABKInAppMessageDarkButtonTheme.h"
+#import "ABKInAppMessage+Compat.h"
 
 // News Feed
 #import "ABKFeedController.h"
@@ -65,3 +66,6 @@
 #import "ABKNoConnectionLocalization.h"
 
 #endif
+
+// Compat
+#import "_ABKBRZCompat.h"

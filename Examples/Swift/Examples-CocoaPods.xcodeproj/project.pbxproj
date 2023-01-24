@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0684053D51385645627A6EC2 /* Readme.swift in Sources */ = {isa = PBXBuildFile; fileRef = C938B015CECD020B6FA2206F /* Readme.swift */; };
+		069F4D1FC2D1AAE0CF69F4C8 /* MockImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1099A7C7E5E89E130751B24C /* MockImage.swift */; };
 		06C97BF64E9A3B3D120DC5DA /* Readme.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4946E4B2E8F15E1A3241324 /* Readme.swift */; };
 		08123F8EDCFA937A58EDAB30 /* Readme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6734EEF181F0535929116A /* Readme.swift */; };
 		0D6BFB49878D5CC48424A07E /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0078638D97BB480D82B18D6C /* Credentials.swift */; };
@@ -35,10 +36,12 @@
 		40FB9F2DCF0F367CEA6D8E12 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0078638D97BB480D82B18D6C /* Credentials.swift */; };
 		432D837B85AECB56882916FE /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0078638D97BB480D82B18D6C /* Credentials.swift */; };
 		43E8FC4FE0FCC54974CED64F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDE1D547738FC75F10AD5E3 /* AppDelegate.swift */; };
+		44DADB7B7CFA12B9AB9CA455 /* MockImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1099A7C7E5E89E130751B24C /* MockImage.swift */; };
 		478599D4418CF81DD5D95C47 /* ReadmeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76740E64DEB7874C6DA73841 /* ReadmeViewController.swift */; };
 		496F65492019BD1A4FE5F6A4 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1994AAD3540F9A97336B542D /* Extensions.swift */; };
 		4B5DE5B818AF38D3D32DE44D /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0078638D97BB480D82B18D6C /* Credentials.swift */; };
 		4C540B906F61167621B755FA /* Readme.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4946E4B2E8F15E1A3241324 /* Readme.swift */; };
+		523A5EF3FC7E75837C56E9F1 /* MockImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1099A7C7E5E89E130751B24C /* MockImage.swift */; };
 		55BE220F9A64058BE8CE2A00 /* SDWebImageGIFViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20ACDCAF82FAFB8B4915FF5D /* SDWebImageGIFViewProvider.swift */; };
 		56E71FBF34C707A0C76D4E92 /* PushNotificationsServiceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 40B660242E5E30D22F3AC51E /* PushNotificationsServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		5752C25DC8C2CA0C0925C10F /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6208C00FB5F7F0284A26EF20 /* UserNotifications.framework */; };
@@ -50,7 +53,9 @@
 		65D110C8D2CCFE582C33FEFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0340E1FFDDBC0C9D72FCD4D4 /* Assets.xcassets */; };
 		667F36DD2198D4DA01794DEE /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0078638D97BB480D82B18D6C /* Credentials.swift */; };
 		6E186056B0E0BED56C16A3B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B31A0AD9310E76D8820B67 /* AppDelegate.swift */; };
+		6F2E37C2C6236133A73B2DA7 /* MockImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1099A7C7E5E89E130751B24C /* MockImage.swift */; };
 		7246237C3E3EFEE060D4520F /* Readme.swift in Sources */ = {isa = PBXBuildFile; fileRef = C938B015CECD020B6FA2206F /* Readme.swift */; };
+		72BE89025E94DA8F7F7970AB /* MockImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1099A7C7E5E89E130751B24C /* MockImage.swift */; };
 		79F0CFE1D23AB1C09F5BA9A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405EC9F18FB085ECB16DB4F2 /* AppDelegate.swift */; };
 		7B812A1EEE21F16A51F14991 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16ACF11150875C20E08B3AC /* AppDelegate.swift */; };
 		7BD7D03FB0E6E381E2CB291A /* CheckoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A11FA051B21C67BB9D89127 /* CheckoutViewController.swift */; };
@@ -60,11 +65,15 @@
 		82635DB213CF8249B31A612D /* Readme.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6742114C06FC93D4AA30B5B /* Readme.swift */; };
 		849BF8AD70E050B555CD942C /* ReadmeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76740E64DEB7874C6DA73841 /* ReadmeViewController.swift */; };
 		86BCC651E1B01D82F6DDA664 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0078638D97BB480D82B18D6C /* Credentials.swift */; };
+		878B628352CB4EAC06C1BE1D /* MockImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1099A7C7E5E89E130751B24C /* MockImage.swift */; };
 		88844A9880FFD74A9B042863 /* CheckoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A11FA051B21C67BB9D89127 /* CheckoutViewController.swift */; };
 		8AA046F58DFE835A8DBDC2FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0340E1FFDDBC0C9D72FCD4D4 /* Assets.xcassets */; };
+		8B1BBB06A40509279B6EBF54 /* MockImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1099A7C7E5E89E130751B24C /* MockImage.swift */; };
 		8EA064B314AC1FFF778E11BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C30CE34888116E754351344 /* AppDelegate.swift */; };
+		93B2F772CCA4F0E1E96CC750 /* MockImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1099A7C7E5E89E130751B24C /* MockImage.swift */; };
 		9840806A060D7FA1A1C04DDB /* CustomInAppMessagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFB1DEB4CDC0C09DF4FF9DC /* CustomInAppMessagePresenter.swift */; };
 		9AA553CA710417B6B9261B6C /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0078638D97BB480D82B18D6C /* Credentials.swift */; };
+		9ADF0CB1A3ED2E0940A3D1D6 /* MockImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1099A7C7E5E89E130751B24C /* MockImage.swift */; };
 		9BE24EB7834014A841226C6F /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9A4EACB9451C069A63F43F /* AuthenticationManager.swift */; };
 		9C4BA0B17CDD5749B1E02314 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CABCDD10D6E23AB146F9F7BA /* LaunchScreen.storyboard */; };
 		9EDF374BDDDC2F7BDE7DC3B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBBD41BB997EBF5820D819F /* AppDelegate.swift */; };
@@ -88,6 +97,7 @@
 		CF19792AFCEF53A28612612B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0340E1FFDDBC0C9D72FCD4D4 /* Assets.xcassets */; };
 		D11E987E346B85F0966242D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CABCDD10D6E23AB146F9F7BA /* LaunchScreen.storyboard */; };
 		D1B4FEFA476833265065E137 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A56AB422F8DA782A8D2B6FD /* LaunchScreen.storyboard */; };
+		D23B5BC12CBA1752292BADB0 /* MockImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1099A7C7E5E89E130751B24C /* MockImage.swift */; };
 		D4858A10B4156FAB0AD564A8 /* ConfirmButtonSlideupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96894D8C1584EE12A5157761 /* ConfirmButtonSlideupView.swift */; };
 		D85EB7E1A82E081898089884 /* Readme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FBE4BAAD0A7EFA2E43ED70 /* Readme.swift */; };
 		D9302D865FB50ABD4486BC20 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0078638D97BB480D82B18D6C /* Credentials.swift */; };
@@ -95,6 +105,7 @@
 		DAB2F6E16C0005941B5CC8EA /* Readme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6992ACA4C973FAF6333EE4B2 /* Readme.swift */; };
 		DBB5253667D14BAA31F4CC93 /* CardsInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEB9D205C9479024B2674FA /* CardsInfoViewController.swift */; };
 		DE53BE67D8DAD53909211056 /* InAppMessageInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D93378C85712C1E5E9146B7 /* InAppMessageInfoViewController.swift */; };
+		E01F64D0A2B2BF0A7FC8E292 /* MockImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1099A7C7E5E89E130751B24C /* MockImage.swift */; };
 		E2874959B3B047F5B4DF82B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0340E1FFDDBC0C9D72FCD4D4 /* Assets.xcassets */; };
 		E497B8E5C5510F2B03179702 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0078638D97BB480D82B18D6C /* Credentials.swift */; };
 		E55B655798FDC3A053213A55 /* Readme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B8597B8B1BE2497CEFD038 /* Readme.swift */; };
@@ -104,12 +115,14 @@
 		EA836E31376F97EB1EA08854 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10608DDB131D70F8273A64B7 /* AppDelegate.swift */; };
 		EB71881CFACEA23DC2CF8112 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0340E1FFDDBC0C9D72FCD4D4 /* Assets.xcassets */; };
 		ECF4B3DD82D61470A3EFC3E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CABCDD10D6E23AB146F9F7BA /* LaunchScreen.storyboard */; };
+		EDD685719D7C6421E3333BA4 /* MockImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1099A7C7E5E89E130751B24C /* MockImage.swift */; };
 		EE1A489AA9350D6C14CBBBCE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CABCDD10D6E23AB146F9F7BA /* LaunchScreen.storyboard */; };
 		EEC8E34CA6F186D5CCE5D080 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B31A0AD9310E76D8820B67 /* AppDelegate.swift */; };
 		F3414EC79F076EE60810E147 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0078638D97BB480D82B18D6C /* Credentials.swift */; };
 		F42CC1B49E69F3E73EFAAA3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514DAF551BD9AE51D34F1ACB /* AppDelegate.swift */; };
 		F57B565FDC038BD0215DD232 /* ReadmeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76740E64DEB7874C6DA73841 /* ReadmeViewController.swift */; };
 		F8A17ADE416B1BDA0913DFC8 /* Readme.swift in Sources */ = {isa = PBXBuildFile; fileRef = D256C020EC4A6696D3E18665 /* Readme.swift */; };
+		FB4712FECE056DF38CF53AC7 /* MockImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1099A7C7E5E89E130751B24C /* MockImage.swift */; };
 		FD1986DD237FE5FF21F3B718 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9A4EACB9451C069A63F43F /* AuthenticationManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -152,6 +165,7 @@
 		05A5CB32692A4493359A70F2 /* InAppMessages-Custom-UI.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "InAppMessages-Custom-UI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F4B1C1A4381988C1833854B /* InAppMessageUI-Customization.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "InAppMessageUI-Customization.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		10608DDB131D70F8273A64B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1099A7C7E5E89E130751B24C /* MockImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockImage.swift; sourceTree = "<group>"; };
 		10E9BA8357610D7CCDC06664 /* CustomClassicImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomClassicImageCell.swift; sourceTree = "<group>"; };
 		1874579DE7E406E73A3CB3A1 /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
 		1994AAD3540F9A97336B542D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -422,6 +436,7 @@
 			children = (
 				0340E1FFDDBC0C9D72FCD4D4 /* Assets.xcassets */,
 				0078638D97BB480D82B18D6C /* Credentials.swift */,
+				1099A7C7E5E89E130751B24C /* MockImage.swift */,
 				76740E64DEB7874C6DA73841 /* ReadmeViewController.swift */,
 				CFAFCFEE58CC8AA1F0BDA699 /* iOS */,
 				7D73AC8BFC703A7B9ECA6177 /* tvOS */,
@@ -856,6 +871,7 @@
 				EA836E31376F97EB1EA08854 /* AppDelegate.swift in Sources */,
 				135B5B670D81F169A12722DF /* Credentials.swift in Sources */,
 				AE9F2211F733CD0E2D2AFC0B /* CustomClassicImageCell.swift in Sources */,
+				93B2F772CCA4F0E1E96CC750 /* MockImage.swift in Sources */,
 				82635DB213CF8249B31A612D /* Readme.swift in Sources */,
 				23026AD66FF84F25CDE81819 /* ReadmeViewController.swift in Sources */,
 				3E794CA31FE8246A6EE566B4 /* SDWebImageGIFViewProvider.swift in Sources */,
@@ -869,6 +885,7 @@
 				EEC8E34CA6F186D5CCE5D080 /* AppDelegate.swift in Sources */,
 				DBB5253667D14BAA31F4CC93 /* CardsInfoViewController.swift in Sources */,
 				432D837B85AECB56882916FE /* Credentials.swift in Sources */,
+				069F4D1FC2D1AAE0CF69F4C8 /* MockImage.swift in Sources */,
 				DAB2F6E16C0005941B5CC8EA /* Readme.swift in Sources */,
 				292FEAABE62351F10BD7242B /* ReadmeViewController.swift in Sources */,
 			);
@@ -883,6 +900,7 @@
 				1F73E5982977DF8B1CBDEAA6 /* CustomInAppMessagePresenter.swift in Sources */,
 				496F65492019BD1A4FE5F6A4 /* Extensions.swift in Sources */,
 				DE53BE67D8DAD53909211056 /* InAppMessageInfoViewController.swift in Sources */,
+				FB4712FECE056DF38CF53AC7 /* MockImage.swift in Sources */,
 				06C97BF64E9A3B3D120DC5DA /* Readme.swift in Sources */,
 				272A23EAF6BAD8414B08EBBC /* ReadmeViewController.swift in Sources */,
 			);
@@ -895,6 +913,7 @@
 				6E186056B0E0BED56C16A3B1 /* AppDelegate.swift in Sources */,
 				1102DA6C1D1C3B9F9D571A6F /* CardsInfoViewController.swift in Sources */,
 				4B5DE5B818AF38D3D32DE44D /* Credentials.swift in Sources */,
+				8B1BBB06A40509279B6EBF54 /* MockImage.swift in Sources */,
 				345CA2282BFEFED98328C0C2 /* Readme.swift in Sources */,
 				B33A20E1225D89AC30CEC430 /* ReadmeViewController.swift in Sources */,
 			);
@@ -908,6 +927,7 @@
 				FD1986DD237FE5FF21F3B718 /* AuthenticationManager.swift in Sources */,
 				88844A9880FFD74A9B042863 /* CheckoutViewController.swift in Sources */,
 				0D6BFB49878D5CC48424A07E /* Credentials.swift in Sources */,
+				44DADB7B7CFA12B9AB9CA455 /* MockImage.swift in Sources */,
 				7246237C3E3EFEE060D4520F /* Readme.swift in Sources */,
 				2CF3E11C7FFCA09427FEABCC /* ReadmeViewController.swift in Sources */,
 			);
@@ -919,6 +939,7 @@
 			files = (
 				E83FD3473FD4FF5F37C5003B /* AppDelegate.swift in Sources */,
 				9AA553CA710417B6B9261B6C /* Credentials.swift in Sources */,
+				6F2E37C2C6236133A73B2DA7 /* MockImage.swift in Sources */,
 				5FC97622559904A83BEB7082 /* Readme.swift in Sources */,
 				B9FD7A99B38E4F820A640660 /* ReadmeViewController.swift in Sources */,
 			);
@@ -932,6 +953,7 @@
 				D4858A10B4156FAB0AD564A8 /* ConfirmButtonSlideupView.swift in Sources */,
 				667F36DD2198D4DA01794DEE /* Credentials.swift in Sources */,
 				247143FD4540ED81C56940F1 /* FullWidthSlideupView.swift in Sources */,
+				9ADF0CB1A3ED2E0940A3D1D6 /* MockImage.swift in Sources */,
 				08123F8EDCFA937A58EDAB30 /* Readme.swift in Sources */,
 				11DD43D9D45939B67DC741A1 /* ReadmeViewController.swift in Sources */,
 				55BE220F9A64058BE8CE2A00 /* SDWebImageGIFViewProvider.swift in Sources */,
@@ -947,6 +969,7 @@
 				9840806A060D7FA1A1C04DDB /* CustomInAppMessagePresenter.swift in Sources */,
 				7FA271D4094CC903F4D8CA14 /* Extensions.swift in Sources */,
 				356FD93DCAEAD68D24E91795 /* InAppMessageInfoViewController.swift in Sources */,
+				72BE89025E94DA8F7F7970AB /* MockImage.swift in Sources */,
 				4C540B906F61167621B755FA /* Readme.swift in Sources */,
 				849BF8AD70E050B555CD942C /* ReadmeViewController.swift in Sources */,
 			);
@@ -958,6 +981,7 @@
 			files = (
 				8EA064B314AC1FFF778E11BC /* AppDelegate.swift in Sources */,
 				86BCC651E1B01D82F6DDA664 /* Credentials.swift in Sources */,
+				E01F64D0A2B2BF0A7FC8E292 /* MockImage.swift in Sources */,
 				AAE8B9B2CD0EFD8BC1386C00 /* Readme.swift in Sources */,
 				F57B565FDC038BD0215DD232 /* ReadmeViewController.swift in Sources */,
 				B3002DB2A8D026865BE7251B /* SDWebImageGIFViewProvider.swift in Sources */,
@@ -978,6 +1002,7 @@
 			files = (
 				7B812A1EEE21F16A51F14991 /* AppDelegate.swift in Sources */,
 				E497B8E5C5510F2B03179702 /* Credentials.swift in Sources */,
+				523A5EF3FC7E75837C56E9F1 /* MockImage.swift in Sources */,
 				E55B655798FDC3A053213A55 /* Readme.swift in Sources */,
 				478599D4418CF81DD5D95C47 /* ReadmeViewController.swift in Sources */,
 				AB3F67EEE9255DAA9A2BB799 /* SDWebImageGIFViewProvider.swift in Sources */,
@@ -998,6 +1023,7 @@
 			files = (
 				F42CC1B49E69F3E73EFAAA3C /* AppDelegate.swift in Sources */,
 				40FB9F2DCF0F367CEA6D8E12 /* Credentials.swift in Sources */,
+				D23B5BC12CBA1752292BADB0 /* MockImage.swift in Sources */,
 				F8A17ADE416B1BDA0913DFC8 /* Readme.swift in Sources */,
 				A8360DD54C28212707944F4A /* ReadmeViewController.swift in Sources */,
 			);
@@ -1009,6 +1035,7 @@
 			files = (
 				79F0CFE1D23AB1C09F5BA9A0 /* AppDelegate.swift in Sources */,
 				801A7B564FDBB3FA929BA3E0 /* Credentials.swift in Sources */,
+				EDD685719D7C6421E3333BA4 /* MockImage.swift in Sources */,
 				D85EB7E1A82E081898089884 /* Readme.swift in Sources */,
 				205B074E35873EF92413D18D /* ReadmeViewController.swift in Sources */,
 			);
@@ -1022,6 +1049,7 @@
 				9BE24EB7834014A841226C6F /* AuthenticationManager.swift in Sources */,
 				7BD7D03FB0E6E381E2CB291A /* CheckoutViewController.swift in Sources */,
 				D9302D865FB50ABD4486BC20 /* Credentials.swift in Sources */,
+				878B628352CB4EAC06C1BE1D /* MockImage.swift in Sources */,
 				0684053D51385645627A6EC2 /* Readme.swift in Sources */,
 				BF4E8A203E306C324C3D7EEA /* ReadmeViewController.swift in Sources */,
 			);
@@ -1068,6 +1096,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Sources/ContentCards-Custom-UI/Info.plist";
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1075,6 +1104,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.ContentCards-Custom-UI-iOS";
 				PRODUCT_NAME = "ContentCards-Custom-UI";
 				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = YES;
+				"SUPPORTS_MACCATALYST[sdk=appletvos*]" = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1085,6 +1116,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Sources/InAppMessages-Custom-UI/Info.plist";
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1092,6 +1124,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.InAppMessages-Custom-UI-iOS";
 				PRODUCT_NAME = "InAppMessages-Custom-UI";
 				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = YES;
+				"SUPPORTS_MACCATALYST[sdk=appletvos*]" = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -1100,6 +1134,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				INFOPLIST_FILE = Sources/PushNotificationsServiceExtension/Info.plist;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1107,6 +1142,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.braze.PushNotifications.PushNotificationsServiceExtension;
 				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = YES;
+				"SUPPORTS_MACCATALYST[sdk=appletvos*]" = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -1117,6 +1154,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = "Sources/InAppMessages-Custom-UI/Info.plist";
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1124,6 +1162,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.InAppMessages-Custom-UI-tvOS";
 				PRODUCT_NAME = "InAppMessages-Custom-UI";
 				SDKROOT = appletvos;
+				SUPPORTS_MACCATALYST = YES;
+				"SUPPORTS_MACCATALYST[sdk=appletvos*]" = NO;
 				TARGETED_DEVICE_FAMILY = 3;
 			};
 			name = Release;
@@ -1134,6 +1174,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = "Sources/InAppMessages-Custom-UI/Info.plist";
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1141,6 +1182,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.InAppMessages-Custom-UI-tvOS";
 				PRODUCT_NAME = "InAppMessages-Custom-UI";
 				SDKROOT = appletvos;
+				SUPPORTS_MACCATALYST = YES;
+				"SUPPORTS_MACCATALYST[sdk=appletvos*]" = NO;
 				TARGETED_DEVICE_FAMILY = 3;
 			};
 			name = Debug;
@@ -1150,7 +1193,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = Sources/Location/Location.entitlements;
 				INFOPLIST_FILE = Sources/Location/Info.plist;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1158,6 +1203,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.Location-tvOS";
 				PRODUCT_NAME = Location;
 				SDKROOT = appletvos;
+				SUPPORTS_MACCATALYST = YES;
+				"SUPPORTS_MACCATALYST[sdk=appletvos*]" = NO;
 				TARGETED_DEVICE_FAMILY = 3;
 			};
 			name = Debug;
@@ -1168,6 +1215,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Sources/Analytics/Info.plist;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1175,6 +1223,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.Analytics-iOS";
 				PRODUCT_NAME = Analytics;
 				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = YES;
+				"SUPPORTS_MACCATALYST[sdk=appletvos*]" = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1184,7 +1234,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = Sources/Location/Location.entitlements;
 				INFOPLIST_FILE = Sources/Location/Info.plist;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1192,6 +1244,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.Location-tvOS";
 				PRODUCT_NAME = Location;
 				SDKROOT = appletvos;
+				SUPPORTS_MACCATALYST = YES;
+				"SUPPORTS_MACCATALYST[sdk=appletvos*]" = NO;
 				TARGETED_DEVICE_FAMILY = 3;
 			};
 			name = Release;
@@ -1202,6 +1256,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = "Sources/ContentCards-Custom-UI/Info.plist";
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1209,6 +1264,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.ContentCards-Custom-UI-tvOS";
 				PRODUCT_NAME = "ContentCards-Custom-UI";
 				SDKROOT = appletvos;
+				SUPPORTS_MACCATALYST = YES;
+				"SUPPORTS_MACCATALYST[sdk=appletvos*]" = NO;
 				TARGETED_DEVICE_FAMILY = 3;
 			};
 			name = Release;
@@ -1217,8 +1274,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Sources/Location/Location.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Sources/Location/Info.plist;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1226,6 +1285,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.Location-iOS";
 				PRODUCT_NAME = Location;
 				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = YES;
+				"SUPPORTS_MACCATALYST[sdk=appletvos*]" = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1236,6 +1297,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Sources/InAppMessages-Custom-UI/Info.plist";
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1243,6 +1305,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.InAppMessages-Custom-UI-iOS";
 				PRODUCT_NAME = "InAppMessages-Custom-UI";
 				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = YES;
+				"SUPPORTS_MACCATALYST[sdk=appletvos*]" = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1253,6 +1317,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Sources/ContentCardUI/Info.plist;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1260,6 +1325,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.braze.ContentCardUI;
 				PRODUCT_NAME = ContentCardUI;
 				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = YES;
+				"SUPPORTS_MACCATALYST[sdk=appletvos*]" = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1270,6 +1337,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Sources/ContentCardUI-Customization/Info.plist";
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1277,6 +1345,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.ContentCardUI-Customization";
 				PRODUCT_NAME = "ContentCardUI-Customization";
 				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = YES;
+				"SUPPORTS_MACCATALYST[sdk=appletvos*]" = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -1350,6 +1420,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Sources/InAppMessageUI-Customization/Info.plist";
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1357,6 +1428,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.InAppMessageUI-Customization";
 				PRODUCT_NAME = "InAppMessageUI-Customization";
 				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = YES;
+				"SUPPORTS_MACCATALYST[sdk=appletvos*]" = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1367,6 +1440,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = Sources/Analytics/Info.plist;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1374,6 +1448,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.Analytics-tvOS";
 				PRODUCT_NAME = Analytics;
 				SDKROOT = appletvos;
+				SUPPORTS_MACCATALYST = YES;
+				"SUPPORTS_MACCATALYST[sdk=appletvos*]" = NO;
 				TARGETED_DEVICE_FAMILY = 3;
 			};
 			name = Release;
@@ -1384,6 +1460,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Sources/InAppMessageUI/Info.plist;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1391,6 +1468,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.braze.InAppMessageUI;
 				PRODUCT_NAME = InAppMessageUI;
 				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = YES;
+				"SUPPORTS_MACCATALYST[sdk=appletvos*]" = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1399,8 +1478,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Sources/Location/Location.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Sources/Location/Info.plist;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1408,6 +1489,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.Location-iOS";
 				PRODUCT_NAME = Location;
 				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = YES;
+				"SUPPORTS_MACCATALYST[sdk=appletvos*]" = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -1418,6 +1501,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = "Sources/ContentCards-Custom-UI/Info.plist";
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1425,6 +1509,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.ContentCards-Custom-UI-tvOS";
 				PRODUCT_NAME = "ContentCards-Custom-UI";
 				SDKROOT = appletvos;
+				SUPPORTS_MACCATALYST = YES;
+				"SUPPORTS_MACCATALYST[sdk=appletvos*]" = NO;
 				TARGETED_DEVICE_FAMILY = 3;
 			};
 			name = Debug;
@@ -1433,6 +1519,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				INFOPLIST_FILE = Sources/PushNotificationsServiceExtension/Info.plist;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1440,6 +1527,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.braze.PushNotifications.PushNotificationsServiceExtension;
 				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = YES;
+				"SUPPORTS_MACCATALYST[sdk=appletvos*]" = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1450,6 +1539,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Sources/ContentCardUI-Customization/Info.plist";
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1457,6 +1547,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.ContentCardUI-Customization";
 				PRODUCT_NAME = "ContentCardUI-Customization";
 				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = YES;
+				"SUPPORTS_MACCATALYST[sdk=appletvos*]" = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1467,6 +1559,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Sources/ContentCardUI/Info.plist;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1474,6 +1567,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.braze.ContentCardUI;
 				PRODUCT_NAME = ContentCardUI;
 				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = YES;
+				"SUPPORTS_MACCATALYST[sdk=appletvos*]" = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -1483,6 +1578,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = Sources/PushNotificationsContentExtension/PushNotificationsContentExtension.entitlements;
 				INFOPLIST_FILE = Sources/PushNotificationsContentExtension/Info.plist;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1490,6 +1586,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.braze.PushNotifications.PushNotificationsContentExtension;
 				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = YES;
+				"SUPPORTS_MACCATALYST[sdk=appletvos*]" = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1499,6 +1597,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = Sources/PushNotificationsContentExtension/PushNotificationsContentExtension.entitlements;
 				INFOPLIST_FILE = Sources/PushNotificationsContentExtension/Info.plist;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1506,6 +1605,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.braze.PushNotifications.PushNotificationsContentExtension;
 				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = YES;
+				"SUPPORTS_MACCATALYST[sdk=appletvos*]" = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -1517,6 +1618,7 @@
 				CODE_SIGN_ENTITLEMENTS = Sources/PushNotifications/PushNotifications.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Sources/PushNotifications/Info.plist;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1524,6 +1626,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.braze.PushNotifications;
 				PRODUCT_NAME = PushNotifications;
 				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = YES;
+				"SUPPORTS_MACCATALYST[sdk=appletvos*]" = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -1534,6 +1638,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Sources/Analytics/Info.plist;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1541,6 +1646,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.Analytics-iOS";
 				PRODUCT_NAME = Analytics;
 				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = YES;
+				"SUPPORTS_MACCATALYST[sdk=appletvos*]" = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -1551,6 +1658,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = Sources/Analytics/Info.plist;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1558,6 +1666,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.Analytics-tvOS";
 				PRODUCT_NAME = Analytics;
 				SDKROOT = appletvos;
+				SUPPORTS_MACCATALYST = YES;
+				"SUPPORTS_MACCATALYST[sdk=appletvos*]" = NO;
 				TARGETED_DEVICE_FAMILY = 3;
 			};
 			name = Debug;
@@ -1568,6 +1678,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Sources/InAppMessageUI/Info.plist;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1575,6 +1686,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.braze.InAppMessageUI;
 				PRODUCT_NAME = InAppMessageUI;
 				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = YES;
+				"SUPPORTS_MACCATALYST[sdk=appletvos*]" = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -1585,6 +1698,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Sources/InAppMessageUI-Customization/Info.plist";
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1592,6 +1706,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.InAppMessageUI-Customization";
 				PRODUCT_NAME = "InAppMessageUI-Customization";
 				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = YES;
+				"SUPPORTS_MACCATALYST[sdk=appletvos*]" = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -1658,6 +1774,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Sources/ContentCards-Custom-UI/Info.plist";
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1665,6 +1782,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.ContentCards-Custom-UI-iOS";
 				PRODUCT_NAME = "ContentCards-Custom-UI";
 				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = YES;
+				"SUPPORTS_MACCATALYST[sdk=appletvos*]" = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -1676,6 +1795,7 @@
 				CODE_SIGN_ENTITLEMENTS = Sources/PushNotifications/PushNotifications.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Sources/PushNotifications/Info.plist;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1683,6 +1803,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.braze.PushNotifications;
 				PRODUCT_NAME = PushNotifications;
 				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = YES;
+				"SUPPORTS_MACCATALYST[sdk=appletvos*]" = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;

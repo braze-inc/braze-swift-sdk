@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
 #import <WebKit/WebKit.h>
 #import "ABKInAppMessageViewController.h"
-#import "AppboyKit.h"
+@import BrazeKitCompat;
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"

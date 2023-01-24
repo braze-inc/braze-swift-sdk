@@ -24,10 +24,10 @@ static NSString * const ABKUIPodNFBundleName = @"AppboyUI.NewsFeed.bundle";
 + (NSBundle *)bundle:(Class)bundleClass channel:(ABKChannel)channel {
   NSBundle *bundle;
 
-  // SPM
 #if SWIFT_PACKAGE
   // SWIFTPM_MODULE_BUNDLE crashes whith the current setup.
-  // SwiftPM generate alternative names for the bundle, we handle them both here.
+  // SwiftPM generate alternative names for the bundle, we handle them both here for both source and
+  // binary configuration.
   bundle = [self bundleForName:@"braze_swift_sdk_BrazeUICompat.bundle" class:bundleClass];
   if (bundle != nil) {
     return bundle;
@@ -36,14 +36,21 @@ static NSString * const ABKUIPodNFBundleName = @"AppboyUI.NewsFeed.bundle";
   if (bundle != nil) {
     return bundle;
   }
-#endif
-
-#if COCOAPODS
-  bundle = [self bundleForName:@"BrazeUICompat.bundle" class: bundleClass];
+  bundle = [self bundleForName:@"braze_swift_sdk_BrazeUICompatResources.bundle" class:bundleClass];
+  if (bundle != nil) {
+    return bundle;
+  }
+  bundle = [self bundleForName:@"braze-swift-sdk_BrazeUICompatResources.bundle" class:bundleClass];
   if (bundle != nil) {
     return bundle;
   }
 #endif
+
+  // CocoaPods or prebuilt integration
+  bundle = [self bundleForName:@"BrazeUICompat.bundle" class:bundleClass];
+  if (bundle != nil) {
+    return bundle;
+  }
   
   return [NSBundle bundleForClass:bundleClass];
 }

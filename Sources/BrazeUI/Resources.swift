@@ -5,9 +5,11 @@ private class BundleFinder {}
 /// UI resources bundle.
 var resourcesBundle: Bundle? = {
   let bundleNames = [
-    // SwiftPM resources
+    // SwiftPM source target resources
     "braze-swift-sdk_BrazeUI",
-    // Cocoapods resources
+    // SwiftPM binary target resources
+    "braze-swift-sdk_BrazeUIResources",
+    // Cocoapods or prebuilt resources
     "BrazeUI",
   ]
 

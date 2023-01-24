@@ -107,7 +107,14 @@ extension BrazeContentCardUI {
       view.backgroundColor = attributes.backgroundColor
 
       // Pull to refresh
-      if attributes.pullToRefresh, refresh != nil {
+      let isCatalyst = {
+        #if targetEnvironment(macCatalyst)
+          return true
+        #else
+          return false
+        #endif
+      }()
+      if attributes.pullToRefresh, !isCatalyst, refresh != nil {
         refreshControl = UIRefreshControl()
         refreshControl?.layer.zPosition = -1
         refreshControl?.addTarget(self, action: #selector(refreshCards), for: .valueChanged)
