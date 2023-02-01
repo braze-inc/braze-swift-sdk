@@ -1,3 +1,12 @@
+## 5.9.1
+
+##### Fixed
+- Fixes an issue preventing local expired content cards from being removed.
+- Fixes a behavior that could lead to background tasks extending beyond the expected time limit with inconsistent network connectivity.
+
+##### Added
+- Adds `logImpression(using:)` and `logClick(buttonId:using:)` to news feed cards.
+
 ## 5.9.0
 
 ##### Breaking
@@ -62,17 +71,6 @@ To help migrate your app from the Appboy-iOS-SDK to our Swift SDK, this release 
   - Enabling this value will only affect new devices. Existing devices will use the device identifier that was previously registered.
 
 ## 5.6.4
-
-##### End of early access phase / Migration Guide / Compatibility Libraries
-
-This release marks the end of the early access phase for the Braze Swift SDK. `Appboy-iOS-SDK` is now deprecated and support will cease on <INSERT DATE HERE>.
-
-To help with your migration process, this release includes:
-- [Appboy-iOS-SDK: Migration guide]:
-  - Follow step-by-step instructions to migrate each feature to the new APIs.
-  - Includes instructions for minimal migration scenario via our compatibility libraries.
-- Compatibility libraries `BrazeKitCompat` and `BrazeUICompat`:
-  - Provides all the old APIs from `Appboy-iOS-SDK` to easily start migrating to the Swift SDK.
 
 ##### Fixed
 - Fixes an issue preventing the execution of `BrazeDelegate` methods when setting the delegate using Objective-C.

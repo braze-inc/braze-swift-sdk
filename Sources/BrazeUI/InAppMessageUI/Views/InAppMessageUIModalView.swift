@@ -24,10 +24,10 @@ extension BrazeInAppMessageUI {
     public struct Attributes {
 
       /// The minimum spacing around the content view.
-      public var margin = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+      public var margin: UIEdgeInsets = .init(top: 20, left: 20, bottom: 20, right: 20)
 
       /// The spacing around the content's view content.
-      public var padding = UIEdgeInsets(top: 40, left: 25, bottom: 30, right: 25)
+      public var padding: UIEdgeInsets = .init(top: 40, left: 25, bottom: 30, right: 25)
 
       /// The spacing between the header and message
       public var labelsSpacing = 10.0
@@ -36,10 +36,10 @@ extension BrazeInAppMessageUI {
       public var spacing = 20.0
 
       /// The font for the header.
-      public var headerFont = UIFont.preferredFont(textStyle: .title3, weight: .bold)
+      public var headerFont: UIFont = .preferredFont(textStyle: .title3, weight: .bold)
 
       /// The font for the message.
-      public var messageFont = UIFont.preferredFont(forTextStyle: .subheadline)
+      public var messageFont: UIFont = .preferredFont(forTextStyle: .subheadline)
 
       /// The content view corner radius.
       public var cornerRadius = 8.0
@@ -73,7 +73,7 @@ extension BrazeInAppMessageUI {
       public var dismissOnBackgroundTap = false
 
       /// The buttons attributes.
-      public var buttonsAttributes = ButtonView.Attributes.defaults
+      public var buttonsAttributes: BrazeInAppMessageUI.ButtonView.Attributes = .defaults
 
       /// Closure allowing further customization, executed when the view is about to be presented.
       public var onPresent: ((ModalView) -> Void)?
@@ -242,10 +242,12 @@ extension BrazeInAppMessageUI {
       return container
     }()
 
-    public var buttons: [ButtonView] {
+    public var buttons: [BrazeInAppMessageUI.ButtonView] {
       buttonsContainer?.stack.arrangedSubviews.compactMap {
-        ($0 as? ButtonView)
-          ?? $0.bfsSubviews.lazy.compactMap { $0 as? ButtonView }.first { _ in true }
+        ($0 as? BrazeInAppMessageUI.ButtonView)
+          ?? $0.bfsSubviews.lazy.compactMap { $0 as? BrazeInAppMessageUI.ButtonView }.first { _ in
+            true
+          }
       } ?? []
     }
 
