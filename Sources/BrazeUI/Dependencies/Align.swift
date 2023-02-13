@@ -47,6 +47,13 @@ extension LayoutAnchors where Base: LayoutItem {
   var leading: Anchor<AnchorType.Edge, AnchorAxis.Horizontal> { Anchor(base, .leading) }
   var trailing: Anchor<AnchorType.Edge, AnchorAxis.Horizontal> { Anchor(base, .trailing) }
 
+  var topMargin: Anchor<AnchorType.Edge, AnchorAxis.Vertical> { Anchor(base, .topMargin) }
+  var bottomMargin: Anchor<AnchorType.Edge, AnchorAxis.Vertical> { Anchor(base, .bottomMargin) }
+  var leftMargin: Anchor<AnchorType.Edge, AnchorAxis.Horizontal> { Anchor(base, .leftMargin) }
+  var rightMargin: Anchor<AnchorType.Edge, AnchorAxis.Horizontal> { Anchor(base, .rightMargin) }
+  var leadingMargin: Anchor<AnchorType.Edge, AnchorAxis.Horizontal> { Anchor(base, .leadingMargin) }
+  var trailingMargin: Anchor<AnchorType.Edge, AnchorAxis.Horizontal> { Anchor(base, .trailingMargin) }
+
   var centerX: Anchor<AnchorType.Center, AnchorAxis.Horizontal> { Anchor(base, .centerX) }
   var centerY: Anchor<AnchorType.Center, AnchorAxis.Vertical> { Anchor(base, .centerY) }
 

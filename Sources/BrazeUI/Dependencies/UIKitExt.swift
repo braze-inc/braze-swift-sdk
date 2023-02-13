@@ -87,8 +87,11 @@ extension UIResponder {
 
 extension String {
 
-  func attributed(_ setup: (NSMutableParagraphStyle) -> Void) -> NSAttributedString {
-    let attributedText = NSMutableAttributedString(string: self)
+  func attributed(
+    with attributes: [NSAttributedString.Key: Any]? = nil,
+    _ setup: (NSMutableParagraphStyle) -> Void
+  ) -> NSAttributedString {
+    let attributedText = NSMutableAttributedString(string: self, attributes: attributes)
     let style = NSMutableParagraphStyle()
     setup(style)
     attributedText.addAttribute(

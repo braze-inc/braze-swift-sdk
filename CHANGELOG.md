@@ -1,3 +1,13 @@
+## 5.10.0
+
+##### Fixed
+- Fixes an issue where test content cards were removed before their expiration date.
+- Fixes an issue in `BrazeUICompat` where the status bar appearance wasn't restored to its original state after dismissing a full in-app message.
+- Fixes an issue when decoding notification payloads where some valid boolean values weren't correctly parsed.
+
+##### Changed
+- In-app modal and full-screen messages are now rendered with `UITextView`, which better supports large amounts of text and extended UTF code points.
+
 ## 5.9.1
 
 ##### Fixed

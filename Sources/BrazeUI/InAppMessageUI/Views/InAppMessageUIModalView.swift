@@ -1,6 +1,17 @@
 import BrazeKit
 import UIKit
 
+struct TextStyle: Equatable {
+  var color: UIColor
+  var font: UIFont
+}
+
+struct TextViewStyle: Equatable {
+  var header: TextStyle
+  var message: TextStyle
+  var headerMessageSpacing: Double
+}
+
 extension BrazeInAppMessageUI {
 
   /// The view for modal in-app messages.
@@ -114,10 +125,10 @@ extension BrazeInAppMessageUI {
         bottom: padding.bottom,
         right: 0
       )
-      textStack.layoutMargins = .init(
-        top: 0,
+      textContainer.layoutMargins = .init(
+        top: TextViewLayoutConstants.textContainerLayoutMargins.top,
         left: padding.left,
-        bottom: 0,
+        bottom: TextViewLayoutConstants.textContainerLayoutMargins.bottom,
         right: padding.right
       )
       buttonsContainer?.stack.layoutMargins = .init(
@@ -128,12 +139,12 @@ extension BrazeInAppMessageUI {
       )
 
       // Spacings
-      textStack.spacing = attributes.labelsSpacing
+      textViewStyle.headerMessageSpacing = attributes.labelsSpacing
       contentView.stack.spacing = attributes.spacing
 
       // Fonts
-      headerLabel.font = attributes.headerFont
-      messageLabel.font = attributes.messageFont
+      textViewStyle.header.font = attributes.headerFont
+      textViewStyle.message.font = attributes.messageFont
 
       // Corner radius
       shadowView.layer.cornerRadius = attributes.cornerRadius
@@ -187,42 +198,30 @@ extension BrazeInAppMessageUI {
       }
     }()
 
-    public lazy var headerLabel: UILabel = {
-      let label = UILabel()
-      label.numberOfLines = 0
-      label.adjustsFontForContentSizeCategory = true
-      label.attributedText = message.header.attributed {
-        $0.lineSpacing = 2
-        $0.alignment = message.headerTextAlignment.nsTextAlignment(forTraits: traitCollection)
-      }
-      label.setContentCompressionResistancePriority(.required, for: .vertical)
-      label.setContentHuggingPriority(.required, for: .vertical)
-      return label
-    }()
+    public lazy var textView: UITextView = {
+      let textView = UITextView()
+      // Config defaults:
+      textView.backgroundColor = .clear
+      textView.isEditable = false
+      textView.isSelectable = false
+      textView.adjustsFontForContentSizeCategory = true
 
-    public lazy var messageLabel: UILabel = {
-      let label = UILabel()
-      label.numberOfLines = 0
-      label.adjustsFontForContentSizeCategory = true
-      label.attributedText = message.message.attributed {
-        $0.lineSpacing = 4
-        $0.alignment = message.messageTextAlignment.nsTextAlignment(forTraits: traitCollection)
-      }
-      label.setContentCompressionResistancePriority(.required, for: .vertical)
-      label.setContentHuggingPriority(.required, for: .vertical)
-      return label
-    }()
+      // Don't allow scrolling; the textview's parent (a scrollview) will control that.
+      // This will force the textView to render its full content height,
+      // and the textViewContainer can then take that as its content and scroll it for us.
+      // (This hot tip brought to you by https://archive.is/fMUR7 and many other results.)
+      textView.isScrollEnabled = false
 
-    public lazy var textStack: UIStackView = {
-      let stack = UIStackView(arrangedSubviews: [headerLabel, messageLabel])
-      stack.axis = .vertical
-      stack.isLayoutMarginsRelativeArrangement = true
-      return stack
+      // Layout defaults:
+      textView.setContentCompressionResistancePriority(.required, for: .vertical)
+      textView.setContentHuggingPriority(.required, for: .vertical)
+
+      return textView
     }()
 
     public lazy var textContainer: UIScrollView = {
       let container = UIScrollView()
-      container.addSubview(textStack)
+      container.addSubview(textView)
       return container
     }()
 
@@ -295,6 +294,18 @@ extension BrazeInAppMessageUI {
       self.gifViewProvider = gifViewProvider
       self.presented = presented
 
+      self.textViewStyle = TextViewStyle(
+        header: .init(
+          color: .clear,
+          font: attributes.headerFont
+        ),
+        message: .init(
+          color: .clear,
+          font: attributes.messageFont
+        ),
+        headerMessageSpacing: attributes.labelsSpacing
+      )
+
       super.init(frame: .zero)
 
       addSubview(shadowView)
@@ -320,8 +331,8 @@ extension BrazeInAppMessageUI {
     public var theme: Braze.InAppMessage.Theme { message.theme(for: traitCollection) }
 
     open func applyTheme() {
-      headerLabel.textColor = theme.headerTextColor.uiColor
-      messageLabel.textColor = theme.textColor.uiColor
+      textViewStyle.header.color = theme.headerTextColor.uiColor
+      textViewStyle.message.color = theme.textColor.uiColor
       closeButton.setTitleColor(theme.closeButtonColor.uiColor, for: .normal)
       contentView.backgroundColor = theme.backgroundColor.uiColor
       backgroundColor = theme.frameColor.uiColor
@@ -372,14 +383,18 @@ extension BrazeInAppMessageUI {
           break
         }
 
-        // Text
-        textStack.anchors.edges.pin()
-        textStack.anchors.width.equal(textContainer.anchors.width)
-        // - not required priority to allow the text container scrollview to shrink
-        textStack.anchors.height.lessThanOrEqual(textContainer.anchors.height).priority =
+        // Anchor the text view's layout using margins from its parent container:
+        textView.anchors.leading.equal(textContainer.anchors.leadingMargin)
+        textView.anchors.trailing.equal(textContainer.anchors.trailingMargin)
+        textView.anchors.top.equal(textContainer.anchors.topMargin)
+        textView.anchors.bottom.equal(textContainer.anchors.bottomMargin)
+        textView.anchors.width.equal(textContainer.layoutMarginsGuide.anchors.width)
+        // Add a not-required priority to allow the text container scrollview to shrink
+        textView.anchors.height.lessThanOrEqual(textContainer.layoutMarginsGuide.anchors.height)
+          .priority =
           .defaultHigh
-        let textStackHeightConstraint = textStack.anchors.height.equal(textContainer.anchors.height)
-        textStackHeightConstraint.priority = .defaultHigh - 1
+        let textViewHeightConstraint = textView.anchors.height.equal(textContainer.anchors.height)
+        textViewHeightConstraint.priority = .defaultHigh - 1
 
         // Close button
         closeButton.anchors.height.equal(closeButton.anchors.width)
@@ -492,8 +507,68 @@ extension BrazeInAppMessageUI {
       }
       dismiss()
     }
+
+    // MARK: - Text view style
+
+    private var textViewStyle: TextViewStyle {
+      didSet {
+        if oldValue != textViewStyle {
+          self.updateTextViewContent()
+        }
+      }
+    }
+
+    private func updateTextViewContent() {
+      let textViewText = NSMutableAttributedString()
+
+      textViewText.append(
+        message.header.attributed(
+          with: [
+            NSAttributedString.Key.font: textViewStyle.header.font,
+            NSAttributedString.Key.foregroundColor: textViewStyle.header.color,
+          ],
+          {
+            $0.lineSpacing = 2 * TextViewLayoutConstants.headerLineSpacingScaleFactor
+            $0.alignment = message.headerTextAlignment.nsTextAlignment(forTraits: traitCollection)
+            $0.paragraphSpacing = max(
+              0.0,
+              textViewStyle.headerMessageSpacing
+                - TextViewLayoutConstants.headerMessageSpacingOffset)
+          })
+      )
+      // Users don't add newlines to the end of their header text
+      // Insert a newline between header and message, but not with the possible extra styling of the header (e.g. font size, etc.)
+      // The paragraph spacing set above will occur between the header text and this linebreak.
+      textViewText.append(NSAttributedString(string: "\n"))
+
+      textViewText.append(
+        message.message.attributed(
+          with: [
+            NSAttributedString.Key.font: textViewStyle.message.font,
+            NSAttributedString.Key.foregroundColor: textViewStyle.message.color,
+          ],
+          {
+            $0.lineSpacing = 4 * TextViewLayoutConstants.messageLineSpacingScaleFactor
+            $0.alignment = message.messageTextAlignment.nsTextAlignment(forTraits: traitCollection)
+          })
+      )
+
+      textView.attributedText = textViewText
+    }
   }
 
+  private enum TextViewLayoutConstants {
+    // Manually-tuned values to get us close to our previous StackView+Label appearance.
+
+    // Soak up some vertical space that UITextView leaves above and below its text:
+    static let textContainerLayoutMargins = UIEdgeInsets(top: -8, left: 0, bottom: -8, right: 0)
+    // Scale factors for label → textview line spacing:
+    static let headerLineSpacingScaleFactor = 0.78
+    static let messageLineSpacingScaleFactor = 0.47
+    // Subtraction offset between header and message:
+    // (textview/TextKit renders a tiny bit of extra ascender+descender space that we want to eat up)
+    static let headerMessageSpacingOffset: Double = 1.0
+  }
 }
 
 // MARK: - Previews
