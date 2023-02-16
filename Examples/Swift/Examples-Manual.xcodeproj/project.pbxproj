@@ -209,7 +209,7 @@
 		239CF1158BD0D1AB82866793 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		274AE07AFBA688EA12B10D6E /* Location.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Location.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FFD57A976BE8350B2E0529C /* SDWebImageGIFViewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDWebImageGIFViewProvider.swift; sourceTree = "<group>"; };
-		30D72A9C07BEDB9E09FAE84D /* BrazeNotificationService.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = BrazeNotificationService.xcframework; path = "braze-swift-sdk-prebuilt/BrazeNotificationService.xcframework"; sourceTree = "<group>"; };
+		30D72A9C07BEDB9E09FAE84D /* BrazeNotificationService.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = BrazeNotificationService.xcframework; path = "braze-swift-sdk-prebuilt/static/BrazeNotificationService.xcframework"; sourceTree = "<group>"; };
 		32DFBEB40F1E345DACF93396 /* SDWebImageGIFViewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDWebImageGIFViewProvider.swift; sourceTree = "<group>"; };
 		334A021F30FF4114F75E59A1 /* PushNotificationsContentExtension.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = PushNotificationsContentExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		35793FE265E4522F854F889E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -217,24 +217,24 @@
 		3AFA91B6028D67A3FDF7B083 /* InAppMessageUI-Customization.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "InAppMessageUI-Customization.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		533195F22A1588713AF533FD /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		55E49D89F598192D2C7522BE /* Readme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Readme.swift; sourceTree = "<group>"; };
-		57FB3263FD36197097B5BE6D /* BrazePushStory.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = BrazePushStory.xcframework; path = "braze-swift-sdk-prebuilt/BrazePushStory.xcframework"; sourceTree = "<group>"; };
+		57FB3263FD36197097B5BE6D /* BrazePushStory.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = BrazePushStory.xcframework; path = "braze-swift-sdk-prebuilt/static/BrazePushStory.xcframework"; sourceTree = "<group>"; };
 		590B9E6A3257E78D0EAD6A81 /* Readme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Readme.swift; sourceTree = "<group>"; };
 		59B7972BA21D047FB9DD5434 /* CustomClassicImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomClassicImageCell.swift; sourceTree = "<group>"; };
-		5CBF91DFBE0824E25FEE7BDC /* BrazeLocation.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = BrazeLocation.xcframework; path = "braze-swift-sdk-prebuilt/BrazeLocation.xcframework"; sourceTree = "<group>"; };
+		5CBF91DFBE0824E25FEE7BDC /* BrazeLocation.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = BrazeLocation.xcframework; path = "braze-swift-sdk-prebuilt/static/BrazeLocation.xcframework"; sourceTree = "<group>"; };
 		627406F5A099BE6947DE116F /* CheckoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutViewController.swift; sourceTree = "<group>"; };
 		638F5E553254E25AD567160B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6AF0BA96142C82245D7AE052 /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
 		7A078FB1132FB5E11A432E19 /* Readme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Readme.swift; sourceTree = "<group>"; };
 		7DEA0C6639997814399BC75B /* ContentCardUI-Customization.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "ContentCardUI-Customization.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F0828EF0524B6419E6B4E54 /* InAppMessages-Custom-UI.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "InAppMessages-Custom-UI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		85365B9C180AB9BA57FBD249 /* BrazeUI.bundle */ = {isa = PBXFileReference; lastKnownFileType = wrapper.cfbundle; name = BrazeUI.bundle; path = "braze-swift-sdk-prebuilt/BrazeUI.bundle"; sourceTree = "<group>"; };
+		85365B9C180AB9BA57FBD249 /* BrazeUI.bundle */ = {isa = PBXFileReference; lastKnownFileType = wrapper.cfbundle; name = BrazeUI.bundle; path = "braze-swift-sdk-prebuilt/bundle/BrazeUI.bundle"; sourceTree = "<group>"; };
 		89EA34CA16304FF0F987694F /* Readme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Readme.swift; sourceTree = "<group>"; };
 		8FDDEDFBD839855424A46CD3 /* ContentCardUI.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = ContentCardUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94272233486EA1A8ABB554F2 /* InAppMessageUI.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = InAppMessageUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95146249FC6DFA62963BFC01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95AA6E44E4B64E89D3860621 /* Analytics.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Analytics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95ACBEAE19ACF0BAFECD47EB /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
-		963312B05750D1D4DA77128F /* BrazeKit.bundle */ = {isa = PBXFileReference; lastKnownFileType = wrapper.cfbundle; name = BrazeKit.bundle; path = "braze-swift-sdk-prebuilt/BrazeKit.bundle"; sourceTree = "<group>"; };
+		963312B05750D1D4DA77128F /* BrazeKit.bundle */ = {isa = PBXFileReference; lastKnownFileType = wrapper.cfbundle; name = BrazeKit.bundle; path = "braze-swift-sdk-prebuilt/bundle/BrazeKit.bundle"; sourceTree = "<group>"; };
 		99F5F7DADAE59DAF19615685 /* Readme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Readme.swift; sourceTree = "<group>"; };
 		9D34CFD4F0F28B78BD6C416B /* Readme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Readme.swift; sourceTree = "<group>"; };
 		A0E3CB930079E9D9B90575A1 /* ContentCards-Custom-UI.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "ContentCards-Custom-UI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -251,15 +251,15 @@
 		C248D54740025F7A153AA681 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		C4F7E5A96D302B8CA3D7FCE5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CDA121B4870060B2DD43FB22 /* SDWebImageGIFViewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDWebImageGIFViewProvider.swift; sourceTree = "<group>"; };
-		CE6FAA10D6D23B01068CC18C /* SDWebImage.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SDWebImage.xcframework; path = "braze-swift-sdk-prebuilt/SDWebImage.xcframework"; sourceTree = "<group>"; };
-		CF2ED58955148E8CDC8E8666 /* BrazeUI.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = BrazeUI.xcframework; path = "braze-swift-sdk-prebuilt/BrazeUI.xcframework"; sourceTree = "<group>"; };
+		CE6FAA10D6D23B01068CC18C /* SDWebImage.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SDWebImage.xcframework; path = "braze-swift-sdk-prebuilt/static/SDWebImage.xcframework"; sourceTree = "<group>"; };
+		CF2ED58955148E8CDC8E8666 /* BrazeUI.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = BrazeUI.xcframework; path = "braze-swift-sdk-prebuilt/static/BrazeUI.xcframework"; sourceTree = "<group>"; };
 		D31F78B4DFC48686CF35F272 /* CustomInAppMessagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInAppMessagePresenter.swift; sourceTree = "<group>"; };
 		E119A40D1B488091F2D29EE8 /* CardsInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsInfoViewController.swift; sourceTree = "<group>"; };
 		E5039B504EF5CFE2AD99088B /* ConfirmButtonSlideupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmButtonSlideupView.swift; sourceTree = "<group>"; };
 		E68B1192B8A63A256A1C970D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EA882DE20154839D73224130 /* ContentCards-Custom-UI.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "ContentCards-Custom-UI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC51D2209600CED7B9043D01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EE1AFA11EB03A5B1BEA614A2 /* BrazeKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = BrazeKit.xcframework; path = "braze-swift-sdk-prebuilt/BrazeKit.xcframework"; sourceTree = "<group>"; };
+		EE1AFA11EB03A5B1BEA614A2 /* BrazeKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = BrazeKit.xcframework; path = "braze-swift-sdk-prebuilt/static/BrazeKit.xcframework"; sourceTree = "<group>"; };
 		EFBFE564453A1C1C9CDC8E16 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F65A2EE40B1942EAB446D46C /* Location.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Location.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8336D4BB1A8E983EF334361 /* Readme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Readme.swift; sourceTree = "<group>"; };
@@ -1309,7 +1309,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"braze-swift-sdk-prebuilt\"",
+					"\"braze-swift-sdk-prebuilt/static\"",
 				);
 				INFOPLIST_FILE = "Sources/ContentCardUI-Customization/Info.plist";
 				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
@@ -1331,7 +1331,7 @@
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"braze-swift-sdk-prebuilt\"",
+					"\"braze-swift-sdk-prebuilt/static\"",
 				);
 				INFOPLIST_FILE = Sources/PushNotificationsServiceExtension/Info.plist;
 				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
@@ -1355,7 +1355,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"braze-swift-sdk-prebuilt\"",
+					"\"braze-swift-sdk-prebuilt/static\"",
 				);
 				INFOPLIST_FILE = "Sources/InAppMessages-Custom-UI/Info.plist";
 				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
@@ -1378,7 +1378,7 @@
 				CODE_SIGN_ENTITLEMENTS = Sources/PushNotificationsContentExtension/PushNotificationsContentExtension.entitlements;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"braze-swift-sdk-prebuilt\"",
+					"\"braze-swift-sdk-prebuilt/static\"",
 				);
 				INFOPLIST_FILE = Sources/PushNotificationsContentExtension/Info.plist;
 				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
@@ -1403,7 +1403,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"braze-swift-sdk-prebuilt\"",
+					"\"braze-swift-sdk-prebuilt/static\"",
 				);
 				INFOPLIST_FILE = Sources/Location/Info.plist;
 				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
@@ -1427,7 +1427,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"braze-swift-sdk-prebuilt\"",
+					"\"braze-swift-sdk-prebuilt/static\"",
 				);
 				INFOPLIST_FILE = Sources/InAppMessageUI/Info.plist;
 				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
@@ -1449,7 +1449,7 @@
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"braze-swift-sdk-prebuilt\"",
+					"\"braze-swift-sdk-prebuilt/static\"",
 				);
 				INFOPLIST_FILE = Sources/PushNotificationsServiceExtension/Info.plist;
 				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
@@ -1474,7 +1474,7 @@
 				CODE_SIGN_ENTITLEMENTS = Sources/Location/Location.entitlements;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"braze-swift-sdk-prebuilt\"",
+					"\"braze-swift-sdk-prebuilt/static\"",
 				);
 				INFOPLIST_FILE = Sources/Location/Info.plist;
 				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
@@ -1498,7 +1498,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"braze-swift-sdk-prebuilt\"",
+					"\"braze-swift-sdk-prebuilt/static\"",
 				);
 				INFOPLIST_FILE = Sources/InAppMessageUI/Info.plist;
 				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
@@ -1522,7 +1522,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"braze-swift-sdk-prebuilt\"",
+					"\"braze-swift-sdk-prebuilt/static\"",
 				);
 				INFOPLIST_FILE = "Sources/InAppMessageUI-Customization/Info.plist";
 				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
@@ -1546,7 +1546,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"braze-swift-sdk-prebuilt\"",
+					"\"braze-swift-sdk-prebuilt/static\"",
 				);
 				INFOPLIST_FILE = Sources/Analytics/Info.plist;
 				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
@@ -1571,7 +1571,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"braze-swift-sdk-prebuilt\"",
+					"\"braze-swift-sdk-prebuilt/static\"",
 				);
 				INFOPLIST_FILE = Sources/PushNotifications/Info.plist;
 				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
@@ -1595,7 +1595,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"braze-swift-sdk-prebuilt\"",
+					"\"braze-swift-sdk-prebuilt/static\"",
 				);
 				INFOPLIST_FILE = Sources/Analytics/Info.plist;
 				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
@@ -1619,7 +1619,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"braze-swift-sdk-prebuilt\"",
+					"\"braze-swift-sdk-prebuilt/static\"",
 				);
 				INFOPLIST_FILE = "Sources/ContentCardUI-Customization/Info.plist";
 				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
@@ -1642,7 +1642,7 @@
 				CODE_SIGN_ENTITLEMENTS = Sources/PushNotificationsContentExtension/PushNotificationsContentExtension.entitlements;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"braze-swift-sdk-prebuilt\"",
+					"\"braze-swift-sdk-prebuilt/static\"",
 				);
 				INFOPLIST_FILE = Sources/PushNotificationsContentExtension/Info.plist;
 				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
@@ -1666,7 +1666,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"braze-swift-sdk-prebuilt\"",
+					"\"braze-swift-sdk-prebuilt/static\"",
 				);
 				INFOPLIST_FILE = "Sources/ContentCards-Custom-UI/Info.plist";
 				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
@@ -1690,7 +1690,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"braze-swift-sdk-prebuilt\"",
+					"\"braze-swift-sdk-prebuilt/static\"",
 				);
 				INFOPLIST_FILE = "Sources/ContentCards-Custom-UI/Info.plist";
 				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
@@ -1714,7 +1714,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"braze-swift-sdk-prebuilt\"",
+					"\"braze-swift-sdk-prebuilt/static\"",
 				);
 				INFOPLIST_FILE = "Sources/ContentCards-Custom-UI/Info.plist";
 				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
@@ -1739,7 +1739,7 @@
 				CODE_SIGN_ENTITLEMENTS = Sources/Location/Location.entitlements;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"braze-swift-sdk-prebuilt\"",
+					"\"braze-swift-sdk-prebuilt/static\"",
 				);
 				INFOPLIST_FILE = Sources/Location/Info.plist;
 				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
@@ -1826,7 +1826,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"braze-swift-sdk-prebuilt\"",
+					"\"braze-swift-sdk-prebuilt/static\"",
 				);
 				INFOPLIST_FILE = "Sources/InAppMessages-Custom-UI/Info.plist";
 				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
@@ -1906,7 +1906,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"braze-swift-sdk-prebuilt\"",
+					"\"braze-swift-sdk-prebuilt/static\"",
 				);
 				INFOPLIST_FILE = "Sources/InAppMessages-Custom-UI/Info.plist";
 				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
@@ -1930,7 +1930,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"braze-swift-sdk-prebuilt\"",
+					"\"braze-swift-sdk-prebuilt/static\"",
 				);
 				INFOPLIST_FILE = Sources/ContentCardUI/Info.plist;
 				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
@@ -1954,7 +1954,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"braze-swift-sdk-prebuilt\"",
+					"\"braze-swift-sdk-prebuilt/static\"",
 				);
 				INFOPLIST_FILE = "Sources/InAppMessages-Custom-UI/Info.plist";
 				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
@@ -1978,7 +1978,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"braze-swift-sdk-prebuilt\"",
+					"\"braze-swift-sdk-prebuilt/static\"",
 				);
 				INFOPLIST_FILE = Sources/ContentCardUI/Info.plist;
 				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
@@ -2002,7 +2002,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"braze-swift-sdk-prebuilt\"",
+					"\"braze-swift-sdk-prebuilt/static\"",
 				);
 				INFOPLIST_FILE = "Sources/ContentCards-Custom-UI/Info.plist";
 				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
@@ -2026,7 +2026,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"braze-swift-sdk-prebuilt\"",
+					"\"braze-swift-sdk-prebuilt/static\"",
 				);
 				INFOPLIST_FILE = Sources/Analytics/Info.plist;
 				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
@@ -2051,7 +2051,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"braze-swift-sdk-prebuilt\"",
+					"\"braze-swift-sdk-prebuilt/static\"",
 				);
 				INFOPLIST_FILE = Sources/PushNotifications/Info.plist;
 				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
@@ -2075,7 +2075,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"braze-swift-sdk-prebuilt\"",
+					"\"braze-swift-sdk-prebuilt/static\"",
 				);
 				INFOPLIST_FILE = Sources/Analytics/Info.plist;
 				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
@@ -2100,7 +2100,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"braze-swift-sdk-prebuilt\"",
+					"\"braze-swift-sdk-prebuilt/static\"",
 				);
 				INFOPLIST_FILE = Sources/Location/Info.plist;
 				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
@@ -2124,7 +2124,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"braze-swift-sdk-prebuilt\"",
+					"\"braze-swift-sdk-prebuilt/static\"",
 				);
 				INFOPLIST_FILE = "Sources/InAppMessageUI-Customization/Info.plist";
 				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;

@@ -1,3 +1,8 @@
+## 5.10.1
+
+##### Changed
+- Dynamic versions of the prebuilt xcframeworks are now available in the `braze-swift-sdk-prebuilt.zip` release artifact.
+
 ## 5.10.0
 
 ##### Fixed
