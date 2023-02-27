@@ -1,3 +1,15 @@
+## 5.11.0
+
+##### Added
+- Adds support for [Live Activities](https://developer.apple.com/documentation/activitykit/displaying-live-data-with-live-activities) via the `liveActivities` module on the Braze instance.
+  - This feature provides the following new methods for tracking and managing Live Activities with the Braze push server:
+    - `launchActivity(pushTokenTag:activity:)`
+    - `resumeActivities(ofType:)`
+  - This feature requires iOS 16.1 and up.
+  - To learn how to integrate this feature, refer to the [setup tutorial](https://braze-inc.github.io/braze-swift-sdk/tutorials/braze/b4-live-activities/).
+- Adds logic to re-synchronize Content Cards on SDK version changes.
+- Adds provisional support for Xcode 14.3 Beta via the [`braze-inc/braze-swift-sdk-xcode-14-3-preview`](https://github.com/braze-inc/braze-swift-sdk-xcode-14-3-preview) repository.
+
 ## 5.10.1
 
 ##### Changed
