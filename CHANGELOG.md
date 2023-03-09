@@ -1,3 +1,19 @@
+## 5.11.1
+
+##### Fixed
+- Fixes an issue preventing the correct calculation of the delay when retrying failed requests. This led to a more aggressive retry schedule than intended.
+- Improves the performance of Live Activity tracking by de-duping push token tag requests.
+- Fixes an issue in `logClick(using:)` where it would incorrectly open the `url` field in addition to logging a click for metrics. It now only logs a click for metrics.
+  - This applies to the associated APIs for content cards, in-app messages, and news feed cards.
+  - It is still recommended to use the associated `Context` object to log interactions instead of these APIs.
+
+##### Added
+- Adds [`BrazeKit.overrideResourcesBundle`] and [`BrazeUI.overrideResourcesBundle`] to allow for custom resource bundles to be used by the SDK.
+  - This feature is useful when your setup prevents you from using the default resource bundle (e.g. Tuist).
+
+[`BrazeKit.overrideResourcesBundle`]: https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/overrideresourcebundle
+[`BrazeUI.overrideResourcesBundle`]: https://braze-inc.github.io/braze-swift-sdk/documentation/brazeui/overrideresourcebundle/
+
 ## 5.11.0
 
 ##### Added

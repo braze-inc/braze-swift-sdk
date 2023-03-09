@@ -1,9 +1,22 @@
 import Foundation
 
+/// The override bundle BrazeUI uses to load resources (default: `nil`).
+///
+/// Set this property to the bundle containing BrazeUI resources when your project cannot
+/// automatically include the resources (e.g. Tuist setup)
+///
+/// - Important: This property needs to be set before the SDK initialization.
+public var overrideResourceBundle: Bundle?
+
 private class BundleFinder {}
 
 /// UI resources bundle.
 var resourcesBundle: Bundle? = {
+  // Use overriden resource bundle
+  if let overrideResourceBundle = overrideResourceBundle {
+    return overrideResourceBundle
+  }
+
   let bundleNames = [
     // SwiftPM source target resources
     "braze-swift-sdk_BrazeUI",
