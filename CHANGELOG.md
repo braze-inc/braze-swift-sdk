@@ -1,3 +1,8 @@
+## 5.11.2
+
+##### Fixed
+- Fixes a crash occurring when the SDK is configured with a flush interval of `0` and network connectivity is poor.
+
 ## 5.11.1
 
 ##### Fixed
