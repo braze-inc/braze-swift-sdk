@@ -1,3 +1,10 @@
+## 5.12.0
+
+> Starting with this release, this SDK will use [Semantic Versioning](https://semver.org/).
+
+##### Added
+- Adds `json()` and `decoding(json:)` public methods to the Feature Flag model object for JSON encoding/decoding.
+
 ## 5.11.2
 
 ##### Fixed
@@ -13,11 +20,11 @@
   - It is still recommended to use the associated `Context` object to log interactions instead of these APIs.
 
 ##### Added
-- Adds [`BrazeKit.overrideResourcesBundle`] and [`BrazeUI.overrideResourcesBundle`] to allow for custom resource bundles to be used by the SDK.
+- Adds [`BrazeKit.overrideResourceBundle`] and [`BrazeUI.overrideResourceBundle`] to allow for custom resource bundles to be used by the SDK.
   - This feature is useful when your setup prevents you from using the default resource bundle (e.g. Tuist).
 
-[`BrazeKit.overrideResourcesBundle`]: https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/overrideresourcebundle
-[`BrazeUI.overrideResourcesBundle`]: https://braze-inc.github.io/braze-swift-sdk/documentation/brazeui/overrideresourcebundle/
+[`BrazeKit.overrideResourceBundle`]: https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/overrideresourcebundle
+[`BrazeUI.overrideResourceBundle`]: https://braze-inc.github.io/braze-swift-sdk/documentation/brazeui/overrideresourcebundle/
 
 ## 5.11.0
 

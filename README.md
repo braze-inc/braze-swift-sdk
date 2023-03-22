@@ -5,7 +5,7 @@
 
 <p align="center">
   <a href="https://github.com/braze-inc/braze-swift-sdk/releases">
-    <img src="https://badgen.net/badge/version/5.11.2/blue" alt="Version: 5.11.2">
+    <img src="https://badgen.net/badge/version/5.12.0/blue" alt="Version: 5.12.0">
   </a>
   <a href="#">
     <img src="https://badgen.net/badge/platforms/iOS%20%7C%20tvOS%20%7C%20Mac%20Catalyst/orange"
@@ -35,6 +35,7 @@ The XCFrameworks distributed by this repository are not supported by Xcode 14.3 
   - Mac Catalyst 13.0+
   - tvOS 11.0+
 - Xcode 14.1 (14B47b) or newer
+- This repository follows [Semantic Versioning](https://semver.org/)
 
 ## Package Managers
 - Swift Package Manager
