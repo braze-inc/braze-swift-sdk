@@ -27,6 +27,11 @@ extension BrazeInAppMessageUI {
       /// The animation used to present the view.
       public var animation: Animation = .auto
 
+      /// Specifies whether the web view should automatically track body clicks.
+      ///
+      /// - Important: Body clicks are always tracked for legacy html in-app messages (zip based).
+      public var automaticBodyClicks: Bool = false
+
       /// Closure allowing customization of the configuration used by the web view.
       public var configure: ((WKWebViewConfiguration) -> Void)?
 
@@ -323,7 +328,10 @@ extension BrazeInAppMessageUI.HtmlView: WKNavigationDelegate {
       return
     }
 
-    let (clickAction, buttonId) = queryHandler.process(url: url)
+    let (clickAction, buttonId) = queryHandler.process(
+      url: url,
+      logBodyClick: message.legacy || attributes.automaticBodyClicks
+    )
     process(clickAction: clickAction, buttonId: buttonId)
     dismiss()
   }

@@ -1,3 +1,16 @@
+## 5.13.0
+
+##### Fixed
+- Fixes an issue where the SDK would automatically track body clicks on non-legacy HTML in-app messages.
+
+##### Added
+- Adds the synchronous `deviceId` property on the Braze instance.
+  - `deviceId(queue:completion:)` is now deprecated.
+  - `deviceId() async` is now deprecated.
+- Adds the `automaticBodyClicks` property to the HTML in-app message view attributes. This property can be used to enable automatic body clicks tracking on non-legacy HTML in-app messages.
+  - This property is `false` by default.
+  - This property is ignored for legacy HTML in-app messages.
+
 ## 5.12.0
 
 > Starting with this release, this SDK will use [Semantic Versioning](https://semver.org/).
