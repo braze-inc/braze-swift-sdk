@@ -19,12 +19,6 @@
   </a>
 </p>
 
-# ⚠️ Xcode 14.3 RC (14E222a) support
-
-The XCFrameworks distributed by this repository are not supported by Xcode 14.3 Release Candidate (14E222a). Please use our alternative repository [`braze-swift-sdk-xcode-14-3-preview`](https://github.com/braze-inc/braze-swift-sdk-xcode-14-3-preview) to build and distribute your application using Xcode 14.3 Release Candidate (14E222a).
-
-Follow this [issue](https://github.com/braze-inc/braze-swift-sdk/issues/52) for updates.
-
 # Braze Swift SDK
 
 - [Braze User Guide](https://www.braze.com/docs/user_guide/introduction/ "Braze User Guide")
