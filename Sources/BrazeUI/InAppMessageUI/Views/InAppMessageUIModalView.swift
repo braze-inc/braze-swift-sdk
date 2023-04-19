@@ -126,9 +126,9 @@ extension BrazeInAppMessageUI {
         right: 0
       )
       textContainer.layoutMargins = .init(
-        top: TextViewLayoutConstants.textContainerLayoutMargins.top,
+        top: 0,
         left: padding.left,
-        bottom: TextViewLayoutConstants.textContainerLayoutMargins.bottom,
+        bottom: 0,
         right: padding.right
       )
       buttonsContainer?.stack.layoutMargins = .init(
@@ -555,20 +555,21 @@ extension BrazeInAppMessageUI {
 
       textView.attributedText = textViewText
     }
+
+    private enum TextViewLayoutConstants {
+      // Manually-tuned values to get us close to our previous StackView+Label appearance.
+
+      // Soak up some vertical space that UITextView leaves above and below its text:
+      static let textContainerLayoutMargins = UIEdgeInsets(top: -8, left: 0, bottom: -8, right: 0)
+      // Scale factors for label → textview line spacing:
+      static let headerLineSpacingScaleFactor = 0.78
+      static let messageLineSpacingScaleFactor = 0.47
+      // Subtraction offset between header and message:
+      // (textview/TextKit renders a tiny bit of extra ascender+descender space that we want to eat up)
+      static let headerMessageSpacingOffset: Double = 1.0
+    }
   }
 
-  private enum TextViewLayoutConstants {
-    // Manually-tuned values to get us close to our previous StackView+Label appearance.
-
-    // Soak up some vertical space that UITextView leaves above and below its text:
-    static let textContainerLayoutMargins = UIEdgeInsets(top: -8, left: 0, bottom: -8, right: 0)
-    // Scale factors for label → textview line spacing:
-    static let headerLineSpacingScaleFactor = 0.78
-    static let messageLineSpacingScaleFactor = 0.47
-    // Subtraction offset between header and message:
-    // (textview/TextKit renders a tiny bit of extra ascender+descender space that we want to eat up)
-    static let headerMessageSpacingOffset: Double = 1.0
-  }
 }
 
 // MARK: - Previews
@@ -630,6 +631,11 @@ extension BrazeInAppMessageUI {
         .preview(center: .required)
         .frame(maxHeight: 375)
         .previewDisplayName("Var. | Long (constrained)")
+
+      ModalView(message: .mockTallCharacters, presented: true)
+        .preview(center: .required)
+        .frame(maxHeight: 500)
+        .previewDisplayName("Var. | Tall Characters")
     }
 
     @ViewBuilder

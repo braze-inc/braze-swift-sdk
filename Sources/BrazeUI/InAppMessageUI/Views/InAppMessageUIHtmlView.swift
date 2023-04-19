@@ -199,6 +199,7 @@ extension BrazeInAppMessageUI {
 
     public func present(completion: (() -> Void)? = nil) {
       prefersStatusBarHidden = true
+      addVoiceOverHook()
 
       setupWebView()
       installPresentationConstraintsIfNeeded()
@@ -428,6 +429,19 @@ extension BrazeInAppMessageUI.HtmlView: WKUIDelegate {
 }
 
 // MARK: - Misc.
+
+extension BrazeInAppMessageUI.HtmlView {
+
+  fileprivate func addVoiceOverHook() {
+    // This view helps the accessibility engine focus on the message view. Without it, the
+    // accessibility engine will fail to properly focus on an accessible element within the web
+    // view.
+    let voiceOverHook = UIView()
+    insertSubview(voiceOverHook, at: 0)
+    initialAccessibilityElement = voiceOverHook
+  }
+
+}
 
 extension WKWebView {
 

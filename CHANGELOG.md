@@ -1,3 +1,15 @@
+## 5.14.0
+
+##### Fixed
+- VoiceOver now correctly focuses on in-app message views when they are presented.
+- Fixes an issue causing in-app messages with re-eligibility disabled to display multiple times under certain conditions.
+- Fixes an issue where modal and full in-app message headers were truncated on devices running iOS versions lower than 16 when displaying non-ASCII characters.
+- The dynamic variant of `BrazeUI.framework` in the release artifact `braze-swift-sdk-prebuilt.zip` is now an actual dynamic framework. Previously, this specific framework was mistakenly distributed as a static framework.
+
+##### Added
+- Adds the `BrazeSDKAuthDelegate` protocol as a separate protocol from `BrazeDelegate`, allowing for more flexible integrations.
+  - Apps implementing `BrazeDelegate.braze(_:sdkAuthenticationFailedWithError:)` should migrate to use `BrazeSDKAuthDelegate` and remove the old implementation. The `BrazeDelegate` method will be removed in a future major release.
+
 ## 5.13.0
 
 ##### Fixed

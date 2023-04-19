@@ -57,6 +57,11 @@ extension BrazeInAppMessageUI {
       didSet { setNeedsStatusBarAppearanceUpdate() }
     }
 
+    /// The message view initial accessibility element.
+    ///
+    /// If assigned, VoiceOver will focus on this element when the message view is presented.
+    var messageViewInitialAccessibilityElement: Any?
+
     // MARK: - Initialization
 
     /// Creates an in-app message view controller.

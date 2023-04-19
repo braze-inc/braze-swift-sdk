@@ -5,7 +5,7 @@
 
 <p align="center">
   <a href="https://github.com/braze-inc/braze-swift-sdk/releases">
-    <img src="https://badgen.net/badge/version/5.13.0/blue" alt="Version: 5.13.0">
+    <img src="https://badgen.net/badge/version/5.14.0/blue" alt="Version: 5.14.0">
   </a>
   <a href="#">
     <img src="https://badgen.net/badge/platforms/iOS%20%7C%20tvOS%20%7C%20Mac%20Catalyst/orange"
@@ -18,6 +18,12 @@
     <img src="https://badgen.net/badge/license/Commercial/black" alt="License: Commercial">
   </a>
 </p>
+
+# ⚠️ Xcode 14.3 RC (14E222a) support
+
+The XCFrameworks distributed by this repository are not supported by Xcode 14.3 Release Candidate (14E222a). Please use our alternative repository [`braze-swift-sdk-xcode-14-3-preview`](https://github.com/braze-inc/braze-swift-sdk-xcode-14-3-preview) to build and distribute your application using Xcode 14.3 Release Candidate (14E222a).
+
+Follow this [issue](https://github.com/braze-inc/braze-swift-sdk/issues/52) for updates.
 
 # Braze Swift SDK
 

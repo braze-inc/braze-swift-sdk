@@ -52,6 +52,14 @@ public protocol InAppMessageView: UIView {
 
 extension InAppMessageView {
 
+  /// The initial accessibility element.
+  ///
+  /// If assigned, VoiceOver will focus on this element when the message view is presented.
+  public var initialAccessibilityElement: Any? {
+    get { controller?.messageViewInitialAccessibilityElement }
+    set { controller?.messageViewInitialAccessibilityElement = newValue }
+  }
+
   /// The preferred status bar hidden state.
   ///
   /// Setting this value may have no effect depending of upstream customizations.
@@ -75,6 +83,10 @@ extension InAppMessageView {
     guard let controller = controller, let ui = controller.ui else {
       return
     }
+
+    // Ensure that VoiceOver moves to initial accessibility element
+    let accessibilityElement = initialAccessibilityElement ?? self
+    UIAccessibility.post(notification: .screenChanged, argument: accessibilityElement)
 
     ui.delegate?.inAppMessage(ui, didPresent: controller.message, view: self)
   }

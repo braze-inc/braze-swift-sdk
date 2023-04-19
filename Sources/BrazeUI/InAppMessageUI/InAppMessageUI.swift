@@ -158,6 +158,7 @@ open class BrazeInAppMessageUI:
     } else {
       window = Window(frame: UIScreen.main.bounds)
     }
+    window.accessibilityViewIsModal = true
     window.windowLevel = context.windowLevel
     window.rootViewController = viewController
     self.window = window

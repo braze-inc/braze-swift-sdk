@@ -339,6 +339,11 @@ extension BrazeInAppMessageUI {
         .preview()
         .frame(maxHeight: 500)
         .previewDisplayName("Var. Full | Long (constrained)")
+
+      FullView(message: .mockTallCharacters, presented: true)
+        .preview()
+        .frame(maxHeight: 800)
+        .previewDisplayName("Var. Full | Tall Characters")
     }
 
     @ViewBuilder
@@ -393,6 +398,12 @@ extension BrazeInAppMessageUI {
         .frame(width: 540, height: 500)
         .environment(\.horizontalSizeClass, .regular)
         .previewDisplayName("Var. Modal | Long (constrained)")
+
+      FullView(message: .mockTallCharacters, presented: true)
+        .preview()
+        .frame(width: 540, height: 820)
+        .environment(\.horizontalSizeClass, .regular)
+        .previewDisplayName("Var. Modal | Tall Characters")
     }
 
     @ViewBuilder

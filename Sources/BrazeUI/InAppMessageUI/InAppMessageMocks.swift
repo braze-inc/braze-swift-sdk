@@ -173,6 +173,17 @@ import Foundation
       ]
     )
 
+    public static let mockTallCharacters = Self(
+      data: .mock,
+      graphic: .icon(""),
+      header: "헤더입니다",
+      message:
+        """
+        제1항의 탄핵소추는 국회재적의원 3분의 1 이상의 발의가 있어야 하며, 그 의결은 국회재적의원 과반수의 찬성이 있어야 한다. 다만, 대통령에 대한 탄핵소추는 국회재적의원 과반수의 발의와 국회재적의원 3분의 2 이상의 찬성이 있어야 한다.
+        국가는 건전한 소비행위를 계도하고 생산품의 품질향상을 촉구하기 위한 소비자보호운동을 법률이 정하는 바에 의하여 보장한다. 모든 국민은 능력에 따라 균등하게 교육을 받을 권리를 가진다.
+        """
+    )
+
     public static let mockThemed = Self(
       data: .mock,
       graphic: .icon(""),
@@ -349,6 +360,17 @@ import Foundation
         .mockSecondary,
         .mockPrimary,
       ]
+    )
+
+    public static let mockTallCharacters = Self(
+      data: .mock,
+      imageURL: .mockImage(width: 1200, height: 1000),
+      header: "헤더입니다",
+      message:
+        """
+        제1항의 탄핵소추는 국회재적의원 3분의 1 이상의 발의가 있어야 하며, 그 의결은 국회재적의원 과반수의 찬성이 있어야 한다. 다만, 대통령에 대한 탄핵소추는 국회재적의원 과반수의 발의와 국회재적의원 3분의 2 이상의 찬성이 있어야 한다.
+        국가는 건전한 소비행위를 계도하고 생산품의 품질향상을 촉구하기 위한 소비자보호운동을 법률이 정하는 바에 의하여 보장한다. 모든 국민은 능력에 따라 균등하게 교육을 받을 권리를 가진다.
+        """
     )
 
     public static let mockThemed = Self(
