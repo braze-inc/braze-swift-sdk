@@ -52,13 +52,46 @@ open class BrazeInAppMessageUI:
   /// The window displaying the current in-app message view.
   var window: Window?
 
+  /// Flag specifying whether the current in-app message is processing a click action.
+  var isProcessingClickAction: Bool = false
+
+  /// The followup message to display directly after the current one was dismissed.
+  ///
+  /// This property helps handling Braze Actions that triggers a new in-app message. The in-app
+  /// message UI only allows one message being displayed at a time.
+  ///
+  /// When an in-app message is clicked, we set ``isProcessingClickAction`` to true which allows
+  /// any triggered in-app message to be stored as the `followupMessage`. Once the current message
+  /// is dismissed, we directly display the `followupMessage`.
+  var followupMessage: Braze.InAppMessage? {
+    get { _followupMessage as? Braze.InAppMessage }
+    set { _followupMessage = newValue }
+  }
+
+  /// This property acts as a store for ``followupMessage``. Storing the typed `Braze.InAppMessage?`
+  /// directly on the `BrazeInAppMessageUI` class leads to that class not being available in ObjC.
+  ///
+  /// This seems to be a compiler bug as no warning or error are printed during the compilation
+  /// process.
+  /// Hypothesis: storing imported Swift-only value types on an ObjC compatible class breaks ObjC
+  /// compatibility. Storing the same value type as an `Any` changes the memory layout by adding
+  /// a layer of indirection. Instead of allocating the space necessary for storing the value type
+  /// on the class itself, the compiler use a "pointer" to somewhere in the heap.
+  private var _followupMessage: Any?
+
+  /// The cancellable for the remote URLs → local URLs message transformation.
+  var localAssetsCancellable: Braze.Cancellable?
+
   // MARK: - Presentation / BrazeInAppMessagePresenter conformance
 
-  public func present(message: Braze.InAppMessage) {
+  open func present(message: Braze.InAppMessage) {
     guard validateMainThread(for: message),
       validateHeadless(for: message, allowHeadless: headless),
       validateFontAwesome(for: message),
-      validateNoMessagePresented(for: message, pushInStack: true)
+      validateNoMessagePresented(
+        for: message,
+        pendingDestination: isProcessingClickAction ? .followup : .stack
+      )
     else {
       return
     }
@@ -68,18 +101,17 @@ open class BrazeInAppMessageUI:
       ?? .now
 
     switch displayChoice {
-    case .discard:
-      message.context?.discard()
+    case .now:
+      prepareAndPresent(message: message)
     case .later:
       stack.append(message)
-    case .now:
-      presentNow(message: message)
+    case .discard:
+      message.context?.discard()
     }
-
   }
 
   @objc
-  public func present(message: Braze.InAppMessageRaw) {
+  open func present(message: Braze.InAppMessageRaw) {
     do {
       let message = try Braze.InAppMessage(message)
       present(message: message)
@@ -92,18 +124,18 @@ open class BrazeInAppMessageUI:
   @objc
   public func presentNext() {
     // We use `last` instead of `popLast()` to avoid potentially modifying `stack` from a non
-    // main thread. The message is removed from the stack in `presentNow`.
+    // main thread. The message is removed from the stack in `prepareAndPresent`.
     guard let next = stack.last else {
       return
     }
-    presentNow(message: next)
+    prepareAndPresent(message: next)
   }
 
-  func presentNow(message: Braze.InAppMessage) {
+  func prepareAndPresent(message: Braze.InAppMessage) {
     guard validateMainThread(for: message),
       validateHeadless(for: message, allowHeadless: headless),
       validateFontAwesome(for: message),
-      validateNoMessagePresented(for: message, pushInStack: false),
+      validateNoMessagePresented(for: message, pendingDestination: nil),
       validateOrientation(for: message),
       validateContext(for: message)
     else {
@@ -113,6 +145,37 @@ open class BrazeInAppMessageUI:
     // Remove the message from the stack if needed
     stack.removeAll { $0 == message }
 
+    // Transform remote asset URLs to local asset URLs
+    // - IAMs not originating from Braze (`context == nil`) cannot go through this transformation
+    //   and are expected to use local asset URLs for proper display
+    guard let context = message.context else {
+      self.presentNow(message: message)
+      return
+    }
+
+    do {
+      // Setup the assets working directory
+      let assetsDirectory = try resetAssetsDirectory()
+
+      // Load the assets and modify the `message` to reference the local assets in `assetsDirectory`
+      // - Presentation is resumed in the completion closure with the updated `message`
+      localAssetsCancellable = context.withLocalAssets(
+        message: message,
+        destinationURL: assetsDirectory
+      ) { [weak self] result in
+        switch result {
+        case .success(let message):
+          self?.presentNow(message: message)
+        case .failure(let error):
+          self?.logError(for: context, error: .assetsFailure(.init(error)))
+        }
+      }
+    } catch {
+      logError(for: context, error: .assetsFailure(.init(error)))
+    }
+  }
+
+  func presentNow(message: Braze.InAppMessage) {
     // Prepare / user customizations
     var context = PresentationContext(
       message: message,
@@ -138,7 +201,7 @@ open class BrazeInAppMessageUI:
         gifViewProvider: GIFViewProvider.shared
       )
     guard let messageView = optMessageView else {
-      message.context?.discard()
+      _ = try? resetAssetsDirectory()
       message.context?.logError(flattened: Error.noMessageView.logDescription)
       return
     }
@@ -188,6 +251,12 @@ open class BrazeInAppMessageUI:
 
   }
 
+  func presentFollowup() {
+    guard let followupMessage else { return }
+    self.followupMessage = nil
+    present(message: followupMessage)
+  }
+
   /// Dismisses the current in-app message view.
   /// - Parameter completion: Executed once the in-app message view has been dismissed or directly
   ///                         when no in-app message view is currently presented.
@@ -197,6 +266,11 @@ open class BrazeInAppMessageUI:
   }
 
   // MARK: - Utils
+
+  enum PendingDestination {
+    case stack
+    case followup
+  }
 
   func logError(for context: Braze.InAppMessage.Context?, error: Error) {
     context?.logError(flattened: error.logDescription) ?? print(error.logDescription)
@@ -227,17 +301,26 @@ open class BrazeInAppMessageUI:
     return true
   }
 
-  func validateNoMessagePresented(for message: Braze.InAppMessage, pushInStack push: Bool)
+  func validateNoMessagePresented(
+    for message: Braze.InAppMessage,
+    pendingDestination destination: PendingDestination?
+  )
     -> Bool
   {
     guard messageView == nil else {
-      if push {
+      switch destination {
+      case .none:
+        logError(for: message.context, error: .otherMessagePresented(push: false))
+      case .stack:
         // Remove message from stack (if present) and place on top
         stack.removeAll { $0.data.id == message.data.id }
         stack.append(message)
+        logError(for: message.context, error: .otherMessagePresented(push: true))
+      case .followup:
+        if let followupMessage { stack.append(followupMessage) }
+        self.followupMessage = message
       }
 
-      logError(for: message.context, error: .otherMessagePresented(push: push))
       return false
     }
     return true
@@ -256,7 +339,6 @@ open class BrazeInAppMessageUI:
     let traits = Braze.UIUtils.activeTopmostViewController?.traitCollection
     guard message.orientation.supported(by: traits) else {
       stack.removeAll { $0 == message }
-      message.context?.discard()
       logError(for: message.context, error: .noMatchingOrientation)
       return false
     }
@@ -269,15 +351,8 @@ open class BrazeInAppMessageUI:
       return true
     }
 
-    guard context.discarded == false else {
-      stack.removeAll { $0 == message }
-      logError(for: message.context, error: .messageContextDiscarded)
-      return false
-    }
-
     guard context.valid else {
       stack.removeAll { $0 == message }
-      context.discard()
       logError(for: message.context, error: .messageContextInvalid)
       return false
     }
@@ -285,7 +360,33 @@ open class BrazeInAppMessageUI:
     return true
   }
 
-  // ***** COMPAT *****
+  // MARK: - Assets
+
+  /// Directory where all in-app message assets are stored.
+  static func assetsDirectory() throws -> URL {
+    try FileManager.default.url(
+      for: .cachesDirectory,
+      in: .userDomainMask,
+      appropriateFor: nil,
+      create: false
+    )
+    .appendingPathComponent("com.braze.inappmessageui", isDirectory: true)
+  }
+
+  @discardableResult
+  func resetAssetsDirectory() throws -> URL {
+    let fileManager = FileManager.default
+    let assetsDirectory = try Self.assetsDirectory()
+
+    if fileManager.fileExists(atPath: assetsDirectory.path) {
+      try fileManager.removeItem(at: assetsDirectory)
+    }
+    try fileManager.createDirectory(at: assetsDirectory, withIntermediateDirectories: true)
+
+    return assetsDirectory
+  }
+
+  // MARK: - Compat
 
   /// Provided for compatibility purposes.
   @objc(_compat_tryPushOnStack:)
@@ -295,5 +396,4 @@ open class BrazeInAppMessageUI:
     stack.append(message)
   }
 
-  // ******************
 }

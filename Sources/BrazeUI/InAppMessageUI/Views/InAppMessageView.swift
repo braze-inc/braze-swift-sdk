@@ -112,6 +112,8 @@ extension InAppMessageView {
 
     removeFromSuperview()
 
+    _ = try? ui.resetAssetsDirectory()
+
     if #available(iOS 13.0, *) {
       ui.window?.windowScene = nil
     }
@@ -120,6 +122,9 @@ extension InAppMessageView {
     Braze.UIUtils.activeTopmostViewController?.setNeedsStatusBarAppearanceUpdate()
 
     ui.delegate?.inAppMessage(ui, didDismiss: controller.message, view: self)
+
+    ui.isProcessingClickAction = false
+    ui.presentFollowup()
   }
 
   /// Call this method to report the in-app message impression.
@@ -164,6 +169,10 @@ extension InAppMessageView {
       logError(.noContextProcessClickAction)
       return
     }
+
+    // Mark UI as processing click action, allowing new IAMs to be fastrack for display instead of
+    // ending up in the stack
+    ui.isProcessingClickAction = true
 
     context.processClickAction(clickAction)
   }

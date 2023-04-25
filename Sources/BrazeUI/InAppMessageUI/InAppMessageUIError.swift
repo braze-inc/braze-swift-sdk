@@ -15,9 +15,9 @@ extension BrazeInAppMessageUI {
     case noAppRootViewController
     case noFontAwesome
     case noMatchingOrientation
+    case assetsFailure(Braze.ErrorString)
 
     case otherMessagePresented(push: Bool)
-    case messageContextDiscarded
     case messageContextInvalid
 
     case htmlNoBaseURL
@@ -65,13 +65,17 @@ extension BrazeInAppMessageUI.Error {
     case .noMatchingOrientation:
       return
         "Unable to present message - current orientation / size classes are not supported by the message."
+    case .assetsFailure(let error):
+      return
+        """
+        Unable to present message - failed to retrieve assets
+        - description: \(error.localizedDescription)
+        - error: \(error)
+        """
 
     case .otherMessagePresented(let push):
       return
         "Unable to present message - another message is already presented.\(push ? " The message has been pushed to the top of the stack." : "")"
-    case .messageContextDiscarded:
-      return
-        "Unable to present message - message already discarded. The message has been removed from the stack."
     case .messageContextInvalid:
       return
         "Unable to present message - message context is invalid. The message has been discarded and removed from the stack."

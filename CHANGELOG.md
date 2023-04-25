@@ -1,3 +1,17 @@
+## 6.0.0
+
+##### Breaking
+- The in-app message data models sent to [`BrazeInAppMessagePresenter.present(message:)`](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/brazeinappmessagepresenter/present(message:)) now contain remote asset URLs. Previously, these data models would contain local asset URLs.
+  - This change is only breaking in two situations:
+    - When implementing a custom `BrazeInAppMessagePresenter`.
+    - When relying on asset URLs being local in the message provided by [`BrazeInAppMessageUIDelegate.inAppMessage(_:displayChoiceForMessage:)`](https://braze-inc.github.io/braze-swift-sdk/documentation/brazeui/brazeinappmessageuidelegate/inappmessage(_:displaychoiceformessage:)-9w1nb)
+  - The in-app message data models available from the other [`BrazeInAppMessageUIDelegate`](https://braze-inc.github.io/braze-swift-sdk/documentation/brazeui/brazeinappmessageuidelegate) methods remain unchanged and contain local asset URLs.
+
+##### Added
+- The in-app message context now provides two additional methods:
+  - [`getLocalAssets(urls:destinationURL:completionHandler:)`](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/inappmessageraw/context-swift.class/getlocalassets(urls:destinationurl:completionhandler:)): Retrieves the local assets associated with the given remote asset URLs.
+  - [`withLocalAssets(message:destinationURL:completionHandler:)`](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/inappmessageraw/context-swift.class/withlocalassets(message:destinationurl:completionhandler:)): Returns a modified in-app message with all remote asset URLs replaced with local ones.
+
 ## 5.14.0
 
 ##### Fixed
