@@ -182,7 +182,7 @@ extension BrazeInAppMessageUI {
         "braze.in-app-message.close-button.title",
         for: .inAppMessage
       )
-      button.titleLabel?.font = .preferredFont(forTextStyle: .title2)
+      button.titleLabel?.font = .brazeCloseButtonFont
       button.addAction { [weak self] in self?.dismiss() }
       return button
     }()

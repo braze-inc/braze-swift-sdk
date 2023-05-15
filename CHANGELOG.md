@@ -1,3 +1,16 @@
+## 6.1.0
+
+##### Fixed
+- Fixes an issue that led to disproportionately large close buttons on in-app messages when the user has set a large font size in the device settings.
+- Fixes an issue that would lock the screen in a specific orientation after the dismissal of an in-app message customized to be presented in that orientation.
+  - This issue only impacted iOS 16.0+ devices.
+
+##### Added
+- Adds new versions of `setCustomAttribute` to the User object to support [nested custom attributes][nca-docs].
+  - Renames `User.setCustomAttributeArray(key: String, array: [String]?)` to `setCustomAttribute(…)` to align it with other custom attribute setters, and adds "string" to the `addTo` and `removeFrom` attribute array methods to clarify which custom attributes they're used for.
+
+[nca-docs]: https://www.braze.com/docs/user_guide/data_and_analytics/custom_data/custom_attributes/nested_custom_attribute_support
+
 ## 6.0.0
 
 ##### Breaking

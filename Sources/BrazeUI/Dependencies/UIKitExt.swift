@@ -11,6 +11,10 @@ extension UIFont {
     Braze.UIUtils.preferredFont(textStyle: textStyle, weight: weight)
   }
 
+  static var brazeCloseButtonFont: UIFont {
+    .systemFont(ofSize: 22)
+  }
+
 }
 
 extension UIButton {

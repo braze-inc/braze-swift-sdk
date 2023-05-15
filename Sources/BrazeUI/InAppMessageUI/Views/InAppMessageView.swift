@@ -120,6 +120,11 @@ extension InAppMessageView {
     ui.window = nil
 
     Braze.UIUtils.activeTopmostViewController?.setNeedsStatusBarAppearanceUpdate()
+    if #available(iOS 16.0, *) {
+      UIView.performWithoutAnimation {
+        Braze.UIUtils.activeTopmostViewController?.setNeedsUpdateOfSupportedInterfaceOrientations()
+      }
+    }
 
     ui.delegate?.inAppMessage(ui, didDismiss: controller.message, view: self)
 
