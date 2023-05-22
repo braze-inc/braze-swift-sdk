@@ -5,7 +5,7 @@
 
 <p align="center">
   <a href="https://github.com/braze-inc/braze-swift-sdk/releases">
-    <img src="https://badgen.net/badge/version/6.1.0/blue" alt="Version: 6.1.0">
+    <img src="https://badgen.net/badge/version/6.2.0/blue" alt="Version: 6.2.0">
   </a>
   <a href="#">
     <img src="https://badgen.net/badge/platforms/iOS%20%7C%20tvOS%20%7C%20Mac%20Catalyst/orange"
@@ -68,11 +68,11 @@ Explore our [examples project](/Examples) which showcases multiple features' int
 
 | **Wrapper SDK** | Swift SDK Support | Release Version |
 |-----------------|-------------------|-----------------|
-| React Native    | ✅                 | v2.0.0          |
-| Flutter         | ✅                 | v3.0.0          |
-| Cordova         | ✅                 | v2.33.0         |
+| React Native    | ✅                 | 2.0.0           |
+| Flutter         | ✅                 | 3.0.0           |
+| Cordova         | ✅                 | 2.33.0          |
+| Unity           | ✅                 | 4.0.0           |
 | Xamarin         | In Progress       | TBD             |
-| Unity           | In Progress       | TBD             |
 
 ## `Appboy-iOS-SDK`
 

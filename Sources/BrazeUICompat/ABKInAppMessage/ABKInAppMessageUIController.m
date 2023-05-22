@@ -14,6 +14,7 @@
 @interface ABKInAppMessageUIController ()
 
 @property (strong, nonatomic) NSMutableArray *inAppMessageStack;
+@property (strong, nonatomic) BRZCancellable *localAssetsCancellable;
 
 - (void)handleExistingInAppMessagesInStack;
 
@@ -261,24 +262,86 @@
     return;
   }
 
-  ABKInAppMessageDisplayChoice inAppMessageDisplayChoice;
-  if (inAppMessage.isControl) {
-    inAppMessageDisplayChoice = [self getCurrentDisplayChoiceForControlInAppMessage:inAppMessage];
-  } else {
-    inAppMessageDisplayChoice = [self getCurrentDisplayChoiceForInAppMessage:inAppMessage];
+
+  // Assets
+  NSURL *assetsDirectory = [ABKInAppMessageUIController resetAssetsDirectory];
+  if (!assetsDirectory) {
+    NSLog(@"%@: Unable to retrieve assets directory, aborting in-app message presentation.", NSStringFromSelector(_cmd));
+    return;
   }
-  if (inAppMessageDisplayChoice == ABKDiscardInAppMessage) {
-    NSLog(@"%@: ABKDiscardInAppMessage received.", NSStringFromSelector(_cmd));
-  } else if (inAppMessageDisplayChoice == ABKDisplayInAppMessageNow) {
-    NSLog(@"%@: ABKDisplayInAppMessageNow received: attempting to display the in-app message", NSStringFromSelector(_cmd));
-    [self showInAppMessage:inAppMessage];
-  } else if (inAppMessageDisplayChoice == ABKDisplayInAppMessageLater) {
-    NSLog(@"%@: ABKDisplayInAppMessageLater received. Returning in-app message to the stack.", NSStringFromSelector(_cmd));
-    [self.inAppMessageStack addObject:inAppMessage];
-  } else {
-    // Developer returned a wrong in-app message return value, print it out to inform the developer
-    NSLog(@"Invalid value returned from beforeInAppMessageDisplayed:withKeyboardIsUp:. Please return ABKDisplayInAppMessageNow, ABKDisplayInAppMessageLater, or ABKDiscardInAppMessage");
+
+  self.localAssetsCancellable = [inAppMessage.inAppMessage.context withLocalAssets:inAppMessage.inAppMessage
+                                                                    destinationURL:assetsDirectory
+                                                                 completionHandler:^(BRZInAppMessageRaw * _Nullable message, NSError * _Nullable error) {
+    // Handle errors
+    if (error != nil || message == nil) {
+      NSLog(@"%@: Unable to retrieve local assets, aborting in-app message presentation.", NSStringFromSelector(_cmd));
+      return;
+    }
+
+    // Update underlying in-app message
+    inAppMessage.inAppMessage = message;
+
+    // Display choice
+    ABKInAppMessageDisplayChoice inAppMessageDisplayChoice;
+    if (inAppMessage.isControl) {
+      inAppMessageDisplayChoice = [self getCurrentDisplayChoiceForControlInAppMessage:inAppMessage];
+    } else {
+      inAppMessageDisplayChoice = [self getCurrentDisplayChoiceForInAppMessage:inAppMessage];
+    }
+    if (inAppMessageDisplayChoice == ABKDiscardInAppMessage) {
+      NSLog(@"%@: ABKDiscardInAppMessage received.", NSStringFromSelector(_cmd));
+    } else if (inAppMessageDisplayChoice == ABKDisplayInAppMessageNow) {
+      NSLog(@"%@: ABKDisplayInAppMessageNow received: attempting to display the in-app message", NSStringFromSelector(_cmd));
+      [self showInAppMessage:inAppMessage];
+    } else if (inAppMessageDisplayChoice == ABKDisplayInAppMessageLater) {
+      NSLog(@"%@: ABKDisplayInAppMessageLater received. Returning in-app message to the stack.", NSStringFromSelector(_cmd));
+      [self.inAppMessageStack addObject:inAppMessage];
+    } else {
+      // Developer returned a wrong in-app message return value, print it out to inform the developer
+      NSLog(@"Invalid value returned from beforeInAppMessageDisplayed:withKeyboardIsUp:. Please return ABKDisplayInAppMessageNow, ABKDisplayInAppMessageLater, or ABKDiscardInAppMessage");
+    }
+  }];
+}
+
+#pragma mark - Assets
+
++ (NSURL *)assetsDirectory {
+  NSFileManager *fm = NSFileManager.defaultManager;
+  NSError *error;
+  NSURL *cachesDirectory = [fm URLForDirectory:NSCachesDirectory
+                                      inDomain:NSUserDomainMask
+                             appropriateForURL:nil
+                                        create:false
+                                         error:&error];
+  if (error) {
+    return nil;
   }
+
+  return [cachesDirectory URLByAppendingPathComponent:@"com.braze.inappmessageuicompat"
+                                          isDirectory:YES];
+}
+
++ (NSURL *)resetAssetsDirectory {
+  NSError *error;
+  NSFileManager *fm = NSFileManager.defaultManager;
+  NSURL *assetsDirectory = [ABKInAppMessageUIController assetsDirectory];
+  if (!assetsDirectory) {
+    return nil;
+  }
+
+  if ([fm fileExistsAtPath:assetsDirectory.path]) {
+    [fm removeItemAtURL:assetsDirectory error:&error];
+    if (error != nil) {
+      return nil;
+    }
+  }
+  [fm createDirectoryAtURL:assetsDirectory withIntermediateDirectories:YES attributes:nil error:&error];
+  if (error != nil) {
+    return nil;
+  }
+
+  return assetsDirectory;
 }
 
 @end

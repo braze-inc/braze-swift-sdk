@@ -1,3 +1,15 @@
+## 6.2.0
+
+##### Fixed
+- Fixes a crash introduced in 6.0.0 when displaying an HTML in-app message using the `BrazeUICompat` module.
+- Removed a system call that is known to be slow on older versions of macOS. This resolves the SDK hanging during initialization on Mac Catalyst when running on affected macOS versions.
+
+##### Added
+- Adds support for `target` attributes on anchor tags in HTML in-app messages (e.g. `<a href="..." target="_blank"></a>`).
+  - Adding the `target` attribute to links will allow them to open in a new webview without dismissing the current in-app message.
+  - This behavior can be disabled via the `linkTargetSupport` property of the `BrazeInAppMessageUI.HtmlView.Attributes` struct.
+  - See our [Custom HTML in-app messages](https://www.braze.com/docs/user_guide/message_building_by_channel/in-app_messages/traditional/customize/html_in-app_messages/) documentation page for more details.
+
 ## 6.1.0
 
 ##### Fixed

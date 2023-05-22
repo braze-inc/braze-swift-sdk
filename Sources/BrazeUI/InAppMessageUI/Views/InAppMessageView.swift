@@ -155,7 +155,13 @@ extension InAppMessageView {
   /// - Parameters:
   ///   - clickAction: The click action to process.
   ///   - buttonId: An optional button identifier.
-  public func process(clickAction: Braze.InAppMessage.ClickAction, buttonId: String? = nil) {
+  ///   - target: The target `UIViewController` used to display an eventual web view (iOS only).
+  ///             Set it to `nil` to let the SDK choose an appropriate view controller.
+  public func process(
+    clickAction: Braze.InAppMessage.ClickAction,
+    buttonId: String? = nil,
+    target: Any? = nil
+  ) {
     guard let ui = controller?.ui, let message = controller?.message else {
       return
     }
@@ -177,9 +183,11 @@ extension InAppMessageView {
 
     // Mark UI as processing click action, allowing new IAMs to be fastrack for display instead of
     // ending up in the stack
-    ui.isProcessingClickAction = true
+    // - Only do it for click actions that dismisses the in-app message
+    let isTransientClickAction = target as? UIViewController == controller
+    ui.isProcessingClickAction = !isTransientClickAction
 
-    context.processClickAction(clickAction)
+    context.processClickAction(clickAction, target: target)
   }
 
   public func logError(_ error: BrazeInAppMessageUI.Error) {

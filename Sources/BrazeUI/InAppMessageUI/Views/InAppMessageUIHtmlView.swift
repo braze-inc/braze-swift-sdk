@@ -32,6 +32,17 @@ extension BrazeInAppMessageUI {
       /// - Important: Body clicks are always tracked for legacy html in-app messages (zip based).
       public var automaticBodyClicks: Bool = false
 
+      /// Specifies whether the web view should support the `target` parameter / attribute in:
+      /// - Anchor tags (e.g. `<a href="..." target="_blank">`)
+      /// - Window opens (e.g. `window.open(url, "_blank")`)`
+      ///
+      /// When set to true (default), the url marked with `target` is opened and the message
+      /// remains visible.
+      /// When set to false, the url marked with `target` is opened and the message is dismissed.
+      ///
+      /// Deeplinks (e.g. `customAppScheme://`) always dismiss the message.
+      public var linkTargetSupport: Bool = true
+
       /// Closure allowing customization of the configuration used by the web view.
       public var configure: ((WKWebViewConfiguration) -> Void)?
 
@@ -295,6 +306,37 @@ extension BrazeInAppMessageUI {
       webView?.loadFileURL(index, allowingReadAccessTo: baseURL)
     }
 
+    open func processNavigationAction(
+      _ navigationAction: WKNavigationAction,
+      isTransientOpen: Bool
+    ) {
+      guard let url = navigationAction.request.url else { return }
+
+      if let action = schemeHandler.action(url: url) {
+        schemeHandler.process(action: action, url: url)
+        return
+      }
+
+      let (clickAction, buttonId) = queryHandler.process(
+        url: url,
+        logBodyClick: message.legacy || attributes.automaticBodyClicks
+      )
+
+      let isTransientOpen =
+        attributes.linkTargetSupport
+        && isTransientOpen
+        && !Self.appURLSchemes.contains(url.scheme ?? "")
+      process(
+        clickAction: clickAction,
+        buttonId: buttonId,
+        target: isTransientOpen ? controller : nil
+      )
+
+      if !isTransientOpen {
+        dismiss()
+      }
+    }
+
   }
 
 }
@@ -324,17 +366,7 @@ extension BrazeInAppMessageUI.HtmlView: WKNavigationDelegate {
 
     decisionHandler(.cancel)
 
-    if let action = schemeHandler.action(url: url) {
-      schemeHandler.process(action: action, url: url)
-      return
-    }
-
-    let (clickAction, buttonId) = queryHandler.process(
-      url: url,
-      logBodyClick: message.legacy || attributes.automaticBodyClicks
-    )
-    process(clickAction: clickAction, buttonId: buttonId)
-    dismiss()
+    processNavigationAction(navigationAction, isTransientOpen: navigationAction.isTransientOpen)
   }
 
   public func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
@@ -374,7 +406,7 @@ extension BrazeInAppMessageUI.HtmlView: WKNavigationDelegate {
 
 }
 
-// MARK: - alert / confirm / prompt
+// MARK: - alert / confirm / prompt / window.open
 
 extension BrazeInAppMessageUI.HtmlView: WKUIDelegate {
 
@@ -426,6 +458,16 @@ extension BrazeInAppMessageUI.HtmlView: WKUIDelegate {
     }
   }
 
+  public func webView(
+    _ webView: WKWebView,
+    createWebViewWith configuration: WKWebViewConfiguration,
+    for navigationAction: WKNavigationAction,
+    windowFeatures: WKWindowFeatures
+  ) -> WKWebView? {
+    processNavigationAction(navigationAction, isTransientOpen: true)
+    return nil
+  }
+
 }
 
 // MARK: - Misc.
@@ -440,6 +482,12 @@ extension BrazeInAppMessageUI.HtmlView {
     insertSubview(voiceOverHook, at: 0)
     initialAccessibilityElement = voiceOverHook
   }
+
+  fileprivate static let appURLSchemes: [String] = {
+    (Bundle.main.infoDictionary?["CFBundleURLTypes"] as? [[String: Any]] ?? [])
+      .filter { $0["CFBundleTypeRole"] as? String == "Editor" }
+      .flatMap { $0["CFBundleURLSchemes"] as? [String] ?? [] }
+  }()
 
 }
 
@@ -471,6 +519,43 @@ extension WKWebView {
       head.appendChild(style)
       """
     )
+  }
+
+}
+
+extension WKNavigationAction {
+
+  /// Returns whether the navigation action is considered _transient_. A transient navigation action
+  /// is processed without dismissing the in-app message.
+  ///
+  /// In HTML, transient navigation actions are performed via an anchor tag with an explicit
+  /// undefined target value (e.g. `_blank`, `_new` or any other name excepted `_self`).
+  ///
+  /// ```html
+  /// <a href="https://example.com" target="_blank">link</a>
+  /// ```
+  ///
+  /// In JavaScript, transient navigation actions are performed via the `window.open()` function.
+  /// `window.open()` is always considered a transient navigation action as its default behavior
+  /// in regular web environment is to open a new window.
+  ///
+  /// ```js
+  /// window.open("https://example.com")
+  /// ```
+  ///
+  fileprivate var isTransientOpen: Bool {
+    let transientSupportedSchemes: Set<String> = [
+      "http",
+      "https",
+      "mailto",
+      "tel",
+      "facetime",
+      "facetime-audio",
+      "sms",
+    ]
+    return navigationType == .linkActivated
+      && targetFrame == nil
+      && transientSupportedSchemes.contains(request.url?.scheme?.lowercased() ?? "")
   }
 
 }
