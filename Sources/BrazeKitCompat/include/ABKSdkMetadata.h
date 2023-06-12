@@ -31,6 +31,7 @@ extern ABKSdkMetadata const ABKSdkMetadataNuGet BRZ_DEPRECATED("renamed to 'Braz
 extern ABKSdkMetadata const ABKSdkMetadataPub BRZ_DEPRECATED("renamed to 'Braze.Configuration.Api.SDKMetadata.pub'");
 extern ABKSdkMetadata const ABKSdkMetadataRadar BRZ_DEPRECATED("renamed to 'Braze.Configuration.Api.SDKMetadata.radar'");
 extern ABKSdkMetadata const ABKSdkMetadataReactNative BRZ_DEPRECATED("renamed to 'Braze.Configuration.Api.SDKMetadata.reactnative'");
+extern ABKSdkMetadata const ABKSdkMetadataReactNativeNewArch BRZ_DEPRECATED("renamed to 'Braze.Configuration.Api.SDKMetadata.reactnativenewarch'");
 extern ABKSdkMetadata const ABKSdkMetadataSegment BRZ_DEPRECATED("renamed to 'Braze.Configuration.Api.SDKMetadata.segment'");
 extern ABKSdkMetadata const ABKSdkMetadataSingular BRZ_DEPRECATED("renamed to 'Braze.Configuration.Api.SDKMetadata.singular'");
 extern ABKSdkMetadata const ABKSdkMetadataSwiftPM BRZ_DEPRECATED("renamed to 'Braze.Configuration.Api.SDKMetadata.swiftpm'");

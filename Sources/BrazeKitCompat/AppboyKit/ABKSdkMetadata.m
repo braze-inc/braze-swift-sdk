@@ -28,6 +28,7 @@ ABKSdkMetadata const ABKSdkMetadataNuGet = @"nugt";
 ABKSdkMetadata const ABKSdkMetadataPub = @"pub";
 ABKSdkMetadata const ABKSdkMetadataRadar = @"rdr";
 ABKSdkMetadata const ABKSdkMetadataReactNative = @"rn";
+ABKSdkMetadata const ABKSdkMetadataReactNativeNewArch = @"rnna";
 ABKSdkMetadata const ABKSdkMetadataSegment = @"sg";
 ABKSdkMetadata const ABKSdkMetadataSingular = @"sng";
 ABKSdkMetadata const ABKSdkMetadataSwiftPM = @"spm";

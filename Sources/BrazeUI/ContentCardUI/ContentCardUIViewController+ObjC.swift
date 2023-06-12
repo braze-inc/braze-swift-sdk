@@ -29,8 +29,8 @@ extension BrazeContentCardUI.ViewController {
     self.init(braze: braze, attributes: .defaults)
   }
 
-  /// Creates and return a table view controller able to display content cards. For most use
-  /// cases, prefer using ``init(braze:attributes:)`` instead.
+  /// Creates and return a table view controller able to display content cards (for most use
+  /// cases, prefer using ``init(braze:attributes:)`` instead).
   ///
   /// - Parameters:
   ///   - initialCards: The initial Content Cards displayed.

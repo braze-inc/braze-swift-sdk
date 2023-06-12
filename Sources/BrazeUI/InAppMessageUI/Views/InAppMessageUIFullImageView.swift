@@ -67,8 +67,8 @@ extension BrazeInAppMessageUI {
       /// The buttons attributes.
       public var buttonsAttributes = ButtonView.Attributes.defaults
 
-      /// Specify the preferred display mode. See
-      /// ``BrazeInAppMessageUI/FullImageView/DisplayMode-swift.enum``.
+      /// Specify the preferred display mode (see
+      /// ``BrazeInAppMessageUI/FullImageView/DisplayMode-swift.enum``).
       public var preferredDisplayMode: DisplayMode?
 
       /// Closure allowing further customization, executed when the view is about to be presented.

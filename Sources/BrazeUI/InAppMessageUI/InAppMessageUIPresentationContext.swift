@@ -61,7 +61,7 @@ extension BrazeInAppMessageUI {
     public var customView: InAppMessageView?
 
     /// The preferred orientation used to present the message (default: current interface
-    /// orientation)
+    /// orientation).
     ///
     /// The orientation is applied only for the presentation of the message. Once the device
     /// changes orientation, the message view adopts one of the orientation it's support.
@@ -89,7 +89,7 @@ extension BrazeInAppMessageUI {
     var _windowScene: Any?
 
     /// The view controller used to proxy `UIViewController` based preferences. (default: topmost
-    /// presented view controller on the application root view controller)
+    /// presented view controller on the application root view controller).
     ///
     /// Preferences includes:
     /// - `UIViewController.prefersHomeIndicatorAutoHidden`

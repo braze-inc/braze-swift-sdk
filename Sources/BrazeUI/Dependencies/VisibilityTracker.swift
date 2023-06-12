@@ -18,6 +18,7 @@ open class VisibilityTracker<Identifier: Hashable> {
   // MARK: - Initialization
 
   /// Creates a visibility tracker.
+  ///
   /// - Parameters:
   ///   - interval: The interval of time after which the `visibleForInterval` closure is called.
   ///   - visibleIdentifiers: Provide the currently visible identifiers to the visibility tracker.

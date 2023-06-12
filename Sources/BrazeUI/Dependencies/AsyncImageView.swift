@@ -4,7 +4,7 @@ import UIKit
 /// An image view able to represent multiple state of an asynchronous image loading operation.
 open class AsyncImageView: UIView {
 
-  /// The image loading operation states
+  /// The image loading operation states.
   public enum ImageLoad {
     case loading(Braze.Cancellable)
     case failed(Error)

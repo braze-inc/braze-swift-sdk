@@ -15,7 +15,7 @@ extension BrazeContentCardUI {
     /// The delegate notified of the content cards UI lifecycle.
     open weak var delegate: BrazeContentCardUIViewControllerDelegate?
 
-    /// The internal refresh implementation. Use ``refreshCards()`` instead.
+    /// The internal refresh implementation, use ``refreshCards()`` instead.
     var refresh: ((@escaping (Result<[Braze.ContentCard], Error>) -> Void) -> Void)?
 
     /// The internal cards updates subscription implementation.
@@ -158,8 +158,8 @@ extension BrazeContentCardUI {
       )
     }
 
-    /// Creates and return a table view controller able to display content cards. For most use
-    /// cases, prefer using ``init(braze:attributes:)`` instead.
+    /// Creates and return a table view controller able to display content cards (for most use
+    /// cases, prefer using ``init(braze:attributes:)`` instead).
     ///
     /// - Parameters:
     ///   - initialCards: The initial Content Cards displayed.
@@ -244,7 +244,7 @@ extension BrazeContentCardUI {
 
     // MARK: - UITableView
 
-    /// Setup the table view
+    /// Setup the table view.
     open func setupTableView() {
 
       // Cells

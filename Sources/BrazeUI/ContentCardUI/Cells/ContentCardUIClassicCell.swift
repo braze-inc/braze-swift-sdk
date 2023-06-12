@@ -33,8 +33,7 @@ extension BrazeContentCardUI {
 
     // MARK: - Layout
 
-    /// The text stack edges constraints. Unset until ``installInternalConstraints()`` is
-    /// executed.
+    /// The text stack edges constraints, unset until ``installInternalConstraints()`` is executed.
     open var textStackContraints: [NSLayoutConstraint]!
 
     open override func installInternalConstraints() {

@@ -106,7 +106,7 @@ extension Braze.InAppMessage.Orientation {
   /// Returns whether the in-app message orientation is supported by the passed `traits`.
   /// - Parameter traits: The current traits.
   /// - Returns: A boolean value indicating if the in-app message orientation is supported by
-  ///            `traits`
+  ///            `traits`.
   func supported(by traits: UITraitCollection?) -> Bool {
     switch (self, traits?.horizontalSizeClass, traits?.verticalSizeClass) {
     case (.any, _, _),

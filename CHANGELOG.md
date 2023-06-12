@@ -1,3 +1,15 @@
+## 6.3.0
+
+##### Fixed
+- "Confirm" and "Cancel" notification categories now show the correct titles on the action buttons.
+
+##### Added
+- Adds a new `SDKMetadata` option `.reactnativenewarch` for the React Native New Architecture.
+- Adds public initializers for [`Braze.URLContext`][url-context] and [`Braze.ModalContext`][modal-context].
+
+[url-context]: https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/urlcontext/
+[modal-context]: https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/modalcontext/
+
 ## 6.2.0
 
 ##### Fixed

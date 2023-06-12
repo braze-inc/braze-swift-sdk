@@ -27,7 +27,7 @@ public protocol BrazeInAppMessageUIDelegate: AnyObject {
     displayChoiceForMessage message: Braze.InAppMessage
   ) -> BrazeInAppMessageUI.DisplayChoice
 
-  /// Called before the in-app message display. Offers ways to deeply customize the in-app message
+  /// Called before the in-app message display, offering ways to deeply customize the in-app message
   /// presentation via the mutable `context`.
   ///
   /// - Parameters:

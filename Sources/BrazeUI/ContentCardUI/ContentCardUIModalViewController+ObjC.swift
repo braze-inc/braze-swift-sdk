@@ -25,8 +25,8 @@ extension BrazeContentCardUI.ModalViewController {
     self.init(braze: braze, attributes: .defaults, title: title)
   }
 
-  /// Creates and return a table view controller able to display content cards. For most use
-  /// cases, prefer using ``init(braze:attributes:)`` instead.
+  /// Creates and return a table view controller able to display content cards (for most use
+  /// cases, prefer using ``BrazeContentCardUI/ModalViewController/init(braze:title:)`` instead).
   ///
   /// - Parameters:
   ///   - initialCards: The initial Content Cards displayed.
@@ -72,8 +72,8 @@ extension BrazeContentCardUI.ModalViewController {
     )
   }
 
-  /// Creates and return a table view controller able to display content cards. For most use
-  /// cases, prefer using ``init(braze:attributes:)`` instead.
+  /// Creates and return a table view controller able to display content cards (for most use
+  /// cases, prefer using ``BrazeContentCardUI/ModalViewController/init(braze:title:)`` instead).
   ///
   /// - Parameters:
   ///   - initialCards: The initial Content Cards displayed.

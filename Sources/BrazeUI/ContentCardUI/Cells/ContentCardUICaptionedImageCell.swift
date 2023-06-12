@@ -35,10 +35,10 @@ extension BrazeContentCardUI {
       fatalError("init(coder:) has not been implemented")
     }
 
-    /// The image height constraint. Unset until ``installInternalConstraints()`` is executed.
+    /// The image height constraint, unset until ``installInternalConstraints()`` is executed.
     open var captionedImageHeight: NSLayoutConstraint!
 
-    /// The text container edges constraints. Unset until ``installInternalConstraints()`` is
+    /// The text container edges constraints, unset until ``installInternalConstraints()`` is
     /// executed.
     open var textContainerContraints: [NSLayoutConstraint]!
 

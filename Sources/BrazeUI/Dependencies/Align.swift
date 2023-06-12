@@ -331,8 +331,7 @@ struct AnchorCollectionEdges {
 
   // MARK: Semantic API
 
-  /// Pins the edges to the edges of the given item. By default, pins the edges
-  /// to the superview.
+  /// Pins the edges to the edges of the given item (default: pins the edges to the superview).
   ///
   /// - parameter target: The target view, by default, uses the superview.
   /// - parameter insets: Insets the reciever's edges by the given insets.
@@ -349,8 +348,7 @@ struct AnchorCollectionEdges {
       axis: axis, alignment: alignment)
   }
 
-  /// Pins the edges to the edges of the given item. By default, pins the edges
-  /// to the superview.
+  /// Pins the edges to the edges of the given item (default: pins the edges to the superview).
   ///
   /// - parameter target: The target view, by default, uses the superview.
   /// - parameter insets: Insets the reciever's edges by the given insets.
@@ -531,13 +529,13 @@ final class Constraints: Collection {
   /// Returns all of the created constraints.
   private(set) var constraints = [NSLayoutConstraint]()
 
-  /// All of the constraints created in the given closure are automatically
-  /// activated at the same time. This is more efficient then installing them
-  /// one-be-one. More importantly, it allows to make changes to the constraints
-  /// before they are installed (e.g. change `priority`).
+  /// All of the constraints created in the given closure are automatically activated at the same
+  /// time.
   ///
-  /// - parameter activate: Set to `false` to disable automatic activation of
-  /// constraints.
+  /// This is more efficient then installing them one-be-one. More importantly, it allows to make
+  /// changes to the constraints before they are installed (e.g. change `priority`).
+  ///
+  /// - parameter activate: Set to `false` to disable automatic activation of constraints.
   @discardableResult init(activate: Bool = true, _ closure: () -> Void) {
     Constraints.stack.append(self)
     closure()  // create constraints

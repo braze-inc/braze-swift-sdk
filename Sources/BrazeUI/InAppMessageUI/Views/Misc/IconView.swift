@@ -58,17 +58,17 @@ extension BrazeInAppMessageUI {
 
       /// Intrinsic size of the icon, including the background.
       ///
-      /// Default: `50x50pt.`
+      /// Default: `50x50pt`.
       public var size: CGSize = CGSize(width: 50, height: 50)
 
       /// Size of the symbol, excluding the background.
       ///
-      /// Default: `30pt.`
+      /// Default: `30pt`.
       public var symbolSize = 30.0
 
-      /// Corner radius of the icon's background
+      /// Corner radius of the icon's background.
       ///
-      /// Default: `10pt.`
+      /// Default: `10pt`.
       public var cornerRadius = 10.0
 
       /// Default initializer.

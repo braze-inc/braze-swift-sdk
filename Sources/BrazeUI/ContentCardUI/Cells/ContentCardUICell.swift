@@ -101,7 +101,7 @@ extension BrazeContentCardUI {
       public static let defaults = Self()
     }
 
-    /// The margin type
+    /// The margin type.
     public enum Margin: Equatable {
 
       /// Use the `layoutMarginsGuide`.
@@ -119,7 +119,7 @@ extension BrazeContentCardUI {
       }
     }
 
-    /// The cell attributes. See ``Attributes-swift.struct``.
+    /// The cell attributes (see ``Attributes-swift.struct``).
     open var attributes: Attributes = .init() {
       didSet {
         guard attributes != oldValue else { return }
@@ -269,24 +269,23 @@ extension BrazeContentCardUI {
 
     // MARK: - Layout
 
-    /// The unviewed indicator height constraint. Unset until ``installInternalConstraints()`` is
+    /// The unviewed indicator height constraint, unset until ``installInternalConstraints()`` is
     /// executed.
     open var unviewedIndicatorHeight: NSLayoutConstraint!
 
-    /// The horizontal constraints to the content view layout margin guide. Unset until
+    /// The horizontal constraints to the content view layout margin guide, unset until
     /// ``installInternalConstraints()`` is executed.
     open var layoutContainerEdges: [NSLayoutConstraint]!
 
-    /// The horizontal constraints to the content view edges. Unset until
+    /// The horizontal constraints to the content view edges, unset until
     /// ``installInternalConstraints()`` is executed.
     open var edgesContainerEdges: [NSLayoutConstraint]!
 
-    /// The vertical constraints to the content view edges. Unset until
+    /// The vertical constraints to the content view edges, unset until
     /// ``installInternalConstraints()`` is executed.
     open var containerVerticalEdges: [NSLayoutConstraint]!
 
-    /// The max width constraint. Unset until ``installInternalConstraints()`` is
-    /// executed.
+    /// The max width constraint, unset until ``installInternalConstraints()`` is executed.
     open var containerMaxWidth: NSLayoutConstraint!
 
     /// Install the internal auto-layout constraints.
@@ -325,13 +324,13 @@ extension BrazeContentCardUI {
 
     // MARK: - Theme
 
-    /// See [`traitCollectionDidChange(_:)`](https://developer.apple.com/documentation/uikit/uitraitenvironment/1623516-traitcollectiondidchange)
+    /// See [`traitCollectionDidChange(_:)`](https://developer.apple.com/documentation/uikit/uitraitenvironment/1623516-traitcollectiondidchange).
     open override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
       super.traitCollectionDidChange(previousTraitCollection)
       applyAttributes(attributes)
     }
 
-    /// See [`tintColorDidChange()`](https://developer.apple.com/documentation/uikit/uiview/1622620-tintcolordidchange)
+    /// See [`tintColorDidChange()`](https://developer.apple.com/documentation/uikit/uiview/1622620-tintcolordidchange).
     open override func tintColorDidChange() {
       super.tintColorDidChange()
       applyAttributes(attributes)
@@ -339,14 +338,15 @@ extension BrazeContentCardUI {
 
     // MARK: - User Interactions
 
-    /// Whether the cell can be highlighted or not. By default, content cards without click action
-    /// are not highlightable.
+    /// Whether the cell can be highlighted or not.
+    ///
+    /// By default, content cards without click action are not highlightable.
     open var highlightable: Bool = true
 
     /// The animator driving the highlighted state.
     open var highlightedAnimator: UIViewPropertyAnimator?
 
-    /// See [`setHighlighted(_:animated:)`](https://developer.apple.com/documentation/uikit/uitableviewcell/1623280-sethighlighted)
+    /// See [`setHighlighted(_:animated:)`](https://developer.apple.com/documentation/uikit/uitableviewcell/1623280-sethighlighted).
     open override func setHighlighted(_ highlighted: Bool, animated: Bool) {
       super.setHighlighted(highlighted, animated: animated)
 

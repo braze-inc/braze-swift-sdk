@@ -29,7 +29,7 @@ extension BrazeInAppMessageUI {
       /// The spacing around the content's view content.
       public var padding = UIEdgeInsets(top: 15, left: 20, bottom: 15, right: 20)
 
-      /// The leading padding when the view is displaying a graphic (icon or image)
+      /// The leading padding when the view is displaying a graphic (icon or image).
       public var graphicLeadingPadding = 15.0
 
       /// The spacing between the graphic view, the body and the chevron.
@@ -108,7 +108,7 @@ extension BrazeInAppMessageUI {
       case visible
     }
 
-    /// The view attributes. See ``Attributes-swift.struct``.
+    /// The view attributes (see ``Attributes-swift.struct``).
     public var attributes: Attributes {
       didSet { applyAttributes() }
     }

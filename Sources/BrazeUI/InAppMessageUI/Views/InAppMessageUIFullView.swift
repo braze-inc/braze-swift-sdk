@@ -28,7 +28,7 @@ extension BrazeInAppMessageUI {
       /// The spacing around the content's view content.
       public var padding = UIEdgeInsets(top: 40, left: 25, bottom: 30, right: 25)
 
-      /// The spacing between the header and message
+      /// The spacing between the header and message.
       public var labelsSpacing = 10.0
 
       /// The spacing between the graphic, the labels scroll view and the buttons.
@@ -74,8 +74,8 @@ extension BrazeInAppMessageUI {
       /// The buttons attributes.
       public var buttonsAttributes = ButtonView.Attributes.defaults
 
-      /// Specify the preferred display mode. See
-      /// ``BrazeInAppMessageUI/FullView/DisplayMode-swift.enum``.
+      /// Specify the preferred display mode (see
+      /// ``BrazeInAppMessageUI/FullView/DisplayMode-swift.enum``).
       public var preferredDisplayMode: DisplayMode?
 
       /// Closure allowing further customization, executed when the view is about to be presented.

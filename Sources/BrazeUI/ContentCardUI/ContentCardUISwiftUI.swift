@@ -23,6 +23,7 @@
     let attributes: Attributes
 
     /// Creates and returns a view displaying the latest content cards fetched by the Braze SDK.
+    ///
     /// - Parameters:
     ///   - braze: The Braze instance.
     ///   - shouldProcess: Whether Braze should process the Content Card click action. See

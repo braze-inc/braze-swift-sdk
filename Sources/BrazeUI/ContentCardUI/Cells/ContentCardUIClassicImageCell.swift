@@ -50,11 +50,11 @@ extension BrazeContentCardUI {
 
     // MARK: - Layout
 
-    /// The horizontal stack edges constraints. Unset until ``installInternalConstraints()`` is
+    /// The horizontal stack edges constraints, unset until ``installInternalConstraints()`` is
     /// executed.
     open var cardStackConstraints: [NSLayoutConstraint]!
 
-    /// The classic image size constraints. Unset until ``installInternalConstraints()`` is
+    /// The classic image size constraints, unset until ``installInternalConstraints()`` is
     /// executed.
     open var classicImageSize: [NSLayoutConstraint]!
 

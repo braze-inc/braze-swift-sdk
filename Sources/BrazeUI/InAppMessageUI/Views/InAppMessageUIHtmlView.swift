@@ -4,7 +4,7 @@ import WebKit
 
 extension BrazeInAppMessageUI {
 
-  /// The view for html in-app messages
+  /// The view for html in-app messages.
   ///
   /// The html view can be customized using the ``attributes-swift.property`` property.
   open class HtmlView: UIView, InAppMessageView {
@@ -33,8 +33,8 @@ extension BrazeInAppMessageUI {
       public var automaticBodyClicks: Bool = false
 
       /// Specifies whether the web view should support the `target` parameter / attribute in:
-      /// - Anchor tags (e.g. `<a href="..." target="_blank">`)
-      /// - Window opens (e.g. `window.open(url, "_blank")`)`
+      /// - Anchor tags (e.g. `<a href="..." target="_blank">`).
+      /// - Window opens (e.g. `window.open(url, "_blank")`).
       ///
       /// When set to true (default), the url marked with `target` is opened and the message
       /// remains visible.
@@ -62,7 +62,7 @@ extension BrazeInAppMessageUI {
       public static var defaults = Self()
     }
 
-    /// The view attributes. See ``Attributes-swift.struct``.
+    /// The view attributes (see ``Attributes-swift.struct``).
     public let attributes: Attributes
 
     // MARK: - Animation
@@ -525,8 +525,9 @@ extension WKWebView {
 
 extension WKNavigationAction {
 
-  /// Returns whether the navigation action is considered _transient_. A transient navigation action
-  /// is processed without dismissing the in-app message.
+  /// Returns whether the navigation action is considered _transient_.
+  ///
+  /// A transient navigation action is processed without dismissing the in-app message.
   ///
   /// In HTML, transient navigation actions are performed via an anchor tag with an explicit
   /// undefined target value (e.g. `_blank`, `_new` or any other name excepted `_self`).

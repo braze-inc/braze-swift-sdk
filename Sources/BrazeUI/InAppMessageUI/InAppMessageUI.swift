@@ -68,8 +68,10 @@ open class BrazeInAppMessageUI:
     set { _followupMessage = newValue }
   }
 
-  /// This property acts as a store for ``followupMessage``. Storing the typed `Braze.InAppMessage?`
-  /// directly on the `BrazeInAppMessageUI` class leads to that class not being available in ObjC.
+  /// This property acts as a store for ``followupMessage``.
+  ///
+  /// Storing the typed `Braze.InAppMessage?` directly on the `BrazeInAppMessageUI` class leads to
+  /// that class not being available in ObjC.
   ///
   /// This seems to be a compiler bug as no warning or error are printed during the compilation
   /// process.

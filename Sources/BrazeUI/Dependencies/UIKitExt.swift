@@ -35,8 +35,10 @@ extension UIButton {
 
 extension UIView {
 
-  /// Position the view in a resizable container view and returns it. The wrapped view can adopt its
-  /// intrinsic content size without being stretched.
+  /// Position the view in a resizable container view and returns it.
+  ///
+  /// The wrapped view can adopt its intrinsic content size without being stretched.
+  ///
   /// - Parameters:
   ///   - centerX: Horizontally center the view in the container view (default: `true`).
   ///   - centerY: Vertically center the view in the container view (default: `true`).

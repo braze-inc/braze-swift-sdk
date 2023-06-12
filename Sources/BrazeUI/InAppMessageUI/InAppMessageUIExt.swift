@@ -12,7 +12,7 @@ extension BrazeInAppMessageUI {
 
   /// The different display choices supported when receiving an in-app message from the Braze SDK.
   ///
-  /// See ``BrazeInAppMessageUIDelegate/inAppMessage(_:displayChoiceForMessage:)-1ghly``.
+  /// See ``BrazeInAppMessageUIDelegate/inAppMessage(_:displayChoiceForMessage:)-9w1nb``.
   public enum DisplayChoice {
 
     /// The in-app message is displayed immediately.

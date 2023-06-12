@@ -40,7 +40,7 @@ extension BrazeInAppMessageUI {
       /// The spacing around the content's view content.
       public var padding: UIEdgeInsets = .init(top: 40, left: 25, bottom: 30, right: 25)
 
-      /// The spacing between the header and message
+      /// The spacing between the header and message.
       public var labelsSpacing = 10.0
 
       /// The spacing between the graphic, the labels scroll view and the buttons.
