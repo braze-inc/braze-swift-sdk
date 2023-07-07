@@ -284,6 +284,7 @@ extension BrazeInAppMessageUI {
       messageLabel.textColor = theme.textColor.uiColor
       chevronView.tintColor = theme.closeButtonColor.uiColor
       contentView.backgroundColor = theme.backgroundColor.uiColor
+      shadowView.alpha = theme.backgroundColor.a
 
       attributes.onTheme?(self)
     }

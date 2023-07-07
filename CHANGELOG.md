@@ -1,3 +1,18 @@
+## 6.3.1
+
+##### Fixed
+- Fixes an issue where the previous user's data would not be flushed after calling `changeUser(userId:sdkAuthSignature:)` when the SDK authentication feature is enabled.
+- A content card impression can now be logged once per session. Previously, the Braze-provided Content Cards UI would limit to a single impression per card at maximum, irrespective of sessions.
+- Fixes an issue that previously caused push notification URLs with percent-encoded characters to fail during decoding.
+- Fixes a behavior to automatically set a user's push subscription state to [`optedIn`][opted-in] after push permissions have explicitly been authorized via the Settings app.
+- Correctly hides shadows on in-app messages that are configured with a transparent background.
+- Fixes a rare crash occurring when deinitializing the Braze instance.
+
+##### Added
+- Adds additional logging for network-related decoding errors.
+
+[opted-in]: https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/user-swift.class/subscriptionstate/optedin
+
 ## 6.3.0
 
 ##### Fixed

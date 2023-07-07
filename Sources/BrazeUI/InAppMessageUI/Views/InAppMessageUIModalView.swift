@@ -335,6 +335,7 @@ extension BrazeInAppMessageUI {
       textViewStyle.message.color = theme.textColor.uiColor
       closeButton.setTitleColor(theme.closeButtonColor.uiColor, for: .normal)
       contentView.backgroundColor = theme.backgroundColor.uiColor
+      shadowView.alpha = theme.backgroundColor.a
       backgroundColor = theme.frameColor.uiColor
 
       attributes.onTheme?(self)

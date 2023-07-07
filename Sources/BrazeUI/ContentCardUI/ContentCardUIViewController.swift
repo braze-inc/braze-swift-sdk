@@ -461,7 +461,6 @@ extension BrazeContentCardUI {
     ///   - card: The visible card.
     ///   - indexPath: The index path for the cell.
     open func cardImpression(_ card: Braze.ContentCard, indexPath: IndexPath) {
-      if card.viewed { return }
       card.context?.logImpression()
 
       // We just update the local data model here, the unviewed indicator is updated separately via

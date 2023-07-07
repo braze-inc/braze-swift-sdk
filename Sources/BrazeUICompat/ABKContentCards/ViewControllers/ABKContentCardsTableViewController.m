@@ -320,7 +320,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
   // We mark a cell as read only if it's not visible already.
   // But this method might be called for visible cells too because of dynamic heights.
   BOOL cellIsVisible = [[tableView indexPathsForVisibleRows] containsObject:indexPath];
-  if (!cellIsVisible && indexPath.row < self.cards.count) {
+  if (!cellIsVisible && (NSUInteger)indexPath.row < self.cards.count) {
     // indexPath.row is out of bounds if the card did end displaying due to its deletion
 
     ABKContentCard *card = self.cards[indexPath.row];
