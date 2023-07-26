@@ -223,15 +223,6 @@
       break;
   }
 
-  // Force loading assets in SDWebImage cache, the assets needs to be directly available otherwise
-  // the IAM UI doesn't render properly.
-  SDImageCache *cache = SDImageCache.sharedImageCache;
-  if (message.imageURL) {
-    NSString *key = [SDWebImageManager.sharedManager cacheKeyForURL:message.imageURL];
-    NSData *imageData = [NSData dataWithContentsOfURL:message.imageURL];
-    [cache storeImageDataToDisk:imageData forKey:key];
-  }
-
   [self.inAppMessageStack addObject:abkMessage];
   [self handleExistingInAppMessagesInStack];
 }
@@ -277,6 +268,15 @@
     if (error != nil || message == nil) {
       NSLog(@"%@: Unable to retrieve local assets, aborting in-app message presentation.", NSStringFromSelector(_cmd));
       return;
+    }
+
+    // Force loading assets in SDWebImage cache, the assets needs to be directly available otherwise
+    // the IAM UI doesn't render properly.
+    SDImageCache *cache = SDImageCache.sharedImageCache;
+    if (message.imageURL) {
+      NSString *key = [SDWebImageManager.sharedManager cacheKeyForURL:message.imageURL];
+      NSData *imageData = [NSData dataWithContentsOfURL:message.imageURL];
+      [cache storeImageDataToDisk:imageData forKey:key];
     }
 
     // Update underlying in-app message

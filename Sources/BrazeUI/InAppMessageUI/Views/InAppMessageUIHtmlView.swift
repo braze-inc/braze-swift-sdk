@@ -509,10 +509,13 @@ extension WKWebView {
     evaluateJavaScript(
       """
       const css = `* {
-        -webkit-touch-callout: none;
-        -webkit-user-select: none;
+          -webkit-touch-callout: none;
+          -webkit-user-select: none;
+      }
+      input, textarea {
+          -webkit-touch-callout: initial !important;
+          -webkit-user-select: initial !important;
       }`
-      const head = document.head || document.getElementsByTagName('head')[0]
       var style = document.createElement('style')
       style.type = 'text/css'
       style.appendChild(document.createTextNode(css))

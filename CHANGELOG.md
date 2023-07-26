@@ -1,3 +1,15 @@
+## 6.4.0
+
+##### Fixed
+- Fixes an issue preventing text fields from being selected in HTML IAMs for iOS 15.
+- Fixes an issue where the device model was inaccurately reported as iPad on macOS (Mac Catalyst and Designed for iPad configurations).
+- Fixes an issue where custom event and purchase properties would not accept an entry if its value was an empty string.
+- Fixes a crash that occurred in the default UI for Content Cards when encountering a zero-value aspect ratio.
+- Fixes an issue introduced in 6.0.0 where images in in-app messages would appear smaller than expected when using the compatibility UI (`BrazeUICompat`).
+
+##### Added
+- Adds the `unviewedCards` convenience property to the `Braze.ContentCards` class to get the unviewed content cards for the current user.
+
 ## 6.3.1
 
 ##### Fixed

@@ -58,7 +58,8 @@ open class AsyncImageView: UIView {
   }
 
   private var effectiveAspectRatio: Double {
-    fixedAspectRatio ?? aspectRatio
+    let effectiveAspectRatio = fixedAspectRatio ?? aspectRatio
+    return effectiveAspectRatio <= 0 ? 1.0 : effectiveAspectRatio
   }
 
   private var aspectRatioConstraint: NSLayoutConstraint!
@@ -107,7 +108,7 @@ open class AsyncImageView: UIView {
     case .failed:
       retryButton.isHidden = retry == nil
     case .success(let url, let size):
-      aspectRatio = size.width / size.height
+      aspectRatio = size.height <= 0 ? 1.0 : (size.width / size.height)
       GIFViewProvider.shared.updateView(imageView, url)
       updateImageCornerRadius()
     }
