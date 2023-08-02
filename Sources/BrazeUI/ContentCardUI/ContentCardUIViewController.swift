@@ -30,6 +30,10 @@ extension BrazeContentCardUI {
     /// The current asynchronous image loading operations.
     var imageLoads: [URL: AsyncImageView.ImageLoad] = [:]
 
+    /// The content cards viewed in the current session, used to limit one impression event per card
+    /// per feed instance.
+    var viewedInFeedCardsIDs: Set<String> = []
+
     // MARK: - Attributes
 
     /// The attributes supported by the view controller.
@@ -461,11 +465,13 @@ extension BrazeContentCardUI {
     ///   - card: The visible card.
     ///   - indexPath: The index path for the cell.
     open func cardImpression(_ card: Braze.ContentCard, indexPath: IndexPath) {
+      guard !viewedInFeedCardsIDs.contains(card.id) else { return }
       card.context?.logImpression()
 
       // We just update the local data model here, the unviewed indicator is updated separately via
       // `cardViewed(_:indexPath:cell:)`
       cards[indexPath.row].viewed = true
+      viewedInFeedCardsIDs.insert(card.id)
     }
 
     /// Mark the card as viewed, hide the cell's unviewed indicator.

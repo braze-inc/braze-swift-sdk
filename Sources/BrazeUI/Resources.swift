@@ -44,6 +44,14 @@ var resourcesBundle: Bundle? = {
     }
   }
 
+  // Returns the framework bundle if available
+  let frameworkBundle = Bundle(for: BundleFinder.self)
+  if let name = frameworkBundle.infoDictionary?["CFBundleName"] as? String,
+    name.hasPrefix("BrazeUI")
+  {
+    return frameworkBundle
+  }
+
   print(
     "[braze] Error: Unable to find UI resources bundle, cannot load localizations and acknowledgments"
   )

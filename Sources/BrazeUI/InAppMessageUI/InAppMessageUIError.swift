@@ -7,6 +7,7 @@ extension BrazeInAppMessageUI {
     case noContextLogClick
     case noContextProcessClickAction
     case invalidBrazeActions
+    case invalidPushPrimer
 
     case rawToTypedConversion(Braze.ErrorString)
 
@@ -43,6 +44,8 @@ extension BrazeInAppMessageUI.Error {
       return "Cannot process click action for non-braze in-app message."
     case .invalidBrazeActions:
       return "Invalid Braze Actions found in click action. Skipping display."
+    case .invalidPushPrimer:
+      return "Invalid push primer."
 
     case .rawToTypedConversion(let error):
       return
@@ -127,18 +130,6 @@ extension Braze.WebViewBridge.ScriptMessageHandler.Error {
         """
     case .deprecation(let message):
       return message
-    case .pushAlreadyEnabled:
-      return
-        """
-        Unable to process JavaScript bridge action to request push permission.
-        - Push is already enabled.
-        """
-    case .invalidPushAuthStatus:
-      return
-        """
-        Unable to process JavaScript bridge action to request push permission.
-        - Push authorization status not found.
-        """
     case .unknown(let error):
       return error.logDescription
     @unknown default:

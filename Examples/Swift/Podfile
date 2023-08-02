@@ -80,7 +80,12 @@ target 'Location-tvOS' do
   pod 'BrazeLocation'
 end
 
-target 'PushNotifications' do
+target 'PushNotifications-Manual' do
+  platform :ios, '11.0'
+  pod 'BrazeKit'
+end
+
+target 'PushNotifications-Automatic' do
   platform :ios, '11.0'
   pod 'BrazeKit'
 end

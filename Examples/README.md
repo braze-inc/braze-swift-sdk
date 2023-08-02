@@ -80,11 +80,33 @@ Follow the instructions below for your preferred integration method to get start
 - Presents a complete BrazeLocation integration which enables location tracking and geofence monitoring.
 - Related tutorial: [Location and Geofences](https://braze-inc.github.io/braze-swift-sdk/tutorials/braze/d1-brazelocation).
 
-#### PushNotifications
+#### PushNotifications-Automatic
 
 - iOS, Mac Catalyst.
 - Swift, Objective-C.
-- Presents a complete push notification integration supporting:
+- Automatic integration via SDK configuration flag.
+- Includes support for:
+  - Automatic setup.
+  - Automatic authorization request.
+  - Silent push notifications.
+  - Foreground push notifications.
+    - Action buttons.
+    - Display push notifications when app is already open.
+  - Rich push notification support (image, GIF, audio, video).
+    - Via **PushNotificationsServiceExtension**.
+  - Braze Push Story implementation.
+    - Via **PushNotificationsContentExtension**.
+- Related tutorials:
+  - [Standard Push Notifications](https://braze-inc.github.io/braze-swift-sdk/tutorials/braze/b1-standard-push-notifications).
+  - [Rich Push Notifications](https://braze-inc.github.io/braze-swift-sdk/tutorials/braze/b2-rich-push-notifications).
+  - [Push Stories](https://braze-inc.github.io/braze-swift-sdk/tutorials/braze/b3-push-stories).
+
+#### PushNotifications-Manual
+
+- iOS, Mac Catalyst.
+- Swift, Objective-C.
+- Manual integration, requiring the implementation of system delegates.
+- Includes support for:
   - Silent push notifications.
   - Foreground push notifications.
     - Action buttons.

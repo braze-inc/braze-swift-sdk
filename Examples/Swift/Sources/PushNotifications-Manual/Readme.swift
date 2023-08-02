@@ -1,6 +1,6 @@
 let readme =
   """
-  This sample presents a complete push notification integration supporting:
+  This sample presents a complete manual push notification integration supporting:
 
   - PushNotifications/AppDelegate.swift:
     - Silent push notifications
@@ -13,6 +13,8 @@ let readme =
 
   - PushNotificationsContentExtension:
     - Braze Push Story implementation
+
+  See the PushNotifications-Automatic example app for a configuration based integration.
   """
 
 let actions: [(String, String, (ReadmeViewController) -> Void)] = []

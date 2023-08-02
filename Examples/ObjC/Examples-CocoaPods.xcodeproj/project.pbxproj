@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		02D39B681AC38D3E38167BC9 /* ReadmeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E06A48D3D2F38E11DAA4C05E /* ReadmeViewController.m */; };
+		039294B223B25C8A9F9F7B27 /* empty-file.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A77FC218A1A67D5037DC3FF /* empty-file.swift */; };
 		0575EAD45DC713FDFA430364 /* CustomInAppMessagePresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2697E60398EE452C7E362B83 /* CustomInAppMessagePresenter.m */; };
 		064F11B6AF1E9932CB533646 /* NotAvailableInObjC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AAC654C4C0BA6482C2E09C7 /* NotAvailableInObjC.m */; };
 		08B5B0B4850594BD052D8A4A /* empty-file.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A77FC218A1A67D5037DC3FF /* empty-file.swift */; };
 		0A06937698DDB503B39A3BCD /* empty-file.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A77FC218A1A67D5037DC3FF /* empty-file.swift */; };
-		0BE8CE4982452A0E74D7F309 /* Readme.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F765C494ACFF150F0A76C4 /* Readme.m */; };
 		0DE3276319B3F7EDE9E5761D /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61DA261A3969E80D4910B919 /* NotificationViewController.swift */; };
 		161DC1259C44AD89479BA698 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA064323F91A22F4E14CAE9D /* NotificationService.swift */; };
 		181CEE421636AF991665AF53 /* AuthenticationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 11D86AE9D1DC590AC4694323 /* AuthenticationManager.m */; };
@@ -22,9 +22,11 @@
 		210B445D7948A3019E0B61DE /* ReadmeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E06A48D3D2F38E11DAA4C05E /* ReadmeViewController.m */; };
 		21406C5977E35E2DB91079C1 /* Readme.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B0E04E20E4B1C458222BA1 /* Readme.m */; };
 		2198B5052B89F561E1408347 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A56AB422F8DA782A8D2B6FD /* LaunchScreen.storyboard */; };
+		224A9FD6214DC149D6BE167D /* Readme.m in Sources */ = {isa = PBXBuildFile; fileRef = 08305DA893D102CE816A0BAB /* Readme.m */; };
 		237398E27F20D11B4A8D6F32 /* ReadmeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E06A48D3D2F38E11DAA4C05E /* ReadmeViewController.m */; };
 		2599D92D219E7BB320EB918C /* CardsInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4B96FFF47505E424237B85 /* CardsInfoViewController.m */; };
 		285F5B1A81AE13600AFD3E88 /* ReadmeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E06A48D3D2F38E11DAA4C05E /* ReadmeViewController.m */; };
+		2D78E3FFBF831E4652A4736F /* ReadmeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E06A48D3D2F38E11DAA4C05E /* ReadmeViewController.m */; };
 		2F0BC077C6D88FED9EAD26EC /* ReadmeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E06A48D3D2F38E11DAA4C05E /* ReadmeViewController.m */; };
 		30A318E7B0B42CE1B196067C /* Readme.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F98A25BAAEE5DC418161B1 /* Readme.m */; };
 		3170955318006DA2CDC1D371 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C0EA46B7F46275141BF76209 /* main.m */; };
@@ -32,20 +34,19 @@
 		34C9C566ACB7B6220C782866 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A56AB422F8DA782A8D2B6FD /* LaunchScreen.storyboard */; };
 		3601B003232E63D1E1087BAC /* Credentials.m in Sources */ = {isa = PBXBuildFile; fileRef = 77273E47E0A73317EF0235A7 /* Credentials.m */; };
 		3C8DEAC1C01DE222C1FD7715 /* Readme.m in Sources */ = {isa = PBXBuildFile; fileRef = C92AD7CCB90625B324C9E200 /* Readme.m */; };
-		3CCF8C060E64864FF2F0FBC5 /* Credentials.m in Sources */ = {isa = PBXBuildFile; fileRef = 77273E47E0A73317EF0235A7 /* Credentials.m */; };
 		3D5364A50CAFCAAC0FA82F99 /* empty-file.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A77FC218A1A67D5037DC3FF /* empty-file.swift */; };
+		3D686D5013A27F97467FEF15 /* PushNotificationsContentExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 7EFD35FD440D538F5EB8F021 /* PushNotificationsContentExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		3EA409082D01D0AF8FA9C47C /* empty-file.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A77FC218A1A67D5037DC3FF /* empty-file.swift */; };
 		40BBC96C23C0D03C1876EFB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0340E1FFDDBC0C9D72FCD4D4 /* Assets.xcassets */; };
 		42A9ED09E8E44A858AE13EFC /* empty-file.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A77FC218A1A67D5037DC3FF /* empty-file.swift */; };
 		4668AEE87D6BFB57357E49F8 /* InAppMessageInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 763258DB970F0A96B2A3DF74 /* InAppMessageInfoViewController.m */; };
 		4CE1532C64C45B1355BB32FC /* empty-file.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A77FC218A1A67D5037DC3FF /* empty-file.swift */; };
 		4E6928C0008070173370990E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C0EA46B7F46275141BF76209 /* main.m */; };
-		4E9C8479947558025D64171B /* ReadmeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E06A48D3D2F38E11DAA4C05E /* ReadmeViewController.m */; };
 		4F93A8E59C746BA0FE66EFD6 /* ReadmeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E06A48D3D2F38E11DAA4C05E /* ReadmeViewController.m */; };
 		4FBBFDC7A8AD63635182DCCC /* Credentials.m in Sources */ = {isa = PBXBuildFile; fileRef = 77273E47E0A73317EF0235A7 /* Credentials.m */; };
 		5443B297E55EFFA3D9531EB5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A9AF15EF29118835FEB5D5E2 /* AppDelegate.m */; };
-		56E71FBF34C707A0C76D4E92 /* PushNotificationsServiceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 40B660242E5E30D22F3AC51E /* PushNotificationsServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		5752C25DC8C2CA0C0925C10F /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6208C00FB5F7F0284A26EF20 /* UserNotifications.framework */; };
+		5B659BAAEEE7DFCD53AC152B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C0EA46B7F46275141BF76209 /* main.m */; };
 		60D9B416B69C17AD0FF5FD87 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6208C00FB5F7F0284A26EF20 /* UserNotifications.framework */; };
 		614AF2E22ADA853DF9227F6F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CABCDD10D6E23AB146F9F7BA /* LaunchScreen.storyboard */; };
 		639A93232862A95314463DE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0340E1FFDDBC0C9D72FCD4D4 /* Assets.xcassets */; };
@@ -53,37 +54,46 @@
 		65D110C8D2CCFE582C33FEFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0340E1FFDDBC0C9D72FCD4D4 /* Assets.xcassets */; };
 		662DDE2EABD1BC726DA86689 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C0EA46B7F46275141BF76209 /* main.m */; };
 		6AA695612AC940383057198A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C0EA46B7F46275141BF76209 /* main.m */; };
+		6E8DEEAF1DA01578928E1D99 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CABCDD10D6E23AB146F9F7BA /* LaunchScreen.storyboard */; };
 		71A28629D048E47EC5F63455 /* Credentials.m in Sources */ = {isa = PBXBuildFile; fileRef = 77273E47E0A73317EF0235A7 /* Credentials.m */; };
 		7440800FB6329FCB28FC0FD6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD5EA6DB57BDEF9D156AF3B /* AppDelegate.m */; };
 		7493B2FFD2F11599A02795B2 /* empty-file.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A77FC218A1A67D5037DC3FF /* empty-file.swift */; };
 		756350E7C92625894BC8B509 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C0EA46B7F46275141BF76209 /* main.m */; };
+		7606A96360AB2DD8B511B8F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0340E1FFDDBC0C9D72FCD4D4 /* Assets.xcassets */; };
+		791E4543832796513BBA8174 /* PushNotificationsServiceExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 40B660242E5E30D22F3AC51E /* PushNotificationsServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		7B7F572DEB2E96237482FFB3 /* Credentials.m in Sources */ = {isa = PBXBuildFile; fileRef = 77273E47E0A73317EF0235A7 /* Credentials.m */; };
 		7BA952D41DC54C1A728AB539 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C0EA46B7F46275141BF76209 /* main.m */; };
 		7BFD94E43BEACE8972BE37C5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C0EA46B7F46275141BF76209 /* main.m */; };
 		7E8AD3897D9983306EE938B9 /* Credentials.m in Sources */ = {isa = PBXBuildFile; fileRef = 77273E47E0A73317EF0235A7 /* Credentials.m */; };
 		7EF26ED3BFA6D87A5CD2C493 /* empty-file.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A77FC218A1A67D5037DC3FF /* empty-file.swift */; };
-		7FC56E25CCA1B6080699728A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0340E1FFDDBC0C9D72FCD4D4 /* Assets.xcassets */; };
 		865837100E2DC0BA8FAB9E6C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C0EA46B7F46275141BF76209 /* main.m */; };
+		8781B776CD3C2F801C2415F9 /* Readme.m in Sources */ = {isa = PBXBuildFile; fileRef = AE1E01D537E51875B6C2DD5A /* Readme.m */; };
 		89FF1DCFFEF6690C0DF13203 /* BRZGIFViewProvider+SDWebImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C04E748BC80720A72FE18A /* BRZGIFViewProvider+SDWebImage.m */; };
 		8AA046F58DFE835A8DBDC2FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0340E1FFDDBC0C9D72FCD4D4 /* Assets.xcassets */; };
 		8B404352670C6944B8EBCD29 /* empty-file.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A77FC218A1A67D5037DC3FF /* empty-file.swift */; };
+		8B7BA5FE9EFF3189A801D9BD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C0EA46B7F46275141BF76209 /* main.m */; };
 		8F470EAC78320B9B5E3C2093 /* Credentials.m in Sources */ = {isa = PBXBuildFile; fileRef = 77273E47E0A73317EF0235A7 /* Credentials.m */; };
 		90A4F6B53E0118D3661585D4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C0EA46B7F46275141BF76209 /* main.m */; };
+		94C492CAEC81F9BC611487FE /* ReadmeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E06A48D3D2F38E11DAA4C05E /* ReadmeViewController.m */; };
 		978DED78E88A3ADE68A1D7D0 /* Credentials.m in Sources */ = {isa = PBXBuildFile; fileRef = 77273E47E0A73317EF0235A7 /* Credentials.m */; };
+		97E77B26EC27F73D5887D7FB /* PushNotificationsContentExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 7EFD35FD440D538F5EB8F021 /* PushNotificationsContentExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		98A97831C24A0DC18D62C93D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CABCDD10D6E23AB146F9F7BA /* LaunchScreen.storyboard */; };
 		99636D4769E4C08A61452149 /* ReadmeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E06A48D3D2F38E11DAA4C05E /* ReadmeViewController.m */; };
 		9ACDCF377DDDFE68EC46E40C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 201DC51A7B4BD5035790D967 /* AppDelegate.m */; };
 		9C4BA0B17CDD5749B1E02314 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CABCDD10D6E23AB146F9F7BA /* LaunchScreen.storyboard */; };
+		9FE4875C2594F91BD39443E3 /* Credentials.m in Sources */ = {isa = PBXBuildFile; fileRef = 77273E47E0A73317EF0235A7 /* Credentials.m */; };
 		A08302940AC13A1B149928CE /* ReadmeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E06A48D3D2F38E11DAA4C05E /* ReadmeViewController.m */; };
 		A0995EE7A6CAF96B4DA7A638 /* empty-file.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A77FC218A1A67D5037DC3FF /* empty-file.swift */; };
-		A2BE6EE947CA0EB7BB800F8C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DC0BEFE722FE52D53AA96B /* AppDelegate.m */; };
+		A1817C820352BB10888A4433 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B05D9F05DB566D0DE7AE92C9 /* AppDelegate.m */; };
 		A59B5541D8BDA70A1818AFDB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C0EA46B7F46275141BF76209 /* main.m */; };
 		A841C03E3FC310874204BBBF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD5EA6DB57BDEF9D156AF3B /* AppDelegate.m */; };
 		AA9687A7D3DF585AC6F6D718 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 201DC51A7B4BD5035790D967 /* AppDelegate.m */; };
+		AAAB5BE8910D8EE9275EC281 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBDB1613508BE9FFD3D05EA /* AppDelegate.m */; };
 		AB2FE63CFBECFD1045D16ED7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0340E1FFDDBC0C9D72FCD4D4 /* Assets.xcassets */; };
 		ADC57BB91E99F03639362DBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0340E1FFDDBC0C9D72FCD4D4 /* Assets.xcassets */; };
-		AEDDEDC6F9B5D7838BE908D6 /* PushNotificationsContentExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7EFD35FD440D538F5EB8F021 /* PushNotificationsContentExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		B20E5CC4144654C1689934FE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C0EA46B7F46275141BF76209 /* main.m */; };
 		B23023008FC1FDB8D94A41F5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 318B57C50A12DB5F02FC6224 /* AppDelegate.m */; };
+		B35DFBA28D2BC55338A76022 /* PushNotificationsServiceExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 40B660242E5E30D22F3AC51E /* PushNotificationsServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		B3E22B9F1A9CCE3F7570ADE1 /* empty-file.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A77FC218A1A67D5037DC3FF /* empty-file.swift */; };
 		BAA8122F4149259E86294F99 /* CustomInAppMessagePresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2697E60398EE452C7E362B83 /* CustomInAppMessagePresenter.m */; };
 		BADCCEAB1CF511D6C2CCA7F2 /* Credentials.m in Sources */ = {isa = PBXBuildFile; fileRef = 77273E47E0A73317EF0235A7 /* Credentials.m */; };
 		BCE0FBAE8B29B501C5C77992 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 318B57C50A12DB5F02FC6224 /* AppDelegate.m */; };
@@ -96,6 +106,7 @@
 		C75C09FC6605F02E7646AF0F /* Readme.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B0E04E20E4B1C458222BA1 /* Readme.m */; };
 		CB5A598CA883F225164544FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CABCDD10D6E23AB146F9F7BA /* LaunchScreen.storyboard */; };
 		CD226CFF2170628172C6385B /* empty-file.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A77FC218A1A67D5037DC3FF /* empty-file.swift */; };
+		CE368BB8224FEE981736837C /* Credentials.m in Sources */ = {isa = PBXBuildFile; fileRef = 77273E47E0A73317EF0235A7 /* Credentials.m */; };
 		CF19792AFCEF53A28612612B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0340E1FFDDBC0C9D72FCD4D4 /* Assets.xcassets */; };
 		D0DECD56C8F8201D27F59B32 /* ReadmeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E06A48D3D2F38E11DAA4C05E /* ReadmeViewController.m */; };
 		D11E987E346B85F0966242D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CABCDD10D6E23AB146F9F7BA /* LaunchScreen.storyboard */; };
@@ -104,7 +115,6 @@
 		D52FFBD38EC45B4A9E0172A0 /* ReadmeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E06A48D3D2F38E11DAA4C05E /* ReadmeViewController.m */; };
 		D54A2A38CB7C392FDD1AA045 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 453E08A2BFC20694C68880F0 /* AppDelegate.m */; };
 		D9DE4C1CC27FB43C46E7B9D1 /* empty-file.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A77FC218A1A67D5037DC3FF /* empty-file.swift */; };
-		DAA18481E36225A541BF8091 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CABCDD10D6E23AB146F9F7BA /* LaunchScreen.storyboard */; };
 		DB825090EC9CD3D9BEB01EFA /* Readme.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EE8EFDC1CAFFB4F4CB5D00D /* Readme.m */; };
 		E0941C6B0D49A073B0A87A0F /* Credentials.m in Sources */ = {isa = PBXBuildFile; fileRef = 77273E47E0A73317EF0235A7 /* Credentials.m */; };
 		E26011227818F9B8FD76C2B4 /* NotAvailableInObjC.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CCAE08D319D0CD9AC2E7BC /* NotAvailableInObjC.m */; };
@@ -119,6 +129,7 @@
 		EB71881CFACEA23DC2CF8112 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0340E1FFDDBC0C9D72FCD4D4 /* Assets.xcassets */; };
 		EBEB879F3C8EDC6C314DEB2A /* BRZGIFViewProvider+SDWebImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 8644B16658ADD00DC06DA1DE /* BRZGIFViewProvider+SDWebImage.m */; };
 		ECF4B3DD82D61470A3EFC3E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CABCDD10D6E23AB146F9F7BA /* LaunchScreen.storyboard */; };
+		ED29EC15FF4B79C53611E1A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0340E1FFDDBC0C9D72FCD4D4 /* Assets.xcassets */; };
 		EE1A489AA9350D6C14CBBBCE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CABCDD10D6E23AB146F9F7BA /* LaunchScreen.storyboard */; };
 		F2395EC507EC1C960CFC6118 /* Credentials.m in Sources */ = {isa = PBXBuildFile; fileRef = 77273E47E0A73317EF0235A7 /* Credentials.m */; };
 		F3EF4E7F2CFCC0512F4F642F /* ReadmeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E06A48D3D2F38E11DAA4C05E /* ReadmeViewController.m */; };
@@ -127,37 +138,62 @@
 		FCC2F0660A38AA60902153A0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C0EA46B7F46275141BF76209 /* main.m */; };
 		FDFE0B5AD6C85ABC76895E1F /* CheckoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 133CC7FED120DA4BC4F63478 /* CheckoutViewController.m */; };
 		FE9AA3224EFAE15896E7A1DA /* InAppMessageInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 763258DB970F0A96B2A3DF74 /* InAppMessageInfoViewController.m */; };
-		FEEDF2FB26120BFEAB5512AD /* empty-file.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A77FC218A1A67D5037DC3FF /* empty-file.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		2E6E453ED2C838C4006D08F8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C9F9231105531CE428ADD921 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = C7435EF6816986F173CAB4E9;
-			remoteInfo = PushNotificationsContentExtension;
-		};
-		33F46D6820611AA9F861E4F9 /* PBXContainerItemProxy */ = {
+		0568A2CF422D920FEAA49B0A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C9F9231105531CE428ADD921 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = CCD5FB3CEF0797FD385EA7F3;
 			remoteInfo = PushNotificationsServiceExtension;
 		};
+		0E0B07FDF6C03C295740E489 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9F9231105531CE428ADD921 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CCD5FB3CEF0797FD385EA7F3;
+			remoteInfo = PushNotificationsServiceExtension;
+		};
+		9B35DAC096ED411D5D503E41 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9F9231105531CE428ADD921 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C7435EF6816986F173CAB4E9;
+			remoteInfo = PushNotificationsContentExtension;
+		};
+		A614A81CCD7D3424F022885D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9F9231105531CE428ADD921 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C7435EF6816986F173CAB4E9;
+			remoteInfo = PushNotificationsContentExtension;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		59784E19DCC3D0A5254ECC61 /* Embed App Extensions */ = {
+		4B1FB6248931D3E0BBB80255 /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				56E71FBF34C707A0C76D4E92 /* PushNotificationsServiceExtension.appex in Embed App Extensions */,
-				AEDDEDC6F9B5D7838BE908D6 /* PushNotificationsContentExtension.appex in Embed App Extensions */,
+				B35DFBA28D2BC55338A76022 /* PushNotificationsServiceExtension.appex in Embed Foundation Extensions */,
+				97E77B26EC27F73D5887D7FB /* PushNotificationsContentExtension.appex in Embed Foundation Extensions */,
 			);
-			name = "Embed App Extensions";
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F2294AE58E3A5959BD694765 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				791E4543832796513BBA8174 /* PushNotificationsServiceExtension.appex in Embed Foundation Extensions */,
+				3D686D5013A27F97467FEF15 /* PushNotificationsContentExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -165,6 +201,7 @@
 /* Begin PBXFileReference section */
 		0340E1FFDDBC0C9D72FCD4D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		05A5CB32692A4493359A70F2 /* InAppMessages-Custom-UI.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "InAppMessages-Custom-UI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		08305DA893D102CE816A0BAB /* Readme.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Readme.m; sourceTree = "<group>"; };
 		0F4B1C1A4381988C1833854B /* InAppMessageUI-Customization.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "InAppMessageUI-Customization.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		11D86AE9D1DC590AC4694323 /* AuthenticationManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AuthenticationManager.m; sourceTree = "<group>"; };
 		133CC7FED120DA4BC4F63478 /* CheckoutViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CheckoutViewController.m; sourceTree = "<group>"; };
@@ -176,19 +213,20 @@
 		249AA3BCC2DA49BBBD853C61 /* InAppMessageInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InAppMessageInfoViewController.h; sourceTree = "<group>"; };
 		2697E60398EE452C7E362B83 /* CustomInAppMessagePresenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomInAppMessagePresenter.m; sourceTree = "<group>"; };
 		318B57C50A12DB5F02FC6224 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		320771F5F893662C2BA93D24 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		34DB46A770028DFE645A3AE4 /* Location.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Location.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E8380DBBF4867829281E73C /* ContentCardUI-Customization.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "ContentCardUI-Customization.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EE8EFDC1CAFFB4F4CB5D00D /* Readme.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Readme.m; sourceTree = "<group>"; };
 		40B660242E5E30D22F3AC51E /* PushNotificationsServiceExtension.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = PushNotificationsServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		42BA0F61D883E0421B3FA7CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4429D3CFE076511E2BFB39CA /* PushNotifications-Automatic.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "PushNotifications-Automatic.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		448DBEDFDE383A8EB08E2D44 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		453E08A2BFC20694C68880F0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		45F98A25BAAEE5DC418161B1 /* Readme.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Readme.m; sourceTree = "<group>"; };
 		4B249F4A999D564ABE64305A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4E9C1C30C3119B822A6C482D /* ReadmeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReadmeViewController.h; sourceTree = "<group>"; };
 		52B0E04E20E4B1C458222BA1 /* Readme.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Readme.m; sourceTree = "<group>"; };
-		52EBE792F20E4F26BC0E7F48 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		52F765C494ACFF150F0A76C4 /* Readme.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Readme.m; sourceTree = "<group>"; };
+		57A567ADB4B41051AC8A1FFC /* PushNotifications-Manual.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "PushNotifications-Manual.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		582681504B814C38AB76A767 /* InAppMessageUI.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = InAppMessageUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A77FC218A1A67D5037DC3FF /* empty-file.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "empty-file.swift"; sourceTree = "<group>"; };
 		60ACFE2CA5782ED484080441 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -207,12 +245,13 @@
 		908EB1570A289903382EC012 /* Readme.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Readme.m; sourceTree = "<group>"; };
 		92820DD39CF4F646BE5FECDA /* BRZGIFViewProvider+SDWebImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BRZGIFViewProvider+SDWebImage.h"; sourceTree = "<group>"; };
 		940A63707D6935CDC81EE9F8 /* BRZGIFViewProvider+SDWebImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BRZGIFViewProvider+SDWebImage.h"; sourceTree = "<group>"; };
+		9BBDB1613508BE9FFD3D05EA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		9E2B80BBE3951963FBA6BBD3 /* Analytics.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Analytics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2AC34AC6990B2FA6CD647CC /* ReadmeAction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReadmeAction.h; sourceTree = "<group>"; };
-		A37E3B0FA418AB843D26F7F9 /* PushNotifications.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = PushNotifications.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A77BCD95413ADCF8578235CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A9AF15EF29118835FEB5D5E2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		B0DC0BEFE722FE52D53AA96B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		AE1E01D537E51875B6C2DD5A /* Readme.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Readme.m; sourceTree = "<group>"; };
+		B05D9F05DB566D0DE7AE92C9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		BA064323F91A22F4E14CAE9D /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		BA37FE8457A48CD8683BE79A /* CardsInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CardsInfoViewController.h; sourceTree = "<group>"; };
 		C0EA46B7F46275141BF76209 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -221,6 +260,7 @@
 		CAF8A0D7B315DF4FF0A9CFC8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CD47A5A37513C58A6E380918 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CF4B96FFF47505E424237B85 /* CardsInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CardsInfoViewController.m; sourceTree = "<group>"; };
+		CFB586B4D0EE31DE00C3B95D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D1FC7DF6067EFA59329D3B00 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DCD5EA6DB57BDEF9D156AF3B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		DE3608B9E460175A349CDB87 /* Analytics.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Analytics.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -264,6 +304,17 @@
 			path = Sources/InAppMessageUI;
 			sourceTree = "<group>";
 		};
+		3560915A60A0B9B707315565 /* PushNotifications-Manual */ = {
+			isa = PBXGroup;
+			children = (
+				320771F5F893662C2BA93D24 /* AppDelegate.h */,
+				9BBDB1613508BE9FFD3D05EA /* AppDelegate.m */,
+				08305DA893D102CE816A0BAB /* Readme.m */,
+			);
+			name = "PushNotifications-Manual";
+			path = "Sources/PushNotifications-Manual";
+			sourceTree = "<group>";
+		};
 		45F192846EACB1A9AA4B13B4 /* InAppMessageUI-Customization */ = {
 			isa = PBXGroup;
 			children = (
@@ -282,6 +333,17 @@
 			);
 			name = Location;
 			path = Sources/Location;
+			sourceTree = "<group>";
+		};
+		4F653ED4B961A2183F4868F6 /* PushNotifications-Automatic */ = {
+			isa = PBXGroup;
+			children = (
+				CFB586B4D0EE31DE00C3B95D /* AppDelegate.h */,
+				B05D9F05DB566D0DE7AE92C9 /* AppDelegate.m */,
+				AE1E01D537E51875B6C2DD5A /* Readme.m */,
+			);
+			name = "PushNotifications-Automatic";
+			path = "Sources/PushNotifications-Automatic";
 			sourceTree = "<group>";
 		};
 		51FBDA444B2130ED53F050CB /* Analytics */ = {
@@ -311,7 +373,8 @@
 				09094FD860B8CA12810EF498 /* InAppMessageUI */,
 				45F192846EACB1A9AA4B13B4 /* InAppMessageUI-Customization */,
 				4F38F2ACA591DCA04EF16BB1 /* Location */,
-				E956091874C7F622B207B35A /* PushNotifications */,
+				4F653ED4B961A2183F4868F6 /* PushNotifications-Automatic */,
+				3560915A60A0B9B707315565 /* PushNotifications-Manual */,
 				79BD163F0CE766FD84A15D5A /* PushNotificationsContentExtension */,
 				E239AFF5E3F3085D7A50AFF6 /* PushNotificationsServiceExtension */,
 				DDE0D6627F8681F53997C26F /* Frameworks */,
@@ -364,7 +427,8 @@
 				582681504B814C38AB76A767 /* InAppMessageUI.app */,
 				6832319B66FB76CAA84519FA /* Location.app */,
 				34DB46A770028DFE645A3AE4 /* Location.app */,
-				A37E3B0FA418AB843D26F7F9 /* PushNotifications.app */,
+				4429D3CFE076511E2BFB39CA /* PushNotifications-Automatic.app */,
+				57A567ADB4B41051AC8A1FFC /* PushNotifications-Manual.app */,
 				7EFD35FD440D538F5EB8F021 /* PushNotificationsContentExtension.appex */,
 				40B660242E5E30D22F3AC51E /* PushNotificationsServiceExtension.appex */,
 			);
@@ -419,17 +483,6 @@
 			);
 			name = "InAppMessages-Custom-UI";
 			path = "Sources/InAppMessages-Custom-UI";
-			sourceTree = "<group>";
-		};
-		E956091874C7F622B207B35A /* PushNotifications */ = {
-			isa = PBXGroup;
-			children = (
-				52EBE792F20E4F26BC0E7F48 /* AppDelegate.h */,
-				B0DC0BEFE722FE52D53AA96B /* AppDelegate.m */,
-				52F765C494ACFF150F0A76C4 /* Readme.m */,
-			);
-			name = PushNotifications;
-			path = Sources/PushNotifications;
 			sourceTree = "<group>";
 		};
 		EB043806B7BB06DCA25E0177 /* Common */ = {
@@ -545,23 +598,23 @@
 			productReference = FE50398A21EB6A33EE9874A2 /* InAppMessages-Custom-UI.app */;
 			productType = "com.apple.product-type.application";
 		};
-		726E40C6A0B9D7595B53FE5E /* PushNotifications */ = {
+		5E54F2499C70D4A700289122 /* PushNotifications-Automatic */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 59402C8CB5DE66A776947595 /* Build configuration list for PBXNativeTarget "PushNotifications" */;
+			buildConfigurationList = 2F874161377BBE80018C6E10 /* Build configuration list for PBXNativeTarget "PushNotifications-Automatic" */;
 			buildPhases = (
-				D2ACF4659AEA97A06A724AF3 /* Sources */,
-				B62AC56D63A64203ECF45AAE /* Resources */,
-				59784E19DCC3D0A5254ECC61 /* Embed App Extensions */,
+				C49D9FC9859ED34993C0E203 /* Sources */,
+				B6972BE215274FFEA2F75965 /* Resources */,
+				4B1FB6248931D3E0BBB80255 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				9D311561DBF39BC8DEEAF340 /* PBXTargetDependency */,
-				1CEA284D6D77D29EF745D466 /* PBXTargetDependency */,
+				21AD16D718A79DBEF9EA50DB /* PBXTargetDependency */,
+				D71CA27BE1539E461C525D56 /* PBXTargetDependency */,
 			);
-			name = PushNotifications;
-			productName = PushNotifications;
-			productReference = A37E3B0FA418AB843D26F7F9 /* PushNotifications.app */;
+			name = "PushNotifications-Automatic";
+			productName = "PushNotifications-Automatic";
+			productReference = 4429D3CFE076511E2BFB39CA /* PushNotifications-Automatic.app */;
 			productType = "com.apple.product-type.application";
 		};
 		980998015E29178149D9B86C /* ContentCardUI */ = {
@@ -692,6 +745,25 @@
 			productReference = 3E8380DBBF4867829281E73C /* ContentCardUI-Customization.app */;
 			productType = "com.apple.product-type.application";
 		};
+		FBFCAD4A1EF9A416BF14D8B6 /* PushNotifications-Manual */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3B82158DE9298CA8C810BEEF /* Build configuration list for PBXNativeTarget "PushNotifications-Manual" */;
+			buildPhases = (
+				F4CA2BC5CE4AF5163604B6D2 /* Sources */,
+				894B10CA8AF2A789007FB324 /* Resources */,
+				F2294AE58E3A5959BD694765 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9D07897113682C779535BDE3 /* PBXTargetDependency */,
+				23E765F73A72256B22DC6D4C /* PBXTargetDependency */,
+			);
+			name = "PushNotifications-Manual";
+			productName = "PushNotifications-Manual";
+			productReference = 57A567ADB4B41051AC8A1FFC /* PushNotifications-Manual.app */;
+			productType = "com.apple.product-type.application";
+		};
 		FDA0A7B4C40914EAF405D9FC /* Analytics-tvOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 33A0A8897465C6BD7C17C2E6 /* Build configuration list for PBXNativeTarget "Analytics-tvOS" */;
@@ -742,7 +814,8 @@
 				4A34648A0491D5D28D9A7E8A /* InAppMessages-Custom-UI-tvOS */,
 				BC720D0A2A3B555DF4D1268A /* Location-iOS */,
 				284840096E199840E3A733BC /* Location-tvOS */,
-				726E40C6A0B9D7595B53FE5E /* PushNotifications */,
+				5E54F2499C70D4A700289122 /* PushNotifications-Automatic */,
+				FBFCAD4A1EF9A416BF14D8B6 /* PushNotifications-Manual */,
 				C7435EF6816986F173CAB4E9 /* PushNotificationsContentExtension */,
 				CCD5FB3CEF0797FD385EA7F3 /* PushNotificationsServiceExtension */,
 			);
@@ -822,6 +895,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		894B10CA8AF2A789007FB324 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED29EC15FF4B79C53611E1A5 /* Assets.xcassets in Resources */,
+				6E8DEEAF1DA01578928E1D99 /* LaunchScreen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9A1D41EDC9F035503FB548B3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -831,12 +913,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B62AC56D63A64203ECF45AAE /* Resources */ = {
+		B6972BE215274FFEA2F75965 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7FC56E25CCA1B6080699728A /* Assets.xcassets in Resources */,
-				DAA18481E36225A541BF8091 /* LaunchScreen.storyboard in Resources */,
+				7606A96360AB2DD8B511B8F0 /* Assets.xcassets in Resources */,
+				98A97831C24A0DC18D62C93D /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1016,24 +1098,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C49D9FC9859ED34993C0E203 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1817C820352BB10888A4433 /* AppDelegate.m in Sources */,
+				9FE4875C2594F91BD39443E3 /* Credentials.m in Sources */,
+				8781B776CD3C2F801C2415F9 /* Readme.m in Sources */,
+				2D78E3FFBF831E4652A4736F /* ReadmeViewController.m in Sources */,
+				039294B223B25C8A9F9F7B27 /* empty-file.swift in Sources */,
+				8B7BA5FE9EFF3189A801D9BD /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C7487814AD5323F755B1E524 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				0DE3276319B3F7EDE9E5761D /* NotificationViewController.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D2ACF4659AEA97A06A724AF3 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A2BE6EE947CA0EB7BB800F8C /* AppDelegate.m in Sources */,
-				3CCF8C060E64864FF2F0FBC5 /* Credentials.m in Sources */,
-				0BE8CE4982452A0E74D7F309 /* Readme.m in Sources */,
-				4E9C8479947558025D64171B /* ReadmeViewController.m in Sources */,
-				FEEDF2FB26120BFEAB5512AD /* empty-file.swift in Sources */,
-				B20E5CC4144654C1689934FE /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1047,6 +1129,19 @@
 				A08302940AC13A1B149928CE /* ReadmeViewController.m in Sources */,
 				3D5364A50CAFCAAC0FA82F99 /* empty-file.swift in Sources */,
 				756350E7C92625894BC8B509 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F4CA2BC5CE4AF5163604B6D2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AAAB5BE8910D8EE9275EC281 /* AppDelegate.m in Sources */,
+				CE368BB8224FEE981736837C /* Credentials.m in Sources */,
+				224A9FD6214DC149D6BE167D /* Readme.m in Sources */,
+				94C492CAEC81F9BC611487FE /* ReadmeViewController.m in Sources */,
+				B3E22B9F1A9CCE3F7570ADE1 /* empty-file.swift in Sources */,
+				5B659BAAEEE7DFCD53AC152B /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1068,15 +1163,25 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		1CEA284D6D77D29EF745D466 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = C7435EF6816986F173CAB4E9 /* PushNotificationsContentExtension */;
-			targetProxy = 2E6E453ED2C838C4006D08F8 /* PBXContainerItemProxy */;
-		};
-		9D311561DBF39BC8DEEAF340 /* PBXTargetDependency */ = {
+		21AD16D718A79DBEF9EA50DB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = CCD5FB3CEF0797FD385EA7F3 /* PushNotificationsServiceExtension */;
-			targetProxy = 33F46D6820611AA9F861E4F9 /* PBXContainerItemProxy */;
+			targetProxy = 0568A2CF422D920FEAA49B0A /* PBXContainerItemProxy */;
+		};
+		23E765F73A72256B22DC6D4C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C7435EF6816986F173CAB4E9 /* PushNotificationsContentExtension */;
+			targetProxy = 9B35DAC096ED411D5D503E41 /* PBXContainerItemProxy */;
+		};
+		9D07897113682C779535BDE3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CCD5FB3CEF0797FD385EA7F3 /* PushNotificationsServiceExtension */;
+			targetProxy = 0E0B07FDF6C03C295740E489 /* PBXContainerItemProxy */;
+		};
+		D71CA27BE1539E461C525D56 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C7435EF6816986F173CAB4E9 /* PushNotificationsContentExtension */;
+			targetProxy = A614A81CCD7D3424F022885D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1198,6 +1303,27 @@
 			};
 			name = Debug;
 		};
+		23A0A93AA18BC52BE2C11CA7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Sources/PushNotifications-Manual/PushNotifications-Manual.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "Sources/PushNotifications-Manual/Info.plist";
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.braze.PushNotifications;
+				PRODUCT_NAME = "PushNotifications-Manual";
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = YES;
+				"SUPPORTS_MACCATALYST[sdk=appletvos*]" = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		277ABE8F9A11018387A77412 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1216,6 +1342,27 @@
 				SUPPORTS_MACCATALYST = YES;
 				"SUPPORTS_MACCATALYST[sdk=appletvos*]" = NO;
 				TARGETED_DEVICE_FAMILY = 3;
+			};
+			name = Debug;
+		};
+		3FFC4FD96CDD76834C8B737E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Sources/PushNotifications-Automatic/PushNotifications-Automatic.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "Sources/PushNotifications-Automatic/Info.plist";
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.braze.PushNotifications;
+				PRODUCT_NAME = "PushNotifications-Automatic";
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = YES;
+				"SUPPORTS_MACCATALYST[sdk=appletvos*]" = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -1505,6 +1652,27 @@
 			};
 			name = Release;
 		};
+		B6CCA9952B0C679524AAC27E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Sources/PushNotifications-Manual/PushNotifications-Manual.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "Sources/PushNotifications-Manual/Info.plist";
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.braze.PushNotifications;
+				PRODUCT_NAME = "PushNotifications-Manual";
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = YES;
+				"SUPPORTS_MACCATALYST[sdk=appletvos*]" = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
 		BA01071103F7280839CDFBF1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1614,27 +1782,6 @@
 					"@executable_path/../../Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.braze.PushNotifications.PushNotificationsContentExtension;
-				SDKROOT = iphoneos;
-				SUPPORTS_MACCATALYST = YES;
-				"SUPPORTS_MACCATALYST[sdk=appletvos*]" = NO;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		D41CC2321BB3390AFD4C3C77 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Sources/PushNotifications/PushNotifications.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				INFOPLIST_FILE = Sources/PushNotifications/Info.plist;
-				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.braze.PushNotifications;
-				PRODUCT_NAME = PushNotifications;
 				SDKROOT = iphoneos;
 				SUPPORTS_MACCATALYST = YES;
 				"SUPPORTS_MACCATALYST[sdk=appletvos*]" = NO;
@@ -1778,6 +1925,27 @@
 			};
 			name = Release;
 		};
+		ED4E638137C50DA1B29EDBEB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Sources/PushNotifications-Automatic/PushNotifications-Automatic.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "Sources/PushNotifications-Automatic/Info.plist";
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.braze.PushNotifications;
+				PRODUCT_NAME = "PushNotifications-Automatic";
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = YES;
+				"SUPPORTS_MACCATALYST[sdk=appletvos*]" = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		F97E175B39C55208E8A73860 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1798,27 +1966,6 @@
 			};
 			name = Release;
 		};
-		FB51E977835920E25D8EB81E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Sources/PushNotifications/PushNotifications.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				INFOPLIST_FILE = Sources/PushNotifications/Info.plist;
-				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.braze.PushNotifications;
-				PRODUCT_NAME = PushNotifications;
-				SDKROOT = iphoneos;
-				SUPPORTS_MACCATALYST = YES;
-				"SUPPORTS_MACCATALYST[sdk=appletvos*]" = NO;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1836,6 +1983,15 @@
 			buildConfigurations = (
 				947EC0697CF1F01DDC513FD6 /* Debug */,
 				E93F9B7A3E25FB962107ED6A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		2F874161377BBE80018C6E10 /* Build configuration list for PBXNativeTarget "PushNotifications-Automatic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3FFC4FD96CDD76834C8B737E /* Debug */,
+				ED4E638137C50DA1B29EDBEB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
@@ -1867,6 +2023,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
+		3B82158DE9298CA8C810BEEF /* Build configuration list for PBXNativeTarget "PushNotifications-Manual" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B6CCA9952B0C679524AAC27E /* Debug */,
+				23A0A93AA18BC52BE2C11CA7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
 		43414268546ED18E21E7E892 /* Build configuration list for PBXNativeTarget "Analytics-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1881,15 +2046,6 @@
 			buildConfigurations = (
 				74B3175DE3731381F52D100D /* Debug */,
 				AEB7354D56CC1297356D6010 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
-		};
-		59402C8CB5DE66A776947595 /* Build configuration list for PBXNativeTarget "PushNotifications" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				FB51E977835920E25D8EB81E /* Debug */,
-				D41CC2321BB3390AFD4C3C77 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;

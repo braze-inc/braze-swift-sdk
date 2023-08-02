@@ -1,8 +1,31 @@
+## 6.5.0
+
+##### Fixed
+- Content card impressions can now be logged any number of times on a single card, bringing parity with Android and Web.
+  - This removes the limit introduced in 6.3.1 where a card impression could only be logged once per session.
+  - In the Braze-provided Content Cards feed UI, impressions will be logged once per feed instance.
+
+##### Added
+- Adds a simplified method for integrating push notification support into your application:
+  - Automatic push integration can be enabled by setting `configuration.push.automation = true` on your configuration object.
+    - This eliminates the need for the manual push integration outlined in the [_Implement the push notification handlers manually_](https://braze-inc.github.io/braze-swift-sdk/tutorials/braze/b1-standard-push-notifications#Option-2-Implement-the-push-notification-handlers-manually) tutorial section.
+    - When enabled, the SDK will automatically implement the necessary system delegate methods for handling push notifications.
+    - Compatibility with other push providers, whether first or third party, is maintained. The SDK will automatically handle only Braze push notifications, while original system delegate methods will be executed for all other push notifications.
+  - Each automation step can be independently enabled or disabled. For example, `configuration.push.automation.requestAuthorizationAtLaunch = false` can be used to prevent the automatic request for push permissions at launch.
+  - Resources:
+    - Updated [_Standard Push Notifications_](https://braze-inc.github.io/braze-swift-sdk/tutorials/braze/b1-standard-push-notifications) tutorial.
+    - [`Braze.Configuration.Push.automation`](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/configuration-swift.class/push-swift.class/automation-swift.property) property.
+    - [`Braze.Configuration.Push.Automation`](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/configuration-swift.class/push-swift.class/automation-swift.class) type (provides details about the behavior of each automation step).
+- Adds the [`Braze.Configuration.forwardUniversalLinks`](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/configuration-swift.class/forwarduniversallinks) configuration. When enabled, the SDK will redirect universal links from Braze campaigns to the appropriate system methods.
+- Adds the [`Braze.Notifications.subscribeToUpdates(_:)`](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/notifications-swift.class/subscribetoupdates(_:)) method to subscribe to the push notifications handled by the SDK. 
+  - This method runs the provided closure with a [`Braze.Notifications.Payload`](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/notifications-swift.class/payload) class representing the processed push notification.
+- Adds the [`Braze.Notifications.deviceToken`](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/notifications-swift.class/devicetoken) property to access the most recent notification device token received by the SDK.
+
 ## 6.4.0
 
 ##### Fixed
 - Fixes an issue preventing text fields from being selected in HTML IAMs for iOS 15.
-- Fixes an issue where the device model was inaccurately reported as iPad on macOS (Mac Catalyst and Designed for iPad configurations).
+- Fixes an issue where the device model was inaccurately reported as iPad on macOS (_Mac Catalyst_ and _Designed for iPad_ configurations).
 - Fixes an issue where custom event and purchase properties would not accept an entry if its value was an empty string.
 - Fixes a crash that occurred in the default UI for Content Cards when encountering a zero-value aspect ratio.
 - Fixes an issue introduced in 6.0.0 where images in in-app messages would appear smaller than expected when using the compatibility UI (`BrazeUICompat`).
