@@ -86,7 +86,6 @@ open class KeyboardFrameNotifier {
 
   @objc
   func didHide(_ notification: Notification) {
-    frame = .zero
     subscriptions.values.forEach { $0(frame) }
   }
 

@@ -1,3 +1,14 @@
+## 6.6.0
+
+##### Fixed
+- Fixes an issue in HTML in-app messages where custom event and purchase properties would always convert values for `1` and `0` to become `true` and `false`, respectively.
+  - These property values will now respect their original form in the HTML.
+- Prevents the default Braze UI from displaying in-app messages underneath the keyboard when Stage Manager is in use.
+
+##### Added
+- Adds the [`Braze.FeatureFlags.logFeatureFlagImpression(id: String)`](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/featureflags-swift.class/logfeatureflagimpression(id:)) method.
+- Adds the optional `merge` parameter to the Objective-C representation of the [`setCustomAttribute(key:dictionary:merge:)`](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/user-swift.class/setcustomattribute(key:dictionary:merge:fileid:line:)) method.
+
 ## 6.5.0
 
 ##### Fixed
@@ -17,7 +28,7 @@
     - [`Braze.Configuration.Push.automation`](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/configuration-swift.class/push-swift.class/automation-swift.property) property.
     - [`Braze.Configuration.Push.Automation`](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/configuration-swift.class/push-swift.class/automation-swift.class) type (provides details about the behavior of each automation step).
 - Adds the [`Braze.Configuration.forwardUniversalLinks`](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/configuration-swift.class/forwarduniversallinks) configuration. When enabled, the SDK will redirect universal links from Braze campaigns to the appropriate system methods.
-- Adds the [`Braze.Notifications.subscribeToUpdates(_:)`](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/notifications-swift.class/subscribetoupdates(_:)) method to subscribe to the push notifications handled by the SDK. 
+- Adds the [`Braze.Notifications.subscribeToUpdates(_:)`](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/notifications-swift.class/subscribetoupdates(_:)) method to subscribe to the push notifications handled by the SDK.
   - This method runs the provided closure with a [`Braze.Notifications.Payload`](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/notifications-swift.class/payload) class representing the processed push notification.
 - Adds the [`Braze.Notifications.deviceToken`](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/notifications-swift.class/devicetoken) property to access the most recent notification device token received by the SDK.
 
