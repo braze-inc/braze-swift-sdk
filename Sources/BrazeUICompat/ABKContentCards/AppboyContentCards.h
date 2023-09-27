@@ -7,3 +7,4 @@
 #import "ABKBaseContentCardCell.h"
 #import "ABKCaptionedImageContentCardCell.h"
 #import "ABKClassicContentCardCell.h"
+#import "ABKClassicImageContentCardCell.h"
