@@ -1,6 +1,9 @@
 // The MIT License (MIT)
 //
-// Copyright (c) 2017-2020 Alexander Grebenyuk (github.com/kean).
+// Copyright (c) 2017-2022 Alexander Grebenyuk (github.com/kean).
+
+// Contains the following changes for Xcode 15 support:
+// - https://github.com/kean/Align/commit/3bc174c128b6e6de52be95429bd626d265f11ce3
 
 #if os(iOS) || os(tvOS)
   import UIKit
@@ -157,20 +160,20 @@ func * <Type, Axis>(anchor: Anchor<Type, Axis>, multiplier: CGFloat) -> Anchor<T
 
 extension Anchor where Type: AnchorType.Alignment {
   /// Adds a constraint that defines the anchors' attributes as equal to each other.
-  @discardableResult func equal<Type: AnchorType.Alignment>(
-    _ anchor: Anchor<Type, Axis>, constant: CGFloat = 0
+  @discardableResult func equal<OtherType: AnchorType.Alignment>(
+    _ anchor: Anchor<OtherType, Axis>, constant: CGFloat = 0
   ) -> NSLayoutConstraint {
     Constraints.add(self, anchor, constant: constant, relation: .equal)
   }
 
-  @discardableResult func greaterThanOrEqual<Type: AnchorType.Alignment>(
-    _ anchor: Anchor<Type, Axis>, constant: CGFloat = 0
+  @discardableResult func greaterThanOrEqual<OtherType: AnchorType.Alignment>(
+    _ anchor: Anchor<OtherType, Axis>, constant: CGFloat = 0
   ) -> NSLayoutConstraint {
     Constraints.add(self, anchor, constant: constant, relation: .greaterThanOrEqual)
   }
 
-  @discardableResult func lessThanOrEqual<Type: AnchorType.Alignment>(
-    _ anchor: Anchor<Type, Axis>, constant: CGFloat = 0
+  @discardableResult func lessThanOrEqual<OtherType: AnchorType.Alignment>(
+    _ anchor: Anchor<OtherType, Axis>, constant: CGFloat = 0
   ) -> NSLayoutConstraint {
     Constraints.add(self, anchor, constant: constant, relation: .lessThanOrEqual)
   }
@@ -180,20 +183,20 @@ extension Anchor where Type: AnchorType.Alignment {
 
 extension Anchor where Type: AnchorType.Dimension {
   /// Adds a constraint that defines the anchors' attributes as equal to each other.
-  @discardableResult func equal<Type: AnchorType.Dimension, Axis>(
-    _ anchor: Anchor<Type, Axis>, constant: CGFloat = 0
+  @discardableResult func equal<OtherType: AnchorType.Dimension, OtherAxis>(
+    _ anchor: Anchor<OtherType, OtherAxis>, constant: CGFloat = 0
   ) -> NSLayoutConstraint {
     Constraints.add(self, anchor, constant: constant, relation: .equal)
   }
 
-  @discardableResult func greaterThanOrEqual<Type: AnchorType.Dimension, Axis>(
-    _ anchor: Anchor<Type, Axis>, constant: CGFloat = 0
+  @discardableResult func greaterThanOrEqual<OtherType: AnchorType.Dimension, OtherAxis>(
+    _ anchor: Anchor<OtherType, OtherAxis>, constant: CGFloat = 0
   ) -> NSLayoutConstraint {
     Constraints.add(self, anchor, constant: constant, relation: .greaterThanOrEqual)
   }
 
-  @discardableResult func lessThanOrEqual<Type: AnchorType.Dimension, Axis>(
-    _ anchor: Anchor<Type, Axis>, constant: CGFloat = 0
+  @discardableResult func lessThanOrEqual<OtherType: AnchorType.Dimension, OtherAxis>(
+    _ anchor: Anchor<OtherType, OtherAxis>, constant: CGFloat = 0
   ) -> NSLayoutConstraint {
     Constraints.add(self, anchor, constant: constant, relation: .lessThanOrEqual)
   }
@@ -236,8 +239,8 @@ extension Anchor where Type: AnchorType.Edge {
   }
 
   /// Adds spacing between the current anchors.
-  @discardableResult func spacing<Type: AnchorType.Edge>(
-    _ spacing: CGFloat, to anchor: Anchor<Type, Axis>,
+  @discardableResult func spacing<OtherType: AnchorType.Edge>(
+    _ spacing: CGFloat, to anchor: Anchor<OtherType, Axis>,
     relation: NSLayoutConstraint.Relation = .equal
   ) -> NSLayoutConstraint {
     let isInverted =

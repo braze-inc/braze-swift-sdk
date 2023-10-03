@@ -1,3 +1,27 @@
+## 7.0.0
+
+##### Breaking
+- The `useUUIDAsDeviceId` configuration is now enabled by default.
+  - For more details on the impacts, refer to this [Collecting IDFV - Swift](https://www.braze.com/docs/developer_guide/platform_integration_guides/ios/initial_sdk_setup/other_sdk_customizations/swift_idfv/).
+- The `Banner` Content Card type and corresponding UI elements have been renamed to `ImageOnly`. All member methods and properties remain the same.
+  - `Braze.ContentCard.Banner` → `Braze.ContentCard.ImageOnly`
+  - `BrazeContentCardUI.BannerCell` → `BrazeContentCardUI.ImageOnlyCell`
+- Refactors some text layout logic in BrazeUI into a new `Braze.ModalTextView` class.
+- Updates the behavior for Feature Flags methods.
+  - `FeatureFlags.featureFlag(id:)` now returns `nil` for an ID that does not exist.
+  - `FeatureFlags.subscribeToUpdates(:)` will trigger the callback when any refresh request completes with a success or failure.
+    - The callback will also trigger immediately upon initial subscription if previously cached data exists.
+
+##### Fixed
+- Fixes compiler warnings about Swift 6 when compiling `BrazeUI` while using Xcode 15.
+- Exposes public imports for `ABKClassicImageContentCardCell.h` and `ABKControlTableViewCell.h` for use in the BrazeUICompat layer.
+- Adds additional safeguards around invalid constraint values for `BrazeInAppMessageUI.SlideupView`
+
+##### Added
+- Adds the `enableDarkTheme` property to `BrazeContentCardUI.ViewController.Attributes`.
+  - Set this field to `false` to prevent the Content Cards feed UI from adopting dark theme styling when the device is in dark mode.
+  - This field is `true` by default.
+
 ## 6.6.1
 
 ##### Fixed

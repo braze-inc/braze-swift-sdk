@@ -17,6 +17,7 @@ extension BrazeInAppMessageUI {
     case noFontAwesome
     case noMatchingOrientation
     case assetsFailure(Braze.ErrorString)
+    case invalidConstraints
 
     case otherMessagePresented(push: Bool)
     case messageContextInvalid
@@ -75,6 +76,9 @@ extension BrazeInAppMessageUI.Error {
         - description: \(error.localizedDescription)
         - error: \(error)
         """
+    case .invalidConstraints:
+      return
+        "Unable to present message - constraints were invalid or nil."
 
     case .otherMessagePresented(let push):
       return

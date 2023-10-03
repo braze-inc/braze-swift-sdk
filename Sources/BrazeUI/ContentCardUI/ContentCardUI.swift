@@ -14,8 +14,8 @@ extension Braze.ContentCard {
       return BrazeContentCardUI.ClassicCell.identifier
     case .classicImage:
       return BrazeContentCardUI.ClassicImageCell.identifier
-    case .banner:
-      return BrazeContentCardUI.BannerCell.identifier
+    case .imageOnly:
+      return BrazeContentCardUI.ImageOnlyCell.identifier
     case .captionedImage:
       return BrazeContentCardUI.CaptionedImageCell.identifier
     case .control:

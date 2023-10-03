@@ -50,7 +50,7 @@ extension BrazeContentCardUI {
       public var cells: [String: UITableViewCell.Type] = [
         ClassicCell.identifier: ClassicCell.self,
         ClassicImageCell.identifier: ClassicImageCell.self,
-        BannerCell.identifier: BannerCell.self,
+        ImageOnlyCell.identifier: ImageOnlyCell.self,
         CaptionedImageCell.identifier: CaptionedImageCell.self,
         ControlCell.identifier: ControlCell.self,
       ]
@@ -92,6 +92,9 @@ extension BrazeContentCardUI {
 
       /// The empty state message color.
       public var emptyStateMessageColor: UIColor = .brazeLabel
+
+      /// Flag specifying whether content cards should display in dark theme when the device is in dark mode.
+      public var enableDarkTheme: Bool = true
 
       /// The default attributes.
       public static let defaults = Self()
@@ -137,6 +140,11 @@ extension BrazeContentCardUI {
       emptyStateLabel.text = attributes.emptyStateMessage
       emptyStateLabel.font = attributes.emptyStateMessageFont
       emptyStateLabel.textColor = attributes.emptyStateMessageColor
+
+      // EnableDarkTheme
+      if #available(iOS 13, *) {
+        overrideUserInterfaceStyle = attributes.enableDarkTheme ? .unspecified : .light
+      }
     }
 
     // MARK: Initialization
@@ -319,11 +327,11 @@ extension BrazeContentCardUI {
         cell.attributes = attributes
         cell.set(card: classicImage, imageLoad: imageLoad)
         return cell
-      case .banner(let banner):
-        let cell = dequeue(as: BannerCell.self)
+      case .imageOnly(let imageOnly):
+        let cell = dequeue(as: ImageOnlyCell.self)
         cell.contentImageView.retry = retry
         cell.attributes = attributes
-        cell.set(card: banner, imageLoad: imageLoad)
+        cell.set(card: imageOnly, imageLoad: imageLoad)
         return cell
       case .captionedImage(let captionedImage):
         let cell = dequeue(as: CaptionedImageCell.self)
@@ -657,7 +665,7 @@ extension BrazeContentCardUI {
     static let cards: [Braze.ContentCard] = [
       .classic(.mockDomain),
       .classicImage(.mockUnviewed),
-      .banner(.mockPinned),
+      .imageOnly(.mockPinned),
       .captionedImage(.mockShort),
     ]
 
@@ -673,7 +681,7 @@ extension BrazeContentCardUI {
     public typealias Cell = BrazeContentCardUI.Cell
     public typealias ClassicCell = BrazeContentCardUI.ClassicCell
     public typealias ClassicImageCell = BrazeContentCardUI.ClassicImageCell
-    public typealias BannerCell = BrazeContentCardUI.BannerCell
+    public typealias ImageOnlyCell = BrazeContentCardUI.ImageOnlyCell
     public typealias CaptionedImageCell = BrazeContentCardUI.CaptionedImageCell
     public typealias ControlCell = BrazeContentCardUI.ControlCell
   }

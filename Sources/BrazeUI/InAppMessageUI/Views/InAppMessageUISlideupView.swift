@@ -156,8 +156,12 @@ extension BrazeInAppMessageUI {
       shadowView.shadow = attributes.shadow
 
       // Dimensions
-      maxWidthConstraints.forEach { $0.constant = attributes.maxWidth }
-      minHeightConstraint.constant = attributes.minHeight
+      if let minHeightConstraint = minHeightConstraint,
+        let maxWidthConstraints = maxWidthConstraints
+      {
+        maxWidthConstraints.forEach { $0.constant = attributes.maxWidth }
+        minHeightConstraint.constant = attributes.minHeight
+      }
 
       // Image
       if case .image = message.graphic {
@@ -393,6 +397,11 @@ extension BrazeInAppMessageUI {
 
       UIView.performWithoutAnimation {
         superview?.layoutIfNeeded()
+      }
+
+      if innerYConstraint == nil || outerYConstraint == nil {
+        logError(BrazeInAppMessageUI.Error.invalidConstraints)
+        return
       }
 
       presented = true

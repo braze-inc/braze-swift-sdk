@@ -6,7 +6,7 @@
 NS_ASSUME_NONNULL_BEGIN
 @interface ABKBannerCard : ABKCard <NSCoding>
 
-/* 
+/*
  * This property is the URL of the card's image.
  */
 @property (copy) NSString *image;

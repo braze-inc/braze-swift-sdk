@@ -28,13 +28,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 // MARK: - Customizations
 
-#warning("""
-For demonstration purposes, this example application uses an alternate Content Card view controller initializer.
+#warning(
+  """
+  For demonstration purposes, this example application uses an alternate Content Card view controller initializer.
 
-In your implementation, you are expected to use the standard `init(braze:attributes:)` initializer to automatically link the UI to your braze instance.
+  In your implementation, you are expected to use the standard `init(braze:attributes:)` initializer to automatically link the UI to your braze instance.
 
-See https://braze-inc.github.io/braze-swift-sdk/documentation/brazeui/brazecontentcardui/viewcontroller/init(braze:attributes:)
-""")
+  See https://braze-inc.github.io/braze-swift-sdk/documentation/brazeui/brazecontentcardui/viewcontroller/init(braze:attributes:)
+  """)
 
 extension AppDelegate {
 
@@ -98,7 +99,7 @@ extension AppDelegate {
     var attributes = BrazeContentCardUI.ViewController.Attributes.defaults
 
     // Create two static cards
-    let headerCard: Braze.ContentCard = .banner(
+    let headerCard: Braze.ContentCard = .imageOnly(
       .init(
         data: .init(viewed: true),
         image: .mockImage(
@@ -106,7 +107,7 @@ extension AppDelegate {
           drawCorners: false)
       )
     )
-    let footerCard: Braze.ContentCard = .banner(
+    let footerCard: Braze.ContentCard = .imageOnly(
       .init(
         data: .init(viewed: true),
         image: .mockImage(
@@ -192,6 +193,26 @@ extension AppDelegate {
     navigationController.pushViewController(viewController, animated: true)
   }
 
+  static func disableDarkThemeCustomization() {
+    var attributes = BrazeContentCardUI.ViewController.Attributes.defaults
+
+    attributes.enableDarkTheme = false
+
+    let viewController = BrazeContentCardUI.ViewController(
+      initialCards: cards,
+      attributes: attributes
+    )
+    viewController.title = "Dark Theme Disabled"
+
+    // This is necessary to stylize the `title` text, which is set off of
+    // `viewController`, but is actually situated under `navigationController.navigationBar`
+    // in the view hierarchy.
+    if #available(iOS 13.0, *) {
+      navigationController.navigationBar.overrideUserInterfaceStyle = .light
+    }
+    navigationController.pushViewController(viewController, animated: true)
+  }
+
 }
 
 // MARK: - Helpers
@@ -200,7 +221,7 @@ private var cards: [Braze.ContentCard] = [
   classicPinned,
   classic,
   classicImage,
-  banner,
+  imageOnly,
   captionedImage,
 ]
 
