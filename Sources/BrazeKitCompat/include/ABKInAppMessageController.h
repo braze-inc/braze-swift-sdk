@@ -62,7 +62,7 @@ BRZ_DEPRECATED("renamed to 'BrazeInAppMessageUI' (BrazeUI module)")
  * displayNextInAppMessageWithDelegate: at to display it. If an in-app message is currently being displayed, it will not be included
  * in the count.
  *
- * Note: Returning ABKDisplayInAppMessageLater in the beforeInAppMessageDisplayed: delegate method will put the in-app message back onto
+ * Note: Returning ABKReenqueueInAppMessage in the beforeInAppMessageDisplayed: delegate method will put the in-app message back onto
  * the stack and this will be reflected in inAppMessagesRemainingOnStack.
  */
 - (NSInteger)inAppMessagesRemainingOnStack;

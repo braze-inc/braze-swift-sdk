@@ -9,7 +9,7 @@ extension BrazeContentCardUI {
 
     /// The content cards currently displayed.
     open var cards: [Braze.ContentCard] = [] {
-      didSet { emptyStateLabel.isHidden = cards.isEmpty == false }
+      didSet { emptyStateLabel.isHidden = cards.filter({ $0.control == nil }).isEmpty == false }
     }
 
     /// The delegate notified of the content cards UI lifecycle.

@@ -20,7 +20,7 @@ if [ ! -f "manual-integration-setup.sh" ]; then
 fi
 
 # Constants
-url="https://github.com/braze-inc/braze-swift-sdk/releases/download/7.0.0/braze-swift-sdk-prebuilt.zip"
+url="https://github.com/braze-inc/braze-swift-sdk/releases/download/7.1.0/braze-swift-sdk-prebuilt.zip"
 
 echo "→" "Cleaning up"
 rm -rf braze-swift-sdk-prebuilt

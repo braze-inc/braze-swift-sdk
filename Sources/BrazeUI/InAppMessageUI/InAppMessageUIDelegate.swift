@@ -4,7 +4,7 @@ import UIKit
 /// Methods for reacting to the in-app message UI lifecycle.
 public protocol BrazeInAppMessageUIDelegate: AnyObject {
 
-  /// Defines whether the in-app message will be displayed now, displayed later, or discarded.
+  /// Defines whether the in-app message will be displayed now, discarded, or re-enqueued.
   ///
   /// The default implementation returns the display choice
   /// ``BrazeInAppMessageUI/DisplayChoice/now``.
@@ -13,7 +13,7 @@ public protocol BrazeInAppMessageUIDelegate: AnyObject {
   /// a full screen game or on a loading screen), you can use this delegate to delay or discard
   /// pending in-app message messages.
   ///
-  /// When returning ``BrazeInAppMessageUI/DisplayChoice/later``, the message is put on the top of
+  /// When returning ``BrazeInAppMessageUI/DisplayChoice/reenqueue``, the message is put on the top of
   /// the message ``BrazeInAppMessageUI/stack``. Use ``BrazeInAppMessageUI/presentNext()`` to
   /// present the next in-app message in the stack.
   ///

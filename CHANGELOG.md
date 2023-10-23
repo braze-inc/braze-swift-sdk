@@ -1,8 +1,20 @@
+## 7.1.0
+
+##### Fixed
+- Resolves an issue preventing templated in-app messages from triggering if a previous attempt to display the message failed within the same session.
+- Fixes an issue that prevented custom events and nested custom attributes from logging if had a property with a value that was prefixed with a `$`.
+- Fixes a bug in the Content Cards feed UI where the empty feed message would not display when the user only had control cards in their feed.
+- Adds additional safeguards when reading the device model.
+
+##### Added
+- Adds a code signature to all XCFrameworks in the Braze Swift SDK, signed by `Braze, Inc.`.
+- `BrazeInAppMessageUI.DisplayChoice.later` has been deprecated in favor of `BrazeInAppMessageUI.DisplayChoice.reenqueue`.
+
 ## 7.0.0
 
 ##### Breaking
 - The `useUUIDAsDeviceId` configuration is now enabled by default.
-  - For more details on the impacts, refer to this [Collecting IDFV - Swift](https://www.braze.com/docs/developer_guide/platform_integration_guides/ios/initial_sdk_setup/other_sdk_customizations/swift_idfv/).
+  - For more details on the impacts, refer to this [Collecting IDFV - Swift](https://www.braze.com/docs/developer_guide/platform_integration_guides/swift/analytics/swift_idfv/).
 - The `Banner` Content Card type and corresponding UI elements have been renamed to `ImageOnly`. All member methods and properties remain the same.
   - `Braze.ContentCard.Banner` → `Braze.ContentCard.ImageOnly`
   - `BrazeContentCardUI.BannerCell` → `BrazeContentCardUI.ImageOnlyCell`
@@ -10,12 +22,13 @@
 - Updates the behavior for Feature Flags methods.
   - `FeatureFlags.featureFlag(id:)` now returns `nil` for an ID that does not exist.
   - `FeatureFlags.subscribeToUpdates(:)` will trigger the callback when any refresh request completes with a success or failure.
-    - The callback will also trigger immediately upon initial subscription if previously cached data exists.
+    - The callback will also trigger immediately upon initial subscription if previously cached data exists from the current session.
 
 ##### Fixed
 - Fixes compiler warnings about Swift 6 when compiling `BrazeUI` while using Xcode 15.
 - Exposes public imports for `ABKClassicImageContentCardCell.h` and `ABKControlTableViewCell.h` for use in the BrazeUICompat layer.
-- Adds additional safeguards around invalid constraint values for `BrazeInAppMessageUI.SlideupView`
+- Adds additional safeguards around invalid constraint values for `BrazeInAppMessageUI.SlideupView`.
+- Resolves a Content Cards feed UI issue displaying a placeholder image in Classic cards without an attached image.
 
 ##### Added
 - Adds the `enableDarkTheme` property to `BrazeContentCardUI.ViewController.Attributes`.

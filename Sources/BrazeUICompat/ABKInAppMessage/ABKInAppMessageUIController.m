@@ -120,9 +120,9 @@
 
 - (ABKInAppMessageDisplayChoice)getCurrentDisplayChoiceForInAppMessage:(ABKInAppMessage *)inAppMessage {
   ABKInAppMessageDisplayChoice inAppMessageDisplayChoice = self.keyboardVisible ?
-    ABKDisplayInAppMessageLater : ABKDisplayInAppMessageNow;
-  if (inAppMessageDisplayChoice == ABKDisplayInAppMessageLater) {
-    NSLog(@"Initially setting in-app message display choice to ABKDisplayInAppMessageLater due to visible keyboard.");
+    ABKReenqueueInAppMessage : ABKDisplayInAppMessageNow;
+  if (inAppMessageDisplayChoice == ABKReenqueueInAppMessage) {
+    NSLog(@"Initially setting in-app message display choice to ABKReenqueueInAppMessage due to visible keyboard.");
   }
   if ([self.uiDelegate respondsToSelector:@selector(beforeInAppMessageDisplayed:withKeyboardIsUp:)]) {
 #pragma clang diagnostic push
@@ -140,9 +140,9 @@
 }
 
 - (ABKInAppMessageDisplayChoice)getCurrentDisplayChoiceForControlInAppMessage:(ABKInAppMessage *)controlInAppMessage {
-  ABKInAppMessageDisplayChoice inAppMessageDisplayChoice = self.keyboardVisible ? ABKDisplayInAppMessageLater : ABKDisplayInAppMessageNow;
-  if (inAppMessageDisplayChoice == ABKDisplayInAppMessageLater) {
-    NSLog(@"Initially setting in-app message display choice to ABKDisplayInAppMessageLater due to visible keyboard.");
+  ABKInAppMessageDisplayChoice inAppMessageDisplayChoice = self.keyboardVisible ? ABKReenqueueInAppMessage : ABKDisplayInAppMessageNow;
+  if (inAppMessageDisplayChoice == ABKReenqueueInAppMessage) {
+    NSLog(@"Initially setting in-app message display choice to ABKReenqueueInAppMessage due to visible keyboard.");
   }
   if ([[Appboy sharedInstance].inAppMessageController.delegate
               respondsToSelector:@selector(beforeControlMessageImpressionLogged:)]) {
@@ -294,12 +294,12 @@
     } else if (inAppMessageDisplayChoice == ABKDisplayInAppMessageNow) {
       NSLog(@"%@: ABKDisplayInAppMessageNow received: attempting to display the in-app message", NSStringFromSelector(_cmd));
       [self showInAppMessage:inAppMessage];
-    } else if (inAppMessageDisplayChoice == ABKDisplayInAppMessageLater) {
-      NSLog(@"%@: ABKDisplayInAppMessageLater received. Returning in-app message to the stack.", NSStringFromSelector(_cmd));
+    } else if (inAppMessageDisplayChoice == ABKReenqueueInAppMessage) {
+      NSLog(@"%@: ABKReenqueueInAppMessage received. Returning in-app message to the stack.", NSStringFromSelector(_cmd));
       [self.inAppMessageStack addObject:inAppMessage];
     } else {
       // Developer returned a wrong in-app message return value, print it out to inform the developer
-      NSLog(@"Invalid value returned from beforeInAppMessageDisplayed:withKeyboardIsUp:. Please return ABKDisplayInAppMessageNow, ABKDisplayInAppMessageLater, or ABKDiscardInAppMessage");
+      NSLog(@"Invalid value returned from beforeInAppMessageDisplayed:withKeyboardIsUp:. Please return ABKDisplayInAppMessageNow, ABKReenqueueInAppMessage, or ABKDiscardInAppMessage");
     }
   }];
 }

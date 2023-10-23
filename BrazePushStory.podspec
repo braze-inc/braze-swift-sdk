@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name              = 'BrazePushStory'
-  s.version           = '7.0.0'
+  s.version           = '7.1.0'
   s.summary           = 'Braze notification content extension library providing support for Push Stories.'
 
   s.homepage          = 'https://braze.com'
@@ -9,8 +9,8 @@ Pod::Spec.new do |s|
   s.authors           = 'Braze, Inc.'
 
   s.source            = {
-    :http => 'https://github.com/braze-inc/braze-swift-sdk/releases/download/7.0.0/BrazePushStory.zip',
-    :sha256 => '26e3ff1284d14a2d2c7c9d02ee08745bc0babd662ed5067b306ff8aa90d4bb3d'
+    :http => 'https://github.com/braze-inc/braze-swift-sdk/releases/download/7.1.0/BrazePushStory.zip',
+    :sha256 => '4ad33d8106c285b3e33c274cfee112542a489abf8284eff330dab12c49766c16'
   }
 
   s.swift_version           = '5.0'

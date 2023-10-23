@@ -105,7 +105,7 @@ open class BrazeInAppMessageUI:
     switch displayChoice {
     case .now:
       prepareAndPresent(message: message)
-    case .later:
+    case .reenqueue:
       stack.append(message)
     case .discard:
       message.context?.discard()
