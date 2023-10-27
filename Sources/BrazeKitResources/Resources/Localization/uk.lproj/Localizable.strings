@@ -1,10 +1,10 @@
-"braze.push.action.accept" = "згоден";
+"braze.push.action.accept" = "прийняти";
 "braze.push.action.decline" = "відхилити";
-"braze.push.action.confirm" = "стверджувати";
+"braze.push.action.confirm" = "підтвердити";
 "braze.push.action.cancel" = "скасувати";
-"braze.push.action.yes" = "та";
+"braze.push.action.yes" = "так";
 "braze.push.action.no" = "ні";
-"braze.push.action.more" = "ще";
+"braze.push.action.more" = "більше";
 "braze.push.action.next" = "наступний";
 "braze.push.action.gotoapp" = "відкрити програму";
 
