@@ -1,3 +1,20 @@
+## 7.2.0
+
+#### Added
+- Exposes the `BrazePushStory.NotificationViewController.didReceive` methods for custom handling of push story notification events.
+
+#### Fixed
+- Resolves an issue for in-app messages with buttons where tapping on the body would incorrectly execute the button's click action.
+  - Now, when you tap on the body of an in-app message with buttons, no event should occur.
+- Resolves a potential deadlock under rare circumstances in BrazeUI's In-App messages presentation.
+- Fixes the default implementation for the Objective-C representation of [`BrazeInAppMessageUIDelegate.inAppMessage(_:shouldProcess:url:buttonId:message:view:)`](https://braze-inc.github.io/braze-swift-sdk/documentation/brazeui/brazeinappmessageuidelegate/inappmessage(_:shouldprocess:buttonid:message:view:)-7lvld) to return the proper click action URL.
+- Resolves an issue where the body of the modal in-app message may be displayed stretched on some device models.
+- Resolves an issue where `BrazeInAppMessageUI` could fail to detect the correct application window for presenting its post-click webview.
+  - `BrazeInAppMessageUI` now prefers using the current key `UIWindow` instead of the first one in the application's window stack.
+
+#### Removed
+- `Braze.Configuration.DeviceProperty.pushDisplayOptions` has been deprecated. Providing this value no longer has an effect.
+
 ## 7.1.0
 
 ##### Fixed

@@ -280,8 +280,9 @@ open class BrazeInAppMessageUI:
 
   func validateMainThread(for message: Braze.InAppMessage) -> Bool {
     guard Thread.isMainThread else {
-      DispatchQueue.main.sync {
-        logError(for: message.context, error: .noMainThread)
+      DispatchQueue.main.async {
+        [weak self] in
+        self?.logError(for: message.context, error: .noMainThread)
       }
       return false
     }

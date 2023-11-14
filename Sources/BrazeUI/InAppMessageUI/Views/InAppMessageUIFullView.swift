@@ -129,6 +129,8 @@ extension BrazeInAppMessageUI {
       imageConstraint?.isActive = false
       imageConstraint = imageView.anchors.height.equal(
         contentView.anchors.height.multiplied(by: 0.5))
+      
+      textView.heightConstraint.isActive = false
     }
 
     var modalMargin: UIEdgeInsets

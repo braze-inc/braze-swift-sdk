@@ -43,6 +43,8 @@ extension BrazeInAppMessageUI {
 
       return textView
     }()
+    
+    var heightConstraint: NSLayoutConstraint!
 
     // MARK: - Initialization
 
@@ -67,6 +69,8 @@ extension BrazeInAppMessageUI {
       textView.anchors.edges.pin(to: layoutMarginsGuide, axis: .horizontal)
       textView.anchors.height.lessThanOrEqual(layoutMarginsGuide.anchors.height)
         .priority = .defaultHigh
+      heightConstraint = textView.anchors.height.equal(layoutMarginsGuide.anchors.height)
+      heightConstraint.priority = .defaultLow
     }
 
     required init?(coder: NSCoder) {

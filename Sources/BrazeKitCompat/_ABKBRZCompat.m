@@ -8,6 +8,7 @@
 #import "AppboyKit/Appboy+Compat.h"
 #import "BRZLog.h"
 #import "BrazeDelegateWrapper.h"
+#import "BrazeSDKAuthDelegateWrapper.h"
 #import <objc/runtime.h>
 
 #import "AppboyKit.h"
@@ -70,6 +71,7 @@ static NSString *const ABKPersistentDataPlistEndpointKey = @"Endpoint";
 
 @property(assign, nonatomic) BOOL enableDismissModalOnOutsideTap;
 @property(strong, nonatomic, readonly) BrazeDelegateWrapper *delegateWrapper;
+@property(strong, nonatomic, readonly) BrazeSDKAuthDelegateWrapper *sdkAuthDelegateWrapper;
 @property(strong, nonatomic) BRZCancellable *contentCardsSubscription;
 @property(strong, nonatomic) BRZCancellable *newsFeedCardsSubscription;
 
@@ -82,6 +84,7 @@ static NSString *const ABKPersistentDataPlistEndpointKey = @"Endpoint";
 @synthesize feedController = _feedController;
 @synthesize contentCardsController = _contentCardsController;
 @synthesize delegateWrapper = _delegateWrapper;
+@synthesize sdkAuthDelegateWrapper = _sdkAuthDelegateWrapper;
 @synthesize locationManager = _locationManager;
 
 + (_ABKBRZCompat *)shared {
@@ -119,6 +122,9 @@ static NSString *const ABKPersistentDataPlistEndpointKey = @"Endpoint";
   // Delegates
   // - delegateWrapper is a proxy for old delegates
   braze.delegate = shared.delegateWrapper;
+  
+  // - sdkAuthDelegateWrapper is a proxy for the authentication delegate
+  braze.sdkAuthDelegate = shared.sdkAuthDelegateWrapper;
 
   // - IDFA
   id<ABKIDFADelegate> idfaDelegate = appboyOptions[ABKIDFADelegateKey];
@@ -240,12 +246,12 @@ static NSString *const ABKPersistentDataPlistEndpointKey = @"Endpoint";
 }
 
 - (id<ABKSdkAuthenticationDelegate>)sdkAuthenticationDelegate {
-  return self.delegateWrapper.sdkAuthDelegate;
+  return self.sdkAuthDelegateWrapper.sdkAuthDelegate;
 }
 
 - (void)setSdkAuthenticationDelegate:
     (id<ABKSdkAuthenticationDelegate>)sdkAuthenticationDelegate {
-  self.delegateWrapper.sdkAuthDelegate = sdkAuthenticationDelegate;
+  self.sdkAuthDelegateWrapper.sdkAuthDelegate = sdkAuthenticationDelegate;
 }
 
 - (ABKLocationManager *)locationManager {
@@ -270,6 +276,13 @@ static NSString *const ABKPersistentDataPlistEndpointKey = @"Endpoint";
     _delegateWrapper = [[BrazeDelegateWrapper alloc] init];
   }
   return _delegateWrapper;
+}
+
+- (BrazeSDKAuthDelegateWrapper *)sdkAuthDelegateWrapper {
+  if (_sdkAuthDelegateWrapper == nil) {
+    _sdkAuthDelegateWrapper = [[BrazeSDKAuthDelegateWrapper alloc] init];
+  }
+  return _sdkAuthDelegateWrapper;
 }
 
 #pragma mark - Configuration

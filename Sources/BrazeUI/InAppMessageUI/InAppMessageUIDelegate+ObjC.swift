@@ -235,7 +235,7 @@ final class _OBJC_BrazeInAppMessageUIDelegateWrapper: BrazeInAppMessageUIDelegat
     return delegate?._objc_inAppMessage?(
       ui,
       shouldProcess: .init(message.clickAction),
-      url: message.url,
+      url: clickAction.url,
       buttonId: buttonId,
       message: message,
       view: view
