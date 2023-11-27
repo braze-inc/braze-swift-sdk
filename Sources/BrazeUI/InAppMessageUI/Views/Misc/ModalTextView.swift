@@ -43,7 +43,7 @@ extension BrazeInAppMessageUI {
 
       return textView
     }()
-    
+
     var heightConstraint: NSLayoutConstraint!
 
     // MARK: - Initialization

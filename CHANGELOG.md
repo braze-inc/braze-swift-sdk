@@ -1,3 +1,12 @@
+## 7.3.0
+
+#### Added
+- Adds support for Expo Notifications [event listeners](https://docs.expo.dev/versions/latest/sdk/notifications/#notification-events-listeners) when using the automatic push integration.
+
+#### Fixed
+- Fixes a rare concurrency issue that might result in duplicated events when logging large amount of events.
+- Fixes an issue where `user.set(dateOfBirth:)` was not setting the date of birth accurately due to variations in the device's timezone.
+
 ## 7.2.0
 
 #### Added
