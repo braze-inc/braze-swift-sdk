@@ -5,7 +5,7 @@
 
 <p align="center">
   <a href="https://github.com/braze-inc/braze-swift-sdk/releases">
-    <img src="https://badgen.net/badge/version/7.3.0/blue" alt="Version: 7.3.0">
+    <img src="https://badgen.net/badge/version/7.4.0/blue" alt="Version: 7.4.0">
   </a>
   <a href="#">
     <img src="https://badgen.net/badge/platforms/iOS%20%7C%20tvOS%20%7C%20Mac%20Catalyst/orange"
@@ -74,6 +74,14 @@ Explore our [examples project](/Examples) which showcases multiple features' int
 | Unity           | ✅                 | 4.0.0           |
 | Xamarin         | In Progress       | TBD             |
 
+## Alternative Repositories
+
+| Variant                               |                                   Repository | GH Issues, SDK info |
+|---------------------------------------|---------------------------------------------:|--------------------:|
+| → **Sources and Static XCFrameworks** |                  [braze-inc/braze-swift-sdk] |                   ✓ |
+| Static XCFrameworks                   |  [braze-inc/braze-swift-sdk-prebuilt-static] |                   ✗ |
+| Dynamic XCFrameworks                  | [braze-inc/braze-swift-sdk-prebuilt-dynamic] |                   ✗ |
+
 ## `Appboy-iOS-SDK`
 
 As of version 5.8.0, the Braze Swift SDK provides all the features available in the `Appboy-iOS-SDK`.
@@ -85,3 +93,7 @@ The `Appboy-iOS-SDK` (Objective-C) SDK is now in maintenance mode, which means o
 ## Questions?
 
 If you have questions, please contact [support@braze.com](mailto:support@braze.com) or open a [Github Issue](https://github.com/braze-inc/braze-swift-sdk/issues).
+
+[braze-inc/braze-swift-sdk]: https://github.com/braze-inc/braze-swift-sdk
+[braze-inc/braze-swift-sdk-prebuilt-static]: https://github.com/braze-inc/braze-swift-sdk-prebuilt-static
+[braze-inc/braze-swift-sdk-prebuilt-dynamic]: https://github.com/braze-inc/braze-swift-sdk-prebuilt-dynamic

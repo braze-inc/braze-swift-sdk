@@ -7,7 +7,17 @@ extension BrazeInAppMessageUI {
   open class ButtonView: UIButton {
 
     /// The button definition.
-    public var button: Braze.InAppMessage.Button
+    public var button: Braze.InAppMessage.Button {
+      get {
+        buttonWrapper.wrappedValue
+      }
+      set {
+        buttonWrapper.wrappedValue = newValue
+      }
+    }
+
+    /// Internal wrapper for the in-app message button.
+    let buttonWrapper: MessageWrapper<Braze.InAppMessage.Button>
 
     /// Creates and returns a Braze in-app message compatible button.
     /// - Parameters:
@@ -17,7 +27,7 @@ extension BrazeInAppMessageUI {
       button: Braze.InAppMessage.Button,
       attributes: Attributes = .defaults
     ) {
-      self.button = button
+      self.buttonWrapper = .init(wrappedValue: button)
       self.attributes = attributes
 
       super.init(frame: .zero)

@@ -35,7 +35,7 @@ extension BrazeInAppMessageUI {
     ) {
       self.symbol = symbol
       self.attributes = attributes
-      self.theme = theme
+      self.themeWrapper = .init(wrappedValue: theme)
 
       super.init(frame: .zero)
       addSubview(label)
@@ -110,8 +110,17 @@ extension BrazeInAppMessageUI {
 
     /// The current theme.
     public var theme: Braze.InAppMessage.Theme {
-      didSet { applyTheme() }
+      get {
+        themeWrapper.wrappedValue
+      }
+      set {
+        themeWrapper.wrappedValue = newValue
+        applyTheme()
+      }
     }
+
+    /// Internal wrapper for the in-app message theme.
+    let themeWrapper: MessageWrapper<Braze.InAppMessage.Theme>
 
     /// Apply the current ``theme`` to the view.
     ///

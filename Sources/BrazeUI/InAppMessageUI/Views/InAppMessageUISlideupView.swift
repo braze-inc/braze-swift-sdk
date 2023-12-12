@@ -9,7 +9,15 @@ extension BrazeInAppMessageUI {
   open class SlideupView: UIView, InAppMessageView {
 
     /// The slideup in-app message.
-    public let message: Braze.InAppMessage.Slideup
+    public var message: Braze.InAppMessage.Slideup {
+      get { messageWrapper.wrappedValue }
+      set {
+        messageWrapper.wrappedValue = newValue
+      }
+    }
+
+    /// Internal wrapper for the slideup in-app message.
+    let messageWrapper: MessageWrapper<Braze.InAppMessage.Slideup>
 
     // MARK: - Attributes
 
@@ -257,7 +265,7 @@ extension BrazeInAppMessageUI {
       gifViewProvider: GIFViewProvider = .shared,
       presented: Bool = false
     ) {
-      self.message = message
+      self.messageWrapper = .init(wrappedValue: message)
       self.attributes = attributes
       self.gifViewProvider = gifViewProvider
       self.presented = presented

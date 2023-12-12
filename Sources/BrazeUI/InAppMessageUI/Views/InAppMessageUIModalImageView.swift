@@ -9,7 +9,15 @@ extension BrazeInAppMessageUI {
   open class ModalImageView: UIView, InAppMessageView {
 
     /// The modal image in-app message.
-    public var message: Braze.InAppMessage.ModalImage
+    public var message: Braze.InAppMessage.ModalImage {
+      get { messageWrapper.wrappedValue }
+      set {
+        messageWrapper.wrappedValue = newValue
+      }
+    }
+
+    /// Internal wrapper for the modal image in-app message.
+    let messageWrapper: MessageWrapper<Braze.InAppMessage.ModalImage>
 
     // MARK: - Attributes
 
@@ -208,7 +216,7 @@ extension BrazeInAppMessageUI {
       gifViewProvider: GIFViewProvider = .shared,
       presented: Bool = false
     ) {
-      self.message = message
+      self.messageWrapper = .init(wrappedValue: message)
       self.attributes = attributes
       self.gifViewProvider = gifViewProvider
       self.presented = presented
