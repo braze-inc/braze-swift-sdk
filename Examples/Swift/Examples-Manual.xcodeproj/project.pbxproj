@@ -63,6 +63,7 @@
 		4F248ABCE70D894092B1DD59 /* BrazeUI.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF2ED58955148E8CDC8E8666 /* BrazeUI.xcframework */; };
 		4F82842CEF215146992E2664 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEF0FF04032299A31D37CDE4 /* Assets.xcassets */; };
 		501FED3C64FF2487E4E9C1C0 /* ReadmeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0617474A1F534AFBE702090C /* ReadmeViewController.swift */; };
+		53064408D600848B60AB3A09 /* BrazeLocation.bundle in Resources */ = {isa = PBXBuildFile; fileRef = EB8AF6AAFE01DAED72696307 /* BrazeLocation.bundle */; };
 		533688F071AE2CBA8D7F9D28 /* BrazeKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 963312B05750D1D4DA77128F /* BrazeKit.bundle */; };
 		5585CC15C01D38BC05EA7EBA /* PushNotificationsContentExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 334A021F30FF4114F75E59A1 /* PushNotificationsContentExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		569177D8B0AC23B87E50AD9B /* BrazeKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE1AFA11EB03A5B1BEA614A2 /* BrazeKit.xcframework */; };
@@ -140,6 +141,7 @@
 		BCDCB5A2B878D59CEC6F7A78 /* BrazeUI.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 85365B9C180AB9BA57FBD249 /* BrazeUI.bundle */; };
 		BF3E00BF746510504CA6D052 /* BrazeKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 963312B05750D1D4DA77128F /* BrazeKit.bundle */; };
 		C0C349911314FFA8D3C1D142 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE8605DB3AE191A4546EFB8 /* Extensions.swift */; };
+		C7015AC6CF3A7937EFA06121 /* BrazeLocation.bundle in Resources */ = {isa = PBXBuildFile; fileRef = EB8AF6AAFE01DAED72696307 /* BrazeLocation.bundle */; };
 		C8C4A7F93FA2E90EA0D8921C /* Readme.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8336D4BB1A8E983EF334361 /* Readme.swift */; };
 		C8FBBED710EB2CD866CE008C /* BrazeKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE1AFA11EB03A5B1BEA614A2 /* BrazeKit.xcframework */; };
 		C9A1CCCD4A85DB7FC21A5E40 /* CardsInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E119A40D1B488091F2D29EE8 /* CardsInfoViewController.swift */; };
@@ -298,6 +300,7 @@
 		E68B1192B8A63A256A1C970D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E9D247FEB352D899BE13EDD2 /* Readme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Readme.swift; sourceTree = "<group>"; };
 		EA882DE20154839D73224130 /* ContentCards-Custom-UI.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "ContentCards-Custom-UI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB8AF6AAFE01DAED72696307 /* BrazeLocation.bundle */ = {isa = PBXFileReference; lastKnownFileType = wrapper.cfbundle; name = BrazeLocation.bundle; path = "braze-swift-sdk-prebuilt/bundle/BrazeLocation.bundle"; sourceTree = "<group>"; };
 		EC51D2209600CED7B9043D01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE1AFA11EB03A5B1BEA614A2 /* BrazeKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = BrazeKit.xcframework; path = "braze-swift-sdk-prebuilt/static/BrazeKit.xcframework"; sourceTree = "<group>"; };
 		EFBFE564453A1C1C9CDC8E16 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -592,6 +595,7 @@
 			isa = PBXGroup;
 			children = (
 				963312B05750D1D4DA77128F /* BrazeKit.bundle */,
+				EB8AF6AAFE01DAED72696307 /* BrazeLocation.bundle */,
 				85365B9C180AB9BA57FBD249 /* BrazeUI.bundle */,
 			);
 			name = Resources;
@@ -1056,6 +1060,7 @@
 			files = (
 				2433F552DC49F4541FCA4B28 /* Assets.xcassets in Resources */,
 				2023639CD85FDD69BCE83916 /* BrazeKit.bundle in Resources */,
+				C7015AC6CF3A7937EFA06121 /* BrazeLocation.bundle in Resources */,
 				0B1E42B8B832406397F71D7C /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1098,6 +1103,7 @@
 			files = (
 				3E2F2CC382C69F9EBF257574 /* Assets.xcassets in Resources */,
 				D21211EFED4A79A9C52E3767 /* BrazeKit.bundle in Resources */,
+				53064408D600848B60AB3A09 /* BrazeLocation.bundle in Resources */,
 				EEA7B49567140123AFF0F8F5 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -51,6 +51,9 @@ extension BrazeInAppMessageUI {
       /// Deeplinks (e.g. `customAppScheme://`) always dismiss the message.
       public var linkTargetSupport: Bool = true
 
+      /// Specifies whether the web view should support the Web Inspector developer tool, if available.
+      public var allowInspector: Bool = true
+
       /// Closure allowing customization of the configuration used by the web view.
       public var configure: ((WKWebViewConfiguration) -> Void)?
 
@@ -287,6 +290,13 @@ extension BrazeInAppMessageUI {
       webView.scrollView.bounces = false
       webView.backgroundColor = .clear
       webView.isOpaque = false
+
+      #if compiler(>=5.8)
+        if #available(iOS 16.4, macOS 13.3, *) {
+          webView.isInspectable = attributes.allowInspector
+        }
+      #endif
+
       // Disable this optimization for mac catalyst (force webview in window bounds)
       #if !targetEnvironment(macCatalyst)
         if #available(iOS 11.0, *) {

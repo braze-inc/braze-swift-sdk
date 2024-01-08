@@ -5,7 +5,7 @@
 
 <p align="center">
   <a href="https://github.com/braze-inc/braze-swift-sdk/releases">
-    <img src="https://badgen.net/badge/version/7.4.0/blue" alt="Version: 7.4.0">
+    <img src="https://badgen.net/badge/version/7.5.0/blue" alt="Version: 7.5.0">
   </a>
   <a href="#">
     <img src="https://badgen.net/badge/platforms/iOS%20%7C%20tvOS%20%7C%20Mac%20Catalyst/orange"
@@ -30,7 +30,7 @@
   - iOS 11.0+
   - Mac Catalyst 13.0+
   - tvOS 11.0+
-- Xcode 14.1 (14B47b) or newer
+- Xcode 14.2 (14C18) or newer
 - This repository follows [Semantic Versioning](https://semver.org/)
 
 ## Package Managers

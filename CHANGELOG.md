@@ -1,3 +1,18 @@
+## 7.5.0
+
+##### Added
+- Adds privacy manifests for `BrazeKit` and `BrazeLocation` to describe Braze's data collection policies. For more details, refer to [Apple's documentation](https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests) on privacy manifests.
+  - More fine-tuned configurations to manage your data collection practices will be made available in a future release.
+- Adds the `optInWhenPushAuthorized` configuration property to specify whether a user's notification subscription state should automatically be set to `optedIn` when updating push permissions to authorized.
+- The WebKit Inspector developer tool is now enabled by default for all instances of `BrazeInAppMessagesUI.HtmlView`. It can be disabled by setting `BrazeInAppMessagesUI.HtmlView.Attributes.allowInspector` to `false`.
+
+##### Fixed
+- Fixes an issue with the code signatures of XCFrameworks introduced in `7.1.0`.
+- Fixes a crash on tvOS devices running versions below 16.0, caused by the absence of the `UIApplication.openNotificationSettingsURLString` symbol in those OS versions.
+- Fixes an issue where a content card would not display if the value under "Redirect to Web URL" was an empty string.
+- Fixes incorrect behavior in BrazeUI where tapping the body of a `Full` or `Modal` in-app message with buttons and an "Image Only" layout would dismiss that message and process the button's click action.
+  - Tapping the body will now be a no-op, bringing parity with other platforms.
+
 ## 7.4.0
 
 ##### Added

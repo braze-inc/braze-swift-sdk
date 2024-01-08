@@ -400,9 +400,14 @@ extension BrazeInAppMessageUI {
       guard gesture.state == .ended else {
         return
       }
-      logClick()
-      process(clickAction: message.clickAction)
-      dismiss()
+
+      // Only handle click action if there are no buttons.
+      // Button clicks are handled separately by the target `ButtonView`.
+      if message.buttons.isEmpty {
+        logClick()
+        process(clickAction: message.clickAction)
+        dismiss()
+      }
     }
 
     open lazy var tapBackgroundGesture = UITapGestureRecognizer(
