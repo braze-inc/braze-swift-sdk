@@ -1,4 +1,4 @@
-@import Foundation;
+#import <Foundation/Foundation.h>
 
 #define LogUnimplemented() brzLogUnimplemented(_cmd, [self class]);
 

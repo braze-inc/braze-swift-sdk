@@ -1,5 +1,10 @@
-@import BrazeKit;
-@import Foundation;
+#import <Foundation/Foundation.h>
+
+#if __has_feature(modules)
+  @import BrazeKit;
+#else
+  #import <BrazeKit/BrazeKit-Swift.h>
+#endif
 
 @protocol ABKURLDelegate;
 @protocol ABKInAppMessageControllerDelegate;

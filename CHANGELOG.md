@@ -1,3 +1,23 @@
+## 7.6.0
+
+##### Added
+- Adds the `Braze.InAppMessage.Data.isTestSend` property, which indicates whether an in-app message was triggered as part of a test send.
+- Adds logic to separate Braze data into tracking and non-tracking requests.
+  - Adds the following methods to set and edit the allow list for properties that will be used for tracking:
+    - `Braze.Configuration.Api.trackingPropertyAllowList`: Set the initial allow list before initializing Braze.
+    - `Braze.updateTrackingAllowList(adding:removing:)`: Update the existing allow list during runtime.
+  - For full usage details on these configurations, refer to our tutorial [here](https://braze-inc.github.io/braze-swift-sdk/tutorials/braze/e1-privacy-tracking/).
+
+##### Fixed
+- Adds safeguards to prevent a rare race condition occuring in the SDK network layer.
+- Prevents in-app message test sends from attempting re-display after being discarded by a custom in-app message UI delegate.
+- Fixes an issue in the default Braze in-app message UI where some messages were not being removed from the stack after display.
+- Fixes the compilation of `BrazeKitCompat` and `BrazeUICompat` in Objective-C++ projects.
+- Fixes an issue in `BrazeUICompat` where the header text in Full or Modal in-app messages would be duplicated in place of the body text under certain conditions.
+- Fixes the encoding of values of types `Float`, `Int8`, `Int16`, `Int32`, `Int64`, `UInt`, `UInt8`, `UInt16`, `UInt32` and `UInt64`. Those types were previously not supported in custom events and purchase properties.
+- Fixes an issue preventing purchase events from being logged when the product identifier has a leading dollar sign.
+- Fixes an issue preventing custom attributes from being logged when the attribute key has a leading dollar sign.
+
 ## 7.5.0
 
 ##### Added

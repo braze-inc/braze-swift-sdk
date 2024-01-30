@@ -145,7 +145,7 @@ open class BrazeInAppMessageUI:
     }
 
     // Remove the message from the stack if needed
-    stack.removeAll { $0 == message }
+    stack.removeAll { $0.isApproximatelyEqual(to: message) }
 
     // Transform remote asset URLs to local asset URLs
     // - IAMs not originating from Braze (`context == nil`) cannot go through this transformation
@@ -316,7 +316,7 @@ open class BrazeInAppMessageUI:
         logError(for: message.context, error: .otherMessagePresented(push: false))
       case .stack:
         // Remove message from stack (if present) and place on top
-        stack.removeAll { $0.data.id == message.data.id }
+        stack.removeAll { $0.isApproximatelyEqual(to: message) }
         stack.append(message)
         logError(for: message.context, error: .otherMessagePresented(push: true))
       case .followup:
@@ -341,7 +341,7 @@ open class BrazeInAppMessageUI:
   func validateOrientation(for message: Braze.InAppMessage) -> Bool {
     let traits = Braze.UIUtils.activeTopmostViewController?.traitCollection
     guard message.orientation.supported(by: traits) else {
-      stack.removeAll { $0 == message }
+      stack.removeAll { $0.isApproximatelyEqual(to: message) }
       logError(for: message.context, error: .noMatchingOrientation)
       return false
     }
@@ -355,7 +355,7 @@ open class BrazeInAppMessageUI:
     }
 
     guard context.valid else {
-      stack.removeAll { $0 == message }
+      stack.removeAll { $0.isApproximatelyEqual(to: message) }
       logError(for: message.context, error: .messageContextInvalid)
       return false
     }
