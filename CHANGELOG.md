@@ -1,11 +1,17 @@
+## 6.6.2
+
+##### Fixed
+- Fixes an issue preventing purchase events from being logged when the product identifier has a leading dollar sign ($).
+- Fixes an issue preventing custom attributes from being logged when the attribute key has a leading dollar sign ($).
+
 ## 6.6.1
 
 ##### Fixed
 - Fixes a crash in the geofences feature that could occur when the number of monitored regions exceeded the maximum count.
-- Fixes an issue introduced in `6.3.1` that would always update a user's push subscription status to `optedIn` on app launch if push permissions were authorized on the device settings.
+- Fixes an issue introduced in `6.3.1` that would automatically set a user's push subscription status to `optedIn` on app launch if push permissions were authorized on the device settings.
   - The SDK now will only send the subscription status at app launch if the device notification settings goes from denied to authorized.
 - `Braze.ContentCard.logClick(using braze: Braze)` will now log a click regardless of whether the `ContentCard` has a `ClickAction`.
-  - This behavior differs from the default API `Braze.ContentCard.Context.logClick()`, which has the safeguard of requiring a `ClickAction` to log a click.
+  - This behavior differs from `Braze.ContentCard.Context.logClick()`, which has the safeguard of requiring a `ClickAction` to log a click.
 
 ## 6.6.0
 
