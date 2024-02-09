@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0259D084689AD80BFC8DE736 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B2A24F812A684E253E1C55 /* AppDelegate.swift */; };
+		03F471437ECF0E971EBD7791 /* SDWebImage.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A4862669D8E8CC116B81CDB2 /* SDWebImage.bundle */; };
 		066576DFE4BB39A709D6A3FB /* MockImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DE243578DBC5FA4DF8237E /* MockImage.swift */; };
 		06B41135C711D26296E4CB72 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CEC1A3A03568BC7B5FB442 /* Credentials.swift */; };
 		072A33D2EC80958D06FC5029 /* BrazeKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE1AFA11EB03A5B1BEA614A2 /* BrazeKit.xcframework */; };
@@ -92,6 +93,7 @@
 		7C6F4B321756F30FED4BB723 /* MockImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DE243578DBC5FA4DF8237E /* MockImage.swift */; };
 		7CD998189812894295F6F844 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F7E5A96D302B8CA3D7FCE5 /* AppDelegate.swift */; };
 		7D5527F1F20316E3E83F7534 /* BrazeKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 963312B05750D1D4DA77128F /* BrazeKit.bundle */; };
+		7FBBB1441AC127087D878C36 /* SDWebImage.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A4862669D8E8CC116B81CDB2 /* SDWebImage.bundle */; };
 		80D76FBA9061A2055BF5009F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239CF1158BD0D1AB82866793 /* AppDelegate.swift */; };
 		81CE6E9D873143D9C328D0BE /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CEC1A3A03568BC7B5FB442 /* Credentials.swift */; };
 		82291C88BF7808FB1117C89F /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CEC1A3A03568BC7B5FB442 /* Credentials.swift */; };
@@ -117,6 +119,7 @@
 		9D7F560F409C217BE1D6C9C7 /* PushNotificationsContentExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 334A021F30FF4114F75E59A1 /* PushNotificationsContentExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A11C816BE6C7F8508374868B /* Readme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970FEBFCFF80A684AD29EE90 /* Readme.swift */; };
 		A1A6B333C3F62EF0CBB0BE07 /* MockImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DE243578DBC5FA4DF8237E /* MockImage.swift */; };
+		A3899B99283411D1D254D7B8 /* SDWebImage.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A4862669D8E8CC116B81CDB2 /* SDWebImage.bundle */; };
 		A5171A5ECEC1421B76E99848 /* SDWebImageGIFViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFD57A976BE8350B2E0529C /* SDWebImageGIFViewProvider.swift */; };
 		A57A0617A5F07E9CC514F61D /* MockImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DE243578DBC5FA4DF8237E /* MockImage.swift */; };
 		A6F37B2852E206D341A4BB1B /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CEC1A3A03568BC7B5FB442 /* Credentials.swift */; };
@@ -162,6 +165,7 @@
 		D9CD1E725F9A4AC2B1F4B6DC /* ReadmeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0617474A1F534AFBE702090C /* ReadmeViewController.swift */; };
 		DA47B24FA215F807B70B8D4C /* BrazeUI.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF2ED58955148E8CDC8E8666 /* BrazeUI.xcframework */; };
 		DD480CDAB38AD655EEA3B5EF /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CEC1A3A03568BC7B5FB442 /* Credentials.swift */; };
+		E23BEBB47BCB32C0740CD6E1 /* SDWebImage.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A4862669D8E8CC116B81CDB2 /* SDWebImage.bundle */; };
 		E6DF2E44081D08C690C2FC49 /* SDWebImageGIFViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4F7F81F66CDA13C9604FDA /* SDWebImageGIFViewProvider.swift */; };
 		E887494ABCDD317C782E1D7F /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533195F22A1588713AF533FD /* NotificationService.swift */; };
 		EAAE90780460DB91BC0C4590 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEF0FF04032299A31D37CDE4 /* Assets.xcassets */; };
@@ -281,6 +285,7 @@
 		9D34CFD4F0F28B78BD6C416B /* Readme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Readme.swift; sourceTree = "<group>"; };
 		A0E3CB930079E9D9B90575A1 /* ContentCards-Custom-UI.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "ContentCards-Custom-UI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A44AB6CF753C2512EA4D110C /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
+		A4862669D8E8CC116B81CDB2 /* SDWebImage.bundle */ = {isa = PBXFileReference; lastKnownFileType = wrapper.cfbundle; name = SDWebImage.bundle; path = "braze-swift-sdk-prebuilt/bundle/SDWebImage.bundle"; sourceTree = "<group>"; };
 		A5256781FE6611430C077175 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A9A04673678B1EEA9C7559C6 /* PushNotificationsServiceExtension.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = PushNotificationsServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC126939B2257D75B5DEDC4E /* InAppMessageInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppMessageInfoViewController.swift; sourceTree = "<group>"; };
@@ -597,6 +602,7 @@
 				963312B05750D1D4DA77128F /* BrazeKit.bundle */,
 				EB8AF6AAFE01DAED72696307 /* BrazeLocation.bundle */,
 				85365B9C180AB9BA57FBD249 /* BrazeUI.bundle */,
+				A4862669D8E8CC116B81CDB2 /* SDWebImage.bundle */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1083,6 +1089,7 @@
 				BF3E00BF746510504CA6D052 /* BrazeKit.bundle in Resources */,
 				87B56CCE5A48D906FC4EFEEA /* BrazeUI.bundle in Resources */,
 				9291C501BFC4FE0730068E24 /* LaunchScreen.storyboard in Resources */,
+				7FBBB1441AC127087D878C36 /* SDWebImage.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1094,6 +1101,7 @@
 				7B24B540AA7946B259E6355F /* BrazeKit.bundle in Resources */,
 				BCDCB5A2B878D59CEC6F7A78 /* BrazeUI.bundle in Resources */,
 				88C413393B8A310612536576 /* LaunchScreen.storyboard in Resources */,
+				03F471437ECF0E971EBD7791 /* SDWebImage.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1146,6 +1154,7 @@
 				6C065226833B8EC7CCEEDA05 /* BrazeKit.bundle in Resources */,
 				1E91998ABF05E912E263E355 /* BrazeUI.bundle in Resources */,
 				74293EC038DEF0E76CC03171 /* LaunchScreen.storyboard in Resources */,
+				E23BEBB47BCB32C0740CD6E1 /* SDWebImage.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1157,6 +1166,7 @@
 				1567A7107DAB82AA67FAEA45 /* BrazeKit.bundle in Resources */,
 				C9A4905EA63DA015B0A4B30F /* BrazeUI.bundle in Resources */,
 				33C10978000DFE7956E68484 /* LaunchScreen.storyboard in Resources */,
+				A3899B99283411D1D254D7B8 /* SDWebImage.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

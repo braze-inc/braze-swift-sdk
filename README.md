@@ -5,7 +5,7 @@
 
 <p align="center">
   <a href="https://github.com/braze-inc/braze-swift-sdk/releases">
-    <img src="https://badgen.net/badge/version/7.6.0/blue" alt="Version: 7.6.0">
+    <img src="https://badgen.net/badge/version/7.7.0/blue" alt="Version: 7.7.0">
   </a>
   <a href="#">
     <img src="https://badgen.net/badge/platforms/iOS%20%7C%20tvOS%20%7C%20Mac%20Catalyst/orange"
@@ -72,7 +72,7 @@ Explore our [examples project](/Examples) which showcases multiple features' int
 | Flutter         | ✅                 | 3.0.0           |
 | Cordova         | ✅                 | 2.33.0          |
 | Unity           | ✅                 | 4.0.0           |
-| Xamarin         | In Progress       | TBD             |
+| Xamarin         | ✅                 | 4.0.0           |
 
 ## Alternative Repositories
 

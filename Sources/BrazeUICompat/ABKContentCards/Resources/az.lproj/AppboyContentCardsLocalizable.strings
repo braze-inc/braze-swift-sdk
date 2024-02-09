@@ -1,0 +1,5 @@
+/* Content Cards Context Labels */
+"Appboy.content-cards.done-button.title" = "Tamamdır";
+"Appboy.content-cards.no-card.text" = "Heç bir yeniləmələrimiz yoxdur.\nZəhmət olmasa, sonra yenidən yoxlayın.";
+"Appboy.content-cards.no-connection.title" = "Bağlantı Xətası";
+"Appboy.content-cards.no-connection.message" = "Şəbəkə bağlantısı qurmaq mümkün olmadı.\nZəhmət olmasa, sonra yenidən cəhd edin.";

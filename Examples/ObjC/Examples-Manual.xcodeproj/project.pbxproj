@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		02DC0031352875AEA57E016F /* Credentials.m in Sources */ = {isa = PBXBuildFile; fileRef = 300EE8F0E93BE17A2E191D94 /* Credentials.m */; };
+		03F471437ECF0E971EBD7791 /* SDWebImage.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A4862669D8E8CC116B81CDB2 /* SDWebImage.bundle */; };
 		068F5E18F0022F81800AC463 /* Credentials.m in Sources */ = {isa = PBXBuildFile; fileRef = 300EE8F0E93BE17A2E191D94 /* Credentials.m */; };
 		072A33D2EC80958D06FC5029 /* BrazeKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE1AFA11EB03A5B1BEA614A2 /* BrazeKit.xcframework */; };
 		09466A6F1F1FB9A4E3C5373F /* BrazeLocation.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CBF91DFBE0824E25FEE7BDC /* BrazeLocation.xcframework */; };
@@ -99,6 +100,7 @@
 		7B7D7F43349E02D078DA4D91 /* ReadmeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CD7AB410DAB0417F872BA8 /* ReadmeViewController.m */; };
 		7C6C57DBD8A366181DA6D41B /* Credentials.m in Sources */ = {isa = PBXBuildFile; fileRef = 300EE8F0E93BE17A2E191D94 /* Credentials.m */; };
 		7D5527F1F20316E3E83F7534 /* BrazeKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 963312B05750D1D4DA77128F /* BrazeKit.bundle */; };
+		7FBBB1441AC127087D878C36 /* SDWebImage.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A4862669D8E8CC116B81CDB2 /* SDWebImage.bundle */; };
 		7FD09FECAD3A87ED5A1781B5 /* ReadmeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CD7AB410DAB0417F872BA8 /* ReadmeViewController.m */; };
 		7FF1A44F5E57B887F707ECB6 /* CustomInAppMessagePresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 94150E2BB7ABD75FD0130D92 /* CustomInAppMessagePresenter.m */; };
 		82090ABD22EA90EBE70FB6FF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C8D7F1FE2EE80796BE4B2B76 /* main.m */; };
@@ -129,6 +131,7 @@
 		9FA9D948525624B0203FC558 /* BRZGIFViewProvider+SDWebImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 87C1CF136D11D5168491F769 /* BRZGIFViewProvider+SDWebImage.m */; };
 		A1E8B7883D7845AC370E5F8B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C8D7F1FE2EE80796BE4B2B76 /* main.m */; };
 		A2464145E52DDEBAFD4725F2 /* Credentials.m in Sources */ = {isa = PBXBuildFile; fileRef = 300EE8F0E93BE17A2E191D94 /* Credentials.m */; };
+		A3899B99283411D1D254D7B8 /* SDWebImage.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A4862669D8E8CC116B81CDB2 /* SDWebImage.bundle */; };
 		A4A35CF95752F89B0C17D783 /* Credentials.m in Sources */ = {isa = PBXBuildFile; fileRef = 300EE8F0E93BE17A2E191D94 /* Credentials.m */; };
 		A6A947BFB3D1425AEA2542E4 /* empty-file.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DEEEEC6C495A8FB90C87DF /* empty-file.swift */; };
 		A6FB7CA3CF50B16E10C22B2C /* PushNotificationsServiceExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = A9A04673678B1EEA9C7559C6 /* PushNotificationsServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -169,6 +172,7 @@
 		DCA35F3923F60DC1D453E42C /* Credentials.m in Sources */ = {isa = PBXBuildFile; fileRef = 300EE8F0E93BE17A2E191D94 /* Credentials.m */; };
 		DE94AAA2B0E9BDF19C99418C /* NotAvailableInObjC.m in Sources */ = {isa = PBXBuildFile; fileRef = AE76D32E01BF5A7187E220F5 /* NotAvailableInObjC.m */; };
 		DFD058BEFA52610A862AABCC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C8D7F1FE2EE80796BE4B2B76 /* main.m */; };
+		E23BEBB47BCB32C0740CD6E1 /* SDWebImage.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A4862669D8E8CC116B81CDB2 /* SDWebImage.bundle */; };
 		E6A3B78AB684D9B08A4F6B55 /* AuthenticationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 70C9AC9B199D50C1B6B422B3 /* AuthenticationManager.m */; };
 		E887494ABCDD317C782E1D7F /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533195F22A1588713AF533FD /* NotificationService.swift */; };
 		EAAE90780460DB91BC0C4590 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEF0FF04032299A31D37CDE4 /* Assets.xcassets */; };
@@ -296,6 +300,7 @@
 		99485A247A6D99729F74D785 /* AuthenticationManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AuthenticationManager.h; sourceTree = "<group>"; };
 		A0E3CB930079E9D9B90575A1 /* ContentCards-Custom-UI.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "ContentCards-Custom-UI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3DEEEEC6C495A8FB90C87DF /* empty-file.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "empty-file.swift"; sourceTree = "<group>"; };
+		A4862669D8E8CC116B81CDB2 /* SDWebImage.bundle */ = {isa = PBXFileReference; lastKnownFileType = wrapper.cfbundle; name = SDWebImage.bundle; path = "braze-swift-sdk-prebuilt/bundle/SDWebImage.bundle"; sourceTree = "<group>"; };
 		A91AF3B830B800D360D5B863 /* ReadmeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReadmeViewController.h; sourceTree = "<group>"; };
 		A9A04673678B1EEA9C7559C6 /* PushNotificationsServiceExtension.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = PushNotificationsServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE76D32E01BF5A7187E220F5 /* NotAvailableInObjC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotAvailableInObjC.m; sourceTree = "<group>"; };
@@ -608,6 +613,7 @@
 				963312B05750D1D4DA77128F /* BrazeKit.bundle */,
 				EB8AF6AAFE01DAED72696307 /* BrazeLocation.bundle */,
 				85365B9C180AB9BA57FBD249 /* BrazeUI.bundle */,
+				A4862669D8E8CC116B81CDB2 /* SDWebImage.bundle */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1092,6 +1098,7 @@
 				BF3E00BF746510504CA6D052 /* BrazeKit.bundle in Resources */,
 				87B56CCE5A48D906FC4EFEEA /* BrazeUI.bundle in Resources */,
 				9291C501BFC4FE0730068E24 /* LaunchScreen.storyboard in Resources */,
+				7FBBB1441AC127087D878C36 /* SDWebImage.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1103,6 +1110,7 @@
 				7B24B540AA7946B259E6355F /* BrazeKit.bundle in Resources */,
 				BCDCB5A2B878D59CEC6F7A78 /* BrazeUI.bundle in Resources */,
 				88C413393B8A310612536576 /* LaunchScreen.storyboard in Resources */,
+				03F471437ECF0E971EBD7791 /* SDWebImage.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1155,6 +1163,7 @@
 				6C065226833B8EC7CCEEDA05 /* BrazeKit.bundle in Resources */,
 				1E91998ABF05E912E263E355 /* BrazeUI.bundle in Resources */,
 				74293EC038DEF0E76CC03171 /* LaunchScreen.storyboard in Resources */,
+				E23BEBB47BCB32C0740CD6E1 /* SDWebImage.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1166,6 +1175,7 @@
 				1567A7107DAB82AA67FAEA45 /* BrazeKit.bundle in Resources */,
 				C9A4905EA63DA015B0A4B30F /* BrazeUI.bundle in Resources */,
 				33C10978000DFE7956E68484 /* LaunchScreen.storyboard in Resources */,
+				A3899B99283411D1D254D7B8 /* SDWebImage.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

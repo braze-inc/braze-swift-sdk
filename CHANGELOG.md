@@ -1,3 +1,18 @@
+## 7.7.0
+
+##### Added
+- Updates the prebuilt release assets to include the privacy manifest for manual integrations of SDWebImage.
+  - Follow the [manual integration guide](https://www.braze.com/docs/developer_guide/platform_integration_guides/swift/initial_sdk_setup/installation_methods/manual_integration/?tab=static) to add the `SDWebImage.bundle` to your project for static XCFrameworks.
+- Enhances support for language localizations.
+  - Introduces a localization for Azerbaijani strings.
+  - Updates Ukrainian localization strings for accuracy.
+
+##### Fixed
+- Fixes the default button placement for full in-app message views.
+- Fixes an issue where setting `Braze.Configuration.Api.endpoint` to a URL with invalid characters could cause a crash.
+  - If the SDK is given an invalid endpoint, it will no longer attempt to make network requests and will instead log an error.
+- Fixes an issue preventing `BrazeLocation` from working correctly when using the dynamic XCFrameworks.
+
 ## 7.6.0
 
 ##### Added
@@ -110,6 +125,12 @@
 - Adds the `enableDarkTheme` property to `BrazeContentCardUI.ViewController.Attributes`.
   - Set this field to `false` to prevent the Content Cards feed UI from adopting dark theme styling when the device is in dark mode.
   - This field is `true` by default.
+
+## 6.6.2
+
+##### Fixed
+- Fixes an issue preventing purchase events from being logged when the product identifier has a leading dollar sign ($).
+- Fixes an issue preventing custom attributes from being logged when the attribute key has a leading dollar sign ($).
 
 ## 6.6.1
 

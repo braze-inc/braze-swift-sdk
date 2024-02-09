@@ -1,11 +1,11 @@
-"braze.push.action.accept" = "згоден";
-"braze.push.action.decline" = "відхилити";
-"braze.push.action.confirm" = "стверджувати";
-"braze.push.action.cancel" = "скасувати";
-"braze.push.action.yes" = "та";
-"braze.push.action.no" = "ні";
-"braze.push.action.more" = "ще";
-"braze.push.action.next" = "наступний";
-"braze.push.action.gotoapp" = "відкрити програму";
+"braze.push.action.accept" = "Прийняти";
+"braze.push.action.decline" = "Відхилити";
+"braze.push.action.confirm" = "Підтвердити";
+"braze.push.action.cancel" = "Скасувати";
+"braze.push.action.yes" = "Так";
+"braze.push.action.no" = "Ні";
+"braze.push.action.more" = "Більше";
+"braze.push.action.next" = "Далі";
+"braze.push.action.gotoapp" = "Перейти до програми";
 
-"braze.webview.no-connection" = "Не вдається встановити підключення до мережі. Будь-ласка спробуйте пізніше.";
+"braze.webview.no-connection" = "Не вдається встановити підключення до мережі. Cпробуйте ще раз пізніше.";

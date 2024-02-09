@@ -1,0 +1,11 @@
+"braze.push.action.accept" = "Qəbul et";
+"braze.push.action.decline" = "Rədd et";
+"braze.push.action.confirm" = "Təsdiqlə";
+"braze.push.action.cancel" = "Ləğv et";
+"braze.push.action.yes" = "Bəli";
+"braze.push.action.no" = "Xeyr";
+"braze.push.action.more" = "Daha çox";
+"braze.push.action.next" = "Növbəti";
+"braze.push.action.gotoapp" = "Tətbiqə keç";
+
+"braze.webview.no-connection" = "Şəbəkə bağlantısı qurmaq mümkün olmadı. Zəhmət olmasa, daha sonra yenidən cəhd edin.";
