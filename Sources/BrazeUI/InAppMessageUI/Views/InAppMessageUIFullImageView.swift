@@ -114,12 +114,14 @@ extension BrazeInAppMessageUI {
     var modalMaxHeight: ViewDimension
     var modalCornerRadius: Double
 
-    open override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-      super.traitCollectionDidChange(previousTraitCollection)
-      if preferredDisplayMode == nil {
-        displayMode = traitCollection.horizontalSizeClass == .compact ? .full : .modal
+    #if !os(visionOS)
+      open override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        if preferredDisplayMode == nil {
+          displayMode = traitCollection.horizontalSizeClass == .compact ? .full : .modal
+        }
       }
-    }
+    #endif
 
     func updateForDisplayMode() {
       let displayMode = preferredDisplayMode ?? self.displayMode

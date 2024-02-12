@@ -381,7 +381,7 @@ extension BrazeContentCardUI {
         // We must return at least one pixel otherwise the table view has trouble reporting the
         // control cells properly in `tableView(_:willDisplay:forRowAt:)` and
         // `tableView(_:didEndDisplaying:forRowAt:)`
-        return 1.0 / UIScreen.main.scale
+        return 1.0 / traitCollection.displayScale
       }
       return UITableView.automaticDimension
     }

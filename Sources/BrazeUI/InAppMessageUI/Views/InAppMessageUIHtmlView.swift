@@ -146,6 +146,14 @@ extension BrazeInAppMessageUI {
       self.attributes = attributes
       self.presented = presented
       super.init(frame: .zero)
+
+      #if os(visionOS)
+        registerForTraitChanges([
+          UITraitActiveAppearance.self
+        ]) { (self: Self, _: UITraitCollection) in
+          self.attributes.onTheme?(self)
+        }
+      #endif
     }
 
     @available(*, unavailable)
@@ -167,10 +175,12 @@ extension BrazeInAppMessageUI {
 
     // MARK: - Theme
 
-    open override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-      super.traitCollectionDidChange(previousTraitCollection)
-      attributes.onTheme?(self)
-    }
+    #if !os(visionOS)
+      open override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        attributes.onTheme?(self)
+      }
+    #endif
 
     // MARK: - Layout
 

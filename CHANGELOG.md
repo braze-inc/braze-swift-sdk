@@ -1,3 +1,15 @@
+## 8.0.0
+
+##### Breaking
+- Compiles the SDK using Xcode version 15.2 (15C500b).
+  - This also raises the minimum deployment targets to iOS 12.0 and tvOS 12.0.
+- The `BrazeLocation` class is now marked as unavailable. It was previously deprecated in favor of `BrazeLocationProvider` in 5.8.1.
+
+##### Added
+- Adds support for visionOS 1.0.
+  - ⚠️ Rich push notifications and Push Stories may not display as expected on visionOS 1.0. We are monitoring the latest versions for potential fixes.
+  - ⚠️ CocoaPods is not yet supported by SDWebImage for visionOS. visionOS sample apps requiring SDWebImage have been disabled in the `Examples-CocoaPods.xcworkspace`. Refer to the SwiftPM or manual integration Xcode project instead.
+
 ## 7.7.0
 
 ##### Added

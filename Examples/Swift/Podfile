@@ -12,7 +12,12 @@ target 'Analytics-tvOS' do
   pod 'BrazeKit'
 end
 
-target 'InAppMessageUI' do
+target 'Analytics-visionOS' do
+  platform :visionos, '1.0'
+  pod 'BrazeKit'
+end
+
+target 'InAppMessageUI-iOS' do
   platform :ios, '11.0'
   pod 'BrazeKit'
   pod 'BrazeUI'
@@ -21,7 +26,17 @@ target 'InAppMessageUI' do
   pod 'SDWebImage', :modular_headers => true
 end
 
-target 'InAppMessageUI-Customization' do
+# Disabled until SDWebImage supports visionOS via CocoaPods
+# target 'InAppMessageUI-visionOS' do
+#   platform :visionos, '1.0'
+#   pod 'BrazeKit'
+#   pod 'BrazeUI'
+#   # SDWebImage is optional. BrazeUI requires a third party library to display GIF images.
+#   # See https://braze-inc.github.io/braze-swift-sdk/documentation/braze/gif-support-integrations
+#   pod 'SDWebImage', :modular_headers => true
+# end
+
+target 'InAppMessageUI-Customization-iOS' do
   platform :ios, '11.0'
   pod 'BrazeKit'
   pod 'BrazeUI'
@@ -29,6 +44,16 @@ target 'InAppMessageUI-Customization' do
   # See https://braze-inc.github.io/braze-swift-sdk/documentation/braze/gif-support-integrations
   pod 'SDWebImage', :modular_headers => true
 end
+
+# Disabled until SDWebImage supports visionOS via CocoaPods
+# target 'InAppMessageUI-Customization-visionOS' do
+#   platform :visionos, '1.0'
+#   pod 'BrazeKit'
+#   pod 'BrazeUI'
+#   # SDWebImage is optional. BrazeUI requires a third party library to display GIF images.
+#   # See https://braze-inc.github.io/braze-swift-sdk/documentation/braze/gif-support-integrations
+#   pod 'SDWebImage', :modular_headers => true
+# end
 
 target 'InAppMessages-Custom-UI-iOS' do
   platform :ios, '11.0'
@@ -40,7 +65,12 @@ target 'InAppMessages-Custom-UI-tvOS' do
   pod 'BrazeKit'
 end
 
-target 'ContentCardUI' do
+target 'InAppMessages-Custom-UI-visionOS' do
+  platform :visionos, '1.0'
+  pod 'BrazeKit'
+end
+
+target 'ContentCardUI-iOS' do
   platform :ios, '11.0'
   pod 'BrazeKit'
   pod 'BrazeUI'
@@ -49,7 +79,17 @@ target 'ContentCardUI' do
   pod 'SDWebImage', :modular_headers => true
 end
 
-target 'ContentCardUI-Customization' do
+# Disabled until SDWebImage supports visionOS via CocoaPods
+# target 'ContentCardUI-visionOS' do
+#   platform :visionos, '1.0'
+#   pod 'BrazeKit'
+#   pod 'BrazeUI'
+#   # SDWebImage is optional. BrazeUI requires a third party library to display GIF images.
+#   # See https://braze-inc.github.io/braze-swift-sdk/documentation/braze/gif-support-integrations
+#   pod 'SDWebImage', :modular_headers => true
+# end
+
+target 'ContentCardUI-Customization-iOS' do
   platform :ios, '11.0'
   pod 'BrazeKit'
   pod 'BrazeUI'
@@ -57,6 +97,16 @@ target 'ContentCardUI-Customization' do
   # See https://braze-inc.github.io/braze-swift-sdk/documentation/braze/gif-support-integrations
   pod 'SDWebImage', :modular_headers => true
 end
+
+# Disabled until SDWebImage supports visionOS via CocoaPods
+# target 'ContentCardUI-Customization-visionOS' do
+#   platform :visionos, '1.0'
+#   pod 'BrazeKit'
+#   pod 'BrazeUI'
+#   # SDWebImage is optional. BrazeUI requires a third party library to display GIF images.
+#   # See https://braze-inc.github.io/braze-swift-sdk/documentation/braze/gif-support-integrations
+#   pod 'SDWebImage', :modular_headers => true
+# end
 
 target 'ContentCards-Custom-UI-iOS' do
   platform :ios, '11.0'
@@ -65,6 +115,11 @@ end
 
 target 'ContentCards-Custom-UI-tvOS' do
   platform :tvos, '11.0'
+  pod 'BrazeKit'
+end
+
+target 'ContentCards-Custom-UI-visionOS' do
+  platform :visionos, '1.0'
   pod 'BrazeKit'
 end
 
@@ -80,22 +135,48 @@ target 'Location-tvOS' do
   pod 'BrazeLocation'
 end
 
-target 'PushNotifications-Manual' do
+target 'Location-visionOS' do
+  platform :visionos, '1.0'
+  pod 'BrazeKit'
+  pod 'BrazeLocation'
+end
+
+target 'PushNotifications-Manual-iOS' do
   platform :ios, '11.0'
   pod 'BrazeKit'
 end
 
-target 'PushNotifications-Automatic' do
+target 'PushNotifications-Manual-visionOS' do
+  platform :visionos, '1.0'
+  pod 'BrazeKit'
+end
+
+target 'PushNotifications-Automatic-iOS' do
   platform :ios, '11.0'
   pod 'BrazeKit'
 end
 
-target 'PushNotificationsServiceExtension' do
+target 'PushNotifications-Automatic-visionOS' do
+  platform :visionos, '1.0'
+  pod 'BrazeKit'
+end
+
+target 'PushNotificationsServiceExtension-iOS' do
   platform :ios, '11.0'
   pod 'BrazeNotificationService'
 end
 
-target 'PushNotificationsContentExtension' do
+target 'PushNotificationsServiceExtension-visionOS' do
+  platform :visionos, '1.0'
+  pod 'BrazeNotificationService'
+end
+
+target 'PushNotificationsContentExtension-iOS' do
   platform :ios, '11.0'
+  pod 'BrazePushStory'
+end
+
+target 'PushNotificationsContentExtension-visionOS' do
+  platform :visionos, '1.0'
   pod 'BrazePushStory'
 end

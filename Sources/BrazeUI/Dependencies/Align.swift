@@ -5,7 +5,7 @@
 // Contains the following changes for Xcode 15 support:
 // - https://github.com/kean/Align/commit/3bc174c128b6e6de52be95429bd626d265f11ce3
 
-#if os(iOS) || os(tvOS)
+#if os(iOS) || os(tvOS) || os(visionOS)
   import UIKit
 
   protocol LayoutItem {  // `UIView`, `UILayoutGuide`
@@ -300,7 +300,7 @@ struct AnchorCollectionEdges {
     AnchorCollectionEdges(item: item, isAbsolute: true)
   }
 
-  #if os(iOS) || os(tvOS)
+  #if os(iOS) || os(tvOS) || os(visionOS)
     typealias Axis = NSLayoutConstraint.Axis
   #else
     typealias Axis = NSLayoutConstraint.Orientation
@@ -568,7 +568,7 @@ final class Constraints: Collection {
     constant: CGFloat = 0
   ) -> NSLayoutConstraint {
     precondition(Thread.isMainThread, "Align APIs can only be used from the main thread")
-    #if os(iOS) || os(tvOS)
+    #if os(iOS) || os(tvOS) || os(visionOS)
       (item1 as? UIView)?.translatesAutoresizingMaskIntoConstraints = false
     #elseif os(macOS)
       (item1 as? NSView)?.translatesAutoresizingMaskIntoConstraints = false
@@ -643,7 +643,7 @@ extension Constraints {
 
 // MARK: - Misc
 
-#if os(iOS) || os(tvOS)
+#if os(iOS) || os(tvOS) || os(visionOS)
   typealias EdgeInsets = UIEdgeInsets
 #elseif os(macOS)
   typealias EdgeInsets = NSEdgeInsets

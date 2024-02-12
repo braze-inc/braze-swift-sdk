@@ -5,7 +5,7 @@
 
 <p align="center">
   <a href="https://github.com/braze-inc/braze-swift-sdk/releases">
-    <img src="https://badgen.net/badge/version/7.7.0/blue" alt="Version: 7.7.0">
+    <img src="https://badgen.net/badge/version/8.0.0/blue" alt="Version: 8.0.0">
   </a>
   <a href="#">
     <img src="https://badgen.net/badge/platforms/iOS%20%7C%20tvOS%20%7C%20Mac%20Catalyst/orange"
@@ -27,10 +27,11 @@
 
 ## Version Information
 - The Braze Swift SDK supports
-  - iOS 11.0+
+  - iOS 12.0+
   - Mac Catalyst 13.0+
-  - tvOS 11.0+
-- Xcode 14.2 (14C18) or newer
+  - tvOS 12.0+
+  - visionOS 1.0+
+- Xcode 15.2 (15C500b) or newer
 - This repository follows [Semantic Versioning](https://semver.org/)
 
 ## Package Managers
@@ -41,16 +42,16 @@
 
 <!-- Table generated with https://www.tablesgenerator.com/markdown_tables -->
 
-|                                                                                                                             | iOS |     tvOS      | macCatatyst |
-|-----------------------------------------------------------------------------------------------------------------------------|:---:|:-------------:|:-----------:|
-| **BrazeKit**</br> _Main SDK library providing support for [analytics] and [push notifications]._                            |  ✅  | ✅<sup>1</sup> |      ✅      |
-| **BrazeUI**</br> _Braze-provided user interface library for [In-App Messages] and [Content Cards]._                         |  ✅  |      n/a      |      ✅      |
-| **BrazeLocation**</br> _Location library providing support for [location analytics and geofence monitoring]._               |  ✅  | ✅<sup>2</sup> |      ✅      |
-| **BrazeNotificationService**</br> _Notification service extension library providing support for [rich push notifications]._ |  ✅  |      n/a      |      ✅      |
-| **BrazePushStory**</br> _Notification content extension library providing support for [Push Stories]._                      |  ✅  |      n/a      |      ✅      |
+|                                                                                                                             | iOS |     tvOS      | macCatatyst |   visionOS    |
+|-----------------------------------------------------------------------------------------------------------------------------|:---:|:-------------:|:-----------:|:-------------:|
+| **BrazeKit**</br> _Main SDK library providing support for [analytics] and [push notifications]._                            |  ✅  | ✅<sup>1</sup> |      ✅      |       ✅       |
+| **BrazeUI**</br> _Braze-provided user interface library for [In-App Messages] and [Content Cards]._                         |  ✅  |      n/a      |      ✅      |       ✅       |
+| **BrazeLocation**</br> _Location library providing support for [location analytics and geofence monitoring]._               |  ✅  | ✅<sup>2</sup> |      ✅      | ✅<sup>2</sup> |
+| **BrazeNotificationService**</br> _Notification service extension library providing support for [rich push notifications]._ |  ✅  |      n/a      |      ✅      |       ✅       |
+| **BrazePushStory**</br> _Notification content extension library providing support for [Push Stories]._                      |  ✅  |      n/a      |      ✅      |       ✅       |
 
 <sup>1</sup> _Push notifications not supported on tvOS_</br>
-<sup>2</sup> _Geofence monitoring not supported on tvOS_
+<sup>2</sup> _Geofence monitoring not supported on tvOS and visionOS_
 
 [analytics]: https://www.braze.com/docs/user_guide/data_and_analytics/user_data_collection/sdk_data_collection/
 [push notifications]: https://www.braze.com/docs/user_guide/message_building_by_channel/push

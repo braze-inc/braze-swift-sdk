@@ -13,7 +13,7 @@ let readme =
     (#"Request "always" authorization"#, "", requestAlwaysAuthorization),
     (#"Request "when in use" authorization"#, "", requestWhenInUseAuthorization),
   ]
-#elseif os(tvOS)
+#elseif os(tvOS) || os(visionOS)
   let actions: [(String, String, (ReadmeViewController) -> Void)] = [
     (#"Request "when in use" authorization"#, "", requestWhenInUseAuthorization)
   ]

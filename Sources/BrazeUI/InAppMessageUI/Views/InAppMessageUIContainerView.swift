@@ -61,7 +61,13 @@ extension BrazeInAppMessageUI {
       else {
         return
       }
-      let frameEnd = window.screen.coordinateSpace.convert(keyboard.frame, to: superview)
+      #if os(visionOS)
+        let frameEnd =
+          window.windowScene?.coordinateSpace.convert(keyboard.frame, to: superview)
+          ?? .zero
+      #else
+        let frameEnd = window.screen.coordinateSpace.convert(keyboard.frame, to: superview)
+      #endif
       let frame = superview.bounds.intersection(frameEnd)
       bottomConstraint?.constant = -frame.height
 

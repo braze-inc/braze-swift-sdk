@@ -88,7 +88,7 @@ extern NSInteger const actionsCount;
     textView.backgroundColor = UIColor.clearColor;
     [textView setScrollEnabled:NO];
 
-#if TARGET_OS_IOS
+#if TARGET_OS_IOS || TARGET_OS_VISION
     [textView setEditable:NO];
     textView.textContainerInset = UIEdgeInsetsMake(16, 16, 0, 16);
     if (@available(iOS 13.0, *)) {

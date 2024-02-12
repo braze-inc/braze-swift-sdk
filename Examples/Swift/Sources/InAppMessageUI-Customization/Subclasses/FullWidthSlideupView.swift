@@ -46,8 +46,25 @@ class FullWidthSlideupView: BrazeInAppMessageUI.SlideupView {
       backgroundView.heightAnchor.constraint(equalToConstant: 1000),
     ])
 
+    // Move gesture recognizer to background view
+    contentView.isUserInteractionEnabled = false
+    contentView.removeGestureRecognizer(pressGesture)
+    contentView.removeGestureRecognizer(panGesture)
+    backgroundView.addGestureRecognizer(pressGesture)
+    backgroundView.addGestureRecognizer(panGesture)
+
+    // Update hover style
+    if #available(iOS 17.0, *) {
+      contentView.hoverStyle = nil
+      backgroundView.hoverStyle = UIHoverStyle(shape: .rect(cornerRadius: attributes.cornerRadius))
+    }
+
     applyTheme()
     applyAttributes()
+  }
+
+  open override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
+    backgroundView.point(inside: convert(point, to: backgroundView), with: event)
   }
 
   override func applyAttributes() {
@@ -57,6 +74,10 @@ class FullWidthSlideupView: BrazeInAppMessageUI.SlideupView {
     if #available(iOS 13.0, *) {
       backgroundView.layer.cornerCurve = attributes.cornerCurve
     }
+    if #available(iOS 17.0, *) {
+      backgroundView.hoverStyle?.shape = .rect(cornerRadius: attributes.cornerRadius)
+    }
+    contentView.backgroundColor = .clear
   }
 
   override func applyTheme() {

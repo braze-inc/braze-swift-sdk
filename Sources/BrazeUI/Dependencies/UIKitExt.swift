@@ -113,11 +113,15 @@ extension String {
 extension UIColor {
 
   static var brazeTableViewBackgroundColor: UIColor {
-    if #available(iOS 13.0, *) {
+    #if os(visionOS)
       return .systemGroupedBackground
-    } else {
-      return .groupTableViewBackground
-    }
+    #else
+      if #available(iOS 13.0, *) {
+        return .systemGroupedBackground
+      } else {
+        return .groupTableViewBackground
+      }
+    #endif
   }
 
   static var brazeCellBackgroundColor: UIColor {
@@ -216,6 +220,30 @@ extension UIGestureRecognizer {
     guard isEnabled else { return }
     isEnabled = false
     isEnabled = true
+  }
+
+}
+
+@available(iOS 17.0, *)
+extension UICornerCurve {
+
+  init(layerCornerCurve: CALayerCornerCurve) {
+    switch layerCornerCurve {
+    case .continuous:
+      self = .continuous
+    case .circular:
+      self = .circular
+    default:
+      self = .continuous
+    }
+  }
+
+}
+
+extension UIEdgeInsets {
+
+  var directionalEdgeInsets: NSDirectionalEdgeInsets {
+    NSDirectionalEdgeInsets(top: top, leading: left, bottom: bottom, trailing: right)
   }
 
 }

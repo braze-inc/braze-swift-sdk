@@ -54,7 +54,11 @@ extension BrazeInAppMessageUI {
     /// The message view can set this value via ``InAppMessageView/prefersStatusBarHidden`` to
     /// customize the status bar hidden state.
     var messageViewPrefersStatusBarHidden: Bool? {
-      didSet { setNeedsStatusBarAppearanceUpdate() }
+      didSet {
+        #if !os(visionOS)
+          setNeedsStatusBarAppearanceUpdate()
+        #endif
+      }
     }
 
     /// The message view initial accessibility element.
@@ -165,9 +169,13 @@ extension BrazeInAppMessageUI {
     open override var prefersStatusBarHidden: Bool {
       switch statusBarHideBehavior {
       case .auto:
-        return messageViewPrefersStatusBarHidden
-          ?? preferencesProxy?.prefersStatusBarHidden
-          ?? false
+        #if os(visionOS)
+          return messageViewPrefersStatusBarHidden ?? false
+        #else
+          return messageViewPrefersStatusBarHidden
+            ?? preferencesProxy?.prefersStatusBarHidden
+            ?? false
+        #endif
       case .hidden:
         return true
       case .visible:
@@ -180,11 +188,19 @@ extension BrazeInAppMessageUI {
     }
 
     open override var preferredStatusBarStyle: UIStatusBarStyle {
-      preferencesProxy?.preferredStatusBarStyle ?? .default
+      #if os(visionOS)
+        return .default
+      #else
+        return preferencesProxy?.preferredStatusBarStyle ?? .default
+      #endif
     }
 
     open override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
-      preferencesProxy?.preferredStatusBarUpdateAnimation ?? .fade
+      #if os(visionOS)
+        return .fade
+      #else
+        return preferencesProxy?.preferredStatusBarUpdateAnimation ?? .fade
+      #endif
     }
 
     @available(iOS 11.0, *)
@@ -201,6 +217,12 @@ extension BrazeInAppMessageUI {
     open override var prefersPointerLocked: Bool {
       preferencesProxy?.prefersPointerLocked ?? false
     }
+
+    #if os(visionOS)
+      open override var preferredContainerBackgroundStyle: UIContainerBackgroundStyle {
+        .hidden
+      }
+    #endif
 
   }
 

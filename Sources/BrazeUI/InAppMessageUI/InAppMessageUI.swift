@@ -218,11 +218,20 @@ open class BrazeInAppMessageUI:
 
     // - Window
     let window: Window
-    if #available(iOS 13.0, tvOS 13.0, *), let windowScene = context.windowScene {
-      window = Window(windowScene: windowScene)
-    } else {
-      window = Window(frame: UIScreen.main.bounds)
-    }
+    #if os(visionOS)
+      if let windowScene = context.windowScene {
+        window = Window(windowScene: windowScene)
+      } else {
+        message.context?.logError(flattened: Error.noWindowScene.logDescription)
+        return
+      }
+    #else
+      if #available(iOS 13.0, tvOS 13.0, *), let windowScene = context.windowScene {
+        window = Window(windowScene: windowScene)
+      } else {
+        window = Window(frame: UIScreen.main.bounds)
+      }
+    #endif
     window.accessibilityViewIsModal = true
     window.windowLevel = context.windowLevel
     window.rootViewController = viewController
@@ -238,18 +247,22 @@ open class BrazeInAppMessageUI:
     }
 
     // Display
-    if #available(iOS 15.0, *) {
-      // - Use animation block to animate the status bar hidden state
-      UIView.animate(withDuration: message.animateIn ? 0.25 : 0) {
-        // - Use `isHidden` instead of `makeKeyAndVisible` to defer the choice of hiding the keyboard
-        //   to the message view. See `InAppMessageView/makeKey`. `isHidden` just displays the window
-        //   without touching the first responder.
+    #if os(iOS)
+      if #available(iOS 15.0, *) {
+        // - Use animation block to animate the status bar hidden state
+        UIView.animate(withDuration: message.animateIn ? 0.25 : 0) {
+          // - Use `isHidden` instead of `makeKeyAndVisible` to defer the choice of hiding the keyboard
+          //   to the message view. See `InAppMessageView/makeKey`. `isHidden` just displays the window
+          //   without touching the first responder.
+          window.isHidden = false
+        }
+      } else {
+        // - No animation block before iOS 15.0, it has undesired side effects
         window.isHidden = false
       }
-    } else {
-      // - No animation block before iOS 15.0, it has undesired side effects
+    #elseif os(visionOS)
       window.isHidden = false
-    }
+    #endif
 
   }
 

@@ -16,6 +16,7 @@ extension BrazeInAppMessageUI {
     case noAppRootViewController
     case noFontAwesome
     case noMatchingOrientation
+    case noWindowScene
     case assetsFailure(Braze.ErrorString)
     case invalidConstraints
 
@@ -69,6 +70,8 @@ extension BrazeInAppMessageUI.Error {
     case .noMatchingOrientation:
       return
         "Unable to present message - current orientation / size classes are not supported by the message."
+    case .noWindowScene:
+      return "Unable to present message - no window scene available to present message."
     case .assetsFailure(let error):
       return
         """

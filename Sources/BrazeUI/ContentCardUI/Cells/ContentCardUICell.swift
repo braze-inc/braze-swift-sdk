@@ -259,6 +259,14 @@ extension BrazeContentCardUI {
 
       selectionStyle = .none
       backgroundColor = .clear
+
+      #if os(visionOS)
+        registerForTraitChanges([
+          UITraitActiveAppearance.self
+        ]) { (self: Self, _: UITraitCollection) in
+          self.applyAttributes(self.attributes)
+        }
+      #endif
     }
 
     /// Does not support interface-builder / storyboards.
@@ -324,11 +332,13 @@ extension BrazeContentCardUI {
 
     // MARK: - Theme
 
-    /// See [`traitCollectionDidChange(_:)`](https://developer.apple.com/documentation/uikit/uitraitenvironment/1623516-traitcollectiondidchange).
-    open override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-      super.traitCollectionDidChange(previousTraitCollection)
-      applyAttributes(attributes)
-    }
+    #if !os(visionOS)
+      /// See [`traitCollectionDidChange(_:)`](https://developer.apple.com/documentation/uikit/uitraitenvironment/1623516-traitcollectiondidchange).
+      open override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        applyAttributes(attributes)
+      }
+    #endif
 
     /// See [`tintColorDidChange()`](https://developer.apple.com/documentation/uikit/uiview/1622620-tintcolordidchange).
     open override func tintColorDidChange() {

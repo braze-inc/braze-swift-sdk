@@ -297,6 +297,17 @@ extension BrazeInAppMessageUI {
       applyTheme()
       applyAttributes()
 
+      #if os(visionOS)
+        registerForTraitChanges([
+          UITraitHorizontalSizeClass.self,
+          UITraitVerticalSizeClass.self,
+          UITraitActiveAppearance.self,
+        ]) { (self: Self, _: UITraitCollection) in
+          self.applyAttributes()
+          self.applyTheme()
+        }
+      #endif
+
       alpha = presented ? 1 : 0
     }
 
@@ -320,16 +331,26 @@ extension BrazeInAppMessageUI {
       shadowView.alpha = theme.backgroundColor.a
       backgroundColor = theme.frameColor.uiColor
 
+      #if os(visionOS)
+        // visionOS hit testing does not trigger on clear background, we use an almost transparent
+        // color instead.
+        if theme.frameColor.a == 0 {
+          backgroundColor = UIColor(white: 0.01, alpha: 0.01)
+        }
+      #endif
+
       attributes.onTheme?(self)
     }
 
-    open override func traitCollectionDidChange(
-      _ previousTraitCollection: UITraitCollection?
-    ) {
-      super.traitCollectionDidChange(previousTraitCollection)
-      applyAttributes()
-      applyTheme()
-    }
+    #if !os(visionOS)
+      open override func traitCollectionDidChange(
+        _ previousTraitCollection: UITraitCollection?
+      ) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        applyAttributes()
+        applyTheme()
+      }
+    #endif
 
     // MARK: - Layout
 

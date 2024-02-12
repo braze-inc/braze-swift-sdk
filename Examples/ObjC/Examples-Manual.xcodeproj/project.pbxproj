@@ -3,140 +3,92 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		02DC0031352875AEA57E016F /* Credentials.m in Sources */ = {isa = PBXBuildFile; fileRef = 300EE8F0E93BE17A2E191D94 /* Credentials.m */; };
 		03F471437ECF0E971EBD7791 /* SDWebImage.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A4862669D8E8CC116B81CDB2 /* SDWebImage.bundle */; };
+		04734526061ED87D7B890114 /* Readme.m in Sources */ = {isa = PBXBuildFile; fileRef = 73875EA72B34CDBE889DB750 /* Readme.m */; };
+		05E79F99B30429A2502BC7F4 /* BrazeKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 963312B05750D1D4DA77128F /* BrazeKit.bundle */; };
 		068F5E18F0022F81800AC463 /* Credentials.m in Sources */ = {isa = PBXBuildFile; fileRef = 300EE8F0E93BE17A2E191D94 /* Credentials.m */; };
-		072A33D2EC80958D06FC5029 /* BrazeKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE1AFA11EB03A5B1BEA614A2 /* BrazeKit.xcframework */; };
-		09466A6F1F1FB9A4E3C5373F /* BrazeLocation.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CBF91DFBE0824E25FEE7BDC /* BrazeLocation.xcframework */; };
-		0A681BCA081DD81E43BB9747 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8121A4438357C96AFFD6AB /* AppDelegate.m */; };
-		0B1E42B8B832406397F71D7C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B71D8E6DE6F7C93CAD551FD /* LaunchScreen.storyboard */; };
-		0B2CEC84EA097AF592A6B0EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEF0FF04032299A31D37CDE4 /* Assets.xcassets */; };
-		0C86A5A5B6B5E3914D4C9447 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C8D7F1FE2EE80796BE4B2B76 /* main.m */; };
-		0DD2238982869C1685101356 /* ReadmeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CD7AB410DAB0417F872BA8 /* ReadmeViewController.m */; };
+		0A7EA99BD8C303884C6C93AE /* BrazeKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE1AFA11EB03A5B1BEA614A2 /* BrazeKit.xcframework */; };
 		0ECDB684C71C7BD798DBE858 /* BrazeKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE1AFA11EB03A5B1BEA614A2 /* BrazeKit.xcframework */; };
-		1025F9FA69E21AEA3A8610E0 /* BrazeKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE1AFA11EB03A5B1BEA614A2 /* BrazeKit.xcframework */; };
+		0F17D790C39A29FAA1F976C2 /* ReadmeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CD7AB410DAB0417F872BA8 /* ReadmeViewController.m */; };
 		115155F4E79EB46A9000DA7F /* ReadmeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CD7AB410DAB0417F872BA8 /* ReadmeViewController.m */; };
 		117FC871E51F5E4FE6D2442A /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C248D54740025F7A153AA681 /* NotificationViewController.swift */; };
-		1426C39F30A15DAE0EDFFD81 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F1A1CD4644026244BE2F84 /* AppDelegate.m */; };
+		14DD11907E32A1B7EE78E593 /* Readme.m in Sources */ = {isa = PBXBuildFile; fileRef = 9737080E688F7CC1AE86D451 /* Readme.m */; };
 		1567A7107DAB82AA67FAEA45 /* BrazeKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 963312B05750D1D4DA77128F /* BrazeKit.bundle */; };
-		157A64B63136033871D682BF /* Readme.m in Sources */ = {isa = PBXBuildFile; fileRef = 9737080E688F7CC1AE86D451 /* Readme.m */; };
 		17F8CA39D97812C42042F840 /* ReadmeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CD7AB410DAB0417F872BA8 /* ReadmeViewController.m */; };
-		181FF85AB67A72FAFCF4BD6E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7DC90A5074EA294E7413A67 /* LaunchScreen.storyboard */; };
 		185B83203DD6004C871041F7 /* ReadmeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CD7AB410DAB0417F872BA8 /* ReadmeViewController.m */; };
 		1864FF78F579CB16C0777254 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8834D4F8D886C94151F1BA /* AppDelegate.m */; };
+		19E1C7836072B17A58DAA6DB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EF948DEAE9C27D25EC6010DB /* AppDelegate.m */; };
 		1E91998ABF05E912E263E355 /* BrazeUI.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 85365B9C180AB9BA57FBD249 /* BrazeUI.bundle */; };
 		1EF13C28EE36D54A14EFDBC9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEF0FF04032299A31D37CDE4 /* Assets.xcassets */; };
-		2023639CD85FDD69BCE83916 /* BrazeKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 963312B05750D1D4DA77128F /* BrazeKit.bundle */; };
+		1FA343FCE4AAC162BEF01630 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CA8EABDA2DED99DE96F26F8 /* AppDelegate.m */; };
 		21C64B681B712E0FC24C4B69 /* Readme.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B2C0FF8888BA151EE18AE45 /* Readme.m */; };
-		22817B8793536910AE239885 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEF0FF04032299A31D37CDE4 /* Assets.xcassets */; };
-		2433F552DC49F4541FCA4B28 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEF0FF04032299A31D37CDE4 /* Assets.xcassets */; };
-		24FE620B9E8D5DFDD7DE04F9 /* BrazeKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE1AFA11EB03A5B1BEA614A2 /* BrazeKit.xcframework */; };
-		26AB8A547C8E053C7A59E64F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7DC90A5074EA294E7413A67 /* LaunchScreen.storyboard */; };
 		281AFFF550A7CEAB1ABB3FBD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C8D7F1FE2EE80796BE4B2B76 /* main.m */; };
 		28ABE29031CF97DB30D54DA1 /* Readme.m in Sources */ = {isa = PBXBuildFile; fileRef = CA17AE59275C5704E7F92785 /* Readme.m */; };
-		298E8EF3CB0A2692CB2D6E3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEF0FF04032299A31D37CDE4 /* Assets.xcassets */; };
 		2BB727278BEB2625EB3FA96E /* Credentials.m in Sources */ = {isa = PBXBuildFile; fileRef = 300EE8F0E93BE17A2E191D94 /* Credentials.m */; };
-		2BD28D5A8F7623322FE79243 /* BrazeKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 963312B05750D1D4DA77128F /* BrazeKit.bundle */; };
-		2E1619521EEF47B332D7AC5A /* ReadmeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CD7AB410DAB0417F872BA8 /* ReadmeViewController.m */; };
 		2E7B629B9B167DE44FE5EF3A /* SDWebImage.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE6FAA10D6D23B01068CC18C /* SDWebImage.xcframework */; };
-		308253B035CADF90CBF2F976 /* empty-file.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DEEEEC6C495A8FB90C87DF /* empty-file.swift */; };
+		2F47A9B731082F7924EFC909 /* CustomInAppMessagePresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 94150E2BB7ABD75FD0130D92 /* CustomInAppMessagePresenter.m */; };
 		32147D3B7AAB40B41F664A5F /* BrazeKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE1AFA11EB03A5B1BEA614A2 /* BrazeKit.xcframework */; };
-		3252C073F2BE61BF5AFA17D8 /* ReadmeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CD7AB410DAB0417F872BA8 /* ReadmeViewController.m */; };
-		32FD4244C463C7F7B7C23934 /* empty-file.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DEEEEC6C495A8FB90C87DF /* empty-file.swift */; };
-		33C10978000DFE7956E68484 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7DC90A5074EA294E7413A67 /* LaunchScreen.storyboard */; };
 		3490A24A8236FD4D6CEA0872 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C8D7F1FE2EE80796BE4B2B76 /* main.m */; };
 		34C96AF2258869951165A6B1 /* BrazeKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE1AFA11EB03A5B1BEA614A2 /* BrazeKit.xcframework */; };
+		355BBF4B6E8689E0CE5D41AB /* BrazeKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 963312B05750D1D4DA77128F /* BrazeKit.bundle */; };
 		391C03356324006B0FFB97C2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FD2B01F5A3DBFBBA7D8F3B8E /* AppDelegate.m */; };
-		3E2F2CC382C69F9EBF257574 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEF0FF04032299A31D37CDE4 /* Assets.xcassets */; };
+		3BAE2C980D9120D9600A6680 /* empty-file.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DEEEEC6C495A8FB90C87DF /* empty-file.swift */; };
+		3C26CEE31384DDD8FE6C2BB8 /* InAppMessageInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF70757F8A0B7AF074017E1 /* InAppMessageInfoViewController.m */; };
 		3FB06BB3F6967AD6EBAC533F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEF0FF04032299A31D37CDE4 /* Assets.xcassets */; };
 		40D7B28F3472BA18FC36845E /* BrazeUI.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF2ED58955148E8CDC8E8666 /* BrazeUI.xcframework */; };
 		41BB9F80FCFCA93D27CE0C26 /* PushNotificationsServiceExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = A9A04673678B1EEA9C7559C6 /* PushNotificationsServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		42DC1478458C4029E3655F22 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7DC90A5074EA294E7413A67 /* LaunchScreen.storyboard */; };
-		439445F891C4C4F5A8BABAA7 /* empty-file.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DEEEEC6C495A8FB90C87DF /* empty-file.swift */; };
 		44172750F5FB20FE4607F6DA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 81C45FA8942EBB59E74A5B38 /* AppDelegate.m */; };
-		47B2D4D2F580BD35A6C979E7 /* Credentials.m in Sources */ = {isa = PBXBuildFile; fileRef = 300EE8F0E93BE17A2E191D94 /* Credentials.m */; };
-		485B590C4578A6A055B59DED /* Readme.m in Sources */ = {isa = PBXBuildFile; fileRef = 9455F390E4F3380AF100069F /* Readme.m */; };
 		494B43DC45CECDE1E0479BEB /* ReadmeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CD7AB410DAB0417F872BA8 /* ReadmeViewController.m */; };
 		495BF744D66F999FF8B4A4AC /* empty-file.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DEEEEC6C495A8FB90C87DF /* empty-file.swift */; };
-		49A8D85E075C823A059944DF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C8D7F1FE2EE80796BE4B2B76 /* main.m */; };
-		4BBF1362EECB8E92F3DF7AFB /* Readme.m in Sources */ = {isa = PBXBuildFile; fileRef = DD4757AA275D30DA01870E11 /* Readme.m */; };
-		4D7CF9C51AECBA622760E3CF /* CardsInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 178C2C03C17DFB514FCC95BF /* CardsInfoViewController.m */; };
+		4E5A3E6B086DCDA601A8A014 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEF0FF04032299A31D37CDE4 /* Assets.xcassets */; };
 		4F248ABCE70D894092B1DD59 /* BrazeUI.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF2ED58955148E8CDC8E8666 /* BrazeUI.xcframework */; };
 		4F82842CEF215146992E2664 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEF0FF04032299A31D37CDE4 /* Assets.xcassets */; };
-		4FBA199342BA29BB0B666F97 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F1A1CD4644026244BE2F84 /* AppDelegate.m */; };
-		53064408D600848B60AB3A09 /* BrazeLocation.bundle in Resources */ = {isa = PBXBuildFile; fileRef = EB8AF6AAFE01DAED72696307 /* BrazeLocation.bundle */; };
-		533688F071AE2CBA8D7F9D28 /* BrazeKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 963312B05750D1D4DA77128F /* BrazeKit.bundle */; };
+		4FD4C66708330DB44E7053AF /* BrazeKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 963312B05750D1D4DA77128F /* BrazeKit.bundle */; };
+		535495CE7BBCBC4021314C6F /* Readme.m in Sources */ = {isa = PBXBuildFile; fileRef = DD4757AA275D30DA01870E11 /* Readme.m */; };
 		5585CC15C01D38BC05EA7EBA /* PushNotificationsContentExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 334A021F30FF4114F75E59A1 /* PushNotificationsContentExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		55F05CFCF26E8E76CF81A431 /* CheckoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF3B26949E7F5C7A9B6D103B /* CheckoutViewController.m */; };
+		56127F4215861115CFA184E7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F1A1CD4644026244BE2F84 /* AppDelegate.m */; };
 		569177D8B0AC23B87E50AD9B /* BrazeKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE1AFA11EB03A5B1BEA614A2 /* BrazeKit.xcframework */; };
-		57C136AB32BFFC0916170040 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EF948DEAE9C27D25EC6010DB /* AppDelegate.m */; };
 		589ACD6F8D36D05412AE2474 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C8D7F1FE2EE80796BE4B2B76 /* main.m */; };
-		59A2FEC51FDF48DB2C077669 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EF948DEAE9C27D25EC6010DB /* AppDelegate.m */; };
 		5D23DF861A6FD3B8B92E1411 /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AF0BA96142C82245D7AE052 /* UserNotificationsUI.framework */; };
-		5D52D68B5C4EEAA3E0C96E58 /* ReadmeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CD7AB410DAB0417F872BA8 /* ReadmeViewController.m */; };
 		5DA56B71104A85AF4B922AF5 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95ACBEAE19ACF0BAFECD47EB /* UserNotifications.framework */; };
-		61BAD7C248088580BF8E2473 /* BrazeLocation.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CBF91DFBE0824E25FEE7BDC /* BrazeLocation.xcframework */; };
-		61DDBC9A77FEC9AB657D35EF /* BrazeKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 963312B05750D1D4DA77128F /* BrazeKit.bundle */; };
-		6206DA9EB9EFE781D1687969 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C8D7F1FE2EE80796BE4B2B76 /* main.m */; };
-		64443B91D74B316F65F1DA18 /* AuthenticationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 70C9AC9B199D50C1B6B422B3 /* AuthenticationManager.m */; };
-		6863C0F8A7A53F8A20E5FB1F /* BrazeKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE1AFA11EB03A5B1BEA614A2 /* BrazeKit.xcframework */; };
+		5E3E68099D1B5E370178846F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEF0FF04032299A31D37CDE4 /* Assets.xcassets */; };
+		5F5660D8B8A46B88335DE902 /* empty-file.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DEEEEC6C495A8FB90C87DF /* empty-file.swift */; };
 		68D9FE94418D0B5F1F72030E /* empty-file.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DEEEEC6C495A8FB90C87DF /* empty-file.swift */; };
 		68F4DFCF05663ED0A9594194 /* BrazePushStory.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57FB3263FD36197097B5BE6D /* BrazePushStory.xcframework */; };
 		699FAE89EED5EF3C2EBCD51F /* BRZGIFViewProvider+SDWebImage.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8BB8D0C42DD214E799D07D /* BRZGIFViewProvider+SDWebImage.m */; };
-		69E8F8CB1F396556DA379FDA /* ReadmeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CD7AB410DAB0417F872BA8 /* ReadmeViewController.m */; };
 		6C065226833B8EC7CCEEDA05 /* BrazeKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 963312B05750D1D4DA77128F /* BrazeKit.bundle */; };
-		6FADC4786A861620869A6822 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7DC90A5074EA294E7413A67 /* LaunchScreen.storyboard */; };
-		70EE69E0CC25A49D0BC0F65E /* empty-file.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DEEEEC6C495A8FB90C87DF /* empty-file.swift */; };
-		7137DAF14A6329BE425458D7 /* CardsInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 178C2C03C17DFB514FCC95BF /* CardsInfoViewController.m */; };
-		737AF526201F7EC0BE19383A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CA8EABDA2DED99DE96F26F8 /* AppDelegate.m */; };
-		74293EC038DEF0E76CC03171 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7DC90A5074EA294E7413A67 /* LaunchScreen.storyboard */; };
-		780F3843A41713B8D3FBA0E3 /* Readme.m in Sources */ = {isa = PBXBuildFile; fileRef = 73875EA72B34CDBE889DB750 /* Readme.m */; };
+		6FD038989CBFFFF22C8255EF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C8D7F1FE2EE80796BE4B2B76 /* main.m */; };
+		753ADE8311DFFFAFC36F0CCB /* ReadmeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CD7AB410DAB0417F872BA8 /* ReadmeViewController.m */; };
+		7801A2CF2663FCC7A4D1D854 /* AuthenticationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 70C9AC9B199D50C1B6B422B3 /* AuthenticationManager.m */; };
 		799207DEB712E13B6E05DE2C /* BrazeKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE1AFA11EB03A5B1BEA614A2 /* BrazeKit.xcframework */; };
-		79C04963F0118492FA3965A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEF0FF04032299A31D37CDE4 /* Assets.xcassets */; };
 		7B24B540AA7946B259E6355F /* BrazeKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 963312B05750D1D4DA77128F /* BrazeKit.bundle */; };
-		7B7D7F43349E02D078DA4D91 /* ReadmeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CD7AB410DAB0417F872BA8 /* ReadmeViewController.m */; };
-		7C6C57DBD8A366181DA6D41B /* Credentials.m in Sources */ = {isa = PBXBuildFile; fileRef = 300EE8F0E93BE17A2E191D94 /* Credentials.m */; };
-		7D5527F1F20316E3E83F7534 /* BrazeKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 963312B05750D1D4DA77128F /* BrazeKit.bundle */; };
 		7FBBB1441AC127087D878C36 /* SDWebImage.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A4862669D8E8CC116B81CDB2 /* SDWebImage.bundle */; };
-		7FD09FECAD3A87ED5A1781B5 /* ReadmeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CD7AB410DAB0417F872BA8 /* ReadmeViewController.m */; };
-		7FF1A44F5E57B887F707ECB6 /* CustomInAppMessagePresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 94150E2BB7ABD75FD0130D92 /* CustomInAppMessagePresenter.m */; };
-		82090ABD22EA90EBE70FB6FF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C8D7F1FE2EE80796BE4B2B76 /* main.m */; };
-		8443EA3BB632D57128F8B8CB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CA8EABDA2DED99DE96F26F8 /* AppDelegate.m */; };
-		8486D1CBA50EC0BFDCD415C3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C8D7F1FE2EE80796BE4B2B76 /* main.m */; };
+		842A847E69B6588DA885B023 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8121A4438357C96AFFD6AB /* AppDelegate.m */; };
 		87B56CCE5A48D906FC4EFEEA /* BrazeUI.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 85365B9C180AB9BA57FBD249 /* BrazeUI.bundle */; };
-		87C8C90D9E747A3CF390F881 /* BrazeKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE1AFA11EB03A5B1BEA614A2 /* BrazeKit.xcframework */; };
-		88A5C2E288ECC51928FC8482 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEF0FF04032299A31D37CDE4 /* Assets.xcassets */; };
-		88C413393B8A310612536576 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7DC90A5074EA294E7413A67 /* LaunchScreen.storyboard */; };
 		8B0FD329DA9C8718F16815A6 /* empty-file.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DEEEEC6C495A8FB90C87DF /* empty-file.swift */; };
-		8CA6FC04AF2B3151F2031BB9 /* BrazeKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE1AFA11EB03A5B1BEA614A2 /* BrazeKit.xcframework */; };
 		8CF50D30A2CDC7546362F501 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FE136ACE6CEBDCB80A043F8 /* AppDelegate.m */; };
-		8D14E24A5565303D5D7D5F53 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C8D7F1FE2EE80796BE4B2B76 /* main.m */; };
 		8E063012B69E9A6DB62071E7 /* SDWebImage.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE6FAA10D6D23B01068CC18C /* SDWebImage.xcframework */; };
-		906C0F3BD6C4832175D5ED8A /* ReadmeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CD7AB410DAB0417F872BA8 /* ReadmeViewController.m */; };
 		9113FB5F9C9F3DD15C140945 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C8D7F1FE2EE80796BE4B2B76 /* main.m */; };
-		915AE14E464750127C70F778 /* CustomInAppMessagePresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 94150E2BB7ABD75FD0130D92 /* CustomInAppMessagePresenter.m */; };
-		91DF1B6C095EFCA0405A1BB4 /* Readme.m in Sources */ = {isa = PBXBuildFile; fileRef = 73875EA72B34CDBE889DB750 /* Readme.m */; };
-		9291C501BFC4FE0730068E24 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7DC90A5074EA294E7413A67 /* LaunchScreen.storyboard */; };
-		9650EF7F9CC4D0BFD08B39D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B71D8E6DE6F7C93CAD551FD /* LaunchScreen.storyboard */; };
-		9669350F2C1A226F14C96CC8 /* CheckoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF3B26949E7F5C7A9B6D103B /* CheckoutViewController.m */; };
+		97056EA2050118D53C498800 /* empty-file.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DEEEEC6C495A8FB90C87DF /* empty-file.swift */; };
 		978E44C7BA19CC47A6583139 /* BrazeKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 963312B05750D1D4DA77128F /* BrazeKit.bundle */; };
-		9C8AC9A6BBAB552B97F560C9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8121A4438357C96AFFD6AB /* AppDelegate.m */; };
+		9B0D5FACB82C018DF4FCBD23 /* Credentials.m in Sources */ = {isa = PBXBuildFile; fileRef = 300EE8F0E93BE17A2E191D94 /* Credentials.m */; };
 		9D7F560F409C217BE1D6C9C7 /* PushNotificationsContentExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 334A021F30FF4114F75E59A1 /* PushNotificationsContentExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		9E5FB329D48AD37E0D6EC6E9 /* ReadmeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CD7AB410DAB0417F872BA8 /* ReadmeViewController.m */; };
-		9F0C0C790DE91629F11869A3 /* empty-file.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DEEEEC6C495A8FB90C87DF /* empty-file.swift */; };
 		9F3AC9D1DDCAF648DD0B6429 /* empty-file.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DEEEEC6C495A8FB90C87DF /* empty-file.swift */; };
 		9FA9D948525624B0203FC558 /* BRZGIFViewProvider+SDWebImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 87C1CF136D11D5168491F769 /* BRZGIFViewProvider+SDWebImage.m */; };
 		A1E8B7883D7845AC370E5F8B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C8D7F1FE2EE80796BE4B2B76 /* main.m */; };
-		A2464145E52DDEBAFD4725F2 /* Credentials.m in Sources */ = {isa = PBXBuildFile; fileRef = 300EE8F0E93BE17A2E191D94 /* Credentials.m */; };
+		A23043648FD2CC23749714C0 /* BrazeKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE1AFA11EB03A5B1BEA614A2 /* BrazeKit.xcframework */; };
 		A3899B99283411D1D254D7B8 /* SDWebImage.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A4862669D8E8CC116B81CDB2 /* SDWebImage.bundle */; };
-		A4A35CF95752F89B0C17D783 /* Credentials.m in Sources */ = {isa = PBXBuildFile; fileRef = 300EE8F0E93BE17A2E191D94 /* Credentials.m */; };
-		A6A947BFB3D1425AEA2542E4 /* empty-file.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DEEEEC6C495A8FB90C87DF /* empty-file.swift */; };
+		A4445C57E438F59CE5E4470D /* ReadmeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CD7AB410DAB0417F872BA8 /* ReadmeViewController.m */; };
+		A5D34CCD65FBB076D2340C68 /* CardsInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 178C2C03C17DFB514FCC95BF /* CardsInfoViewController.m */; };
 		A6FB7CA3CF50B16E10C22B2C /* PushNotificationsServiceExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = A9A04673678B1EEA9C7559C6 /* PushNotificationsServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		A8AACBE0815454A2547D2426 /* BrazeKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 963312B05750D1D4DA77128F /* BrazeKit.bundle */; };
 		A9648C1785B2E87F4A62E554 /* BrazeKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE1AFA11EB03A5B1BEA614A2 /* BrazeKit.xcframework */; };
+		A98E24571AF48455406D015A /* BrazeLocation.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CBF91DFBE0824E25FEE7BDC /* BrazeLocation.xcframework */; };
 		AB0AE5B51A604444894A4DFF /* empty-file.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DEEEEC6C495A8FB90C87DF /* empty-file.swift */; };
 		AB75D2D9D2BAA20492CA9DBC /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95ACBEAE19ACF0BAFECD47EB /* UserNotifications.framework */; };
 		AC42EEC63BB5C2C2E2B14DCF /* BrazeNotificationService.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30D72A9C07BEDB9E09FAE84D /* BrazeNotificationService.xcframework */; };
@@ -145,49 +97,40 @@
 		B168C83BBDE130867FC3AF3D /* Credentials.m in Sources */ = {isa = PBXBuildFile; fileRef = 300EE8F0E93BE17A2E191D94 /* Credentials.m */; };
 		B1C3CFCC7C0D81F1C169DF2F /* empty-file.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DEEEEC6C495A8FB90C87DF /* empty-file.swift */; };
 		B20FE0CED0FC0B36BC86F754 /* BrazeKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 963312B05750D1D4DA77128F /* BrazeKit.bundle */; };
+		B3F897301F177FE6BEDA80EF /* ReadmeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CD7AB410DAB0417F872BA8 /* ReadmeViewController.m */; };
 		B4FC5DE788FD2B8F39DC067D /* Credentials.m in Sources */ = {isa = PBXBuildFile; fileRef = 300EE8F0E93BE17A2E191D94 /* Credentials.m */; };
-		B7B72DDCD8437C552899186B /* InAppMessageInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF70757F8A0B7AF074017E1 /* InAppMessageInfoViewController.m */; };
-		B94D3CEEE4C5F83F1D4C7148 /* Credentials.m in Sources */ = {isa = PBXBuildFile; fileRef = 300EE8F0E93BE17A2E191D94 /* Credentials.m */; };
-		B99E9DEA5DD03DC004C7B4AC /* Readme.m in Sources */ = {isa = PBXBuildFile; fileRef = 9737080E688F7CC1AE86D451 /* Readme.m */; };
+		B547CE8C237E3BA8CF9DC991 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEF0FF04032299A31D37CDE4 /* Assets.xcassets */; };
+		B754FCEF1B555F1B50700AD6 /* Credentials.m in Sources */ = {isa = PBXBuildFile; fileRef = 300EE8F0E93BE17A2E191D94 /* Credentials.m */; };
+		BAF34142870A97C611C36D0B /* Credentials.m in Sources */ = {isa = PBXBuildFile; fileRef = 300EE8F0E93BE17A2E191D94 /* Credentials.m */; };
 		BCDCB5A2B878D59CEC6F7A78 /* BrazeUI.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 85365B9C180AB9BA57FBD249 /* BrazeUI.bundle */; };
-		BD0EC8348EE8F08F688CE96F /* Credentials.m in Sources */ = {isa = PBXBuildFile; fileRef = 300EE8F0E93BE17A2E191D94 /* Credentials.m */; };
+		BDB36CBB33D0B3199832A497 /* Readme.m in Sources */ = {isa = PBXBuildFile; fileRef = 9455F390E4F3380AF100069F /* Readme.m */; };
 		BF3E00BF746510504CA6D052 /* BrazeKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 963312B05750D1D4DA77128F /* BrazeKit.bundle */; };
 		C0B3D5E2CE9698CB65AAAA68 /* Credentials.m in Sources */ = {isa = PBXBuildFile; fileRef = 300EE8F0E93BE17A2E191D94 /* Credentials.m */; };
 		C119F9D4D037385C7A6D539F /* ReadmeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CD7AB410DAB0417F872BA8 /* ReadmeViewController.m */; };
-		C67B830B590421DE8746A78B /* Readme.m in Sources */ = {isa = PBXBuildFile; fileRef = 9455F390E4F3380AF100069F /* Readme.m */; };
-		C6E36A2E936AFFBC6161431E /* empty-file.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DEEEEC6C495A8FB90C87DF /* empty-file.swift */; };
-		C7015AC6CF3A7937EFA06121 /* BrazeLocation.bundle in Resources */ = {isa = PBXBuildFile; fileRef = EB8AF6AAFE01DAED72696307 /* BrazeLocation.bundle */; };
-		C8FBBED710EB2CD866CE008C /* BrazeKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE1AFA11EB03A5B1BEA614A2 /* BrazeKit.xcframework */; };
+		C2C0054EA8B2CD0FE02300A7 /* BrazeLocation.bundle in Resources */ = {isa = PBXBuildFile; fileRef = EB8AF6AAFE01DAED72696307 /* BrazeLocation.bundle */; };
+		C52569EE1C4FC5B2E83739AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEF0FF04032299A31D37CDE4 /* Assets.xcassets */; };
 		C9A4905EA63DA015B0A4B30F /* BrazeUI.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 85365B9C180AB9BA57FBD249 /* BrazeUI.bundle */; };
-		CD8B51B9515887A350A2A257 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B71D8E6DE6F7C93CAD551FD /* LaunchScreen.storyboard */; };
-		CF3F0621AC5D7137F58AABB8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7DC90A5074EA294E7413A67 /* LaunchScreen.storyboard */; };
-		CF580A411C6099B9187270E2 /* Readme.m in Sources */ = {isa = PBXBuildFile; fileRef = DD4757AA275D30DA01870E11 /* Readme.m */; };
-		D21211EFED4A79A9C52E3767 /* BrazeKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 963312B05750D1D4DA77128F /* BrazeKit.bundle */; };
+		D23C7EAA7A3C8A36BA79A772 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C8D7F1FE2EE80796BE4B2B76 /* main.m */; };
+		D2486FABBEC068957D9E1F80 /* BrazeKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 963312B05750D1D4DA77128F /* BrazeKit.bundle */; };
+		D2A2A9D7AA2CD60C731AC87D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C8D7F1FE2EE80796BE4B2B76 /* main.m */; };
 		D4B49E6449CB7D4948F8DA4E /* BrazeUI.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF2ED58955148E8CDC8E8666 /* BrazeUI.xcframework */; };
 		D581185A212454E1399899CD /* NotAvailableInObjC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3071AD3E5782D08FC88FCA68 /* NotAvailableInObjC.m */; };
-		D6D0F5E083283E5F92EC29E9 /* empty-file.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DEEEEC6C495A8FB90C87DF /* empty-file.swift */; };
-		D947226E679E332E9ECFFCEB /* Credentials.m in Sources */ = {isa = PBXBuildFile; fileRef = 300EE8F0E93BE17A2E191D94 /* Credentials.m */; };
-		D97E47AE966716AA810B9329 /* BrazeKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE1AFA11EB03A5B1BEA614A2 /* BrazeKit.xcframework */; };
 		DA47B24FA215F807B70B8D4C /* BrazeUI.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF2ED58955148E8CDC8E8666 /* BrazeUI.xcframework */; };
 		DCA35F3923F60DC1D453E42C /* Credentials.m in Sources */ = {isa = PBXBuildFile; fileRef = 300EE8F0E93BE17A2E191D94 /* Credentials.m */; };
 		DE94AAA2B0E9BDF19C99418C /* NotAvailableInObjC.m in Sources */ = {isa = PBXBuildFile; fileRef = AE76D32E01BF5A7187E220F5 /* NotAvailableInObjC.m */; };
-		DFD058BEFA52610A862AABCC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C8D7F1FE2EE80796BE4B2B76 /* main.m */; };
 		E23BEBB47BCB32C0740CD6E1 /* SDWebImage.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A4862669D8E8CC116B81CDB2 /* SDWebImage.bundle */; };
-		E6A3B78AB684D9B08A4F6B55 /* AuthenticationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 70C9AC9B199D50C1B6B422B3 /* AuthenticationManager.m */; };
+		E317AF1ABD3251AC5EEB4314 /* empty-file.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DEEEEC6C495A8FB90C87DF /* empty-file.swift */; };
 		E887494ABCDD317C782E1D7F /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533195F22A1588713AF533FD /* NotificationService.swift */; };
 		EAAE90780460DB91BC0C4590 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEF0FF04032299A31D37CDE4 /* Assets.xcassets */; };
 		EC7AD29DA6734849DEC75FEC /* Readme.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D9AEB92C8612C8AD37E9358 /* Readme.m */; };
-		ED1F41FF4171130188A33126 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEF0FF04032299A31D37CDE4 /* Assets.xcassets */; };
 		EE1C5AC0018BC5820B5567CF /* SDWebImage.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE6FAA10D6D23B01068CC18C /* SDWebImage.xcframework */; };
-		EEA7B49567140123AFF0F8F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7DC90A5074EA294E7413A67 /* LaunchScreen.storyboard */; };
-		EEB12009AC24BDF5E0E276F7 /* InAppMessageInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF70757F8A0B7AF074017E1 /* InAppMessageInfoViewController.m */; };
-		EFCE1C60753860707B8F51C1 /* CheckoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF3B26949E7F5C7A9B6D103B /* CheckoutViewController.m */; };
+		EF8AD0645D4E94D60D5F45B6 /* Credentials.m in Sources */ = {isa = PBXBuildFile; fileRef = 300EE8F0E93BE17A2E191D94 /* Credentials.m */; };
 		F12A0D7DD1578FB848CEDC93 /* SDWebImage.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE6FAA10D6D23B01068CC18C /* SDWebImage.xcframework */; };
-		F297BAD9E1D72836528A9FCA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C8D7F1FE2EE80796BE4B2B76 /* main.m */; };
+		F278FE43E1164E5876B35C5C /* BrazeKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE1AFA11EB03A5B1BEA614A2 /* BrazeKit.xcframework */; };
+		F3E32D48F75B02DAAC743445 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C8D7F1FE2EE80796BE4B2B76 /* main.m */; };
 		F4614BFB3B0846850399E6D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEF0FF04032299A31D37CDE4 /* Assets.xcassets */; };
-		F8D977535BA0735B860595AC /* BrazeKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 963312B05750D1D4DA77128F /* BrazeKit.bundle */; };
+		FC8A419CB477428EFE88152F /* BrazeKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE1AFA11EB03A5B1BEA614A2 /* BrazeKit.xcframework */; };
 		FD12306795E4DAAE687EFFA4 /* Readme.m in Sources */ = {isa = PBXBuildFile; fileRef = 6275BCD0F7BFAE11D061D807 /* Readme.m */; };
-		FD632CED3FD5FD06E04E5DCD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B71D8E6DE6F7C93CAD551FD /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -249,23 +192,22 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		04C3067FF4E0F80A91908A69 /* InAppMessages-Custom-UI.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "InAppMessages-Custom-UI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		174C8DF24400B46DB84C9645 /* BRZGIFViewProvider+SDWebImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BRZGIFViewProvider+SDWebImage.h"; sourceTree = "<group>"; };
 		178C2C03C17DFB514FCC95BF /* CardsInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CardsInfoViewController.m; sourceTree = "<group>"; };
-		1B5AF0D79206D5065A771C3B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1D9AEB92C8612C8AD37E9358 /* Readme.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Readme.m; sourceTree = "<group>"; };
 		1F1631DFDCE0C1B3F41E792E /* PushNotifications-Automatic.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "PushNotifications-Automatic.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		23775435322EF231161D5367 /* CardsInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CardsInfoViewController.h; sourceTree = "<group>"; };
-		274AE07AFBA688EA12B10D6E /* Location.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Location.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		300EE8F0E93BE17A2E191D94 /* Credentials.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Credentials.m; sourceTree = "<group>"; };
 		3071AD3E5782D08FC88FCA68 /* NotAvailableInObjC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotAvailableInObjC.m; sourceTree = "<group>"; };
 		30D72A9C07BEDB9E09FAE84D /* BrazeNotificationService.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = BrazeNotificationService.xcframework; path = "braze-swift-sdk-prebuilt/static/BrazeNotificationService.xcframework"; sourceTree = "<group>"; };
 		334A021F30FF4114F75E59A1 /* PushNotificationsContentExtension.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = PushNotificationsContentExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		3684C71FB2813470651513A7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		39B760D798A1106EC4FDD2AB /* InAppMessages-Custom-UI.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "InAppMessages-Custom-UI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AFA91B6028D67A3FDF7B083 /* InAppMessageUI-Customization.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "InAppMessageUI-Customization.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		42F1A1CD4644026244BE2F84 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		437F6450A861B53F8C59ED33 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4FE136ACE6CEBDCB80A043F8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		52E9A2F2A90CD27D63E5F049 /* ContentCards-Custom-UI.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "ContentCards-Custom-UI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		53287D0E6FFFAFDBC1C4223C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		533195F22A1588713AF533FD /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		57FB3263FD36197097B5BE6D /* BrazePushStory.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = BrazePushStory.xcframework; path = "braze-swift-sdk-prebuilt/static/BrazePushStory.xcframework"; sourceTree = "<group>"; };
@@ -279,9 +221,9 @@
 		6B2C0FF8888BA151EE18AE45 /* Readme.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Readme.m; sourceTree = "<group>"; };
 		70C9AC9B199D50C1B6B422B3 /* AuthenticationManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AuthenticationManager.m; sourceTree = "<group>"; };
 		73875EA72B34CDBE889DB750 /* Readme.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Readme.m; sourceTree = "<group>"; };
+		758DEDBCB620A5640515A39F /* Analytics.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Analytics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B4F2A475388D1FD39A2AA09 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7DEA0C6639997814399BC75B /* ContentCardUI-Customization.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "ContentCardUI-Customization.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7F0828EF0524B6419E6B4E54 /* InAppMessages-Custom-UI.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "InAppMessages-Custom-UI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FF70757F8A0B7AF074017E1 /* InAppMessageInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InAppMessageInfoViewController.m; sourceTree = "<group>"; };
 		81C45FA8942EBB59E74A5B38 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		85365B9C180AB9BA57FBD249 /* BrazeUI.bundle */ = {isa = PBXFileReference; lastKnownFileType = wrapper.cfbundle; name = BrazeUI.bundle; path = "braze-swift-sdk-prebuilt/bundle/BrazeUI.bundle"; sourceTree = "<group>"; };
@@ -293,12 +235,11 @@
 		94150E2BB7ABD75FD0130D92 /* CustomInAppMessagePresenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomInAppMessagePresenter.m; sourceTree = "<group>"; };
 		94272233486EA1A8ABB554F2 /* InAppMessageUI.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = InAppMessageUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9455F390E4F3380AF100069F /* Readme.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Readme.m; sourceTree = "<group>"; };
-		95AA6E44E4B64E89D3860621 /* Analytics.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Analytics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95ACBEAE19ACF0BAFECD47EB /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		963312B05750D1D4DA77128F /* BrazeKit.bundle */ = {isa = PBXFileReference; lastKnownFileType = wrapper.cfbundle; name = BrazeKit.bundle; path = "braze-swift-sdk-prebuilt/bundle/BrazeKit.bundle"; sourceTree = "<group>"; };
 		9737080E688F7CC1AE86D451 /* Readme.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Readme.m; sourceTree = "<group>"; };
 		99485A247A6D99729F74D785 /* AuthenticationManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AuthenticationManager.h; sourceTree = "<group>"; };
-		A0E3CB930079E9D9B90575A1 /* ContentCards-Custom-UI.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "ContentCards-Custom-UI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9BD64137870DE7C6D6ECB508 /* Location.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Location.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3DEEEEC6C495A8FB90C87DF /* empty-file.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "empty-file.swift"; sourceTree = "<group>"; };
 		A4862669D8E8CC116B81CDB2 /* SDWebImage.bundle */ = {isa = PBXFileReference; lastKnownFileType = wrapper.cfbundle; name = SDWebImage.bundle; path = "braze-swift-sdk-prebuilt/bundle/SDWebImage.bundle"; sourceTree = "<group>"; };
 		A91AF3B830B800D360D5B863 /* ReadmeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReadmeViewController.h; sourceTree = "<group>"; };
@@ -307,7 +248,6 @@
 		AEF0FF04032299A31D37CDE4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF3B26949E7F5C7A9B6D103B /* CheckoutViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CheckoutViewController.m; sourceTree = "<group>"; };
 		B3E980097FAAA5F4F97E0FBF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		BEB5BF7DE5A6B72C80849BDA /* Analytics.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Analytics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C248D54740025F7A153AA681 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		C341130BE4760BCF11B2EDE7 /* BRZGIFViewProvider+SDWebImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BRZGIFViewProvider+SDWebImage.h"; sourceTree = "<group>"; };
 		C7CD7AB410DAB0417F872BA8 /* ReadmeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReadmeViewController.m; sourceTree = "<group>"; };
@@ -319,13 +259,10 @@
 		D04CF4513AB119A7A021922F /* ReadmeAction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReadmeAction.h; sourceTree = "<group>"; };
 		DA8BB8D0C42DD214E799D07D /* BRZGIFViewProvider+SDWebImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "BRZGIFViewProvider+SDWebImage.m"; sourceTree = "<group>"; };
 		DD4757AA275D30DA01870E11 /* Readme.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Readme.m; sourceTree = "<group>"; };
-		E68B1192B8A63A256A1C970D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		EA882DE20154839D73224130 /* ContentCards-Custom-UI.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "ContentCards-Custom-UI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB8AF6AAFE01DAED72696307 /* BrazeLocation.bundle */ = {isa = PBXFileReference; lastKnownFileType = wrapper.cfbundle; name = BrazeLocation.bundle; path = "braze-swift-sdk-prebuilt/bundle/BrazeLocation.bundle"; sourceTree = "<group>"; };
 		EE1AFA11EB03A5B1BEA614A2 /* BrazeKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = BrazeKit.xcframework; path = "braze-swift-sdk-prebuilt/static/BrazeKit.xcframework"; sourceTree = "<group>"; };
 		EF948DEAE9C27D25EC6010DB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		F54F5A2EF6CB84758453D966 /* CheckoutViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CheckoutViewController.h; sourceTree = "<group>"; };
-		F65A2EE40B1942EAB446D46C /* Location.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Location.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD2B01F5A3DBFBBA7D8F3B8E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		FE8121A4438357C96AFFD6AB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -351,52 +288,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		31C53B46B65CD9FF8DDFBBE0 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6863C0F8A7A53F8A20E5FB1F /* BrazeKit.xcframework in Frameworks */,
-				09466A6F1F1FB9A4E3C5373F /* BrazeLocation.xcframework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		4E89E03DF8945CFB90A2C8E6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				A9648C1785B2E87F4A62E554 /* BrazeKit.xcframework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5021ADC4EEDB2997F4A016CC /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				072A33D2EC80958D06FC5029 /* BrazeKit.xcframework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5BDE758888608D5E3D7EBD15 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				87C8C90D9E747A3CF390F881 /* BrazeKit.xcframework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5D0945E2D2A1B7150CE593D5 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8CA6FC04AF2B3151F2031BB9 /* BrazeKit.xcframework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6E65552BA1D7C97F01CA3247 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1025F9FA69E21AEA3A8610E0 /* BrazeKit.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,14 +314,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A699CD9A4CECE081959145E8 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				24FE620B9E8D5DFDD7DE04F9 /* BrazeKit.xcframework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		A91705F597C64A792CCD387A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -433,6 +321,14 @@
 				569177D8B0AC23B87E50AD9B /* BrazeKit.xcframework in Frameworks */,
 				40D7B28F3472BA18FC36845E /* BrazeUI.xcframework in Frameworks */,
 				F12A0D7DD1578FB848CEDC93 /* SDWebImage.xcframework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B069C61BCA6634CE7830CC1F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F278FE43E1164E5876B35C5C /* BrazeKit.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,6 +342,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BA5666907B4798638AEFEF7A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A23043648FD2CC23749714C0 /* BrazeKit.xcframework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C125B19877EE1684025CB1EB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -455,20 +359,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C3FB1610B5D7E8694FE4B117 /* Frameworks */ = {
+		DC6EB103CB11D09CF29C4C6B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D97E47AE966716AA810B9329 /* BrazeKit.xcframework in Frameworks */,
-				61BAD7C248088580BF8E2473 /* BrazeLocation.xcframework in Frameworks */,
+				0A7EA99BD8C303884C6C93AE /* BrazeKit.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E2EA6065F8955D0DDD6D7D43 /* Frameworks */ = {
+		F8A28551B47C362F16F979C6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C8FBBED710EB2CD866CE008C /* BrazeKit.xcframework in Frameworks */,
+				FC8A419CB477428EFE88152F /* BrazeKit.xcframework in Frameworks */,
+				A98E24571AF48455406D015A /* BrazeLocation.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -491,18 +395,14 @@
 		13009E976DB1B5F59E67256D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				95AA6E44E4B64E89D3860621 /* Analytics.app */,
-				BEB5BF7DE5A6B72C80849BDA /* Analytics.app */,
-				A0E3CB930079E9D9B90575A1 /* ContentCards-Custom-UI.app */,
-				EA882DE20154839D73224130 /* ContentCards-Custom-UI.app */,
+				758DEDBCB620A5640515A39F /* Analytics.app */,
+				52E9A2F2A90CD27D63E5F049 /* ContentCards-Custom-UI.app */,
 				7DEA0C6639997814399BC75B /* ContentCardUI-Customization.app */,
 				8FDDEDFBD839855424A46CD3 /* ContentCardUI.app */,
-				04C3067FF4E0F80A91908A69 /* InAppMessages-Custom-UI.app */,
-				7F0828EF0524B6419E6B4E54 /* InAppMessages-Custom-UI.app */,
+				39B760D798A1106EC4FDD2AB /* InAppMessages-Custom-UI.app */,
 				3AFA91B6028D67A3FDF7B083 /* InAppMessageUI-Customization.app */,
 				94272233486EA1A8ABB554F2 /* InAppMessageUI.app */,
-				274AE07AFBA688EA12B10D6E /* Location.app */,
-				F65A2EE40B1942EAB446D46C /* Location.app */,
+				9BD64137870DE7C6D6ECB508 /* Location.app */,
 				1F1631DFDCE0C1B3F41E792E /* PushNotifications-Automatic.app */,
 				892C81C4FA9E8A7692363B5A /* PushNotifications-Manual.app */,
 				334A021F30FF4114F75E59A1 /* PushNotificationsContentExtension.appex */,
@@ -522,14 +422,6 @@
 			);
 			name = InAppMessageUI;
 			path = Sources/InAppMessageUI;
-			sourceTree = "<group>";
-		};
-		4700DBA3D2BF7B28E9581FDE /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				D7DC90A5074EA294E7413A67 /* LaunchScreen.storyboard */,
-			);
-			path = iOS;
 			sourceTree = "<group>";
 		};
 		4CCE6170371FD8120E5B1290 /* InAppMessageUI-Customization */ = {
@@ -633,14 +525,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		B58F8EA80F4F686D5133F62C /* tvOS */ = {
-			isa = PBXGroup;
-			children = (
-				1B71D8E6DE6F7C93CAD551FD /* LaunchScreen.storyboard */,
-			);
-			path = tvOS;
-			sourceTree = "<group>";
-		};
 		BFDCF0E5D62AB33DDEB1E4D7 /* Analytics */ = {
 			isa = PBXGroup;
 			children = (
@@ -710,8 +594,6 @@
 				D04CF4513AB119A7A021922F /* ReadmeAction.h */,
 				A91AF3B830B800D360D5B863 /* ReadmeViewController.h */,
 				C7CD7AB410DAB0417F872BA8 /* ReadmeViewController.m */,
-				4700DBA3D2BF7B28E9581FDE /* iOS */,
-				B58F8EA80F4F686D5133F62C /* tvOS */,
 			);
 			name = Common;
 			path = Sources/Common;
@@ -720,21 +602,21 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1428E9593F4918046E9FA6E7 /* Location-tvOS */ = {
+		03B2052E558A71218BC22579 /* Location */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D506DC48E6B06F23C1EA032A /* Build configuration list for PBXNativeTarget "Location-tvOS" */;
+			buildConfigurationList = 5D8FB8B32F7A2F439A51209E /* Build configuration list for PBXNativeTarget "Location" */;
 			buildPhases = (
-				6906E74936826DE9051B40FB /* Sources */,
-				51D2B2255A9AC5129976D1A3 /* Resources */,
-				C3FB1610B5D7E8694FE4B117 /* Frameworks */,
+				9A4AA249F115BD2E4254EBDF /* Sources */,
+				2623E45081DFCBE78F47EE90 /* Resources */,
+				F8A28551B47C362F16F979C6 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "Location-tvOS";
-			productName = "Location-tvOS";
-			productReference = F65A2EE40B1942EAB446D46C /* Location.app */;
+			name = Location;
+			productName = Location;
+			productReference = 9BD64137870DE7C6D6ECB508 /* Location.app */;
 			productType = "com.apple.product-type.application";
 		};
 		2D82CDF07E47504BAAA5B41F /* PushNotifications-Automatic */ = {
@@ -757,6 +639,23 @@
 			productReference = 1F1631DFDCE0C1B3F41E792E /* PushNotifications-Automatic.app */;
 			productType = "com.apple.product-type.application";
 		};
+		3424DE025B55C57D8D88CF98 /* Analytics */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6B4F621B9C0641153DAD0DE1 /* Build configuration list for PBXNativeTarget "Analytics" */;
+			buildPhases = (
+				4770D08E40CC748273AA084B /* Sources */,
+				165B4D49904276900065D9D4 /* Resources */,
+				DC6EB103CB11D09CF29C4C6B /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Analytics;
+			productName = Analytics;
+			productReference = 758DEDBCB620A5640515A39F /* Analytics.app */;
+			productType = "com.apple.product-type.application";
+		};
 		4CF94578CDC41CCB2531C03E /* ContentCardUI */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6C37D265106C4DAA8F43327C /* Build configuration list for PBXNativeTarget "ContentCardUI" */;
@@ -772,23 +671,6 @@
 			name = ContentCardUI;
 			productName = ContentCardUI;
 			productReference = 8FDDEDFBD839855424A46CD3 /* ContentCardUI.app */;
-			productType = "com.apple.product-type.application";
-		};
-		5273DD4B59931CAA93078A83 /* Location-iOS */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 601EFB81C4E5BFA94DC4AC0B /* Build configuration list for PBXNativeTarget "Location-iOS" */;
-			buildPhases = (
-				85F2B134D53EAAB5A9E8E938 /* Sources */,
-				A6007AC24B18F0D7D07EA76B /* Resources */,
-				31C53B46B65CD9FF8DDFBBE0 /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Location-iOS";
-			productName = "Location-iOS";
-			productReference = 274AE07AFBA688EA12B10D6E /* Location.app */;
 			productType = "com.apple.product-type.application";
 		};
 		730CBD368DF92F037A30E1DB /* PushNotifications-Manual */ = {
@@ -844,21 +726,21 @@
 			productReference = A9A04673678B1EEA9C7559C6 /* PushNotificationsServiceExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
-		8CBE60EFABCC15591795FB27 /* Analytics-tvOS */ = {
+		8CE88AF5BE8687E1035552BA /* ContentCards-Custom-UI */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4A136837C482FB1494BC7094 /* Build configuration list for PBXNativeTarget "Analytics-tvOS" */;
+			buildConfigurationList = E386FA8664059BD365B9DC25 /* Build configuration list for PBXNativeTarget "ContentCards-Custom-UI" */;
 			buildPhases = (
-				6F19BCECD958BC9670FF3F8A /* Sources */,
-				B575321CA0C5343A091BDE2C /* Resources */,
-				A699CD9A4CECE081959145E8 /* Frameworks */,
+				929A4774EB4EB244A2EEEC78 /* Sources */,
+				B251FAD98264E01A6A6401E6 /* Resources */,
+				BA5666907B4798638AEFEF7A /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "Analytics-tvOS";
-			productName = "Analytics-tvOS";
-			productReference = BEB5BF7DE5A6B72C80849BDA /* Analytics.app */;
+			name = "ContentCards-Custom-UI";
+			productName = "ContentCards-Custom-UI";
+			productReference = 52E9A2F2A90CD27D63E5F049 /* ContentCards-Custom-UI.app */;
 			productType = "com.apple.product-type.application";
 		};
 		9271831B14E0049767FA3451 /* InAppMessageUI */ = {
@@ -895,23 +777,6 @@
 			productReference = 3AFA91B6028D67A3FDF7B083 /* InAppMessageUI-Customization.app */;
 			productType = "com.apple.product-type.application";
 		};
-		A61917AE4A8B4AF46E686BC9 /* Analytics-iOS */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E87BF30EEB2BFC89921D9EA4 /* Build configuration list for PBXNativeTarget "Analytics-iOS" */;
-			buildPhases = (
-				EF64CAD35E954E9550554B07 /* Sources */,
-				08CE4A6E1D9A31C48BDCAEEC /* Resources */,
-				6E65552BA1D7C97F01CA3247 /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Analytics-iOS";
-			productName = "Analytics-iOS";
-			productReference = 95AA6E44E4B64E89D3860621 /* Analytics.app */;
-			productType = "com.apple.product-type.application";
-		};
 		ABDD889C9BD46680C87F8A70 /* PushNotificationsContentExtension */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1D13B0F7AC90CD3A0D077381 /* Build configuration list for PBXNativeTarget "PushNotificationsContentExtension" */;
@@ -928,72 +793,21 @@
 			productReference = 334A021F30FF4114F75E59A1 /* PushNotificationsContentExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
-		B76C3E6B56292DB24F4E36A4 /* ContentCards-Custom-UI-tvOS */ = {
+		CC8373AC31E15FD5A870D3BB /* InAppMessages-Custom-UI */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AC559B194CAF1DF98BEE1EA5 /* Build configuration list for PBXNativeTarget "ContentCards-Custom-UI-tvOS" */;
+			buildConfigurationList = 5808D679C896B0CE4DA3E1E0 /* Build configuration list for PBXNativeTarget "InAppMessages-Custom-UI" */;
 			buildPhases = (
-				F453AA7E34E40F95A63B363C /* Sources */,
-				CC0E946C74A5746EB5F4572B /* Resources */,
-				E2EA6065F8955D0DDD6D7D43 /* Frameworks */,
+				631467A02692E3B43BDD4195 /* Sources */,
+				51E48FA1D9CB3F8791E31658 /* Resources */,
+				B069C61BCA6634CE7830CC1F /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "ContentCards-Custom-UI-tvOS";
-			productName = "ContentCards-Custom-UI-tvOS";
-			productReference = EA882DE20154839D73224130 /* ContentCards-Custom-UI.app */;
-			productType = "com.apple.product-type.application";
-		};
-		DCBABE7975D74A9E7ACA1ED3 /* InAppMessages-Custom-UI-iOS */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 252181892A25BD308C6AFDE8 /* Build configuration list for PBXNativeTarget "InAppMessages-Custom-UI-iOS" */;
-			buildPhases = (
-				DA1F23E5038202FAD1A46838 /* Sources */,
-				1A5FEB2E823A94CDF2A5CCF6 /* Resources */,
-				5D0945E2D2A1B7150CE593D5 /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "InAppMessages-Custom-UI-iOS";
-			productName = "InAppMessages-Custom-UI-iOS";
-			productReference = 04C3067FF4E0F80A91908A69 /* InAppMessages-Custom-UI.app */;
-			productType = "com.apple.product-type.application";
-		};
-		E857D137732294881C9C72FD /* ContentCards-Custom-UI-iOS */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 945DCC6190245203D0060AC7 /* Build configuration list for PBXNativeTarget "ContentCards-Custom-UI-iOS" */;
-			buildPhases = (
-				9F261F9753B11A279FBA8C69 /* Sources */,
-				5ECEF4944E04931B8147F871 /* Resources */,
-				5BDE758888608D5E3D7EBD15 /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "ContentCards-Custom-UI-iOS";
-			productName = "ContentCards-Custom-UI-iOS";
-			productReference = A0E3CB930079E9D9B90575A1 /* ContentCards-Custom-UI.app */;
-			productType = "com.apple.product-type.application";
-		};
-		FF5873B76FC253C855039EC4 /* InAppMessages-Custom-UI-tvOS */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 3DF9DB181A545EB48413CF0B /* Build configuration list for PBXNativeTarget "InAppMessages-Custom-UI-tvOS" */;
-			buildPhases = (
-				4F6E473CC6271DC88EFEE32C /* Sources */,
-				EF196A15E259658F9F0D47AA /* Resources */,
-				5021ADC4EEDB2997F4A016CC /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "InAppMessages-Custom-UI-tvOS";
-			productName = "InAppMessages-Custom-UI-tvOS";
-			productReference = 7F0828EF0524B6419E6B4E54 /* InAppMessages-Custom-UI.app */;
+			name = "InAppMessages-Custom-UI";
+			productName = "InAppMessages-Custom-UI";
+			productReference = 39B760D798A1106EC4FDD2AB /* InAppMessages-Custom-UI.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1002,12 +816,13 @@
 		C9B4EA2C3E8F6AF9580434A9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1200;
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
 				TargetAttributes = {
 				};
 			};
 			buildConfigurationList = E1DECCCD0247DE414EB92A53 /* Build configuration list for PBXProject "Examples-Manual" */;
-			compatibilityVersion = "Xcode 11.0";
+			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -1018,18 +833,14 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A61917AE4A8B4AF46E686BC9 /* Analytics-iOS */,
-				8CBE60EFABCC15591795FB27 /* Analytics-tvOS */,
+				3424DE025B55C57D8D88CF98 /* Analytics */,
 				4CF94578CDC41CCB2531C03E /* ContentCardUI */,
 				7A8A97B5756032F77C72A0FF /* ContentCardUI-Customization */,
-				E857D137732294881C9C72FD /* ContentCards-Custom-UI-iOS */,
-				B76C3E6B56292DB24F4E36A4 /* ContentCards-Custom-UI-tvOS */,
+				8CE88AF5BE8687E1035552BA /* ContentCards-Custom-UI */,
 				9271831B14E0049767FA3451 /* InAppMessageUI */,
 				9844E2ECB2B13EACD3762C4C /* InAppMessageUI-Customization */,
-				DCBABE7975D74A9E7ACA1ED3 /* InAppMessages-Custom-UI-iOS */,
-				FF5873B76FC253C855039EC4 /* InAppMessages-Custom-UI-tvOS */,
-				5273DD4B59931CAA93078A83 /* Location-iOS */,
-				1428E9593F4918046E9FA6E7 /* Location-tvOS */,
+				CC8373AC31E15FD5A870D3BB /* InAppMessages-Custom-UI */,
+				03B2052E558A71218BC22579 /* Location */,
 				2D82CDF07E47504BAAA5B41F /* PushNotifications-Automatic */,
 				730CBD368DF92F037A30E1DB /* PushNotifications-Manual */,
 				ABDD889C9BD46680C87F8A70 /* PushNotificationsContentExtension */,
@@ -1045,48 +856,34 @@
 			files = (
 				F4614BFB3B0846850399E6D3 /* Assets.xcassets in Resources */,
 				B20FE0CED0FC0B36BC86F754 /* BrazeKit.bundle in Resources */,
-				6FADC4786A861620869A6822 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		08CE4A6E1D9A31C48BDCAEEC /* Resources */ = {
+		165B4D49904276900065D9D4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				79C04963F0118492FA3965A1 /* Assets.xcassets in Resources */,
-				61DDBC9A77FEC9AB657D35EF /* BrazeKit.bundle in Resources */,
-				CF3F0621AC5D7137F58AABB8 /* LaunchScreen.storyboard in Resources */,
+				C52569EE1C4FC5B2E83739AC /* Assets.xcassets in Resources */,
+				4FD4C66708330DB44E7053AF /* BrazeKit.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1A5FEB2E823A94CDF2A5CCF6 /* Resources */ = {
+		2623E45081DFCBE78F47EE90 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				298E8EF3CB0A2692CB2D6E3F /* Assets.xcassets in Resources */,
-				7D5527F1F20316E3E83F7534 /* BrazeKit.bundle in Resources */,
-				42DC1478458C4029E3655F22 /* LaunchScreen.storyboard in Resources */,
+				5E3E68099D1B5E370178846F /* Assets.xcassets in Resources */,
+				05E79F99B30429A2502BC7F4 /* BrazeKit.bundle in Resources */,
+				C2C0054EA8B2CD0FE02300A7 /* BrazeLocation.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		51D2B2255A9AC5129976D1A3 /* Resources */ = {
+		51E48FA1D9CB3F8791E31658 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2433F552DC49F4541FCA4B28 /* Assets.xcassets in Resources */,
-				2023639CD85FDD69BCE83916 /* BrazeKit.bundle in Resources */,
-				C7015AC6CF3A7937EFA06121 /* BrazeLocation.bundle in Resources */,
-				0B1E42B8B832406397F71D7C /* LaunchScreen.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5ECEF4944E04931B8147F871 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				22817B8793536910AE239885 /* Assets.xcassets in Resources */,
-				A8AACBE0815454A2547D2426 /* BrazeKit.bundle in Resources */,
-				181FF85AB67A72FAFCF4BD6E /* LaunchScreen.storyboard in Resources */,
+				B547CE8C237E3BA8CF9DC991 /* Assets.xcassets in Resources */,
+				355BBF4B6E8689E0CE5D41AB /* BrazeKit.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1097,7 +894,6 @@
 				4F82842CEF215146992E2664 /* Assets.xcassets in Resources */,
 				BF3E00BF746510504CA6D052 /* BrazeKit.bundle in Resources */,
 				87B56CCE5A48D906FC4EFEEA /* BrazeUI.bundle in Resources */,
-				9291C501BFC4FE0730068E24 /* LaunchScreen.storyboard in Resources */,
 				7FBBB1441AC127087D878C36 /* SDWebImage.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1109,29 +905,16 @@
 				EAAE90780460DB91BC0C4590 /* Assets.xcassets in Resources */,
 				7B24B540AA7946B259E6355F /* BrazeKit.bundle in Resources */,
 				BCDCB5A2B878D59CEC6F7A78 /* BrazeUI.bundle in Resources */,
-				88C413393B8A310612536576 /* LaunchScreen.storyboard in Resources */,
 				03F471437ECF0E971EBD7791 /* SDWebImage.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A6007AC24B18F0D7D07EA76B /* Resources */ = {
+		B251FAD98264E01A6A6401E6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3E2F2CC382C69F9EBF257574 /* Assets.xcassets in Resources */,
-				D21211EFED4A79A9C52E3767 /* BrazeKit.bundle in Resources */,
-				53064408D600848B60AB3A09 /* BrazeLocation.bundle in Resources */,
-				EEA7B49567140123AFF0F8F5 /* LaunchScreen.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B575321CA0C5343A091BDE2C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0B2CEC84EA097AF592A6B0EC /* Assets.xcassets in Resources */,
-				533688F071AE2CBA8D7F9D28 /* BrazeKit.bundle in Resources */,
-				FD632CED3FD5FD06E04E5DCD /* LaunchScreen.storyboard in Resources */,
+				4E5A3E6B086DCDA601A8A014 /* Assets.xcassets in Resources */,
+				D2486FABBEC068957D9E1F80 /* BrazeKit.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1141,17 +924,6 @@
 			files = (
 				1EF13C28EE36D54A14EFDBC9 /* Assets.xcassets in Resources */,
 				978E44C7BA19CC47A6583139 /* BrazeKit.bundle in Resources */,
-				26AB8A547C8E053C7A59E64F /* LaunchScreen.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CC0E946C74A5746EB5F4572B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				88A5C2E288ECC51928FC8482 /* Assets.xcassets in Resources */,
-				2BD28D5A8F7623322FE79243 /* BrazeKit.bundle in Resources */,
-				9650EF7F9CC4D0BFD08B39D3 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1162,7 +934,6 @@
 				3FB06BB3F6967AD6EBAC533F /* Assets.xcassets in Resources */,
 				6C065226833B8EC7CCEEDA05 /* BrazeKit.bundle in Resources */,
 				1E91998ABF05E912E263E355 /* BrazeUI.bundle in Resources */,
-				74293EC038DEF0E76CC03171 /* LaunchScreen.storyboard in Resources */,
 				E23BEBB47BCB32C0740CD6E1 /* SDWebImage.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1174,18 +945,7 @@
 				B07454F08044C816DC655B50 /* Assets.xcassets in Resources */,
 				1567A7107DAB82AA67FAEA45 /* BrazeKit.bundle in Resources */,
 				C9A4905EA63DA015B0A4B30F /* BrazeUI.bundle in Resources */,
-				33C10978000DFE7956E68484 /* LaunchScreen.storyboard in Resources */,
 				A3899B99283411D1D254D7B8 /* SDWebImage.bundle in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EF196A15E259658F9F0D47AA /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				ED1F41FF4171130188A33126 /* Assets.xcassets in Resources */,
-				F8D977535BA0735B860595AC /* BrazeKit.bundle in Resources */,
-				CD8B51B9515887A350A2A257 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1224,46 +984,33 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4F6E473CC6271DC88EFEE32C /* Sources */ = {
+		4770D08E40CC748273AA084B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				59A2FEC51FDF48DB2C077669 /* AppDelegate.m in Sources */,
-				D947226E679E332E9ECFFCEB /* Credentials.m in Sources */,
-				915AE14E464750127C70F778 /* CustomInAppMessagePresenter.m in Sources */,
-				B7B72DDCD8437C552899186B /* InAppMessageInfoViewController.m in Sources */,
-				CF580A411C6099B9187270E2 /* Readme.m in Sources */,
-				7B7D7F43349E02D078DA4D91 /* ReadmeViewController.m in Sources */,
-				A6A947BFB3D1425AEA2542E4 /* empty-file.swift in Sources */,
-				8D14E24A5565303D5D7D5F53 /* main.m in Sources */,
+				1FA343FCE4AAC162BEF01630 /* AppDelegate.m in Sources */,
+				7801A2CF2663FCC7A4D1D854 /* AuthenticationManager.m in Sources */,
+				55F05CFCF26E8E76CF81A431 /* CheckoutViewController.m in Sources */,
+				B754FCEF1B555F1B50700AD6 /* Credentials.m in Sources */,
+				04734526061ED87D7B890114 /* Readme.m in Sources */,
+				753ADE8311DFFFAFC36F0CCB /* ReadmeViewController.m in Sources */,
+				E317AF1ABD3251AC5EEB4314 /* empty-file.swift in Sources */,
+				D2A2A9D7AA2CD60C731AC87D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6906E74936826DE9051B40FB /* Sources */ = {
+		631467A02692E3B43BDD4195 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A681BCA081DD81E43BB9747 /* AppDelegate.m in Sources */,
-				47B2D4D2F580BD35A6C979E7 /* Credentials.m in Sources */,
-				157A64B63136033871D682BF /* Readme.m in Sources */,
-				3252C073F2BE61BF5AFA17D8 /* ReadmeViewController.m in Sources */,
-				C6E36A2E936AFFBC6161431E /* empty-file.swift in Sources */,
-				49A8D85E075C823A059944DF /* main.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6F19BCECD958BC9670FF3F8A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8443EA3BB632D57128F8B8CB /* AppDelegate.m in Sources */,
-				E6A3B78AB684D9B08A4F6B55 /* AuthenticationManager.m in Sources */,
-				EFCE1C60753860707B8F51C1 /* CheckoutViewController.m in Sources */,
-				A4A35CF95752F89B0C17D783 /* Credentials.m in Sources */,
-				780F3843A41713B8D3FBA0E3 /* Readme.m in Sources */,
-				906C0F3BD6C4832175D5ED8A /* ReadmeViewController.m in Sources */,
-				D6D0F5E083283E5F92EC29E9 /* empty-file.swift in Sources */,
-				0C86A5A5B6B5E3914D4C9447 /* main.m in Sources */,
+				19E1C7836072B17A58DAA6DB /* AppDelegate.m in Sources */,
+				EF8AD0645D4E94D60D5F45B6 /* Credentials.m in Sources */,
+				2F47A9B731082F7924EFC909 /* CustomInAppMessagePresenter.m in Sources */,
+				3C26CEE31384DDD8FE6C2BB8 /* InAppMessageInfoViewController.m in Sources */,
+				535495CE7BBCBC4021314C6F /* Readme.m in Sources */,
+				A4445C57E438F59CE5E4470D /* ReadmeViewController.m in Sources */,
+				5F5660D8B8A46B88335DE902 /* empty-file.swift in Sources */,
+				F3E32D48F75B02DAAC743445 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1281,19 +1028,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		85F2B134D53EAAB5A9E8E938 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9C8AC9A6BBAB552B97F560C9 /* AppDelegate.m in Sources */,
-				A2464145E52DDEBAFD4725F2 /* Credentials.m in Sources */,
-				B99E9DEA5DD03DC004C7B4AC /* Readme.m in Sources */,
-				69E8F8CB1F396556DA379FDA /* ReadmeViewController.m in Sources */,
-				32FD4244C463C7F7B7C23934 /* empty-file.swift in Sources */,
-				6206DA9EB9EFE781D1687969 /* main.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		906073B0AB81212DEF44B479 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1302,17 +1036,30 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9F261F9753B11A279FBA8C69 /* Sources */ = {
+		929A4774EB4EB244A2EEEC78 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1426C39F30A15DAE0EDFFD81 /* AppDelegate.m in Sources */,
-				4D7CF9C51AECBA622760E3CF /* CardsInfoViewController.m in Sources */,
-				02DC0031352875AEA57E016F /* Credentials.m in Sources */,
-				C67B830B590421DE8746A78B /* Readme.m in Sources */,
-				2E1619521EEF47B332D7AC5A /* ReadmeViewController.m in Sources */,
-				70EE69E0CC25A49D0BC0F65E /* empty-file.swift in Sources */,
-				F297BAD9E1D72836528A9FCA /* main.m in Sources */,
+				56127F4215861115CFA184E7 /* AppDelegate.m in Sources */,
+				A5D34CCD65FBB076D2340C68 /* CardsInfoViewController.m in Sources */,
+				BAF34142870A97C611C36D0B /* Credentials.m in Sources */,
+				BDB36CBB33D0B3199832A497 /* Readme.m in Sources */,
+				B3F897301F177FE6BEDA80EF /* ReadmeViewController.m in Sources */,
+				97056EA2050118D53C498800 /* empty-file.swift in Sources */,
+				D23C7EAA7A3C8A36BA79A772 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A4AA249F115BD2E4254EBDF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				842A847E69B6588DA885B023 /* AppDelegate.m in Sources */,
+				9B0D5FACB82C018DF4FCBD23 /* Credentials.m in Sources */,
+				14DD11907E32A1B7EE78E593 /* Readme.m in Sources */,
+				0F17D790C39A29FAA1F976C2 /* ReadmeViewController.m in Sources */,
+				3BAE2C980D9120D9600A6680 /* empty-file.swift in Sources */,
+				6FD038989CBFFFF22C8255EF /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1329,21 +1076,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DA1F23E5038202FAD1A46838 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				57C136AB32BFFC0916170040 /* AppDelegate.m in Sources */,
-				7C6C57DBD8A366181DA6D41B /* Credentials.m in Sources */,
-				7FF1A44F5E57B887F707ECB6 /* CustomInAppMessagePresenter.m in Sources */,
-				EEB12009AC24BDF5E0E276F7 /* InAppMessageInfoViewController.m in Sources */,
-				4BBF1362EECB8E92F3DF7AFB /* Readme.m in Sources */,
-				0DD2238982869C1685101356 /* ReadmeViewController.m in Sources */,
-				308253B035CADF90CBF2F976 /* empty-file.swift in Sources */,
-				82090ABD22EA90EBE70FB6FF /* main.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		DEE5884E2E5FC10170F33A9F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1354,35 +1086,6 @@
 				C119F9D4D037385C7A6D539F /* ReadmeViewController.m in Sources */,
 				8B0FD329DA9C8718F16815A6 /* empty-file.swift in Sources */,
 				A1E8B7883D7845AC370E5F8B /* main.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EF64CAD35E954E9550554B07 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				737AF526201F7EC0BE19383A /* AppDelegate.m in Sources */,
-				64443B91D74B316F65F1DA18 /* AuthenticationManager.m in Sources */,
-				9669350F2C1A226F14C96CC8 /* CheckoutViewController.m in Sources */,
-				BD0EC8348EE8F08F688CE96F /* Credentials.m in Sources */,
-				91DF1B6C095EFCA0405A1BB4 /* Readme.m in Sources */,
-				5D52D68B5C4EEAA3E0C96E58 /* ReadmeViewController.m in Sources */,
-				9F0C0C790DE91629F11869A3 /* empty-file.swift in Sources */,
-				8486D1CBA50EC0BFDCD415C3 /* main.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F453AA7E34E40F95A63B363C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4FBA199342BA29BB0B666F97 /* AppDelegate.m in Sources */,
-				7137DAF14A6329BE425458D7 /* CardsInfoViewController.m in Sources */,
-				B94D3CEEE4C5F83F1D4C7148 /* Credentials.m in Sources */,
-				485B590C4578A6A055B59DED /* Readme.m in Sources */,
-				7FD09FECAD3A87ED5A1781B5 /* ReadmeViewController.m in Sources */,
-				439445F891C4C4F5A8BABAA7 /* empty-file.swift in Sources */,
-				DFD058BEFA52610A862AABCC /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1425,25 +1128,6 @@
 		};
 /* End PBXTargetDependency section */
 
-/* Begin PBXVariantGroup section */
-		1B71D8E6DE6F7C93CAD551FD /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E68B1192B8A63A256A1C970D /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		D7DC90A5074EA294E7413A67 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1B5AF0D79206D5065A771C3B /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
 		0117423D2BF4C879BC5FFEAD /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1461,11 +1145,12 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.ContentCardUI-Customization";
-				PRODUCT_NAME = "ContentCardUI-Customization";
-				SDKROOT = iphoneos;
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
 				SUPPORTS_MACCATALYST = YES;
-				"SUPPORTS_MACCATALYST[sdk=appletvos*]" = NO;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
 			};
 			name = Debug;
 		};
@@ -1484,36 +1169,14 @@
 					"@executable_path/../../Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.braze.PushNotifications.PushNotificationsServiceExtension;
-				SDKROOT = iphoneos;
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
 				SUPPORTS_MACCATALYST = YES;
-				"SUPPORTS_MACCATALYST[sdk=appletvos*]" = NO;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
 			};
 			name = Release;
-		};
-		0919C9AE99D3CB5DCACA7533 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"braze-swift-sdk-prebuilt/static\"",
-				);
-				INFOPLIST_FILE = "Sources/InAppMessages-Custom-UI/Info.plist";
-				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.InAppMessages-Custom-UI-tvOS";
-				PRODUCT_NAME = "InAppMessages-Custom-UI";
-				SDKROOT = appletvos;
-				SUPPORTS_MACCATALYST = YES;
-				"SUPPORTS_MACCATALYST[sdk=appletvos*]" = NO;
-				TARGETED_DEVICE_FAMILY = 3;
-			};
-			name = Debug;
 		};
 		0BB5E9C33B506401E1015098 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -1531,37 +1194,14 @@
 					"@executable_path/../../Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.braze.PushNotifications.PushNotificationsContentExtension;
-				SDKROOT = iphoneos;
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
 				SUPPORTS_MACCATALYST = YES;
-				"SUPPORTS_MACCATALYST[sdk=appletvos*]" = NO;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
 			};
 			name = Release;
-		};
-		0F6E4CD79E57932908DD2A5D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Sources/Location/Location.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"braze-swift-sdk-prebuilt/static\"",
-				);
-				INFOPLIST_FILE = Sources/Location/Info.plist;
-				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.Location-iOS";
-				PRODUCT_NAME = Location;
-				SDKROOT = iphoneos;
-				SUPPORTS_MACCATALYST = YES;
-				"SUPPORTS_MACCATALYST[sdk=appletvos*]" = NO;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
 		};
 		196F609B1ED291D8C92A57DD /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1580,11 +1220,12 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.braze.PushNotifications;
-				PRODUCT_NAME = "PushNotifications-Automatic";
-				SDKROOT = iphoneos;
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
 				SUPPORTS_MACCATALYST = YES;
-				"SUPPORTS_MACCATALYST[sdk=appletvos*]" = NO;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
 			};
 			name = Debug;
 		};
@@ -1604,11 +1245,12 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.braze.InAppMessageUI;
-				PRODUCT_NAME = InAppMessageUI;
-				SDKROOT = iphoneos;
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
 				SUPPORTS_MACCATALYST = YES;
-				"SUPPORTS_MACCATALYST[sdk=appletvos*]" = NO;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
 			};
 			name = Debug;
 		};
@@ -1627,37 +1269,64 @@
 					"@executable_path/../../Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.braze.PushNotifications.PushNotificationsServiceExtension;
-				SDKROOT = iphoneos;
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
 				SUPPORTS_MACCATALYST = YES;
-				"SUPPORTS_MACCATALYST[sdk=appletvos*]" = NO;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
 			};
 			name = Debug;
 		};
-		22AE924E4E35E944C9C52F06 /* Release */ = {
+		292F260EB50572BC94C1FCC3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_ENTITLEMENTS = Sources/Location/Location.entitlements;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"braze-swift-sdk-prebuilt/static\"",
 				);
-				INFOPLIST_FILE = Sources/Location/Info.plist;
+				INFOPLIST_FILE = "Sources/InAppMessages-Custom-UI/Info.plist";
 				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.Location-tvOS";
-				PRODUCT_NAME = Location;
-				SDKROOT = appletvos;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.InAppMessages-Custom-UI";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator appletvos appletvsimulator xros xrsimulator";
 				SUPPORTS_MACCATALYST = YES;
-				"SUPPORTS_MACCATALYST[sdk=appletvos*]" = NO;
-				TARGETED_DEVICE_FAMILY = 3;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
+				TARGETED_DEVICE_FAMILY = "1,2,3,7";
 			};
 			name = Release;
+		};
+		4CB0A6906BAEF5EBCD166CEC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"braze-swift-sdk-prebuilt/static\"",
+				);
+				INFOPLIST_FILE = Sources/Analytics/Info.plist;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.braze.Analytics;
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator appletvos appletvsimulator xros xrsimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
+				TARGETED_DEVICE_FAMILY = "1,2,3,7";
+			};
+			name = Debug;
 		};
 		59188EA2BC8B8C8A1DCE1B8B /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -1676,11 +1345,62 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.braze.PushNotifications;
-				PRODUCT_NAME = "PushNotifications-Automatic";
-				SDKROOT = iphoneos;
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
 				SUPPORTS_MACCATALYST = YES;
-				"SUPPORTS_MACCATALYST[sdk=appletvos*]" = NO;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+			};
+			name = Release;
+		};
+		5B1A16CAB9768316733B0750 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"braze-swift-sdk-prebuilt/static\"",
+				);
+				INFOPLIST_FILE = "Sources/ContentCards-Custom-UI/Info.plist";
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.ContentCards-Custom-UI";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator appletvos appletvsimulator xros xrsimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
+				TARGETED_DEVICE_FAMILY = "1,2,3,7";
+			};
+			name = Release;
+		};
+		5E852FEED0245D00854BFB74 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"braze-swift-sdk-prebuilt/static\"",
+				);
+				INFOPLIST_FILE = Sources/Analytics/Info.plist;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.braze.Analytics;
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator appletvos appletvsimulator xros xrsimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
+				TARGETED_DEVICE_FAMILY = "1,2,3,7";
 			};
 			name = Release;
 		};
@@ -1700,11 +1420,12 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.braze.InAppMessageUI;
-				PRODUCT_NAME = InAppMessageUI;
-				SDKROOT = iphoneos;
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
 				SUPPORTS_MACCATALYST = YES;
-				"SUPPORTS_MACCATALYST[sdk=appletvos*]" = NO;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
 			};
 			name = Release;
 		};
@@ -1724,39 +1445,16 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.InAppMessageUI-Customization";
-				PRODUCT_NAME = "InAppMessageUI-Customization";
-				SDKROOT = iphoneos;
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
 				SUPPORTS_MACCATALYST = YES;
-				"SUPPORTS_MACCATALYST[sdk=appletvos*]" = NO;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
 			};
 			name = Debug;
 		};
-		76B6A3FD68E41E196313726F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"braze-swift-sdk-prebuilt/static\"",
-				);
-				INFOPLIST_FILE = Sources/Analytics/Info.plist;
-				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.Analytics-tvOS";
-				PRODUCT_NAME = Analytics;
-				SDKROOT = appletvos;
-				SUPPORTS_MACCATALYST = YES;
-				"SUPPORTS_MACCATALYST[sdk=appletvos*]" = NO;
-				TARGETED_DEVICE_FAMILY = 3;
-			};
-			name = Debug;
-		};
-		945D77EDE8ACA81344B39961 /* Release */ = {
+		6FD059E04B80E05F2D45A22A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -1765,20 +1463,47 @@
 					"$(inherited)",
 					"\"braze-swift-sdk-prebuilt/static\"",
 				);
-				INFOPLIST_FILE = Sources/Analytics/Info.plist;
+				INFOPLIST_FILE = "Sources/InAppMessages-Custom-UI/Info.plist";
 				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.Analytics-iOS";
-				PRODUCT_NAME = Analytics;
-				SDKROOT = iphoneos;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.InAppMessages-Custom-UI";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator appletvos appletvsimulator xros xrsimulator";
 				SUPPORTS_MACCATALYST = YES;
-				"SUPPORTS_MACCATALYST[sdk=appletvos*]" = NO;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
+				TARGETED_DEVICE_FAMILY = "1,2,3,7";
 			};
-			name = Release;
+			name = Debug;
+		};
+		95AA35DDE321C3C26A3DF16C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Sources/Location/Location.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"braze-swift-sdk-prebuilt/static\"",
+				);
+				INFOPLIST_FILE = Sources/Location/Info.plist;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.braze.Location;
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator appletvos appletvsimulator xros xrsimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
+				TARGETED_DEVICE_FAMILY = "1,2,3,7";
+			};
+			name = Debug;
 		};
 		9B9399CC7A4D4A8A65921CD2 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -1796,11 +1521,12 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.ContentCardUI-Customization";
-				PRODUCT_NAME = "ContentCardUI-Customization";
-				SDKROOT = iphoneos;
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
 				SUPPORTS_MACCATALYST = YES;
-				"SUPPORTS_MACCATALYST[sdk=appletvos*]" = NO;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
 			};
 			name = Release;
 		};
@@ -1820,10 +1546,12 @@
 					"@executable_path/../../Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.braze.PushNotifications.PushNotificationsContentExtension;
-				SDKROOT = iphoneos;
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
 				SUPPORTS_MACCATALYST = YES;
-				"SUPPORTS_MACCATALYST[sdk=appletvos*]" = NO;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
 			};
 			name = Debug;
 		};
@@ -1844,63 +1572,16 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.braze.PushNotifications;
-				PRODUCT_NAME = "PushNotifications-Manual";
-				SDKROOT = iphoneos;
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
 				SUPPORTS_MACCATALYST = YES;
-				"SUPPORTS_MACCATALYST[sdk=appletvos*]" = NO;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
 			};
 			name = Debug;
 		};
-		A174E4CF629A4FC24982DCBB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"braze-swift-sdk-prebuilt/static\"",
-				);
-				INFOPLIST_FILE = "Sources/ContentCards-Custom-UI/Info.plist";
-				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.ContentCards-Custom-UI-tvOS";
-				PRODUCT_NAME = "ContentCards-Custom-UI";
-				SDKROOT = appletvos;
-				SUPPORTS_MACCATALYST = YES;
-				"SUPPORTS_MACCATALYST[sdk=appletvos*]" = NO;
-				TARGETED_DEVICE_FAMILY = 3;
-			};
-			name = Debug;
-		};
-		A340172973B97B5E26762932 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"braze-swift-sdk-prebuilt/static\"",
-				);
-				INFOPLIST_FILE = "Sources/ContentCards-Custom-UI/Info.plist";
-				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.ContentCards-Custom-UI-tvOS";
-				PRODUCT_NAME = "ContentCards-Custom-UI";
-				SDKROOT = appletvos;
-				SUPPORTS_MACCATALYST = YES;
-				"SUPPORTS_MACCATALYST[sdk=appletvos*]" = NO;
-				TARGETED_DEVICE_FAMILY = 3;
-			};
-			name = Release;
-		};
-		A4278090B57498D0976EA67F /* Debug */ = {
+		A7E9E9B74E099745161A6BEA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -1915,37 +1596,13 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.ContentCards-Custom-UI-iOS";
-				PRODUCT_NAME = "ContentCards-Custom-UI";
-				SDKROOT = iphoneos;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.ContentCards-Custom-UI";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator appletvos appletvsimulator xros xrsimulator";
 				SUPPORTS_MACCATALYST = YES;
-				"SUPPORTS_MACCATALYST[sdk=appletvos*]" = NO;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		AE2A30B2943BA779C525378A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_ENTITLEMENTS = Sources/Location/Location.entitlements;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"braze-swift-sdk-prebuilt/static\"",
-				);
-				INFOPLIST_FILE = Sources/Location/Info.plist;
-				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.Location-tvOS";
-				PRODUCT_NAME = Location;
-				SDKROOT = appletvos;
-				SUPPORTS_MACCATALYST = YES;
-				"SUPPORTS_MACCATALYST[sdk=appletvos*]" = NO;
-				TARGETED_DEVICE_FAMILY = 3;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
+				TARGETED_DEVICE_FAMILY = "1,2,3,7";
 			};
 			name = Debug;
 		};
@@ -2000,41 +1657,19 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TVOS_DEPLOYMENT_TARGET = 11.0;
+				TVOS_DEPLOYMENT_TARGET = 12.0;
+				XROS_DEPLOYMENT_TARGET = 1.0;
 			};
 			name = Debug;
-		};
-		B82CB59A80FD93898830517A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"braze-swift-sdk-prebuilt/static\"",
-				);
-				INFOPLIST_FILE = "Sources/InAppMessages-Custom-UI/Info.plist";
-				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.InAppMessages-Custom-UI-tvOS";
-				PRODUCT_NAME = "InAppMessages-Custom-UI";
-				SDKROOT = appletvos;
-				SUPPORTS_MACCATALYST = YES;
-				"SUPPORTS_MACCATALYST[sdk=appletvos*]" = NO;
-				TARGETED_DEVICE_FAMILY = 3;
-			};
-			name = Release;
 		};
 		BCB9BBED33A3C4997CDF07D7 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -2081,40 +1716,18 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
-				TVOS_DEPLOYMENT_TARGET = 11.0;
+				TVOS_DEPLOYMENT_TARGET = 12.0;
+				XROS_DEPLOYMENT_TARGET = 1.0;
 			};
 			name = Release;
-		};
-		C2DF2240F6589034FEBAC31B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"braze-swift-sdk-prebuilt/static\"",
-				);
-				INFOPLIST_FILE = "Sources/InAppMessages-Custom-UI/Info.plist";
-				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.InAppMessages-Custom-UI-iOS";
-				PRODUCT_NAME = "InAppMessages-Custom-UI";
-				SDKROOT = iphoneos;
-				SUPPORTS_MACCATALYST = YES;
-				"SUPPORTS_MACCATALYST[sdk=appletvos*]" = NO;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
 		};
 		CC6D78E0F1EA0413289B4151 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -2132,37 +1745,14 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.braze.ContentCardUI;
-				PRODUCT_NAME = ContentCardUI;
-				SDKROOT = iphoneos;
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
 				SUPPORTS_MACCATALYST = YES;
-				"SUPPORTS_MACCATALYST[sdk=appletvos*]" = NO;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
 			};
 			name = Debug;
-		};
-		CE75B1AAB128CEA43249FE4C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"braze-swift-sdk-prebuilt/static\"",
-				);
-				INFOPLIST_FILE = "Sources/InAppMessages-Custom-UI/Info.plist";
-				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.InAppMessages-Custom-UI-iOS";
-				PRODUCT_NAME = "InAppMessages-Custom-UI";
-				SDKROOT = iphoneos;
-				SUPPORTS_MACCATALYST = YES;
-				"SUPPORTS_MACCATALYST[sdk=appletvos*]" = NO;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
 		};
 		D3AA6B2A6AE430E171646EF2 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -2180,35 +1770,38 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.braze.ContentCardUI;
-				PRODUCT_NAME = ContentCardUI;
-				SDKROOT = iphoneos;
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
 				SUPPORTS_MACCATALYST = YES;
-				"SUPPORTS_MACCATALYST[sdk=appletvos*]" = NO;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
 			};
 			name = Release;
 		};
-		DFFDE4EBB185DD4ABC2A6354 /* Release */ = {
+		D67C9C359C5E18CBC7F87080 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Sources/Location/Location.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"braze-swift-sdk-prebuilt/static\"",
 				);
-				INFOPLIST_FILE = "Sources/ContentCards-Custom-UI/Info.plist";
+				INFOPLIST_FILE = Sources/Location/Info.plist;
 				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.ContentCards-Custom-UI-iOS";
-				PRODUCT_NAME = "ContentCards-Custom-UI";
-				SDKROOT = iphoneos;
+				PRODUCT_BUNDLE_IDENTIFIER = com.braze.Location;
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator appletvos appletvsimulator xros xrsimulator";
 				SUPPORTS_MACCATALYST = YES;
-				"SUPPORTS_MACCATALYST[sdk=appletvos*]" = NO;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
+				TARGETED_DEVICE_FAMILY = "1,2,3,7";
 			};
 			name = Release;
 		};
@@ -2229,84 +1822,12 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.braze.PushNotifications;
-				PRODUCT_NAME = "PushNotifications-Manual";
-				SDKROOT = iphoneos;
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
 				SUPPORTS_MACCATALYST = YES;
-				"SUPPORTS_MACCATALYST[sdk=appletvos*]" = NO;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		E7CD97A7085112A812E60146 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"braze-swift-sdk-prebuilt/static\"",
-				);
-				INFOPLIST_FILE = Sources/Analytics/Info.plist;
-				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.Analytics-iOS";
-				PRODUCT_NAME = Analytics;
-				SDKROOT = iphoneos;
-				SUPPORTS_MACCATALYST = YES;
-				"SUPPORTS_MACCATALYST[sdk=appletvos*]" = NO;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		EF2C9A6847923F7D7AA45474 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"braze-swift-sdk-prebuilt/static\"",
-				);
-				INFOPLIST_FILE = Sources/Analytics/Info.plist;
-				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.Analytics-tvOS";
-				PRODUCT_NAME = Analytics;
-				SDKROOT = appletvos;
-				SUPPORTS_MACCATALYST = YES;
-				"SUPPORTS_MACCATALYST[sdk=appletvos*]" = NO;
-				TARGETED_DEVICE_FAMILY = 3;
-			};
-			name = Release;
-		};
-		F4B9A5CC945DC19ADAFFCA14 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Sources/Location/Location.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"braze-swift-sdk-prebuilt/static\"",
-				);
-				INFOPLIST_FILE = Sources/Location/Info.plist;
-				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.Location-iOS";
-				PRODUCT_NAME = Location;
-				SDKROOT = iphoneos;
-				SUPPORTS_MACCATALYST = YES;
-				"SUPPORTS_MACCATALYST[sdk=appletvos*]" = NO;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
 			};
 			name = Release;
 		};
@@ -2326,11 +1847,12 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.InAppMessageUI-Customization";
-				PRODUCT_NAME = "InAppMessageUI-Customization";
-				SDKROOT = iphoneos;
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
 				SUPPORTS_MACCATALYST = YES;
-				"SUPPORTS_MACCATALYST[sdk=appletvos*]" = NO;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
 			};
 			name = Release;
 		};
@@ -2355,38 +1877,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		252181892A25BD308C6AFDE8 /* Build configuration list for PBXNativeTarget "InAppMessages-Custom-UI-iOS" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C2DF2240F6589034FEBAC31B /* Debug */,
-				CE75B1AAB128CEA43249FE4C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
-		};
-		3DF9DB181A545EB48413CF0B /* Build configuration list for PBXNativeTarget "InAppMessages-Custom-UI-tvOS" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				0919C9AE99D3CB5DCACA7533 /* Debug */,
-				B82CB59A80FD93898830517A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
-		};
 		434028818239DFAF98C8B248 /* Build configuration list for PBXNativeTarget "InAppMessageUI-Customization" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6F1AC5099B49B75E06887855 /* Debug */,
 				F755A270DBEB5D14FAE2FD76 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
-		};
-		4A136837C482FB1494BC7094 /* Build configuration list for PBXNativeTarget "Analytics-tvOS" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				76B6A3FD68E41E196313726F /* Debug */,
-				EF2C9A6847923F7D7AA45474 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
@@ -2400,11 +1895,29 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		601EFB81C4E5BFA94DC4AC0B /* Build configuration list for PBXNativeTarget "Location-iOS" */ = {
+		5808D679C896B0CE4DA3E1E0 /* Build configuration list for PBXNativeTarget "InAppMessages-Custom-UI" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0F6E4CD79E57932908DD2A5D /* Debug */,
-				F4B9A5CC945DC19ADAFFCA14 /* Release */,
+				6FD059E04B80E05F2D45A22A /* Debug */,
+				292F260EB50572BC94C1FCC3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		5D8FB8B32F7A2F439A51209E /* Build configuration list for PBXNativeTarget "Location" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				95AA35DDE321C3C26A3DF16C /* Debug */,
+				D67C9C359C5E18CBC7F87080 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		6B4F621B9C0641153DAD0DE1 /* Build configuration list for PBXNativeTarget "Analytics" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4CB0A6906BAEF5EBCD166CEC /* Debug */,
+				5E852FEED0245D00854BFB74 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
@@ -2414,33 +1927,6 @@
 			buildConfigurations = (
 				CC6D78E0F1EA0413289B4151 /* Debug */,
 				D3AA6B2A6AE430E171646EF2 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
-		};
-		945DCC6190245203D0060AC7 /* Build configuration list for PBXNativeTarget "ContentCards-Custom-UI-iOS" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A4278090B57498D0976EA67F /* Debug */,
-				DFFDE4EBB185DD4ABC2A6354 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
-		};
-		AC559B194CAF1DF98BEE1EA5 /* Build configuration list for PBXNativeTarget "ContentCards-Custom-UI-tvOS" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A174E4CF629A4FC24982DCBB /* Debug */,
-				A340172973B97B5E26762932 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
-		};
-		D506DC48E6B06F23C1EA032A /* Build configuration list for PBXNativeTarget "Location-tvOS" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				AE2A30B2943BA779C525378A /* Debug */,
-				22AE924E4E35E944C9C52F06 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
@@ -2463,11 +1949,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		E87BF30EEB2BFC89921D9EA4 /* Build configuration list for PBXNativeTarget "Analytics-iOS" */ = {
+		E386FA8664059BD365B9DC25 /* Build configuration list for PBXNativeTarget "ContentCards-Custom-UI" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E7CD97A7085112A812E60146 /* Debug */,
-				945D77EDE8ACA81344B39961 /* Release */,
+				A7E9E9B74E099745161A6BEA /* Debug */,
+				5B1A16CAB9768316733B0750 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;

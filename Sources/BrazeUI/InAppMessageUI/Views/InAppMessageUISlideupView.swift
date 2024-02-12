@@ -150,14 +150,18 @@ extension BrazeInAppMessageUI {
         attributes.chevronVisibility == .hidden
         || (attributes.chevronVisibility == .auto && message.clickAction == .none)
 
-      // Corner radius
+      // Corner radius + corner curve
       shadowView.layer.cornerRadius = attributes.cornerRadius
       contentView.layer.cornerRadius = attributes.cornerRadius
-
-      // Corner curve
       if #available(iOS 13.0, *) {
         shadowView.layer.cornerCurve = attributes.cornerCurve
         contentView.layer.cornerCurve = attributes.cornerCurve
+      }
+      if #available(iOS 17.0, *) {
+        contentView.hoverStyle?.shape = .rect(
+          cornerRadius: attributes.cornerRadius,
+          cornerCurve: .init(layerCornerCurve: attributes.cornerCurve)
+        )
       }
 
       // Shadow
@@ -254,6 +258,14 @@ extension BrazeInAppMessageUI {
       view.stack.alignment = .center
       view.stack.distribution = .fill
       view.stack.isLayoutMarginsRelativeArrangement = true
+      if #available(iOS 17.0, *) {
+        view.hoverStyle = UIHoverStyle(
+          shape: .rect(
+            cornerRadius: attributes.cornerRadius,
+            cornerCurve: .init(layerCornerCurve: attributes.cornerCurve)
+          )
+        )
+      }
       return view
     }()
 
@@ -281,6 +293,14 @@ extension BrazeInAppMessageUI {
 
       applyTheme()
       applyAttributes()
+
+      #if os(visionOS)
+        registerForTraitChanges([
+          UITraitActiveAppearance.self
+        ]) { (self: Self, _: UITraitCollection) in
+          self.applyTheme()
+        }
+      #endif
     }
 
     @available(*, unavailable)
@@ -301,12 +321,14 @@ extension BrazeInAppMessageUI {
       attributes.onTheme?(self)
     }
 
-    open override func traitCollectionDidChange(
-      _ previousTraitCollection: UITraitCollection?
-    ) {
-      super.traitCollectionDidChange(previousTraitCollection)
-      applyTheme()
-    }
+    #if !os(visionOS)
+      open override func traitCollectionDidChange(
+        _ previousTraitCollection: UITraitCollection?
+      ) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        applyTheme()
+      }
+    #endif
 
     // MARK: - Layout
 
