@@ -6,5 +6,7 @@ builder:
       scheme: BrazeKit
     - platform: tvos
       scheme: BrazeKit
+    - platform: visionos
+      scheme: BrazeKit
 external_links:
   documentation: https://braze-inc.github.io/braze-swift-sdk

@@ -5,11 +5,11 @@
 
 <p align="center">
   <a href="https://github.com/braze-inc/braze-swift-sdk/releases">
-    <img src="https://badgen.net/badge/version/8.0.0/blue" alt="Version: 8.0.0">
+    <img src="https://badgen.net/badge/version/8.0.1/blue" alt="Version: 8.0.1">
   </a>
   <a href="#">
-    <img src="https://badgen.net/badge/platforms/iOS%20%7C%20tvOS%20%7C%20Mac%20Catalyst/orange"
-      alt="Platforms: iOS – tvOS – Mac Catalyst">
+    <img src="https://badgen.net/badge/platforms/iOS%20%7C%20visionOS%20%7C%20tvOS%20%7C%20Mac%20Catalyst/orange"
+      alt="Platforms: iOS - visionOS – tvOS – Mac Catalyst">
   </a>
   <a href="#">
     <img src="https://badgen.net/badge/package%20managers/SwiftPM%20%7C%20CocoaPods/green" alt="Package Managers: SwiftPM - CocoaPods">

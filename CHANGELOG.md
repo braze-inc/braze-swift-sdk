@@ -1,4 +1,13 @@
+## 8.0.1
+
+##### Fixed
+- Fixes the reported SDK version, see [8.0.0](#800).
+- Removes crash data from the `BrazeKit` privacy manifest. This data type is not collected by Braze.
+
 ## 8.0.0
+
+##### ⚠️ Warning
+- This release reports the SDK version as `7.7.0` instead of `8.0.0`.
 
 ##### Breaking
 - Compiles the SDK using Xcode version 15.2 (15C500b).
