@@ -1,3 +1,5 @@
+import Foundation
+
 // MARK: - Pre feature-parity
 
 // MARK: 08/25/2022
@@ -17,4 +19,12 @@ extension GIFViewProvider {
   @available(*, deprecated, renamed: "nonAnimating")
   public static let `default`: GIFViewProvider = .nonAnimating
 
+}
+
+// MARK: 02/23/2024
+
+/// See ``overrideResourcesBundle``.
+public var overrideResourceBundle: Bundle? {
+  get { overrideResourcesBundle }
+  set { overrideResourcesBundle = newValue }
 }

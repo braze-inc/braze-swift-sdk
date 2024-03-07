@@ -153,12 +153,7 @@ extension BrazeInAppMessageUI {
     public lazy var imageContainerView: UIScrollView = {
       let view = UIScrollView()
       view.addSubview(imageView)
-      if #available(iOS 11, *) {
-        view.contentInsetAdjustmentBehavior = .never
-      } else {
-        // No need for iOS 10 support.
-        // No devices supporting iOS 10 has a need for safe-area handling.
-      }
+      view.contentInsetAdjustmentBehavior = .never
       return view
     }()
 

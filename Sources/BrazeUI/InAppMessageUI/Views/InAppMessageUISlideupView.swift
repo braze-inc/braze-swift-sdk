@@ -234,7 +234,7 @@ extension BrazeInAppMessageUI {
     open lazy var chevronView: UIImageView = {
       let image = UIImage(
         named: "InAppMessage/chevron",
-        in: resourcesBundle,
+        in: BrazeUIResources.bundle,
         compatibleWith: traitCollection
       )?
       .withRenderingMode(.alwaysTemplate)

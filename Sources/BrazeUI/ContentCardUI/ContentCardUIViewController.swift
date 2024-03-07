@@ -258,17 +258,6 @@ extension BrazeContentCardUI {
 
     /// Setup the table view.
     open func setupTableView() {
-
-      // Cells
-      // - iOS 10 requires explicitly setting `estimatedRowHeight` to enable self-sizing cells
-      if #available(iOS 11.0, *) {
-      } else {
-        tableView.estimatedRowHeight = 200
-      }
-
-      // - iOS 10 & 11 `cellLayoutMarginsFollowReadableWidth` default to true
-      tableView.cellLayoutMarginsFollowReadableWidth = false
-
       // Appearance
       tableView.separatorStyle = .none
 

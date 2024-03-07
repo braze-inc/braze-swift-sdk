@@ -309,12 +309,10 @@ extension BrazeInAppMessageUI {
 
       // Disable this optimization for mac catalyst (force webview in window bounds)
       #if !targetEnvironment(macCatalyst)
-        if #available(iOS 11.0, *) {
-          // Make web view ignore the safe area allowing proper handling in html / css. See the usage
-          // section at https://developer.mozilla.org/en-US/docs/Web/CSS/env() (archived version:
-          // https://archive.is/EBSJD) for instructions.
-          webView.scrollView.contentInsetAdjustmentBehavior = .never
-        }
+        // Make web view ignore the safe area allowing proper handling in html / css. See the usage
+        // section at https://developer.mozilla.org/en-US/docs/Web/CSS/env() (archived version:
+        // https://archive.is/EBSJD) for instructions.
+        webView.scrollView.contentInsetAdjustmentBehavior = .never
       #endif
       webView.alpha = attributes.animation.initialAlpha(legacy: message.legacy)
       addSubview(webView)
@@ -532,15 +530,12 @@ extension BrazeInAppMessageUI.HtmlView {
 extension WKWebView {
 
   fileprivate func disableDragAndDrop() {
-    if #available(iOS 11.0, *) {
-      self
-        .bfsSubviews
-        .lazy
-        .first { $0.interactions.contains(where: { $0 is UIDragInteraction }) }?
-        .interactions
-        .filter { $0 is UIDragInteraction }
-        .forEach { $0.view?.removeInteraction($0) }
-    }
+    bfsSubviews
+      .lazy
+      .first { $0.interactions.contains(where: { $0 is UIDragInteraction }) }?
+      .interactions
+      .filter { $0 is UIDragInteraction }
+      .forEach { $0.view?.removeInteraction($0) }
   }
 
   fileprivate func disableSelection() {

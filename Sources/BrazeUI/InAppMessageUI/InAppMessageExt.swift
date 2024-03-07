@@ -10,10 +10,6 @@ extension BrazeInAppMessageThemeable {
   ///
   /// [Dark Mode]: https://apple.co/2WBiaQ7
   public func theme(for traits: UITraitCollection) -> Braze.InAppMessage.Theme {
-    guard #available(iOS 12.0, *) else {
-      return themes.light
-    }
-
     switch traits.userInterfaceStyle {
     case .light, .unspecified:
       return themes.light
@@ -35,10 +31,6 @@ extension Braze.InAppMessage.Button {
   ///
   /// [Dark Mode]: https://apple.co/2WBiaQ7
   public func theme(for traits: UITraitCollection) -> Braze.InAppMessage.ButtonTheme {
-    guard #available(iOS 12.0, *) else {
-      return themes.light
-    }
-
     switch traits.userInterfaceStyle {
     case .light, .unspecified:
       return themes.light

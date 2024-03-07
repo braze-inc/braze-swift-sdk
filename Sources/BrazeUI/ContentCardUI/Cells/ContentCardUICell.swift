@@ -198,7 +198,7 @@ extension BrazeContentCardUI {
     open lazy var pinIndicator: UIImageView = {
       let image = UIImage(
         named: "ContentCard/pin",
-        in: resourcesBundle,
+        in: BrazeUIResources.bundle,
         compatibleWith: traitCollection
       )?
       .withRenderingMode(.alwaysTemplate)

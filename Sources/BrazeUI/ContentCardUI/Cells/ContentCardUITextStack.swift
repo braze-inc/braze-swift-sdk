@@ -50,16 +50,11 @@ extension BrazeContentCardUI {
 
       axis = .vertical
       alignment = .leading
+      spacing = UIStackView.spacingUseSystem
 
       addArrangedSubview(titleLabel)
       addArrangedSubview(descriptionLabel)
       addArrangedSubview(domainLabel)
-
-      if #available(iOS 11.0, *) {
-        spacing = UIStackView.spacingUseSystem
-      } else {
-        spacing = 10
-      }
     }
 
     /// Does not support interface-builder / storyboards.

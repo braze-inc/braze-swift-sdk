@@ -203,12 +203,10 @@ extension BrazeInAppMessageUI {
       #endif
     }
 
-    @available(iOS 11.0, *)
     open override var prefersHomeIndicatorAutoHidden: Bool {
       preferencesProxy?.prefersHomeIndicatorAutoHidden ?? false
     }
 
-    @available(iOS 11.0, *)
     open override var preferredScreenEdgesDeferringSystemGestures: UIRectEdge {
       preferencesProxy?.preferredScreenEdgesDeferringSystemGestures ?? []
     }

@@ -150,7 +150,7 @@ open class AsyncImageView: UIView {
   public lazy var retryButton: UIButton = {
     let image = UIImage(
       named: "ContentCard/retry",
-      in: resourcesBundle,
+      in: BrazeUIResources.bundle,
       compatibleWith: traitCollection
     )?
     .withRenderingMode(.alwaysTemplate)

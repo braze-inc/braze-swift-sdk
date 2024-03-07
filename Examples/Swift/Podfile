@@ -26,15 +26,14 @@ target 'InAppMessageUI-iOS' do
   pod 'SDWebImage', :modular_headers => true
 end
 
-# Disabled until SDWebImage supports visionOS via CocoaPods
-# target 'InAppMessageUI-visionOS' do
-#   platform :visionos, '1.0'
-#   pod 'BrazeKit'
-#   pod 'BrazeUI'
-#   # SDWebImage is optional. BrazeUI requires a third party library to display GIF images.
-#   # See https://braze-inc.github.io/braze-swift-sdk/documentation/braze/gif-support-integrations
-#   pod 'SDWebImage', :modular_headers => true
-# end
+target 'InAppMessageUI-visionOS' do
+  platform :visionos, '1.0'
+  pod 'BrazeKit'
+  pod 'BrazeUI'
+  # SDWebImage is optional. BrazeUI requires a third party library to display GIF images.
+  # See https://braze-inc.github.io/braze-swift-sdk/documentation/braze/gif-support-integrations
+  pod 'SDWebImage', :modular_headers => true
+end
 
 target 'InAppMessageUI-Customization-iOS' do
   platform :ios, '11.0'
@@ -45,15 +44,14 @@ target 'InAppMessageUI-Customization-iOS' do
   pod 'SDWebImage', :modular_headers => true
 end
 
-# Disabled until SDWebImage supports visionOS via CocoaPods
-# target 'InAppMessageUI-Customization-visionOS' do
-#   platform :visionos, '1.0'
-#   pod 'BrazeKit'
-#   pod 'BrazeUI'
-#   # SDWebImage is optional. BrazeUI requires a third party library to display GIF images.
-#   # See https://braze-inc.github.io/braze-swift-sdk/documentation/braze/gif-support-integrations
-#   pod 'SDWebImage', :modular_headers => true
-# end
+target 'InAppMessageUI-Customization-visionOS' do
+  platform :visionos, '1.0'
+  pod 'BrazeKit'
+  pod 'BrazeUI'
+  # SDWebImage is optional. BrazeUI requires a third party library to display GIF images.
+  # See https://braze-inc.github.io/braze-swift-sdk/documentation/braze/gif-support-integrations
+  pod 'SDWebImage', :modular_headers => true
+end
 
 target 'InAppMessages-Custom-UI-iOS' do
   platform :ios, '11.0'
@@ -79,15 +77,14 @@ target 'ContentCardUI-iOS' do
   pod 'SDWebImage', :modular_headers => true
 end
 
-# Disabled until SDWebImage supports visionOS via CocoaPods
-# target 'ContentCardUI-visionOS' do
-#   platform :visionos, '1.0'
-#   pod 'BrazeKit'
-#   pod 'BrazeUI'
-#   # SDWebImage is optional. BrazeUI requires a third party library to display GIF images.
-#   # See https://braze-inc.github.io/braze-swift-sdk/documentation/braze/gif-support-integrations
-#   pod 'SDWebImage', :modular_headers => true
-# end
+target 'ContentCardUI-visionOS' do
+  platform :visionos, '1.0'
+  pod 'BrazeKit'
+  pod 'BrazeUI'
+  # SDWebImage is optional. BrazeUI requires a third party library to display GIF images.
+  # See https://braze-inc.github.io/braze-swift-sdk/documentation/braze/gif-support-integrations
+  pod 'SDWebImage', :modular_headers => true
+end
 
 target 'ContentCardUI-Customization-iOS' do
   platform :ios, '11.0'
@@ -98,15 +95,14 @@ target 'ContentCardUI-Customization-iOS' do
   pod 'SDWebImage', :modular_headers => true
 end
 
-# Disabled until SDWebImage supports visionOS via CocoaPods
-# target 'ContentCardUI-Customization-visionOS' do
-#   platform :visionos, '1.0'
-#   pod 'BrazeKit'
-#   pod 'BrazeUI'
-#   # SDWebImage is optional. BrazeUI requires a third party library to display GIF images.
-#   # See https://braze-inc.github.io/braze-swift-sdk/documentation/braze/gif-support-integrations
-#   pod 'SDWebImage', :modular_headers => true
-# end
+target 'ContentCardUI-Customization-visionOS' do
+  platform :visionos, '1.0'
+  pod 'BrazeKit'
+  pod 'BrazeUI'
+  # SDWebImage is optional. BrazeUI requires a third party library to display GIF images.
+  # See https://braze-inc.github.io/braze-swift-sdk/documentation/braze/gif-support-integrations
+  pod 'SDWebImage', :modular_headers => true
+end
 
 target 'ContentCards-Custom-UI-iOS' do
   platform :ios, '11.0'
