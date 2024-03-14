@@ -1,3 +1,16 @@
+## 8.2.0
+
+##### Added
+- Adds support for remotely starting Live Activities via push notifications.
+  - Adds the following methods to the `liveActivities` module:
+    - [`registerPushToStart(forType:name:) -> Task<Void, Never>`](http://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/liveactivities-swift.class/registerpushtostart(fortype:name:))
+    - [`optOutPushToStart(type:)`](http://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/liveactivities-swift.class/optoutpushtostart(type:))
+  - This feature requires iOS 17.2 or higher.
+  - For usage details, refer to the updated Live Activities tutorial [here](https://braze-inc.github.io/braze-swift-sdk/tutorials/braze/b4-live-activities/).
+- Adds return values for existing `liveActivities` methods:
+  - `launchActivity(pushTokenTag:activity:)` now returns a discardable `Task<Void, Never>?`.
+- Adds `pushToStartTokens` as a new [tracking property](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/configuration-swift.class/trackingproperty) type.
+
 ## 8.1.0
 
 ##### Added
@@ -18,7 +31,7 @@
   - [Braze.Notifications.Payload.targetScene](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/notifications-swift.class/payload/targetscene) is now defined.
   - [Braze.URLContext.targetScene](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/urlcontext/targetscene) is now properly set by the SDK for in-app messages click actions.
   - [Braze.WebViewBridge.ScriptMessageHandler.init(logClick:logError:showNewsFeed:closeMessage:braze:)](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/webviewbridge/scriptmessagehandler/init(logclick:logerror:shownewsfeed:closemessage:braze:)-p2ki) is now defined.
-  - [BrazeDelegate.braze(_:willPresentModalWithContext:)](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/brazedelegate/braze(_:willpresentmodalwithcontext:)-1fj41) now have a default implementation.
+  - [BrazeDelegate.braze(_:willPresentModalWithContext:)](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/brazedelegate/braze(_:willpresentmodalwithcontext:)-1fj41) now has a default implementation.
   - Handling network requests and persisting data properly extend the lifetime of the application for processing.
 
 ## 8.0.1
