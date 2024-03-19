@@ -5,7 +5,7 @@
 
 <p align="center">
   <a href="https://github.com/braze-inc/braze-swift-sdk/releases">
-    <img src="https://badgen.net/badge/version/8.2.0/blue" alt="Version: 8.2.0">
+    <img src="https://badgen.net/badge/version/8.2.1/blue" alt="Version: 8.2.1">
   </a>
   <a href="#">
     <img src="https://badgen.net/badge/platforms/iOS%20%7C%20visionOS%20%7C%20tvOS%20%7C%20Mac%20Catalyst/orange"

@@ -1,3 +1,8 @@
+## 8.2.1
+
+##### Fixed
+- Fixes App Store validation issues when archiving with Xcode 15.3.
+
 ## 8.2.0
 
 ##### Added
