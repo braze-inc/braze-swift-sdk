@@ -125,6 +125,7 @@
 		F12A0D7DD1578FB848CEDC93 /* SDWebImage.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE6FAA10D6D23B01068CC18C /* SDWebImage.xcframework */; };
 		F205773604C16B2A873B11C9 /* Readme.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8336D4BB1A8E983EF334361 /* Readme.swift */; };
 		F278FE43E1164E5876B35C5C /* BrazeKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE1AFA11EB03A5B1BEA614A2 /* BrazeKit.xcframework */; };
+		F417EE06D05C355037E64C44 /* BrazePushStory.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BE7CF3E9F05C416B3F94F7D6 /* BrazePushStory.bundle */; };
 		F4614BFB3B0846850399E6D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEF0FF04032299A31D37CDE4 /* Assets.xcassets */; };
 		F646B1FF70F027C387555FDF /* ReadmeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0617474A1F534AFBE702090C /* ReadmeViewController.swift */; };
 		F89CD2EB10DCB566C20D739C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F7E5A96D302B8CA3D7FCE5 /* AppDelegate.swift */; };
@@ -236,6 +237,7 @@
 		AC9CF4A73393593A05187CAC /* FullWidthSlideupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullWidthSlideupView.swift; sourceTree = "<group>"; };
 		ADE8605DB3AE191A4546EFB8 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		AEF0FF04032299A31D37CDE4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BE7CF3E9F05C416B3F94F7D6 /* BrazePushStory.bundle */ = {isa = PBXFileReference; lastKnownFileType = wrapper.cfbundle; name = BrazePushStory.bundle; path = "braze-swift-sdk-prebuilt/bundle/BrazePushStory.bundle"; sourceTree = "<group>"; };
 		C1D163F4C981902AAE2C5031 /* Readme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Readme.swift; sourceTree = "<group>"; };
 		C248D54740025F7A153AA681 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		C4F7E5A96D302B8CA3D7FCE5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -496,6 +498,7 @@
 			children = (
 				963312B05750D1D4DA77128F /* BrazeKit.bundle */,
 				EB8AF6AAFE01DAED72696307 /* BrazeLocation.bundle */,
+				BE7CF3E9F05C416B3F94F7D6 /* BrazePushStory.bundle */,
 				85365B9C180AB9BA57FBD249 /* BrazeUI.bundle */,
 				A4862669D8E8CC116B81CDB2 /* SDWebImage.bundle */,
 			);
@@ -776,6 +779,7 @@
 			buildConfigurationList = 1D13B0F7AC90CD3A0D077381 /* Build configuration list for PBXNativeTarget "PushNotificationsContentExtension" */;
 			buildPhases = (
 				1ED051A689FACC54B986EFF4 /* Sources */,
+				9835D559CAE0D0736EFE9A69 /* Resources */,
 				1C7CA24208B570478CA321D1 /* Frameworks */,
 			);
 			buildRules = (
@@ -900,6 +904,14 @@
 				7B24B540AA7946B259E6355F /* BrazeKit.bundle in Resources */,
 				BCDCB5A2B878D59CEC6F7A78 /* BrazeUI.bundle in Resources */,
 				03F471437ECF0E971EBD7791 /* SDWebImage.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9835D559CAE0D0736EFE9A69 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F417EE06D05C355037E64C44 /* BrazePushStory.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

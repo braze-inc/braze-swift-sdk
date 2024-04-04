@@ -5,7 +5,7 @@
 
 <p align="center">
   <a href="https://github.com/braze-inc/braze-swift-sdk/releases">
-    <img src="https://badgen.net/badge/version/8.2.1/blue" alt="Version: 8.2.1">
+    <img src="https://badgen.net/badge/version/8.3.0/blue" alt="Version: 8.3.0">
   </a>
   <a href="#">
     <img src="https://badgen.net/badge/platforms/iOS%20%7C%20visionOS%20%7C%20tvOS%20%7C%20Mac%20Catalyst/orange"
@@ -77,11 +77,12 @@ Explore our [examples project](/Examples) which showcases multiple features' int
 
 ## Alternative Repositories
 
-| Variant                               |                                   Repository | GH Issues, SDK info |
-|---------------------------------------|---------------------------------------------:|--------------------:|
-| → **Sources and Static XCFrameworks** |                  [braze-inc/braze-swift-sdk] |                   ✓ |
-| Static XCFrameworks                   |  [braze-inc/braze-swift-sdk-prebuilt-static] |                   ✗ |
-| Dynamic XCFrameworks                  | [braze-inc/braze-swift-sdk-prebuilt-dynamic] |                   ✗ |
+| Variant                               |                                     Repository | GH Issues, SDK info |
+|---------------------------------------|-----------------------------------------------:|--------------------:|
+| → **Sources and Static XCFrameworks** |                    [braze-inc/braze-swift-sdk] |                   ✓ |
+| Static XCFrameworks                   |    [braze-inc/braze-swift-sdk-prebuilt-static] |                   ✗ |
+| Dynamic XCFrameworks                  |   [braze-inc/braze-swift-sdk-prebuilt-dynamic] |                   ✗ |
+| Mergeable XCFrameworks (early access) | [braze-inc/braze-swift-sdk-prebuilt-mergeable] |                   ✗ |
 
 ## `Appboy-iOS-SDK`
 
@@ -98,3 +99,4 @@ If you have questions, please contact [support@braze.com](mailto:support@braze.c
 [braze-inc/braze-swift-sdk]: https://github.com/braze-inc/braze-swift-sdk
 [braze-inc/braze-swift-sdk-prebuilt-static]: https://github.com/braze-inc/braze-swift-sdk-prebuilt-static
 [braze-inc/braze-swift-sdk-prebuilt-dynamic]: https://github.com/braze-inc/braze-swift-sdk-prebuilt-dynamic
+[braze-inc/braze-swift-sdk-prebuilt-mergeable]: https://github.com/braze-inc/braze-swift-sdk-prebuilt-mergeable

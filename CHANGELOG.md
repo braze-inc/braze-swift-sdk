@@ -1,3 +1,18 @@
+## 8.3.0
+
+##### Added
+- Adds early access for a third alternative repository which provides all Braze modules as mergeable XCFrameworks. For instructions on how to leverage it, refer to the repository README:
+  - [braze-inc/braze-swift-sdk-prebuilt-mergeable](https://github.com/braze-inc/braze-swift-sdk-prebuilt-mergeable)
+
+##### Fixed
+- Adds a missing privacy manifest for `BrazePushStory`.
+- Fixes an invalid privacy manifest warning in `BrazeLocation` when submitting to the App Store as a dynamic XCFramework.
+- Fixes an issue where already enqueued in-app messages would not be removed from the stack after subsequent `.reenqueue` and `.discard` display actions.
+- Fixes an issue preventing retried requests from using an updated SDK authentication token until a new request was scheduled for processing.
+- Purchases, custom events, and nested custom user attributes can now include properties with values of any type conforming to [`BinaryInteger`](https://developer.apple.com/documentation/swift/binaryinteger) (`Int64`, `UInt16`, etc).
+  - All values will be cast to `Int` before being logged.
+  - This resolves an issue with a bugfix in `7.6.0`.
+
 ## 8.2.1
 
 ##### Fixed

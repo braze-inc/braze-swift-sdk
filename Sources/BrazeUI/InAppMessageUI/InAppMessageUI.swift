@@ -106,8 +106,12 @@ open class BrazeInAppMessageUI:
     case .now:
       prepareAndPresent(message: message)
     case .reenqueue:
+      // Remove message from stack (if present) and place on top
+      stack.removeAll { $0.isApproximatelyEqual(to: message) }
       stack.append(message)
     case .discard:
+      // Remove message from stack (if present) and discard it
+      stack.removeAll { $0.isApproximatelyEqual(to: message) }
       message.context?.discard()
     }
   }
