@@ -1,3 +1,12 @@
+## 8.4.0
+
+##### Added
+- Expands Geofences behavior in the background while "When In Use" authorization is selected:
+  - Adds the `Braze.Location.Configuration.allowBackgroundGeofenceUpdates` property to toggle whether geofences should be updated in the background.
+    - When using this setting, verify that you have enabled the _Location updates_ background mode.
+  - Adds the `Braze.Location.Configuration.distanceFilter` property to configure the minimum distance sensitivity for triggering a location update.
+- Adds support for the `message_extras` Liquid tag for in-app messages.
+
 ## 8.3.0
 
 ##### Added

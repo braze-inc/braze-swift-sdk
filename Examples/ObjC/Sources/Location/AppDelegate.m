@@ -18,6 +18,8 @@
   configuration.location.automaticLocationCollection = YES;
   configuration.location.geofencesEnabled = YES;
   configuration.location.automaticGeofenceRequests = YES;
+  configuration.location.allowBackgroundGeofenceUpdates = YES;
+  configuration.location.distanceFilter = 5000;
   Braze *braze = [[Braze alloc] initWithConfiguration:configuration];
   AppDelegate.braze = braze;
 

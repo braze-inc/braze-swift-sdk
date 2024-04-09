@@ -20,6 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     configuration.location.automaticLocationCollection = true
     configuration.location.geofencesEnabled = true
     configuration.location.automaticGeofenceRequests = true
+    configuration.location.allowBackgroundGeofenceUpdates = true
+    configuration.location.distanceFilter = 5000
     let braze = Braze(configuration: configuration)
     AppDelegate.braze = braze
 
