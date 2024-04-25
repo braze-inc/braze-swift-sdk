@@ -1,3 +1,16 @@
+## 9.0.0
+
+##### Breaking
+- Removes the default privacy tracking domains from the `BrazeKit` privacy manifest.
+  - If you are using the Braze [data tracking features](https://www.braze.com/docs/developer_guide/platform_integration_guides/swift/privacy_manifest/), you will need to manually add your tracking endpoint to your app-level privacy manifest.
+  - Refer to the updated [tutorial](https://braze-inc.github.io/braze-swift-sdk/tutorials/braze/e1-privacy-tracking) for integration guidance.
+- Removes the deprecated `BrazeDelegate.braze(_:sdkAuthenticationFailedWithError)` method in favor of `BrazeSDKAuthDelegate.braze(_:sdkAuthenticationFailedWithError)`.
+  - This method was originally deprecated in [release `5.14.0`](https://github.com/braze-inc/braze-swift-sdk/releases/tag/5.14.0).
+  - Failing to switch to the new delegate method will not trigger a compiler error; instead, the `BrazeDelegate.braze(_:sdkAuthenticationFailedWithError)` method you define will simply not be called.
+
+##### Fixed
+- Adds the missing `NSPrivacyCollectedDataTypes` key to the `BrazePushStory` privacy manifest.
+
 ## 8.4.0
 
 ##### Added

@@ -3,12 +3,12 @@ source 'https://cdn.cocoapods.org/'
 project 'Examples-CocoaPods'
 
 target 'Analytics-iOS' do
-  platform :ios, '11.0'
+  platform :ios, '12.0'
   pod 'BrazeKit'
 end
 
 target 'Analytics-tvOS' do
-  platform :tvos, '11.0'
+  platform :tvos, '12.0'
   pod 'BrazeKit'
 end
 
@@ -18,7 +18,7 @@ target 'Analytics-visionOS' do
 end
 
 target 'InAppMessageUI-iOS' do
-  platform :ios, '11.0'
+  platform :ios, '12.0'
   pod 'BrazeKit'
   pod 'BrazeUI'
   # SDWebImage is optional. BrazeUI requires a third party library to display GIF images.
@@ -36,7 +36,7 @@ target 'InAppMessageUI-visionOS' do
 end
 
 target 'InAppMessageUI-Customization-iOS' do
-  platform :ios, '11.0'
+  platform :ios, '12.0'
   pod 'BrazeKit'
   pod 'BrazeUI'
   # SDWebImage is optional. BrazeUI requires a third party library to display GIF images.
@@ -54,12 +54,12 @@ target 'InAppMessageUI-Customization-visionOS' do
 end
 
 target 'InAppMessages-Custom-UI-iOS' do
-  platform :ios, '11.0'
+  platform :ios, '12.0'
   pod 'BrazeKit'
 end
 
 target 'InAppMessages-Custom-UI-tvOS' do
-  platform :tvos, '11.0'
+  platform :tvos, '12.0'
   pod 'BrazeKit'
 end
 
@@ -69,7 +69,7 @@ target 'InAppMessages-Custom-UI-visionOS' do
 end
 
 target 'ContentCardUI-iOS' do
-  platform :ios, '11.0'
+  platform :ios, '12.0'
   pod 'BrazeKit'
   pod 'BrazeUI'
   # SDWebImage is optional. BrazeUI requires a third party library to display GIF images.
@@ -87,7 +87,7 @@ target 'ContentCardUI-visionOS' do
 end
 
 target 'ContentCardUI-Customization-iOS' do
-  platform :ios, '11.0'
+  platform :ios, '12.0'
   pod 'BrazeKit'
   pod 'BrazeUI'
   # SDWebImage is optional. BrazeUI requires a third party library to display GIF images.
@@ -105,12 +105,12 @@ target 'ContentCardUI-Customization-visionOS' do
 end
 
 target 'ContentCards-Custom-UI-iOS' do
-  platform :ios, '11.0'
+  platform :ios, '12.0'
   pod 'BrazeKit'
 end
 
 target 'ContentCards-Custom-UI-tvOS' do
-  platform :tvos, '11.0'
+  platform :tvos, '12.0'
   pod 'BrazeKit'
 end
 
@@ -120,13 +120,13 @@ target 'ContentCards-Custom-UI-visionOS' do
 end
 
 target 'Location-iOS' do
-  platform :ios, '11.0'
+  platform :ios, '12.0'
   pod 'BrazeKit'
   pod 'BrazeLocation'
 end
 
 target 'Location-tvOS' do
-  platform :tvos, '11.0'
+  platform :tvos, '12.0'
   pod 'BrazeKit'
   pod 'BrazeLocation'
 end
@@ -138,7 +138,7 @@ target 'Location-visionOS' do
 end
 
 target 'PushNotifications-Manual-iOS' do
-  platform :ios, '11.0'
+  platform :ios, '12.0'
   pod 'BrazeKit'
 end
 
@@ -148,7 +148,7 @@ target 'PushNotifications-Manual-visionOS' do
 end
 
 target 'PushNotifications-Automatic-iOS' do
-  platform :ios, '11.0'
+  platform :ios, '12.0'
   pod 'BrazeKit'
 end
 
@@ -158,7 +158,7 @@ target 'PushNotifications-Automatic-visionOS' do
 end
 
 target 'PushNotificationsServiceExtension-iOS' do
-  platform :ios, '11.0'
+  platform :ios, '12.0'
   pod 'BrazeNotificationService'
 end
 
@@ -168,7 +168,7 @@ target 'PushNotificationsServiceExtension-visionOS' do
 end
 
 target 'PushNotificationsContentExtension-iOS' do
-  platform :ios, '11.0'
+  platform :ios, '12.0'
   pod 'BrazePushStory'
 end
 
