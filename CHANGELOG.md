@@ -1,3 +1,16 @@
+## 9.1.0
+
+##### Added
+- Adds support for 3 new Feature Flag property types and various APIs for accessing them:
+  - `Braze.FeatureFlag.timestampProperty(key:)` for accessing `Int` Unix UTC millisecond timestamps.
+  - `Braze.FeatureFlag.imageProperty(key:)` for accessing image URLs as `String`s.
+  - `Braze.FeatureFlag.jsonObjectProperty(key:)` for accessing JSONs as `[String:Any]` dictionaries.
+  - `Braze.FeatureFlag.jsonStringProperty(key:)` for accessing JSONs as `String`s.
+- Adds safeguards when reading the device model.
+
+##### Fixed
+- Fixes the duplicate symbols compilation errors and runtime warnings that may occur under specific conditions when integrating `BrazeKit` and either `BrazeNotificationService` or `BrazePushStory` via CocoaPods.
+
 ## 9.0.0
 
 ##### Breaking
