@@ -120,6 +120,12 @@ Follow the instructions below for your preferred integration method to get start
   - [Rich Push Notifications](https://braze-inc.github.io/braze-swift-sdk/tutorials/braze/b2-rich-push-notifications).
   - [Push Stories](https://braze-inc.github.io/braze-swift-sdk/tutorials/braze/b3-push-stories).
 
+#### PushNotifications-DelayedInitialization
+
+- iOS, visionOS, Mac Catalyst.
+- Swift, Objective-C.
+- Extension of the PushNotifications-Automatic example with delayed SDK initialization support.
+
 #### PushNotificationsContentExtension
 
 - iOS, visionOS, Mac Catalyst.

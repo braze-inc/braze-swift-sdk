@@ -49,8 +49,8 @@ let package = Package(
   targets: [
     .binaryTarget(
       name: "BrazeKit",
-      url: "https://github.com/braze-inc/braze-swift-sdk/releases/download/9.1.0/BrazeKit.zip",
-      checksum: "693c8d5f940e8d68702910ccaec73cf4749f55b336cb9f5dd4b4d4364df168f8"
+      url: "https://github.com/braze-inc/braze-swift-sdk/releases/download/9.2.0/BrazeKit.zip",
+      checksum: "5ed56654230300f344fd9984931ec9ce973c47fc8f534787ed20ef28a3024eb2"
     ),
     .target(
       name: "BrazeKitResources",
@@ -67,8 +67,8 @@ let package = Package(
     ),
     .binaryTarget(
       name: "BrazeLocation",
-      url: "https://github.com/braze-inc/braze-swift-sdk/releases/download/9.1.0/BrazeLocation.zip",
-      checksum: "bfa13cd2b38dba7824377979c74fda8d08b10cb33f09aaad8a0617c620c3493e"
+      url: "https://github.com/braze-inc/braze-swift-sdk/releases/download/9.2.0/BrazeLocation.zip",
+      checksum: "17b43c37ff2c8cf1eef15df12c771cb12b4f901943a8045073be425da8b9bf58"
     ),
     .target(
       name: "BrazeLocationResources",
@@ -78,13 +78,13 @@ let package = Package(
     ),
     .binaryTarget(
       name: "BrazeNotificationService",
-      url: "https://github.com/braze-inc/braze-swift-sdk/releases/download/9.1.0/BrazeNotificationService.zip",
-      checksum: "c4648f53a3f8dd273304d7cdb6e6d2cecc8c9dc494d7b321508deb7bea5e884b"
+      url: "https://github.com/braze-inc/braze-swift-sdk/releases/download/9.2.0/BrazeNotificationService.zip",
+      checksum: "a816612048715dc2d6ba23a16dc274fed06a7ad12dcd49a97b5f1013978f5da7"
     ),
     .binaryTarget(
       name: "BrazePushStory",
-      url: "https://github.com/braze-inc/braze-swift-sdk/releases/download/9.1.0/BrazePushStory.zip",
-      checksum: "5bf7915057a01c2f7087cc0ef5a1adcb36310366759927a19144be0a645625e0"
+      url: "https://github.com/braze-inc/braze-swift-sdk/releases/download/9.2.0/BrazePushStory.zip",
+      checksum: "de60b3324133b1664c5d152634e7ddcc41b36f187b400b205f209e7491d3fb17"
     ),
     .target(
       name: "BrazePushStoryResources",

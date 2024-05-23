@@ -817,6 +817,42 @@
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
+					03B2052E558A71218BC22579 = {
+						ProvisioningStyle = automatic;
+					};
+					2D82CDF07E47504BAAA5B41F = {
+						ProvisioningStyle = automatic;
+					};
+					3424DE025B55C57D8D88CF98 = {
+						ProvisioningStyle = automatic;
+					};
+					4CF94578CDC41CCB2531C03E = {
+						ProvisioningStyle = automatic;
+					};
+					730CBD368DF92F037A30E1DB = {
+						ProvisioningStyle = automatic;
+					};
+					7A8A97B5756032F77C72A0FF = {
+						ProvisioningStyle = automatic;
+					};
+					7BC007CEA49315C4DA0291C9 = {
+						ProvisioningStyle = automatic;
+					};
+					8CE88AF5BE8687E1035552BA = {
+						ProvisioningStyle = automatic;
+					};
+					9271831B14E0049767FA3451 = {
+						ProvisioningStyle = automatic;
+					};
+					9844E2ECB2B13EACD3762C4C = {
+						ProvisioningStyle = automatic;
+					};
+					ABDD889C9BD46680C87F8A70 = {
+						ProvisioningStyle = automatic;
+					};
+					CC8373AC31E15FD5A870D3BB = {
+						ProvisioningStyle = automatic;
+					};
 				};
 			};
 			buildConfigurationList = E1DECCCD0247DE414EB92A53 /* Build configuration list for PBXProject "Examples-Manual" */;
@@ -1138,6 +1174,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = automatic;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"braze-swift-sdk-prebuilt/static\"",
@@ -1161,6 +1198,7 @@
 		086E04D720914C4631B4D126 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_STYLE = automatic;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"braze-swift-sdk-prebuilt/static\"",
@@ -1186,6 +1224,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = Sources/PushNotificationsContentExtension/PushNotificationsContentExtension.entitlements;
+				CODE_SIGN_STYLE = automatic;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"braze-swift-sdk-prebuilt/static\"",
@@ -1213,6 +1252,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Sources/PushNotifications-Automatic/PushNotifications-Automatic.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = automatic;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"braze-swift-sdk-prebuilt/static\"",
@@ -1238,6 +1278,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = automatic;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"braze-swift-sdk-prebuilt/static\"",
@@ -1261,6 +1302,7 @@
 		21E085F47A614AA1DD021EB3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_STYLE = automatic;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"braze-swift-sdk-prebuilt/static\"",
@@ -1287,6 +1329,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = automatic;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"braze-swift-sdk-prebuilt/static\"",
@@ -1312,6 +1355,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = automatic;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"braze-swift-sdk-prebuilt/static\"",
@@ -1338,6 +1382,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Sources/PushNotifications-Automatic/PushNotifications-Automatic.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = automatic;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"braze-swift-sdk-prebuilt/static\"",
@@ -1363,6 +1408,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = automatic;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"braze-swift-sdk-prebuilt/static\"",
@@ -1388,6 +1434,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = automatic;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"braze-swift-sdk-prebuilt/static\"",
@@ -1413,6 +1460,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = automatic;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"braze-swift-sdk-prebuilt/static\"",
@@ -1438,6 +1486,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = automatic;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"braze-swift-sdk-prebuilt/static\"",
@@ -1463,6 +1512,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = automatic;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"braze-swift-sdk-prebuilt/static\"",
@@ -1489,6 +1539,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Sources/Location/Location.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = automatic;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"braze-swift-sdk-prebuilt/static\"",
@@ -1514,6 +1565,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = automatic;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"braze-swift-sdk-prebuilt/static\"",
@@ -1538,6 +1590,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = Sources/PushNotificationsContentExtension/PushNotificationsContentExtension.entitlements;
+				CODE_SIGN_STYLE = automatic;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"braze-swift-sdk-prebuilt/static\"",
@@ -1565,6 +1618,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Sources/PushNotifications-Manual/PushNotifications-Manual.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = automatic;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"braze-swift-sdk-prebuilt/static\"",
@@ -1590,6 +1644,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = automatic;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"braze-swift-sdk-prebuilt/static\"",
@@ -1738,6 +1793,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = automatic;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"braze-swift-sdk-prebuilt/static\"",
@@ -1763,6 +1819,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = automatic;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"braze-swift-sdk-prebuilt/static\"",
@@ -1789,6 +1846,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Sources/Location/Location.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = automatic;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"braze-swift-sdk-prebuilt/static\"",
@@ -1815,6 +1873,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Sources/PushNotifications-Manual/PushNotifications-Manual.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = automatic;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"braze-swift-sdk-prebuilt/static\"",
@@ -1840,6 +1899,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = automatic;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"braze-swift-sdk-prebuilt/static\"",

@@ -157,6 +157,16 @@ target 'PushNotifications-Automatic-visionOS' do
   pod 'BrazeKit'
 end
 
+target 'PushNotifications-DelayedInitialization-iOS' do
+  platform :ios, '12.0'
+  pod 'BrazeKit'
+end
+
+target 'PushNotifications-DelayedInitialization-visionOS' do
+  platform :visionos, '1.0'
+  pod 'BrazeKit'
+end
+
 target 'PushNotificationsServiceExtension-iOS' do
   platform :ios, '12.0'
   pod 'BrazeNotificationService'

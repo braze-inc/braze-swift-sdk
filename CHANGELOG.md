@@ -1,3 +1,13 @@
+## 9.2.0
+
+##### Added
+- Adds the `openNewWindowLinksInBrowser` configuration (default: `false`) to `Braze.ModalContext`.
+  - Set this value in the `braze(_:willPresentModalWithContext:)` method of your `BrazeDelegate` to specify whether to launch the device browser to open web view hyperlinks that normally open a new tab or window.
+
+##### Fixed
+- Fixes an issue with the automatic push integration feature that could cause the SDK not to send the device token to Braze.
+- Fixes an issue that prevented external links, which open in a new tab, from being activated in presented web views.
+
 ## 9.1.0
 
 ##### Added
@@ -58,8 +68,8 @@
 ##### Added
 - Adds support for remotely starting Live Activities via push notifications.
   - Adds the following methods to the `liveActivities` module:
-    - [`registerPushToStart(forType:name:) -> Task<Void, Never>`](http://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/liveactivities-swift.class/registerpushtostart(fortype:name:))
-    - [`optOutPushToStart(type:)`](http://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/liveactivities-swift.class/optoutpushtostart(type:))
+    - [`registerPushToStart(forType:name:) -> Task<Void, Never>`](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/liveactivities-swift.class/registerpushtostart(fortype:name:))
+    - [`optOutPushToStart(type:)`](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/liveactivities-swift.class/optoutpushtostart(type:))
   - This feature requires iOS 17.2 or higher.
   - For usage details, refer to the updated Live Activities tutorial [here](https://braze-inc.github.io/braze-swift-sdk/tutorials/braze/b4-live-activities/).
 - Adds return values for existing `liveActivities` methods:
