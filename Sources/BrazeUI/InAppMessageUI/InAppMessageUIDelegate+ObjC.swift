@@ -108,6 +108,19 @@ public protocol _OBJC_BrazeInAppMessageUIDelegate: AnyObject {
     view: UIView
   ) -> Bool
 
+  /// Called before the in-app message display, offering ways to deeply customize the in-app message
+  /// presentation via the mutable `context`.
+  ///
+  /// - Parameters:
+  ///   - ui: The in-app message UI instance.
+  ///   - context: The presentation context. See ``BrazeInAppMessageUI/PresentationContextRaw`` for a
+  ///              list of supported customizations.
+  @objc(inAppMessage:prepareWith:)
+  optional func _objc_inAppMessage(
+    _ ui: BrazeInAppMessageUI,
+    prepareWith context: BrazeInAppMessageUI.PresentationContextRaw
+  )
+
 }
 
 /// The different display choices supported when receiving an in-app message from the Braze SDK.
@@ -240,6 +253,16 @@ final class _OBJC_BrazeInAppMessageUIDelegateWrapper: BrazeInAppMessageUIDelegat
       message: message,
       view: view
     ) ?? true
+  }
+
+  func inAppMessage(
+    _ ui: BrazeInAppMessageUI, prepareWith context: inout BrazeInAppMessageUI.PresentationContext
+  ) {
+    let rawContext = BrazeInAppMessageUI.PresentationContextRaw(context)
+    delegate?._objc_inAppMessage?(ui, prepareWith: rawContext)
+    if let updatedContext = try? BrazeInAppMessageUI.PresentationContext(rawContext) {
+      context = updatedContext
+    }
   }
 
 }

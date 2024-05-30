@@ -64,4 +64,8 @@ static Braze *_braze = nil;
   // Executed when `message` is presented to the user
 }
 
+- (void)inAppMessage:(BrazeInAppMessageUI *)ui prepareWith:(BrazeInAppMessageUIPresentationContextRaw *)context {
+  // Executed before an in-app message is presented to the user.
+}
+
 @end

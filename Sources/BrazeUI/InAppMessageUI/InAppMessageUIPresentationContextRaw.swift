@@ -1,13 +1,18 @@
 import BrazeKit
+import Foundation
 import UIKit
 
 extension BrazeInAppMessageUI {
 
-  /// Presentation context for an in-app message.
+  /// A compatibility representation of the presentation context for an in-app message.
+  ///
+  /// This representation is provided for compatibility with Objective-C and wrapper SDKs. When
+  /// developing in Swift, prefer using the type-safe, always valid ``BrazeInAppMessageUI/PresentationContext`` instead.
   ///
   /// A writable instance of this type is passed to the ``BrazeInAppMessageUI/delegate`` via the
   /// ``BrazeInAppMessageUIDelegate/inAppMessage(_:prepareWith:)-11fog`` method.
-  public struct PresentationContext {
+  @objc(BrazeInAppMessageUIPresentationContextRaw)
+  public class PresentationContextRaw: NSObject {
 
     /// The message to be presented.
     ///
@@ -19,19 +24,18 @@ extension BrazeInAppMessageUI {
     /// context.message.animateOut = false
     ///
     /// // Force slideup messages to animate from the top
-    /// context.message.slideup?.slideFrom = .top
+    /// context.message.slideFrom = .top
     ///
     /// // Read custom text from extras and apply it to multiple message types.
     /// if let customText = context.message.extras["custom_text"] as? String {
-    ///   context.message.slideup?.message = customText
-    ///   context.message.modal?.message = customText
-    ///   context.message.full?.message = customText
+    ///   context.message.message = customText
     /// }
     /// ```
     ///
     /// - Important: Customizing the campaign via the Braze platform is preferred to using this
     ///              property directly.
-    public var message: Braze.InAppMessage
+    @objc
+    public var message: Braze.InAppMessageRaw
 
     /// The attributes for the message view to be presented.
     ///
@@ -54,6 +58,8 @@ extension BrazeInAppMessageUI {
     /// ```swift
     /// BrazeInAppMessageUI.SlideupView.Attributes.defaults.imageSize = CGSize(width: 100, height: 100)
     /// ```
+    ///
+    /// - Note: This property is not available in Objective-C.
     public var attributes: ViewAttributes?
 
     /// A user-provided custom in-app message view to be used in place of the Braze in-app message
@@ -69,6 +75,7 @@ extension BrazeInAppMessageUI {
     ///
     /// - Important: On smaller devices (iPhones, iPod Touch), setting a landscape orientation for
     ///              a modal or full in-app message may lead to truncated content.
+    @objc
     public var preferredOrientation: UIInterfaceOrientation
 
     /// Defines the status bar hide behavior (default: `.auto`).
@@ -78,14 +85,17 @@ extension BrazeInAppMessageUI {
     public var statusBarHideBehavior: StatusBarHideBehavior = .auto
 
     /// The window level for the in-app message window (default: `.normal`).
+    @objc
     public var windowLevel: UIWindow.Level = .normal
 
     /// The window scene used to present the message (default: current active window scene).
+    @objc
     @available(iOS 13.0, tvOS 13.0, *)
     public var windowScene: UIWindowScene? {
       get { _windowScene as? UIWindowScene }
       set { _windowScene = newValue }
     }
+
     var _windowScene: Any?
 
     /// The view controller used to proxy `UIViewController` based preferences. (default: topmost
@@ -103,21 +113,78 @@ extension BrazeInAppMessageUI {
     ///
     /// Set this value to a view controller implementing some of the aforementioned properties and
     /// methods to customize the in-app message view controller presentation.
+    @objc
     public var preferencesProxy: UIViewController?
+
+    /// Initializes a raw `PresentationContext` from the Swift representation.
+    ///
+    /// - Parameter context: The Swift version of the ``BrazeInAppMessageUI/PresentationContext``.
+    init(_ context: BrazeInAppMessageUI.PresentationContext) {
+      self.message = Braze.InAppMessageRaw(context.message)
+      self.attributes = context.attributes
+      self.customView = context.customView
+      self.preferredOrientation = context.preferredOrientation
+      self.statusBarHideBehavior = context.statusBarHideBehavior
+      self.windowLevel = context.windowLevel
+      self.preferencesProxy = context.preferencesProxy
+
+      super.init()
+
+      if #available(iOS 13.0, tvOS 13.0, *) {
+        self.windowScene = context.windowScene
+      }
+    }
+
+    /// Default initializer.
+    init(
+      message: Braze.InAppMessageRaw,
+      attributes: ViewAttributes? = nil,
+      customView: InAppMessageView? = nil,
+      preferredOrientation: UIInterfaceOrientation,
+      statusBarHideBehavior: StatusBarHideBehavior = .auto,
+      windowLevel: UIWindow.Level = .normal,
+      preferencesProxy: UIViewController? = nil,
+      windowScene: Any? = nil
+    ) {
+
+      self.message = message
+      self.attributes = attributes
+      self.customView = customView
+      self.preferredOrientation = preferredOrientation
+      self.statusBarHideBehavior = statusBarHideBehavior
+      self.windowLevel = windowLevel
+      self.preferencesProxy = preferencesProxy
+
+      super.init()
+
+      if #available(iOS 13.0, tvOS 13.0, *),
+        let windowScene = windowScene as? UIWindowScene
+      {
+        self.windowScene = windowScene
+      }
+    }
+
   }
 
-  /// Different behaviors supported to hide and display the status bar.
-  public enum StatusBarHideBehavior {
+}
 
-    /// The message view decides the status bar hidden state.
-    case auto
+extension BrazeInAppMessageUI.PresentationContext {
 
-    /// Always hide the status bar.
-    case hidden
+  /// Initializes a Swift ``BrazeInAppMessageUI/PresentationContext`` from the raw context.
+  ///
+  /// - Parameter presentationContextRaw: The raw presentation context.
+  init(_ presentationContextRaw: BrazeInAppMessageUI.PresentationContextRaw) throws {
+    self.message = try Braze.InAppMessage(presentationContextRaw.message)
+    self.attributes = presentationContextRaw.attributes
+    self.customView = presentationContextRaw.customView
+    self.preferredOrientation = presentationContextRaw.preferredOrientation
+    self.statusBarHideBehavior = presentationContextRaw.statusBarHideBehavior
+    self.windowLevel = presentationContextRaw.windowLevel
+    self.preferencesProxy = presentationContextRaw.preferencesProxy
 
-    /// Always display the status bar.
-    case visible
-
+    if #available(iOS 13.0, tvOS 13.0, *) {
+      self.windowScene = presentationContextRaw.windowScene
+    }
   }
 
 }

@@ -1,3 +1,16 @@
+## 9.3.0
+
+##### Added
+- Adds Objective-C support for the [`BrazeInAppMessageUIDelegate.inAppMessage(_:prepareWith:)`](https://braze-inc.github.io/braze-swift-sdk/documentation/brazeui/brazeinappmessageuidelegate/inappmessage(_:preparewith:)-11fog) method.
+  - Customization of `ViewAttributes` via the `attributes` property is not available in the Objective-C version of `PresentationContextRaw`.
+- Adds `Braze.FeatureFlag.jsonProperty(key:type:decoder:)` to decode `jsonobject` type Feature Flag properties into custom `Decodable` types.
+- Deprecates the existing Feature Flag APIs, to be removed in a future version:
+  - `Braze.FeatureFlag.jsonStringProperty(key:)` has been deprecated.
+  - `Braze.FeatureFlag.jsonObjectProperty(key:)` has been deprecated in favor of `Braze.FeatureFlag.jsonProperty(key:)`.
+
+##### Fixed
+- Fixes an issue where the [`preferredOrientation`](https://braze-inc.github.io/braze-swift-sdk/documentation/brazeui/brazeinappmessageui/presentationcontext/preferredorientation) on the presentation context of an in-app message would not be respected.
+
 ## 9.2.0
 
 ##### Added

@@ -95,4 +95,12 @@ import UIKit
 
   }
 
+  class MockCustomInAppMessageView: UIView, InAppMessageView {
+    var presented: Bool = true
+
+    func present(completion: (() -> Void)?) {}
+
+    func dismiss(completion: (() -> Void)?) {}
+  }
+
 #endif

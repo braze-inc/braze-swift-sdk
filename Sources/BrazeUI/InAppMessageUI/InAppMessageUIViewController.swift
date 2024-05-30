@@ -104,6 +104,18 @@ extension BrazeInAppMessageUI {
       self.view = containerView
     }
 
+    open override func viewDidLoad() {
+      super.viewDidLoad()
+
+      #if !os(visionOS)
+        NotificationCenter.default.addObserver(
+          self,
+          selector: #selector(notifyOrientationChange),
+          name: UIDevice.orientationDidChangeNotification, object: nil
+        )
+      #endif
+    }
+
     open override func viewDidAppear(_ animated: Bool) {
       super.viewDidAppear(animated)
       if presented { return }
@@ -116,25 +128,38 @@ extension BrazeInAppMessageUI {
     // MARK: - Orientation
 
     open override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-      !isViewLoaded
+      !presented
         ? preferredOrientationMask
         : supportedOrientations
     }
 
     var preferredOrientationMask: UIInterfaceOrientationMask {
+      let supported = supportedOrientations
       switch preferredOrientation {
       case .unknown:
         return .all
-      case .portrait:
+      case .portrait where supported.contains(.portrait):
         return .portrait
-      case .portraitUpsideDown:
+      case .portraitUpsideDown where supported.contains(.portraitUpsideDown):
         return .portraitUpsideDown
-      case .landscapeLeft:
+      case .landscapeLeft where supported.contains(.landscapeLeft):
         return .landscapeLeft
-      case .landscapeRight:
+      case .landscapeRight where supported.contains(.landscapeRight):
         return .landscapeRight
-      @unknown default:
+      default:
         return .all
+      }
+    }
+
+    @objc
+    func notifyOrientationChange() {
+      #if !os(visionOS)
+        setNeedsStatusBarAppearanceUpdate()
+      #endif
+      if #available(iOS 16.0, *) {
+        UIView.performWithoutAnimation {
+          setNeedsUpdateOfSupportedInterfaceOrientations()
+        }
       }
     }
 
