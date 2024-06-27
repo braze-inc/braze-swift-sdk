@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name              = 'BrazeNotificationService'
-  s.version           = '9.3.0'
+  s.version           = '9.3.1'
   s.summary           = 'Braze notification service extension library providing support for Rich Push notifications.'
 
   s.homepage          = 'https://braze.com'
@@ -9,8 +9,8 @@ Pod::Spec.new do |s|
   s.authors           = 'Braze, Inc.'
 
   s.source            = {
-    :http => 'https://github.com/braze-inc/braze-swift-sdk/releases/download/9.3.0/BrazeNotificationService.zip',
-    :sha256 => '55e6796e1acbf42b0167e16631d5eab0056fd564b8d9c4360e97b58eb0efd08b'
+    :http => 'https://github.com/braze-inc/braze-swift-sdk/releases/download/9.3.1/BrazeNotificationService.zip',
+    :sha256 => '77c3d9a707a5668b84b125112fee8cc7391bf72c065cca5e510c046d5ae39e11'
   }
 
   s.swift_version               = '5.0'

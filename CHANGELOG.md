@@ -1,3 +1,11 @@
+## 9.3.1
+
+##### Fixed
+- Fixes an issue where the [`Braze.FeatureFlag.subscribeToUpdates(_:)`](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/featureflags-swift.class/subscribetoupdates(_:)) callback was not triggered at app launch when the cached feature flags matched the remote feature flags.
+- Fixes an issue in Objective-C projects where the return value of `Braze.FeatureFlag.jsonProperty(key:)` would incorrectly encode any entry value equal to `null` under certain conditions.
+  - `[String: Any]` dictionaries returned by the Swift API will now drop `null` values.
+  - `NSDictionary` objects returned by the Objective-C API will now encode `null` values as `NSNull`.
+
 ## 9.3.0
 
 ##### Added
