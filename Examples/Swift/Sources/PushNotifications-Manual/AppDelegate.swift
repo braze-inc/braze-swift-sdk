@@ -6,6 +6,7 @@ import UserNotifications
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
   static var braze: Braze? = nil
+  var notificationSubscription: Braze.Cancellable?
 
   func application(
     _ application: UIApplication,
@@ -28,6 +29,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     window?.makeKeyAndVisible()
+
+    // Subscribe to Push notification events
+    notificationSubscription = AppDelegate.braze?.notifications.subscribeToUpdates { payload in
+      print(
+        """
+        Push notification subscription triggered:
+        - type: \(payload.type)
+        - title: \(String(describing: payload.title))
+        - isSilent: \(payload.isSilent)
+        """
+      )
+    }
 
     return true
   }
@@ -91,6 +104,10 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     willPresent notification: UNNotification,
     withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void
   ) {
+    if let braze = AppDelegate.braze {
+      braze.notifications.handleForegroundNotification(notification: notification)
+    }
+
     if #available(iOS 14, *) {
       completionHandler([.list, .banner])
     } else {

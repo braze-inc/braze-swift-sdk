@@ -629,7 +629,7 @@ static NSString *const ABKPersistentDataPlistEndpointKey = @"Endpoint";
     NSLog(@"[BrazeKitCompat] Warning: use `braze.set(adTrackingEnabled:)` to set the ad tracking enabled flag.");
   }
   if (allowList & ABKDeviceOptionPushDisplayOptions) {
-    [deviceProperties addObject:BRZDeviceProperty.pushDisplayOptions];
+    NSLog(@"[BrazeKitCompat] Warning: Push Display Options are no longer supported. Skipping.");
   }
 
   return deviceProperties;

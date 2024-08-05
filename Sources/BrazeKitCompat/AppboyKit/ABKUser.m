@@ -202,13 +202,13 @@
 
 - (BOOL)addToCustomAttributeArrayWithKey:(NSString *)key
                                    value:(NSString *)value {
-  [self.user addToCustomAttributeArrayWithKey:key value:value];
+  [self.user addToCustomAttributeStringArrayWithKey:key value:value];
   return YES;
 }
 
 - (BOOL)removeFromCustomAttributeArrayWithKey:(NSString *)key
                                         value:(NSString *)value {
-  [self.user removeFromCustomAttributeArrayWithKey:key value:value];
+  [self.user removeFromCustomAttributeStringArrayWithKey:key value:value];
   return YES;
 }
 

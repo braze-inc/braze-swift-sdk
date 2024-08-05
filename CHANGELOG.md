@@ -1,3 +1,57 @@
+## 10.0.0
+
+##### Breaking
+- The following changes have been made when subscribing to Push events with [`Braze.Notifications.subscribeToUpdates(payloadTypes:_:)`][push-subscribe]:
+  - The `update` closure will now be triggered by both "Push Opened" and "Push Received" events by default. Previously, it would only be triggered by "Push Opened" events.
+    - To continue subscribing only to "Push Opened" events, pass in `[.opened]` for the parameter `payloadTypes`. Alternatively, implement your `update` closure to check that the `type` from the `Braze.Notifications.Payload` is `.opened`.
+  - When receiving a push notification with `content-available: true`, the [`Braze.Notifications.Payload.type`][payload-type] will now be `.received` instead of `.opened`.
+- Marks the following deprecated APIs as unavailable:
+  - `Braze.Configuration.Api.Flavor`
+  - `Braze.Configuration.Api.flavor`
+  - `Braze.Configuration.Api.SdkMetadata`
+  - `Braze.Configuration.Api.addSdkMetadata(_:)`
+  - `Braze.ContentCard.ClickAction.uri(_:useWebview:)`
+  - `Braze.ContentCard.ClickAction.uri`
+  - `Braze.InAppMessage.ClickAction.uri(_:useWebview:)`
+  - `Braze.InAppMessage.ClickAction.uri`
+  - `Braze.InAppMessage.ModalImage.imageUri`
+  - `Braze.InAppMessage.Full.imageUri`
+  - `Braze.InAppMessage.FullImage.imageUri`
+  - `Braze.InAppMessage.Themes.default`
+  - `Braze.deviceId(queue:completion:)`
+  - `Braze._objc_deviceId(completion:)`
+  - `Braze.deviceId()`
+  - `Braze.User.setCustomAttributeArray(key:array:fileID:line:)`
+  - `Braze.User.addToCustomAttributeArray(key:value:fileID:line:)`
+  - `Braze.User.removeFromCustomAttributeArray(key:value:fileID:line:)`
+  - `Braze.User._objc_addToCustomAttributeArray(key:value:)`
+  - `Braze.User._objc_removeFromCustomAttributeArray(key:value:)`
+  - `gifViewProvider`
+  - `GifViewProvider.default`
+- Removes the deprecated APIs:
+  - `Braze.Configuration.DeviceProperty.pushDisplayOptions`
+  - `Braze.InAppMessageRaw.Context.Error.extraProcessClickAction`
+- Removes the deprecated `BrazeLocation` class in favor of `BrazeLocationProvider`.
+
+##### Fixed
+- Fixes a crash when handling a scheme-based deep link containing a registered `applink` domain (e.g. `applinks:example.com` with a deep link to `app://example.com/path`).
+
+##### Added
+- Adds support to subscribe to "Push Received" events via [`Braze.Notifications.subscribeToUpdates(payloadTypes:_:)`][push-subscribe].
+  - The following notifications will trigger this subscription:
+    - Notifications received in the foreground
+    - Notifications with the field `content-available: true` received in the foreground or background
+  - The following notifications will _not_ trigger this subscription:
+    - Notifications received while terminated
+    - Notifications received in the background without the field `content-available: true`
+  - The new parameter `payloadTypes` will allow you to subscribe to "Push Opened" events, "Push Received" events, or both. If the parameter is omitted, it will subscribe to both by default.
+  - If you are using manual push integration, you will need to first implement `UNUserNotificationCenter.userNotificationCenter(_:willPresent:withCompletionHandler:)`, and make sure to call `Braze.Notifications.handleForegroundNotification(notification:)` within your implementation. Then, use `subscribeToUpdates` as noted above. See [our guide on push notification integration](https://www.braze.com/docs/developer_guide/platform_integration_guides/swift/push_notifications/integration/#step-3-enable-push-handling) for more info.
+- Adds the public property [`Braze.Notifications.Payload.type`][payload-type].
+- Adds the [`Braze.WebViewBridge.ScriptMessageHandler.init(braze:)`](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/webviewbridge/scriptmessagehandler/init(braze:)) initializer enabling a simpler way to initialize the `ScriptMessageHandler` for adding it to user-provided web views.
+
+[push-subscribe]: https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/notifications-swift.class/subscribetoupdates(payloadtypes:_:)
+[payload-type]: https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/notifications-swift.class/payload/type
+
 ## 9.3.1
 
 ##### Fixed

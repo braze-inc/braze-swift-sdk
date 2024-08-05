@@ -5,7 +5,7 @@ import Foundation
 // MARK: 08/25/2022
 
 /// See ``GIFViewProvider-swift.struct/shared``.
-@available(*, deprecated, renamed: "GIFViewProvider.shared")
+@available(*, unavailable, renamed: "GIFViewProvider.shared")
 public var gifViewProvider: GIFViewProvider {
   get { GIFViewProvider.shared }
   set { GIFViewProvider.shared = newValue }
@@ -16,7 +16,7 @@ public var gifViewProvider: GIFViewProvider {
 extension GIFViewProvider {
 
   /// See ``nonAnimating``.
-  @available(*, deprecated, renamed: "nonAnimating")
+  @available(*, unavailable, renamed: "nonAnimating")
   public static let `default`: GIFViewProvider = .nonAnimating
 
 }

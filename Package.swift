@@ -49,8 +49,8 @@ let package = Package(
   targets: [
     .binaryTarget(
       name: "BrazeKit",
-      url: "https://github.com/braze-inc/braze-swift-sdk/releases/download/9.3.1/BrazeKit.zip",
-      checksum: "0502169a0e55f294f8c341b2f4e1afc19f19367684668e0bbee09e293cab8667"
+      url: "https://github.com/braze-inc/braze-swift-sdk/releases/download/10.0.0/BrazeKit.zip",
+      checksum: "41683c0da51824e23371fd0bcaaa85384a7a98f395b5d6d422057635a631a6ba"
     ),
     .target(
       name: "BrazeKitResources",
@@ -67,8 +67,8 @@ let package = Package(
     ),
     .binaryTarget(
       name: "BrazeLocation",
-      url: "https://github.com/braze-inc/braze-swift-sdk/releases/download/9.3.1/BrazeLocation.zip",
-      checksum: "cd34bc7a95e529d0dae495bf5dd8b3d59387fd124be6f0559ca07863f7c3de8c"
+      url: "https://github.com/braze-inc/braze-swift-sdk/releases/download/10.0.0/BrazeLocation.zip",
+      checksum: "66493255b40d84b207364d22738b842576ad4df5d3cd674e834fb5e5641406dd"
     ),
     .target(
       name: "BrazeLocationResources",
@@ -78,13 +78,13 @@ let package = Package(
     ),
     .binaryTarget(
       name: "BrazeNotificationService",
-      url: "https://github.com/braze-inc/braze-swift-sdk/releases/download/9.3.1/BrazeNotificationService.zip",
-      checksum: "77c3d9a707a5668b84b125112fee8cc7391bf72c065cca5e510c046d5ae39e11"
+      url: "https://github.com/braze-inc/braze-swift-sdk/releases/download/10.0.0/BrazeNotificationService.zip",
+      checksum: "2fb95af7f2718da1d11ad6adb4794860f4dd835acc33d2ae125e7aca0b61b889"
     ),
     .binaryTarget(
       name: "BrazePushStory",
-      url: "https://github.com/braze-inc/braze-swift-sdk/releases/download/9.3.1/BrazePushStory.zip",
-      checksum: "af0b9176553f4e39f5020e548f101c550220bb4d62f2b9b1d69ad70a8e6f56ec"
+      url: "https://github.com/braze-inc/braze-swift-sdk/releases/download/10.0.0/BrazePushStory.zip",
+      checksum: "44a40e063bc5d7635c1bb69c0f0bca5f7eaa9fbd4165eae6aaea033aad30590c"
     ),
     .target(
       name: "BrazePushStoryResources",
