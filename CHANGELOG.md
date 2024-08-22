@@ -1,3 +1,19 @@
+## 10.1.0
+
+##### Fixed
+- Fixes an issue affecting the Objective-C variants of `BrazeDelegate`, `BrazeContentCardUIViewControllerDelegate` and `BrazeInAppMessageUIDelegate`.
+  - When setting these delegates in Objective-C a second time, the delegate would end up being set to `nil`.
+  - This issue has been resolved and the delegates can now be set multiple times without issue.
+
+##### Added
+- Adds support for delayed SDK initialization, allowing you to create the Braze instance outside of `application(_:didFinishLaunchingWithOptions:)`.
+  - The SDK can now be initialized asynchronously, while conserving the ability to process incoming Braze push notifications.
+  - Symbol documentation: [`Braze.prepareForDelayedInitialization(pushAutomation:)`](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/preparefordelayedinitialization(pushautomation:))
+  - Integration documentation: [_Delayed Initialization_](https://braze.com/docs/developer_guide/platform_integration_guides/swift/advanced_use_cases/delayed_initialization/)
+  - Sample app: [_PushNotifications-DelayedInitialization_](https://github.com/braze-inc/braze-swift-sdk/tree/main/Examples#pushnotifications-delayedinitialization).
+- Adds the ability to prevent showing an in-app message to a different user than the one that triggered the in-app message.
+  - To enable this feature, set [`Braze.Configuration.preventInAppMessageDisplayForDifferentUser`](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/configuration-swift.class/preventinappmessagedisplayfordifferentuser) to `true` (default: `false`).
+
 ## 10.0.0
 
 ##### Breaking

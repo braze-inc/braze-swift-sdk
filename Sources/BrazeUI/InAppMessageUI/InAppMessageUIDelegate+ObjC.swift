@@ -192,12 +192,6 @@ final class _OBJC_BrazeInAppMessageUIDelegateWrapper: BrazeInAppMessageUIDelegat
     objc_setAssociatedObject(delegate, &Self.wrapperKey, self, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
   }
 
-  deinit {
-    if let delegate = delegate {
-      objc_setAssociatedObject(delegate, &Self.wrapperKey, nil, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-    }
-  }
-
   func inAppMessage(
     _ ui: BrazeInAppMessageUI,
     displayChoiceForMessage message: Braze.InAppMessage

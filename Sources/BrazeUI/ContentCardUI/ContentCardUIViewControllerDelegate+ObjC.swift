@@ -45,12 +45,6 @@ final class _OBJC_BrazeContentCardUIViewControllerDelegateWrapper:
     objc_setAssociatedObject(delegate, &Self.wrapperKey, self, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
   }
 
-  deinit {
-    if let delegate = delegate {
-      objc_setAssociatedObject(delegate, &Self.wrapperKey, nil, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-    }
-  }
-
   func contentCard(
     _ controller: BrazeContentCardUI.ViewController,
     shouldProcess clickAction: Braze.ContentCard.ClickAction,
