@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name              = 'BrazeLocation'
-  s.version           = '10.1.0'
+  s.version           = '10.2.0'
   s.summary           = 'Braze location library providing support for location analytics and geofence monitoring.'
 
   s.homepage          = 'https://braze.com'
@@ -9,8 +9,8 @@ Pod::Spec.new do |s|
   s.authors           = 'Braze, Inc.'
 
   s.source            = {
-    :http => 'https://github.com/braze-inc/braze-swift-sdk/releases/download/10.1.0/BrazeLocation.zip',
-    :sha256 => 'f6125209d53b92dcf87572f569536bd896529e1468fd664583cfd7a652fdfd03'
+    :http => 'https://github.com/braze-inc/braze-swift-sdk/releases/download/10.2.0/BrazeLocation.zip',
+    :sha256 => '8ef04d2945942890bb8c8ff507ccfd76b1a7748274c3f37191381ee0fca398ab'
   }
 
   s.swift_version               = '5.0'
@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
   s.vendored_framework      = 'BrazeLocation.xcframework'
   s.resource_bundles        = { 'BrazeLocation' => ['Sources/BrazeLocationResources/Resources/**/*'] }
 
-  s.dependency 'BrazeKit', '10.1.0'
+  s.dependency 'BrazeKit', '10.2.0'
 
   s.pod_target_xcconfig     = { 'DEFINES_MODULE' => 'YES' }
 end

@@ -1,3 +1,11 @@
+## 10.2.0
+
+##### Fixed
+- Updates the content card image background color to be clear.
+
+##### Added
+- Adds support for an upcoming Braze SDK Debugging tool.
+
 ## 10.1.0
 
 ##### Fixed
