@@ -110,9 +110,8 @@ extension BrazeInAppMessageUI {
     }
 
     public lazy var displayMode: DisplayMode =
-      (traitCollection.horizontalSizeClass == .compact
-        ? .full
-        : .modal)
+      (traitCollection.horizontalSizeClass == .regular
+        && traitCollection.verticalSizeClass == .regular) ? .modal : .full
     {
       didSet { updateForDisplayMode() }
     }
@@ -140,7 +139,9 @@ extension BrazeInAppMessageUI {
       open override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
         if preferredDisplayMode == nil {
-          displayMode = traitCollection.horizontalSizeClass == .compact ? .full : .modal
+          displayMode =
+            (traitCollection.horizontalSizeClass == .regular
+              && traitCollection.verticalSizeClass == .regular) ? .modal : .full
         }
       }
     #endif

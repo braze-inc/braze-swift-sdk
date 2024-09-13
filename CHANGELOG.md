@@ -1,3 +1,17 @@
+## 10.3.0
+
+##### Fixed
+- Fixes the in-app message orientation validation logic, which prevented certain device classes from displaying messages under certain orientation configurations.
+- Fixes the default behavior on full-screen in-app messages to display as modals only on tablet screen sizes.
+  - Previously, full-screen messages would erroneously default to modal presentations on some larger phones.
+- Fixes a crash when dismissing a slideup in-app message before it has finished presenting.
+- Fixes an issue on iOS 18.0+ where the in-app message UI would persist on the screen when attempting to dismiss the message before it has finished presenting.
+- Updates custom attribute value, custom event, and purchase string validation to use a 255 character maximum instead of a 255 byte maximum.
+
+##### Added
+- The [`Braze.set(identifierForAdvertiser:)`](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/set(identifierforadvertiser:)) and [`Braze.set(identifierForVendor:)`](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/set(identifierforvendor:)) methods now accept a `nil` parameter value to remove the identifiers from the user profile.
+- Adds additional safeguards to `Braze.Notifications.subscribeToUpdates` to ensure the same Push notification can't trigger the update closure multiple times.
+
 ## 10.2.0
 
 ##### Fixed

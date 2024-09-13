@@ -49,8 +49,8 @@ let package = Package(
   targets: [
     .binaryTarget(
       name: "BrazeKit",
-      url: "https://github.com/braze-inc/braze-swift-sdk/releases/download/10.2.0/BrazeKit.zip",
-      checksum: "c0c593e68068edd1c8caa89ea4e18cdb6c0d52801c90c0b8a173dae3da757b9b"
+      url: "https://github.com/braze-inc/braze-swift-sdk/releases/download/10.3.0/BrazeKit.zip",
+      checksum: "4913d8c1ad1115ec50c07858523c6ba9ab506f37a39a853a4a19c77b82d7f821"
     ),
     .target(
       name: "BrazeKitResources",
@@ -67,8 +67,8 @@ let package = Package(
     ),
     .binaryTarget(
       name: "BrazeLocation",
-      url: "https://github.com/braze-inc/braze-swift-sdk/releases/download/10.2.0/BrazeLocation.zip",
-      checksum: "8ef04d2945942890bb8c8ff507ccfd76b1a7748274c3f37191381ee0fca398ab"
+      url: "https://github.com/braze-inc/braze-swift-sdk/releases/download/10.3.0/BrazeLocation.zip",
+      checksum: "a0e299ea114723f5ae9e124a94c59304b082b838be422a4ae823384a713f563c"
     ),
     .target(
       name: "BrazeLocationResources",
@@ -78,13 +78,13 @@ let package = Package(
     ),
     .binaryTarget(
       name: "BrazeNotificationService",
-      url: "https://github.com/braze-inc/braze-swift-sdk/releases/download/10.2.0/BrazeNotificationService.zip",
-      checksum: "3e8c00381f07545697f0a1f06198b7546800bc34bc0d0ea83ca3370b59de431d"
+      url: "https://github.com/braze-inc/braze-swift-sdk/releases/download/10.3.0/BrazeNotificationService.zip",
+      checksum: "4dbd229689d1d77a289ebbc60b5e7e367e2f5b2b1aff9a3c6539bceb6c21a51f"
     ),
     .binaryTarget(
       name: "BrazePushStory",
-      url: "https://github.com/braze-inc/braze-swift-sdk/releases/download/10.2.0/BrazePushStory.zip",
-      checksum: "adb1fa1d70a52275f1e0ab9551f69fa7188bd997c7407202b89829c4423bc99b"
+      url: "https://github.com/braze-inc/braze-swift-sdk/releases/download/10.3.0/BrazePushStory.zip",
+      checksum: "1b0e1ecc6da91edb467dd0db3498fb09a89ddccf9ffbf5fc96479971499b5035"
     ),
     .target(
       name: "BrazePushStoryResources",

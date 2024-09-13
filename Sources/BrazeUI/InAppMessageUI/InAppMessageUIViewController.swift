@@ -66,6 +66,9 @@ extension BrazeInAppMessageUI {
     /// If assigned, VoiceOver will focus on this element when the message view is presented.
     var messageViewInitialAccessibilityElement: Any?
 
+    /// Flag indicating whether the message is being dismissed or has already been dismissed.
+    var messageDismissed: Bool = false
+
     // MARK: - Initialization
 
     /// Creates an in-app message view controller.
@@ -121,8 +124,19 @@ extension BrazeInAppMessageUI {
       if presented { return }
 
       view.addSubview(messageView)
-      messageView.present(completion: nil)
+      messageView.present {
+        // If the message was dismissed while being presented, dismiss it again to ensure that
+        // cleanup occured properly.
+        if self.messageDismissed {
+          self.dismissMessage()
+        }
+      }
       presented = true
+    }
+
+    open func dismissMessage(completion: (() -> Void)? = nil) {
+      messageDismissed = true
+      messageView.dismiss(completion: completion)
     }
 
     // MARK: - Orientation

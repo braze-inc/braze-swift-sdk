@@ -104,10 +104,10 @@ extension Braze.InAppMessage.Orientation {
     case (.any, _, _),
       (_, .none, .none):
       return true
-    case (.portrait, .compact, _),
-      (.portrait, .regular, .regular):
+    case (.portrait, _, .regular):
       return true
-    case (.landscape, .regular, _):
+    case (.landscape, .regular, _),
+      (.landscape, .compact, .compact):
       return true
     default:
       return false

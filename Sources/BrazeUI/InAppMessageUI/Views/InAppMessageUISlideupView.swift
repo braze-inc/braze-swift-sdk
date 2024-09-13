@@ -413,6 +413,10 @@ extension BrazeInAppMessageUI {
 
     open var presented: Bool = false {
       didSet {
+        // It is technically possible to dismiss the slideup before it has been presented. In that
+        // case, the presentation constraints are not yet initialized and we guard against their
+        // installation to prevent a potential crash.
+        guard presentationConstraintsInstalled else { return }
         presented
           ? NSLayoutConstraint.activate([innerYConstraint, outerYConstraint])
           : NSLayoutConstraint.deactivate([innerYConstraint, outerYConstraint])
@@ -496,7 +500,9 @@ extension BrazeInAppMessageUI {
 
     @objc
     func pan(_ gesture: UIPanGestureRecognizer) {
-      guard let superview = gesture.view?.superview else { return }
+      guard let superview = gesture.view?.superview, presentationConstraintsInstalled else {
+        return
+      }
       let dismissible = attributes.dismissible
       var dy = gesture.translation(in: superview).y
 

@@ -281,7 +281,7 @@ open class BrazeInAppMessageUI:
   ///                         when no in-app message view is currently presented.
   @objc
   public func dismiss(completion: (() -> Void)? = nil) {
-    messageView?.dismiss(completion: completion) ?? completion?()
+    window?.messageViewController?.dismissMessage(completion: completion) ?? completion?()
   }
 
   // MARK: - Utils

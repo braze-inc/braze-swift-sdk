@@ -332,6 +332,22 @@ import Foundation
       ]
     )
 
+    public static let mockForcedLandscape = Self(
+      data: .mockForcedLandscape,
+      imageURL: .mockImage(width: 2000, height: 600),
+      header: "Hello world!",
+      message:
+        "Cupcake ipsum dolor sit amet topping. Cookie candy chupa chups jujubes pastry soufflé. Danish cake cheesecake liquorice wafer marshmallow macaroon."
+    )
+
+    public static let mockForcedPortrait = Self(
+      data: .mockForcedPortrait,
+      imageURL: .mockImage(width: 2000, height: 600),
+      header: "Hello world!",
+      message:
+        "Cupcake ipsum dolor sit amet topping. Cookie candy chupa chups jujubes pastry soufflé. Danish cake cheesecake liquorice wafer marshmallow macaroon."
+    )
+
     public static let mockLeadingAligned = Self(
       data: .mock,
       imageURL: .mockImage(width: 1200, height: 1000),
@@ -513,6 +529,14 @@ import Foundation
 
     public static let mock = Self(
       clickAction: .mock
+    )
+
+    public static let mockForcedLandscape = Self(
+      orientation: .landscape
+    )
+
+    public static let mockForcedPortrait = Self(
+      orientation: .portrait
     )
 
     public static let mockNoClickAction = Self()
