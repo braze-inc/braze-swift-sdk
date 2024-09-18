@@ -1,3 +1,8 @@
+## 10.3.1
+
+##### Fixed
+- Improves the reliability of sending updates to Live Activities that were launched via a push-to-start notification to an app in the terminated state.
+
 ## 10.3.0
 
 ##### Fixed
