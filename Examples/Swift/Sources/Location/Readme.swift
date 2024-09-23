@@ -9,26 +9,31 @@ let readme =
   """
 
 #if os(iOS)
-  let actions: [(String, String, (ReadmeViewController) -> Void)] = [
+  @MainActor
+  let actions: [(String, String, @MainActor (ReadmeViewController) -> Void)] = [
     (#"Request "always" authorization"#, "", requestAlwaysAuthorization),
     (#"Request "when in use" authorization"#, "", requestWhenInUseAuthorization),
   ]
 #elseif os(tvOS) || os(visionOS)
-  let actions: [(String, String, (ReadmeViewController) -> Void)] = [
+  @MainActor
+  let actions: [(String, String, @MainActor (ReadmeViewController) -> Void)] = [
     (#"Request "when in use" authorization"#, "", requestWhenInUseAuthorization)
   ]
 #endif
 
 // MARK: - Internal
 
+@MainActor
 let locationManager = CLLocationManager()
 
 #if os(iOS)
+  @MainActor
   func requestAlwaysAuthorization(_ viewController: ReadmeViewController) {
     locationManager.requestAlwaysAuthorization()
   }
 #endif
 
+@MainActor
 func requestWhenInUseAuthorization(_ viewController: ReadmeViewController) {
   locationManager.requestWhenInUseAuthorization()
 }

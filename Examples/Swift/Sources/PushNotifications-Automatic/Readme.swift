@@ -14,4 +14,5 @@ let readme =
     - Braze Push Story implementation
   """
 
-let actions: [(String, String, (ReadmeViewController) -> Void)] = []
+@MainActor
+let actions: [(String, String, @MainActor (ReadmeViewController) -> Void)] = []

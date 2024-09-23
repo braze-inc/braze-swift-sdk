@@ -14,7 +14,8 @@ let readme =
     - Log purchases
   """
 
-let actions: [(String, String, (ReadmeViewController) -> Void)] = [
+@MainActor
+let actions: [(String, String, @MainActor (ReadmeViewController) -> Void)] = [
   ("Authenticate user", "Identify the user on Braze", { _ in authenticateUser() }),
   ("Present checkout", #"Log "open_checkout_controller" custom event"#, presentCheckout),
   (
@@ -26,8 +27,10 @@ let actions: [(String, String, (ReadmeViewController) -> Void)] = [
 
 // MARK: - Internal
 
+@MainActor
 let authenticationManager = AuthenticationManager()
 
+@MainActor
 func authenticateUser() {
   let user = AuthenticationManager.User(
     id: UUID().uuidString,
@@ -37,11 +40,13 @@ func authenticateUser() {
   authenticationManager.userDidLogin(user)
 }
 
+@MainActor
 func presentCheckout(_ viewController: ReadmeViewController) {
   let (navigationController, _) = createCheckoutViewController()
   viewController.present(navigationController, animated: true, completion: nil)
 }
 
+@MainActor
 func presentCheckoutAndPurchase(_ viewController: ReadmeViewController) {
   let (navigationController, checkoutViewController) = createCheckoutViewController()
   viewController.present(navigationController, animated: true) {
@@ -49,6 +54,7 @@ func presentCheckoutAndPurchase(_ viewController: ReadmeViewController) {
   }
 }
 
+@MainActor
 func createCheckoutViewController() -> (UINavigationController, CheckoutViewController) {
   let productsIds = [
     UUID().uuidString,

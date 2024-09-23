@@ -17,4 +17,5 @@ let readme =
   See the PushNotifications-Automatic example app for a configuration based integration.
   """
 
-let actions: [(String, String, (ReadmeViewController) -> Void)] = []
+@MainActor
+let actions: [(String, String, @MainActor (ReadmeViewController) -> Void)] = []

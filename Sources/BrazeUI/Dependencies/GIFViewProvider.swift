@@ -14,32 +14,43 @@ import UIKit
 /// ```swift
 /// GIFViewProvider.shared = .sdWebImage
 /// ```
-public struct GIFViewProvider {
+public struct GIFViewProvider: Sendable {
+
+  /// The lock guarding the static properties.
+  private static let lock = NSRecursiveLock()
 
   /// The GIF view provider used for all BrazeUI components.
   ///
   /// By default, Braze displays animated GIFs as static images.
   /// See ``GIFViewProvider-swift.struct`` for details about how to add support for animated GIFs.
-  public static var shared: GIFViewProvider = .nonAnimating
+  public static var shared: GIFViewProvider {
+    get { lock.sync { _shared } }
+    set { lock.sync { _shared = newValue } }
+  }
+  #if compiler(>=5.10)
+    nonisolated(unsafe) private static var _shared: GIFViewProvider = .nonAnimating
+  #else
+    private static var _shared: GIFViewProvider = .nonAnimating
+  #endif
 
   /// Creates a view able to display static and animated GIF images.
   /// - Parameters:
   ///   - url: The local file url for the image.
-  public var view: (_ url: URL?) -> UIView
+  public var view: @MainActor @Sendable (_ url: URL?) -> UIView
 
   /// Updates the passed view with a new image at `url`.
   /// - Parameters:
   ///   - view: The view to update.
   ///   - url: The local file url for the image.
-  public var updateView: (_ view: UIView, _ url: URL?) -> Void
+  public var updateView: @MainActor @Sendable (_ view: UIView, _ url: URL?) -> Void
 
   /// Creates a GIF view provider.
   /// - Parameters:
   ///   - view: See ``view``.
   ///   - updateView: See ``updateView``.
   public init(
-    view: @escaping (URL?) -> UIView,
-    updateView: @escaping (UIView, URL?) -> Void
+    view: @MainActor @Sendable @escaping (URL?) -> UIView,
+    updateView: @MainActor @Sendable @escaping (UIView, URL?) -> Void
   ) {
     self.view = view
     self.updateView = updateView

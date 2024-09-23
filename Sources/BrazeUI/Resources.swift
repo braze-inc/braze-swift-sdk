@@ -1,18 +1,30 @@
 import Foundation
 
+/// Lock guarding ``BrazeUI/overrideResourcesBundle``.
+private let lock = NSRecursiveLock()
+
 /// The override bundle BrazeUI uses to load resources (default: `nil`).
 ///
 /// Set this property to the bundle containing BrazeUI resources when your project cannot
 /// automatically include the resources (e.g. Tuist setup)
 ///
 /// - Important: This property needs to be set before the SDK initialization.
-public var overrideResourcesBundle: Bundle?
+public var overrideResourcesBundle: Bundle? {
+  get { lock.sync { _overrideResourcesBundle } }
+  set { lock.sync { _overrideResourcesBundle = newValue } }
+}
+// nonisolated(unsafe) attribute for global variable is only available in Xcode 15.3 and later.
+#if compiler(>=5.10)
+  nonisolated(unsafe) private var _overrideResourcesBundle: Bundle?
+#else
+  private var _overrideResourcesBundle: Bundle?
+#endif
 
 private class BundleFinder {}
 
 /// Resources related utilities.
 @objc(BRZUIResources)
-public class BrazeUIResources: NSObject {
+public final class BrazeUIResources: NSObject {
 
   /// The resources bundle.
   @objc

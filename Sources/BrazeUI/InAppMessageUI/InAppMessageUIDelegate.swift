@@ -22,6 +22,7 @@ public protocol BrazeInAppMessageUIDelegate: AnyObject {
   ///   - message: The message to be presented.
   /// - Returns: The display choice for `message`. See ``BrazeInAppMessageUI/DisplayChoice`` for
   ///            possible values.
+  @MainActor
   func inAppMessage(
     _ ui: BrazeInAppMessageUI,
     displayChoiceForMessage message: Braze.InAppMessage
@@ -34,6 +35,7 @@ public protocol BrazeInAppMessageUIDelegate: AnyObject {
   ///   - ui: The in-app message ui instance.
   ///   - context: The presentation context. See ``BrazeInAppMessageUI/PresentationContext`` for a
   ///              list of supported customizations.
+  @MainActor
   func inAppMessage(
     _ ui: BrazeInAppMessageUI,
     prepareWith context: inout BrazeInAppMessageUI.PresentationContext
@@ -45,6 +47,7 @@ public protocol BrazeInAppMessageUIDelegate: AnyObject {
   ///   - ui: The in-app message ui instance.
   ///   - message: The message to be presented.
   ///   - view: The in-app message view.
+  @MainActor
   func inAppMessage(
     _ ui: BrazeInAppMessageUI,
     willPresent message: Braze.InAppMessage,
@@ -56,6 +59,7 @@ public protocol BrazeInAppMessageUIDelegate: AnyObject {
   ///   - ui: The in-app message ui instance.
   ///   - message: The message to be presented.
   ///   - view: The in-app message view.
+  @MainActor
   func inAppMessage(
     _ ui: BrazeInAppMessageUI,
     didPresent message: Braze.InAppMessage,
@@ -67,6 +71,7 @@ public protocol BrazeInAppMessageUIDelegate: AnyObject {
   ///   - ui: The in-app message ui instance.
   ///   - message: The message to be presented.
   ///   - view: The in-app message view.
+  @MainActor
   func inAppMessage(
     _ ui: BrazeInAppMessageUI,
     willDismiss message: Braze.InAppMessage,
@@ -79,6 +84,7 @@ public protocol BrazeInAppMessageUIDelegate: AnyObject {
   ///   - ui: The in-app message ui instance.
   ///   - message: The message to be presented.
   ///   - view: The in-app message view.
+  @MainActor
   func inAppMessage(
     _ ui: BrazeInAppMessageUI,
     didDismiss message: Braze.InAppMessage,
@@ -102,6 +108,7 @@ public protocol BrazeInAppMessageUIDelegate: AnyObject {
   ///   - message: The message to be presented.
   ///   - view: The in-app message view.
   /// - Returns: `true` to let Braze process the click action, `false` otherwise.
+  @MainActor
   func inAppMessage(
     _ ui: BrazeInAppMessageUI,
     shouldProcess clickAction: Braze.InAppMessage.ClickAction,

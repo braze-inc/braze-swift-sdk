@@ -8,6 +8,7 @@ import UIKit
 /// `UIKit` does not offer any api to retrieve the current state of the software keyboard, only
 /// updates. The keyboard frame is `.zero` until the keyboard frame notifier receives an update from
 /// `UIKit`.
+@MainActor
 open class KeyboardFrameNotifier {
 
   /// The shared keyboard frame notifier.

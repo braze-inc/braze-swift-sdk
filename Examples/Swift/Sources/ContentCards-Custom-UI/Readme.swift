@@ -12,7 +12,8 @@ let readme =
     - UIViewController subclass presenting the content cards data in a table view.
   """
 
-let actions: [(String, String, (ReadmeViewController) -> Void)] = [
+@MainActor
+let actions: [(String, String, @MainActor (ReadmeViewController) -> Void)] = [
   (
     "Print current Content Cards",
     "",
@@ -47,26 +48,32 @@ let actions: [(String, String, (ReadmeViewController) -> Void)] = [
 
 // MARK: - Internal
 
+@MainActor
 func printCurrentContentCards(_ viewController: ReadmeViewController) {
   (UIApplication.shared.delegate as? AppDelegate)?.printCurrentContentCards()
 }
 
+@MainActor
 func printCurrentContentCardsRaw(_ viewController: ReadmeViewController) {
   (UIApplication.shared.delegate as? AppDelegate)?.printCurrentContentCardsRaw()
 }
 
+@MainActor
 func refreshContentCards(_ viewController: ReadmeViewController) {
   (UIApplication.shared.delegate as? AppDelegate)?.refreshContentCards()
 }
 
+@MainActor
 func subscribeToContentCardsUpdates(_ viewController: ReadmeViewController) {
   (UIApplication.shared.delegate as? AppDelegate)?.subscribeToContentCardsUpdates()
 }
 
+@MainActor
 func cancelContentCardsUpdatesSubscription(_ viewController: ReadmeViewController) {
   (UIApplication.shared.delegate as? AppDelegate)?.cancelContentCardsUpdatesSubscription()
 }
 
+@MainActor
 func presentContentCardsInfoViewController(_ viewController: ReadmeViewController) {
   (UIApplication.shared.delegate as? AppDelegate)?.presentContentCardsInfoViewController()
 }

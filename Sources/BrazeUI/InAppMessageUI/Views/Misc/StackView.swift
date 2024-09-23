@@ -7,7 +7,7 @@ extension BrazeInAppMessageUI {
   /// Before iOS 14, `UIStackView` uses a non-rendering `CATransformLayer` instead of a classic
   /// `CALayer` (see [tweet](https://archive.md/t0AIh)). This wrapper view allow to set the layer's
   /// properties on pre-iOS 14 devices
-  public class StackView: UIView {
+  public final class StackView: UIView {
 
     /// The inner stack view.
     public let stack = UIStackView()
@@ -29,7 +29,7 @@ extension BrazeInAppMessageUI {
     /// See `UIStackView/init(arrangedSubviews:)`.
     convenience init(arrangedSubviews subviews: [UIView]) {
       self.init(frame: .zero)
-      subviews.forEach(stack.addArrangedSubview)
+      subviews.forEach { stack.addArrangedSubview($0) }
     }
 
     required init(coder: NSCoder) {

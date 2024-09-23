@@ -8,7 +8,8 @@ let readme =
   Customizations are applied when presenting the Content Cards UI in the `AppDelegate` methods.
   """
 
-let actions: [(String, String, (ReadmeViewController) -> Void)] = [
+@MainActor
+let actions: [(String, String, @MainActor (ReadmeViewController) -> Void)] = [
   (
     "Default",
     "No customization.",
@@ -58,6 +59,7 @@ let actions: [(String, String, (ReadmeViewController) -> Void)] = [
 
 // MARK: - Internal
 
+@MainActor
 let classicPinned: Braze.ContentCard = withContext(
   .classic(
     .init(
@@ -70,6 +72,7 @@ let classicPinned: Braze.ContentCard = withContext(
   )
 )
 
+@MainActor
 let classic: Braze.ContentCard = withContext(
   .classic(
     .init(
@@ -81,6 +84,7 @@ let classic: Braze.ContentCard = withContext(
   )
 )
 
+@MainActor
 let classicImage: Braze.ContentCard = withContext(
   .classicImage(
     .init(
@@ -93,6 +97,7 @@ let classicImage: Braze.ContentCard = withContext(
   )
 )
 
+@MainActor
 let imageOnly: Braze.ContentCard = withContext(
   .imageOnly(
     .init(
@@ -103,6 +108,7 @@ let imageOnly: Braze.ContentCard = withContext(
   )
 )
 
+@MainActor
 let captionedImage: Braze.ContentCard = withContext(
   .captionedImage(
     .init(
@@ -115,38 +121,47 @@ let captionedImage: Braze.ContentCard = withContext(
   )
 )
 
+@MainActor
 func noCustomization(_ viewController: ReadmeViewController) {
   AppDelegate.noCustomization()
 }
 
+@MainActor
 func attributesCustomization(_ viewController: ReadmeViewController) {
   AppDelegate.attributesCustomization()
 }
 
+@MainActor
 func tintColorCustomization(_ viewController: ReadmeViewController) {
   AppDelegate.tintColorCustomization()
 }
 
+@MainActor
 func emptyStateCustomization(_ viewController: ReadmeViewController) {
   AppDelegate.emptyStateCustomization()
 }
 
+@MainActor
 func subclassClassicImageCellCustomization(_ viewController: ReadmeViewController) {
   AppDelegate.subclassClassicImageCellCustomization()
 }
 
+@MainActor
 func staticCardCustomization(_ viewController: ReadmeViewController) {
   AppDelegate.staticCardsCustomization()
 }
 
+@MainActor
 func filterCardsCustomization(_ viewController: ReadmeViewController) {
   AppDelegate.filterCardsCustomization()
 }
 
+@MainActor
 func transformCardsCustomization(_ viewController: ReadmeViewController) {
   AppDelegate.transformCardsCustomization()
 }
 
+@MainActor
 func disableDarkThemeCustomization(_ viewController: ReadmeViewController) {
   AppDelegate.disableDarkThemeCustomization()
 }
@@ -154,7 +169,8 @@ func disableDarkThemeCustomization(_ viewController: ReadmeViewController) {
 func withContext(_ card: Braze.ContentCard) -> Braze.ContentCard {
   var card = card
 
-  var loadImage: ((@escaping (Result<URL, Error>) -> Void) -> Braze.Cancellable)?
+  var loadImage:
+    ((@MainActor @Sendable @escaping (Result<URL, Error>) -> Void) -> Braze.Cancellable)?
   if let imageURL = card.imageURL {
     loadImage = { completion in
       DispatchQueue.main.async {
@@ -168,21 +184,23 @@ func withContext(_ card: Braze.ContentCard) -> Braze.ContentCard {
     logImpression: {},
     logClick: {},
     processClickAction: { clickAction in
-      switch clickAction {
-      case .url(let url, let useWebView):
-        let alert = UIAlertController(
-          title: "Opening URL",
-          message:
-            """
-            url: \(url)
-            useWebView: \(useWebView)
-            """,
-          preferredStyle: .actionSheet
-        )
-        alert.addAction(.init(title: "Dismiss", style: .cancel))
-        Braze.UIUtils.activeTopmostViewController?.present(alert, animated: true)
-      @unknown default:
-        print("Unknown click action: \(clickAction)")
+      DispatchQueue.main.async {
+        switch clickAction {
+        case .url(let url, let useWebView):
+          let alert = UIAlertController(
+            title: "Opening URL",
+            message:
+              """
+              url: \(url)
+              useWebView: \(useWebView)
+              """,
+            preferredStyle: .actionSheet
+          )
+          alert.addAction(.init(title: "Dismiss", style: .cancel))
+          Braze.UIUtils.activeTopmostViewController?.present(alert, animated: true)
+        @unknown default:
+          print("Unknown click action: \(clickAction)")
+        }
       }
     },
     logDismissed: {},

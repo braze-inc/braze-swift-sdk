@@ -30,7 +30,7 @@ extension BrazeInAppMessageUI {
     ///   delegate.
     /// - Via modifying the ``BrazeInAppMessageUI/messageView`` attributes on the
     ///   `BrazeInAppMessageUI` instance.
-    public struct Attributes {
+    public struct Attributes: Sendable {
 
       /// The animation used to present the view.
       public var animation: Animation = .auto
@@ -55,22 +55,35 @@ extension BrazeInAppMessageUI {
       public var allowInspector: Bool = true
 
       /// Closure allowing customization of the configuration used by the web view.
-      public var configure: ((WKWebViewConfiguration) -> Void)?
+      public var configure: (@MainActor @Sendable (WKWebViewConfiguration) -> Void)?
 
       /// Closure allowing further customization, executed when the view is about to be presented.
-      public var onPresent: ((HtmlView) -> Void)?
+      public var onPresent: (@MainActor @Sendable (HtmlView) -> Void)?
 
       /// Closure executed every time the view is laid out.
-      public var onLayout: ((HtmlView) -> Void)?
+      public var onLayout: (@MainActor @Sendable (HtmlView) -> Void)?
 
       /// Closure executed every time the view update its theme.
-      public var onTheme: ((HtmlView) -> Void)?
+      public var onTheme: (@MainActor @Sendable (HtmlView) -> Void)?
 
       /// The defaults html view attributes.
       ///
       /// Modify this value directly to apply the customizations to all html in-app messages
       /// presented by the SDK.
-      public static var defaults = Self()
+      public static var defaults: Self {
+        get { lock.sync { _defaults } }
+        set { lock.sync { _defaults = newValue } }
+      }
+
+      // nonisolated(unsafe) attribute for global variable is only available in Xcode 15.3 and later.
+      #if compiler(>=5.10)
+        nonisolated(unsafe) private static var _defaults = Self()
+      #else
+        private static var _defaults = Self()
+      #endif
+
+      /// The lock guarding the static properties.
+      private static let lock = NSRecursiveLock()
     }
 
     /// The view attributes (see ``Attributes-swift.struct``).
@@ -79,7 +92,7 @@ extension BrazeInAppMessageUI {
     // MARK: - Animation
 
     /// The presentation animations supported by the html in-app message view.
-    public enum Animation {
+    public enum Animation: Sendable {
 
       /// The animation chosen is automatically by the view.
       ///
@@ -166,11 +179,13 @@ extension BrazeInAppMessageUI {
       // - strongly retain its scripts and script message handlers
       // - seems to outlive the configuration / web view instance
       // - manual cleanup here ensure proper deallocation of those objects
-      let userContentController = webView?.configuration.userContentController
-      userContentController?.removeAllUserScripts()
-      userContentController?.removeScriptMessageHandler(
-        forName: Braze.WebViewBridge.ScriptMessageHandler.name
-      )
+      isolatedMainActorDeinit { [webView] in
+        let userContentController = webView?.configuration.userContentController
+        userContentController?.removeAllUserScripts()
+        userContentController?.removeScriptMessageHandler(
+          forName: Braze.WebViewBridge.ScriptMessageHandler.name
+        )
+      }
     }
 
     // MARK: - Theme

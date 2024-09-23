@@ -69,7 +69,7 @@ extension BrazeInAppMessageUI {
     // MARK: - Attributes
 
     /// Attributes allow a high-level customization of Braze's UI component.
-    public struct Attributes {
+    public struct Attributes: Sendable {
 
       /// Space around the button label, inside the button border.
       ///
@@ -106,7 +106,20 @@ extension BrazeInAppMessageUI {
       ///
       /// Modify this value directly to apply the customizations to all in-app message buttons
       /// presented by the SDK.
-      public static var defaults = Self()
+      public static var defaults: Self {
+        get { lock.sync { _defaults } }
+        set { lock.sync { _defaults = newValue } }
+      }
+
+      // nonisolated(unsafe) attribute for global variable is only available in Xcode 15.3 and later.
+      #if compiler(>=5.10)
+        nonisolated(unsafe) private static var _defaults = Self()
+      #else
+        private static var _defaults = Self()
+      #endif
+
+      /// The lock guarding the static properties.
+      private static let lock = NSRecursiveLock()
     }
 
     /// The high-level customization struct.

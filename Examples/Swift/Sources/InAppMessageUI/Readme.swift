@@ -12,7 +12,8 @@ let readme =
     - Use SDWebImage to provide GIF support to the Braze UI components
   """
 
-let actions: [(String, String, (ReadmeViewController) -> Void)] = [
+@MainActor
+let actions: [(String, String, @MainActor (ReadmeViewController) -> Void)] = [
   (
     "Present local slideup in-app message",
     "",
@@ -27,6 +28,7 @@ let actions: [(String, String, (ReadmeViewController) -> Void)] = [
 
 // MARK: - Internal
 
+@MainActor
 func localSlideup(_ viewController: ReadmeViewController) {
   let slideup: Braze.InAppMessage = .slideup(
     .init(
@@ -37,6 +39,7 @@ func localSlideup(_ viewController: ReadmeViewController) {
   AppDelegate.braze?.inAppMessagePresenter?.present(message: slideup)
 }
 
+@MainActor
 func localModal(_ viewController: ReadmeViewController) {
   let modal: Braze.InAppMessage = .modal(
     .init(

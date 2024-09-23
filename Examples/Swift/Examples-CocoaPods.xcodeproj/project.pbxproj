@@ -58,6 +58,7 @@
 		345CA2282BFEFED98328C0C2 /* Readme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6992ACA4C973FAF6333EE4B2 /* Readme.swift */; };
 		34C9C566ACB7B6220C782866 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A56AB422F8DA782A8D2B6FD /* LaunchScreen.storyboard */; };
 		356FD93DCAEAD68D24E91795 /* InAppMessageInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D93378C85712C1E5E9146B7 /* InAppMessageInfoViewController.swift */; };
+		3781F2BE6289AA47C84F66EB /* AppDelegate+Xcode16.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52769C8F4926DE1AE9B5C40 /* AppDelegate+Xcode16.swift */; };
 		383D757BFC1CFD0BE5D70CAB /* MockImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1099A7C7E5E89E130751B24C /* MockImage.swift */; };
 		3848E121BD7880E965B1E928 /* Readme.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6742114C06FC93D4AA30B5B /* Readme.swift */; };
 		3C6B1FC5F61A52BDC162A342 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0340E1FFDDBC0C9D72FCD4D4 /* Assets.xcassets */; };
@@ -96,6 +97,7 @@
 		67058DC19EFF4F37D190035A /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0078638D97BB480D82B18D6C /* Credentials.swift */; };
 		684401812C4C2490603788C1 /* FullWidthSlideupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C74A8AB0317373366057E4 /* FullWidthSlideupView.swift */; };
 		6A1B61950E0EEE8F2CC58222 /* MockImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1099A7C7E5E89E130751B24C /* MockImage.swift */; };
+		6B11762CE968AA3C64156187 /* AppDelegate+Xcode16.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52769C8F4926DE1AE9B5C40 /* AppDelegate+Xcode16.swift */; };
 		6BBEF5F38216AE455D0DD78F /* Readme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B8597B8B1BE2497CEFD038 /* Readme.swift */; };
 		6CE1D3089C764A51A5747648 /* SDWebImageGIFViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20ACDCAF82FAFB8B4915FF5D /* SDWebImageGIFViewProvider.swift */; };
 		6D0FFAC9BD9D9E6A49827977 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBBD41BB997EBF5820D819F /* AppDelegate.swift */; };
@@ -462,6 +464,7 @@
 		D6742114C06FC93D4AA30B5B /* Readme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Readme.swift; sourceTree = "<group>"; };
 		D6D87B0B28882DFD35A2BE4B /* InAppMessageUI-Customization.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "InAppMessageUI-Customization.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE3608B9E460175A349CDB87 /* Analytics.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Analytics.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E52769C8F4926DE1AE9B5C40 /* AppDelegate+Xcode16.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Xcode16.swift"; sourceTree = "<group>"; };
 		EB96485E099438DAB9547DF5 /* PushNotificationsContentExtension.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = PushNotificationsContentExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC4AEEA68D47995F66CD4034 /* ContentCardUI.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = ContentCardUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F224F57B3C4BE13C161148B0 /* SDWebImageGIFViewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDWebImageGIFViewProvider.swift; sourceTree = "<group>"; };
@@ -536,6 +539,7 @@
 			isa = PBXGroup;
 			children = (
 				0BA4A3B91B682BDF5707A9B8 /* AppDelegate.swift */,
+				E52769C8F4926DE1AE9B5C40 /* AppDelegate+Xcode16.swift */,
 				56301FA4B15B6867A6EC6713 /* Readme.swift */,
 			);
 			name = "PushNotifications-Manual";
@@ -1898,6 +1902,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3781F2BE6289AA47C84F66EB /* AppDelegate+Xcode16.swift in Sources */,
 				10E6DC8D2BCBC3BEB9A57C5C /* AppDelegate.swift in Sources */,
 				B623DADAA2CD790DE1B3FBF6 /* Credentials.swift in Sources */,
 				584387A3A80A86D5F630ABBE /* MockImage.swift in Sources */,
@@ -1936,6 +1941,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B11762CE968AA3C64156187 /* AppDelegate+Xcode16.swift in Sources */,
 				D043379496CD796896B44512 /* AppDelegate.swift in Sources */,
 				8D3BC628AF159AB7C8F52527 /* Credentials.swift in Sources */,
 				139780D805B7B80896DAA823 /* MockImage.swift in Sources */,

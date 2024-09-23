@@ -5,7 +5,7 @@ extension BrazeInAppMessageUI {
 
   // A view displaying modal and full in-app messages' header and message according the Braze's
   // specs.
-  public class ModalTextView: UIScrollView {
+  public final class ModalTextView: UIScrollView {
 
     /// The view's header string.
     public var header: String {
@@ -80,7 +80,7 @@ extension BrazeInAppMessageUI {
     // MARK: - Attributes
 
     /// The attributes supported by the modal text view.
-    public struct Attributes {
+    public struct Attributes: Sendable {
       /// The style for the header.
       public var header = TextStyle()
 
@@ -92,7 +92,7 @@ extension BrazeInAppMessageUI {
     }
 
     /// The style for displaying text in the modal text view.
-    public struct TextStyle {
+    public struct TextStyle: Sendable {
       /// The text color.
       public var color: UIColor = .brazeLabel
 

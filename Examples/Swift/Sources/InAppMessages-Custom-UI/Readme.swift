@@ -11,7 +11,8 @@ let readme =
     - Explains how to use the `Braze.InAppMessage` data model and present the message in a custom view controller.
   """
 
-let actions: [(String, String, (ReadmeViewController) -> Void)] = [
+@MainActor
+let actions: [(String, String, @MainActor (ReadmeViewController) -> Void)] = [
   (
     "Present local slideup in-app message",
     "",
@@ -26,6 +27,7 @@ let actions: [(String, String, (ReadmeViewController) -> Void)] = [
 
 // MARK: - Internal
 
+@MainActor
 func localSlideup(_ viewController: ReadmeViewController) {
   let slideup: Braze.InAppMessage = .slideup(
     .init(
@@ -40,6 +42,7 @@ func localSlideup(_ viewController: ReadmeViewController) {
   AppDelegate.braze?.inAppMessagePresenter?.present(message: slideup)
 }
 
+@MainActor
 func localModal(_ viewController: ReadmeViewController) {
   let modal: Braze.InAppMessage = .modal(
     .init(

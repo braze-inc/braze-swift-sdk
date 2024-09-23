@@ -54,7 +54,7 @@ extension BrazeInAppMessageUI {
     // MARK: - Attributes
 
     /// Attributes allow high-level customization of Braze's UI component.
-    public struct Attributes {
+    public struct Attributes: Sendable {
 
       /// Intrinsic size of the icon, including the background.
       ///

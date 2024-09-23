@@ -1,6 +1,7 @@
 import BrazeKit
 import UIKit
 
+@MainActor
 final class InAppMessageInfoViewController: UITableViewController {
 
   // Represents an in-app message property

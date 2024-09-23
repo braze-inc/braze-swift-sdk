@@ -12,7 +12,8 @@ extension BrazeInAppMessageUI {
   /// A writable instance of this type is passed to the ``BrazeInAppMessageUI/delegate`` via the
   /// ``BrazeInAppMessageUIDelegate/inAppMessage(_:prepareWith:)-11fog`` method.
   @objc(BrazeInAppMessageUIPresentationContextRaw)
-  public class PresentationContextRaw: NSObject {
+  @MainActor
+  public final class PresentationContextRaw: NSObject {
 
     /// The message to be presented.
     ///

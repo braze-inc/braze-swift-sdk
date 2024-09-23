@@ -25,9 +25,11 @@ extension BrazeContentCardUI {
     ///   - title: The navigation bar title (default: `""`).
     public init(
       braze: Braze,
-      attributes: ViewController.Attributes = .defaults,
+      attributes: ViewController.Attributes? = nil,
       title: String = ""
     ) {
+      let attributes = attributes ?? .defaults
+
       viewController = .init(braze: braze, attributes: attributes)
       viewController.title = title
       super.init(rootViewController: viewController)
@@ -53,9 +55,11 @@ extension BrazeContentCardUI {
       refresh: ((@escaping (Result<[Braze.ContentCard], Error>) -> Void) -> Void)? = nil,
       subscribe: ((@escaping ([Braze.ContentCard]) -> Void) -> Braze.Cancellable)? = nil,
       lastUpdate: Date? = nil,
-      attributes: ViewController.Attributes = .defaults,
+      attributes: ViewController.Attributes? = nil,
       title: String = ""
     ) {
+      let attributes = attributes ?? .defaults
+
       viewController = .init(
         initialCards: initialCards,
         refresh: refresh,

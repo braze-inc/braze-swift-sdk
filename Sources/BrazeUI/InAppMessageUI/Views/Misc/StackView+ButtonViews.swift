@@ -22,7 +22,7 @@ extension BrazeInAppMessageUI.StackView {
     let subviews: [UIView] =
       buttons
       .map { data in
-        let button = BrazeInAppMessageUI.ButtonView(button: data)
+        let button = BrazeInAppMessageUI.ButtonView(button: data, attributes: attributes)
         button.addAction { onClick(data) }
         return button
       }

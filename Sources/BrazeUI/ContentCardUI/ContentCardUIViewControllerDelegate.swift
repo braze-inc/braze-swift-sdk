@@ -18,6 +18,7 @@ public protocol BrazeContentCardUIViewControllerDelegate: AnyObject {
   ///   - clickAction: The click action.
   ///   - card: The Content Card.
   /// - Returns: `true` to let Braze process the click action, `false` otherwise
+  @MainActor
   func contentCard(
     _ controller: BrazeContentCardUI.ViewController,
     shouldProcess clickAction: Braze.ContentCard.ClickAction,

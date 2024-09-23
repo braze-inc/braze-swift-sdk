@@ -13,7 +13,7 @@ extension BrazeInAppMessageUI {
   /// The different display choices supported when receiving an in-app message from the Braze SDK.
   ///
   /// See ``BrazeInAppMessageUIDelegate/inAppMessage(_:displayChoiceForMessage:)-9w1nb``.
-  public enum DisplayChoice {
+  public enum DisplayChoice: Sendable {
 
     /// The in-app message is displayed immediately.
     case now
@@ -100,7 +100,7 @@ extension BrazeInAppMessageUI {
   ///
   /// InAppMessage types are represented as structs and imported from BrazeKit.
   /// This wrapper acts as a workaround to prevent Objective-C metaclass errors.
-  class MessageWrapper<WrappedType> {
+  final class MessageWrapper<WrappedType> {
     var wrappedValue: WrappedType
 
     /// Initializes the wrapper with the wrapped struct.

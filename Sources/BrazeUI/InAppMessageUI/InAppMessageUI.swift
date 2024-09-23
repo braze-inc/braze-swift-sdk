@@ -10,6 +10,7 @@ import UIKit
 /// To add GIF support to the in-app message UI components, set a valid
 /// ``gifViewProvider-swift.var``.
 @objc(BrazeInAppMessageUI)
+@MainActor
 open class BrazeInAppMessageUI:
   NSObject,
   BrazeInAppMessagePresenter,
@@ -245,9 +246,12 @@ open class BrazeInAppMessageUI:
     if case .auto(let interval) = message.messageClose {
       dismissTimer?.invalidate()
       dismissTimer = .scheduledTimer(
-        withTimeInterval: interval,
+        timeInterval: interval,
+        target: self,
+        selector: #selector(dismissAfterTimer),
+        userInfo: nil,
         repeats: false
-      ) { [weak self] _ in self?.dismiss() }
+      )
     }
 
     // Display
@@ -282,6 +286,11 @@ open class BrazeInAppMessageUI:
   @objc
   public func dismiss(completion: (() -> Void)? = nil) {
     window?.messageViewController?.dismissMessage(completion: completion) ?? completion?()
+  }
+
+  @objc
+  private func dismissAfterTimer() {
+    dismiss(completion: nil)
   }
 
   // MARK: - Utils

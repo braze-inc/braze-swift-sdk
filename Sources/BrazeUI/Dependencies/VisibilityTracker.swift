@@ -2,14 +2,15 @@ import UIKit
 
 /// VisibilityTracker keeps track of a list of visible identifiers and can report when they remain
 /// visible for more than a specified time interval.
+@MainActor
 open class VisibilityTracker<Identifier: Hashable> {
 
   // MARK: - Properties
 
   private let interval: TimeInterval
-  private let visibleIdentifiers: () -> [Identifier]
-  private let visibleForInterval: (Identifier) -> Void
-  private let exitVisible: (Identifier, _ afterInterval: Bool) -> Void
+  private let visibleIdentifiers: @MainActor () -> [Identifier]
+  private let visibleForInterval: @MainActor (Identifier) -> Void
+  private let exitVisible: @MainActor (Identifier, _ afterInterval: Bool) -> Void
 
   private lazy var displayLink: CADisplayLink = createDisplayLink()
   private var identifiersMap: [Identifier: CFTimeInterval] = [:]
@@ -30,9 +31,9 @@ open class VisibilityTracker<Identifier: Hashable> {
   ///                  than `interval` seconds before its exit.
   public init(
     interval: TimeInterval = 0.3,
-    visibleIdentifiers: @escaping () -> [Identifier],
-    visibleForInterval: @escaping (Identifier) -> Void = { _ in },
-    exitVisible: @escaping (Identifier, _ afterInterval: Bool) -> Void = { _, _ in }
+    visibleIdentifiers: @MainActor @escaping () -> [Identifier],
+    visibleForInterval: @MainActor @escaping (Identifier) -> Void = { _ in },
+    exitVisible: @MainActor @escaping (Identifier, _ afterInterval: Bool) -> Void = { _, _ in }
   ) {
     self.interval = interval
     self.visibleIdentifiers = visibleIdentifiers

@@ -8,6 +8,7 @@ extension Braze.ContentCard {
 
   /// The cell identifier used by ``BrazeUI/BrazeContentCardUI/ViewController`` to display the
   /// content cards.
+  @MainActor
   public var cellIdentifier: String {
     switch self {
     case .classic:

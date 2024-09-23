@@ -11,6 +11,7 @@
 
   /// A SwiftUI view which displays Braze Content Cards.
   @available(iOS 13.0, *)
+  @MainActor
   public struct ContentCardsView: UIViewControllerRepresentable {
 
     /// The attributes supported by the view.
@@ -32,11 +33,12 @@
     ///   - attributes: An attributes struct allowing customization of the view and its cells.
     public init(
       braze: Braze?,
-      shouldProcess: @escaping (Braze.ContentCard.ClickAction, Braze.ContentCard) -> Bool = {
-        _, _ in true
-      },
-      attributes: Attributes = .defaults
+      shouldProcess: @MainActor @escaping (Braze.ContentCard.ClickAction, Braze.ContentCard)
+        -> Bool = { _, _ in true },
+      attributes: Attributes? = nil
     ) {
+      let attributes = attributes ?? .defaults
+
       self.braze = braze
       self.shouldProcess = shouldProcess
       self.attributes = attributes
@@ -70,7 +72,7 @@
   @available(iOS 13.0, *)
   extension ContentCardsView {
 
-    public class Coordinator: BrazeContentCardUIViewControllerDelegate {
+    public final class Coordinator: BrazeContentCardUIViewControllerDelegate {
 
       weak var braze: Braze?
       var shouldProcess: (Braze.ContentCard.ClickAction, Braze.ContentCard) -> Bool

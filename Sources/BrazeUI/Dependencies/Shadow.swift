@@ -1,7 +1,7 @@
 import UIKit
 
 /// Type representing a view's shadow.
-public struct Shadow: Equatable {
+public struct Shadow: Equatable, Sendable {
   public var color: UIColor
   public var offset: CGSize
   public var radius: CGFloat

@@ -7,6 +7,7 @@ extension BrazeInAppMessageUI {
   ///
   /// A writable instance of this type is passed to the ``BrazeInAppMessageUI/delegate`` via the
   /// ``BrazeInAppMessageUIDelegate/inAppMessage(_:prepareWith:)-11fog`` method.
+  @MainActor
   public struct PresentationContext {
 
     /// The message to be presented.

@@ -13,6 +13,7 @@ import UIKit
 /// - ``BrazeInAppMessageUI/ControlView``
 ///
 /// Custom in-app message views must conform to this protocol.
+@MainActor
 public protocol InAppMessageView: UIView {
 
   /// The current presented state — is the message view visible to the user.

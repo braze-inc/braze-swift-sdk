@@ -12,10 +12,10 @@ extension BrazeInAppMessageUI {
 
     /// Creates and returns a container view initialized with a keyboard frame notifier.
     /// - Parameter keyboard: The keyboard frame notifier.
-    public init(keyboard: KeyboardFrameNotifier = .shared) {
-      self.keyboard = keyboard
+    public init(keyboard: KeyboardFrameNotifier? = nil) {
+      self.keyboard = keyboard ?? .shared
       super.init(frame: .zero)
-      keyboard.subscribe(identifier: ObjectIdentifier(self)) { [weak self] _ in
+      self.keyboard.subscribe(identifier: ObjectIdentifier(self)) { [weak self] _ in
         self?.updateConstraintsForKeyboard()
       }
     }
@@ -25,7 +25,9 @@ extension BrazeInAppMessageUI {
     }
 
     deinit {
-      keyboard.unsubscribe(identifier: ObjectIdentifier(self))
+      isolatedMainActorDeinit { [id = ObjectIdentifier(self), keyboard] in
+        keyboard.unsubscribe(identifier: id)
+      }
     }
 
     // MARK: - Layout

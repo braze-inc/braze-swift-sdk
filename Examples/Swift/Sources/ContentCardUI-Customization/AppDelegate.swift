@@ -217,6 +217,7 @@ extension AppDelegate {
 
 // MARK: - Helpers
 
+@MainActor
 private var cards: [Braze.ContentCard] = [
   classicPinned,
   classic,
@@ -225,6 +226,7 @@ private var cards: [Braze.ContentCard] = [
   captionedImage,
 ]
 
+@MainActor
 private var navigationController: UINavigationController {
   UIApplication.shared.delegate!.window!!.rootViewController! as! UINavigationController
 }

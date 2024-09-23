@@ -1,6 +1,7 @@
 import BrazeKit
 import Foundation
 
+@MainActor
 class AuthenticationManager {
 
   struct User {

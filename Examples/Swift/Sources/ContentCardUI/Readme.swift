@@ -12,7 +12,8 @@ let readme =
     - Use SDWebImage to provide GIF support to the Braze UI components
   """
 
-let actions: [(String, String, (ReadmeViewController) -> Void)] = [
+@MainActor
+let actions: [(String, String, @MainActor (ReadmeViewController) -> Void)] = [
   (
     "Push content cards view controller",
     "",
@@ -32,14 +33,17 @@ let actions: [(String, String, (ReadmeViewController) -> Void)] = [
 
 // MARK: - Internal
 
+@MainActor
 func pushContentCardsViewController(_ viewController: ReadmeViewController) {
   (UIApplication.shared.delegate as? AppDelegate)?.pushContentCardsViewController()
 }
 
+@MainActor
 func presentModalContentCardsViewController(_ viewController: ReadmeViewController) {
   (UIApplication.shared.delegate as? AppDelegate)?.presentModalContentCardsViewController()
 }
 
+@MainActor
 func presentModalContentCardsViewControllerCustomized(_ viewController: ReadmeViewController) {
   (UIApplication.shared.delegate as? AppDelegate)?
     .presentModalContentCardsViewControllerCustomized()

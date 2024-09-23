@@ -20,6 +20,7 @@ public protocol _OBJC_BrazeContentCardUIViewControllerDelegate: AnyObject {
   ///   - card: The Content Card.
   /// - Returns: `true` to let Braze process the click action, `false` otherwise
   @objc(contentCardController:shouldProcess:card:)
+  @MainActor
   optional func _objc_contentCard(
     _ controller: BrazeContentCardUI.ViewController,
     shouldProcess url: URL,
@@ -34,8 +35,13 @@ final class _OBJC_BrazeContentCardUIViewControllerDelegateWrapper:
   BrazeContentCardUIViewControllerDelegate
 {
 
-  /// Property used as a unique key for the wrapper lifecycle behavior.
-  private static var wrapperKey: Void?
+  // nonisolated(unsafe) attribute for global variable is only available in Xcode 15.3 and later.
+  #if compiler(>=5.10)
+    /// Property used as a unique key for the wrapper lifecycle behavior.
+    nonisolated(unsafe) private static var wrapperKey: Void?
+  #else
+    private static var wrapperKey: Void?
+  #endif
 
   /// The ObjC content card UI view controller delegate.
   weak var delegate: _OBJC_BrazeContentCardUIViewControllerDelegate?

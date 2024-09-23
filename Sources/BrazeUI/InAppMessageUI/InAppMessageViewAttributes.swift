@@ -2,7 +2,7 @@ import BrazeKit
 
 extension BrazeInAppMessageUI {
 
-  public enum ViewAttributes {
+  public enum ViewAttributes: Sendable {
     case slideup(SlideupView.Attributes)
     case modal(ModalView.Attributes)
     case modalImage(ModalImageView.Attributes)

@@ -4,7 +4,7 @@ import UIKit
 ///
 /// Large interface values are used when the UI is being displayed with both horizontal and vertical
 /// size classes are `.regular` and the device is in landscape.
-public struct ViewDimension: Hashable {
+public struct ViewDimension: Hashable, Sendable {
 
   /// The dimension for the regular case.
   public var regular: Double

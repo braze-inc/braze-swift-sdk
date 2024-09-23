@@ -13,7 +13,8 @@ let readme =
     - Braze Push Story implementation
   """
 
-let actions: [(String, String, (ReadmeViewController) -> Void)] = [
+@MainActor
+let actions: [(String, String, @MainActor (ReadmeViewController) -> Void)] = [
   (
     "Initialize Braze",
     "",
@@ -23,6 +24,7 @@ let actions: [(String, String, (ReadmeViewController) -> Void)] = [
 
 // MARK: - Internal
 
+@MainActor
 func initializeBraze(_ viewController: ReadmeViewController) {
   AppDelegate.initializeBraze()
 

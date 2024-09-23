@@ -81,8 +81,9 @@ extension BrazeInAppMessageUI {
       ui: BrazeInAppMessageUI,
       context: PresentationContext,
       messageView: InAppMessageView,
-      keyboard: KeyboardFrameNotifier = .shared
+      keyboard: KeyboardFrameNotifier? = nil
     ) {
+      let keyboard = keyboard ?? .shared
       let traits = context.preferencesProxy?.traitCollection
 
       self.ui = ui

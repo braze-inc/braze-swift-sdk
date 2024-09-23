@@ -963,7 +963,7 @@
 			mainGroup = D8CC2266D736859D7DD9A8FF;
 			packageReferences = (
 				9928D5150C45879A982BA1C6 /* XCRemoteSwiftPackageReference "SDWebImage" */,
-				90D8318C2DB3CED6610DD38C /* XCLocalSwiftPackageReference "/Users/jerielng/swift-sdk/.build/braze/release/braze-swift-sdk" */,
+				B0CAEC5E933F542260FE1612 /* XCLocalSwiftPackageReference "/Users/daniel.hok/Desktop/swift-sdk/.build/braze/release/braze-swift-sdk" */,
 			);
 			projectDirPath = "";
 			projectRoot = "";
@@ -1427,6 +1427,7 @@
 				SDKROOT = auto;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = complete;
 				SWIFT_VERSION = 5.0;
 				TVOS_DEPLOYMENT_TARGET = 12.0;
 				XROS_DEPLOYMENT_TARGET = 1.0;
@@ -1552,6 +1553,7 @@
 				SDKROOT = auto;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_STRICT_CONCURRENCY = complete;
 				SWIFT_VERSION = 5.0;
 				TVOS_DEPLOYMENT_TARGET = 12.0;
 				XROS_DEPLOYMENT_TARGET = 1.0;
@@ -2115,15 +2117,15 @@
 			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 5.19.0;
+				minimumVersion = 5.19.7;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		90D8318C2DB3CED6610DD38C /* XCLocalSwiftPackageReference "/Users/jerielng/swift-sdk/.build/braze/release/braze-swift-sdk" */ = {
+		B0CAEC5E933F542260FE1612 /* XCLocalSwiftPackageReference "/Users/daniel.hok/Desktop/swift-sdk/.build/braze/release/braze-swift-sdk" */ = {
 			isa = XCLocalSwiftPackageReference;
-			relativePath = "/Users/jerielng/swift-sdk/.build/braze/release/braze-swift-sdk";
+			relativePath = "/Users/daniel.hok/Desktop/swift-sdk/.build/braze/release/braze-swift-sdk";
 		};
 /* End XCLocalSwiftPackageReference section */
 

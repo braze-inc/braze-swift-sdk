@@ -25,6 +25,7 @@ public protocol _OBJC_BrazeInAppMessageUIDelegate: AnyObject {
   /// - Returns: The display choice for `message`. See ``BrazeInAppMessageUI/DisplayChoice`` for
   ///            possible values.
   @objc(inAppMessage:displayChoiceForMessage:)
+  @MainActor
   optional func _objc_inAppMessage(
     _ ui: BrazeInAppMessageUI,
     displayChoiceForMessage message: Braze.InAppMessageRaw
@@ -37,6 +38,7 @@ public protocol _OBJC_BrazeInAppMessageUIDelegate: AnyObject {
   ///   - message: The message to be presented.
   ///   - view: The in-app message view.
   @objc(inAppMessage:willPresent:view:)
+  @MainActor
   optional func _objc_inAppMessage(
     _ ui: BrazeInAppMessageUI,
     willPresent message: Braze.InAppMessageRaw,
@@ -49,6 +51,7 @@ public protocol _OBJC_BrazeInAppMessageUIDelegate: AnyObject {
   ///   - message: The message to be presented.
   ///   - view: The in-app message view.
   @objc(inAppMessage:didPresent:view:)
+  @MainActor
   optional func _objc_inAppMessage(
     _ ui: BrazeInAppMessageUI,
     didPresent message: Braze.InAppMessageRaw,
@@ -61,6 +64,7 @@ public protocol _OBJC_BrazeInAppMessageUIDelegate: AnyObject {
   ///   - message: The message to be presented.
   ///   - view: The in-app message view.
   @objc(inAppMessage:willDismiss:view:)
+  @MainActor
   optional func _objc_inAppMessage(
     _ ui: BrazeInAppMessageUI,
     willDismiss message: Braze.InAppMessageRaw,
@@ -74,6 +78,7 @@ public protocol _OBJC_BrazeInAppMessageUIDelegate: AnyObject {
   ///   - message: The message to be presented.
   ///   - view: The in-app message view.
   @objc(inAppMessage:didDismiss:view:)
+  @MainActor
   optional func _objc_inAppMessage(
     _ ui: BrazeInAppMessageUI,
     didDismiss message: Braze.InAppMessageRaw,
@@ -99,6 +104,7 @@ public protocol _OBJC_BrazeInAppMessageUIDelegate: AnyObject {
   ///   - view: The in-app message view.
   /// - Returns: `true` to let Braze process the click action, `false` otherwise.
   @objc(inAppMessage:shouldProcess:url:buttonId:message:view:)
+  @MainActor
   optional func _objc_inAppMessage(
     _ ui: BrazeInAppMessageUI,
     shouldProcess clickAction: Braze.InAppMessageRaw._OBJC_BRZInAppMessageRawClickAction,
@@ -116,6 +122,7 @@ public protocol _OBJC_BrazeInAppMessageUIDelegate: AnyObject {
   ///   - context: The presentation context. See ``BrazeInAppMessageUI/PresentationContextRaw`` for a
   ///              list of supported customizations.
   @objc(inAppMessage:prepareWith:)
+  @MainActor
   optional func _objc_inAppMessage(
     _ ui: BrazeInAppMessageUI,
     prepareWith context: BrazeInAppMessageUI.PresentationContextRaw
@@ -127,7 +134,7 @@ public protocol _OBJC_BrazeInAppMessageUIDelegate: AnyObject {
 ///
 /// See ``BrazeInAppMessageUIDelegate/inAppMessage(_:displayChoiceForMessage:)-1ghly``.
 @objc(BRZInAppMessageUIDisplayChoice)
-public enum _OBJC_BRZInAppMessageUIDisplayChoice: Int {
+public enum _OBJC_BRZInAppMessageUIDisplayChoice: Int, Sendable {
 
   /// The in-app message is displayed immediately.
   case now
@@ -173,8 +180,13 @@ public enum _OBJC_BRZInAppMessageUIDisplayChoice: Int {
 /// with the base Swift implementation.
 final class _OBJC_BrazeInAppMessageUIDelegateWrapper: BrazeInAppMessageUIDelegate {
 
-  /// Property used as a unique key for the wrapper lifecycle behavior.
-  private static var wrapperKey: Void?
+  // nonisolated(unsafe) attribute for global variable is only available in Xcode 15.3 and later.
+  #if compiler(>=5.10)
+    /// Property used as a unique key for the wrapper lifecycle behavior.
+    nonisolated(unsafe) private static var wrapperKey: Void?
+  #else
+    private static var wrapperKey: Void?
+  #endif
 
   /// The ObjC in-app message UI delegate.
   weak var delegate: _OBJC_BrazeInAppMessageUIDelegate?

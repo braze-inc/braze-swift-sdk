@@ -29,7 +29,7 @@ extension BrazeInAppMessageUI {
     ///   delegate.
     /// - Via modifying the ``BrazeInAppMessageUI/messageView`` attributes on the
     ///   `BrazeInAppMessageUI` instance.
-    public struct Attributes {
+    public struct Attributes: Sendable {
 
       /// The minimum spacing around the content view.
       public var margin = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
@@ -76,19 +76,32 @@ extension BrazeInAppMessageUI {
       public var buttonsAttributes = ButtonView.Attributes.defaults
 
       /// Closure allowing further customization, executed when the view is about to be presented.
-      public var onPresent: ((ModalImageView) -> Void)?
+      public var onPresent: (@MainActor @Sendable (ModalImageView) -> Void)?
 
       /// Closure executed every time the view is laid out.
-      public var onLayout: ((ModalImageView) -> Void)?
+      public var onLayout: (@MainActor @Sendable (ModalImageView) -> Void)?
 
       /// Closure executed every time the view update its theme.
-      public var onTheme: ((ModalImageView) -> Void)?
+      public var onTheme: (@MainActor @Sendable (ModalImageView) -> Void)?
 
       /// The defaults modal image view attributes.
       ///
       /// Modify this value directly to apply the customizations to all modal in-app messages
       /// presented by the SDK.
-      public static var defaults = Self()
+      public static var defaults: Self {
+        get { lock.sync { _defaults } }
+        set { lock.sync { _defaults = newValue } }
+      }
+
+      // nonisolated(unsafe) attribute for global variable is only available in Xcode 15.3 and later.
+      #if compiler(>=5.10)
+        nonisolated(unsafe) private static var _defaults = Self()
+      #else
+        private static var _defaults = Self()
+      #endif
+
+      /// The lock guarding the static properties.
+      private static let lock = NSRecursiveLock()
 
     }
 

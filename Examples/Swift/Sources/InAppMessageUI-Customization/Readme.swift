@@ -8,7 +8,8 @@ let readme =
   Customizations are applied in the `inAppMessage(_:prepareWith:)` delegate method implemented by the `AppDelegate`.
   """
 
-let actions: [(String, String, (ReadmeViewController) -> Void)] = [
+@MainActor
+let actions: [(String, String, @MainActor (ReadmeViewController) -> Void)] = [
   (
     "Slideup - Default",
     "A non-customized slideup.",
@@ -98,6 +99,7 @@ let actions: [(String, String, (ReadmeViewController) -> Void)] = [
 
 // MARK: - Internal
 
+@MainActor
 let slideup: Braze.InAppMessage = .slideup(
   .init(
     graphic: .image(
@@ -108,6 +110,7 @@ let slideup: Braze.InAppMessage = .slideup(
   )
 )
 
+@MainActor
 let modal: Braze.InAppMessage = .modal(
   .init(
     graphic: .image(
@@ -121,6 +124,7 @@ let modal: Braze.InAppMessage = .modal(
   )
 )
 
+@MainActor
 let modalImage: Braze.InAppMessage = .modalImage(
   .init(
     imageURL: .mockImage(
@@ -130,6 +134,7 @@ let modalImage: Braze.InAppMessage = .modalImage(
   )
 )
 
+@MainActor
 let full: Braze.InAppMessage = .full(
   .init(
     imageURL: .mockImage(
@@ -142,6 +147,7 @@ let full: Braze.InAppMessage = .full(
   )
 )
 
+@MainActor
 let fullImage: Braze.InAppMessage = .fullImage(
   .init(
     imageURL: .mockImage(
@@ -151,98 +157,116 @@ let fullImage: Braze.InAppMessage = .fullImage(
   )
 )
 
+@MainActor
 func slideupDefault(_ viewController: ReadmeViewController) {
   present(message: slideup)
 }
 
+@MainActor
 func slideupAttributes(_ viewController: ReadmeViewController) {
   var message = slideup
   message.extras = ["customization": "slideup-attributes"]
   present(message: message)
 }
 
+@MainActor
 func slideupFullWidth(_ viewController: ReadmeViewController) {
   var message = slideup
   message.extras = ["customization": "slideup-full-width"]
   present(message: message)
 }
 
+@MainActor
 func slideupConfirmButton(_ viewController: ReadmeViewController) {
   var message = slideup
   message.extras = ["customization": "slideup-confirm-button"]
   present(message: message)
 }
 
+@MainActor
 func modalDefault(_ viewController: ReadmeViewController) {
   present(message: modal)
 }
 
+@MainActor
 func modalAttributes(_ viewController: ReadmeViewController) {
   var message = modal
   message.extras = ["customization": "modal-attributes"]
   present(message: message)
 }
 
+@MainActor
 func modalDismissOnBackgroundTap(_ viewController: ReadmeViewController) {
   var message = modal
   message.extras = ["customization": "modal-dismiss-on-background-tap"]
   present(message: message)
 }
 
+@MainActor
 func modalButtonFont(_ viewController: ReadmeViewController) {
   var message = modal
   message.extras = ["customization": "modal-button-font"]
   present(message: message)
 }
 
+@MainActor
 func modalImageDefault(_ viewController: ReadmeViewController) {
   present(message: modalImage)
 }
 
+@MainActor
 func modalImageAttributes(_ viewController: ReadmeViewController) {
   var message = modalImage
   message.extras = ["customization": "modal-image-attributes"]
   present(message: message)
 }
 
+@MainActor
 func modalImageDismissOnBackgroundTap(_ viewController: ReadmeViewController) {
   var message = modalImage
   message.extras = ["customization": "modal-image-dismiss-on-background-tap"]
   present(message: message)
 }
 
+@MainActor
 func fullDefault(_ viewController: ReadmeViewController) {
   present(message: full)
 }
 
+@MainActor
 func fullAttributes(_ viewController: ReadmeViewController) {
   var message = full
   message.extras = ["customization": "full-attributes"]
   present(message: message)
 }
 
+@MainActor
 func fullDismissOnBackgroundTap(_ viewController: ReadmeViewController) {
   var message = full
   message.extras = ["customization": "full-dismiss-on-background-tap"]
   present(message: message)
 }
 
+@MainActor
 func fullImageDefault(_ viewController: ReadmeViewController) {
   present(message: fullImage)
 }
 
+@MainActor
 func fullImageAttributes(_ viewController: ReadmeViewController) {
   var message = fullImage
   message.extras = ["customization": "full-image-attributes"]
   present(message: message)
 }
 
+@MainActor
 func fullImageDismissOnBackgroundTap(_ viewController: ReadmeViewController) {
   var message = fullImage
   message.extras = ["customization": "full-image-dismiss-on-background-tap"]
   present(message: message)
 }
 
+@MainActor
 private func present(message: Braze.InAppMessage) {
   AppDelegate.braze?.inAppMessagePresenter?.present(message: message)
 }

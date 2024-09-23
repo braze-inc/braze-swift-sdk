@@ -39,6 +39,7 @@ extension BrazeContentCardUI {
     /// The attributes supported by the view controller.
     ///
     /// Attributes allows customizing the view controller and its associated cells.
+    @MainActor
     public struct Attributes {
 
       /// The _cell identifier_ to _cell class_ map.
@@ -79,7 +80,9 @@ extension BrazeContentCardUI {
       /// Closure allowing the modification of the content cards list presented.
       ///
       /// This closure is executed every time the controller receives content cards to display.
-      public var transform: ([Braze.ContentCard]) -> [Braze.ContentCard] = { $0 }
+      public var transform: @MainActor @Sendable ([Braze.ContentCard]) -> [Braze.ContentCard] = {
+        $0
+      }
 
       /// The message displayed when there is no content cards available.
       public var emptyStateMessage: String = localize(
@@ -156,7 +159,9 @@ extension BrazeContentCardUI {
     ///   - braze: The Braze instance.
     ///   - attributes: An attributes struct allowing customization of the table view controller
     ///                 and its cells.
-    public convenience init(braze: Braze, attributes: Attributes = .defaults) {
+    public convenience init(braze: Braze, attributes: Attributes? = nil) {
+      let attributes = attributes ?? .defaults
+
       self.init(
         initialCards: braze.contentCards.cards,
         refresh: { [weak braze] fulfill in
@@ -187,8 +192,10 @@ extension BrazeContentCardUI {
       refresh: ((@escaping (Result<[Braze.ContentCard], Error>) -> Void) -> Void)? = nil,
       subscribe: ((@escaping ([Braze.ContentCard]) -> Void) -> Braze.Cancellable)? = nil,
       lastUpdate: Date? = nil,
-      attributes: Attributes = .defaults
+      attributes: Attributes? = nil
     ) {
+      let attributes = attributes ?? .defaults
+
       self.cards = attributes.transform(initialCards)
       self.refresh = refresh
       self.subscribe = subscribe
@@ -402,7 +409,7 @@ extension BrazeContentCardUI {
 
     open func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
       indexPaths
-        .compactMap(card(at:))
+        .compactMap { card(at: $0) }
         .forEach { loadImage(card: $0) }
     }
 
@@ -410,8 +417,8 @@ extension BrazeContentCardUI {
       _ tableView: UITableView, cancelPrefetchingForRowsAt indexPaths: [IndexPath]
     ) {
       indexPaths
-        .compactMap(card(at:))
-        .forEach(cancelLoadImage(card:))
+        .compactMap { card(at: $0) }
+        .forEach { cancelLoadImage(card: $0) }
     }
 
     // MARK: - Subscribe
@@ -510,7 +517,10 @@ extension BrazeContentCardUI {
         guard let self = self,
           let visibleIndexPaths = self.tableView.indexPathsForVisibleRows
         else { return [] }
-        let ids = visibleIndexPaths.compactMap(self.card(at:)).map(\.id)
+        let ids =
+          visibleIndexPaths
+          .compactMap { self.card(at: $0) }
+          .map(\.id)
         return ids
       },
       visibleForInterval: { [weak self] id in

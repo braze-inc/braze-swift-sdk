@@ -15,6 +15,7 @@ import UIKit
 /// GIFViewProvider.shared = .sdWebImage
 /// ```
 @objc(BRZGIFViewProvider)
+@MainActor
 public final class _OBJC_BRZGIFViewProvider: NSObject {
 
   /// The GIF view provider used for all BrazeUI components.
@@ -31,7 +32,7 @@ public final class _OBJC_BRZGIFViewProvider: NSObject {
   /// - Parameters:
   ///   - url: The local file url for the image.
   @objc
-  public var view: (_ url: URL?) -> UIView {
+  public var view: @MainActor @Sendable (_ url: URL?) -> UIView {
     get { gifViewProvider.view }
     set { gifViewProvider.view = newValue }
   }
@@ -41,7 +42,7 @@ public final class _OBJC_BRZGIFViewProvider: NSObject {
   ///   - view: The view to update.
   ///   - url: The local file url for the image.
   @objc
-  public var updateView: (_ view: UIView, _ url: URL?) -> Void {
+  public var updateView: @MainActor @Sendable (_ view: UIView, _ url: URL?) -> Void {
     get { gifViewProvider.updateView }
     set { gifViewProvider.updateView = newValue }
   }
@@ -54,8 +55,8 @@ public final class _OBJC_BRZGIFViewProvider: NSObject {
   ///   - updateView: See ``updateView``.
   @objc
   public convenience init(
-    view: @escaping (_ url: URL?) -> UIView,
-    updateView: @escaping (_ view: UIView, _ url: URL?) -> Void
+    view: @MainActor @Sendable @escaping (_ url: URL?) -> UIView,
+    updateView: @MainActor @Sendable @escaping (_ view: UIView, _ url: URL?) -> Void
   ) {
     self.init(.init(view: view, updateView: updateView))
   }
@@ -70,8 +71,8 @@ public final class _OBJC_BRZGIFViewProvider: NSObject {
   ///   - updateView: See ``updateView``.
   @objc
   public static func provider(
-    view: @escaping (_ url: URL?) -> UIView,
-    updateView: @escaping (_ view: UIView, _ url: URL?) -> Void
+    view: @MainActor @Sendable @escaping (_ url: URL?) -> UIView,
+    updateView: @MainActor @Sendable @escaping (_ view: UIView, _ url: URL?) -> Void
   ) -> _OBJC_BRZGIFViewProvider {
     .init(view: view, updateView: updateView)
   }

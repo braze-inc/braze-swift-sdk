@@ -14,7 +14,7 @@ extension BrazeContentCardUI {
     /// The attributes supported by content card cell.
     ///
     /// Attributes allows customizing the cells.
-    public struct Attributes: Equatable {
+    public struct Attributes: Equatable, Sendable {
 
       /// The spacing around the content view.
       public var margin: Margin = .layoutMargins(
@@ -102,7 +102,7 @@ extension BrazeContentCardUI {
     }
 
     /// The margin type.
-    public enum Margin: Equatable {
+    public enum Margin: Equatable, Sendable {
 
       /// Use the `layoutMarginsGuide`.
       case layoutMargins(UIEdgeInsets)

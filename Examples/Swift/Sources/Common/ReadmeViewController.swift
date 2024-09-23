@@ -1,8 +1,9 @@
 import UIKit
 
+@MainActor
 final class ReadmeViewController: UITableViewController {
 
-  let actions: [(String, String, (ReadmeViewController) -> Void)]
+  let actions: [(String, String, @MainActor (ReadmeViewController) -> Void)]
 
   let readmeTextView: UITextView = {
     let textView = UITextView()
@@ -34,7 +35,7 @@ final class ReadmeViewController: UITableViewController {
     return textView
   }()
 
-  init(readme: String, actions: [(String, String, (ReadmeViewController) -> Void)]) {
+  init(readme: String, actions: [(String, String, @MainActor (ReadmeViewController) -> Void)]) {
     self.actions = actions
     super.init(style: .grouped)
 
@@ -107,6 +108,7 @@ final class ReadmeViewController: UITableViewController {
 
 // MARK: - AutoReadme
 
+@MainActor
 private var _window: UIWindow? = {
   let readmeViewController = ReadmeViewController(readme: readme, actions: actions)
   let navigationController = UINavigationController(rootViewController: readmeViewController)

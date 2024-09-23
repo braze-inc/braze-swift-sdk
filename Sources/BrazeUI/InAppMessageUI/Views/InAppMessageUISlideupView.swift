@@ -29,7 +29,7 @@ extension BrazeInAppMessageUI {
     ///   delegate.
     /// - Via modifying the ``BrazeInAppMessageUI/messageView`` attributes on the
     ///   `BrazeInAppMessageUI` instance.
-    public struct Attributes {
+    public struct Attributes: Sendable {
 
       /// The minimum spacing around the content view.
       public var margin = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
@@ -87,24 +87,37 @@ extension BrazeInAppMessageUI {
       public var maxWidth = 450.0
 
       /// Closure allowing further customization, executed when the view is about to be presented.
-      public var onPresent: ((SlideupView) -> Void)?
+      public var onPresent: (@MainActor @Sendable (SlideupView) -> Void)?
 
       /// Closure executed every time the view is laid out.
-      public var onLayout: ((SlideupView) -> Void)?
+      public var onLayout: (@MainActor @Sendable (SlideupView) -> Void)?
 
       /// Closure executed every time the view update its theme.
-      public var onTheme: ((SlideupView) -> Void)?
+      public var onTheme: (@MainActor @Sendable (SlideupView) -> Void)?
 
       /// The defaults slideup view attributes.
       ///
       /// Modify this value directly to apply the customizations to all slideup in-app messages
       /// presented by the SDK.
-      public static var defaults = Self()
+      public static var defaults: Self {
+        get { lock.sync { _defaults } }
+        set { lock.sync { _defaults = newValue } }
+      }
+
+      // nonisolated(unsafe) attribute for global variable is only available in Xcode 15.3 and later.
+      #if compiler(>=5.10)
+        nonisolated(unsafe) private static var _defaults = Self()
+      #else
+        private static var _defaults = Self()
+      #endif
+
+      /// The lock guarding the static properties.
+      private static let lock = NSRecursiveLock()
 
     }
 
     /// Visibility options supported for the chevron.
-    public enum ChevronVisibility {
+    public enum ChevronVisibility: Sendable {
 
       /// Visible when the message has a click action, hidden otherwise.
       case auto
@@ -477,7 +490,8 @@ extension BrazeInAppMessageUI {
       contentView.point(inside: convert(point, to: contentView), with: event)
     }
 
-    class PressGestureDelegate: NSObject, UIGestureRecognizerDelegate {
+    @MainActor
+    final class PressGestureDelegate: NSObject, UIGestureRecognizerDelegate {
       func gestureRecognizer(
         _ gestureRecognizer: UIGestureRecognizer,
         shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer

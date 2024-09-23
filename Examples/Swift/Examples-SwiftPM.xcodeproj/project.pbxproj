@@ -50,6 +50,7 @@
 		50D8D4EB19BF8DB20DF34B8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FCD17EEF41713F18F4CA702 /* Assets.xcassets */; };
 		52CAA705E5A2A6B084470A6B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FCD17EEF41713F18F4CA702 /* Assets.xcassets */; };
 		5489F499BAD776AAF047FE41 /* PushNotificationsContentExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = A7B092ACAEC915379923328F /* PushNotificationsContentExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		55575A615424AB84B62EA11D /* AppDelegate+Xcode16.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43029D0CF2FFD58212D8A976 /* AppDelegate+Xcode16.swift */; };
 		56D5E2804EA244C26A6C7084 /* ReadmeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C3766DAA0E86C999794A8F /* ReadmeViewController.swift */; };
 		5C46A726B573C78D24809762 /* BrazeKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1BF6D20F4E3962FBB5B92AF3 /* BrazeKit */; };
 		61A171370197788908EC6E6C /* ReadmeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C3766DAA0E86C999794A8F /* ReadmeViewController.swift */; };
@@ -219,6 +220,7 @@
 		2205604217E64D9BDCAB2FDF /* PushNotifications-DelayedInitialization.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "PushNotifications-DelayedInitialization.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3779C8A71C6D78BBBD104EE0 /* Readme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Readme.swift; sourceTree = "<group>"; };
 		3E837265F7BEBDDF6865917B /* PushNotifications-Manual.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "PushNotifications-Manual.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		43029D0CF2FFD58212D8A976 /* AppDelegate+Xcode16.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Xcode16.swift"; sourceTree = "<group>"; };
 		43898C005AA33A7630288625 /* ContentCardUI.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = ContentCardUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45164B1D1773E47F1B4F4671 /* Readme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Readme.swift; sourceTree = "<group>"; };
 		4FE3CE0839B9CDC3DBD854F1 /* SDWebImageGIFViewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDWebImageGIFViewProvider.swift; sourceTree = "<group>"; };
@@ -422,6 +424,7 @@
 			isa = PBXGroup;
 			children = (
 				D19D0F1AEE6BC19D74B3B363 /* AppDelegate.swift */,
+				43029D0CF2FFD58212D8A976 /* AppDelegate+Xcode16.swift */,
 				45164B1D1773E47F1B4F4671 /* Readme.swift */,
 			);
 			name = "PushNotifications-Manual";
@@ -954,7 +957,7 @@
 			mainGroup = D8CC2266D736859D7DD9A8FF;
 			packageReferences = (
 				9928D5150C45879A982BA1C6 /* XCRemoteSwiftPackageReference "SDWebImage" */,
-				90D8318C2DB3CED6610DD38C /* XCLocalSwiftPackageReference "/Users/jerielng/swift-sdk/.build/braze/release/braze-swift-sdk" */,
+				B0CAEC5E933F542260FE1612 /* XCLocalSwiftPackageReference "/Users/daniel.hok/Desktop/swift-sdk/.build/braze/release/braze-swift-sdk" */,
 			);
 			projectDirPath = "";
 			projectRoot = "";
@@ -1153,6 +1156,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55575A615424AB84B62EA11D /* AppDelegate+Xcode16.swift in Sources */,
 				A37DA2DB71B7AD385059771C /* AppDelegate.swift in Sources */,
 				0DA5B1EC47B75FAE8E3F637F /* Credentials.swift in Sources */,
 				ABDD26A5B1458660253434E6 /* MockImage.swift in Sources */,
@@ -1415,6 +1419,7 @@
 				SDKROOT = auto;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = complete;
 				SWIFT_VERSION = 5.0;
 				TVOS_DEPLOYMENT_TARGET = 12.0;
 				XROS_DEPLOYMENT_TARGET = 1.0;
@@ -1540,6 +1545,7 @@
 				SDKROOT = auto;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_STRICT_CONCURRENCY = complete;
 				SWIFT_VERSION = 5.0;
 				TVOS_DEPLOYMENT_TARGET = 12.0;
 				XROS_DEPLOYMENT_TARGET = 1.0;
@@ -2103,15 +2109,15 @@
 			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 5.19.0;
+				minimumVersion = 5.19.7;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		90D8318C2DB3CED6610DD38C /* XCLocalSwiftPackageReference "/Users/jerielng/swift-sdk/.build/braze/release/braze-swift-sdk" */ = {
+		B0CAEC5E933F542260FE1612 /* XCLocalSwiftPackageReference "/Users/daniel.hok/Desktop/swift-sdk/.build/braze/release/braze-swift-sdk" */ = {
 			isa = XCLocalSwiftPackageReference;
-			relativePath = "/Users/jerielng/swift-sdk/.build/braze/release/braze-swift-sdk";
+			relativePath = "/Users/daniel.hok/Desktop/swift-sdk/.build/braze/release/braze-swift-sdk";
 		};
 /* End XCLocalSwiftPackageReference section */
 

@@ -20,7 +20,7 @@ extension BrazeInAppMessageUI {
     ///   delegate.
     /// - Via modifying the ``BrazeInAppMessageUI/messageView`` attributes on the
     ///   `BrazeInAppMessageUI` instance.
-    public struct Attributes {
+    public struct Attributes: Sendable {
 
       /// The minimum spacing around the content view (used when displayed as modal).
       public var margin = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
@@ -79,19 +79,32 @@ extension BrazeInAppMessageUI {
       public var preferredDisplayMode: DisplayMode?
 
       /// Closure allowing further customization, executed when the view is about to be presented.
-      public var onPresent: ((FullView) -> Void)?
+      public var onPresent: (@MainActor @Sendable (FullView) -> Void)?
 
       /// Closure executed every time the view is laid out.
-      public var onLayout: ((FullView) -> Void)?
+      public var onLayout: (@MainActor @Sendable (FullView) -> Void)?
 
       /// Closure executed every time the view update its theme.
-      public var onTheme: ((FullView) -> Void)?
+      public var onTheme: (@MainActor @Sendable (FullView) -> Void)?
 
       /// The defaults full view attributes.
       ///
       /// Modify this value directly to apply the customizations to all full in-app messages
       /// presented by the SDK.
-      public static var defaults = Self()
+      public static var defaults: Self {
+        get { lock.sync { _defaults } }
+        set { lock.sync { _defaults = newValue } }
+      }
+
+      // nonisolated(unsafe) attribute for global variable is only available in Xcode 15.3 and later.
+      #if compiler(>=5.10)
+        nonisolated(unsafe) private static var _defaults = Self()
+      #else
+        private static var _defaults = Self()
+      #endif
+
+      /// The lock guarding the static properties.
+      private static let lock = NSRecursiveLock()
 
     }
 
@@ -100,7 +113,7 @@ extension BrazeInAppMessageUI {
     }
 
     /// Display modes supported by the full in-app message view.
-    public enum DisplayMode {
+    public enum DisplayMode: Sendable {
 
       /// Displays the view as a modal.
       case modal
