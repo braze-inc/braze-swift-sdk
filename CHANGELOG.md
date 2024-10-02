@@ -1,3 +1,13 @@
+## 11.1.0
+
+##### Fixed
+- Fixes an issue introduced in `11.0.0` where the push token status would not always be reported in all circumstances.
+- Fixes a display bug where an in-app message would appear truncated after certain keyboard dismissal scenarios.
+- Fixes a reference cycle in `Braze.NewsFeedCard.Context` that could prevent the card from being deallocated.
+
+##### Added
+- Adds a public initializer for `Braze.Notifications.Payload`.
+
 ## 11.0.0
 
 ##### Breaking
