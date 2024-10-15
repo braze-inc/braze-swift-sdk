@@ -1,5 +1,7 @@
 ## 11.1.0
 
+⚠️ **Important:** This version has a known issue around Push Notifications that can cause incorrect unsubscribes. Do not upgrade to this version.
+
 ##### Fixed
 - Fixes an issue introduced in `11.0.0` where the push token status would not always be reported in all circumstances.
 - Fixes a display bug where an in-app message would appear truncated after certain keyboard dismissal scenarios.
@@ -9,6 +11,8 @@
 - Adds a public initializer for `Braze.Notifications.Payload`.
 
 ## 11.0.0
+
+⚠️ **Important:** This version has a known issue around Push Notifications that can cause incorrect unsubscribes. Do not upgrade to this version.
 
 ##### Breaking
 - Adds support for [Swift 6 strict concurrency checking](https://developer.apple.com/documentation/swift/adoptingswift6).
