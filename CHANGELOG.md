@@ -1,6 +1,6 @@
 ## 11.1.0
 
-⚠️ **Important:** This version has a known issue around Push Notifications that can cause incorrect unsubscribes. Do not upgrade to this version.
+⚠️ **Important:** This version has a known issue related to push subscription status. Do not upgrade to this version.
 
 ##### Fixed
 - Fixes an issue introduced in `11.0.0` where the push token status would not always be reported in all circumstances.
@@ -12,7 +12,7 @@
 
 ## 11.0.0
 
-⚠️ **Important:** This version has a known issue around Push Notifications that can cause incorrect unsubscribes. Do not upgrade to this version.
+⚠️ **Important:** This version has a known issue related to push subscription status. Do not upgrade to this version.
 
 ##### Breaking
 - Adds support for [Swift 6 strict concurrency checking](https://developer.apple.com/documentation/swift/adoptingswift6).
