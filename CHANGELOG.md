@@ -1,6 +1,11 @@
+## 11.1.1
+
+##### Fixed
+- Fixes an issue introduced in `11.0.0` where the push subscription status would be sent to the backend with an inaccurate value at startup, causing an unexpected subscription state. The SDK now sends up the accurate subscription status at each startup.
+
 ## 11.1.0
 
-⚠️ **Important:** This version has a known issue related to push subscription status. Do not upgrade to this version.
+⚠️ **Important:** This version has a known issue related to push subscription status. Upgrade to version `11.1.1` instead.
 
 ##### Fixed
 - Fixes an issue introduced in `11.0.0` where the push token status would not always be reported in all circumstances.
@@ -12,7 +17,7 @@
 
 ## 11.0.0
 
-⚠️ **Important:** This version has a known issue related to push subscription status. Do not upgrade to this version.
+⚠️ **Important:** This version has a known issue related to push subscription status. Upgrade to version `11.1.1` instead.
 
 ##### Breaking
 - Adds support for [Swift 6 strict concurrency checking](https://developer.apple.com/documentation/swift/adoptingswift6).
