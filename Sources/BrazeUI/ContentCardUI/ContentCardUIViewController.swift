@@ -100,7 +100,7 @@ extension BrazeContentCardUI {
       public var enableDarkTheme: Bool = true
 
       /// The default attributes.
-      public static let defaults = Self()
+      public static var defaults = Self()
     }
 
     /// The attributes customizing the table view and its cells.

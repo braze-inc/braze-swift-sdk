@@ -1,3 +1,16 @@
+## 11.2.0
+
+##### Fixed
+- Fixes the Objective-C `Braze.delegate` declaration to be `weak` like the Swift variant.
+
+##### Added
+- `Braze.prepareForDelayedInitialization` now takes an optional parameter `analyticsBehavior: PushEnqueueBehavior`.
+  - Braze uses this value to determine whether any Braze push payloads received before initialization should be processed once initialization is complete.
+  - `PushEnqueueBehavior.queue` will enqueue received push payloads to be processed upon initialization. This option is selected by default.
+  - `PushEnqueueBehavior.drop` will drop received push payloads, ignoring them.
+- Adds configuration properties to customize the `lineSpacing`, `maxLineHeight`, `minLineHeight`, and `lineHeightMultiple` for the header and message texts in full and modal in-app messages.
+- Updates `BrazeContentCardUI.ViewController.Attributes.defaults` to be a `var` to allow directly editing the property for convenience.
+
 ## 11.1.1
 
 ##### Fixed

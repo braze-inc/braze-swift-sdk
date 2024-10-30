@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // Prepare Braze for delayed initialization
     // - This ensures that push notifications received before the SDK is initialized are processed
     //   during initialization.
-    Braze.prepareForDelayedInitialization()
+    Braze.prepareForDelayedInitialization(pushAutomation: true)
 
     window?.makeKeyAndVisible()
     return true

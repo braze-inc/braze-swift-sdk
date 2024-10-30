@@ -98,6 +98,9 @@ extension BrazeContentCardUI {
       public var classicImageTextSpacing: Double = 12
 
       /// The default attributes.
+      ///
+      /// Cell attributes are not directly customizable via this property. To customize all Cell's attributes at once, use
+      /// ``BrazeContentCardUI/ViewController/Attributes/cellAttributes``.
       public static let defaults = Self()
     }
 

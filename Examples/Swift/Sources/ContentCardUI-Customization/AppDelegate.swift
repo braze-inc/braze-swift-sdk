@@ -28,14 +28,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 // MARK: - Customizations
 
-#warning(
-  """
-  For demonstration purposes, this example application uses an alternate Content Card view controller initializer.
+#warning("""
+For demonstration purposes, this example application uses an alternate Content Card view controller initializer.
 
-  In your implementation, you are expected to use the standard `init(braze:attributes:)` initializer to automatically link the UI to your braze instance.
+In your implementation, you are expected to use the standard `init(braze:attributes:)` initializer to automatically link the UI to your braze instance.
 
-  See https://braze-inc.github.io/braze-swift-sdk/documentation/brazeui/brazecontentcardui/viewcontroller/init(braze:attributes:)
-  """)
+See https://braze-inc.github.io/braze-swift-sdk/documentation/brazeui/brazecontentcardui/viewcontroller/init(braze:attributes:)
+""")
 
 extension AppDelegate {
 
@@ -69,7 +68,35 @@ extension AppDelegate {
       initialCards: cards,
       attributes: attributes
     )
-    viewController.title = "Attributes"
+    viewController.title = "Modifying Attributes"
+    navigationController.pushViewController(viewController, animated: true)
+  }
+
+  static func defaultAttributesCustomization() {
+    // Customize the cell attribute defaults directly to customize the cell
+    BrazeContentCardUI.ViewController.Attributes.defaults.cellAttributes.cornerRadius = 40
+    BrazeContentCardUI.ViewController.Attributes.defaults.cellAttributes.classicImageCornerRadius =
+      10
+    if #available(iOS 13.0, *) {
+      BrazeContentCardUI.ViewController.Attributes.defaults.cellAttributes.cornerCurve = .continuous
+    }
+
+    BrazeContentCardUI.ViewController.Attributes.defaults.cellAttributes.titleFont = UIFont(
+      name: "AvenirNext-Heavy", size: 18)!
+    BrazeContentCardUI.ViewController.Attributes.defaults.cellAttributes.descriptionFont = UIFont(
+      name: "BradleyHandITCTT-Bold", size: 16)!
+    BrazeContentCardUI.ViewController.Attributes.defaults.cellAttributes.domainFont = UIFont(
+      name: "TimesNewRomanPSMT", size: 12)!
+    if #available(iOS 13.0, *) {
+      BrazeContentCardUI.ViewController.Attributes.defaults.cellAttributes.domainColor = .green
+    } else {
+      BrazeContentCardUI.ViewController.Attributes.defaults.cellAttributes.domainColor = .gray
+    }
+    BrazeContentCardUI.ViewController.Attributes.defaults.cellAttributes.highlightColor =
+      .systemGreen.withAlphaComponent(0.8)
+
+    let viewController = BrazeContentCardUI.ViewController(initialCards: cards)
+    viewController.title = "Modifying default Attributes"
     navigationController.pushViewController(viewController, animated: true)
   }
 

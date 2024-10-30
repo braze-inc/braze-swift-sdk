@@ -101,6 +101,18 @@ extension BrazeInAppMessageUI {
 
       /// The text alignment.
       public var alignment: NSTextAlignment = .natural
+
+      /// The text line spacing (default: `nil`).
+      public var lineSpacing: CGFloat? = nil
+
+      /// The maximum line height (default: `0.0`).
+      public var maxLineHeight: CGFloat = 0.0
+
+      /// The minimum line height (default: `0.0`).
+      public var minLineHeight: CGFloat = 0.0
+
+      /// The line height multiple (default: `0.0`).
+      public var lineHeightMultiple: CGFloat = 0.0
     }
 
     // MARK: - Misc.
@@ -123,12 +135,16 @@ extension BrazeInAppMessageUI {
             .foregroundColor: attributes.header.color,
           ],
           {
-            $0.lineSpacing = 2 * Layout.headerLineSpacingScaleFactor
+            $0.lineSpacing =
+              attributes.header.lineSpacing ?? (2 * Layout.headerLineSpacingScaleFactor)
             $0.alignment = attributes.header.alignment
             $0.paragraphSpacing = max(
               0.0,
               attributes.headerMessageSpacing - Layout.headerMessageSpacingOffset
             )
+            $0.lineHeightMultiple = attributes.header.lineHeightMultiple
+            $0.minimumLineHeight = attributes.header.minLineHeight
+            $0.maximumLineHeight = attributes.header.maxLineHeight
           })
       )
 
@@ -145,8 +161,13 @@ extension BrazeInAppMessageUI {
             .foregroundColor: attributes.message.color,
           ]
         ) {
-          $0.lineSpacing = 4 * Layout.messageLineSpacingScaleFactor
+          $0.lineSpacing =
+            attributes.message.lineSpacing ?? (4 * Layout.messageLineSpacingScaleFactor)
           $0.alignment = attributes.message.alignment
+
+          $0.lineHeightMultiple = attributes.message.lineHeightMultiple
+          $0.minimumLineHeight = attributes.message.minLineHeight
+          $0.maximumLineHeight = attributes.message.maxLineHeight
         }
       )
 

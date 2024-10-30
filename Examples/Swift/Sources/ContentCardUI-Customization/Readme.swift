@@ -21,6 +21,11 @@ let actions: [(String, String, @MainActor (ReadmeViewController) -> Void)] = [
     attributesCustomization
   ),
   (
+    "Modify default attributes",
+    "Corner radius, fonts, text color and highlight color.",
+    defaultAttributesCustomization
+  ),
+  (
     "Tint color",
     "Pin image, unviewed indicator and domain label inherit the current tint color.",
     tintColorCustomization
@@ -129,6 +134,11 @@ func noCustomization(_ viewController: ReadmeViewController) {
 @MainActor
 func attributesCustomization(_ viewController: ReadmeViewController) {
   AppDelegate.attributesCustomization()
+}
+
+@MainActor
+func defaultAttributesCustomization(_ viewController: ReadmeViewController) {
+  AppDelegate.defaultAttributesCustomization()
 }
 
 @MainActor
