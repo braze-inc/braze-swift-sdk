@@ -17,7 +17,7 @@ extension BrazeInAppMessageUI {
     }
 
     /// Internal wrapper for the control in-app message.
-    let messageWrapper: MessageWrapper<Braze.InAppMessage.Control>
+    let messageWrapper: StructWrapper<Braze.InAppMessage.Control>
 
     /// Creates and returns a control in-app message view.
     /// - Parameter message: The message.

@@ -1,3 +1,13 @@
+## 11.3.0
+
+##### Fixed
+- Fixes a behavior where calling the `logClick` bridge method in HTML in-app messages with `""` as the button ID would log an error.
+  - Instead, this would log an in-app message body click to match other platforms.
+
+##### Added
+- Adds support for the Braze Banner Cards product.
+  - For usage details, refer to our tutorial [here](https://braze-inc.github.io/braze-swift-sdk/tutorials/braze/c4-bannersui).
+
 ## 11.2.0
 
 ##### Fixed

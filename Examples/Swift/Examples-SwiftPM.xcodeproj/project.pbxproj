@@ -23,6 +23,7 @@
 		1706C805A425B9891F03C685 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FCD17EEF41713F18F4CA702 /* Assets.xcassets */; };
 		19210C4C3F84E4FCEF294DDA /* MockImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E59EF18571FF184E5965819 /* MockImage.swift */; };
 		192400F4407E861A42E5D31B /* BrazeKit in Frameworks */ = {isa = PBXBuildFile; productRef = 56B0C3BB439D22B39FD34A28 /* BrazeKit */; };
+		1B0009A5BF554FC7A7674215 /* MockImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E59EF18571FF184E5965819 /* MockImage.swift */; };
 		1B1E05801B0FD5BD680AAF12 /* CustomInAppMessagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F28A24B0752E1A7F5C2E760 /* CustomInAppMessagePresenter.swift */; };
 		1DF1C08B07EE12BE36E9D54A /* CardsInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8AD06FAD6F81E92F64DD72 /* CardsInfoViewController.swift */; };
 		1EEDCADAEE7204185CC6967E /* SDWebImageGIFViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE3CE0839B9CDC3DBD854F1 /* SDWebImageGIFViewProvider.swift */; };
@@ -39,27 +40,34 @@
 		3C02C1D2705DD7EA7DDBB1F3 /* ReadmeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C3766DAA0E86C999794A8F /* ReadmeViewController.swift */; };
 		3C2431D4633D61A92CD9F814 /* PushNotificationsContentExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = A7B092ACAEC915379923328F /* PushNotificationsContentExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		3DB4EEAF2E9C2939B89DA1F8 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAE9DDCCBE7557171C3574D /* Credentials.swift */; };
+		3E6B194C548511577D79ACA9 /* BrazeUI in Frameworks */ = {isa = PBXBuildFile; productRef = E8F0CDD2BA63A81551367410 /* BrazeUI */; };
 		3F89717369F2843ADE0A6C72 /* InAppMessageInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9558DB2C4D4AC89D4AF89D2A /* InAppMessageInfoViewController.swift */; };
 		415A15C183F0F1C99F81F869 /* Readme.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2073DD85CD3A92784EC1F4 /* Readme.swift */; };
 		428899E5A2B3E55F5D5584BA /* Readme.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCC91596E91D51EABEC2401 /* Readme.swift */; };
+		435184022629B52F5501E541 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAE9DDCCBE7557171C3574D /* Credentials.swift */; };
 		441B48CAD39A1021EF88BEA6 /* MockImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E59EF18571FF184E5965819 /* MockImage.swift */; };
 		4484E207BCFD002822F2BB7D /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE00D10FF658213E5A00188D /* NotificationViewController.swift */; };
 		4A7CFEAEF687982DD12D2985 /* PushNotificationsContentExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = A7B092ACAEC915379923328F /* PushNotificationsContentExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		4E986F1ED04C2A28C3F0C90D /* FullScreenBannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1740BB61C34E6BCBDA6F3F06 /* FullScreenBannerViewController.swift */; };
 		4ED0AB723C077D7353F8E18E /* ReadmeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C3766DAA0E86C999794A8F /* ReadmeViewController.swift */; };
 		4F846A08AD6511B92F7D1EA7 /* Readme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3779C8A71C6D78BBBD104EE0 /* Readme.swift */; };
 		50D8D4EB19BF8DB20DF34B8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FCD17EEF41713F18F4CA702 /* Assets.xcassets */; };
 		52CAA705E5A2A6B084470A6B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FCD17EEF41713F18F4CA702 /* Assets.xcassets */; };
 		5489F499BAD776AAF047FE41 /* PushNotificationsContentExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = A7B092ACAEC915379923328F /* PushNotificationsContentExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		55575A615424AB84B62EA11D /* AppDelegate+Xcode16.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43029D0CF2FFD58212D8A976 /* AppDelegate+Xcode16.swift */; };
+		5606EFC24899773A0167896E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8361A451688DDD9588B5C8 /* AppDelegate.swift */; };
 		56D5E2804EA244C26A6C7084 /* ReadmeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C3766DAA0E86C999794A8F /* ReadmeViewController.swift */; };
+		581BE073EED9A7F7DF18FAC3 /* Readme.swift in Sources */ = {isa = PBXBuildFile; fileRef = D903A056458272184BA387B0 /* Readme.swift */; };
 		5C46A726B573C78D24809762 /* BrazeKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1BF6D20F4E3962FBB5B92AF3 /* BrazeKit */; };
 		61A171370197788908EC6E6C /* ReadmeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C3766DAA0E86C999794A8F /* ReadmeViewController.swift */; };
 		64FA8C3157DE02D59358B389 /* ReadmeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C3766DAA0E86C999794A8F /* ReadmeViewController.swift */; };
 		69EFC44917551E618D408078 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591F3570467FB230FB58226B /* AuthenticationManager.swift */; };
 		6A57DC306722BCFB4E0CE424 /* MockImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E59EF18571FF184E5965819 /* MockImage.swift */; };
 		6B20D783226EC21AD5B2FCE9 /* SDWebImageGIFViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A7BDBC78AFBA13FE890836 /* SDWebImageGIFViewProvider.swift */; };
+		6C33A4039AA2C6434E4C2BCB /* WideBannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB1BAFFE38985F8A4C3C60A /* WideBannerViewController.swift */; };
 		6CB3AC485F3CFBA9395977A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02B81A3965D35DA6381280B /* AppDelegate.swift */; };
 		6D37F619E60F577AF2FB208D /* BrazeKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9720FE32CFB77D7E0319A501 /* BrazeKit */; };
+		6EAC7E6B09832F4AE89EED28 /* FullScreenBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58144D9A782909488951B3C0 /* FullScreenBannerView.swift */; };
 		76D388C71E54AC6F93A16056 /* Readme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B5CF8D1D25040DF4009F8D /* Readme.swift */; };
 		77D0B2EF2C33D791B3324AD2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A95BD7429DEEF38D2D3902 /* AppDelegate.swift */; };
 		7CFDF51A3B73EE52EFB93AE6 /* PushNotificationsServiceExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = B5666DA142189EEEDFAFB41F /* PushNotificationsServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -96,6 +104,7 @@
 		BF41216C1D111CE29716A956 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FCD17EEF41713F18F4CA702 /* Assets.xcassets */; };
 		C0D24609493996E29265747A /* Readme.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7097EB3ABED4921B719078C /* Readme.swift */; };
 		C18EE9EE632F602ED54A3E25 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAE9DDCCBE7557171C3574D /* Credentials.swift */; };
+		C19B7582791B96C003F1E05D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FCD17EEF41713F18F4CA702 /* Assets.xcassets */; };
 		CB098C7D232762AE7FBE8C1E /* MockImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E59EF18571FF184E5965819 /* MockImage.swift */; };
 		D2C67400FFB0B1B2704FBC1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1547060F01C454ED90CBC172 /* AppDelegate.swift */; };
 		D52CCDAF5D7012F377EA5942 /* MockImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E59EF18571FF184E5965819 /* MockImage.swift */; };
@@ -103,10 +112,12 @@
 		DD04470BAE6FBDC467DBDA53 /* BrazeKit in Frameworks */ = {isa = PBXBuildFile; productRef = 40864C1ED6466B40F23B72D8 /* BrazeKit */; };
 		DE620D05A5DCCA569EE55A19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FCD17EEF41713F18F4CA702 /* Assets.xcassets */; };
 		DED6497BFC44ADEAA7CF1A65 /* Readme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BC5C30464318DD5BAD679C /* Readme.swift */; };
+		E118DCD0E5E68391043F15BF /* WideBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512457F3EE742BCEBF70A97D /* WideBannerView.swift */; };
 		E2498F93471B3ED7DCF4F798 /* BrazeKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1587AFA62763A9B75CA01C6C /* BrazeKit */; };
 		E293C55F39CB2FB23B1FC702 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAE9DDCCBE7557171C3574D /* Credentials.swift */; };
 		E2E95C34F86FA357D6BCAE54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FCD17EEF41713F18F4CA702 /* Assets.xcassets */; };
 		E5131ADF55A3FB4A71A0EBC7 /* SDWebImageGIFViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727E0E49D4446141F00905B4 /* SDWebImageGIFViewProvider.swift */; };
+		E661F97A6D1858D647AF0EAB /* BrazeKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8790507F4D5F35EB03D127E1 /* BrazeKit */; };
 		E784AA64821A0E83F5F90128 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAE9DDCCBE7557171C3574D /* Credentials.swift */; };
 		E7A502FBBA81B6005B62EE82 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAE9DDCCBE7557171C3574D /* Credentials.swift */; };
 		E923E134167C0E49D15A2990 /* Readme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45164B1D1773E47F1B4F4671 /* Readme.swift */; };
@@ -118,6 +129,7 @@
 		ECF4EB3AB84967F7DBDB8452 /* BrazeUI in Frameworks */ = {isa = PBXBuildFile; productRef = 96F76CB78E3FFBBBCDE87EBD /* BrazeUI */; };
 		F3F3CC7273572BF814DE3243 /* MockImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E59EF18571FF184E5965819 /* MockImage.swift */; };
 		F97087EBFD4931AA7C9F3463 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FCD17EEF41713F18F4CA702 /* Assets.xcassets */; };
+		FA131E4DEC9D70B1E040C0D2 /* ReadmeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C3766DAA0E86C999794A8F /* ReadmeViewController.swift */; };
 		FB5AC9ED72701723CF8DC3E9 /* MockImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E59EF18571FF184E5965819 /* MockImage.swift */; };
 		FD58E69D42E36415DB32AEAD /* Readme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86FBC0C8BC857C247C84103 /* Readme.swift */; };
 /* End PBXBuildFile section */
@@ -214,6 +226,7 @@
 		0BDEF769FDC6414D453D28CE /* InAppMessages-Custom-UI.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "InAppMessages-Custom-UI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FCD17EEF41713F18F4CA702 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1547060F01C454ED90CBC172 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1740BB61C34E6BCBDA6F3F06 /* FullScreenBannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenBannerViewController.swift; sourceTree = "<group>"; };
 		1A008F2386666F587E975D0D /* InAppMessageUI.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = InAppMessageUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F8AD06FAD6F81E92F64DD72 /* CardsInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsInfoViewController.swift; sourceTree = "<group>"; };
 		220432BEC0EA7628608EA5BA /* braze-swift-sdk */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "braze-swift-sdk"; path = ../..; sourceTree = SOURCE_ROOT; };
@@ -224,7 +237,9 @@
 		43898C005AA33A7630288625 /* ContentCardUI.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = ContentCardUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45164B1D1773E47F1B4F4671 /* Readme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Readme.swift; sourceTree = "<group>"; };
 		4FE3CE0839B9CDC3DBD854F1 /* SDWebImageGIFViewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDWebImageGIFViewProvider.swift; sourceTree = "<group>"; };
+		512457F3EE742BCEBF70A97D /* WideBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WideBannerView.swift; sourceTree = "<group>"; };
 		57D73DD16728C7AD0A7EA662 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		58144D9A782909488951B3C0 /* FullScreenBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenBannerView.swift; sourceTree = "<group>"; };
 		591F3570467FB230FB58226B /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
 		61323FF27FE35756D97CED2B /* Location.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Location.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		631DCED7E638A6BD4C9D95C2 /* CheckoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutViewController.swift; sourceTree = "<group>"; };
@@ -232,11 +247,13 @@
 		69A95BD7429DEEF38D2D3902 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6A76DADC444C28D2653F471B /* InAppMessageUI-Customization.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "InAppMessageUI-Customization.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A7EC3A55D550F5ADC29F4F4 /* Readme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Readme.swift; sourceTree = "<group>"; };
+		6E8361A451688DDD9588B5C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		727E0E49D4446141F00905B4 /* SDWebImageGIFViewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDWebImageGIFViewProvider.swift; sourceTree = "<group>"; };
 		7E59EF18571FF184E5965819 /* MockImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockImage.swift; sourceTree = "<group>"; };
 		8B1C56F36CEB28971F181FAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8F28A24B0752E1A7F5C2E760 /* CustomInAppMessagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInAppMessagePresenter.swift; sourceTree = "<group>"; };
 		9558DB2C4D4AC89D4AF89D2A /* InAppMessageInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppMessageInfoViewController.swift; sourceTree = "<group>"; };
+		98ADD07CC89BDF408F0F8288 /* BannerUI.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = BannerUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99BC5C30464318DD5BAD679C /* Readme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Readme.swift; sourceTree = "<group>"; };
 		9AE5A233316273D84DDDECFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A02B81A3965D35DA6381280B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -250,6 +267,7 @@
 		B5666DA142189EEEDFAFB41F /* PushNotificationsServiceExtension.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = PushNotificationsServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6A36D1600434E690C1F9910 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		B9D5BBC757BE390849FCDD52 /* ContentCards-Custom-UI.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "ContentCards-Custom-UI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BBB1BAFFE38985F8A4C3C60A /* WideBannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WideBannerViewController.swift; sourceTree = "<group>"; };
 		C7097EB3ABED4921B719078C /* Readme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Readme.swift; sourceTree = "<group>"; };
 		CCAE9DDCCBE7557171C3574D /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
 		CCCC91596E91D51EABEC2401 /* Readme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Readme.swift; sourceTree = "<group>"; };
@@ -258,6 +276,7 @@
 		D63F498CAD1B487B718A6064 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		D65F1DF14BBFB716FC3B8EA8 /* ContentCardUI-Customization.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "ContentCardUI-Customization.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D80C5976EE2C1D5CE55B90B5 /* ConfirmButtonSlideupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmButtonSlideupView.swift; sourceTree = "<group>"; };
+		D903A056458272184BA387B0 /* Readme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Readme.swift; sourceTree = "<group>"; };
 		DD38A4655755B813B9D207F9 /* Readme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Readme.swift; sourceTree = "<group>"; };
 		E2DBE68CBD1A748542579E66 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7F9F8EF80EC7B30AB429008 /* FullWidthSlideupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullWidthSlideupView.swift; sourceTree = "<group>"; };
@@ -312,6 +331,15 @@
 				EAC53BC784BF380F8205F01F /* BrazeKit in Frameworks */,
 				2553ED24C2112991F382CF3A /* BrazeUI in Frameworks */,
 				B3BDA4F943A5C0AD2DEF5A7C /* SDWebImage in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2FA2F0A335091CF440592398 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E661F97A6D1858D647AF0EAB /* BrazeKit in Frameworks */,
+				3E6B194C548511577D79ACA9 /* BrazeUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,6 +415,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C988F6B125C5EE79E59318D /* BannerUI */ = {
+			isa = PBXGroup;
+			children = (
+				6E8361A451688DDD9588B5C8 /* AppDelegate.swift */,
+				58144D9A782909488951B3C0 /* FullScreenBannerView.swift */,
+				1740BB61C34E6BCBDA6F3F06 /* FullScreenBannerViewController.swift */,
+				D903A056458272184BA387B0 /* Readme.swift */,
+				512457F3EE742BCEBF70A97D /* WideBannerView.swift */,
+				BBB1BAFFE38985F8A4C3C60A /* WideBannerViewController.swift */,
+			);
+			name = BannerUI;
+			path = Sources/BannerUI;
+			sourceTree = "<group>";
+		};
 		119FF3F930BD1BF66DEB0B47 /* ContentCards-Custom-UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -539,6 +581,7 @@
 			isa = PBXGroup;
 			children = (
 				ED657ED06A52B67E6F53309B /* Analytics.app */,
+				98ADD07CC89BDF408F0F8288 /* BannerUI.app */,
 				B9D5BBC757BE390849FCDD52 /* ContentCards-Custom-UI.app */,
 				D65F1DF14BBFB716FC3B8EA8 /* ContentCardUI-Customization.app */,
 				43898C005AA33A7630288625 /* ContentCardUI.app */,
@@ -573,6 +616,7 @@
 				E3AF9F206199B993ACB3E63D /* Packages */,
 				B4F25C051708E808116165D4 /* Common */,
 				258F28BC46EE3F2D3E079C37 /* Analytics */,
+				0C988F6B125C5EE79E59318D /* BannerUI */,
 				119FF3F930BD1BF66DEB0B47 /* ContentCards-Custom-UI */,
 				518A861147034CC7C7A6F886 /* ContentCardUI */,
 				D03146EA39AB44D97182A5DF /* ContentCardUI-Customization */,
@@ -705,6 +749,27 @@
 			);
 			productName = "PushNotifications-Automatic";
 			productReference = 67B6F9D3158877B0045A2F80 /* PushNotifications-Automatic.app */;
+			productType = "com.apple.product-type.application";
+		};
+		67EDD4489E05F820AC5C4C72 /* BannerUI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5C9226DEFB56FCE86BDECA11 /* Build configuration list for PBXNativeTarget "BannerUI" */;
+			buildPhases = (
+				97924445A853B859FE3B47C9 /* Sources */,
+				81A915DDC95E775F4BC5C01D /* Resources */,
+				2FA2F0A335091CF440592398 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BannerUI;
+			packageProductDependencies = (
+				8790507F4D5F35EB03D127E1 /* BrazeKit */,
+				E8F0CDD2BA63A81551367410 /* BrazeUI */,
+			);
+			productName = BannerUI;
+			productReference = 98ADD07CC89BDF408F0F8288 /* BannerUI.app */;
 			productType = "com.apple.product-type.application";
 		};
 		6F0145EB7E39FDE6D8D6FD4C /* PushNotifications-Manual */ = {
@@ -917,6 +982,9 @@
 					59B8633A44EBC4A918E17FBF = {
 						ProvisioningStyle = automatic;
 					};
+					67EDD4489E05F820AC5C4C72 = {
+						ProvisioningStyle = automatic;
+					};
 					6F0145EB7E39FDE6D8D6FD4C = {
 						ProvisioningStyle = automatic;
 					};
@@ -963,6 +1031,7 @@
 			projectRoot = "";
 			targets = (
 				0642C7DCDAD9AB0330096707 /* Analytics */,
+				67EDD4489E05F820AC5C4C72 /* BannerUI */,
 				0A1211FC31CA5DD9A5E1D18E /* ContentCardUI */,
 				C86DEA9CD6ED7E7E75358AD0 /* ContentCardUI-Customization */,
 				908A74E9B2A6D8455EB2933D /* ContentCards-Custom-UI */,
@@ -1009,6 +1078,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2E95C34F86FA357D6BCAE54 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		81A915DDC95E775F4BC5C01D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C19B7582791B96C003F1E05D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1128,6 +1205,22 @@
 				D52CCDAF5D7012F377EA5942 /* MockImage.swift in Sources */,
 				B6E31EC54DEBB30C75BAB89F /* Readme.swift in Sources */,
 				EBB29DA80FA347C2CBBDEF13 /* ReadmeViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		97924445A853B859FE3B47C9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5606EFC24899773A0167896E /* AppDelegate.swift in Sources */,
+				435184022629B52F5501E541 /* Credentials.swift in Sources */,
+				6EAC7E6B09832F4AE89EED28 /* FullScreenBannerView.swift in Sources */,
+				4E986F1ED04C2A28C3F0C90D /* FullScreenBannerViewController.swift in Sources */,
+				1B0009A5BF554FC7A7674215 /* MockImage.swift in Sources */,
+				581BE073EED9A7F7DF18FAC3 /* Readme.swift in Sources */,
+				FA131E4DEC9D70B1E040C0D2 /* ReadmeViewController.swift in Sources */,
+				E118DCD0E5E68391043F15BF /* WideBannerView.swift in Sources */,
+				6C33A4039AA2C6434E4C2BCB /* WideBannerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1305,6 +1398,28 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.braze.PushNotifications;
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+			};
+			name = Debug;
+		};
+		0E16DC639408818C18DA1706 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = automatic;
+				INFOPLIST_FILE = Sources/BannerUI/Info.plist;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.braze.BannerUI;
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
 				SUPPORTS_MACCATALYST = YES;
@@ -1907,6 +2022,28 @@
 			};
 			name = Release;
 		};
+		C5E70E219CFA85111DF5B129 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = automatic;
+				INFOPLIST_FILE = Sources/BannerUI/Info.plist;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.braze.BannerUI;
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+			};
+			name = Release;
+		};
 		EE68CEA71696509EBFD2C020 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -2034,6 +2171,15 @@
 			buildConfigurations = (
 				BE47B129D3210EFFB3B5C0E3 /* Debug */,
 				B9FD2D94FC2BF1DFA9DDA644 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		5C9226DEFB56FCE86BDECA11 /* Build configuration list for PBXNativeTarget "BannerUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0E16DC639408818C18DA1706 /* Debug */,
+				C5E70E219CFA85111DF5B129 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
@@ -2190,6 +2336,10 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = BrazeKit;
 		};
+		8790507F4D5F35EB03D127E1 /* BrazeKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = BrazeKit;
+		};
 		96F76CB78E3FFBBBCDE87EBD /* BrazeUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = BrazeUI;
@@ -2209,6 +2359,10 @@
 		E045FE65756A230024955AD5 /* BrazeKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = BrazeKit;
+		};
+		E8F0CDD2BA63A81551367410 /* BrazeUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = BrazeUI;
 		};
 		FCFA9573D5A8726847280A8C /* BrazeLocation */ = {
 			isa = XCSwiftPackageProductDependency;

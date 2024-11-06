@@ -17,7 +17,7 @@ extension BrazeInAppMessageUI {
     }
 
     /// Internal wrapper for the in-app message button.
-    let buttonWrapper: MessageWrapper<Braze.InAppMessage.Button>
+    let buttonWrapper: StructWrapper<Braze.InAppMessage.Button>
 
     /// Creates and returns a Braze in-app message compatible button.
     /// - Parameters:

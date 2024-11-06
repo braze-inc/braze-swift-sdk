@@ -17,7 +17,7 @@ extension BrazeInAppMessageUI {
     }
 
     /// Internal wrapper for the slideup in-app message.
-    let messageWrapper: MessageWrapper<Braze.InAppMessage.Slideup>
+    let messageWrapper: StructWrapper<Braze.InAppMessage.Slideup>
 
     // MARK: - Attributes
 

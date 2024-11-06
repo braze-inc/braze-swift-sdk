@@ -28,7 +28,7 @@ extension BrazeInAppMessageUI {
     }
 
     /// Internal wrapper for the modal in-app message.
-    let messageWrapper: MessageWrapper<Braze.InAppMessage.Modal>
+    let messageWrapper: StructWrapper<Braze.InAppMessage.Modal>
 
     // MARK: - Attributes
 

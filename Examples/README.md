@@ -31,6 +31,13 @@ Follow the instructions below for your preferred integration method to get start
 - Demonstrates how to use the analytics features of the SDK.
 - Related tutorial: [Analytics](https://braze-inc.github.io/braze-swift-sdk/tutorials/braze/a3-analytics).
 
+#### BannerUI
+
+- iOS, visionOS, Mac Catalyst.
+- Swift, Objective-C.
+- Demonstrates how to use the Braze provided Banners UI.
+- Related tutorial: [Banners UI](https://braze-inc.github.io/braze-swift-sdk/tutorials/braze/c4-bannersui).
+
 #### ContentCardUI
 
 - iOS, visionOS, Mac Catalyst.

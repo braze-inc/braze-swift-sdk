@@ -17,7 +17,7 @@ extension BrazeInAppMessageUI {
     }
 
     /// Internal wrapper for the modal image in-app message.
-    let messageWrapper: MessageWrapper<Braze.InAppMessage.ModalImage>
+    let messageWrapper: StructWrapper<Braze.InAppMessage.ModalImage>
 
     // MARK: - Attributes
 

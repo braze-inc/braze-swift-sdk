@@ -8,7 +8,7 @@ import UIKit
 /// in-app messages to the user.
 ///
 /// To add GIF support to the in-app message UI components, set a valid
-/// ``gifViewProvider-swift.var``.
+/// ``GIFViewProvider-swift.struct/shared``.
 @objc(BrazeInAppMessageUI)
 @MainActor
 open class BrazeInAppMessageUI:

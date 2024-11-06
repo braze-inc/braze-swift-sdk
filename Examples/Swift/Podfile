@@ -119,6 +119,18 @@ target 'ContentCards-Custom-UI-visionOS' do
   pod 'BrazeKit'
 end
 
+target 'BannerUI-iOS' do
+  platform :ios, '12.0'
+  pod 'BrazeKit'
+  pod 'BrazeUI'
+end
+
+target 'BannerUI-visionOS' do
+  platform :visionos, '12.0'
+  pod 'BrazeKit'
+  pod 'BrazeUI'
+end
+
 target 'Location-iOS' do
   platform :ios, '12.0'
   pod 'BrazeKit'

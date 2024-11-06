@@ -120,7 +120,7 @@ extension BrazeInAppMessageUI {
     }
 
     /// Internal wrapper for the in-app message theme.
-    let themeWrapper: MessageWrapper<Braze.InAppMessage.Theme>
+    let themeWrapper: StructWrapper<Braze.InAppMessage.Theme>
 
     /// Apply the current ``theme`` to the view.
     ///

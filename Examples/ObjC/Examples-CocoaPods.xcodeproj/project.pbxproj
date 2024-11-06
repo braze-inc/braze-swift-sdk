@@ -13,6 +13,7 @@
 		026882EA86255E4AA554035A /* Credentials.m in Sources */ = {isa = PBXBuildFile; fileRef = 77273E47E0A73317EF0235A7 /* Credentials.m */; };
 		02D39B681AC38D3E38167BC9 /* ReadmeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E06A48D3D2F38E11DAA4C05E /* ReadmeViewController.m */; };
 		0474AF59A3BBD8ADD1EA136E /* BRZGIFViewProvider+SDWebImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C04E748BC80720A72FE18A /* BRZGIFViewProvider+SDWebImage.m */; };
+		050F4233BFD50E658876B373 /* FullScreenBannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 288AD91FB9535494739F57A9 /* FullScreenBannerViewController.m */; };
 		056AB4AFF6BEC7205C874129 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C0EA46B7F46275141BF76209 /* main.m */; };
 		0575EAD45DC713FDFA430364 /* CustomInAppMessagePresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2697E60398EE452C7E362B83 /* CustomInAppMessagePresenter.m */; };
 		08B5B0B4850594BD052D8A4A /* empty-file.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A77FC218A1A67D5037DC3FF /* empty-file.swift */; };
@@ -23,6 +24,7 @@
 		0E0A608E0864361CAC7512BD /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61DA261A3969E80D4910B919 /* NotificationViewController.swift */; };
 		0FBA9A6BF5F0972F15075730 /* ReadmeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E06A48D3D2F38E11DAA4C05E /* ReadmeViewController.m */; };
 		102CF63E686EDC624805B196 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C0EA46B7F46275141BF76209 /* main.m */; };
+		132424772CC351CCEAA2F735 /* Readme.m in Sources */ = {isa = PBXBuildFile; fileRef = B6847C1027BF34B7177EA70B /* Readme.m */; };
 		134617EE423ED9AA507DF6AD /* PushNotificationsContentExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = EB96485E099438DAB9547DF5 /* PushNotificationsContentExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		163526223623B063A095F0E3 /* empty-file.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A77FC218A1A67D5037DC3FF /* empty-file.swift */; };
 		17D29A1B76A1C42B44C7A8BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CABCDD10D6E23AB146F9F7BA /* LaunchScreen.storyboard */; };
@@ -31,6 +33,7 @@
 		189EE6D3E6666D84E091A8E9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 88414679C671DCEC826AE04E /* AppDelegate.m */; };
 		18DE204B580AF59319172A34 /* Credentials.m in Sources */ = {isa = PBXBuildFile; fileRef = 77273E47E0A73317EF0235A7 /* Credentials.m */; };
 		197CC45A9866F6536844449F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0340E1FFDDBC0C9D72FCD4D4 /* Assets.xcassets */; };
+		1AAB452EDBDC5D9F084DF9A5 /* Credentials.m in Sources */ = {isa = PBXBuildFile; fileRef = 77273E47E0A73317EF0235A7 /* Credentials.m */; };
 		1EB7F46010C2EE195B7F82DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0340E1FFDDBC0C9D72FCD4D4 /* Assets.xcassets */; };
 		2004486C1F497F0D78D3C3C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CABCDD10D6E23AB146F9F7BA /* LaunchScreen.storyboard */; };
 		20EA0B03CAEC54003499D8D4 /* ReadmeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E06A48D3D2F38E11DAA4C05E /* ReadmeViewController.m */; };
@@ -51,9 +54,11 @@
 		2CFB9852DA7AD64058AF53FA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C0EA46B7F46275141BF76209 /* main.m */; };
 		2D02D8ADF963BCFCAB1D3683 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6208C00FB5F7F0284A26EF20 /* UserNotifications.framework */; };
 		2EF8FB56D4B1954D5FDE8AAC /* Readme.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B0E04E20E4B1C458222BA1 /* Readme.m */; };
+		314F9EAF101B0AA0E283BB89 /* WideBannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 356CB255CC90C5C9DAC29848 /* WideBannerViewController.m */; };
 		3170955318006DA2CDC1D371 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C0EA46B7F46275141BF76209 /* main.m */; };
 		330538042DBA8D66FE29106B /* Credentials.m in Sources */ = {isa = PBXBuildFile; fileRef = 77273E47E0A73317EF0235A7 /* Credentials.m */; };
 		3378DAE43C5EDE386F72D7BB /* PushNotificationsServiceExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 025C514A87C7682650C8F612 /* PushNotificationsServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		33EBE6E0A3C2703734EF9C34 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C0EA46B7F46275141BF76209 /* main.m */; };
 		34A7652FC91B0C32C6FBDDA3 /* empty-file.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A77FC218A1A67D5037DC3FF /* empty-file.swift */; };
 		34C9C566ACB7B6220C782866 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A56AB422F8DA782A8D2B6FD /* LaunchScreen.storyboard */; };
 		3A0E77C6129C6E64AF9BB382 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C0EA46B7F46275141BF76209 /* main.m */; };
@@ -68,7 +73,9 @@
 		40BBC96C23C0D03C1876EFB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0340E1FFDDBC0C9D72FCD4D4 /* Assets.xcassets */; };
 		41CAA99CD3F8DF599AFB2109 /* NotAvailableInObjC.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CCAE08D319D0CD9AC2E7BC /* NotAvailableInObjC.m */; };
 		42A9ED09E8E44A858AE13EFC /* empty-file.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A77FC218A1A67D5037DC3FF /* empty-file.swift */; };
+		453330607F35D913C48DDCE8 /* ReadmeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E06A48D3D2F38E11DAA4C05E /* ReadmeViewController.m */; };
 		4668AEE87D6BFB57357E49F8 /* InAppMessageInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 763258DB970F0A96B2A3DF74 /* InAppMessageInfoViewController.m */; };
+		46990FDB3A6018F0B87122E7 /* Readme.m in Sources */ = {isa = PBXBuildFile; fileRef = B6847C1027BF34B7177EA70B /* Readme.m */; };
 		474A97EA37572E933D5B17B8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C0EA46B7F46275141BF76209 /* main.m */; };
 		47BF889155DEA885F5077C07 /* ReadmeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E06A48D3D2F38E11DAA4C05E /* ReadmeViewController.m */; };
 		48F75AD192CDFD6BC1FFC575 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBDB1613508BE9FFD3D05EA /* AppDelegate.m */; };
@@ -82,9 +89,12 @@
 		4FBBFDC7A8AD63635182DCCC /* Credentials.m in Sources */ = {isa = PBXBuildFile; fileRef = 77273E47E0A73317EF0235A7 /* Credentials.m */; };
 		505878B30DC03D2DEDE05E05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0340E1FFDDBC0C9D72FCD4D4 /* Assets.xcassets */; };
 		5064BAE3FFA9153AFCCE50DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CABCDD10D6E23AB146F9F7BA /* LaunchScreen.storyboard */; };
+		518FE99CB2BEAA57753E2A14 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AFAE486C714A1CDE35BC69BA /* AppDelegate.m */; };
 		523DC27FE8962E3A3CE695F0 /* Readme.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C307795934847C752765580 /* Readme.m */; };
+		5312D66C95FC98E34439D9B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0340E1FFDDBC0C9D72FCD4D4 /* Assets.xcassets */; };
 		5443B297E55EFFA3D9531EB5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A9AF15EF29118835FEB5D5E2 /* AppDelegate.m */; };
 		55204FC9ED5EA1C9F6F1260D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B05D9F05DB566D0DE7AE92C9 /* AppDelegate.m */; };
+		579386C6FBD6BAAAEFFD6882 /* empty-file.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A77FC218A1A67D5037DC3FF /* empty-file.swift */; };
 		5A11F40332720602D77FB878 /* CheckoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 133CC7FED120DA4BC4F63478 /* CheckoutViewController.m */; };
 		614C896736BBDCBB171D6D3C /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6208C00FB5F7F0284A26EF20 /* UserNotifications.framework */; };
 		615E27ED764B63BE6414F1C2 /* empty-file.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A77FC218A1A67D5037DC3FF /* empty-file.swift */; };
@@ -107,6 +117,7 @@
 		7493B2FFD2F11599A02795B2 /* empty-file.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A77FC218A1A67D5037DC3FF /* empty-file.swift */; };
 		7541DB19315B784540A1675C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 88414679C671DCEC826AE04E /* AppDelegate.m */; };
 		756350E7C92625894BC8B509 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C0EA46B7F46275141BF76209 /* main.m */; };
+		7A3054A03EF9AE28014994FD /* Credentials.m in Sources */ = {isa = PBXBuildFile; fileRef = 77273E47E0A73317EF0235A7 /* Credentials.m */; };
 		7A584EF597483821706EC8BB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C0EA46B7F46275141BF76209 /* main.m */; };
 		7B42DB1C3DB17FD665F00A85 /* empty-file.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A77FC218A1A67D5037DC3FF /* empty-file.swift */; };
 		7B687808B107F9D98A010616 /* CustomInAppMessagePresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2697E60398EE452C7E362B83 /* CustomInAppMessagePresenter.m */; };
@@ -115,6 +126,7 @@
 		7E8AD3897D9983306EE938B9 /* Credentials.m in Sources */ = {isa = PBXBuildFile; fileRef = 77273E47E0A73317EF0235A7 /* Credentials.m */; };
 		7E93EB8FDF68F8127A0003CF /* PushNotificationsContentExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 2F8034AC1A6839C07DF75941 /* PushNotificationsContentExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		7EDA3421CAC61750552B52C1 /* ReadmeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E06A48D3D2F38E11DAA4C05E /* ReadmeViewController.m */; };
+		7F1111D6FB86D3950005D97A /* ReadmeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E06A48D3D2F38E11DAA4C05E /* ReadmeViewController.m */; };
 		8179A760938B01AA674C5E9F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 201DC51A7B4BD5035790D967 /* AppDelegate.m */; };
 		832C94F7802D74360050627C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0340E1FFDDBC0C9D72FCD4D4 /* Assets.xcassets */; };
 		85C631B6E1D8BE584F1F4D4A /* PushNotificationsServiceExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 72614321094796ABD86A5AA6 /* PushNotificationsServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -132,6 +144,7 @@
 		8FD0F8EF53945DCDBDD405C3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 453E08A2BFC20694C68880F0 /* AppDelegate.m */; };
 		90A4F6B53E0118D3661585D4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C0EA46B7F46275141BF76209 /* main.m */; };
 		921A10D04DDEA806DF21F29B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C0EA46B7F46275141BF76209 /* main.m */; };
+		93D55D7EFEE70FD39AD4EF13 /* WideBannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 356CB255CC90C5C9DAC29848 /* WideBannerViewController.m */; };
 		93F51ADCC2F81D43C7200194 /* Readme.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F98A25BAAEE5DC418161B1 /* Readme.m */; };
 		94B4B2402F3B4DF699641CE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0340E1FFDDBC0C9D72FCD4D4 /* Assets.xcassets */; };
 		9ACDCF377DDDFE68EC46E40C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 201DC51A7B4BD5035790D967 /* AppDelegate.m */; };
@@ -145,6 +158,7 @@
 		A5879CAB0B6EB4B04AA8B083 /* empty-file.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A77FC218A1A67D5037DC3FF /* empty-file.swift */; };
 		A59B5541D8BDA70A1818AFDB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C0EA46B7F46275141BF76209 /* main.m */; };
 		A5C3AEA8DEAB2F5A5B83E470 /* ReadmeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E06A48D3D2F38E11DAA4C05E /* ReadmeViewController.m */; };
+		A60B2E77DFACCA5AE551786D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AFAE486C714A1CDE35BC69BA /* AppDelegate.m */; };
 		A6FAADE725F752D3BD3C170F /* Credentials.m in Sources */ = {isa = PBXBuildFile; fileRef = 77273E47E0A73317EF0235A7 /* Credentials.m */; };
 		A834575E7697CCF6782DB0C7 /* ReadmeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E06A48D3D2F38E11DAA4C05E /* ReadmeViewController.m */; };
 		A841C03E3FC310874204BBBF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD5EA6DB57BDEF9D156AF3B /* AppDelegate.m */; };
@@ -154,6 +168,7 @@
 		AA9687A7D3DF585AC6F6D718 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 201DC51A7B4BD5035790D967 /* AppDelegate.m */; };
 		AB2FE63CFBECFD1045D16ED7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0340E1FFDDBC0C9D72FCD4D4 /* Assets.xcassets */; };
 		AC9B0B424486FC0912BD72D9 /* Credentials.m in Sources */ = {isa = PBXBuildFile; fileRef = 77273E47E0A73317EF0235A7 /* Credentials.m */; };
+		ADEEA01EFF0D87591BE5FD74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0340E1FFDDBC0C9D72FCD4D4 /* Assets.xcassets */; };
 		AE2F0A77BEBE9A60E448A1C7 /* Readme.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EE8EFDC1CAFFB4F4CB5D00D /* Readme.m */; };
 		AE68881832BF3782E13CB456 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CABCDD10D6E23AB146F9F7BA /* LaunchScreen.storyboard */; };
 		AED9CDDB610D3B9FF090A880 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C0EA46B7F46275141BF76209 /* main.m */; };
@@ -177,12 +192,15 @@
 		C0D33859C6D3087FCD453D9F /* PushNotificationsContentExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = EB96485E099438DAB9547DF5 /* PushNotificationsContentExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C0D38B13A94DADB550966E38 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A56AB422F8DA782A8D2B6FD /* LaunchScreen.storyboard */; };
 		C25E42027E9FF502BA7D7269 /* CardsInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4B96FFF47505E424237B85 /* CardsInfoViewController.m */; };
+		C3EFEE994DA198C7D420FE6B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CABCDD10D6E23AB146F9F7BA /* LaunchScreen.storyboard */; };
 		C650783920A53EDD98DD19E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CABCDD10D6E23AB146F9F7BA /* LaunchScreen.storyboard */; };
 		C670BDE41367D4C18C9C27D3 /* empty-file.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A77FC218A1A67D5037DC3FF /* empty-file.swift */; };
 		C6A06C3B17248E8369F21897 /* Readme.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C307795934847C752765580 /* Readme.m */; };
+		C7007E9DB1B18A24E8F1506E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C0EA46B7F46275141BF76209 /* main.m */; };
 		C75C09FC6605F02E7646AF0F /* Readme.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B0E04E20E4B1C458222BA1 /* Readme.m */; };
 		C8506C62CCCD592FDF718D48 /* PushNotificationsContentExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 2F8034AC1A6839C07DF75941 /* PushNotificationsContentExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		CD226CFF2170628172C6385B /* empty-file.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A77FC218A1A67D5037DC3FF /* empty-file.swift */; };
+		CE06F05766F725C6B571CB5F /* FullScreenBannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 288AD91FB9535494739F57A9 /* FullScreenBannerViewController.m */; };
 		CF19792AFCEF53A28612612B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0340E1FFDDBC0C9D72FCD4D4 /* Assets.xcassets */; };
 		D01C0090F24D13062F394593 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C0EA46B7F46275141BF76209 /* main.m */; };
 		D0DECD56C8F8201D27F59B32 /* ReadmeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E06A48D3D2F38E11DAA4C05E /* ReadmeViewController.m */; };
@@ -237,6 +255,7 @@
 		FA75B7DE8BC13AF86D469465 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A9AF15EF29118835FEB5D5E2 /* AppDelegate.m */; };
 		FABBA04DA0A4157969DC55B6 /* empty-file.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A77FC218A1A67D5037DC3FF /* empty-file.swift */; };
 		FACAC893B82FD5F310E63BBF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0340E1FFDDBC0C9D72FCD4D4 /* Assets.xcassets */; };
+		FD44D510CB7B092B6AD0E733 /* empty-file.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A77FC218A1A67D5037DC3FF /* empty-file.swift */; };
 		FDFE0B5AD6C85ABC76895E1F /* CheckoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 133CC7FED120DA4BC4F63478 /* CheckoutViewController.m */; };
 		FE5B1117D24926292E583750 /* ReadmeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E06A48D3D2F38E11DAA4C05E /* ReadmeViewController.m */; };
 		FE95DF7DDE9D81181A89AB00 /* ReadmeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E06A48D3D2F38E11DAA4C05E /* ReadmeViewController.m */; };
@@ -413,6 +432,7 @@
 		0D27FC50D2EF457F536B1D05 /* Analytics.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Analytics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11D86AE9D1DC590AC4694323 /* AuthenticationManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AuthenticationManager.m; sourceTree = "<group>"; };
 		133CC7FED120DA4BC4F63478 /* CheckoutViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CheckoutViewController.m; sourceTree = "<group>"; };
+		14BBB11A8EAB3794FCB52C38 /* BannerUI.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = BannerUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1874579DE7E406E73A3CB3A1 /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
 		1CA06BB2ED58DC38DE098EEB /* CustomInAppMessagePresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomInAppMessagePresenter.h; sourceTree = "<group>"; };
 		201DC51A7B4BD5035790D967 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -421,11 +441,14 @@
 		22CCAE08D319D0CD9AC2E7BC /* NotAvailableInObjC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotAvailableInObjC.m; sourceTree = "<group>"; };
 		249AA3BCC2DA49BBBD853C61 /* InAppMessageInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InAppMessageInfoViewController.h; sourceTree = "<group>"; };
 		2697E60398EE452C7E362B83 /* CustomInAppMessagePresenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomInAppMessagePresenter.m; sourceTree = "<group>"; };
+		288AD91FB9535494739F57A9 /* FullScreenBannerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FullScreenBannerViewController.m; sourceTree = "<group>"; };
 		2F8034AC1A6839C07DF75941 /* PushNotificationsContentExtension.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = PushNotificationsContentExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		30A0DFD80FCA5043A1BEE12E /* PushNotifications-DelayedInitialization.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "PushNotifications-DelayedInitialization.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3151B323AB3A5ECF3CA4A0A2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		318B57C50A12DB5F02FC6224 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		320771F5F893662C2BA93D24 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		34DB46A770028DFE645A3AE4 /* Location.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Location.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		356CB255CC90C5C9DAC29848 /* WideBannerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WideBannerViewController.m; sourceTree = "<group>"; };
 		36429750999AB8D731442248 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3EE8EFDC1CAFFB4F4CB5D00D /* Readme.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Readme.m; sourceTree = "<group>"; };
 		42BA0F61D883E0421B3FA7CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -445,10 +468,12 @@
 		6208C00FB5F7F0284A26EF20 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		6832319B66FB76CAA84519FA /* Location.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Location.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		686098660857D5462CAF8E48 /* Readme.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Readme.m; sourceTree = "<group>"; };
+		6CD4675CD37E8D52090B309D /* BannerUI.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = BannerUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7127ABB9B4C02043D02B278E /* InAppMessageUI.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = InAppMessageUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72614321094796ABD86A5AA6 /* PushNotificationsServiceExtension.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = PushNotificationsServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		763258DB970F0A96B2A3DF74 /* InAppMessageInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InAppMessageInfoViewController.m; sourceTree = "<group>"; };
 		77273E47E0A73317EF0235A7 /* Credentials.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Credentials.m; sourceTree = "<group>"; };
+		79FA659C77CFB82709B7532A /* FullScreenBannerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FullScreenBannerViewController.h; sourceTree = "<group>"; };
 		80CF36610D640D20AB35926E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8644B16658ADD00DC06DA1DE /* BRZGIFViewProvider+SDWebImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "BRZGIFViewProvider+SDWebImage.m"; sourceTree = "<group>"; };
 		88414679C671DCEC826AE04E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -465,8 +490,11 @@
 		A77BCD95413ADCF8578235CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A9AF15EF29118835FEB5D5E2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		AE1E01D537E51875B6C2DD5A /* Readme.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Readme.m; sourceTree = "<group>"; };
+		AFAE486C714A1CDE35BC69BA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		B05D9F05DB566D0DE7AE92C9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		B518E4E09D196D7C45E30A38 /* WideBannerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WideBannerViewController.h; sourceTree = "<group>"; };
 		B65615CB6F044C414CAF1654 /* ContentCardUI-Customization.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "ContentCardUI-Customization.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6847C1027BF34B7177EA70B /* Readme.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Readme.m; sourceTree = "<group>"; };
 		BA064323F91A22F4E14CAE9D /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		BA37FE8457A48CD8683BE79A /* CardsInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CardsInfoViewController.h; sourceTree = "<group>"; };
 		BDC50080223D78243A47D144 /* PushNotifications-Automatic.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "PushNotifications-Automatic.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -607,6 +635,7 @@
 			children = (
 				EB043806B7BB06DCA25E0177 /* Common */,
 				51FBDA444B2130ED53F050CB /* Analytics */,
+				7E7E0C2117F579E6C76C0B82 /* BannerUI */,
 				6F112DA3865BFE3961698859 /* ContentCards-Custom-UI */,
 				F500AE7A04E46943FAA225C4 /* ContentCardUI */,
 				CFAE53A0FC9D7251D24F9F70 /* ContentCardUI-Customization */,
@@ -665,12 +694,29 @@
 			path = tvOS;
 			sourceTree = "<group>";
 		};
+		7E7E0C2117F579E6C76C0B82 /* BannerUI */ = {
+			isa = PBXGroup;
+			children = (
+				3151B323AB3A5ECF3CA4A0A2 /* AppDelegate.h */,
+				AFAE486C714A1CDE35BC69BA /* AppDelegate.m */,
+				79FA659C77CFB82709B7532A /* FullScreenBannerViewController.h */,
+				288AD91FB9535494739F57A9 /* FullScreenBannerViewController.m */,
+				B6847C1027BF34B7177EA70B /* Readme.m */,
+				B518E4E09D196D7C45E30A38 /* WideBannerViewController.h */,
+				356CB255CC90C5C9DAC29848 /* WideBannerViewController.m */,
+			);
+			name = BannerUI;
+			path = Sources/BannerUI;
+			sourceTree = "<group>";
+		};
 		944D5C0BF6DC0B28ACDA2036 /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				9E2B80BBE3951963FBA6BBD3 /* Analytics.app */,
 				DE3608B9E460175A349CDB87 /* Analytics.app */,
 				0D27FC50D2EF457F536B1D05 /* Analytics.app */,
+				6CD4675CD37E8D52090B309D /* BannerUI.app */,
+				14BBB11A8EAB3794FCB52C38 /* BannerUI.app */,
 				8854CADF86F02FA64B2CC3F1 /* ContentCards-Custom-UI.app */,
 				C78E0B5A5D52F990511A4091 /* ContentCards-Custom-UI.app */,
 				552EA65890BB8DAA0D631388 /* ContentCards-Custom-UI.app */,
@@ -1072,6 +1118,22 @@
 			productReference = F3C2ED512ED12F090A1DC54C /* PushNotifications-Manual.app */;
 			productType = "com.apple.product-type.application";
 		};
+		7C8E32C853480800C57DC8E7 /* BannerUI-visionOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 38C0BD9C07673F37A09A19E3 /* Build configuration list for PBXNativeTarget "BannerUI-visionOS" */;
+			buildPhases = (
+				CA22BA010905FB1B028F5E91 /* Sources */,
+				0F5408060052FDBB85EAE34A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "BannerUI-visionOS";
+			productName = "BannerUI-visionOS";
+			productReference = 14BBB11A8EAB3794FCB52C38 /* BannerUI.app */;
+			productType = "com.apple.product-type.application";
+		};
 		A003570FDB24621EC4EA44CD /* InAppMessageUI-iOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 164687F613B08495D152F03E /* Build configuration list for PBXNativeTarget "InAppMessageUI-iOS" */;
@@ -1267,6 +1329,22 @@
 			productReference = F90C9DB8B3DF39E04E70DAAB /* ContentCardUI.app */;
 			productType = "com.apple.product-type.application";
 		};
+		FAFC8B1833A6F20A7D444193 /* BannerUI-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 109F81262E896319C249EA14 /* Build configuration list for PBXNativeTarget "BannerUI-iOS" */;
+			buildPhases = (
+				42183F1691A493E061D74045 /* Sources */,
+				6BC3A42AA571E6E4A914E021 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "BannerUI-iOS";
+			productName = "BannerUI-iOS";
+			productReference = 6CD4675CD37E8D52090B309D /* BannerUI.app */;
+			productType = "com.apple.product-type.application";
+		};
 		FDA0A7B4C40914EAF405D9FC /* Analytics-tvOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 33A0A8897465C6BD7C17C2E6 /* Build configuration list for PBXNativeTarget "Analytics-tvOS" */;
@@ -1343,6 +1421,9 @@
 					7A56C6610176F67086A05593 = {
 						ProvisioningStyle = automatic;
 					};
+					7C8E32C853480800C57DC8E7 = {
+						ProvisioningStyle = automatic;
+					};
 					A003570FDB24621EC4EA44CD = {
 						ProvisioningStyle = automatic;
 					};
@@ -1379,6 +1460,9 @@
 					F7627CCAD54F489968127C71 = {
 						ProvisioningStyle = automatic;
 					};
+					FAFC8B1833A6F20A7D444193 = {
+						ProvisioningStyle = automatic;
+					};
 					FDA0A7B4C40914EAF405D9FC = {
 						ProvisioningStyle = automatic;
 					};
@@ -1399,6 +1483,8 @@
 				A0EF8DC5C1ED6288C32D3D23 /* Analytics-iOS */,
 				FDA0A7B4C40914EAF405D9FC /* Analytics-tvOS */,
 				1A20DFCA0DF677F61651351C /* Analytics-visionOS */,
+				FAFC8B1833A6F20A7D444193 /* BannerUI-iOS */,
+				7C8E32C853480800C57DC8E7 /* BannerUI-visionOS */,
 				027F5C80F4345CD80EAB6233 /* ContentCardUI-Customization-iOS */,
 				75C44F728211105AB0B11127 /* ContentCardUI-Customization-visionOS */,
 				C160EA300423AABE590DA8FE /* ContentCardUI-iOS */,
@@ -1431,6 +1517,14 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		0F5408060052FDBB85EAE34A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ADEEA01EFF0D87591BE5FD74 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		13074D7ABBEC686036D4B4ED /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1548,6 +1642,15 @@
 			files = (
 				639A93232862A95314463DE5 /* Assets.xcassets in Resources */,
 				34C9C566ACB7B6220C782866 /* LaunchScreen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6BC3A42AA571E6E4A914E021 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5312D66C95FC98E34439D9B0 /* Assets.xcassets in Resources */,
+				C3EFEE994DA198C7D420FE6B /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1781,6 +1884,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		42183F1691A493E061D74045 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A60B2E77DFACCA5AE551786D /* AppDelegate.m in Sources */,
+				1AAB452EDBDC5D9F084DF9A5 /* Credentials.m in Sources */,
+				050F4233BFD50E658876B373 /* FullScreenBannerViewController.m in Sources */,
+				46990FDB3A6018F0B87122E7 /* Readme.m in Sources */,
+				453330607F35D913C48DDCE8 /* ReadmeViewController.m in Sources */,
+				314F9EAF101B0AA0E283BB89 /* WideBannerViewController.m in Sources */,
+				FD44D510CB7B092B6AD0E733 /* empty-file.swift in Sources */,
+				33EBE6E0A3C2703734EF9C34 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4A2ADA87B5A7F8E2B9688416 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1922,6 +2040,21 @@
 				D6EA8D935BAB548927CFED14 /* ReadmeViewController.m in Sources */,
 				C670BDE41367D4C18C9C27D3 /* empty-file.swift in Sources */,
 				EB084C135FAF342F0EE85CD1 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA22BA010905FB1B028F5E91 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				518FE99CB2BEAA57753E2A14 /* AppDelegate.m in Sources */,
+				7A3054A03EF9AE28014994FD /* Credentials.m in Sources */,
+				CE06F05766F725C6B571CB5F /* FullScreenBannerViewController.m in Sources */,
+				132424772CC351CCEAA2F735 /* Readme.m in Sources */,
+				7F1111D6FB86D3950005D97A /* ReadmeViewController.m in Sources */,
+				93D55D7EFEE70FD39AD4EF13 /* WideBannerViewController.m in Sources */,
+				579386C6FBD6BAAAEFFD6882 /* empty-file.swift in Sources */,
+				C7007E9DB1B18A24E8F1506E /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2546,6 +2679,28 @@
 				TARGETED_DEVICE_FAMILY = 7;
 			};
 			name = Release;
+		};
+		4BFEADB9B0027E777D3C7794 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = automatic;
+				INFOPLIST_FILE = Sources/BannerUI/Info.plist;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.BannerUI-visionOS";
+				PRODUCT_NAME = BannerUI;
+				SDKROOT = xros;
+				SUPPORTS_MACCATALYST = YES;
+				"SUPPORTS_MACCATALYST[sdk=appletvos*]" = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
+				TARGETED_DEVICE_FAMILY = 7;
+			};
+			name = Debug;
 		};
 		4EBD32EE3B16C9EBF7493F73 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -3215,6 +3370,29 @@
 			};
 			name = Release;
 		};
+		B7779E3DFA5B6D0B19DA5EBA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = automatic;
+				INFOPLIST_FILE = Sources/BannerUI/Info.plist;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.BannerUI-iOS";
+				PRODUCT_NAME = BannerUI;
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = YES;
+				"SUPPORTS_MACCATALYST[sdk=appletvos*]" = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		BA01071103F7280839CDFBF1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -3494,6 +3672,29 @@
 			};
 			name = Debug;
 		};
+		F1F0BAE70D9F7A6F01185BC3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = automatic;
+				INFOPLIST_FILE = Sources/BannerUI/Info.plist;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.BannerUI-iOS";
+				PRODUCT_NAME = BannerUI;
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = YES;
+				"SUPPORTS_MACCATALYST[sdk=appletvos*]" = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
 		F5929C3F0AEDBA673A70D39A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -3516,6 +3717,28 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
+		};
+		F6D1095489DB346DC0EF951F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = automatic;
+				INFOPLIST_FILE = Sources/BannerUI/Info.plist;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.BannerUI-visionOS";
+				PRODUCT_NAME = BannerUI;
+				SDKROOT = xros;
+				SUPPORTS_MACCATALYST = YES;
+				"SUPPORTS_MACCATALYST[sdk=appletvos*]" = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
+				TARGETED_DEVICE_FAMILY = 7;
+			};
+			name = Release;
 		};
 		F97E175B39C55208E8A73860 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -3627,6 +3850,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
+		109F81262E896319C249EA14 /* Build configuration list for PBXNativeTarget "BannerUI-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F1F0BAE70D9F7A6F01185BC3 /* Debug */,
+				B7779E3DFA5B6D0B19DA5EBA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
 		164687F613B08495D152F03E /* Build configuration list for PBXNativeTarget "InAppMessageUI-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -3659,6 +3891,15 @@
 			buildConfigurations = (
 				D73FE2FD92F59639E0E66547 /* Debug */,
 				A653F811811645548266EC3A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		38C0BD9C07673F37A09A19E3 /* Build configuration list for PBXNativeTarget "BannerUI-visionOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4BFEADB9B0027E777D3C7794 /* Debug */,
+				F6D1095489DB346DC0EF951F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;

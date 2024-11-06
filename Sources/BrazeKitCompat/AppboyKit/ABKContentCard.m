@@ -121,7 +121,7 @@
 
 - (nonnull id)copyWithZone:(nullable NSZone *)zone {
   NSData *json = [self.card json];
-  BRZContentCardRaw *card = [BRZContentCardRaw fromJson:json];
+  BRZContentCardRaw *card = [BRZContentCardRaw decodingWithJson:json];
   return [[ABKContentCard allocWithZone:zone] initWithContentCard:card];
 }
 
@@ -131,7 +131,7 @@
 
 - (nullable instancetype)initWithCoder:(nonnull NSCoder *)coder {
   NSData *json = [coder decodeDataObject];
-  BRZContentCardRaw *card = [BRZContentCardRaw fromJson:json];
+  BRZContentCardRaw *card = [BRZContentCardRaw decodingWithJson:json];
   return [[ABKContentCard alloc] initWithContentCard:card];
 }
 

@@ -18,7 +18,7 @@ extension BrazeInAppMessageUI {
     }
 
     /// Internal wrapper for the html in-app message.
-    let messageWrapper: MessageWrapper<Braze.InAppMessage.Html>
+    let messageWrapper: StructWrapper<Braze.InAppMessage.Html>
 
     // MARK: - Attributes
 
@@ -145,7 +145,7 @@ extension BrazeInAppMessageUI {
       }
     }
 
-    lazy var queryHandlerWrapper: MessageWrapper<Braze.WebViewBridge.QueryHandler> = .init(
+    lazy var queryHandlerWrapper: StructWrapper<Braze.WebViewBridge.QueryHandler> = .init(
       wrappedValue: webViewQueryHandler())
 
     // MARK: - LifeCycle
@@ -295,17 +295,11 @@ extension BrazeInAppMessageUI {
 
     open func setupWebView() {
       // Configuration
-      let configuration = WKWebViewConfiguration()
-      configuration.suppressesIncrementalRendering = true
-      configuration.allowsInlineMediaPlayback = true
+      let configuration = WKWebViewConfiguration.forBrazeBridge(
+        scriptMessageHandler: scriptMessageHandler)
 
       // - Customization
       attributes.configure?(configuration)
-
-      // - Script message handler
-      typealias ScriptMessageHandler = Braze.WebViewBridge.ScriptMessageHandler
-      configuration.userContentController.addUserScript(ScriptMessageHandler.script)
-      configuration.userContentController.add(scriptMessageHandler, name: ScriptMessageHandler.name)
 
       // WebView
       let webView = WKWebView(frame: .zero, configuration: configuration)
@@ -368,8 +362,8 @@ extension BrazeInAppMessageUI {
         return
       }
 
-      let (clickAction, buttonId) = queryHandler.process(
-        url: url,
+      let (clickAction, buttonId) = queryHandler.processInAppMessageURL(
+        url,
         logBodyClick: message.legacy || attributes.automaticBodyClicks
       )
 
@@ -401,23 +395,15 @@ extension BrazeInAppMessageUI.HtmlView: WKNavigationDelegate {
     decidePolicyFor navigationAction: WKNavigationAction,
     decisionHandler: @escaping (WKNavigationActionPolicy) -> Void
   ) {
-    let isIframeLoad =
-      navigationAction.targetFrame != nil
-      && navigationAction.sourceFrame != navigationAction.targetFrame
-    let isIframeNavigation = navigationAction.targetFrame?.isMainFrame == false
-
-    guard let url = navigationAction.request.url,
-      url.isFileURL == false,
-      isIframeLoad == false,
-      isIframeNavigation == false
-    else {
+    if shouldProcessNavigationAction(navigationAction) {
+      decisionHandler(.cancel)
+      processNavigationAction(
+        navigationAction,
+        isTransientOpen: navigationAction.isTransientOpen
+      )
+    } else {
       decisionHandler(.allow)
-      return
     }
-
-    decisionHandler(.cancel)
-
-    processNavigationAction(navigationAction, isTransientOpen: navigationAction.isTransientOpen)
   }
 
   public func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
@@ -539,38 +525,6 @@ extension BrazeInAppMessageUI.HtmlView {
       .filter { $0["CFBundleTypeRole"] as? String == "Editor" }
       .flatMap { $0["CFBundleURLSchemes"] as? [String] ?? [] }
   }()
-
-}
-
-extension WKWebView {
-
-  fileprivate func disableDragAndDrop() {
-    bfsSubviews
-      .lazy
-      .first { $0.interactions.contains(where: { $0 is UIDragInteraction }) }?
-      .interactions
-      .filter { $0 is UIDragInteraction }
-      .forEach { $0.view?.removeInteraction($0) }
-  }
-
-  fileprivate func disableSelection() {
-    evaluateJavaScript(
-      """
-      const css = `* {
-          -webkit-touch-callout: none;
-          -webkit-user-select: none;
-      }
-      input, textarea {
-          -webkit-touch-callout: initial !important;
-          -webkit-user-select: initial !important;
-      }`
-      var style = document.createElement('style')
-      style.type = 'text/css'
-      style.appendChild(document.createTextNode(css))
-      head.appendChild(style)
-      """
-    )
-  }
 
 }
 
