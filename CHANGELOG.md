@@ -1,3 +1,8 @@
+## 11.0.1
+
+##### Fixed
+- Fixes an issue introduced in `11.0.0` where the push subscription status would be sent to the backend with an inaccurate value at startup, causing an unexpected subscription state. The SDK now sends up the accurate subscription status at each startup.
+
 ## 11.0.0
 
 ##### Breaking
