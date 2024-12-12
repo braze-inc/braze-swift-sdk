@@ -1,3 +1,15 @@
+## 11.4.0
+
+##### Fixed
+- Fixes an issue where the SDK could hang during initialization if previous sessions generated a large number of geofence refreshes. This hang could sometimes lead to a crash by blocking the main thread for an extended period.
+- Fixes an issue where the triggering of in-app messages could be delayed in cases where requests for updated in-app message triggers are also delayed due to rate limiting.
+- Adds additional safeguards to ensure that ongoing network requests are dropped when changing users mid-flight.
+
+##### Added
+- When Content Cards, Feature Flags, or Banner Cards go from enabled to disabled, the stored data is removed from cache.
+- Adds [`banner.trackingId`](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/banner/trackingid) to distinguish between banner objects.
+  - Deprecates `banner.id` in favor of `banner.trackingId`.
+
 ## 11.3.0
 
 ##### Fixed
@@ -37,6 +49,11 @@
 
 ##### Added
 - Adds a public initializer for `Braze.Notifications.Payload`.
+
+## 11.0.1
+
+##### Fixed
+- Fixes an issue introduced in `11.0.0` where the push subscription status would be sent to the backend with an inaccurate value at startup, causing an unexpected subscription state. The SDK now sends up the accurate subscription status at each startup.
 
 ## 11.0.0
 

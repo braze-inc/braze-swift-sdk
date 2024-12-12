@@ -31,7 +31,7 @@ extension BrazeBannerUI {
 
     /// Banner views currently tracked for impression logging.
     ///
-    /// Banner views are tracked and managed with their banner IDs (tracking string).
+    /// Banner views are tracked and managed with their banner tracking IDs.
     var trackedBanners: NSMapTable<NSString, BrazeBannerUI.BannerUIView> {
       get { lock.sync { _trackedBanners } }
       set { lock.sync { _trackedBanners = newValue } }
@@ -50,7 +50,7 @@ extension BrazeBannerUI {
     }
     private var _sessionSubscriber: Braze.Cancellable?
 
-    /// The banner IDs that have been viewed this session.
+    /// The banner tracking IDs that have been viewed this session.
     var viewedInSessionBanners: Set<String> {
       get { lock.sync { _viewedInSessionBanners } }
       set { lock.sync { _viewedInSessionBanners = newValue } }
@@ -83,11 +83,11 @@ extension BrazeBannerUI {
     ///
     /// - Parameter view: The Braze banner view.
     public func trackView(_ view: BrazeBannerUI.BannerUIView) {
-      guard let bannerId = view.banner?.id,
-        !viewedInSessionBanners.contains(bannerId)
+      guard let trackingId = view.banner?.trackingId,
+        !viewedInSessionBanners.contains(trackingId)
       else { return }
 
-      trackedBanners.setObject(view, forKey: bannerId as NSString)
+      trackedBanners.setObject(view, forKey: trackingId as NSString)
       startVisibilityTracking()
     }
 
@@ -98,7 +98,7 @@ extension BrazeBannerUI {
       isCurrentlyTracking = true
       visibilityTracker = VisibilityTracker<String>(
         interval: 0.1,
-        visibleIdentifiers: bannerIdentifiers,
+        visibleIdentifiers: bannerTrackingIdentifiers,
         visibleForInterval: logBannerImpression
       )
       visibilityTracker?.start()
@@ -122,7 +122,7 @@ extension BrazeBannerUI {
 
 extension BrazeBannerUI.BannersImpressionTracker {
 
-  func bannerIdentifiers() -> [String] {
+  func bannerTrackingIdentifiers() -> [String] {
     return trackedBanners.keyEnumerator().allObjects.compactMap { key in
       guard let nsStringKey = key as? NSString,
         let view = trackedBanners.object(forKey: nsStringKey)
@@ -133,14 +133,14 @@ extension BrazeBannerUI.BannersImpressionTracker {
     }
   }
 
-  func logBannerImpression(bannerId: String) {
-    guard let bannerView = trackedBanners.object(forKey: bannerId as NSString),
-      let actualBannerId = bannerView.banner?.id,
-      !viewedInSessionBanners.contains(actualBannerId)
+  func logBannerImpression(trackingId: String) {
+    guard let bannerView = trackedBanners.object(forKey: trackingId as NSString),
+      let actualTrackingId = bannerView.banner?.trackingId,
+      !viewedInSessionBanners.contains(actualTrackingId)
     else { return }
 
     bannerView.logImpression()
-    viewedInSessionBanners.insert(actualBannerId)
+    viewedInSessionBanners.insert(actualTrackingId)
 
     // All banners that were visible are already tracked
     let allKeys = trackedBanners.keyEnumerator().allObjects.compactMap { $0 as? String }
