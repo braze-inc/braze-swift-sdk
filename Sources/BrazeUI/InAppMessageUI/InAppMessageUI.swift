@@ -213,6 +213,22 @@ open class BrazeInAppMessageUI:
       return
     }
 
+    // Verifies that the user that triggered the message matches the current identified user on the
+    // braze instance. The ID-matching behavior is enforced by default for in-app messages originating
+    // from Braze and ignored by default for local in-app messages.
+    if case .enforce(let messageUserId) = message.context?.userIDMatchBehavior,
+      let braze = message.context?.braze as? Braze,
+      messageUserId != braze.user.id
+    {
+      let error = Error.triggeredUserCurrentUserMismatch(
+        messageId: message.data.id,
+        currentUser: braze.user.id,
+        previousUser: messageUserId
+      )
+      message.context?.logError(flattened: error.logDescription)
+      return
+    }
+
     // - View controller
     let viewController = ViewController(
       ui: self,

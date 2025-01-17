@@ -19,6 +19,8 @@ extension BrazeInAppMessageUI {
     case noWindowScene
     case assetsFailure(Braze.ErrorString)
     case invalidConstraints
+    case triggeredUserCurrentUserMismatch(
+      messageId: String?, currentUser: String?, previousUser: String?)
 
     case otherMessagePresented(push: Bool)
     case messageContextInvalid
@@ -82,6 +84,14 @@ extension BrazeInAppMessageUI.Error {
     case .invalidConstraints:
       return
         "Unable to present message - constraints were invalid or nil."
+    case .triggeredUserCurrentUserMismatch(let messageId, let currentUser, let previousUser):
+      return
+        """
+        Skipping message presentation - the current user is not the user who triggered the message.
+        - in-app message: \(messageId ?? "No message ID")
+        - current user: \(currentUser ?? "anonymous user")
+        - original user: \(previousUser ?? "anonymous user")
+        """
 
     case .otherMessagePresented(let push):
       return

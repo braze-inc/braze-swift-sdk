@@ -34,14 +34,13 @@ public struct GIFViewProvider: Sendable {
   #endif
 
   /// Creates a view able to display static and animated GIF images.
-  /// - Parameters:
-  ///   - url: The local file url for the image.
+  ///
+  /// This closure takes in the local file url for the image and returns the corresponding `UIView`.
   public var view: @MainActor @Sendable (_ url: URL?) -> UIView
 
   /// Updates the passed view with a new image at `url`.
-  /// - Parameters:
-  ///   - view: The view to update.
-  ///   - url: The local file url for the image.
+  ///
+  /// This closure takes in the view to update and the local file url for the image as parameters.
   public var updateView: @MainActor @Sendable (_ view: UIView, _ url: URL?) -> Void
 
   /// Creates a GIF view provider.

@@ -1,3 +1,21 @@
+## 11.5.0
+
+##### Fixed
+- `Braze.banners.getBanner(for:_:)` now successfully returns a cached `Banner` object for the requested placement ID as long as a Banner Cards sync has ever succeeded for the current user.
+  - Previously, it would log a warning and pass `nil` to the completion handler if a Banner Cards sync had not been completed for the current user during the current session specifically.
+  - This change aligns behavior with the Android SDK.
+- Fixes an issue where images with the `"JPEG"` image type would sometimes not display in Push Stories.
+- Fixes an issue where an in-app message in a Braze-provided UI can be displayed for an ineligible user under rare conditions.
+  - This may occur if the in-app message was in the process of being displayed in the UI at the same time that the user was changed to a different user.
+
+##### Added
+- Adds [`Braze.User.id`](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/user/id) to access the current user identifier synchronously.
+  - Deprecates `Braze.User.id() async` and `Braze.User.id(queue:completion:)` in favor of `Braze.User.id`.
+    - These methods will be removed fully in a future update.
+- Adds the optional parameter `userIDMatchBehavior` to the initializers of `Braze.InAppMessageRaw.Context`. This determines the behavior in the UI when the current identified user is different from the one that triggered the in-app message.
+  - The default for Braze-provided UIs (`.enforce`) will enforce that the user ID matches the user ID that triggered the in-app message. If there is a mismatch, the in-app message will not be displayed.
+  - For custom UIs, the default is `.ignore` and a mismatch will still display the in-app message.
+
 ## 11.4.0
 
 ##### Fixed
