@@ -1,3 +1,22 @@
+## 11.6.0
+
+##### Fixed
+- Fixes the behavior in the Braze-provided UI for Banner Cards where content would not automatically be cleared from the UI when changing to a user that was not eligible for that campaign.
+- Changes the behavior of `Braze.Banners.subscribeToUpdates(_:)` to match behavior of the corresponding API on the Braze Android SDK.
+  - Upon calling `Braze.Banners.subscribeToUpdates(_:)`, the update handler closure will only be called if a banners sync has succeeded during the current user session.
+    - Previously, calling `Braze.Banners.subscribeToUpdates(_:)` would always result in the update handler being called one time immediately.
+  - Upon successfully completing a banners sync, `Braze.Banners.subscribeToUpdates(_:)` will call its registered update handler even if the sync result is identical to the last successful sync.
+- Changes the behavior of `Braze.Banners.bannersStream` to match behavior of the corresponding API on the Braze Android SDK.
+  - `Braze.Banners.bannersStream` will now only emit an update immediately upon access if a banners sync has succeeded during the current user session.
+    - Previously, accessing `Braze.Banners.bannersStream` would always emit one update immediately.
+  - Upon successfully completing a banners sync, `Braze.Banners.bannersStream` will emit an update even if the sync result is identical to the last successful sync.
+- JavaScript bridge methods expecting number arguments now also accept string representations of numbers.
+  - This change aligns the behavior of the Swift SDK with the behavior of the Web SDK.
+  
+##### Added
+- Adds an optional method `removeBannerContent` to the `BrazeBannerPlacement` protocol.
+- Locally persisted Braze SDK data will no longer transfer during OS backups. This resolves an issue introduced in `6.2.0`.
+
 ## 11.5.0
 
 ##### Fixed

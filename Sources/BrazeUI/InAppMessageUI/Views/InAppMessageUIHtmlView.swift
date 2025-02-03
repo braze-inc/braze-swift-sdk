@@ -209,7 +209,7 @@ extension BrazeInAppMessageUI {
     }
 
     open func installPresentationConstraintsIfNeeded() {
-      guard let superview = superview,
+      guard let superview,
         webView?.superview != nil,
         !presentationConstraintsInstalled
       else {

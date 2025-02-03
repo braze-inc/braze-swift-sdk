@@ -28,13 +28,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 // MARK: - Customizations
 
-#warning("""
-For demonstration purposes, this example application uses an alternate Content Card view controller initializer.
+#warning(
+  """
+  For demonstration purposes, this example application uses an alternate Content Card view controller initializer.
 
-In your implementation, you are expected to use the standard `init(braze:attributes:)` initializer to automatically link the UI to your braze instance.
+  In your implementation, you are expected to use the standard `init(braze:attributes:)` initializer to automatically link the UI to your braze instance.
 
-See https://braze-inc.github.io/braze-swift-sdk/documentation/brazeui/brazecontentcardui/viewcontroller/init(braze:attributes:)
-""")
+  See https://braze-inc.github.io/braze-swift-sdk/documentation/brazeui/brazecontentcardui/viewcontroller/init(braze:attributes:)
+  """)
 
 extension AppDelegate {
 

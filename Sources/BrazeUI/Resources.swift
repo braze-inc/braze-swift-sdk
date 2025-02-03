@@ -30,7 +30,7 @@ public final class BrazeUIResources: NSObject {
   @objc
   public static let bundle: Bundle? = {
     // Use overriden resources bundle
-    if let overrideResourcesBundle = overrideResourcesBundle {
+    if let overrideResourcesBundle {
       return overrideResourcesBundle
     }
 

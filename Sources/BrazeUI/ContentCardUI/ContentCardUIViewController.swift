@@ -306,7 +306,7 @@ extension BrazeContentCardUI {
       let attributes = self.attributes.cellAttributes
       let imageLoad = loadImage(card: card)
       let retry = { [weak self] in
-        guard let self = self,
+        guard let self,
           let imageLoad = self.loadImage(card: card, retry: true)
         else { return }
         self.updateImageCell(card: card, imageLoad: imageLoad)
@@ -427,7 +427,7 @@ extension BrazeContentCardUI {
     /// - Returns: A cancellable that must be retained for the duration of the subscription.
     open func subscribeToUpdates() -> Braze.Cancellable? {
       subscribe? { [weak self] cards in
-        guard let self = self else { return }
+        guard let self else { return }
         self.lastUpdate = Date()
         self.cards = self.attributes.transform(cards)
         self.tableView.reloadData()
@@ -440,7 +440,7 @@ extension BrazeContentCardUI {
     @objc open func refreshCards() {
       refreshControl?.beginRefreshing()
       refresh? { [weak self] result in
-        guard let self = self else { return }
+        guard let self else { return }
         if case .success(let cards) = result {
           self.lastUpdate = Date()
           self.cards = self.attributes.transform(cards)
@@ -514,7 +514,7 @@ extension BrazeContentCardUI {
     lazy var impressionTracker: VisibilityTracker<String> = .init(
       interval: 0.1,
       visibleIdentifiers: { [weak self] in
-        guard let self = self,
+        guard let self,
           let visibleIndexPaths = self.tableView.indexPathsForVisibleRows
         else { return [] }
         let ids =
@@ -524,14 +524,14 @@ extension BrazeContentCardUI {
         return ids
       },
       visibleForInterval: { [weak self] id in
-        guard let self = self,
+        guard let self,
           let card = self.card(id: id),
           let indexPath = self.indexPath(for: card)
         else { return }
         self.cardImpression(card, indexPath: indexPath)
       },
       exitVisible: { [weak self] indexPath, afterInterval in
-        guard let self = self,
+        guard let self,
           let card = self.card(id: indexPath),
           let indexPath = self.indexPath(for: card),
           afterInterval
@@ -562,7 +562,7 @@ extension BrazeContentCardUI {
           ? .success(imageURL, imageSize(url: imageURL) ?? .zero)
           : .loading(
             contextLoadImage { [weak self] result in
-              guard let self = self else { return }
+              guard let self else { return }
               switch result {
               case .success(let localURL):
                 let size = imageSize(url: localURL) ?? .zero

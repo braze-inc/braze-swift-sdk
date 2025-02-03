@@ -57,9 +57,9 @@ extension BrazeInAppMessageUI {
     public let keyboard: KeyboardFrameNotifier
 
     open func updateConstraintsForKeyboard() {
-      guard let window = window,
+      guard let window,
         keyboard.windows.contains(window),
-        let superview = superview
+        let superview
       else {
         return
       }

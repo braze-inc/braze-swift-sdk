@@ -53,8 +53,17 @@
       public func updateUIView(_ uiView: BannerUIView, context: Context) {
         if let banner {
           uiView.render(with: banner)
-        } else if let error {
+        } else {
+          uiView.removeBannerContent()
+        }
+
+        if let error {
           uiView.notifyError(error)
+
+          // Nullify the error after using so it doesn't get reported multiple times.
+          DispatchQueue.main.async {
+            self.error = nil
+          }
         }
       }
 
@@ -76,11 +85,11 @@
       public let placementId: String
       let impressionTracker: BrazeBannerUI.BannersImpressionTracker
 
-      var didReceiveUpdate: (Result<Braze.Banner, Swift.Error>) -> Void
+      var didReceiveUpdate: (Result<Braze.Banner?, Swift.Error>) -> Void
 
       init(
         placementId: String,
-        didReceiveUpdate: @escaping (Result<Braze.Banner, Swift.Error>) -> Void,
+        didReceiveUpdate: @escaping (Result<Braze.Banner?, Swift.Error>) -> Void,
         impressionTracker: BrazeBannerUI.BannersImpressionTracker = .shared
       ) {
         self.placementId = placementId
@@ -94,6 +103,10 @@
 
       public func notifyError(_ error: Error) {
         didReceiveUpdate(.failure(error))
+      }
+
+      public func removeBannerContent() {
+        didReceiveUpdate(.success(nil))
       }
 
     }

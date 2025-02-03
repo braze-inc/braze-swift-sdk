@@ -11,7 +11,7 @@ extension GIFViewProvider {
   )
 
   private static func image(for url: URL?) -> UIImage? {
-    guard let url = url else { return nil }
+    guard let url else { return nil }
     return url.pathExtension == "gif"
       ? SDAnimatedImage(contentsOfFile: url.path)
       : UIImage(contentsOfFile: url.path)

@@ -45,7 +45,7 @@
     }
 
     public func makeUIViewController(context: Context) -> BrazeContentCardUI.ViewController {
-      guard let braze = braze else { return .init(initialCards: []) }
+      guard let braze else { return .init(initialCards: []) }
       let viewController = BrazeContentCardUI.ViewController(braze: braze, attributes: attributes)
       viewController.delegate = context.coordinator
       return viewController
@@ -57,7 +57,7 @@
     ) {
       viewController.delegate = context.coordinator
       viewController.attributes = attributes
-      if let braze = braze, braze !== context.coordinator.braze {
+      if let braze, braze !== context.coordinator.braze {
         context.coordinator.braze = braze
         viewController.updateWithBraze(braze)
       }

@@ -71,7 +71,7 @@ extension InAppMessageView {
 
   /// Call this method to report the "will present" event before any presentation animation occurs.
   public func willPresent() {
-    guard let controller = controller, let ui = controller.ui else {
+    guard let controller, let ui = controller.ui else {
       return
     }
 
@@ -81,7 +81,7 @@ extension InAppMessageView {
   /// Call this method to report the "did present" event after all presentation animations are
   /// completed and the message view is fully visible to the user.
   public func didPresent() {
-    guard let controller = controller, let ui = controller.ui else {
+    guard let controller, let ui = controller.ui else {
       return
     }
 
@@ -94,7 +94,7 @@ extension InAppMessageView {
 
   /// Call this method to report the "will dismiss" event before any dismissal animation occurs.
   public func willDismiss() {
-    guard let controller = controller, let ui = controller.ui else {
+    guard let controller, let ui = controller.ui else {
       return
     }
 
@@ -104,7 +104,7 @@ extension InAppMessageView {
   /// Call this method to report the "did dismiss" event after all dismissal animations are
   /// completed and the message view is fully hidden from the user.
   public func didDismiss() {
-    guard let controller = controller, let ui = controller.ui else {
+    guard let controller, let ui = controller.ui else {
       return
     }
 

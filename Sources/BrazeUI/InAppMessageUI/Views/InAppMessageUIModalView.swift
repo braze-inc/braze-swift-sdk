@@ -233,7 +233,7 @@ extension BrazeInAppMessageUI {
       let container = StackView(
         buttons: message.buttons,
         onClick: { [weak self] button in
-          guard let self = self else { return }
+          guard let self else { return }
           self.logClick(buttonId: "\(button.id)")
           self.process(clickAction: button.clickAction, buttonId: "\(button.id)")
           self.dismiss()
@@ -432,7 +432,7 @@ extension BrazeInAppMessageUI {
     }
 
     open func installPresentationConstraintsIfNeeded() {
-      guard let superview = superview, !presentationConstraintsInstalled else { return }
+      guard let superview, !presentationConstraintsInstalled else { return }
       presentationConstraintsInstalled = true
       anchors.edges.pin()
       setNeedsLayout()

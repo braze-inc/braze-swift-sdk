@@ -80,16 +80,8 @@ extension BrazeBannerUI {
     }
 
     deinit {
-      // Cleanup userContentController because:
-      // - It strongly retains its scripts and script message handlers
-      // - It seems to outlive the configuration / web view instance
-      // - Manual cleanup here ensure proper deallocation of those objects
-      isolatedMainActorDeinit { [webView] in
-        let userContentController = webView?.configuration.userContentController
-        userContentController?.removeAllUserScripts()
-        userContentController?.removeScriptMessageHandler(
-          forName: Braze.WebViewBridge.ScriptMessageHandler.name
-        )
+      isolatedMainActorDeinit { [self] in
+        self.tearDownWebView()
       }
     }
 
@@ -111,6 +103,20 @@ extension BrazeBannerUI {
       ])
     }
 
+    func tearDownWebView() {
+      // Cleanup userContentController because:
+      // - It strongly retains its scripts and script message handlers
+      // - It seems to outlive the configuration / web view instance
+      // - Manual cleanup here ensure proper deallocation of those objects
+      let userContentController = webView?.configuration.userContentController
+      userContentController?.removeAllUserScripts()
+      userContentController?.removeScriptMessageHandler(
+        forName: Braze.WebViewBridge.ScriptMessageHandler.name
+      )
+      self.subviews.forEach { ($0 as? WKWebView)?.removeFromSuperview() }
+      webView = nil
+    }
+
     required public init?(coder: NSCoder) {
       fatalError("init(coder:) has not been implemented")
     }
@@ -119,6 +125,10 @@ extension BrazeBannerUI {
     ///
     /// - Parameter banner: The Braze banner model.
     open func render(with banner: Braze.Banner) {
+      if self.webView == nil {
+        setupWebView()
+      }
+
       if self.banner != banner {
         self.banner = banner
         DispatchQueue.main.async { [weak self] in
@@ -135,6 +145,13 @@ extension BrazeBannerUI {
         logError(brazeError)
       }
       self.processContentUpdates?(.failure(error))
+    }
+
+    /// Instructs the view to nullify and remove its existing Banner Card content.
+    public func removeBannerContent() {
+      self.banner = nil
+      self.tearDownWebView()
+      self.processContentUpdates?(.success(.init(height: 0)))
     }
 
     /// Logs an error related to the banner.

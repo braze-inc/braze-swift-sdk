@@ -37,7 +37,7 @@ open class ShadowView: UIView {
 
   /// Draws the shadow with the current ``shadow``.
   open func drawShadow() {
-    guard let shadow = shadow else {
+    guard let shadow else {
       layer.shadowOffset = .zero
       layer.shadowRadius = 0
       layer.shadowOpacity = 0

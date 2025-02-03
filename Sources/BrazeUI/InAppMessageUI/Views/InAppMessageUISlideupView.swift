@@ -181,8 +181,8 @@ extension BrazeInAppMessageUI {
       shadowView.shadow = attributes.shadow
 
       // Dimensions
-      if let minHeightConstraint = minHeightConstraint,
-        let maxWidthConstraints = maxWidthConstraints
+      if let minHeightConstraint,
+        let maxWidthConstraints
       {
         maxWidthConstraints.forEach { $0.constant = attributes.maxWidth }
         minHeightConstraint.constant = attributes.minHeight
@@ -392,7 +392,7 @@ extension BrazeInAppMessageUI {
     }
 
     open func installPresentationConstraintsIfNeeded() {
-      guard let superview = superview, !presentationConstraintsInstalled else { return }
+      guard let superview, !presentationConstraintsInstalled else { return }
       presentationConstraintsInstalled = true
 
       Constraints {

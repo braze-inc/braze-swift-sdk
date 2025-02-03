@@ -49,10 +49,10 @@
         func updateUIView(_ view: UIView, context: Context) {
           guard !context.coordinator.setup else { return }
           context.coordinator.setup = true
-          if let pin = pin {
+          if let pin {
             view.anchors.edges.pin().forEach { $0.priority = pin }
           }
-          if let center = center {
+          if let center {
             view.anchors.center.align().forEach { $0.priority = center }
           }
           let flexPriority: UILayoutPriority = flex ? .defaultLow : .required
