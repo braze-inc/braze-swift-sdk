@@ -1,3 +1,14 @@
+## 11.6.1
+
+##### Fixed
+- Improves the reliability of collecting Live Activity push-to-start tokens on calling `registerPushToStart`:
+  - Push-to-start tokens will now flush to the server immediately as soon as they are retrieved.
+  - Push-to-start tokens will now be read immediately from the `pushToStartToken` property as soon as `registerPushToStart` is called, in addition to the existing behavior where an observable is set up to monitor new tokens.
+- Resolves issues with the SDK's internal state for devices that were previously affected after restoring from another device's iCloud or iTunes backup.
+  - Previously, these devices would incorrectly inherit the device ID from the original device.
+  - With this update, the SDK now generates a unique device ID for each restored device, ensuring proper identification and functionality.
+  - This update follows up on the `11.6.0` fix, which prevented the issue from occurring on future backups.
+
 ## 11.6.0
 
 ##### Fixed
