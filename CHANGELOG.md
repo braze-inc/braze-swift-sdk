@@ -1,3 +1,8 @@
+## 11.7.0
+
+##### Added
+- Adds the ability for a banner container to resize when the banner content changes height.
+
 ## 11.6.1
 
 ##### Fixed

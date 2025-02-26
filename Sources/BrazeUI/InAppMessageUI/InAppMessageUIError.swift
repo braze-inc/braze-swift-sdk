@@ -145,6 +145,17 @@ extension Braze.WebViewBridge.ScriptMessageHandler.Error {
         - arg: \(arg)
         - type: \(type)
         """
+    case .noBridgeWebView:
+      return
+        """
+        The web view does not integrate the JavaScript bridge.
+        """
+    case .jsError(let error):
+      return
+        """
+        Encountered error when executing JavaScript.
+        - error: \(error)
+        """
     case .deprecation(let message):
       return message
     case .unknown(let error):

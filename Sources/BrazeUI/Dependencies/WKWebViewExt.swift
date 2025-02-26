@@ -72,4 +72,34 @@ extension WKWebView {
     )
   }
 
+  /// Wait for the HTML page to be fully loaded.
+  ///
+  /// - Important: This method requires that the web view implements the Braze JavaScript bridge.
+  ///              When the bridge is missing, the completion handler is never called
+  ///
+  /// - Parameters:
+  ///   - handler: The Braze JavaScript bridge script message handler.
+  ///   - completion: The completion handler executed when the page is loaded.
+  func waitForLoadedState(
+    _ handler: Braze.WebViewBridge.ScriptMessageHandler,
+    completion: @escaping () -> Void
+  ) {
+    handler.callAsyncJavaScript(
+      """
+      Promise.all([
+        new Promise(resolve =>
+          document.readyState === 'complete' ? resolve() : window.addEventListener('load', resolve)
+        ),
+        new Promise(resolve =>
+          window.brazeBridge ? resolve() : window.addEventListener('ab.BridgeReady', resolve)
+        )
+      ]);
+      """,
+      in: self
+    ) { result in
+      guard case .success = result else { return }
+      completion()
+    }
+  }
+
 }

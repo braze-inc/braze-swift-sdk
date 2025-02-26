@@ -12,8 +12,9 @@ extension BrazeBannerUI.BannerUIView {
       },
       logError: { [weak self] in self?.logError(.webViewScript($0)) },
       showNewsFeed: { [weak self] in self?.process(clickAction: .newsFeed) },
-      closeMessage: { [weak self] in
-        self?.logError(.webViewFeatureNotAvailable)
+      closeMessage: { [weak self] in self?.logError(.webViewFeatureNotAvailable) },
+      setBannerHeight: { [weak self] height in
+        self?.processContentUpdates?(.success(.init(height: Double(height))))
       },
       braze: self.braze
     )
@@ -25,9 +26,7 @@ extension BrazeBannerUI.BannerUIView {
       channel: .banner,
       logError: { [weak self] in self?.logError(.webViewScheme($0)) },
       showNewsFeed: { [weak self] in self?.process(clickAction: .newsFeed) },
-      closeMessage: { [weak self] in
-        self?.logError(.webViewFeatureNotAvailable)
-      },
+      closeMessage: { [weak self] in self?.logError(.webViewFeatureNotAvailable) },
       queryHandler: queryHandler,
       braze: self.braze
     )
@@ -36,9 +35,7 @@ extension BrazeBannerUI.BannerUIView {
   /// Creates and returns an url query handler implementing the logic for query-based actions.
   public func webViewQueryHandler() -> Braze.WebViewBridge.QueryHandler {
     .init(
-      logClick: { [weak self] in
-        self?.logClick(buttonId: $0)
-      },
+      logClick: { [weak self] in self?.logClick(buttonId: $0) },
       logError: { [weak self] in self?.logError(.webViewQuery($0)) }
     )
   }

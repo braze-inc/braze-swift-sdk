@@ -91,6 +91,13 @@ extension BrazeBannerUI {
       let webView = WKWebView(frame: .zero, configuration: configuration)
       webView.navigationDelegate = self
       webView.clipsToBounds = true
+
+      #if compiler(>=5.8)
+        if #available(iOS 16.4, macOS 13.3, *) {
+          webView.isInspectable = true
+        }
+      #endif
+
       self.webView = webView
       self.addSubview(webView)
 
@@ -238,34 +245,10 @@ extension BrazeBannerUI.BannerUIView: WKNavigationDelegate {
     webView.disableDragAndDrop()
     // Disable selection by inserting CSS
     webView.disableSelection()
-
-    DispatchQueue.main.async { [weak self] in
-      webView.evaluateJavaScript("document.readyState") { (complete, error) in
-        if let error {
-          self?.processContentUpdates?(.failure(error))
-        } else if complete != nil {
-          webView.evaluateJavaScript("document.documentElement.scrollHeight") { (height, error) in
-            guard let self else { return }
-
-            if let error {
-              self.processContentUpdates?(.failure(error))
-            } else {
-              // Start tracking the view after it has successfully loaded.
-              self.impressionTracker.trackView(self)
-
-              if let height = height as? Double, height > 0 {
-                self.processContentUpdates?(
-                  .success(.init(height: height))
-                )
-              } else {
-                self.processContentUpdates?(
-                  .failure(BrazeBannerUI.Error.bannerHeightUnavailable)
-                )
-              }
-            }
-          }
-        }
-      }
+    // Start tracking the view after it has successfully loaded.
+    webView.waitForLoadedState(scriptMessageHandler) { [weak self] in
+      guard let self else { return }
+      self.impressionTracker.trackView(self)
     }
   }
 
