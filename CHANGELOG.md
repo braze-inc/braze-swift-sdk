@@ -1,3 +1,19 @@
+## 11.8.0
+
+##### Added
+- Network requests made by the SDK to the Braze Live Activities `/push_token_tag` endpoint will now be retried in the case of a request failure.
+- Expands customizability options of custom endpoints passed when initializing a `Braze` instance.
+  - You can now specify a base path to be used for SDK network requests (i.e. "example.com/mockServer").
+  - `http` schemes are now supported for use by custom endpoints (i.e. http://example.com). Previously, only `https` schemes were supported.
+
+##### Fixed
+- Fixes an issue where in-app messages would not always be triggered when sending Braze requests to the tracking endpoint. This occurred when both of the following conditions are true:
+  - The `Braze.Configuration.Api.trackingPropertyAllowList` did not include the [`.everything` type](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/configuration-swift.class/trackingproperty/everything).
+  - All other `Braze.Configuration.TrackingProperty` types were manually listed in the `trackingPropertyAllowList`.
+- Improves the rendering behavior of Banner Cards embedded in a scroll view on hybrid development frameworks.
+- Fixes the Banner Card view to prevent drag gestures from exposing the background of the HTML content.
+- Fixes an issue on the Braze web view bridge where numeric values of `1` or `0` would be incorrectly reported as `true` or `false`, respectively.
+
 ## 11.7.0
 
 ##### Added
