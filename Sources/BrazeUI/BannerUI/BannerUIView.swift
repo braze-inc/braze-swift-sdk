@@ -94,6 +94,7 @@ extension BrazeBannerUI {
       webView.scrollView.isScrollEnabled = false
       // Prevents the status bar from pushing down the web view's content when scrolling on Flutter.
       webView.scrollView.contentInsetAdjustmentBehavior = .never
+      webView.isOpaque = false
 
       #if compiler(>=5.8)
         if #available(iOS 16.4, macOS 13.3, *) {

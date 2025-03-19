@@ -66,7 +66,7 @@ open class VisibilityTracker<Identifier: Hashable> {
   // MARK: - CADisplayLink Tick
 
   @objc
-  private func displayLinkTick(_ displayLink: CADisplayLink) {
+  private func brazeDisplayLinkTick(_ displayLink: CADisplayLink) {
     defer { previousTimestamp = displayLink.timestamp }
 
     let previous = Set(identifiersMap.keys)
@@ -104,7 +104,7 @@ open class VisibilityTracker<Identifier: Hashable> {
   // MARK: - Misc.
 
   private func createDisplayLink() -> CADisplayLink {
-    let displayLink = CADisplayLink(target: self, selector: #selector(displayLinkTick))
+    let displayLink = CADisplayLink(target: self, selector: #selector(brazeDisplayLinkTick))
     if #available(iOS 15.0, *) {
       displayLink.preferredFrameRateRange = .init(minimum: 10, maximum: 20, preferred: 15)
     } else {

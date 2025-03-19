@@ -1,3 +1,17 @@
+## 11.9.0
+
+##### Added
+- Adds [`Braze.LiveActivities.pushToStartTokenUpdatesStream: AsyncStream<Braze.LiveActivities.PushToStartTokenUpdate>`](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/liveactivities-swift.class/pushtostarttokenupdatesstream), an asynchronous stream which publishes updates pertaining to the Live Activities push-to-start token lifecycle.
+  - See [`Braze.LiveActivities.PushToStartTokenUpdate`](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/liveactivities-swift.class/pushtostarttokenupdate) for all varieties of update events published by the stream.
+- Adds dSYM files to the dynamic and mergeable variants of the Braze SDK XCFrameworks.
+  - This addresses an App Store submission validation warning when using Xcode 16.0 or later.
+
+##### Fixed
+- The SDK Debugger tool will now capture logs even when `Braze.configuration.logger.level` is `.disabled` and no SDK logging occurs locally.
+  - This aligns the Braze Swift SDK Debugger Tool behavior with that of the Debugger Tool on the Braze Android SDK.
+- Sets the default background of `BannerUIView` to be transparent.
+- Renames the `VisibilityTracker.displayLinkTick` method to `VisibilityTracker.brazeDisplayLinkTick` in BrazeUI to avoid potential naming conflicts with private system methods.
+
 ## 11.8.0
 
 ##### Added
