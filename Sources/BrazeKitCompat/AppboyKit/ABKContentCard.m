@@ -24,6 +24,10 @@
   return self.card.createdAt;
 }
 
+- (double)expiresAt {
+  return self.card.expiresAt;
+}
+
 - (BOOL)dismissible {
   return self.card.dismissible;
 }

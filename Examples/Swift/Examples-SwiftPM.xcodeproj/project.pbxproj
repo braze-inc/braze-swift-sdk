@@ -54,7 +54,6 @@
 		50D8D4EB19BF8DB20DF34B8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FCD17EEF41713F18F4CA702 /* Assets.xcassets */; };
 		52CAA705E5A2A6B084470A6B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FCD17EEF41713F18F4CA702 /* Assets.xcassets */; };
 		5489F499BAD776AAF047FE41 /* PushNotificationsContentExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = A7B092ACAEC915379923328F /* PushNotificationsContentExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		55575A615424AB84B62EA11D /* AppDelegate+Xcode16.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43029D0CF2FFD58212D8A976 /* AppDelegate+Xcode16.swift */; };
 		5606EFC24899773A0167896E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8361A451688DDD9588B5C8 /* AppDelegate.swift */; };
 		56D5E2804EA244C26A6C7084 /* ReadmeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C3766DAA0E86C999794A8F /* ReadmeViewController.swift */; };
 		581BE073EED9A7F7DF18FAC3 /* Readme.swift in Sources */ = {isa = PBXBuildFile; fileRef = D903A056458272184BA387B0 /* Readme.swift */; };
@@ -233,7 +232,6 @@
 		2205604217E64D9BDCAB2FDF /* PushNotifications-DelayedInitialization.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "PushNotifications-DelayedInitialization.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3779C8A71C6D78BBBD104EE0 /* Readme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Readme.swift; sourceTree = "<group>"; };
 		3E837265F7BEBDDF6865917B /* PushNotifications-Manual.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "PushNotifications-Manual.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		43029D0CF2FFD58212D8A976 /* AppDelegate+Xcode16.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Xcode16.swift"; sourceTree = "<group>"; };
 		43898C005AA33A7630288625 /* ContentCardUI.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = ContentCardUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45164B1D1773E47F1B4F4671 /* Readme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Readme.swift; sourceTree = "<group>"; };
 		4FE3CE0839B9CDC3DBD854F1 /* SDWebImageGIFViewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDWebImageGIFViewProvider.swift; sourceTree = "<group>"; };
@@ -466,7 +464,6 @@
 			isa = PBXGroup;
 			children = (
 				D19D0F1AEE6BC19D74B3B363 /* AppDelegate.swift */,
-				43029D0CF2FFD58212D8A976 /* AppDelegate+Xcode16.swift */,
 				45164B1D1773E47F1B4F4671 /* Readme.swift */,
 			);
 			name = "PushNotifications-Manual";
@@ -1025,7 +1022,7 @@
 			mainGroup = D8CC2266D736859D7DD9A8FF;
 			packageReferences = (
 				9928D5150C45879A982BA1C6 /* XCRemoteSwiftPackageReference "SDWebImage" */,
-				90D8318C2DB3CED6610DD38C /* XCLocalSwiftPackageReference "/Users/jerielng/swift-sdk/.build/braze/release/braze-swift-sdk" */,
+				6764A035A4A67CE751802C3E /* XCLocalSwiftPackageReference "/Users/louis.bur/Developer/swift-sdk/.build/braze/release/braze-swift-sdk" */,
 			);
 			projectDirPath = "";
 			projectRoot = "";
@@ -1249,7 +1246,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				55575A615424AB84B62EA11D /* AppDelegate+Xcode16.swift in Sources */,
 				A37DA2DB71B7AD385059771C /* AppDelegate.swift in Sources */,
 				0DA5B1EC47B75FAE8E3F637F /* Credentials.swift in Sources */,
 				ABDD26A5B1458660253434E6 /* MockImage.swift in Sources */,
@@ -2261,9 +2257,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		90D8318C2DB3CED6610DD38C /* XCLocalSwiftPackageReference "/Users/jerielng/swift-sdk/.build/braze/release/braze-swift-sdk" */ = {
+		6764A035A4A67CE751802C3E /* XCLocalSwiftPackageReference "/Users/louis.bur/Developer/swift-sdk/.build/braze/release/braze-swift-sdk" */ = {
 			isa = XCLocalSwiftPackageReference;
-			relativePath = "/Users/jerielng/swift-sdk/.build/braze/release/braze-swift-sdk";
+			relativePath = "/Users/louis.bur/Developer/swift-sdk/.build/braze/release/braze-swift-sdk";
 		};
 /* End XCLocalSwiftPackageReference section */
 

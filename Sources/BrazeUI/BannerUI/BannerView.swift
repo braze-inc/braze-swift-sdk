@@ -90,11 +90,11 @@
       init(
         placementId: String,
         didReceiveUpdate: @escaping (Result<Braze.Banner?, Swift.Error>) -> Void,
-        impressionTracker: BrazeBannerUI.BannersImpressionTracker = .shared
+        impressionTracker: BrazeBannerUI.BannersImpressionTracker? = nil
       ) {
         self.placementId = placementId
         self.didReceiveUpdate = didReceiveUpdate
-        self.impressionTracker = impressionTracker
+        self.impressionTracker = impressionTracker ?? .shared
       }
 
       public func render(with banner: BrazeKit.Braze.Banner) {

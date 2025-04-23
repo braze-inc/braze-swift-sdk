@@ -126,7 +126,7 @@ target 'BannerUI-iOS' do
 end
 
 target 'BannerUI-visionOS' do
-  platform :visionos, '12.0'
+  platform :visionos, '1.0'
   pod 'BrazeKit'
   pod 'BrazeUI'
 end

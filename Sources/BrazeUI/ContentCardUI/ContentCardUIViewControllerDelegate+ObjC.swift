@@ -34,14 +34,8 @@ public protocol _OBJC_BrazeContentCardUIViewControllerDelegate: AnyObject {
 final class _OBJC_BrazeContentCardUIViewControllerDelegateWrapper:
   BrazeContentCardUIViewControllerDelegate
 {
-
-  // nonisolated(unsafe) attribute for global variable is only available in Xcode 15.3 and later.
-  #if compiler(>=5.10)
-    /// Property used as a unique key for the wrapper lifecycle behavior.
-    nonisolated(unsafe) private static var wrapperKey: Void?
-  #else
-    private static var wrapperKey: Void?
-  #endif
+  /// Property used as a unique key for the wrapper lifecycle behavior.
+  nonisolated(unsafe) private static var wrapperKey: Void?
 
   /// The ObjC content card UI view controller delegate.
   weak var delegate: _OBJC_BrazeContentCardUIViewControllerDelegate?

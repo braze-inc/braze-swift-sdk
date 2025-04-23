@@ -95,13 +95,7 @@ extension BrazeInAppMessageUI {
         get { lock.sync { _defaults } }
         set { lock.sync { _defaults = newValue } }
       }
-
-      // nonisolated(unsafe) attribute for global variable is only available in Xcode 15.3 and later.
-      #if compiler(>=5.10)
-        nonisolated(unsafe) private static var _defaults = Self()
-      #else
-        private static var _defaults = Self()
-      #endif
+      nonisolated(unsafe) private static var _defaults = Self()
 
       /// The lock guarding the static properties.
       private static let lock = NSRecursiveLock()

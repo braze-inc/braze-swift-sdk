@@ -85,7 +85,7 @@ open class BrazeInAppMessageUI:
   /// The cancellable for the remote URLs → local URLs message transformation.
   var localAssetsCancellable: Braze.Cancellable?
 
-  // MARK: - Presentation / BrazeInAppMessagePresenter conformance
+  // MARK: - BrazeInAppMessagePresenter conformance
 
   open func present(message: Braze.InAppMessage) {
     guard validateMainThread(for: message),
@@ -126,6 +126,29 @@ open class BrazeInAppMessageUI:
       logError(for: message.context, error: .rawToTypedConversion(.init(error)))
     }
   }
+
+  public func dismiss(reason: Braze.InAppMessage.DismissalReason) {
+    switch reason {
+    case .wipeData:
+      // Clear internal state
+      stack.removeAll()
+      localAssetsCancellable = nil
+      isProcessingClickAction = false
+      followupMessage = nil
+    @unknown default:
+      break
+    }
+
+    // Dismiss the message
+    dismiss(completion: nil)
+  }
+
+  public func dismiss(reason: _OBJC_BrazeInAppMessageDismissalReason) {
+    // Forward to the Swift implementation
+    dismiss(reason: reason.reason)
+  }
+
+  // MARK: - Presentation
 
   /// Presents the next in-app message in the stack if any.
   @objc
@@ -295,6 +318,8 @@ open class BrazeInAppMessageUI:
     self.followupMessage = nil
     present(message: followupMessage)
   }
+
+  // MARK: - Dismissal
 
   /// Dismisses the current in-app message view.
   /// - Parameter completion: Executed once the in-app message view has been dismissed or directly

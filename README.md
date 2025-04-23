@@ -5,7 +5,7 @@
 
 <p align="center">
   <a href="https://github.com/braze-inc/braze-swift-sdk/releases">
-    <img src="https://badgen.net/badge/version/11.9.0/blue" alt="Version: 11.9.0">
+    <img src="https://badgen.net/badge/version/12.0.0/blue" alt="Version: 12.0.0">
   </a>
   <a href="#">
     <img src="https://badgen.net/badge/platforms/iOS%20%7C%20visionOS%20%7C%20tvOS%20%7C%20Mac%20Catalyst/orange"
@@ -31,7 +31,7 @@
   - Mac Catalyst 13.0+
   - tvOS 12.0+
   - visionOS 1.0+
-- Xcode 15.2 (15C500b) or newer
+- Xcode 16.0 (16A242d) or newer
 - This repository follows [Semantic Versioning](https://semver.org/)
 
 ## Package Managers

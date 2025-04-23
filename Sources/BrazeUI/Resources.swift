@@ -13,12 +13,7 @@ public var overrideResourcesBundle: Bundle? {
   get { lock.sync { _overrideResourcesBundle } }
   set { lock.sync { _overrideResourcesBundle = newValue } }
 }
-// nonisolated(unsafe) attribute for global variable is only available in Xcode 15.3 and later.
-#if compiler(>=5.10)
-  nonisolated(unsafe) private var _overrideResourcesBundle: Bundle?
-#else
-  private var _overrideResourcesBundle: Bundle?
-#endif
+nonisolated(unsafe) private var _overrideResourcesBundle: Bundle?
 
 private class BundleFinder {}
 
@@ -34,45 +29,45 @@ public final class BrazeUIResources: NSObject {
       return overrideResourcesBundle
     }
 
-    let bundleNames = [
-      // SwiftPM source target resources
-      "braze-swift-sdk_BrazeUI",
-      // SwiftPM binary target resources
-      "braze-swift-sdk_BrazeUIResources",
-      // Cocoapods or prebuilt resources
-      "BrazeUI",
-    ]
-
-    let candidates = [
-      // Bundle should be present here when the package is linked into an App.
-      Bundle.main.resourceURL,
-      // Bundle should be present here when the package is linked into a framework.
-      Bundle(for: BundleFinder.self).resourceURL,
-      // For command-line tools.
-      Bundle.main.bundleURL,
-    ]
-
-    for bundleName in bundleNames {
-      for candidate in candidates {
-        let bundlePath = candidate?.appendingPathComponent(bundleName + ".bundle")
-        if let bundle = bundlePath.flatMap(Bundle.init(url:)) {
-          return bundle
-        }
+    #if SWIFT_PACKAGE
+      // Sources w/ SwiftPM
+      return Bundle.module
+    #else
+      // Get the module name
+      let module = String(#fileID.prefix { $0 != "/" })
+      // Validates that a bundle matches the module
+      let isValid: (Bundle) -> Bool = {
+        ["com.braze.\(module)", "org.cocoapods.\(module)"]
+          .contains($0.bundleIdentifier)
       }
-    }
 
-    // Returns the framework bundle if available
-    let frameworkBundle = Bundle(for: BundleFinder.self)
-    if let name = frameworkBundle.infoDictionary?["CFBundleName"] as? String,
-      name.hasPrefix("BrazeUI")
-    {
-      return frameworkBundle
-    }
+      var bundle: Bundle?
 
-    print(
-      "[braze] Error: Unable to find UI resources bundle, cannot load localizations and acknowledgments"
-    )
-    return nil
+      // Dymamic XCFramework w/ (SwiftPM | CocoaPods | Manual)
+      bundle = Bundle(for: BundleFinder.self)
+      if let bundle, isValid(bundle) { return bundle }
+
+      // Static XCFramework w/ (SwiftPM | Manual)
+      bundle = {
+        let frameworksURL = Bundle.main.privateFrameworksURL
+        let frameworkURL = frameworksURL?.appendingPathComponent("\(module).framework")
+        return frameworkURL.flatMap(Bundle.init(url:))
+      }()
+      if let bundle, isValid(bundle) { return bundle }
+
+      // (Sources | Static XCFramework) w/ CocoaPods
+      bundle = {
+        let resourceURL = Bundle(for: BundleFinder.self).resourceURL
+        let bundleURL = resourceURL?.appendingPathComponent("\(module).bundle")
+        return bundleURL.flatMap(Bundle.init(url:))
+      }()
+      if let bundle, isValid(bundle) { return bundle }
+
+      print(
+        "[braze] Error: Unable to find UI resources bundle, cannot load localizations and acknowledgments"
+      )
+      return nil
+    #endif
   }()
 
   /// Acknowledgments for third-party open-source libraries used by BrazeUI.

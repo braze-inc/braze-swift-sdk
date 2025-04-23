@@ -76,48 +76,45 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
-// When using Xcode 16+, see the AppDelegate+Xcode16.swift file for the
-// `UNUserNotificationCenterDelegate` conformance. Xcode 16+ provides tools to suppress concurrency
-// related warnings.
-#if compiler(<6.0)
-  extension AppDelegate: UNUserNotificationCenterDelegate {
+// Important: `UNUserNotificationCenterDelegate` is not yet annotated for Swift Concurrency. We use
+// the `@preconcurrency` attribute to suppress concurrency warnings.
+extension AppDelegate: @preconcurrency UNUserNotificationCenterDelegate {
 
-    // - Add support for push notifications
+  // - Add support for push notifications
 
-    func userNotificationCenter(
-      _ center: UNUserNotificationCenter,
-      didReceive response: UNNotificationResponse,
-      withCompletionHandler completionHandler: @escaping () -> Void
-    ) {
-      if let braze = AppDelegate.braze,
-        braze.notifications.handleUserNotification(
-          response: response,
-          withCompletionHandler: completionHandler
-        )
-      {
-        return
-      }
-      completionHandler()
+  func userNotificationCenter(
+    _ center: UNUserNotificationCenter,
+    didReceive response: UNNotificationResponse,
+    withCompletionHandler completionHandler: @escaping () -> Void
+  ) {
+    if let braze = AppDelegate.braze,
+      braze.notifications.handleUserNotification(
+        response: response,
+        withCompletionHandler: completionHandler
+      )
+    {
+      return
     }
-
-    // - Add support for displaying push notification when the app is currently running in the
-    //   foreground
-
-    func userNotificationCenter(
-      _ center: UNUserNotificationCenter,
-      willPresent notification: UNNotification,
-      withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void
-    ) {
-      if let braze = AppDelegate.braze {
-        braze.notifications.handleForegroundNotification(notification: notification)
-      }
-
-      if #available(iOS 14, *) {
-        completionHandler([.list, .banner])
-      } else {
-        completionHandler(.alert)
-      }
-    }
-
+    completionHandler()
   }
-#endif
+
+  // - Add support for displaying push notification when the app is currently running in the
+  //   foreground
+
+  func userNotificationCenter(
+    _ center: UNUserNotificationCenter,
+    willPresent notification: UNNotification,
+    withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void
+  ) {
+    if let braze = AppDelegate.braze {
+      braze.notifications.handleForegroundNotification(notification: notification)
+    }
+
+    if #available(iOS 14, *) {
+      completionHandler([.list, .banner])
+    } else {
+      completionHandler(.alert)
+    }
+  }
+
+}

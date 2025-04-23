@@ -180,13 +180,8 @@ public enum _OBJC_BRZInAppMessageUIDisplayChoice: Int, Sendable {
 /// with the base Swift implementation.
 final class _OBJC_BrazeInAppMessageUIDelegateWrapper: BrazeInAppMessageUIDelegate {
 
-  // nonisolated(unsafe) attribute for global variable is only available in Xcode 15.3 and later.
-  #if compiler(>=5.10)
-    /// Property used as a unique key for the wrapper lifecycle behavior.
-    nonisolated(unsafe) private static var wrapperKey: Void?
-  #else
-    private static var wrapperKey: Void?
-  #endif
+  /// Property used as a unique key for the wrapper lifecycle behavior.
+  nonisolated(unsafe) private static var wrapperKey: Void?
 
   /// The ObjC in-app message UI delegate.
   weak var delegate: _OBJC_BrazeInAppMessageUIDelegate?

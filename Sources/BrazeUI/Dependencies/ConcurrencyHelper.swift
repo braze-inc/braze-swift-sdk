@@ -16,17 +16,9 @@ import Foundation
 ///
 /// - Parameter work: The deinitialization work to perform.
 func isolatedMainActorDeinit(work: @MainActor @Sendable @escaping () -> Void) {
-  #if compiler(>=5.10)
-    if #available(macOS 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *) {
-      MainActor.assumeIsolated { work() }
-    } else {
-      DispatchQueue.main.async { work() }
-    }
-  #else
-    if #available(macOS 14.0, iOS 17.0, watchOS 10.0, tvOS 17.0, *) {
-      MainActor.assumeIsolated { work() }
-    } else {
-      DispatchQueue.main.async { work() }
-    }
-  #endif
+  if #available(macOS 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *) {
+    MainActor.assumeIsolated { work() }
+  } else {
+    DispatchQueue.main.async { work() }
+  }
 }

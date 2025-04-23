@@ -1,3 +1,32 @@
+## 12.0.0
+
+##### Breaking
+- The distributed static XCFrameworks now include their resources directly instead of relying on external resources bundles.
+  - When manually integrating the static XCFrameworks, you must select the _Embed & Sign_ option for each XCFramework in the _Frameworks, Libraries, and Embedded Content_ section of your target's _General_ settings.
+  - No changes are required for Swift Package Manager or CocoaPods integrations.
+
+##### Fixed
+- Fixes an App Store validation issue where Braze's libraries privacy manifests would fail to be detected when integrating the SDK as static XCFrameworks.
+- Fixes `BrazeKitCompat` `ABKContentCard.expiresAt` to return the correct expiration date.
+  - Previously, `ABKContentCard.expiresAt` would always return `0`.
+- Fixes an issue where the `Braze.FeatureFlags.subscribeToUpdates(_:)` update closure was being called immediately after calling `changeUser(userId:)` instead of waiting for the next feature flags sync result.
+- Fixes an issue where `Braze.ContentCards.subscribeToUpdates(_:)` would not call the update closure whenever a sync occurred without any changes in the Content Cards data.
+  - Previously, the update closure would only be called when the sync resulted in a change.
+- Fixes the `Braze.User.set(dateOfBirth:)` method to report dates using the Gregorian calendar instead of the device's current calendar setting.
+  - Previously, the SDK would override input dates and formats if the device's calendar settings were non-Gregorian.
+  - With this change, you will still need to ensure that dates provided to `set(dateOfBirth:)` are generated with the Gregorian calendar, but the Braze SDK will no longer override their formats inadvertently.
+- Enhances the `⁠braze.wipeData()` function to send a final update to all registered channel subscribers, notifying them of the data wipe.
+  - This update ensures that any UI components utilizing the channel's data are properly dismissed and cleaned up.
+  - For instance, if an in-app message is currently displaying as `braze.wipeData()` is called, the message will be removed from display.
+- Fixes `braze.user.id` not resetting to `nil` after calling `braze.wipeData()`.
+  - Internally, the user identifier was properly reset, but the public `braze.user.id` property was not updated to reflect this change.
+
+##### Added
+- Adds the `BrazeInAppMessagePresenter.dismiss(reason:)` optional protocol method.
+  - This method enables the SDK to inform the in-app message presenter when an in-app message should be dismissed due to an internal SDK state change.
+  - Currently, this method is triggered only by calling `⁠braze.wipeData()`.
+  - `BrazeInAppMessageUI` implements this optional method and dismisses the in-app message when triggered.
+
 ## 11.9.0
 
 ##### Added

@@ -1,6 +1,6 @@
 import BrazeKit
 import UIKit
-import WebKit
+@preconcurrency import WebKit
 
 extension BrazeBannerUI {
 
@@ -96,11 +96,9 @@ extension BrazeBannerUI {
       webView.scrollView.contentInsetAdjustmentBehavior = .never
       webView.isOpaque = false
 
-      #if compiler(>=5.8)
-        if #available(iOS 16.4, macOS 13.3, *) {
-          webView.isInspectable = true
-        }
-      #endif
+      if #available(iOS 16.4, macOS 13.3, *) {
+        webView.isInspectable = true
+      }
 
       self.webView = webView
       self.addSubview(webView)

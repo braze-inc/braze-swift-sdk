@@ -27,11 +27,7 @@ public struct GIFViewProvider: Sendable {
     get { lock.sync { _shared } }
     set { lock.sync { _shared = newValue } }
   }
-  #if compiler(>=5.10)
-    nonisolated(unsafe) private static var _shared: GIFViewProvider = .nonAnimating
-  #else
-    private static var _shared: GIFViewProvider = .nonAnimating
-  #endif
+  nonisolated(unsafe) private static var _shared: GIFViewProvider = .nonAnimating
 
   /// Creates a view able to display static and animated GIF images.
   ///
