@@ -57,7 +57,8 @@ body:
       label: Library Type
       multiple: false
       options:
-        - Static (default)
+        - Static + Sources (default)
+        - Static
         - Dynamic
         - Mergeable
   - type: dropdown
