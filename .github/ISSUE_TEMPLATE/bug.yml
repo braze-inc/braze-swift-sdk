@@ -50,13 +50,14 @@ body:
         - Swift Package Manager
         - CocoaPods
         - Manual integration
+        - Other (please explain)
   - type: dropdown
     id: library_type
     attributes:
       label: Library Type
       multiple: false
       options:
-        - Static
+        - Static (default)
         - Dynamic
         - Mergeable
   - type: dropdown
