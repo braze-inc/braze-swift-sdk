@@ -42,7 +42,7 @@ let package = Package(
     ),
   ],
   dependencies: [
-    .package(url: "https://github.com/SDWebImage/SDWebImage.git", from: "5.19.7"),
+    .package(url: "https://github.com/SDWebImage/SDWebImage.git", exact: "5.21.0"),
     /* ${dependencies-start} */
     /* ${dependencies-end} */
   ],
