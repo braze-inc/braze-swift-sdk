@@ -387,7 +387,7 @@ extension BrazeInAppMessageUI.HtmlView: WKNavigationDelegate {
     decidePolicyFor navigationAction: WKNavigationAction,
     decisionHandler: @escaping (WKNavigationActionPolicy) -> Void
   ) {
-    if shouldProcessNavigationAction(navigationAction) {
+    if brazeShouldIntercept(navigationAction) {
       decisionHandler(.cancel)
       processNavigationAction(
         navigationAction,

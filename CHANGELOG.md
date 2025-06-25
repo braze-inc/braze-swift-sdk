@@ -1,3 +1,16 @@
+## 12.0.1
+
+##### Fixed
+- Fixes an issue where setting `configuration.forwardUniversalLinks = true` would not properly forward universal links to the system APIs in some cases.
+  - The SDK now verifies that the system APIs are implemented (either in your `UIApplicationDelegate` or `SceneDelegate`) before forwarding the universal link.
+  - When multiple implementations are found, the SDK favors the `SceneDelegate` implementation over the `UIApplicationDelegate` implementation.
+- Fixes an issue when configuring `Braze.Configuration.Push.Automation.authorizationOptions` with the `.provisional` option.
+  - Previously, the `.provisional` option was also applied for push primer in-app messages. This resulted in no push notification permission prompt being shown to the user.
+  - With this change, push primer in-app messages will request push notification permissions using only the `.alert`, `.badge`, and `.sound` options, ensuring that the system prompt is presented to the user.
+- Fixes an incompatibility with iOS 18.5 where Banners would not render.
+  - Previously, the Banner view would be added to the view hierarchy with a height of 0 but never successfully load the HTML content.
+  - Banner views will no longer trigger superfluous `about:blank` URLs upon initial load.
+
 ## 12.0.0
 
 ##### Breaking

@@ -174,11 +174,13 @@ extension BrazeBannerUI {
     open func processNavigationAction(_ navigationAction: WKNavigationAction) {
       guard let url = navigationAction.request.url else { return }
 
+      // Process as a Braze bridge action.
       if let action = schemeHandler.action(url: url) {
         schemeHandler.process(action: action, url: url)
         return
       }
 
+      // Process as a Braze click action.
       let clickAction = queryHandler.processBannerURL(url)
       process(clickAction: clickAction)
     }
@@ -259,10 +261,13 @@ extension BrazeBannerUI.BannerUIView: WKNavigationDelegate {
     decidePolicyFor navigationAction: WKNavigationAction,
     decisionHandler: @escaping (WKNavigationActionPolicy) -> Void
   ) {
-    if shouldProcessNavigationAction(navigationAction) {
+    // Link was explicitly clicked by user.
+    // Intercept the default web view navigation and handle within the SDK.
+    if brazeShouldIntercept(navigationAction) {
       decisionHandler(.cancel)
       processNavigationAction(navigationAction)
     } else {
+      // Pass to web view to let system handle it.
       decisionHandler(.allow)
     }
   }

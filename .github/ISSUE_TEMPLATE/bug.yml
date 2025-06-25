@@ -11,12 +11,10 @@ body:
     id: platform
     attributes:
       label: Platform
-      multiple: true
+      multiple: false
       options:
         - iOS
-        - tvOS
         - Mac Catalyst
-        - visionOS
         - Other
     validations:
       required: true
@@ -41,26 +39,6 @@ body:
       placeholder: ex. Xcode 14.2
     validations:
       required: true
-  - type: dropdown
-    id: integration
-    attributes:
-      label: Integration Method
-      multiple: false
-      options:
-        - Swift Package Manager
-        - CocoaPods
-        - Manual integration
-        - Other (please explain)
-  - type: dropdown
-    id: library_type
-    attributes:
-      label: Library Type
-      multiple: false
-      options:
-        - Static + Sources (default)
-        - Static
-        - Dynamic
-        - Mergeable
   - type: dropdown
     id: processor
     attributes:

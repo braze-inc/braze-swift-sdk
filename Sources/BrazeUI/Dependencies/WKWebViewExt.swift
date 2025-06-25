@@ -27,17 +27,25 @@ extension WKWebViewConfiguration {
 extension WKNavigationDelegate {
 
   /// Validates if a navigation action should occur from a web view context.
-  func shouldProcessNavigationAction(_ navigationAction: WKNavigationAction) -> Bool {
-    let isIframeLoad =
-      navigationAction.targetFrame != nil
-      && navigationAction.sourceFrame != navigationAction.targetFrame
-    let isIframeNavigation = navigationAction.targetFrame?.isMainFrame == false
+  ///
+  /// - Returns: `true` if Braze SDK should intercept the navigation action and handle it internally, `false` to allow the operating system to handle it.
+  func brazeShouldIntercept(_ navigationAction: WKNavigationAction) -> Bool {
+    // There must be a valid URL to process.
+    guard let url = navigationAction.request.url else { return false }
 
-    if let url = navigationAction.request.url {
-      return !url.isFileURL && !isIframeLoad && !isIframeNavigation
+    // Link must be user-initiated and not a file URL.
+    guard navigationAction.navigationType == .linkActivated && !url.isFileURL else {
+      return false
     }
 
-    return false
+    // A nil target frame implies an external link navigation (i.e. opening in browser).
+    // If there is a target frame, verify that the link is not meant for an embedded iframe.
+    if let targetFrame = navigationAction.targetFrame {
+      let isSameFrame = targetFrame == navigationAction.sourceFrame
+      return isSameFrame && targetFrame.isMainFrame
+    }
+
+    return true
   }
 
 }
