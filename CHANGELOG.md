@@ -1,4 +1,14 @@
+## 12.0.2
+
+⚠️ Important: This version has a known issue preventing Banners from rendering on iOS 18.5+.
+
+##### Fixed
+- Reverts Banners to the behavior found in versions `12.0.0` and prior.
+  - Banners remain unusable on iOS 18.5+. A future release will address this issue.
+
 ## 12.0.1
+
+⚠️ Important: This version has a known issue in Banners preventing certain URLs from redirecting properly. Update to a newer version if you are using this feature.
 
 ##### Fixed
 - Fixes an issue where setting `configuration.forwardUniversalLinks = true` would not properly forward universal links to the system APIs in some cases.
