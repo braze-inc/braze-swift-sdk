@@ -18,6 +18,7 @@ extension BrazeBannerUI {
 
     var webView: WKWebView?
     var banner: Braze.Banner?
+    var hasContentLoaded: Bool = false
 
     public lazy var scriptMessageHandler: Braze.WebViewBridge.ScriptMessageHandler =
       webViewScriptMessageHandler()
@@ -124,6 +125,7 @@ extension BrazeBannerUI {
       )
       self.subviews.forEach { ($0 as? WKWebView)?.removeFromSuperview() }
       webView = nil
+      hasContentLoaded = false
     }
 
     required public init?(coder: NSCoder) {
@@ -253,17 +255,18 @@ extension BrazeBannerUI.BannerUIView: WKNavigationDelegate {
     webView.waitForLoadedState(scriptMessageHandler) { [weak self] in
       guard let self else { return }
       self.impressionTracker.trackView(self)
+      self.hasContentLoaded = true
     }
   }
 
   public func webView(
     _ webView: WKWebView,
     decidePolicyFor navigationAction: WKNavigationAction,
-    decisionHandler: @escaping (WKNavigationActionPolicy) -> Void
+    decisionHandler: @escaping @MainActor (WKNavigationActionPolicy) -> Void
   ) {
     // Link was explicitly clicked by user.
     // Intercept the default web view navigation and handle within the SDK.
-    if brazeShouldIntercept(navigationAction) {
+    if brazeShouldIntercept(navigationAction) && hasContentLoaded {
       decisionHandler(.cancel)
       processNavigationAction(navigationAction)
     } else {

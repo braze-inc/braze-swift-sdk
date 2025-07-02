@@ -1,3 +1,10 @@
+## 12.0.3
+
+##### Fixed
+- Fixes the Banner rendering incompatibility with iOS 18.5+ while maintaining the correct URL redirect behavior.
+  - Banners can now successfully render on iOS 18.5+ without compromising click action functionality.
+  - See the changelog entries for versions 12.0.1 and 12.0.2 for further details.
+
 ## 12.0.2
 
 ⚠️ Important: This version has a known issue preventing Banners from rendering on iOS 18.5+.
@@ -8,7 +15,7 @@
 
 ## 12.0.1
 
-⚠️ Important: This version has a known issue in Banners preventing certain URLs from redirecting properly. Update to a newer version if you are using this feature.
+⚠️ Important: This version has a known issue in Drag-and-Drop in-app messages and Banners, preventing certain URLs from redirecting properly. Update to a newer version if you are using this feature.
 
 ##### Fixed
 - Fixes an issue where setting `configuration.forwardUniversalLinks = true` would not properly forward universal links to the system APIs in some cases.
@@ -110,7 +117,7 @@
   - Upon successfully completing a banners sync, `Braze.Banners.bannersStream` will emit an update even if the sync result is identical to the last successful sync.
 - JavaScript bridge methods expecting number arguments now also accept string representations of numbers.
   - This change aligns the behavior of the Swift SDK with the behavior of the Web SDK.
-  
+
 ##### Added
 - Adds an optional method `removeBannerContent` to the `BrazeBannerPlacement` protocol.
 - Locally persisted Braze SDK data will no longer transfer during OS backups. This resolves an issue introduced in `6.2.0`.
