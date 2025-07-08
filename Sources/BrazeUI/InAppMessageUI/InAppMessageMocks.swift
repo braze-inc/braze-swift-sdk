@@ -9,44 +9,55 @@ import Foundation
 
     public static let mock = Self(
       data: .mock,
+      language: "en-US",
       message: "Cupcake ipsum dolor sit amet. Topping dessert muffin fruitcake."
     )
 
     public static let mockText = Self(
       data: .mockNoClickAction,
+      language: "en-US",
       message: "Cupcake ipsum dolor sit amet. Topping dessert muffin fruitcake."
     )
 
     public static let mockShortText = Self(
       data: .mock,
+      language: "en-US",
       message: "Short"
     )
 
     public static let mockChevron = Self(
       data: .mock,
+      language: "en-US",
       message: "Cupcake ipsum dolor sit amet. Topping dessert muffin fruitcake."
     )
 
     public static let mockIcon = Self(
       data: .mock,
       graphic: .icon(""),
+      imageAltText: "slideup icon image alt text",
+      language: "en-US",
       message: "Cupcake ipsum dolor sit amet. Topping dessert muffin fruitcake."
     )
 
     public static let mockImage = Self(
       data: .mock,
       graphic: .image(.mockImage(width: 150, height: 150, textSize: 30)),
+      imageAltText: "slideup image image alt text",
+      language: "en-US",
       message: "Cupcake ipsum dolor sit amet. Topping dessert muffin fruitcake."
     )
 
     public static let mockShort = Self(
       data: .init(),
+      language: "en-US",
       message: "abc"
     )
 
     public static let mockLong = Self(
       data: .mock,
       graphic: .icon(""),
+      imageAltText: "slideup long image alt text",
+      language: "en-US",
       message:
         "Cupcake ipsum dolor sit amet topping. Cookie candy chupa chups jujubes pastry soufflé. Danish cake cheesecake liquorice wafer marshmallow macaroon."
     )
@@ -54,6 +65,8 @@ import Foundation
     public static let mockThemed = Self(
       data: .mock,
       graphic: .icon(""),
+      imageAltText: "slideup themed image alt text",
+      language: "en-US",
       message: "Cupcake ipsum dolor sit amet. Topping dessert muffin fruitcake.",
       themes: [
         "light": .init(
@@ -69,6 +82,8 @@ import Foundation
     public static let mockTop = Self(
       data: .mock,
       graphic: .icon(""),
+      imageAltText: "slideup top image alt text",
+      language: "en-US",
       message: "Cupcake ipsum dolor sit amet. Topping dessert muffin fruitcake.",
       slideFrom: .top
     )
@@ -81,6 +96,7 @@ import Foundation
 
     public static let mock = Self(
       data: .mock,
+      language: "en-US",
       header: "Hello world!",
       message:
         "Cupcake ipsum dolor sit amet topping. Cookie candy chupa chups jujubes pastry soufflé. Danish cake cheesecake liquorice wafer marshmallow macaroon."
@@ -88,6 +104,7 @@ import Foundation
 
     public static let mockOneButton = Self(
       data: .mock,
+      language: "en-US",
       header: "Hello world!",
       message:
         "Cupcake ipsum dolor sit amet topping. Cookie candy chupa chups jujubes pastry soufflé. Danish cake cheesecake liquorice wafer marshmallow macaroon.",
@@ -98,6 +115,7 @@ import Foundation
 
     public static let mockTwoButtons = Self(
       data: .mock,
+      language: "en-US",
       header: "Hello world!",
       message:
         "Cupcake ipsum dolor sit amet topping. Cookie candy chupa chups jujubes pastry soufflé. Danish cake cheesecake liquorice wafer marshmallow macaroon.",
@@ -110,6 +128,8 @@ import Foundation
     public static let mockIcon = Self(
       data: .mock,
       graphic: .icon(""),
+      imageAltText: "modal icon image alt text",
+      language: "en-US",
       header: "Hello world!",
       message:
         "Cupcake ipsum dolor sit amet topping. Cookie candy chupa chups jujubes pastry soufflé. Danish cake cheesecake liquorice wafer marshmallow macaroon.",
@@ -122,6 +142,8 @@ import Foundation
     public static let mockImage = Self(
       data: .mock,
       graphic: .image(.mockImage(width: 1450, height: 500)),
+      imageAltText: "modal image image alt text",
+      language: "en-US",
       header: "Hello world!",
       message:
         "Cupcake ipsum dolor sit amet topping. Cookie candy chupa chups jujubes pastry soufflé. Danish cake cheesecake liquorice wafer marshmallow macaroon.",
@@ -134,6 +156,7 @@ import Foundation
     public static let mockImageWrongAspectRatio = Self(
       data: .mock,
       graphic: .image(.mockImage(width: 1450, height: 650)),
+      imageAltText: "modal image wrong aspect ratio image alt text",
       header: "Hello world!",
       message:
         "Cupcake ipsum dolor sit amet topping. Cookie candy chupa chups jujubes pastry soufflé. Danish cake cheesecake liquorice wafer marshmallow macaroon.",
@@ -146,6 +169,8 @@ import Foundation
     public static let mockLeadingAligned = Self(
       data: .mock,
       graphic: .icon(""),
+      imageAltText: "modal leading aligned image alt text",
+      language: "en-US",
       header: "Hello world!",
       headerTextAlignment: .leading,
       message:
@@ -160,6 +185,8 @@ import Foundation
     public static let mockLong = Self(
       data: .mock,
       graphic: .icon(""),
+      imageAltText: "modal long image alt text",
+      language: "en-US",
       header: "Hello world!",
       message:
         """
@@ -176,6 +203,8 @@ import Foundation
     public static let mockTallCharacters = Self(
       data: .mock,
       graphic: .icon(""),
+      imageAltText: "modal tall characters image alt text",
+      language: "en-US",
       header: "헤더입니다",
       message:
         """
@@ -187,6 +216,8 @@ import Foundation
     public static let mockThemed = Self(
       data: .mock,
       graphic: .icon(""),
+      imageAltText: "modal themed image alt text",
+      language: "en-US",
       header: "Hello world!",
       message:
         "Cupcake ipsum dolor sit amet topping. Cookie candy chupa chups jujubes pastry soufflé. Danish cake cheesecake liquorice wafer marshmallow macaroon.",
@@ -213,6 +244,8 @@ import Foundation
     public static let mock = Self(
       data: .mock,
       imageURL: .mockImage(width: 600, height: 600),
+      imageAltText: "modal image image alt text",
+      language: "en-US",
       buttons: [
         .mockSecondary,
         .mockPrimary,
@@ -222,6 +255,8 @@ import Foundation
     public static let mockLargeImage = Self(
       data: .mock,
       imageURL: .mockImage(width: 1200, height: 2000),
+      imageAltText: "modal image large image alt text",
+      language: "en-US",
       buttons: [
         .mockSecondary,
         .mockPrimary,
@@ -231,6 +266,8 @@ import Foundation
     public static let mockExtraLargeImage = Self(
       data: .mock,
       imageURL: .mockImage(width: 1200, height: 4000),
+      imageAltText: "modal image extra large image alt text",
+      language: "en-US",
       buttons: [
         .mockSecondary,
         .mockPrimary,
@@ -240,12 +277,16 @@ import Foundation
     public static let mockNoButtons = Self(
       data: .mock,
       imageURL: .mockImage(width: 600, height: 600),
+      imageAltText: "modal image no buttons image alt text",
+      language: "en-US",
       buttons: []
     )
 
     public static let mockOneButton = Self(
       data: .mock,
       imageURL: .mockImage(width: 600, height: 600),
+      imageAltText: "modal image one button image alt text",
+      language: "en-US",
       buttons: [
         .mockPrimary
       ]
@@ -254,6 +295,8 @@ import Foundation
     public static let mockThemed = Self(
       data: .mock,
       imageURL: .mockImage(width: 600, height: 600),
+      imageAltText: "modal image themed image alt text",
+      language: "en-US",
       buttons: [
         .mockSecondary,
         .mockPrimaryThemed,
@@ -275,6 +318,8 @@ import Foundation
     public static let mock = Self(
       data: .mock,
       imageURL: .mockImage(width: 1200, height: 1000),
+      imageAltText: "full image alt text",
+      language: "en-US",
       header: "Hello world!",
       message:
         "Cupcake ipsum dolor sit amet topping. Cookie candy chupa chups jujubes pastry soufflé. Danish cake cheesecake liquorice wafer marshmallow macaroon."
@@ -283,6 +328,8 @@ import Foundation
     public static let mockOneButton = Self(
       data: .mock,
       imageURL: .mockImage(width: 1200, height: 1000),
+      imageAltText: "full one button image alt text",
+      language: "en-US",
       header: "Hello world!",
       message:
         "Cupcake ipsum dolor sit amet topping. Cookie candy chupa chups jujubes pastry soufflé. Danish cake cheesecake liquorice wafer marshmallow macaroon.",
@@ -294,6 +341,7 @@ import Foundation
     public static let mockTwoButtons = Self(
       data: .mock,
       imageURL: .mockImage(width: 1200, height: 1000),
+      language: "en-US",
       header: "Hello world!",
       message:
         "Cupcake ipsum dolor sit amet topping. Cookie candy chupa chups jujubes pastry soufflé. Danish cake cheesecake liquorice wafer marshmallow macaroon.",
@@ -306,6 +354,8 @@ import Foundation
     public static let mockLandscape = Self(
       data: .mock,
       imageURL: .mockImage(width: 2000, height: 600),
+      imageAltText: "full landscape image alt text",
+      language: "en-US",
       header: "Hello world!",
       message:
         "Cupcake ipsum dolor sit amet topping. Cookie candy chupa chups jujubes pastry soufflé. Danish cake cheesecake liquorice wafer marshmallow macaroon."
@@ -314,6 +364,8 @@ import Foundation
     public static let mockLandscapeOneButton = Self(
       data: .mock,
       imageURL: .mockImage(width: 2000, height: 600),
+      imageAltText: "full landscape one button image alt text",
+      language: "en-US",
       header: "Hello world!",
       message:
         "Cupcake ipsum dolor sit amet topping. Cookie candy chupa chups jujubes pastry soufflé. Danish cake cheesecake liquorice wafer marshmallow macaroon.",
@@ -323,6 +375,8 @@ import Foundation
     public static let mockLandscapeTwoButtons = Self(
       data: .mock,
       imageURL: .mockImage(width: 2000, height: 600),
+      imageAltText: "full landscape two buttons image alt text",
+      language: "en-US",
       header: "Hello world!",
       message:
         "Cupcake ipsum dolor sit amet topping. Cookie candy chupa chups jujubes pastry soufflé. Danish cake cheesecake liquorice wafer marshmallow macaroon.",
@@ -335,6 +389,8 @@ import Foundation
     public static let mockForcedLandscape = Self(
       data: .mockForcedLandscape,
       imageURL: .mockImage(width: 2000, height: 600),
+      imageAltText: "full forced landscape image alt text",
+      language: "en-US",
       header: "Hello world!",
       message:
         "Cupcake ipsum dolor sit amet topping. Cookie candy chupa chups jujubes pastry soufflé. Danish cake cheesecake liquorice wafer marshmallow macaroon."
@@ -343,6 +399,8 @@ import Foundation
     public static let mockForcedPortrait = Self(
       data: .mockForcedPortrait,
       imageURL: .mockImage(width: 2000, height: 600),
+      imageAltText: "full forced portrait image alt text",
+      language: "en-US",
       header: "Hello world!",
       message:
         "Cupcake ipsum dolor sit amet topping. Cookie candy chupa chups jujubes pastry soufflé. Danish cake cheesecake liquorice wafer marshmallow macaroon."
@@ -351,6 +409,8 @@ import Foundation
     public static let mockLeadingAligned = Self(
       data: .mock,
       imageURL: .mockImage(width: 1200, height: 1000),
+      imageAltText: "full leading aligned image alt text",
+      language: "en-US",
       header: "Hello world!",
       headerTextAlignment: .leading,
       message:
@@ -365,6 +425,8 @@ import Foundation
     public static let mockLong = Self(
       data: .mock,
       imageURL: .mockImage(width: 1200, height: 1000),
+      imageAltText: "full long image alt text",
+      language: "en-US",
       header: "Hello world!",
       message:
         """
@@ -381,6 +443,8 @@ import Foundation
     public static let mockTallCharacters = Self(
       data: .mock,
       imageURL: .mockImage(width: 1200, height: 1000),
+      imageAltText: "full tall characters image alt text",
+      language: "en-US",
       header: "헤더입니다",
       message:
         """
@@ -392,6 +456,8 @@ import Foundation
     public static let mockThemed = Self(
       data: .mock,
       imageURL: .mockImage(width: 1200, height: 1000),
+      imageAltText: "full themed image alt text",
+      language: "en-US",
       header: "Hello world!",
       message:
         "Cupcake ipsum dolor sit amet topping. Cookie candy chupa chups jujubes pastry soufflé. Danish cake cheesecake liquorice wafer marshmallow macaroon.",
@@ -416,18 +482,24 @@ import Foundation
 
     public static let mock = Self(
       data: .mock,
-      imageURL: .mockImage(width: 1200, height: 2000)
+      imageURL: .mockImage(width: 1200, height: 2000),
+      imageAltText: "full image image alt text",
+      language: "en-US"
     )
 
     public static let mockOneButton = Self(
       data: .mock,
       imageURL: .mockImage(width: 1200, height: 2000),
+      imageAltText: "full one button image alt text",
+      language: "en-US",
       buttons: [.mockPrimary]
     )
 
     public static let mockTwoButtons = Self(
       data: .mock,
       imageURL: .mockImage(width: 1200, height: 2000),
+      imageAltText: "full two buttons image alt text",
+      language: "en-US",
       buttons: [
         .mockSecondary,
         .mockPrimary,
@@ -436,18 +508,24 @@ import Foundation
 
     public static let mockLandscape = Self(
       data: .mock,
-      imageURL: .mockImage(width: 2000, height: 1200)
+      imageURL: .mockImage(width: 2000, height: 1200),
+      imageAltText: "full landscape image alt text",
+      language: "en-US"
     )
 
     public static let mockLandscapeOneButton = Self(
       data: .mock,
       imageURL: .mockImage(width: 2000, height: 1200),
+      imageAltText: "full landscape one button image alt text",
+      language: "en-US",
       buttons: [.mockPrimary]
     )
 
     public static let mockLandscapeTwoButtons = Self(
       data: .mock,
       imageURL: .mockImage(width: 2000, height: 1200),
+      imageAltText: "full landscape two buttons image alt text",
+      language: "en-US",
       buttons: [
         .mockSecondary,
         .mockPrimary,
@@ -457,6 +535,8 @@ import Foundation
     public static let mockMinRecommendedSize = Self(
       data: .mock,
       imageURL: .mockImage(width: 600, height: 1000),
+      imageAltText: "full min recommended size image alt text",
+      language: "en-US",
       buttons: [
         .mockSecondary,
         .mockPrimary,
@@ -468,6 +548,8 @@ import Foundation
     public static let mockNonRecommendedSize = Self(
       data: .mock,
       imageURL: .mockImage(width: 1200, height: 4000),
+      imageAltText: "full non recommended size image alt text",
+      language: "en-US",
       buttons: [
         .mockSecondary,
         .mockPrimary,
@@ -477,6 +559,8 @@ import Foundation
     public static let mockThemed = Self(
       data: .mock,
       imageURL: .mockImage(width: 1200, height: 2000),
+      imageAltText: "full themed image alt text",
+      language: "en-US",
       themes: [
         "light": .init(
           backgroundColor: 0xFF2D_3436,

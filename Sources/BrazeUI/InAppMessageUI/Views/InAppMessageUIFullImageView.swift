@@ -200,6 +200,8 @@ extension BrazeInAppMessageUI {
         message: .init(
           data: message.data,
           imageURL: message.imageURL,
+          imageAltText: message.imageAltText,
+          language: message.language,
           buttons: message.buttons,
           themes: message.themes
         ),

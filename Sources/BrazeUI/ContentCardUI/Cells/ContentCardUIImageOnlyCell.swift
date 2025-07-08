@@ -53,6 +53,9 @@ extension BrazeContentCardUI {
       }
       contentImageView.imageLoad = imageLoad
 
+      contentImageView.imageView.addAccessibilityAltText(card.imageAltText)
+      applyAccessibilityLanguage(card.language)
+
       pinIndicator.isHidden = !card.pinned
       unviewedIndicator.isHidden = card.viewed
 

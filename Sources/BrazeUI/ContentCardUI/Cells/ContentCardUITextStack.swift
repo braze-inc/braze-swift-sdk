@@ -62,6 +62,14 @@ extension BrazeContentCardUI {
     public required init(coder: NSCoder) {
       fatalError("init(coder:) has not been implemented")
     }
+
+    // MARK: - Accessibility
+
+    public func addAccessibilityAltText() {
+      titleLabel.addAccessibilityAltText(titleLabel.text)
+      descriptionLabel.addAccessibilityAltText(descriptionLabel.text)
+      domainLabel.addAccessibilityAltText(domainLabel.text)
+    }
   }
 
 }

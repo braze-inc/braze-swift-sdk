@@ -246,6 +246,8 @@ extension BrazeInAppMessageUI {
         message: .init(
           data: message.data,
           graphic: .image(message.imageURL),
+          imageAltText: message.imageAltText,
+          language: message.language,
           header: message.header,
           headerTextAlignment: message.headerTextAlignment,
           message: message.message,
@@ -263,6 +265,7 @@ extension BrazeInAppMessageUI {
 
       // Bottom spacer view
       contentView.stack.addArrangedSubview(UIView())
+      applyAccessibilityLanguage(message.language)
 
       updateForDisplayMode()
     }

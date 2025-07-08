@@ -22,6 +22,15 @@ extension BrazeInAppMessageUI {
       didSet { updateTextViewContent() }
     }
 
+    /// The language (BCP 47 format) of narrator to use when reading content in accessibility VoiceOver mode.
+    ///
+    /// If `nil`, the user's system language is used.
+    public var language: String? {
+      didSet {
+        textView.accessibilityLanguage = language
+      }
+    }
+
     private let textView: UITextView = {
       let textView = UITextView()
 
@@ -53,14 +62,18 @@ extension BrazeInAppMessageUI {
     ///   - header: The header string.
     ///   - message: The message string.
     ///   - attributes: The attributes for customization.
-    public init(header: String, message: String, attributes: Attributes) {
+    ///   - language: The language (BCP 47 format) of narrator to use when reading content in accessibility
+    ///   VoiceOver mode. Defaults to using the user's system language.
+    public init(header: String, message: String, attributes: Attributes, language: String? = nil) {
       self.header = header
       self.message = message
       self.attributes = attributes
+      self.language = language
 
       super.init(frame: .zero)
 
       // Hierarchy
+      textView.addAccessibilityAltText(textView.text)
       addSubview(textView)
 
       // Constraints
@@ -172,6 +185,7 @@ extension BrazeInAppMessageUI {
       )
 
       textView.attributedText = text
+      textView.addAccessibilityAltText(text.string)
     }
 
   }
@@ -195,7 +209,8 @@ extension BrazeInAppMessageUI.ModalTextView {
     self.init(
       header: modal.header,
       message: modal.message,
-      attributes: .init(modal: modal, attributes: attributes, traitCollection: traitCollection)
+      attributes: .init(modal: modal, attributes: attributes, traitCollection: traitCollection),
+      language: modal.language
     )
   }
 

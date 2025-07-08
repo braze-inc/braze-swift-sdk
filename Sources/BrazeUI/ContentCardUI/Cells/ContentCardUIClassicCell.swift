@@ -51,6 +51,10 @@ extension BrazeContentCardUI {
       textStack?.domainLabel.text = card.domain
       textStack?.domainHidden = card.domain == nil || card.domain == ""
 
+      // Accessibility
+      textStack?.addAccessibilityAltText()
+      applyAccessibilityLanguage(card.language)
+
       pinIndicator.isHidden = !card.pinned
       unviewedIndicator.isHidden = card.viewed
 

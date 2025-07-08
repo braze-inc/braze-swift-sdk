@@ -41,6 +41,8 @@ extension BrazeInAppMessageUI {
       titleLabel?.adjustsFontForContentSizeCategory = true
       titleLabel?.adjustsFontSizeToFitWidth = true
       layer.masksToBounds = true
+      
+      addAccessibilityAltText(button.text)
 
       setContentCompressionResistancePriority(.required, for: .vertical)
 
@@ -101,6 +103,11 @@ extension BrazeInAppMessageUI {
       ///
       /// Default: `44pt.`
       public var maxHeight: Double = 44
+      
+      /// The language (BCP 47 format) of narrator to use when reading content in accessibility VoiceOver mode.
+      ///
+      /// Default: `nil`, which uses the system language.
+      public var language: String? = nil
 
       /// The defaults button view attributes.
       ///

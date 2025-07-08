@@ -1,4 +1,6 @@
 import Foundation
+import UIKit
+import BrazeKit
 
 /// Lock guarding ``BrazeUI/overrideResourcesBundle``.
 private let lock = NSRecursiveLock()
@@ -14,6 +16,33 @@ public var overrideResourcesBundle: Bundle? {
   set { lock.sync { _overrideResourcesBundle = newValue } }
 }
 nonisolated(unsafe) private var _overrideResourcesBundle: Bundle?
+
+extension UIView {
+  
+  /// Sets the view's `accessibilityLabel` and `isAccessibilityElement` properties if `altText` is
+  /// non-`nil`.
+  /// - Parameters:
+  ///   - altText: Accessibility alt text to be read for the view's image or icon (if any) when in
+  ///   VoiceOver mode.
+  func addAccessibilityAltText(_ altText: String?) {
+    if let altText {
+      accessibilityLabel = altText
+      isAccessibilityElement = true
+    }
+  }
+  
+  /// Sets the `accessibilityLanguage` property of the view and all of its subviews.
+  /// - Parameters:
+  ///   - language:The language (BCP 47 format) of narrator to use when reading the view's text
+  ///   content in accessibility VoiceOver mode.
+  func applyAccessibilityLanguage(_ language: String?) {
+    self.accessibilityLanguage = language
+    for subview in self.subviews {
+      subview.applyAccessibilityLanguage(language)
+    }
+  }
+  
+}
 
 private class BundleFinder {}
 

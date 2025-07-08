@@ -214,11 +214,14 @@ extension BrazeInAppMessageUI {
     open lazy var graphicView: UIView? = {
       switch message.graphic {
       case .icon(let id):
-        return IconView(symbol: id, theme: theme)
+        let iconView = IconView(symbol: id, theme: theme)
+        iconView.addAccessibilityAltText(message.imageAltText)
+        return iconView
       case .image(let url):
         let imageView = self.gifViewProvider.view(url)
         imageView.contentMode = .scaleAspectFit
         imageView.layer.masksToBounds = true
+        imageView.addAccessibilityAltText(message.imageAltText)
         return imageView
       default:
         return nil
@@ -235,6 +238,7 @@ extension BrazeInAppMessageUI {
         $0.lineBreakMode = .byTruncatingTail
       }
       label.setContentCompressionResistancePriority(.required, for: .horizontal)
+      label.addAccessibilityAltText(message.message)
       return label
     }()
 
@@ -300,6 +304,7 @@ extension BrazeInAppMessageUI {
 
       applyTheme()
       applyAttributes()
+      applyAccessibilityLanguage(message.language)
 
       #if os(visionOS)
         registerForTraitChanges([

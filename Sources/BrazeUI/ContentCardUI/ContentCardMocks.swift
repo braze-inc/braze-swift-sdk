@@ -10,24 +10,28 @@ import UIKit
 
     public static let mockPinned = Self(
       data: .init(viewed: true, pinned: true),
+      language: "en-US",
       title: "Pinned",
       description: "Cupcake ipsum dolor sit amet. Topping dessert muffin fruitcake."
     )
 
     public static let mockUnviewed = Self(
       data: .init(),
+      language: "en-US",
       title: "Unviewed",
       description: "Cupcake ipsum dolor sit amet. Topping dessert muffin fruitcake."
     )
 
     public static let mockViewed = Self(
       data: .init(viewed: true),
+      language: "en-US",
       title: "Viewed",
       description: "Cupcake ipsum dolor sit amet. Topping dessert muffin fruitcake."
     )
 
     public static let mockDomain = Self(
       data: .init(viewed: true),
+      language: "en-US",
       title: "Domain",
       description: "Cupcake ipsum dolor sit amet. Topping dessert muffin fruitcake.",
       domain: "domain.com"
@@ -35,12 +39,14 @@ import UIKit
 
     public static let mockShort = Self(
       data: .init(viewed: true),
+      language: "en-US",
       title: "Short Text",
       description: "abc"
     )
 
     public static let mockLong = Self(
       data: .init(viewed: true),
+      language: "en-US",
       title:
         "Long Text | Cupcake ipsum dolor sit amet cake brownie powder. Pudding chupa chups toffee liquorice biscuit pastry dragée marshmallow bonbon. Gummi bears liquorice gingerbread donut pudding liquorice.",
       description:
@@ -55,6 +61,7 @@ import UIKit
 
     public static let mockExtraLong = Self(
       data: .init(viewed: true),
+      language: "en-US",
       title:
         "Extra Long Text | Cupcake ipsum dolor sit amet carrot cake tootsie roll jujubes. Powder tiramisu jelly beans cake bear claw chocolate oat cake cotton candy tart. Jelly lemon drops brownie chocolate bar brownie cotton candy. Brownie chupa chups jelly halvah jelly beans shortbread soufflé. Cheesecake oat cake oat cake apple pie cheesecake candy canes jelly-o. Candy canes cupcake muffin cotton candy lollipop pudding. Icing jelly-o shortbread icing icing. Jelly-o lollipop lemon drops cake tiramisu cheesecake. Croissant gummi bears powder gingerbread cotton candy.",
       description:
@@ -79,6 +86,8 @@ import UIKit
     public static let mockPinned = Self(
       data: .init(viewed: true, pinned: true),
       image: .mockImage(width: 100, height: 100, text: "100", textSize: 20),
+      imageAltText: "Pinned classic image card",
+      language: "en-US",
       title: "Pinned",
       description: "Cupcake ipsum dolor sit amet. Topping dessert muffin fruitcake."
     )
@@ -86,6 +95,8 @@ import UIKit
     public static let mockUnviewed = Self(
       data: .init(),
       image: .mockImage(width: 100, height: 100, text: "100", textSize: 20),
+      imageAltText: "Unviewed classic image card",
+      language: "en-US",
       title: "Unviewed",
       description: "Cupcake ipsum dolor sit amet. Topping dessert muffin fruitcake."
     )
@@ -93,6 +104,8 @@ import UIKit
     public static let mockViewed = Self(
       data: .init(viewed: true),
       image: .mockImage(width: 100, height: 100, text: "100", textSize: 20),
+      imageAltText: "Viewed classic image card",
+      language: "en-US",
       title: "Viewed",
       description: "Cupcake ipsum dolor sit amet. Topping dessert muffin fruitcake."
     )
@@ -100,6 +113,8 @@ import UIKit
     public static let mockDomain = Self(
       data: .init(viewed: true),
       image: .mockImage(width: 100, height: 100, text: "100", textSize: 20),
+      imageAltText: "Domain classic image card",
+      language: "en-US",
       title: "Domain",
       description: "Cupcake ipsum dolor sit amet. Topping dessert muffin fruitcake.",
       domain: "domain.com"
@@ -108,6 +123,8 @@ import UIKit
     public static let mockShort = Self(
       data: .init(viewed: true),
       image: .mockImage(width: 100, height: 100, text: "100", textSize: 20),
+      imageAltText: "Short classic image card",
+      language: "en-US",
       title: "Short Text",
       description: "abc"
     )
@@ -115,6 +132,8 @@ import UIKit
     public static let mockLong = Self(
       data: .init(viewed: true),
       image: .mockImage(width: 100, height: 100, text: "100", textSize: 20),
+      imageAltText: "Long classic image card",
+      language: "en-US",
       title:
         "Long Text | Cupcake ipsum dolor sit amet cake brownie powder. Pudding chupa chups toffee liquorice biscuit pastry dragée marshmallow bonbon. Gummi bears liquorice gingerbread donut pudding liquorice.",
       description:
@@ -130,6 +149,8 @@ import UIKit
     public static let mockExtraLong = Self(
       data: .init(viewed: true),
       image: .mockImage(width: 100, height: 100, text: "100", textSize: 20),
+      imageAltText: "Extra long classic image card",
+      language: "en-US",
       title:
         "Extra Long Text | Cupcake ipsum dolor sit amet carrot cake tootsie roll jujubes. Powder tiramisu jelly beans cake bear claw chocolate oat cake cotton candy tart. Jelly lemon drops brownie chocolate bar brownie cotton candy. Brownie chupa chups jelly halvah jelly beans shortbread soufflé. Cheesecake oat cake oat cake apple pie cheesecake candy canes jelly-o. Candy canes cupcake muffin cotton candy lollipop pudding. Icing jelly-o shortbread icing icing. Jelly-o lollipop lemon drops cake tiramisu cheesecake. Croissant gummi bears powder gingerbread cotton candy.",
       description:
@@ -161,7 +182,9 @@ import UIKit
         height: 200,
         text: "Pinned",
         backgroundColor: backgroundColor
-      )
+      ),
+      imageAltText: "Pinned image only card",
+      language: "en-US"
     )
 
     public static let mockUnviewed = Self(
@@ -171,7 +194,9 @@ import UIKit
         height: 200,
         text: "Unviewed",
         backgroundColor: backgroundColor
-      )
+      ),
+      imageAltText: "Unviewed image only card",
+      language: "en-US"
     )
 
     public static let mockViewed = Self(
@@ -181,7 +206,9 @@ import UIKit
         height: 200,
         text: "Viewed",
         backgroundColor: backgroundColor
-      )
+      ),
+      imageAltText: "Viewed image only card",
+      language: "en-US"
     )
 
   }
@@ -195,6 +222,8 @@ import UIKit
     public static let mockPinned = Self(
       data: .init(viewed: true, pinned: true),
       image: .mockImage(width: 600, height: 400, backgroundColor: backgroundColor),
+      imageAltText: "Pinned captioned image card",
+      language: "en-US",
       title: "Pinned",
       description: "Cupcake ipsum dolor sit amet. Topping dessert muffin fruitcake."
     )
@@ -202,6 +231,8 @@ import UIKit
     public static let mockUnviewed = Self(
       data: .init(),
       image: .mockImage(width: 600, height: 400, backgroundColor: backgroundColor),
+      imageAltText: "Unviewed captioned image card",
+      language: "en-US",
       title: "Unviewed",
       description: "Cupcake ipsum dolor sit amet. Topping dessert muffin fruitcake."
     )
@@ -209,6 +240,8 @@ import UIKit
     public static let mockViewed = Self(
       data: .init(viewed: true),
       image: .mockImage(width: 600, height: 400, backgroundColor: backgroundColor),
+      imageAltText: "Viewed captioned image card",
+      language: "en-US",
       title: "Viewed",
       description: "Cupcake ipsum dolor sit amet. Topping dessert muffin fruitcake."
     )
@@ -216,6 +249,8 @@ import UIKit
     public static let mockDomain = Self(
       data: .init(viewed: true),
       image: .mockImage(width: 600, height: 400, backgroundColor: backgroundColor),
+      imageAltText: "Domain captioned image card",
+      language: "en-US",
       title: "Domain",
       description: "Cupcake ipsum dolor sit amet. Topping dessert muffin fruitcake.",
       domain: "domain.com"
@@ -224,6 +259,8 @@ import UIKit
     public static let mockShort = Self(
       data: .init(viewed: true),
       image: .mockImage(width: 600, height: 400, backgroundColor: backgroundColor),
+      imageAltText: "Short captioned image card",
+      language: "en-US",
       title: "Short Text",
       description: "abc"
     )
@@ -231,6 +268,8 @@ import UIKit
     public static let mockLong = Self(
       data: .init(viewed: true),
       image: .mockImage(width: 600, height: 400, backgroundColor: backgroundColor),
+      imageAltText: "Long captioned image card",
+      language: "en-US",
       title:
         "Long Text | Cupcake ipsum dolor sit amet cake brownie powder. Pudding chupa chups toffee liquorice biscuit pastry dragée marshmallow bonbon. Gummi bears liquorice gingerbread donut pudding liquorice.",
       description:
@@ -246,6 +285,8 @@ import UIKit
     public static let mockExtraLong = Self(
       data: .init(viewed: true),
       image: .mockImage(width: 600, height: 400, backgroundColor: backgroundColor),
+      imageAltText: "Extra long captioned image card",
+      language: "en-US",
       title:
         "Extra Long Text | Cupcake ipsum dolor sit amet carrot cake tootsie roll jujubes. Powder tiramisu jelly beans cake bear claw chocolate oat cake cotton candy tart. Jelly lemon drops brownie chocolate bar brownie cotton candy. Brownie chupa chups jelly halvah jelly beans shortbread soufflé. Cheesecake oat cake oat cake apple pie cheesecake candy canes jelly-o. Candy canes cupcake muffin cotton candy lollipop pudding. Icing jelly-o shortbread icing icing. Jelly-o lollipop lemon drops cake tiramisu cheesecake. Croissant gummi bears powder gingerbread cotton candy.",
       description:

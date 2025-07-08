@@ -1,3 +1,25 @@
+## 12.1.0
+
+##### Added
+- Adds optional `imageAltText` and `language` fields to UI classes and structs associated with Content Card and In-App Message campaigns for improved accessibility.
+  - The `imageAltText` field contains the image accessibility alt text (if any) for the image or icon in a given campaign. The SDK's default UI will use this field to inform how VoiceOver narrates the image portion of a campaign
+  - The optional `language` field is a [BCP 47](https://en.wikipedia.org/wiki/IETF_language_tag) tag. If it is present, VoiceOver will use the corresponding language narrator when reading the campaign. Otherwise, the user system default settings will be used.
+  - These are the classes and structs with `imageAltText` and `language`:
+    - `Braze.ContentCard.ClassicImage`
+    - `Braze.ContentCard.ImageOnly`
+    - `Braze.ContentCard.CaptionedImage`
+    - `Braze.ContentCardRaw` (`BRZContentCardRaw` in Objective-C)
+    - `Braze.InAppMessage.Slideup`
+    - `Braze.InAppMessage.Modal`
+    - `Braze.InAppMessage.ModalImage`
+    - `Braze.InAppMessage.Full`
+    - `Braze.InAppMessage.FullImage`
+    - `Braze.InAppMessageRaw` (`BRZInAppMessageRaw` in Objective-C)
+    - `Braze.ContentCard.Classic` has the `language` field only
+- Adds provisional support for Xcode 26 Beta via the [`braze-inc/braze-swift-sdk-xcode-26-preview`](https://github.com/braze-inc/braze-swift-sdk-xcode-26-preview) repository.
+  - Full support will be added to the main repository closer to the public release of Xcode 26.  
+  - For any compatibility issues discovered while using the Xcode 26 Beta, submit a GitHub issue on the [main repository](https://github.com/braze-inc/braze-swift-sdk/issues).
+
 ## 12.0.3
 
 ##### Fixed

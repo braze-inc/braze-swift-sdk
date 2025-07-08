@@ -154,6 +154,7 @@ extension BrazeInAppMessageUI {
     public lazy var imageView: UIView = {
       let imageView = gifViewProvider.view(message.imageURL)
       imageView.contentMode = .scaleAspectFill
+      imageView.addAccessibilityAltText(message.imageAltText)
       return imageView
     }()
 
@@ -165,8 +166,11 @@ extension BrazeInAppMessageUI {
     }()
 
     public lazy var buttonsContainer: StackView? = {
+      var attributes: ButtonView.Attributes = .defaults
+      attributes.language = message.language
       let container = StackView(
         buttons: message.buttons,
+        attributes: attributes,
         onClick: { [weak self] button in
           guard let self else { return }
           self.logClick(buttonId: "\(button.id)")
@@ -234,6 +238,7 @@ extension BrazeInAppMessageUI {
 
       applyTheme()
       applyAttributes()
+      applyAccessibilityLanguage(message.language)
 
       #if os(visionOS)
         registerForTraitChanges([

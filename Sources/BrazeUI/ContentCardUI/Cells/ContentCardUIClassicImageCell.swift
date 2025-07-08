@@ -73,10 +73,16 @@ extension BrazeContentCardUI {
     open func set(card: Braze.ContentCard.ClassicImage, imageLoad: AsyncImageView.ImageLoad?) {
       contentImageView.imageLoad = imageLoad
 
+      contentImageView.imageView.addAccessibilityAltText(card.imageAltText)
+
       textStack?.titleLabel.text = card.title
       textStack?.descriptionLabel.text = card.description
       textStack?.domainLabel.text = card.domain
       textStack?.domainHidden = card.domain == nil || card.domain == ""
+
+      // Accessibility
+      textStack?.addAccessibilityAltText()
+      applyAccessibilityLanguage(card.language)
 
       pinIndicator.isHidden = !card.pinned
       unviewedIndicator.isHidden = card.viewed
