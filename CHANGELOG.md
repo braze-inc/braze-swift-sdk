@@ -1,3 +1,19 @@
+## 13.0.0
+
+##### Breaking
+- Extends the functionality of `BrazeSDKAuthDelegate.braze(_:sdkAuthenticationFailedWithError:)` to be triggered for "Optional" authentication errors.
+  - The delegate method `BrazeSDKAuthDelegate.braze(_:sdkAuthenticationFailedWithError:)` will now be triggered for both "Required" __and "Optional"__ authentication errors.
+  - If you want to only handle "Required" SDK authentication errors, add a check ensuring that `BrazeSDKAuthError.optional` is `false` inside your implementation of this delegate method.
+- Fixes the usage of `Braze.Configuration.sdkAuthentication` to take effect when enabled.
+  - Previously, the value of this configuration was not consumed by the SDK and the token was always attached to requests if it was present.
+  - Now, the SDK will only attach the SDK authentication token to outgoing network requests when this configuration is enabled.
+- The setters for all properties of `Braze.FeatureFlag` and all properties of `Braze.Banner` have been made `private`. The properties of these classes are now read-only.
+- Removes the `Braze.Banner.id` property, which was deprecated in version `11.4.0`.
+  - Instead, use `Braze.Banner.trackingId` to read a banner's campaign tracking ID.
+
+##### Added
+- Adds the boolean field `optional` to `BrazeSDKAuthError` to indicate if it is an optional authentication error.
+
 ## 12.1.0
 
 ##### Added
