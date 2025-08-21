@@ -88,6 +88,14 @@ import Foundation
       slideFrom: .top
     )
 
+    public static let mockImageEmptyAltText = Self(
+      data: .mock,
+      graphic: .image(.mockImage(width: 150, height: 150, textSize: 30)),
+      imageAltText: "",
+      language: "en-US",
+      message: "Cupcake ipsum dolor sit amet. Topping dessert muffin fruitcake."
+    )
+
   }
 
   // MARK: - Modals
@@ -237,6 +245,20 @@ import Foundation
       ]
     )
 
+    public static let mockImageEmptyAltText = Self(
+      data: .mock,
+      graphic: .image(.mockImage(width: 1450, height: 500)),
+      imageAltText: "",
+      language: "en-US",
+      header: "Hello world!",
+      message:
+        "Cupcake ipsum dolor sit amet topping. Cookie candy chupa chups jujubes pastry soufflé. Danish cake cheesecake liquorice wafer marshmallow macaroon.",
+      buttons: [
+        .mockSecondary,
+        .mockPrimary,
+      ]
+    )
+
   }
 
   extension Braze.InAppMessage.ModalImage {
@@ -306,6 +328,17 @@ import Foundation
           closeButtonColor: 0xFFC0_00FF,
           frameColor: 0xFF40_A0A0
         )
+      ]
+    )
+
+    public static let mockEmptyAltText = Self(
+      data: .mock,
+      imageURL: .mockImage(width: 600, height: 600),
+      imageAltText: "",
+      language: "en-US",
+      buttons: [
+        .mockSecondary,
+        .mockPrimary,
       ]
     )
 
@@ -476,6 +509,16 @@ import Foundation
         )
       ]
     )
+
+    public static let mockEmptyAltText = Self(
+      data: .mock,
+      imageURL: .mockImage(width: 1200, height: 1000),
+      imageAltText: "",
+      language: "en-US",
+      header: "Hello world!",
+      message:
+        "Cupcake ipsum dolor sit amet topping. Cookie candy chupa chups jujubes pastry soufflé. Danish cake cheesecake liquorice wafer marshmallow macaroon."
+    )
   }
 
   extension Braze.InAppMessage.FullImage {
@@ -572,6 +615,12 @@ import Foundation
       ]
     )
 
+    public static let mockEmptyAltText = Self(
+      data: .mock,
+      imageURL: .mockImage(width: 1200, height: 2000),
+      imageAltText: "",
+      language: "en-US"
+    )
   }
 
   // MARK: - Buttons

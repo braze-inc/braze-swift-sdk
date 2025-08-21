@@ -1,3 +1,22 @@
+## 13.1.0
+
+##### Added
+- Adds support for Banner properties via new public methods for `Braze.Banner`.
+  - `Braze.Banner.stringProperty(key:)` for accessing `String` properties.
+  - `Braze.Banner.numberProperty(key:)` for accessing `Double` properties.
+  - `Braze.Banner.timestampProperty(key:)` for accessing `Int` Unix millisecond timestamp  properties.
+  - `Braze.Banner.booleanProperty(key:)` for accessing `Bool` properties.
+  - `Braze.Banner.imageProperty(key:)` for accessing image URL properties as `String`s.
+  - `Braze.Banner.jsonProperty(key:)` for accessing JSON properties as `[String:Any]` dictionaries.
+  - `Braze.Banner.jsonProperty<T: Decodable>(key:type:decoder)` for accessing JSON properties as values of any custom `Decodable` type.
+- The default client-side rate limiting values for Banners refresh has been increased. For more information on SDK rate limiting, please refer to the [Braze Developer Guide](https://www.braze.com/docs/developer_guide/sdk_integration/rate_limits#braze-sdk-rate-limits)
+
+##### Fixed
+- Improves the behavior of VoiceOver for assets that are missing an `imageAltText` for Content Card and In-App Message campaigns created via the Traditional editor.
+  - These assets will no longer be selectable or narrated by VoiceOver. Previously, the asset would be selectable and VoiceOver would read gibberish.
+  - Drag-and-drop campaigns are not affected by this issue.
+  - Campaigns created using the Traditional editor should always have the `Alt text` field populated for accessible users.
+
 ## 13.0.0
 
 ##### Breaking
@@ -33,7 +52,7 @@
     - `Braze.InAppMessageRaw` (`BRZInAppMessageRaw` in Objective-C)
     - `Braze.ContentCard.Classic` has the `language` field only
 - Adds provisional support for Xcode 26 Beta via the [`braze-inc/braze-swift-sdk-xcode-26-preview`](https://github.com/braze-inc/braze-swift-sdk-xcode-26-preview) repository.
-  - Full support will be added to the main repository closer to the public release of Xcode 26.  
+  - Full support will be added to the main repository closer to the public release of Xcode 26.
   - For any compatibility issues discovered while using the Xcode 26 Beta, submit a GitHub issue on the [main repository](https://github.com/braze-inc/braze-swift-sdk/issues).
 
 ## 12.0.3
@@ -389,7 +408,7 @@
 
 ##### Added
 - Adds support for 3 new Feature Flag property types and various APIs for accessing them:
-  - `Braze.FeatureFlag.timestampProperty(key:)` for accessing `Int` Unix UTC millisecond timestamps.
+  - `Braze.FeatureFlag.timestampProperty(key:)` for accessing `Int` Unix millisecond timestamps.
   - `Braze.FeatureFlag.imageProperty(key:)` for accessing image URLs as `String`s.
   - `Braze.FeatureFlag.jsonObjectProperty(key:)` for accessing JSONs as `[String:Any]` dictionaries.
   - `Braze.FeatureFlag.jsonStringProperty(key:)` for accessing JSONs as `String`s.

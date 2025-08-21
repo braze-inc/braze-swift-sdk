@@ -167,6 +167,15 @@ import UIKit
         """
     )
 
+    public static let mockEmptyAltText = Self(
+      data: .init(viewed: true),
+      image: .mockImage(width: 100, height: 100, text: "100", textSize: 20),
+      imageAltText: "",
+      language: "en-US",
+      title: "Empty Alt Text",
+      description: "Cupcake ipsum dolor sit amet. Topping dessert muffin fruitcake."
+    )
+
   }
 
   // MARK: - ImageOnly
@@ -208,6 +217,18 @@ import UIKit
         backgroundColor: backgroundColor
       ),
       imageAltText: "Viewed image only card",
+      language: "en-US"
+    )
+
+    public static let mockEmptyAltText = Self(
+      data: .init(viewed: true),
+      image: .mockImage(
+        width: 400,
+        height: 200,
+        text: "Empty Alt",
+        backgroundColor: backgroundColor
+      ),
+      imageAltText: "",
       language: "en-US"
     )
 
@@ -301,6 +322,15 @@ import UIKit
 
         Sweet roll cookie jelly-o soufflé sugar plum bear claw dragée candy canes gummies. Cake carrot cake brownie donut chocolate gummies brownie cotton candy. Lollipop biscuit candy halvah chocolate cake biscuit sweet. Chocolate bar danish gummies pastry icing. Carrot cake pudding jujubes dragée toffee fruitcake toffee. Gingerbread caramels chupa chups jelly-o jujubes cookie sesame snaps.
         """
+    )
+
+    public static let mockEmptyAltText = Self(
+      data: .init(viewed: true),
+      image: .mockImage(width: 600, height: 400, backgroundColor: backgroundColor),
+      imageAltText: "",
+      language: "en-US",
+      title: "Empty Alt Text",
+      description: "Cupcake ipsum dolor sit amet. Topping dessert muffin fruitcake."
     )
 
   }

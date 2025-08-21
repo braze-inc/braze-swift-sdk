@@ -73,6 +73,33 @@ extension UIView {
     }
   }
 
+  // MARK: - Accessibility
+
+  /// Sets the view's `accessibilityLabel` and `isAccessibilityElement` properties if `altText` is
+  /// non-`nil`.
+  /// - Parameters:
+  ///   - altText: Accessibility alt text to be read for the view's image or icon (if any) when in
+  ///   VoiceOver mode.
+  func addAccessibilityAltText(_ altText: String?) {
+    if let altText, altText != "" {
+      accessibilityLabel = altText
+      isAccessibilityElement = true
+    } else {
+      isAccessibilityElement = false
+    }
+  }
+
+  /// Sets the `accessibilityLanguage` property of the view and all of its subviews.
+  /// - Parameters:
+  ///   - language:The language (BCP 47 format) of narrator to use when reading the view's text
+  ///   content in accessibility VoiceOver mode.
+  func applyAccessibilityLanguage(_ language: String?) {
+    self.accessibilityLanguage = language
+    for subview in self.subviews {
+      subview.applyAccessibilityLanguage(language)
+    }
+  }
+
 }
 
 extension UIResponder {
