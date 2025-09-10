@@ -1,3 +1,8 @@
+## 13.2.0
+
+##### Added
+- Adds support for compilation with Xcode 26.0 and its corresponding operating system runtimes on all platforms supported by the Braze Swift SDK.
+
 ## 13.1.0
 
 ##### Added

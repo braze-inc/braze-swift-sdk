@@ -113,16 +113,33 @@ private var _window: UIWindow? = {
   let readmeViewController = ReadmeViewController(readme: readme, actions: actions)
   let navigationController = UINavigationController(rootViewController: readmeViewController)
 
-  #if os(visionOS)
-    let window = UIWindow(
-      windowScene: UIApplication.shared.connectedScenes
-        .compactMap { $0 as? UIWindowScene }
-        .first { $0.activationState == .foregroundActive }!
-    )
-  #else
-    let window = UIWindow(frame: UIScreen.main.bounds)
-  #endif
-  window.rootViewController = navigationController
+  @MainActor
+  @available(iOS 13.0, tvOS 13.0, *)
+  func getWindowFromScene() -> UIWindow? {
+    // Get active window scene or fallback to the first scene
+    let windowScene =
+      UIApplication.shared.connectedScenes
+      .compactMap { $0 as? UIWindowScene }
+      .first { $0.activationState == .foregroundActive }
+      ?? UIApplication.shared.connectedScenes
+      .compactMap { $0 as? UIWindowScene }
+      .first
+    return windowScene.map { UIWindow(windowScene: $0) }
+  }
+
+  let window: UIWindow? = {
+    #if os(visionOS)
+      return getWindowFromScene()
+    #else
+      if #available(iOS 26.0, tvOS 26.0, *) {
+        return getWindowFromScene()
+      } else {
+        return UIWindow(frame: UIScreen.main.bounds)
+      }
+    #endif
+  }()
+
+  window?.rootViewController = navigationController
   return window
 }()
 
