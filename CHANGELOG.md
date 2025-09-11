@@ -1,3 +1,9 @@
+## 13.2.1
+
+##### Fixed
+- Resolves an issue that where an accumulation of Banners pending requests could cause the host application to hang at app startup.
+  - This fix performs additional cleanup to any existing requests that were accumulated from previous versions, so you do not need to do any manual cleanup.
+
 ## 13.2.0
 
 ##### Added
