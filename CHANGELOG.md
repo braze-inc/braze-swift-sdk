@@ -1,3 +1,9 @@
+## 13.3.0
+
+##### Added
+- Improves reliability when sending the push token and push authorization status to the backend.
+  - This change ensures that push authorization status changes will be flushed immediately as soon as they are read.
+
 ## 13.2.1
 
 ##### Fixed
