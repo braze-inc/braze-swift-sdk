@@ -215,13 +215,13 @@ extension BrazeInAppMessageUI {
       switch message.graphic {
       case .icon(let id):
         let iconView = IconView(symbol: id, theme: theme)
-        iconView.addAccessibilityAltText(message.imageAltText)
+        iconView.isAccessibilityElement = false
         return iconView
       case .image(let url):
         let imageView = self.gifViewProvider.view(url)
         imageView.contentMode = .scaleAspectFit
         imageView.layer.masksToBounds = true
-        imageView.addAccessibilityAltText(message.imageAltText)
+        imageView.isAccessibilityElement = false
         return imageView
       default:
         return nil
@@ -238,7 +238,7 @@ extension BrazeInAppMessageUI {
         $0.lineBreakMode = .byTruncatingTail
       }
       label.setContentCompressionResistancePriority(.required, for: .horizontal)
-      label.addAccessibilityAltText(message.message)
+      label.isAccessibilityElement = false
       return label
     }()
 
@@ -252,6 +252,7 @@ extension BrazeInAppMessageUI {
       .imageFlippedForRightToLeftLayoutDirection()
       let view = UIImageView(image: image)
       view.isHidden = message.clickAction == .none
+      view.isAccessibilityElement = false
       return view
     }()
 
@@ -304,7 +305,7 @@ extension BrazeInAppMessageUI {
 
       applyTheme()
       applyAttributes()
-      applyAccessibilityLanguage(message.language)
+      setupAccessibility()
 
       #if os(visionOS)
         registerForTraitChanges([
@@ -582,14 +583,127 @@ extension BrazeInAppMessageUI {
         }
       case .ended:
         highlighted = false
-        logClick()
-        process(clickAction: message.clickAction)
-        dismiss()
+        performClickAction()
       default:
         highlighted = false
       }
     }
 
+    /// Performs the standard click action flow: log click, process action, dismiss
+    private func performClickAction() {
+      logClick()
+      process(clickAction: message.clickAction)
+      dismiss()
+    }
+
+    // MARK: - Accessibility
+
+    private func setupAccessibility() {
+      // Make the entire slide-up an accessibility element.
+      // This allows the message to be selectable when using Full Keyboard Access.
+      isAccessibilityElement = true
+
+      // Build combined accessibility label
+      updateAccessibilityLabel()
+
+      // Set accessibility language
+      applyAccessibilityLanguage(message.language)
+    }
+
+    // MARK: - VoiceOver Support
+
+    open override func accessibilityActivate() -> Bool {
+      guard message.clickAction != .none else { return false }
+
+      performClickAction()
+      return true
+    }
+
+    private func updateAccessibilityLabel() {
+      var components: [String] = []
+
+      // Add image description if present
+      if let imageAltText = message.imageAltText, !imageAltText.isEmpty {
+        components.append(
+          localizedAccessibilityComponent(
+            content: imageAltText,
+            prefixKey: "braze.in-app-message.slideup.image-prefix"
+          ))
+      }
+
+      // Add text content
+      if !message.message.isEmpty {
+        components.append(
+          localizedAccessibilityComponent(
+            content: message.message,
+            prefixKey: "braze.in-app-message.slideup.text-prefix"
+          ))
+      }
+
+      accessibilityLabel = components.joined(separator: " ")
+    }
+
+    /// Creates an accessibility component with localized prefix, falling back to content only
+    private func localizedAccessibilityComponent(content: String, prefixKey: String) -> String {
+      let prefix = localize(prefixKey, for: .inAppMessage)
+      // Fall back gracefully if localization fails
+      if prefix != prefixKey {
+        return "\(prefix) \(content)"
+      } else {
+        return content
+      }
+    }
+
+    // MARK: - Keyboard Navigation
+
+    open override var canBecomeFocused: Bool {
+      return true
+    }
+
+    open override func pressesBegan(_ presses: Set<UIPress>, with event: UIPressesEvent?) {
+      guard let key = presses.first?.key else {
+        super.pressesBegan(presses, with: event)
+        return
+      }
+
+      switch key.keyCode {
+      case .keyboardReturnOrEnter, .keyboardSpacebar:
+        // Activate the slide-up
+        if message.clickAction != .none {
+          highlighted = true
+          dismiss()
+        }
+      case .keyboardEscape:
+        // Dismiss without activating click action
+        if attributes.dismissible {
+          dismiss()
+        }
+      default:
+        super.pressesBegan(presses, with: event)
+      }
+    }
+
+    open override func pressesEnded(_ presses: Set<UIPress>, with event: UIPressesEvent?) {
+      guard let key = presses.first?.key else {
+        super.pressesEnded(presses, with: event)
+        return
+      }
+
+      switch key.keyCode {
+      case .keyboardReturnOrEnter, .keyboardSpacebar:
+        highlighted = false
+        if message.clickAction != .none {
+          performClickAction()
+        }
+      default:
+        super.pressesEnded(presses, with: event)
+      }
+    }
+
+    open override func pressesCancelled(_ presses: Set<UIPress>, with event: UIPressesEvent?) {
+      highlighted = false
+      super.pressesCancelled(presses, with: event)
+    }
   }
 
 }

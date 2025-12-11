@@ -132,6 +132,29 @@ import Foundation
         .mockPrimary,
       ]
     )
+    
+    public static let mockOneButtonWithLongText = Self(
+      data: .mock,
+      language: "en-US",
+      header: "Hello world!",
+      message:
+        "Cupcake ipsum dolor sit amet topping. Cookie candy chupa chups jujubes pastry soufflé. Danish cake cheesecake liquorice wafer marshmallow macaroon.",
+      buttons: [
+        .mockLongTextPrimary
+      ]
+    )
+    
+    public static let mockTwoButtonWithLongText = Self(
+      data: .mock,
+      language: "en-US",
+      header: "Hello world!",
+      message:
+        "Cupcake ipsum dolor sit amet topping. Cookie candy chupa chups jujubes pastry soufflé. Danish cake cheesecake liquorice wafer marshmallow macaroon.",
+      buttons: [
+        .mockLongTextSecondary,
+        .mockLongTextPrimary,
+      ]
+    )
 
     public static let mockIcon = Self(
       data: .mock,
@@ -652,6 +675,20 @@ import Foundation
           backgroundColor: 0xFF40_0060
         )
       ]
+    )
+    
+    static let mockLongTextPrimary = Self(
+      id: 1,
+      text: "This is a really long button text that should truncate",
+      clickAction: .none,
+      themes: ["light": .primary]
+    )
+    
+    static let mockLongTextSecondary = Self(
+      id: 0,
+      text: "This is another long button text that should truncate",
+      clickAction: .none,
+      themes: ["light": .secondary]
     )
 
   }

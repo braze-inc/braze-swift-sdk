@@ -423,9 +423,6 @@ static NSInteger const KeyWindowRetryMaxCount = 10;
   switch (actionType) {
     case ABKInAppMessageNoneClickAction:
       break;
-    case ABKInAppMessageDisplayNewsFeed:
-      [self displayModalFeedView];
-      break;
     case ABKInAppMessageRedirectToURI:
       if ([ABKUIUtils objectIsValidAndNotEmpty:url]) {
         [self handleInAppMessageURL:url inWebView:openUrlInWebView];
@@ -433,19 +430,6 @@ static NSInteger const KeyWindowRetryMaxCount = 10;
       break;
   }
   [self hideInAppMessageViewWithAnimation:self.inAppMessage.animateOut];
-}
-
-#pragma mark - Display News Feed
-
-- (void)displayModalFeedView {
-  Class ModalFeedViewControllerClass = [ABKUIUtils getModalFeedViewControllerClass];
-  if (ModalFeedViewControllerClass != nil) {
-    UIViewController *topmostViewController =
-      [ABKUIURLUtils topmostViewControllerWithRootViewController:ABKUIUtils.activeApplicationViewController];
-    [topmostViewController presentViewController:[[ModalFeedViewControllerClass alloc] init]
-                                                 animated:YES
-                                               completion:nil];
-  }
 }
 
 #pragma mark - URL Handling

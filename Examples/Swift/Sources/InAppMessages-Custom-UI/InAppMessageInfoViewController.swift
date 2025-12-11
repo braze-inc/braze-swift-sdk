@@ -244,8 +244,6 @@ final class InAppMessageInfoViewController: UITableViewController {
     switch clickAction {
     case .none:
       header.value = "none"
-    case .newsFeed:
-      header.value = "newsFeed"
     case .url(let url, let useWebView):
       header.value = "url"
       fields = [

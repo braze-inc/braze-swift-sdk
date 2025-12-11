@@ -11,7 +11,6 @@ extension InAppMessageView {
     return .init(
       logClick: { [weak self] in self?.logClick(buttonId: $0) },
       logError: { [weak self] in self?.logError(.webViewScript($0)) },
-      showNewsFeed: { [weak self] in self?.process(clickAction: .newsFeed, buttonId: nil) },
       closeMessage: closeMessage,
       braze: braze
     )
@@ -25,7 +24,6 @@ extension InAppMessageView {
     return .init(
       channel: .inAppMessage,
       logError: { [weak self] in self?.logError(.webViewScheme($0)) },
-      showNewsFeed: { [weak self] in self?.process(clickAction: .newsFeed, buttonId: nil) },
       closeMessage: closeMessage,
       queryHandler: webViewQueryHandler(),
       braze: braze

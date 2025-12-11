@@ -1,5 +1,0 @@
-/* News Feed Context Labels */
-"Appboy.feed.done-button.title" = "Tamamdır";
-"Appboy.feed.no-card.text" = "Heç bir yeniləmələrimiz yoxdur.\nZəhmət olmasa, sonra yenidən yoxlayın.";
-"Appboy.feed.no-connection.title" = "Bağlantı Xətası";
-"Appboy.feed.no-connection.message" = "Şəbəkə bağlantısı qurmaq mümkün olmadı.\nZəhmət olmasa, sonra yenidən cəhd edin.";

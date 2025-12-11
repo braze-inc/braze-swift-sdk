@@ -1,1 +1,3 @@
 "braze.in-app-message.close-button.title" = "schließen";
+"braze.in-app-message.slideup.image-prefix" = "Bild:";
+"braze.in-app-message.slideup.text-prefix" = "Text:";

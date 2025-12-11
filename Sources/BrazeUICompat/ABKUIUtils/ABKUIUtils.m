@@ -15,7 +15,6 @@ static NSUInteger const iPhone12Mini = 2340.0;
 // Bundles
 static NSString * const ABKUIPodCCBundleName = @"AppboyUI.ContentCards.bundle";
 static NSString * const ABKUIPodIAMBundleName = @"AppboyUI.InAppMessage.bundle";
-static NSString * const ABKUIPodNFBundleName = @"AppboyUI.NewsFeed.bundle";
 
 @implementation ABKUIUtils
 
@@ -204,10 +203,6 @@ static NSString * const ABKUIPodNFBundleName = @"AppboyUI.NewsFeed.bundle";
     return YES;
   }
   return NO;
-}
-
-+ (Class)getModalFeedViewControllerClass {
-  return NSClassFromString(@"ABKNewsFeedViewController");
 }
 
 + (BOOL)isNotchedPhone {

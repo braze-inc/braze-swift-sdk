@@ -70,8 +70,8 @@ BRZ_DEPRECATED("renamed to 'Braze.InAppMessage.Button'")
  * This method will set the buttonClickActionType property.
  *
  * When clickActionType is ABKInAppMessageRedirectToURI, the parameter uri cannot be nil, and the value will be passed to
- * buttonClickedURI. When clickActionType is ABKInAppMessageDisplayNewsFeed or ABKInAppMessageNoneClickAction, the
- * parameter uri will be ignored, and property uri  will be set to nil.
+ * buttonClickedURI. When clickActionType is ABKInAppMessageNoneClickAction, the parameter uri will be ignored, and
+ * property uri  will be set to nil.
  */
 - (void)setButtonClickAction:(ABKInAppMessageClickActionType)clickActionType withURI:(nullable NSURL *)uri;
 

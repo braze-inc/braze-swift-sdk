@@ -7,8 +7,6 @@
 /*!
  * The ABKInAppMessageClickActionType defines the action that will be performed when the in-app message is clicked.
  *
- *   ABKInAppMessageDisplayNewsFeed - This is the default behavior. It will open a modal view of Braze news feed.
- *
  *   ABKInAppMessageRedirectToURI - The in-app message will try to redirect to the uri defined by the uri property. Only when the uri
  *    is an HTTP URL, a modal web view will be displayed. If the uri is a protocol uri, the in-app message will redirect to the
  *    protocol uri.
@@ -16,7 +14,6 @@
  *   ABKInAppMessageNoneClickAction - The in-app message will do nothing but dismiss itself.
  */
 typedef NS_ENUM(NSInteger, ABKInAppMessageClickActionType) {
-  ABKInAppMessageDisplayNewsFeed,
   ABKInAppMessageRedirectToURI,
   ABKInAppMessageNoneClickAction
 };
@@ -234,8 +231,7 @@ BRZ_DEPRECATED("renamed to 'Braze.InAppMessage'")
  * This method will set the inAppMessageClickActionType property.
  *
  * When clickActionType is ABKInAppMessageRedirectToURI, the parameter uri cannot be nil. When clickActionType is
- * ABKInAppMessageDisplayNewsFeed or ABKInAppMessageNoneClickAction, the parameter uri will be ignored, and property uri
- * will be set to nil.
+ * ABKInAppMessageNoneClickAction, the parameter uri will be ignored, and property uri will be set to nil.
  */
 - (void)setInAppMessageClickAction:(ABKInAppMessageClickActionType)clickActionType withURI:(nullable NSURL *)uri;
 

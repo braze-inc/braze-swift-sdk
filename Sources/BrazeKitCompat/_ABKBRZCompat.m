@@ -2,7 +2,6 @@
 #import "ABKURLDelegate.h"
 #import "Appboy.h"
 #import "AppboyKit/ABKContentCardsController+Compat.h"
-#import "AppboyKit/ABKFeedController+Compat.h"
 #import "AppboyKit/ABKInAppMessageController+Compat.h"
 #import "AppboyKit/ABKLocationManager+Compat.h"
 #import "AppboyKit/Appboy+Compat.h"
@@ -73,7 +72,6 @@ static NSString *const ABKPersistentDataPlistEndpointKey = @"Endpoint";
 @property(strong, nonatomic, readonly) BrazeDelegateWrapper *delegateWrapper;
 @property(strong, nonatomic, readonly) BrazeSDKAuthDelegateWrapper *sdkAuthDelegateWrapper;
 @property(strong, nonatomic) BRZCancellable *contentCardsSubscription;
-@property(strong, nonatomic) BRZCancellable *newsFeedCardsSubscription;
 
 @property(strong, nonatomic, readwrite)
     ABKInAppMessageController *inAppMessageController;
@@ -81,7 +79,6 @@ static NSString *const ABKPersistentDataPlistEndpointKey = @"Endpoint";
 @end
 
 @implementation _ABKBRZCompat
-@synthesize feedController = _feedController;
 @synthesize contentCardsController = _contentCardsController;
 @synthesize delegateWrapper = _delegateWrapper;
 @synthesize sdkAuthDelegateWrapper = _sdkAuthDelegateWrapper;
@@ -164,17 +161,6 @@ static NSString *const ABKPersistentDataPlistEndpointKey = @"Endpoint";
                           ABKContentCardsProcessedIsSuccessfulKey : @(YES)
                         }];
       }];
-  // - NewsFeed
-  shared.newsFeedCardsSubscription =
-      [braze.newsFeed subscribeToUpdates:^(
-                          __unused NSArray<BRZNewsFeedCard *> *_Nonnull cards) {
-        [NSNotificationCenter.defaultCenter
-            postNotificationName:ABKFeedUpdatedNotification
-                          object:weakBraze
-                        userInfo:@{
-                          ABKFeedUpdatedIsSuccessfulKey : @(YES)
-                        }];
-      }];
 
   // In-App Messages
   shared.inAppMessageController = [[ABKInAppMessageController alloc]
@@ -213,14 +199,6 @@ static NSString *const ABKPersistentDataPlistEndpointKey = @"Endpoint";
   id<ABKInAppMessageControllerDelegate> inAppMessageControllerDelegate =
       appboyOptions[ABKInAppMessageControllerDelegateKey];
   shared.inAppMessageController.delegate = inAppMessageControllerDelegate;
-}
-
-- (ABKFeedController *)feedController {
-  if (_feedController == nil) {
-    _feedController =
-        [[ABKFeedController alloc] initWithNewsFeedApi:self.braze.newsFeed];
-  }
-  return _feedController;
 }
 
 - (ABKContentCardsController *)contentCardsController {

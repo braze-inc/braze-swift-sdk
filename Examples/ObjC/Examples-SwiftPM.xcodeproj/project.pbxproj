@@ -1032,7 +1032,7 @@
 			mainGroup = D8CC2266D736859D7DD9A8FF;
 			packageReferences = (
 				9928D5150C45879A982BA1C6 /* XCRemoteSwiftPackageReference "SDWebImage" */,
-				E81AB52A80727C820B25174B /* XCLocalSwiftPackageReference "/Users/Jeriel.Ng/swift-sdk/.build/braze/release/braze-swift-sdk" */,
+				D9D9FC06709BDFAFEDCE0EB9 /* XCLocalSwiftPackageReference "/Users/yichin.sun/Documents/swift-sdk/.build/braze/release/braze-swift-sdk" */,
 			);
 			projectDirPath = "";
 			projectRoot = "";
@@ -2269,9 +2269,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		E81AB52A80727C820B25174B /* XCLocalSwiftPackageReference "/Users/Jeriel.Ng/swift-sdk/.build/braze/release/braze-swift-sdk" */ = {
+		D9D9FC06709BDFAFEDCE0EB9 /* XCLocalSwiftPackageReference "/Users/yichin.sun/Documents/swift-sdk/.build/braze/release/braze-swift-sdk" */ = {
 			isa = XCLocalSwiftPackageReference;
-			relativePath = "/Users/Jeriel.Ng/swift-sdk/.build/braze/release/braze-swift-sdk";
+			relativePath = "/Users/yichin.sun/Documents/swift-sdk/.build/braze/release/braze-swift-sdk";
 		};
 /* End XCLocalSwiftPackageReference section */
 

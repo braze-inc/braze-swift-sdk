@@ -135,9 +135,6 @@
   case BRZInAppMessageRawClickActionNone:
     [fields addObject:[Field fieldWithName:@"clickAction" value:@"none"]];
     break;
-  case BRZInAppMessageRawClickActionNewsFeed:
-    [fields addObject:[Field fieldWithName:@"clickAction" value:@"newsFeed"]];
-    break;
   case BRZInAppMessageRawClickActionURL:
     [fields addObject:[Field fieldWithName:@"clickAction" value:@"uri"]];
     break;

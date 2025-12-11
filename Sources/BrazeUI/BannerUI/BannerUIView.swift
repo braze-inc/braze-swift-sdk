@@ -20,6 +20,9 @@ extension BrazeBannerUI {
     var banner: Braze.Banner?
     var hasContentLoaded: Bool = false
 
+    private let notificationCenter: NotificationCenter
+    private var foregroundObserver: NSObjectProtocol?
+
     public lazy var scriptMessageHandler: Braze.WebViewBridge.ScriptMessageHandler =
       webViewScriptMessageHandler()
     public lazy var schemeHandler: Braze.WebViewBridge.SchemeHandler = webViewSchemeHandler()
@@ -43,21 +46,21 @@ extension BrazeBannerUI {
     /// - Parameter placementId: The placement ID of the banner.
     /// - Parameter braze: The Braze instance.
     /// - Parameter processContentUpdates: A closure that provides the updated properties of the banner view after content has finished rendering.
-    public init(
+    public convenience init(
       placementId: String,
       braze: Braze,
       processContentUpdates: (
         @MainActor (Result<BrazeBannerUI.ContentUpdates, Swift.Error>) -> Void
       )? = nil
     ) {
-      self.placementId = placementId
-      self.braze = braze
-      self.processContentUpdates = processContentUpdates
-      self.impressionTracker = .shared
+      self.init(
+        placementId: placementId,
+        braze: braze,
+        processContentUpdates: processContentUpdates,
+        impressionTracker: .shared,
+        notificationCenter: .default
+      )
 
-      super.init(frame: .zero)
-
-      setupWebView()
       braze.banners.registerView(self)
       impressionTracker.startSessionTracking(with: braze)
     }
@@ -69,18 +72,34 @@ extension BrazeBannerUI {
       processContentUpdates: (
         @MainActor (Result<BrazeBannerUI.ContentUpdates, Swift.Error>) -> Void
       )? = nil,
-      impressionTracker: BrazeBannerUI.BannersImpressionTracker
+      impressionTracker: BrazeBannerUI.BannersImpressionTracker,
+      notificationCenter: NotificationCenter = .default
     ) {
       self.placementId = placementId
       self.braze = braze
       self.processContentUpdates = processContentUpdates
       self.impressionTracker = impressionTracker
+      self.notificationCenter = notificationCenter
 
       super.init(frame: .zero)
       setupWebView()
+
+      // Add foreground observer to refresh content when app becomes active
+      foregroundObserver = notificationCenter.addObserver(
+        forName: UIApplication.didBecomeActiveNotification,
+        object: nil,
+        queue: .main
+      ) { [weak self] _ in
+        self?.handleAppDidBecomeActive()
+      }
     }
 
     deinit {
+      // Remove foreground observer (synchronous, safe outside MainActor)
+      if let observer = foregroundObserver {
+        notificationCenter.removeObserver(observer)
+      }
+
       isolatedMainActorDeinit { [self] in
         self.tearDownWebView()
       }
@@ -132,19 +151,31 @@ extension BrazeBannerUI {
       fatalError("init(coder:) has not been implemented")
     }
 
-    /// Renders the banner content into the view if there are updates.
+    /// Renders the banner content into the view.
     ///
     /// - Parameter banner: The Braze banner model.
     open func render(with banner: Braze.Banner) {
+      render(with: banner, forceReload: false)
+    }
+
+    /// Internal method that handles the actual rendering logic.
+    ///
+    /// - Parameter banner: The Braze banner model.
+    /// - Parameter forceReload: If true, reloads content even if HTML hasn't changed.
+    func render(with banner: Braze.Banner, forceReload: Bool) {
       if self.webView == nil {
         setupWebView()
       }
 
-      if self.banner != banner {
+      // Only reload if banner content has changed to avoid unnecessary WebView navigations
+      guard forceReload || self.banner?.html != banner.html else {
         self.banner = banner
-        DispatchQueue.main.async { [weak self] in
-          self?.webView?.loadHTMLString(banner.html, baseURL: nil)
-        }
+        return
+      }
+
+      self.banner = banner
+      DispatchQueue.main.async { [weak self] in
+        self?.webView?.loadHTMLString(banner.html, baseURL: nil)
       }
     }
 
@@ -197,6 +228,14 @@ extension BrazeBannerUI {
       }
 
       context.processClickAction(clickAction, target: target)
+    }
+
+    /// Handles app becoming active by refreshing banner content if WebView exists.
+    @objc private func handleAppDidBecomeActive() {
+      // Only reload content if the web view exists AND its content state is lost.
+      if let banner = self.banner, self.webView != nil, !self.hasContentLoaded {
+        render(with: banner, forceReload: true)
+      }
     }
 
   }
@@ -283,6 +322,19 @@ extension BrazeBannerUI.BannerUIView: WKNavigationDelegate {
     notifyError(
       BrazeBannerUI.Error.webViewNavigation(.init(error))
     )
+  }
+
+  /// Handles WebView process termination, which occurs when iOS terminates the WebView
+  /// process under memory pressure (e.g., when app goes to background).
+  public func webViewWebContentProcessDidTerminate(_ webView: WKWebView) {
+    hasContentLoaded = false
+
+    // Automatically reload content if we have a banner
+    if let banner = self.banner {
+      DispatchQueue.main.async { [weak self] in
+        self?.render(with: banner, forceReload: true)
+      }
+    }
   }
 
 }

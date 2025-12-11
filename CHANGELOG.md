@@ -1,3 +1,24 @@
+## 14.0.0
+
+##### Breaking
+- Removes News Feed.
+  - This fully removes all UI elements, data models, and actions associated with News Feed.
+
+##### Added
+- Remote configuration now automatically refetches after SDK upgrades, keeping server defaults in sync and improving reliability after version changes.
+  
+##### Fixed
+- Resolves an issue where long text in in-app message buttons would wrap to multiple lines.
+  - These messages will now match the dashboard preview behavior of truncating long text.
+- Push Stories now fail gracefully when receiving `null`/empty deeplink values.
+  - Previously, an invalid deeplink would cause the Push Story's content to appear blank.
+  - `StoryPage` safely trims and percent-encodes deeplink strings, dropping invalid values instead of throwing an error.
+  - `StoryView` only scrolls when pages exist, preventing the "Next" action from crashing when the carousel is empty.
+- HTML in-app messages now reuse cached payloads to mitigate app hangs that occur in rare situations during presentation.
+- Templated in-app messages with delayed presentation will now request templated values only after completion of the delay.
+  - This ensures that templated values are most up-to-date with the display of the message.
+  - Previously, the request for templated values would occur at trigger time, prior to the delay.
+
 ## 13.3.0
 
 ##### Added

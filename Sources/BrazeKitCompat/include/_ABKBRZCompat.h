@@ -7,7 +7,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @class Braze;
 @class Appboy;
-@class ABKFeedController;
 @class ABKContentCardsController;
 @class ABKInAppMessageController;
 @class ABKLocationManager;
@@ -25,7 +24,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic, nullable) Braze *braze;
 @property (strong, nonatomic, nullable) Appboy *appboy;
 
-@property (strong, nonatomic, readonly) ABKFeedController *feedController;
 @property (strong, nonatomic, readonly) ABKContentCardsController *contentCardsController;
 @property (strong, nonatomic, nullable) id<ABKIDFADelegate> idfaDelegate;
 @property (strong, nonatomic, nullable) id<ABKSdkAuthenticationDelegate> sdkAuthenticationDelegate;

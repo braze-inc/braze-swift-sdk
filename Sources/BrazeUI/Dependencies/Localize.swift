@@ -3,7 +3,6 @@ import Foundation
 enum LocalizationSet: String {
   case inAppMessage = "InAppMessageLocalizable"
   case contentCard = "ContentCardsLocalizable"
-  case newsFeed
 }
 
 func localize(_ key: String, for localizationSet: LocalizationSet) -> String {

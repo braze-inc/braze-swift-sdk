@@ -26,7 +26,6 @@
 #endif
 
 @class ABKUser;
-@class ABKFeedController;
 @class ABKContentCardsController;
 @class ABKLocationManager;
 @protocol ABKInAppMessageControllerDelegate;
@@ -240,7 +239,6 @@ typedef NS_OPTIONS(NSUInteger, ABKDeviceOptions) {
 typedef NS_ENUM(NSInteger, ABKChannel) {
   ABKPushNotificationChannel,
   ABKInAppMessageChannel,
-  ABKNewsFeedChannel,
   ABKContentCardChannel,
   ABKUnknownChannel __deprecated_enum_msg("ABKUnknownChannel will be removed in a future update.")
 };
@@ -305,8 +303,6 @@ BRZ_DEPRECATED("renamed to 'Braze'")
  * See ABKUser.h and changeUser:userId below.
  */
 @property (readonly) ABKUser *user;
-
-@property (readonly) ABKFeedController *feedController;
 
 @property (readonly) ABKContentCardsController *contentCardsController;
 
@@ -533,28 +529,11 @@ BRZ_DEPRECATED("renamed to 'Braze'")
 - (void)logPurchase:(NSString *)productIdentifier inCurrency:(NSString *)currencyCode atPrice:(NSDecimalNumber *)price withQuantity:(NSUInteger)quantity andProperties:(nullable NSDictionary *)properties;
 
 /*!
- * If you're displaying cards on your own instead of using ABKFeedViewController, you should still report impressions of
- * the news feed back to Braze with this method so that your campaign reporting features still work in the dashboard.
- */
-- (void)logFeedDisplayed;
-
-/*!
  * If you're displaying content cards on your own instead of using ABKContentCardsViewController, you should still report
  * impressions of the content cards back to Braze with this method so that your campaign reporting features still work
  * in the dashboard.
  */
 - (void)logContentCardsDisplayed;
-
-/*!
- * Enqueues a news feed request for the current user. Note that if the queue already contains another request for the
- * current user, that the new feed request will be merged into the already existing request and only one will execute
- * for that user.
- *
- * When the new cards for news feed return from Braze server, the SDK will post an ABKFeedUpdatedNotification with an
- * ABKFeedUpdatedIsSuccessfulKey in the notification's userInfo dictionary to indicate if the news feed request is successful
- * or not. For more detail about the ABKFeedUpdatedNotification and the ABKFeedUpdatedIsSuccessfulKey, please check ABKFeedController.
- */
-- (void)requestFeedRefresh;
 
 /*!
  * Enqueues a content cards request for the current user.

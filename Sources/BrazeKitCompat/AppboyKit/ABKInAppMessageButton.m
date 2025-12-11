@@ -45,8 +45,6 @@
 
 - (ABKInAppMessageClickActionType)buttonClickActionType {
   switch (self.button.clickAction) {
-  case BRZInAppMessageRawClickActionNewsFeed:
-    return ABKInAppMessageDisplayNewsFeed;
   case BRZInAppMessageRawClickActionURL:
     return ABKInAppMessageRedirectToURI;
   case BRZInAppMessageRawClickActionNone:
@@ -75,10 +73,6 @@
 - (void)setButtonClickAction:(ABKInAppMessageClickActionType)clickActionType
                      withURI:(NSURL *)uri {
   switch (clickActionType) {
-  case ABKInAppMessageDisplayNewsFeed:
-    self.button.clickAction = BRZInAppMessageRawClickActionNewsFeed;
-    self.button.url = nil;
-    break;
   case ABKInAppMessageRedirectToURI:
     self.button.clickAction = BRZInAppMessageRawClickActionURL;
     self.button.url = uri;

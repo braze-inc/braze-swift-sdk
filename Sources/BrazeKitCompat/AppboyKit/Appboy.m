@@ -53,10 +53,6 @@
        withAppboyOptions:appboyOptions];
 }
 
-- (ABKFeedController *)feedController {
-  return self.braze.feedController;
-}
-
 - (ABKContentCardsController *)contentCardsController {
   return self.braze.contentCardsController;
 }
@@ -202,16 +198,8 @@
             andProperties:properties];
 }
 
-- (void)logFeedDisplayed {
-  [self.braze logFeedDisplayed];
-}
-
 - (void)logContentCardsDisplayed {
   [self.braze logContentCardsDisplayed];
-}
-
-- (void)requestFeedRefresh {
-  [self.braze requestFeedRefresh];
 }
 
 - (void)requestContentCardsRefresh {

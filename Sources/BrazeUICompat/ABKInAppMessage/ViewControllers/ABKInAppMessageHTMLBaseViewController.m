@@ -10,7 +10,6 @@ static NSString *const ABKBlankURLString = @"about:blank";
 static NSString *const ABKHTMLInAppButtonIdKey = @"abButtonId";
 static NSString *const ABKHTMLInAppAppboyKey = @"appboy";
 static NSString *const ABKHTMLInAppCloseKey = @"close";
-static NSString *const ABKHTMLInAppFeedKey = @"feed";
 static NSString *const ABKHTMLInAppCustomEventKey = @"customEvent";
 static NSString *const ABKHTMLInAppCustomEventQueryParamNameKey = @"name";
 static NSString *const ABKHTMLInAppExternalOpenKey = @"abExternalOpen";
@@ -356,17 +355,13 @@ runJavaScriptTextInputPanelWithPrompt:(NSString *)prompt
   return queryParams[ABKHTMLInAppButtonIdKey];
 }
 
-// Set the inAppMessage's click action type based on given URL. It's going to be three types:
+// Set the inAppMessage's click action type based on given URL. It's going to be two types:
 // * URL is appboy://close: set click action to be ABKInAppMessageNoneClickAction
-// * URL is appboy://feed: set click action to be ABKInAppMessageDisplayNewsFeed
 // * URL is anything else: set click action to be ABKInAppMessageRedirectToURI and the uri is the URL.
 - (void)setClickActionBasedOnURL:(NSURL *)url {
   if ([ABKUIUtils string:url.scheme.lowercaseString isEqualToString:ABKHTMLInAppAppboyKey]) {
     if ([ABKUIUtils string:url.host.lowercaseString isEqualToString:ABKHTMLInAppCloseKey]) {
       [self.inAppMessage setInAppMessageClickAction:ABKInAppMessageNoneClickAction withURI:nil];
-      return;
-    } else if ([ABKUIUtils string:url.host.lowercaseString isEqualToString:ABKHTMLInAppFeedKey]) {
-      [self.inAppMessage setInAppMessageClickAction:ABKInAppMessageDisplayNewsFeed withURI:nil];
       return;
     }
   }

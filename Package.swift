@@ -49,8 +49,8 @@ let package = Package(
   targets: [
     .binaryTarget(
       name: "BrazeKit",
-      url: "https://github.com/braze-inc/braze-swift-sdk/releases/download/13.3.0/BrazeKit.zip",
-      checksum: "b5cb0a5d1256f08373e0cf8f62c8e7caff6809589b47f258468dedd0d941930d"
+      url: "https://github.com/braze-inc/braze-swift-sdk/releases/download/14.0.0/BrazeKit.zip",
+      checksum: "1660f843eb98fc36001741e0b9334760542b8982c7d540e850a96ecd83d8f7fa"
     ),
     .target(
       name: "BrazeUI",
@@ -61,18 +61,18 @@ let package = Package(
     ),
     .binaryTarget(
       name: "BrazeLocation",
-      url: "https://github.com/braze-inc/braze-swift-sdk/releases/download/13.3.0/BrazeLocation.zip",
-      checksum: "326ea4761bb8541325a639fea04548cb244b19cb6719f508cf340fba4d7fe152"
+      url: "https://github.com/braze-inc/braze-swift-sdk/releases/download/14.0.0/BrazeLocation.zip",
+      checksum: "7190b82304871c2c4ad891f871198862f6c42040e371b7f4a58e3c49b0d2cb41"
     ),
     .binaryTarget(
       name: "BrazeNotificationService",
-      url: "https://github.com/braze-inc/braze-swift-sdk/releases/download/13.3.0/BrazeNotificationService.zip",
-      checksum: "d746f9a1fe4b659f75bad5bec5e16293326153adad1caa5ace2e10bb234876f7"
+      url: "https://github.com/braze-inc/braze-swift-sdk/releases/download/14.0.0/BrazeNotificationService.zip",
+      checksum: "96f6ae359425b541cf38a5f07483a5830c5fc2fda94043ed8a85770e537e7195"
     ),
     .binaryTarget(
       name: "BrazePushStory",
-      url: "https://github.com/braze-inc/braze-swift-sdk/releases/download/13.3.0/BrazePushStory.zip",
-      checksum: "72a9b1c2cfa80265e32258cf3d88cd5e9b921f3ad3f8a10cb00b3d93329081dd"
+      url: "https://github.com/braze-inc/braze-swift-sdk/releases/download/14.0.0/BrazePushStory.zip",
+      checksum: "b519ddfbd2a6ad5a7b94368a17233aa8693eb3d31cd5d88bf6ece43e6c1ab5bb"
     ),
     .target(
       name: "BrazeKitCompat",
@@ -88,7 +88,6 @@ let package = Package(
         "SDWebImage",
       ],
       resources: [
-        .process("ABKNewsFeed/Resources"),
         .process("ABKInAppMessage/Resources"),
         .process("ABKContentCards/Resources")
       ],

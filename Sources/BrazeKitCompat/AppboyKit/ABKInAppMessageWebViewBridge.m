@@ -40,14 +40,6 @@
               NSLog(@"[BrazeKitCompat] ABKInAppMessageWebViewBridge Error: %@",
                     error.localizedDescription);
             }
-            showNewsFeed:^{
-              if ([weakSelf.delegate respondsToSelector:@selector
-                                     (webViewBridge:receivedClickAction:)]) {
-                [weakSelf.delegate
-                          webViewBridge:weakSelf
-                    receivedClickAction:ABKInAppMessageDisplayNewsFeed];
-              }
-            }
             closeMessage:^{
               if ([weakSelf.delegate respondsToSelector:@selector
                                      (closeMessageWithWebViewBridge:)]) {

@@ -39,17 +39,16 @@ extension BrazeInAppMessageUI {
 
       setTitle(button.text, for: .normal)
       titleLabel?.adjustsFontForContentSizeCategory = true
-      titleLabel?.adjustsFontSizeToFitWidth = true
       layer.masksToBounds = true
-      
+
       addAccessibilityAltText(button.text)
 
       setContentCompressionResistancePriority(.required, for: .vertical)
 
       minWidthConstraint = anchors.width.greaterThanOrEqual(0)
       minWidthConstraint.priority = .defaultHigh
-      maxHeightContraint = anchors.height.lessThanOrEqual(0)
-      maxHeightContraint.priority = .defaultHigh
+      maxHeightConstraint = anchors.height.lessThanOrEqual(0)
+      maxHeightConstraint.priority = .defaultHigh
 
       applyTheme()
       applyAttributes()
@@ -103,7 +102,7 @@ extension BrazeInAppMessageUI {
       ///
       /// Default: `44pt.`
       public var maxHeight: Double = 44
-      
+
       /// The language (BCP 47 format) of narrator to use when reading content in accessibility VoiceOver mode.
       ///
       /// Default: `nil`, which uses the system language.
@@ -136,6 +135,7 @@ extension BrazeInAppMessageUI {
     open func applyAttributes() {
       if #available(iOS 15.0, visionOS 1.0, *) {
         configuration?.contentInsets = attributes.padding.directionalEdgeInsets
+        configuration?.titleLineBreakMode = .byTruncatingTail
         configuration?.titleTextAttributesTransformer = .init { [attributes] inc in
           var out = inc
           out.font = attributes.font
@@ -144,20 +144,30 @@ extension BrazeInAppMessageUI {
       } else {
         contentEdgeInsets = attributes.padding
         titleLabel?.font = attributes.font
+        titleLabel?.lineBreakMode = .byTruncatingTail
       }
       layer.borderWidth = attributes.borderWidth
       layer.cornerRadius = attributes.cornerRadius
 
       minWidthConstraint.constant = attributes.minWidth
-      maxHeightContraint.constant = attributes.maxHeight
+      maxHeightConstraint.constant = attributes.maxHeight
 
       invalidateIntrinsicContentSize()
     }
 
     // MARK: - Layout
 
-    var minWidthConstraint: NSLayoutConstraint!
-    var maxHeightContraint: NSLayoutConstraint!
+      lazy var minWidthConstraint: NSLayoutConstraint = {
+        let constraint = anchors.width.greaterThanOrEqual(0)
+        constraint.priority = .defaultHigh
+        return constraint
+      }()
+
+      lazy var maxHeightConstraint: NSLayoutConstraint = {
+        let constraint = anchors.height.lessThanOrEqual(0)
+        constraint.priority = .defaultHigh
+        return constraint
+      }()
 
     open override var intrinsicContentSize: CGSize {
       CGSize(

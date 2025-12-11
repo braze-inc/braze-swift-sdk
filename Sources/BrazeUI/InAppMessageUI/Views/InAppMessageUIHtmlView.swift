@@ -82,6 +82,12 @@ extension BrazeInAppMessageUI {
 
     /// The view attributes (see ``Attributes-swift.struct``).
     public let attributes: Attributes
+    private let persistence: InAppMessagePersistenceProtocol
+    private lazy var htmlRenderer: HtmlViewRenderer = HtmlViewRenderer(
+      persistence: persistence,
+      webViewProvider: { [weak self] in self?.webView },
+      onFailure: { [weak self] error in self?.handleHtmlPersistenceError(error) }
+    )
 
     // MARK: - Animation
 
@@ -144,13 +150,28 @@ extension BrazeInAppMessageUI {
 
     // MARK: - LifeCycle
 
-    public init(
+    public convenience init(
       message: Braze.InAppMessage.Html,
       attributes: Attributes = .defaults,
       presented: Bool = false
     ) {
+      self.init(
+        message: message,
+        attributes: attributes,
+        presented: presented,
+        persistence: InAppMessagePersistenceQueueWriter()
+      )
+    }
+
+    init(
+      message: Braze.InAppMessage.Html,
+      attributes: Attributes = .defaults,
+      presented: Bool = false,
+      persistence: InAppMessagePersistenceProtocol
+    ) {
       self.messageWrapper = .init(wrappedValue: message)
       self.attributes = attributes
+      self.persistence = persistence
       self.presented = presented
       super.init(frame: .zero)
 
@@ -321,6 +342,7 @@ extension BrazeInAppMessageUI {
     }
 
     open func loadMessage() {
+      // Ensure we have a writable base directory before attempting any disk IO.
       guard let baseURL = message.baseURL else {
         logError(.htmlNoBaseURL)
         messageWrapper.wrappedValue.animateOut = false
@@ -328,19 +350,21 @@ extension BrazeInAppMessageUI {
         return
       }
 
-      // Create directory if needed
-      try? FileManager.default.createDirectory(
-        at: baseURL,
-        withIntermediateDirectories: true,
-        attributes: nil
+      // Build a payload representing the HTML content and target directory on disk.
+      let payload = HtmlViewRenderer.Payload(
+        html: messageWrapper.wrappedValue.message,
+        baseURL: baseURL
       )
 
-      // Write index.html
-      let index = baseURL.appendingPathComponent("index.html")
-      try? messageWrapper.wrappedValue.message.write(to: index, atomically: true, encoding: .utf8)
-
-      // Load
-      webView?.loadFileURL(index, allowingReadAccessTo: baseURL)
+      // Delegate to the renderer so it can persist the HTML off the main thread and load it when ready.
+      htmlRenderer.update(
+        with: InAppMessageContentStateFactory.html(
+          message: messageWrapper.wrappedValue,
+          baseURL: baseURL,
+          traits: traitCollection
+        ),
+        payload: payload
+      )
     }
 
     open func processNavigationAction(
@@ -517,6 +541,12 @@ extension BrazeInAppMessageUI.HtmlView {
       .filter { $0["CFBundleTypeRole"] as? String == "Editor" }
       .flatMap { $0["CFBundleURLSchemes"] as? [String] ?? [] }
   }()
+
+  private func handleHtmlPersistenceError(_ error: Error) {
+    logError(.htmlFileWrite(.init(error)))
+    messageWrapper.wrappedValue.animateOut = false
+    dismiss()
+  }
 
 }
 

@@ -19,7 +19,9 @@ extension BrazeInAppMessageUI {
 
     /// The view's attributes for customization.
     public var attributes: Attributes {
-      didSet { updateTextViewContent() }
+      didSet {
+        updateTextViewContent(oldAttributes: oldValue)
+      }
     }
 
     /// The language (BCP 47 format) of narrator to use when reading content in accessibility VoiceOver mode.
@@ -30,6 +32,9 @@ extension BrazeInAppMessageUI {
         textView.accessibilityLanguage = language
       }
     }
+
+    /// The object responsible for styling the text view.
+    private let styler: any ModalTextStyling
 
     private let textView: UITextView = {
       let textView = UITextView()
@@ -64,11 +69,19 @@ extension BrazeInAppMessageUI {
     ///   - attributes: The attributes for customization.
     ///   - language: The language (BCP 47 format) of narrator to use when reading content in accessibility
     ///   VoiceOver mode. Defaults to using the user's system language.
-    public init(header: String, message: String, attributes: Attributes, language: String? = nil) {
+    ///   - styler: The object responsible for styling the text view. Defaults to `ModalTextStyler`.
+    internal init(
+      header: String,
+      message: String,
+      attributes: Attributes,
+      language: String? = nil,
+      styler: any ModalTextStyling
+    ) {
       self.header = header
       self.message = message
       self.attributes = attributes
       self.language = language
+      self.styler = styler
 
       super.init(frame: .zero)
 
@@ -86,6 +99,29 @@ extension BrazeInAppMessageUI {
       heightConstraint.priority = .defaultLow
     }
 
+    /// Creates and returns a modal text view.
+    /// - Parameters:
+    ///   - header: The header string.
+    ///   - message: The message string.
+    ///   - attributes: The attributes for customization.
+    ///   - language: The language (BCP 47 format) of narrator to use when reading content in accessibility
+    ///   VoiceOver mode. Defaults to using the user's system language.
+    public convenience init(
+      header: String,
+      message: String,
+      attributes: Attributes,
+      language: String? = nil
+    ) {
+      self.init(
+        header: header,
+        message: message,
+        attributes: attributes,
+        language: language,
+        styler: ModalTextStyler()
+      )
+    }
+
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
       fatalError("init(coder:) has not been implemented")
     }
@@ -128,64 +164,16 @@ extension BrazeInAppMessageUI {
       public var lineHeightMultiple: CGFloat = 0.0
     }
 
-    // MARK: - Misc.
+    // MARK: - Content Updates
 
-    /// Manually-tuned values to get us closer to our visual spec.
-    private enum Layout {
-      static let headerLineSpacingScaleFactor = 0.78
-      static let messageLineSpacingScaleFactor = 0.47
-      static let headerMessageSpacingOffset = 1.0
-    }
-
-    private func updateTextViewContent() {
-      let text = NSMutableAttributedString()
-
-      // Header
-      text.append(
-        header.attributed(
-          with: [
-            .font: attributes.header.font,
-            .foregroundColor: attributes.header.color,
-          ],
-          {
-            $0.lineSpacing =
-              attributes.header.lineSpacing ?? (2 * Layout.headerLineSpacingScaleFactor)
-            $0.alignment = attributes.header.alignment
-            $0.paragraphSpacing = max(
-              0.0,
-              attributes.headerMessageSpacing - Layout.headerMessageSpacingOffset
-            )
-            $0.lineHeightMultiple = attributes.header.lineHeightMultiple
-            $0.minimumLineHeight = attributes.header.minLineHeight
-            $0.maximumLineHeight = attributes.header.maxLineHeight
-          })
+    private func updateTextViewContent(oldAttributes: Attributes? = nil) {
+      styler.apply(
+        to: textView,
+        header: header,
+        message: message,
+        attributes: attributes,
+        oldAttributes: oldAttributes
       )
-
-      // Users don't add newlines to the end of their header text
-      // Insert a newline between header and message, but not with the possible extra styling of the header (e.g. font size, etc.)
-      // The paragraph spacing set above will occur between the header text and this linebreak.
-      text.append(NSAttributedString(string: "\n"))
-
-      // Message
-      text.append(
-        message.attributed(
-          with: [
-            .font: attributes.message.font,
-            .foregroundColor: attributes.message.color,
-          ]
-        ) {
-          $0.lineSpacing =
-            attributes.message.lineSpacing ?? (4 * Layout.messageLineSpacingScaleFactor)
-          $0.alignment = attributes.message.alignment
-
-          $0.lineHeightMultiple = attributes.message.lineHeightMultiple
-          $0.minimumLineHeight = attributes.message.minLineHeight
-          $0.maximumLineHeight = attributes.message.maxLineHeight
-        }
-      )
-
-      textView.attributedText = text
-      textView.addAccessibilityAltText(text.string)
     }
 
   }

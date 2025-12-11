@@ -45,7 +45,6 @@ typedef NS_ENUM(NSInteger, ABKChannel);
 
 + (NSString *)getLocalizedString:(NSString *)key inAppboyBundle:(NSBundle *)appboyBundle table:(NSString *)table;
 + (BOOL)objectIsValidAndNotEmpty:(id)object;
-+ (Class)getModalFeedViewControllerClass;
 + (BOOL)isNotchedPhone;
 
 + (UIInterfaceOrientation)getInterfaceOrientation;

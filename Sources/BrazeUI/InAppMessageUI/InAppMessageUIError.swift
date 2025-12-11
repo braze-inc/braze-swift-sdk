@@ -26,6 +26,7 @@ extension BrazeInAppMessageUI {
     case messageContextInvalid
 
     case htmlNoBaseURL
+    case htmlFileWrite(Braze.ErrorString)
     case webViewNavigation(Braze.ErrorString)
     case webViewScript(Braze.WebViewBridge.ScriptMessageHandler.Error)
     case webViewScheme(Braze.WebViewBridge.SchemeHandler.Error)
@@ -102,6 +103,13 @@ extension BrazeInAppMessageUI.Error {
 
     case .htmlNoBaseURL:
       return "Unable to present html in-app message - no base url."
+    case .htmlFileWrite(let error):
+      return
+        """
+        Unable to write HTML in-app message file.
+        - description: \(error.localizedDescription)
+        - error: \(error)
+        """
     case .webViewNavigation(let error):
       return "Unable to load html in web view - \(error.logDescription)"
     case .webViewScript(let error):

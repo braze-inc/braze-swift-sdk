@@ -1,1 +1,3 @@
 "braze.in-app-message.close-button.title" = "sulkea";
+"braze.in-app-message.slideup.image-prefix" = "kuva:";
+"braze.in-app-message.slideup.text-prefix" = "teksti:";
