@@ -1,3 +1,12 @@
+## 14.0.1
+
+##### Fixed
+- Resolves an issue where the handling of universal links defaulted to the `UIApplicationDelegate` implementation instead of the `UISceneDelegate` implementation when the app was not in foreground.
+  - This would occur even if there was no `UIApplicationDelegate` implementation, resulting in dropped universal link handling under such scenarios.
+- Fixes a memory leak where base64-encoded tracking IDs in in-app messages would accumulate on background threads.
+- Resolves an issue where in-app messages were not dismissed when the user is changed, resulting in the user seeing incorrect content.
+  - This change also adds `changeUser` dismissal reason for in-app messages.
+
 ## 14.0.0
 
 ##### Breaking

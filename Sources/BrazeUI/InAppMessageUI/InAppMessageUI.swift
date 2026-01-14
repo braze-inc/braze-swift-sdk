@@ -129,7 +129,7 @@ open class BrazeInAppMessageUI:
 
   public func dismiss(reason: Braze.InAppMessage.DismissalReason) {
     switch reason {
-    case .wipeData:
+    case .wipeData, .changeUser:
       // Clear internal state
       stack.removeAll()
       localAssetsCancellable = nil
