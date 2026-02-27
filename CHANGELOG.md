@@ -1,3 +1,11 @@
+## 14.0.2
+
+##### Fixed
+- Fixes the SwiftUI implementation of `BannerView` to update Banner contents in-place whenever a refresh has succeeded.
+- Re-exposes the public initializer of `BrazeInAppMessageUI.HtmlView` as a designated `init` instead of a `convenience init`, which was introduced in version `14.0.0`
+  - This allows subclasses of `HtmlView` to access the public initializer.
+- Improves robustness of internal SDK logic around dictionary access to prevent potential crashes.
+
 ## 14.0.1
 
 ##### Fixed

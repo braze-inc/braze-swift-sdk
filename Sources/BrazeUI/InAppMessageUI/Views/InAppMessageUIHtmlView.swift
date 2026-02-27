@@ -150,17 +150,18 @@ extension BrazeInAppMessageUI {
 
     // MARK: - LifeCycle
 
-    public convenience init(
+    public init(
       message: Braze.InAppMessage.Html,
       attributes: Attributes = .defaults,
       presented: Bool = false
     ) {
-      self.init(
-        message: message,
-        attributes: attributes,
-        presented: presented,
-        persistence: InAppMessagePersistenceQueueWriter()
-      )
+      self.messageWrapper = .init(wrappedValue: message)
+      self.attributes = attributes
+      self.presented = presented
+      self.persistence = InAppMessagePersistenceQueueWriter()
+      super.init(frame: .zero)
+
+      registerForTraitChanges()
     }
 
     init(
@@ -171,17 +172,11 @@ extension BrazeInAppMessageUI {
     ) {
       self.messageWrapper = .init(wrappedValue: message)
       self.attributes = attributes
-      self.persistence = persistence
       self.presented = presented
+      self.persistence = persistence
       super.init(frame: .zero)
 
-      #if os(visionOS)
-        registerForTraitChanges([
-          UITraitActiveAppearance.self
-        ]) { (self: Self, _: UITraitCollection) in
-          self.attributes.onTheme?(self)
-        }
-      #endif
+      registerForTraitChanges()
     }
 
     @available(*, unavailable)
@@ -211,6 +206,17 @@ extension BrazeInAppMessageUI {
         attributes.onTheme?(self)
       }
     #endif
+
+    /// Sets up the listener for trait changes on visionOS.
+    func registerForTraitChanges() {
+      #if os(visionOS)
+        registerForTraitChanges([
+          UITraitActiveAppearance.self
+        ]) { (self: Self, _: UITraitCollection) in
+          self.attributes.onTheme?(self)
+        }
+      #endif
+    }
 
     // MARK: - Layout
 

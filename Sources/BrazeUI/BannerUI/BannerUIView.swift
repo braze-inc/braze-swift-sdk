@@ -173,6 +173,7 @@ extension BrazeBannerUI {
         return
       }
 
+      self.hasContentLoaded = false
       self.banner = banner
       DispatchQueue.main.async { [weak self] in
         self?.webView?.loadHTMLString(banner.html, baseURL: nil)

@@ -20,12 +20,6 @@
       let braze: Braze
       let processContentUpdates: ((Result<BrazeBannerUI.ContentUpdates, Swift.Error>) -> Void)?
 
-      /// Internal state property to trigger `updateUIView` whenever new banners are received from the platform.
-      @State var banner: Braze.Banner? = nil
-
-      /// Internal state property to trigger `updateUIView` whenever banners are refreshed with an error.
-      @State var error: Swift.Error? = nil
-
       /// Initializes a SwiftUI-compatible version of the Braze Banner view.
       ///
       /// - Parameter placementId: The placement ID for the banner.
@@ -51,18 +45,17 @@
       }
 
       public func updateUIView(_ uiView: BannerUIView, context: Context) {
-        if let banner {
-          uiView.render(with: banner)
-        } else {
-          uiView.removeBannerContent()
-        }
-
-        if let error {
-          uiView.notifyError(error)
-
-          // Nullify the error after using so it doesn't get reported multiple times.
-          DispatchQueue.main.async {
-            self.error = nil
+        context.coordinator.didReceiveUpdate = { [weak uiView] result in
+          guard let uiView else { return }
+          switch result {
+          case .success(let banner):
+            if let banner {
+              uiView.render(with: banner)
+            } else {
+              uiView.removeBannerContent()
+            }
+          case .failure(let error):
+            uiView.notifyError(error)
           }
         }
       }
@@ -85,41 +78,32 @@
       public let placementId: String
       let impressionTracker: BrazeBannerUI.BannersImpressionTracker
 
-      var didReceiveUpdate: (Result<Braze.Banner?, Swift.Error>) -> Void
+      var didReceiveUpdate: ((Result<Braze.Banner?, Swift.Error>) -> Void)?
 
       init(
         placementId: String,
-        didReceiveUpdate: @escaping (Result<Braze.Banner?, Swift.Error>) -> Void,
         impressionTracker: BrazeBannerUI.BannersImpressionTracker? = nil
       ) {
         self.placementId = placementId
-        self.didReceiveUpdate = didReceiveUpdate
         self.impressionTracker = impressionTracker ?? .shared
       }
 
       public func render(with banner: BrazeKit.Braze.Banner) {
-        didReceiveUpdate(.success(banner))
+        didReceiveUpdate?(.success(banner))
       }
 
       public func notifyError(_ error: Error) {
-        didReceiveUpdate(.failure(error))
+        didReceiveUpdate?(.failure(error))
       }
 
       public func removeBannerContent() {
-        didReceiveUpdate(.success(nil))
+        didReceiveUpdate?(.success(nil))
       }
 
     }
 
     public func makeCoordinator() -> Coordinator {
-      let coordinator = Coordinator(placementId: self.placementId) { result in
-        switch result {
-        case .success(let banner):
-          self.banner = banner
-        case .failure(let error):
-          self.error = error
-        }
-      }
+      let coordinator = Coordinator(placementId: self.placementId)
       self.braze.banners.registerView(coordinator)
       coordinator.impressionTracker.startSessionTracking(with: braze)
       return coordinator
