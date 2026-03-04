@@ -49,8 +49,7 @@ let package = Package(
   targets: [
     .binaryTarget(
       name: "BrazeKit",
-      url: "https://github.com/braze-inc/braze-swift-sdk/releases/download/14.0.2/BrazeKit.zip",
-      checksum: "79e6a21322ba0cacae12575226d4be53e05b6ddf8827ebed4d99cf9354f92c3e"
+      path: "BrazeKit.xcframework"
     ),
     .target(
       name: "BrazeUI",
@@ -61,18 +60,15 @@ let package = Package(
     ),
     .binaryTarget(
       name: "BrazeLocation",
-      url: "https://github.com/braze-inc/braze-swift-sdk/releases/download/14.0.2/BrazeLocation.zip",
-      checksum: "e29a6a9b45c0a94e04fa1dd8572be2461ac5f12cf423b57d68848597a28f5e62"
+      path: "BrazeLocation.xcframework"
     ),
     .binaryTarget(
       name: "BrazeNotificationService",
-      url: "https://github.com/braze-inc/braze-swift-sdk/releases/download/14.0.2/BrazeNotificationService.zip",
-      checksum: "9ff32d6779961da330cb1146b8e639a2c7d4b70a3f6c4629c9add95ad8284038"
+      path: "BrazeNotificationService.xcframework"
     ),
     .binaryTarget(
       name: "BrazePushStory",
-      url: "https://github.com/braze-inc/braze-swift-sdk/releases/download/14.0.2/BrazePushStory.zip",
-      checksum: "c219614b8a93588d0c12759638e94a786bf57974dba61571e9a1f91befc682be"
+      path: "BrazePushStory.xcframework"
     ),
     .target(
       name: "BrazeKitCompat",
