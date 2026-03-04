@@ -1,8 +1,3 @@
-## 14.0.3
-
-##### Fixed
-- Push Stories now filter out invalid pages so users can still navigate through remaining valid pages.
-
 ## 14.0.2
 
 ##### Fixed

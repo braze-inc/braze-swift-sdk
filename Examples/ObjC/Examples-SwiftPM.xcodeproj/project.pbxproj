@@ -1,0 +1,2382 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 54;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		04ABB1F6B9F73AAAC87714B4 /* Credentials.m in Sources */ = {isa = PBXBuildFile; fileRef = A900B781B2DFE220B129E338 /* Credentials.m */; };
+		0660D42F760AE4E46AD69562 /* BrazeKit in Frameworks */ = {isa = PBXBuildFile; productRef = B886221109B13C767819BA7C /* BrazeKit */; };
+		07995DC0FD113700D297A5AA /* ReadmeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA72C16B9A189DE9D4D7A58 /* ReadmeViewController.m */; };
+		09CEE69C09EA2F85F9BA7609 /* Credentials.m in Sources */ = {isa = PBXBuildFile; fileRef = A900B781B2DFE220B129E338 /* Credentials.m */; };
+		0B298EF42BAE73A61618FED4 /* BrazeKit in Frameworks */ = {isa = PBXBuildFile; productRef = 710652AF50043CF76221D1D8 /* BrazeKit */; };
+		0B3BB78BFCEFB203775E1600 /* PushNotificationsServiceExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = B5666DA142189EEEDFAFB41F /* PushNotificationsServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		0D40BBCEFD7AE21423024F13 /* empty-file.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F9A5B35B5C55AF7BAC0EA5 /* empty-file.swift */; };
+		0E8EDD9BB75CC896A60C2E6F /* Readme.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFCA5A7A3B8EF9BFE4BF145 /* Readme.m */; };
+		123944DA228A07A27CA8FE20 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA022D2664E917AB6DF910C /* AppDelegate.m */; };
+		132D504B0EABCACA4F5697AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FCD17EEF41713F18F4CA702 /* Assets.xcassets */; };
+		169FF56C826D2FFB93F61A02 /* BrazeKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8603B741E7060A7D18612200 /* BrazeKit */; };
+		1706C805A425B9891F03C685 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FCD17EEF41713F18F4CA702 /* Assets.xcassets */; };
+		192400F4407E861A42E5D31B /* BrazeKit in Frameworks */ = {isa = PBXBuildFile; productRef = 56B0C3BB439D22B39FD34A28 /* BrazeKit */; };
+		1DA9FEF369A4E15D2B76215A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BE6866047868E31857FEB14 /* AppDelegate.m */; };
+		2245F5622601D5013C6E5577 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 54DC394BE5B4E5BA7093FEEF /* AppDelegate.m */; };
+		24400D6B97710B109BDD8A60 /* BrazePushStory in Frameworks */ = {isa = PBXBuildFile; productRef = 5133F5A2D91882A4AE649D4D /* BrazePushStory */; };
+		2553ED24C2112991F382CF3A /* BrazeUI in Frameworks */ = {isa = PBXBuildFile; productRef = 5FDBAD51FF3A992AEB226099 /* BrazeUI */; };
+		27ECC4ED9EABA2405DF780CC /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 64EAC9A16C6BB0EA49C9157A /* SDWebImage */; };
+		2C47D73C2D8F2F68DF83612B /* BrazeNotificationService in Frameworks */ = {isa = PBXBuildFile; productRef = 47F3E12B1114B00B4CB70C60 /* BrazeNotificationService */; };
+		2E1DF7C49B03F38BCE5285E7 /* BrazeUI in Frameworks */ = {isa = PBXBuildFile; productRef = 0891F7D29EA51A994793513D /* BrazeUI */; };
+		33C23221D1FD4E12233559C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FCD17EEF41713F18F4CA702 /* Assets.xcassets */; };
+		35B59884EE2548DE02C9953C /* CardsInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5634FD53344A83FD267AB580 /* CardsInfoViewController.m */; };
+		35BF107E8A22715D1FBF05EB /* Credentials.m in Sources */ = {isa = PBXBuildFile; fileRef = A900B781B2DFE220B129E338 /* Credentials.m */; };
+		36656D5D919225765A697238 /* Credentials.m in Sources */ = {isa = PBXBuildFile; fileRef = A900B781B2DFE220B129E338 /* Credentials.m */; };
+		3B5A9CCB48E3991920B2C446 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6459ADE015D6A93F4DDEF4D8 /* main.m */; };
+		3C2431D4633D61A92CD9F814 /* PushNotificationsContentExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = A7B092ACAEC915379923328F /* PushNotificationsContentExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		3C39E7E58C01C8CE44D9BAC5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6459ADE015D6A93F4DDEF4D8 /* main.m */; };
+		3E6B194C548511577D79ACA9 /* BrazeUI in Frameworks */ = {isa = PBXBuildFile; productRef = E8F0CDD2BA63A81551367410 /* BrazeUI */; };
+		3E6D81E2DD6BA6B5F8E30BAE /* ReadmeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA72C16B9A189DE9D4D7A58 /* ReadmeViewController.m */; };
+		41CFC07655CF0A3FB6E2ADE2 /* NotAvailableInObjC.m in Sources */ = {isa = PBXBuildFile; fileRef = EF84C935C8D4200A2401B6E1 /* NotAvailableInObjC.m */; };
+		4484E207BCFD002822F2BB7D /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE00D10FF658213E5A00188D /* NotificationViewController.swift */; };
+		4A7CFEAEF687982DD12D2985 /* PushNotificationsContentExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = A7B092ACAEC915379923328F /* PushNotificationsContentExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		50D8D4EB19BF8DB20DF34B8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FCD17EEF41713F18F4CA702 /* Assets.xcassets */; };
+		52CAA705E5A2A6B084470A6B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FCD17EEF41713F18F4CA702 /* Assets.xcassets */; };
+		5489F499BAD776AAF047FE41 /* PushNotificationsContentExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = A7B092ACAEC915379923328F /* PushNotificationsContentExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		54E8D58237B1B94EEBF67682 /* BRZGIFViewProvider+SDWebImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A6F4B2BEAD3CC7A8F9250E8 /* BRZGIFViewProvider+SDWebImage.m */; };
+		5682AF0A97678D2E008636A0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BC5EE8BE3BAD32DB6D66AC70 /* AppDelegate.m */; };
+		56A9503D2DE9A0187181B9AD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8783B6A324D425D55615AFD9 /* AppDelegate.m */; };
+		5C46A726B573C78D24809762 /* BrazeKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1BF6D20F4E3962FBB5B92AF3 /* BrazeKit */; };
+		5D3DC164C01F1693AB940603 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6459ADE015D6A93F4DDEF4D8 /* main.m */; };
+		5DF2674CA83F6ECC633EDA99 /* Credentials.m in Sources */ = {isa = PBXBuildFile; fileRef = A900B781B2DFE220B129E338 /* Credentials.m */; };
+		64E392623EFC0EDFCBA52E38 /* empty-file.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F9A5B35B5C55AF7BAC0EA5 /* empty-file.swift */; };
+		6D2A781F030467865F95A781 /* InAppMessageInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF02C869BF9AFF144C7C90DF /* InAppMessageInfoViewController.m */; };
+		6D37F619E60F577AF2FB208D /* BrazeKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9720FE32CFB77D7E0319A501 /* BrazeKit */; };
+		72B34E806548749A8D2BB495 /* ReadmeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA72C16B9A189DE9D4D7A58 /* ReadmeViewController.m */; };
+		75230F2FAD54A48F6AAE5341 /* Credentials.m in Sources */ = {isa = PBXBuildFile; fileRef = A900B781B2DFE220B129E338 /* Credentials.m */; };
+		7CFDF51A3B73EE52EFB93AE6 /* PushNotificationsServiceExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = B5666DA142189EEEDFAFB41F /* PushNotificationsServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		7F18A6ABA418E714F2E9FC75 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6459ADE015D6A93F4DDEF4D8 /* main.m */; };
+		80A7523D239AEE0E2DEE0DBB /* PushNotificationsServiceExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = B5666DA142189EEEDFAFB41F /* PushNotificationsServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		83179E87F34EF8488F3C09EE /* empty-file.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F9A5B35B5C55AF7BAC0EA5 /* empty-file.swift */; };
+		84B02A6E08D76AE5A66A561D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6459ADE015D6A93F4DDEF4D8 /* main.m */; };
+		850853B18B7DB34ADBCB56D2 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 6406D8C02D350722AE48DE31 /* SDWebImage */; };
+		85961060173CC12347896B7C /* ReadmeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA72C16B9A189DE9D4D7A58 /* ReadmeViewController.m */; };
+		86FE98F6F784798BAD8E759E /* ReadmeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA72C16B9A189DE9D4D7A58 /* ReadmeViewController.m */; };
+		87824C15AAA2003EC964C107 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08CE7C19F258AF40B394B358 /* UserNotifications.framework */; };
+		87C3CFDDFECB5F3B4477D98B /* empty-file.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F9A5B35B5C55AF7BAC0EA5 /* empty-file.swift */; };
+		89759DEB80D4EEE3A9DFA3F7 /* empty-file.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F9A5B35B5C55AF7BAC0EA5 /* empty-file.swift */; };
+		8E665BA6E1ECBC079DC8F962 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F5CA3297B4978C4916EBCC5 /* AppDelegate.m */; };
+		8FEC271CD3BBE8918EAC74D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FCD17EEF41713F18F4CA702 /* Assets.xcassets */; };
+		904106D5D0DCB422BFFC0702 /* BrazeKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9BAE4406D94C39537917176F /* BrazeKit */; };
+		9045C48A41E6C9FE7BF2DB50 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6459ADE015D6A93F4DDEF4D8 /* main.m */; };
+		908501329354B80A45EFD05F /* BrazeKit in Frameworks */ = {isa = PBXBuildFile; productRef = 4EC00DCCE10936877006ED4B /* BrazeKit */; };
+		9102B7E0F26046AD1FDE3D16 /* Readme.m in Sources */ = {isa = PBXBuildFile; fileRef = F9E6C11F27DDDD5C6E6AD3AE /* Readme.m */; };
+		929CD2A8A23F56E66DB94112 /* empty-file.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F9A5B35B5C55AF7BAC0EA5 /* empty-file.swift */; };
+		93F56B30055D001DF05356A5 /* BrazeUI in Frameworks */ = {isa = PBXBuildFile; productRef = 624AA955B2621EE8B5A153AE /* BrazeUI */; };
+		949F18A735AE80D5213E51A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FCD17EEF41713F18F4CA702 /* Assets.xcassets */; };
+		9582A148124B27B2FED8FA0C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F7D912E013554F7C8A41F0ED /* AppDelegate.m */; };
+		96DD3EF523919DE8E912D45A /* CheckoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFCDF89427142AC55571D3A4 /* CheckoutViewController.m */; };
+		970E129EDC8F2E439C0C0823 /* Readme.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F278DD5EBF9747004183C8F /* Readme.m */; };
+		97403331CA7F887B935DBC01 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6459ADE015D6A93F4DDEF4D8 /* main.m */; };
+		9A4DB2119944DCC81C5561CF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6459ADE015D6A93F4DDEF4D8 /* main.m */; };
+		9AF111E606D01AE0A6083C4D /* Credentials.m in Sources */ = {isa = PBXBuildFile; fileRef = A900B781B2DFE220B129E338 /* Credentials.m */; };
+		9BF21EBB274A7B94D2B601CC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0013D8D56F5E3C7963E30A2E /* AppDelegate.m */; };
+		A0289110223C950C43155634 /* FullScreenBannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B61B2602706102FC4E64E5B9 /* FullScreenBannerViewController.m */; };
+		A7D7689D324CFB54651FC94D /* ReadmeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA72C16B9A189DE9D4D7A58 /* ReadmeViewController.m */; };
+		A993F9AB30617C5759D76985 /* empty-file.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F9A5B35B5C55AF7BAC0EA5 /* empty-file.swift */; };
+		AA286BBF813DDDFA3A9E1440 /* empty-file.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F9A5B35B5C55AF7BAC0EA5 /* empty-file.swift */; };
+		AE9B5583963142DD6C7E2B7F /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63F498CAD1B487B718A6064 /* NotificationService.swift */; };
+		AF2CC1B40270C6B61BCB36F3 /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0D325AE1E7E717D151B9B6B /* UserNotificationsUI.framework */; };
+		B36AD5F91B9F069E042F3CB5 /* Credentials.m in Sources */ = {isa = PBXBuildFile; fileRef = A900B781B2DFE220B129E338 /* Credentials.m */; };
+		B3BDA4F943A5C0AD2DEF5A7C /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 2DFFD8844A474098D6408946 /* SDWebImage */; };
+		B5C4502619ADB8C486E46AEC /* Credentials.m in Sources */ = {isa = PBXBuildFile; fileRef = A900B781B2DFE220B129E338 /* Credentials.m */; };
+		B703505115C6B4659E0FE981 /* BrazeLocation in Frameworks */ = {isa = PBXBuildFile; productRef = FCFA9573D5A8726847280A8C /* BrazeLocation */; };
+		B7ABA845C1D8F0EA259FE018 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6459ADE015D6A93F4DDEF4D8 /* main.m */; };
+		B9FD0579C0BD5CB2E1C11C6D /* Credentials.m in Sources */ = {isa = PBXBuildFile; fileRef = A900B781B2DFE220B129E338 /* Credentials.m */; };
+		BBD9966C313CE224A9B7194F /* Readme.m in Sources */ = {isa = PBXBuildFile; fileRef = 40B1FA52497F602A50792867 /* Readme.m */; };
+		BCC0EAFB4BE6ACFA69A9729D /* empty-file.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F9A5B35B5C55AF7BAC0EA5 /* empty-file.swift */; };
+		BDE801705460564F94DE0F0D /* Readme.m in Sources */ = {isa = PBXBuildFile; fileRef = 7509FFDD2664F798C716F648 /* Readme.m */; };
+		BE2FFCF2524274DA78EA813E /* Readme.m in Sources */ = {isa = PBXBuildFile; fileRef = F860D740F25C10FAE51F0DB3 /* Readme.m */; };
+		BF41216C1D111CE29716A956 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FCD17EEF41713F18F4CA702 /* Assets.xcassets */; };
+		C0BE8ED350B4792E68B0460F /* CustomInAppMessagePresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A8584CCE6D9BBC4C2F634BB /* CustomInAppMessagePresenter.m */; };
+		C0EB0E00F930078EBD44FFD4 /* ReadmeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA72C16B9A189DE9D4D7A58 /* ReadmeViewController.m */; };
+		C19B7582791B96C003F1E05D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FCD17EEF41713F18F4CA702 /* Assets.xcassets */; };
+		C20761A80E31DE7D15ADE19C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6459ADE015D6A93F4DDEF4D8 /* main.m */; };
+		C29066DEB0CD5F8386A25B2C /* Credentials.m in Sources */ = {isa = PBXBuildFile; fileRef = A900B781B2DFE220B129E338 /* Credentials.m */; };
+		C610684B33610C4253D8CA2C /* AuthenticationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF7AC51A554A71CFA452B84 /* AuthenticationManager.m */; };
+		C7D552BC12B80792646ED3B5 /* empty-file.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F9A5B35B5C55AF7BAC0EA5 /* empty-file.swift */; };
+		CBA72F5F963855C68A676FB6 /* ReadmeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA72C16B9A189DE9D4D7A58 /* ReadmeViewController.m */; };
+		CF598F420E2A091247934D57 /* WideBannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C80857918925CBF34BB326 /* WideBannerViewController.m */; };
+		D117EDCFC5FADDCD2F3C475F /* NotAvailableInObjC.m in Sources */ = {isa = PBXBuildFile; fileRef = 71CF9250418324FDD933C503 /* NotAvailableInObjC.m */; };
+		D9C6A59CE85BAB7EFE4861B0 /* ReadmeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA72C16B9A189DE9D4D7A58 /* ReadmeViewController.m */; };
+		DA9105FC44F03B9C044F6C1B /* Readme.m in Sources */ = {isa = PBXBuildFile; fileRef = 75CC1E79A9D6815B60835BA2 /* Readme.m */; };
+		DB13431FC72E0BCD34A86902 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 77C32D8D5EBCD917A23EE382 /* SDWebImage */; };
+		DD04470BAE6FBDC467DBDA53 /* BrazeKit in Frameworks */ = {isa = PBXBuildFile; productRef = 40864C1ED6466B40F23B72D8 /* BrazeKit */; };
+		DDC02124E96821C3A8EB4B31 /* ReadmeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA72C16B9A189DE9D4D7A58 /* ReadmeViewController.m */; };
+		DE620D05A5DCCA569EE55A19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FCD17EEF41713F18F4CA702 /* Assets.xcassets */; };
+		DE94E8805837A99FC5630235 /* Credentials.m in Sources */ = {isa = PBXBuildFile; fileRef = A900B781B2DFE220B129E338 /* Credentials.m */; };
+		E2498F93471B3ED7DCF4F798 /* BrazeKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1587AFA62763A9B75CA01C6C /* BrazeKit */; };
+		E2E95C34F86FA357D6BCAE54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FCD17EEF41713F18F4CA702 /* Assets.xcassets */; };
+		E40CF734FBAC13C6792F5DE5 /* empty-file.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F9A5B35B5C55AF7BAC0EA5 /* empty-file.swift */; };
+		E57EF4D623F7C39F800DF8CB /* Readme.m in Sources */ = {isa = PBXBuildFile; fileRef = 742A9C4C4D1368BA62472F8B /* Readme.m */; };
+		E661F97A6D1858D647AF0EAB /* BrazeKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8790507F4D5F35EB03D127E1 /* BrazeKit */; };
+		E6C6496228FD5FEF34994381 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 971900217FE69BE4658FE8B2 /* AppDelegate.m */; };
+		EAC53BC784BF380F8205F01F /* BrazeKit in Frameworks */ = {isa = PBXBuildFile; productRef = E045FE65756A230024955AD5 /* BrazeKit */; };
+		EAE5019C370440A40B31D2AC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6459ADE015D6A93F4DDEF4D8 /* main.m */; };
+		EC57F25FE46BBD05EA33C939 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08CE7C19F258AF40B394B358 /* UserNotifications.framework */; };
+		ECDB1592FF3F6BD7986C69FF /* ReadmeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA72C16B9A189DE9D4D7A58 /* ReadmeViewController.m */; };
+		ECF4EB3AB84967F7DBDB8452 /* BrazeUI in Frameworks */ = {isa = PBXBuildFile; productRef = 96F76CB78E3FFBBBCDE87EBD /* BrazeUI */; };
+		EE3106CED8AA29A095639237 /* Readme.m in Sources */ = {isa = PBXBuildFile; fileRef = 625BB7F254E41A663E8F5B26 /* Readme.m */; };
+		F0ABA2C708B18F9BFB743F87 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 95789D924A98ADC813B250FA /* AppDelegate.m */; };
+		F1E61D7B1116B3BC042B1750 /* empty-file.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F9A5B35B5C55AF7BAC0EA5 /* empty-file.swift */; };
+		F29E1A116AF3E52AE5210430 /* Readme.m in Sources */ = {isa = PBXBuildFile; fileRef = 55CBEA31B5EB1B86C498A465 /* Readme.m */; };
+		F96C05B7AD7E6B52CA3F826D /* ReadmeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA72C16B9A189DE9D4D7A58 /* ReadmeViewController.m */; };
+		F97087EBFD4931AA7C9F3463 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FCD17EEF41713F18F4CA702 /* Assets.xcassets */; };
+		FD9823DF369C66F24A265598 /* BRZGIFViewProvider+SDWebImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD7D38FC280085F402924CA /* BRZGIFViewProvider+SDWebImage.m */; };
+		FF4835E6FE65B5459E0B9BE0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6459ADE015D6A93F4DDEF4D8 /* main.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		044FD4EA5C7C2510F9894F77 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D0C505F98E2813EFE5D58816 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 842A3D91E0A246B872DA9846;
+			remoteInfo = PushNotificationsServiceExtension;
+		};
+		46563B80F6ABD54885B36AAE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D0C505F98E2813EFE5D58816 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E59DB4201FEAE1A212979375;
+			remoteInfo = PushNotificationsContentExtension;
+		};
+		64DBB81ED5D12FDEBFE282D1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D0C505F98E2813EFE5D58816 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 842A3D91E0A246B872DA9846;
+			remoteInfo = PushNotificationsServiceExtension;
+		};
+		6E0DAD4708E14D2DF0E10B8D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D0C505F98E2813EFE5D58816 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 842A3D91E0A246B872DA9846;
+			remoteInfo = PushNotificationsServiceExtension;
+		};
+		D0674C75EA71B668B5CCC002 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D0C505F98E2813EFE5D58816 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E59DB4201FEAE1A212979375;
+			remoteInfo = PushNotificationsContentExtension;
+		};
+		E25578ACF01B53F0D60C8560 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D0C505F98E2813EFE5D58816 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E59DB4201FEAE1A212979375;
+			remoteInfo = PushNotificationsContentExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		0BD8AA5D88A45C7AB829918C /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				0B3BB78BFCEFB203775E1600 /* PushNotificationsServiceExtension.appex in Embed Foundation Extensions */,
+				3C2431D4633D61A92CD9F814 /* PushNotificationsContentExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		366B642023686765A395E398 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				7CFDF51A3B73EE52EFB93AE6 /* PushNotificationsServiceExtension.appex in Embed Foundation Extensions */,
+				5489F499BAD776AAF047FE41 /* PushNotificationsContentExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B69CC68C5DEF00A1DB3D3991 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				80A7523D239AEE0E2DEE0DBB /* PushNotificationsServiceExtension.appex in Embed Foundation Extensions */,
+				4A7CFEAEF687982DD12D2985 /* PushNotificationsContentExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		0013D8D56F5E3C7963E30A2E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		01BB19FD80E90EE93B172CF8 /* InAppMessageInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InAppMessageInfoViewController.h; sourceTree = "<group>"; };
+		01EA6698732DABC8995A7243 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		08CE7C19F258AF40B394B358 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		0BDEF769FDC6414D453D28CE /* InAppMessages-Custom-UI.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "InAppMessages-Custom-UI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0FCD17EEF41713F18F4CA702 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1A008F2386666F587E975D0D /* InAppMessageUI.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = InAppMessageUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1EA72C16B9A189DE9D4D7A58 /* ReadmeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReadmeViewController.m; sourceTree = "<group>"; };
+		220432BEC0EA7628608EA5BA /* braze-swift-sdk */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "braze-swift-sdk"; path = ../..; sourceTree = SOURCE_ROOT; };
+		2205604217E64D9BDCAB2FDF /* PushNotifications-DelayedInitialization.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "PushNotifications-DelayedInitialization.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2BE6866047868E31857FEB14 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		324D8E917E21EC25C2E0EC7C /* AuthenticationManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AuthenticationManager.h; sourceTree = "<group>"; };
+		37F9A5B35B5C55AF7BAC0EA5 /* empty-file.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "empty-file.swift"; sourceTree = "<group>"; };
+		3A8584CCE6D9BBC4C2F634BB /* CustomInAppMessagePresenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomInAppMessagePresenter.m; sourceTree = "<group>"; };
+		3BF7AC51A554A71CFA452B84 /* AuthenticationManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AuthenticationManager.m; sourceTree = "<group>"; };
+		3E837265F7BEBDDF6865917B /* PushNotifications-Manual.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "PushNotifications-Manual.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F278DD5EBF9747004183C8F /* Readme.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Readme.m; sourceTree = "<group>"; };
+		40B1FA52497F602A50792867 /* Readme.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Readme.m; sourceTree = "<group>"; };
+		43898C005AA33A7630288625 /* ContentCardUI.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = ContentCardUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A6F4B2BEAD3CC7A8F9250E8 /* BRZGIFViewProvider+SDWebImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "BRZGIFViewProvider+SDWebImage.m"; sourceTree = "<group>"; };
+		4BBB1BAF4899070A79FFC101 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		4C9D744C8C6CD3ECD092712A /* BRZGIFViewProvider+SDWebImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BRZGIFViewProvider+SDWebImage.h"; sourceTree = "<group>"; };
+		4CD7D38FC280085F402924CA /* BRZGIFViewProvider+SDWebImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "BRZGIFViewProvider+SDWebImage.m"; sourceTree = "<group>"; };
+		54B2132B425902ECA87672DE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		54DC394BE5B4E5BA7093FEEF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		55CBEA31B5EB1B86C498A465 /* Readme.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Readme.m; sourceTree = "<group>"; };
+		5634FD53344A83FD267AB580 /* CardsInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CardsInfoViewController.m; sourceTree = "<group>"; };
+		5DA022D2664E917AB6DF910C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		5FFCA5A7A3B8EF9BFE4BF145 /* Readme.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Readme.m; sourceTree = "<group>"; };
+		61323FF27FE35756D97CED2B /* Location.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Location.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		625BB7F254E41A663E8F5B26 /* Readme.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Readme.m; sourceTree = "<group>"; };
+		631AC4EE3B6D81ACA0DBEFBE /* CardsInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CardsInfoViewController.h; sourceTree = "<group>"; };
+		6459ADE015D6A93F4DDEF4D8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		64B22ACFDEB977C9F3B3B67E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		67B6F9D3158877B0045A2F80 /* PushNotifications-Automatic.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "PushNotifications-Automatic.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		68F135007650E2777AB21639 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		6A76DADC444C28D2653F471B /* InAppMessageUI-Customization.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "InAppMessageUI-Customization.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6CB7B2B6C601A32E293D5298 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		71CF9250418324FDD933C503 /* NotAvailableInObjC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotAvailableInObjC.m; sourceTree = "<group>"; };
+		742A9C4C4D1368BA62472F8B /* Readme.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Readme.m; sourceTree = "<group>"; };
+		7509FFDD2664F798C716F648 /* Readme.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Readme.m; sourceTree = "<group>"; };
+		75CC1E79A9D6815B60835BA2 /* Readme.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Readme.m; sourceTree = "<group>"; };
+		7F5CA3297B4978C4916EBCC5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		84C80857918925CBF34BB326 /* WideBannerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WideBannerViewController.m; sourceTree = "<group>"; };
+		85EB91B2555C84CBD26F79F6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		8783B6A324D425D55615AFD9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		95789D924A98ADC813B250FA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		971900217FE69BE4658FE8B2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		98ADD07CC89BDF408F0F8288 /* BannerUI.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = BannerUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7B092ACAEC915379923328F /* PushNotificationsContentExtension.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = PushNotificationsContentExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		A900B781B2DFE220B129E338 /* Credentials.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Credentials.m; sourceTree = "<group>"; };
+		AF02C869BF9AFF144C7C90DF /* InAppMessageInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InAppMessageInfoViewController.m; sourceTree = "<group>"; };
+		B0D325AE1E7E717D151B9B6B /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
+		B29D192E53C1405628200101 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		B558422CCA055B4615F43572 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		B5666DA142189EEEDFAFB41F /* PushNotificationsServiceExtension.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = PushNotificationsServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		B61B2602706102FC4E64E5B9 /* FullScreenBannerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FullScreenBannerViewController.m; sourceTree = "<group>"; };
+		B9D5BBC757BE390849FCDD52 /* ContentCards-Custom-UI.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "ContentCards-Custom-UI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BAE951BE8F753A9864D29D6C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		BC5EE8BE3BAD32DB6D66AC70 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		C1B822E14D6196E0BDCC531E /* ReadmeAction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReadmeAction.h; sourceTree = "<group>"; };
+		CE00D10FF658213E5A00188D /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		CF2BBB04F875FF5FA863FC82 /* CustomInAppMessagePresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomInAppMessagePresenter.h; sourceTree = "<group>"; };
+		CFCDF89427142AC55571D3A4 /* CheckoutViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CheckoutViewController.m; sourceTree = "<group>"; };
+		D63F498CAD1B487B718A6064 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		D65F1DF14BBFB716FC3B8EA8 /* ContentCardUI-Customization.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "ContentCardUI-Customization.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E10D62519894CE82ED94A20E /* BRZGIFViewProvider+SDWebImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BRZGIFViewProvider+SDWebImage.h"; sourceTree = "<group>"; };
+		E402AD8F8CC6ED4C9C97FCE4 /* WideBannerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WideBannerViewController.h; sourceTree = "<group>"; };
+		E5F704300A66AB9522AA5F94 /* CheckoutViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CheckoutViewController.h; sourceTree = "<group>"; };
+		ED657ED06A52B67E6F53309B /* Analytics.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Analytics.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE718585DF8925CE6290EB8E /* ReadmeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReadmeViewController.h; sourceTree = "<group>"; };
+		EF84C935C8D4200A2401B6E1 /* NotAvailableInObjC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotAvailableInObjC.m; sourceTree = "<group>"; };
+		F3EC9FBBF2D073B40B1CD637 /* FullScreenBannerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FullScreenBannerViewController.h; sourceTree = "<group>"; };
+		F7D912E013554F7C8A41F0ED /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F860D740F25C10FAE51F0DB3 /* Readme.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Readme.m; sourceTree = "<group>"; };
+		F9E6C11F27DDDD5C6E6AD3AE /* Readme.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Readme.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0352C484CD82DC90EE02F469 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2498F93471B3ED7DCF4F798 /* BrazeKit in Frameworks */,
+				2E1DF7C49B03F38BCE5285E7 /* BrazeUI in Frameworks */,
+				850853B18B7DB34ADBCB56D2 /* SDWebImage in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0867922074A825F0202DC4D3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0B298EF42BAE73A61618FED4 /* BrazeKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		183E99B0677A3CBB42A80754 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC57F25FE46BBD05EA33C939 /* UserNotifications.framework in Frameworks */,
+				2C47D73C2D8F2F68DF83612B /* BrazeNotificationService in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F87FC703AE08051B48A9038 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0660D42F760AE4E46AD69562 /* BrazeKit in Frameworks */,
+				93F56B30055D001DF05356A5 /* BrazeUI in Frameworks */,
+				27ECC4ED9EABA2405DF780CC /* SDWebImage in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		237BB517A826BB290757249B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EAC53BC784BF380F8205F01F /* BrazeKit in Frameworks */,
+				2553ED24C2112991F382CF3A /* BrazeUI in Frameworks */,
+				B3BDA4F943A5C0AD2DEF5A7C /* SDWebImage in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2FA2F0A335091CF440592398 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E661F97A6D1858D647AF0EAB /* BrazeKit in Frameworks */,
+				3E6B194C548511577D79ACA9 /* BrazeUI in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3389685734F96A39F6C8534E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				908501329354B80A45EFD05F /* BrazeKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		38F881362BB186391F0EEF7E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				904106D5D0DCB422BFFC0702 /* BrazeKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4E1BD2E76D5B08698C2D0853 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				87824C15AAA2003EC964C107 /* UserNotifications.framework in Frameworks */,
+				AF2CC1B40270C6B61BCB36F3 /* UserNotificationsUI.framework in Frameworks */,
+				24400D6B97710B109BDD8A60 /* BrazePushStory in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C911032532647ABBD19356F1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D37F619E60F577AF2FB208D /* BrazeKit in Frameworks */,
+				ECF4EB3AB84967F7DBDB8452 /* BrazeUI in Frameworks */,
+				DB13431FC72E0BCD34A86902 /* SDWebImage in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D9C22B7B860F9B468BE1EAEE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				169FF56C826D2FFB93F61A02 /* BrazeKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F490DAC399F5A07FDAF6EBCB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C46A726B573C78D24809762 /* BrazeKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA7EB9315B4886B030BB5B6A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD04470BAE6FBDC467DBDA53 /* BrazeKit in Frameworks */,
+				B703505115C6B4659E0FE981 /* BrazeLocation in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA8B65B395F33BF05EA3D1E4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				192400F4407E861A42E5D31B /* BrazeKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0C988F6B125C5EE79E59318D /* BannerUI */ = {
+			isa = PBXGroup;
+			children = (
+				68F135007650E2777AB21639 /* AppDelegate.h */,
+				7F5CA3297B4978C4916EBCC5 /* AppDelegate.m */,
+				F3EC9FBBF2D073B40B1CD637 /* FullScreenBannerViewController.h */,
+				B61B2602706102FC4E64E5B9 /* FullScreenBannerViewController.m */,
+				55CBEA31B5EB1B86C498A465 /* Readme.m */,
+				E402AD8F8CC6ED4C9C97FCE4 /* WideBannerViewController.h */,
+				84C80857918925CBF34BB326 /* WideBannerViewController.m */,
+			);
+			name = BannerUI;
+			path = Sources/BannerUI;
+			sourceTree = "<group>";
+		};
+		119FF3F930BD1BF66DEB0B47 /* ContentCards-Custom-UI */ = {
+			isa = PBXGroup;
+			children = (
+				54B2132B425902ECA87672DE /* AppDelegate.h */,
+				8783B6A324D425D55615AFD9 /* AppDelegate.m */,
+				631AC4EE3B6D81ACA0DBEFBE /* CardsInfoViewController.h */,
+				5634FD53344A83FD267AB580 /* CardsInfoViewController.m */,
+				7509FFDD2664F798C716F648 /* Readme.m */,
+			);
+			name = "ContentCards-Custom-UI";
+			path = "Sources/ContentCards-Custom-UI";
+			sourceTree = "<group>";
+		};
+		256C64FD5A9C547C95ED205A /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				B558422CCA055B4615F43572 /* AppDelegate.h */,
+				BC5EE8BE3BAD32DB6D66AC70 /* AppDelegate.m */,
+				40B1FA52497F602A50792867 /* Readme.m */,
+			);
+			name = Location;
+			path = Sources/Location;
+			sourceTree = "<group>";
+		};
+		258F28BC46EE3F2D3E079C37 /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				64B22ACFDEB977C9F3B3B67E /* AppDelegate.h */,
+				971900217FE69BE4658FE8B2 /* AppDelegate.m */,
+				324D8E917E21EC25C2E0EC7C /* AuthenticationManager.h */,
+				3BF7AC51A554A71CFA452B84 /* AuthenticationManager.m */,
+				E5F704300A66AB9522AA5F94 /* CheckoutViewController.h */,
+				CFCDF89427142AC55571D3A4 /* CheckoutViewController.m */,
+				75CC1E79A9D6815B60835BA2 /* Readme.m */,
+			);
+			name = Analytics;
+			path = Sources/Analytics;
+			sourceTree = "<group>";
+		};
+		2E1A1FFF237BDE07262704B1 /* PushNotifications-Manual */ = {
+			isa = PBXGroup;
+			children = (
+				4BBB1BAF4899070A79FFC101 /* AppDelegate.h */,
+				95789D924A98ADC813B250FA /* AppDelegate.m */,
+				F9E6C11F27DDDD5C6E6AD3AE /* Readme.m */,
+			);
+			name = "PushNotifications-Manual";
+			path = "Sources/PushNotifications-Manual";
+			sourceTree = "<group>";
+		};
+		4A8610F6DB5D3BD5353159BF /* InAppMessageUI-Customization */ = {
+			isa = PBXGroup;
+			children = (
+				EF84C935C8D4200A2401B6E1 /* NotAvailableInObjC.m */,
+			);
+			name = "InAppMessageUI-Customization";
+			path = "Sources/InAppMessageUI-Customization";
+			sourceTree = "<group>";
+		};
+		518A861147034CC7C7A6F886 /* ContentCardUI */ = {
+			isa = PBXGroup;
+			children = (
+				B29D192E53C1405628200101 /* AppDelegate.h */,
+				2BE6866047868E31857FEB14 /* AppDelegate.m */,
+				4C9D744C8C6CD3ECD092712A /* BRZGIFViewProvider+SDWebImage.h */,
+				4CD7D38FC280085F402924CA /* BRZGIFViewProvider+SDWebImage.m */,
+				742A9C4C4D1368BA62472F8B /* Readme.m */,
+			);
+			name = ContentCardUI;
+			path = Sources/ContentCardUI;
+			sourceTree = "<group>";
+		};
+		602D317DF9E1FCBC46B4F176 /* PushNotificationsContentExtension */ = {
+			isa = PBXGroup;
+			children = (
+				CE00D10FF658213E5A00188D /* NotificationViewController.swift */,
+			);
+			name = PushNotificationsContentExtension;
+			path = Sources/PushNotificationsContentExtension;
+			sourceTree = "<group>";
+		};
+		6E715B0CD6028EAEB53373C9 /* InAppMessages-Custom-UI */ = {
+			isa = PBXGroup;
+			children = (
+				85EB91B2555C84CBD26F79F6 /* AppDelegate.h */,
+				F7D912E013554F7C8A41F0ED /* AppDelegate.m */,
+				CF2BBB04F875FF5FA863FC82 /* CustomInAppMessagePresenter.h */,
+				3A8584CCE6D9BBC4C2F634BB /* CustomInAppMessagePresenter.m */,
+				01BB19FD80E90EE93B172CF8 /* InAppMessageInfoViewController.h */,
+				AF02C869BF9AFF144C7C90DF /* InAppMessageInfoViewController.m */,
+				5FFCA5A7A3B8EF9BFE4BF145 /* Readme.m */,
+			);
+			name = "InAppMessages-Custom-UI";
+			path = "Sources/InAppMessages-Custom-UI";
+			sourceTree = "<group>";
+		};
+		8F4C62B879C7CE97F997C1E5 /* PushNotifications-DelayedInitialization */ = {
+			isa = PBXGroup;
+			children = (
+				01EA6698732DABC8995A7243 /* AppDelegate.h */,
+				54DC394BE5B4E5BA7093FEEF /* AppDelegate.m */,
+				625BB7F254E41A663E8F5B26 /* Readme.m */,
+			);
+			name = "PushNotifications-DelayedInitialization";
+			path = "Sources/PushNotifications-DelayedInitialization";
+			sourceTree = "<group>";
+		};
+		AD1929AE02C13E7023AE1CA4 /* PushNotificationsServiceExtension */ = {
+			isa = PBXGroup;
+			children = (
+				D63F498CAD1B487B718A6064 /* NotificationService.swift */,
+			);
+			name = PushNotificationsServiceExtension;
+			path = Sources/PushNotificationsServiceExtension;
+			sourceTree = "<group>";
+		};
+		B4F25C051708E808116165D4 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				0FCD17EEF41713F18F4CA702 /* Assets.xcassets */,
+				A900B781B2DFE220B129E338 /* Credentials.m */,
+				37F9A5B35B5C55AF7BAC0EA5 /* empty-file.swift */,
+				6459ADE015D6A93F4DDEF4D8 /* main.m */,
+				C1B822E14D6196E0BDCC531E /* ReadmeAction.h */,
+				EE718585DF8925CE6290EB8E /* ReadmeViewController.h */,
+				1EA72C16B9A189DE9D4D7A58 /* ReadmeViewController.m */,
+			);
+			name = Common;
+			path = Sources/Common;
+			sourceTree = "<group>";
+		};
+		BE255BA36238D9A1B4530C95 /* InAppMessageUI */ = {
+			isa = PBXGroup;
+			children = (
+				BAE951BE8F753A9864D29D6C /* AppDelegate.h */,
+				5DA022D2664E917AB6DF910C /* AppDelegate.m */,
+				E10D62519894CE82ED94A20E /* BRZGIFViewProvider+SDWebImage.h */,
+				4A6F4B2BEAD3CC7A8F9250E8 /* BRZGIFViewProvider+SDWebImage.m */,
+				3F278DD5EBF9747004183C8F /* Readme.m */,
+			);
+			name = InAppMessageUI;
+			path = Sources/InAppMessageUI;
+			sourceTree = "<group>";
+		};
+		CD535985A50FFC8EDE928813 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ED657ED06A52B67E6F53309B /* Analytics.app */,
+				98ADD07CC89BDF408F0F8288 /* BannerUI.app */,
+				B9D5BBC757BE390849FCDD52 /* ContentCards-Custom-UI.app */,
+				D65F1DF14BBFB716FC3B8EA8 /* ContentCardUI-Customization.app */,
+				43898C005AA33A7630288625 /* ContentCardUI.app */,
+				0BDEF769FDC6414D453D28CE /* InAppMessages-Custom-UI.app */,
+				6A76DADC444C28D2653F471B /* InAppMessageUI-Customization.app */,
+				1A008F2386666F587E975D0D /* InAppMessageUI.app */,
+				61323FF27FE35756D97CED2B /* Location.app */,
+				67B6F9D3158877B0045A2F80 /* PushNotifications-Automatic.app */,
+				2205604217E64D9BDCAB2FDF /* PushNotifications-DelayedInitialization.app */,
+				3E837265F7BEBDDF6865917B /* PushNotifications-Manual.app */,
+				A7B092ACAEC915379923328F /* PushNotificationsContentExtension.appex */,
+				B5666DA142189EEEDFAFB41F /* PushNotificationsServiceExtension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D03146EA39AB44D97182A5DF /* ContentCardUI-Customization */ = {
+			isa = PBXGroup;
+			children = (
+				71CF9250418324FDD933C503 /* NotAvailableInObjC.m */,
+			);
+			name = "ContentCardUI-Customization";
+			path = "Sources/ContentCardUI-Customization";
+			sourceTree = "<group>";
+		};
+		D8CC2266D736859D7DD9A8FF = {
+			isa = PBXGroup;
+			children = (
+				E3AF9F206199B993ACB3E63D /* Packages */,
+				B4F25C051708E808116165D4 /* Common */,
+				258F28BC46EE3F2D3E079C37 /* Analytics */,
+				0C988F6B125C5EE79E59318D /* BannerUI */,
+				119FF3F930BD1BF66DEB0B47 /* ContentCards-Custom-UI */,
+				518A861147034CC7C7A6F886 /* ContentCardUI */,
+				D03146EA39AB44D97182A5DF /* ContentCardUI-Customization */,
+				6E715B0CD6028EAEB53373C9 /* InAppMessages-Custom-UI */,
+				BE255BA36238D9A1B4530C95 /* InAppMessageUI */,
+				4A8610F6DB5D3BD5353159BF /* InAppMessageUI-Customization */,
+				256C64FD5A9C547C95ED205A /* Location */,
+				F4C0F166529FA080CE6C9836 /* PushNotifications-Automatic */,
+				8F4C62B879C7CE97F997C1E5 /* PushNotifications-DelayedInitialization */,
+				2E1A1FFF237BDE07262704B1 /* PushNotifications-Manual */,
+				602D317DF9E1FCBC46B4F176 /* PushNotificationsContentExtension */,
+				AD1929AE02C13E7023AE1CA4 /* PushNotificationsServiceExtension */,
+				DF23D21F2F74022094519AC3 /* Frameworks */,
+				CD535985A50FFC8EDE928813 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DF23D21F2F74022094519AC3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				08CE7C19F258AF40B394B358 /* UserNotifications.framework */,
+				B0D325AE1E7E717D151B9B6B /* UserNotificationsUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E3AF9F206199B993ACB3E63D /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				220432BEC0EA7628608EA5BA /* braze-swift-sdk */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		F4C0F166529FA080CE6C9836 /* PushNotifications-Automatic */ = {
+			isa = PBXGroup;
+			children = (
+				6CB7B2B6C601A32E293D5298 /* AppDelegate.h */,
+				0013D8D56F5E3C7963E30A2E /* AppDelegate.m */,
+				F860D740F25C10FAE51F0DB3 /* Readme.m */,
+			);
+			name = "PushNotifications-Automatic";
+			path = "Sources/PushNotifications-Automatic";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0642C7DCDAD9AB0330096707 /* Analytics */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D59FCEDC2DB34D2E4572B9E9 /* Build configuration list for PBXNativeTarget "Analytics" */;
+			buildPhases = (
+				717A47D1E0BBA35F584988D1 /* Sources */,
+				91A2E308EF9C5828E3BE39AA /* Resources */,
+				38F881362BB186391F0EEF7E /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Analytics;
+			packageProductDependencies = (
+				9BAE4406D94C39537917176F /* BrazeKit */,
+			);
+			productName = Analytics;
+			productReference = ED657ED06A52B67E6F53309B /* Analytics.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0A1211FC31CA5DD9A5E1D18E /* ContentCardUI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5181AF8DDEA182DF10C54652 /* Build configuration list for PBXNativeTarget "ContentCardUI" */;
+			buildPhases = (
+				FB5C5DB7F3CC52A66733B1D4 /* Sources */,
+				6EDCC3D6A15F3C94C51FCD3D /* Resources */,
+				1F87FC703AE08051B48A9038 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ContentCardUI;
+			packageProductDependencies = (
+				B886221109B13C767819BA7C /* BrazeKit */,
+				624AA955B2621EE8B5A153AE /* BrazeUI */,
+				64EAC9A16C6BB0EA49C9157A /* SDWebImage */,
+			);
+			productName = ContentCardUI;
+			productReference = 43898C005AA33A7630288625 /* ContentCardUI.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1BB9C370026C39B3DBE54065 /* InAppMessageUI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4C19E16B15D4B729583F0D3A /* Build configuration list for PBXNativeTarget "InAppMessageUI" */;
+			buildPhases = (
+				EEF022E2C366440FCCF362C0 /* Sources */,
+				865BE7921091ADCB20B8EBC2 /* Resources */,
+				237BB517A826BB290757249B /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = InAppMessageUI;
+			packageProductDependencies = (
+				E045FE65756A230024955AD5 /* BrazeKit */,
+				5FDBAD51FF3A992AEB226099 /* BrazeUI */,
+				2DFFD8844A474098D6408946 /* SDWebImage */,
+			);
+			productName = InAppMessageUI;
+			productReference = 1A008F2386666F587E975D0D /* InAppMessageUI.app */;
+			productType = "com.apple.product-type.application";
+		};
+		59B8633A44EBC4A918E17FBF /* PushNotifications-Automatic */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 331FD755F8963A911E13D83B /* Build configuration list for PBXNativeTarget "PushNotifications-Automatic" */;
+			buildPhases = (
+				87642D534ACB2BAB8E532FF1 /* Sources */,
+				9083F594F67E65EF33A64918 /* Resources */,
+				F490DAC399F5A07FDAF6EBCB /* Frameworks */,
+				366B642023686765A395E398 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9D3BE18FEEC5320586F94DC9 /* PBXTargetDependency */,
+				630FAB23D8F49A0816EEA8E5 /* PBXTargetDependency */,
+			);
+			name = "PushNotifications-Automatic";
+			packageProductDependencies = (
+				1BF6D20F4E3962FBB5B92AF3 /* BrazeKit */,
+			);
+			productName = "PushNotifications-Automatic";
+			productReference = 67B6F9D3158877B0045A2F80 /* PushNotifications-Automatic.app */;
+			productType = "com.apple.product-type.application";
+		};
+		67EDD4489E05F820AC5C4C72 /* BannerUI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5C9226DEFB56FCE86BDECA11 /* Build configuration list for PBXNativeTarget "BannerUI" */;
+			buildPhases = (
+				97924445A853B859FE3B47C9 /* Sources */,
+				81A915DDC95E775F4BC5C01D /* Resources */,
+				2FA2F0A335091CF440592398 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BannerUI;
+			packageProductDependencies = (
+				8790507F4D5F35EB03D127E1 /* BrazeKit */,
+				E8F0CDD2BA63A81551367410 /* BrazeUI */,
+			);
+			productName = BannerUI;
+			productReference = 98ADD07CC89BDF408F0F8288 /* BannerUI.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6F0145EB7E39FDE6D8D6FD4C /* PushNotifications-Manual */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CD229DA33B161BD356A199E5 /* Build configuration list for PBXNativeTarget "PushNotifications-Manual" */;
+			buildPhases = (
+				B99034C89893FC3E72B4CEA5 /* Sources */,
+				CFDC70E5773B7ADA1E2C99EF /* Resources */,
+				D9C22B7B860F9B468BE1EAEE /* Frameworks */,
+				B69CC68C5DEF00A1DB3D3991 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1C92BA395149806D98697AB4 /* PBXTargetDependency */,
+				6D866338030C2F6C73A0811E /* PBXTargetDependency */,
+			);
+			name = "PushNotifications-Manual";
+			packageProductDependencies = (
+				8603B741E7060A7D18612200 /* BrazeKit */,
+			);
+			productName = "PushNotifications-Manual";
+			productReference = 3E837265F7BEBDDF6865917B /* PushNotifications-Manual.app */;
+			productType = "com.apple.product-type.application";
+		};
+		842A3D91E0A246B872DA9846 /* PushNotificationsServiceExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FB6122990820F57E6DB4A7D6 /* Build configuration list for PBXNativeTarget "PushNotificationsServiceExtension" */;
+			buildPhases = (
+				0F4E3ECA66B0F7D180D317DF /* Sources */,
+				183E99B0677A3CBB42A80754 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PushNotificationsServiceExtension;
+			packageProductDependencies = (
+				47F3E12B1114B00B4CB70C60 /* BrazeNotificationService */,
+			);
+			productName = PushNotificationsServiceExtension;
+			productReference = B5666DA142189EEEDFAFB41F /* PushNotificationsServiceExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		908A74E9B2A6D8455EB2933D /* ContentCards-Custom-UI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F15ACF9A562AD4BE837493B0 /* Build configuration list for PBXNativeTarget "ContentCards-Custom-UI" */;
+			buildPhases = (
+				A46B2EB718DACFE4899DAD66 /* Sources */,
+				F5167D4A5A5E5F48A41FBC7B /* Resources */,
+				3389685734F96A39F6C8534E /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ContentCards-Custom-UI";
+			packageProductDependencies = (
+				4EC00DCCE10936877006ED4B /* BrazeKit */,
+			);
+			productName = "ContentCards-Custom-UI";
+			productReference = B9D5BBC757BE390849FCDD52 /* ContentCards-Custom-UI.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BF81DFAFE8B8E3CB74955E60 /* InAppMessageUI-Customization */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A6A1E4C76F43C48C764BB3A6 /* Build configuration list for PBXNativeTarget "InAppMessageUI-Customization" */;
+			buildPhases = (
+				CEC03848E365E8C4311060A8 /* Sources */,
+				61024293B1BC6D12325B3AEB /* Resources */,
+				0352C484CD82DC90EE02F469 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "InAppMessageUI-Customization";
+			packageProductDependencies = (
+				1587AFA62763A9B75CA01C6C /* BrazeKit */,
+				0891F7D29EA51A994793513D /* BrazeUI */,
+				6406D8C02D350722AE48DE31 /* SDWebImage */,
+			);
+			productName = "InAppMessageUI-Customization";
+			productReference = 6A76DADC444C28D2653F471B /* InAppMessageUI-Customization.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C20A5C88D2F5943F57B53CEE /* InAppMessages-Custom-UI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 109848605591551D72855DA7 /* Build configuration list for PBXNativeTarget "InAppMessages-Custom-UI" */;
+			buildPhases = (
+				EAD09AA7F529EC40DB5EB0AE /* Sources */,
+				FFEA367D978B9C156F3DDC89 /* Resources */,
+				0867922074A825F0202DC4D3 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "InAppMessages-Custom-UI";
+			packageProductDependencies = (
+				710652AF50043CF76221D1D8 /* BrazeKit */,
+			);
+			productName = "InAppMessages-Custom-UI";
+			productReference = 0BDEF769FDC6414D453D28CE /* InAppMessages-Custom-UI.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C86DEA9CD6ED7E7E75358AD0 /* ContentCardUI-Customization */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4F7E20F26C98E081CA9378CE /* Build configuration list for PBXNativeTarget "ContentCardUI-Customization" */;
+			buildPhases = (
+				2DE3C693088803AF76B02FC7 /* Sources */,
+				B8FC3F5D81CD320A55B54135 /* Resources */,
+				C911032532647ABBD19356F1 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ContentCardUI-Customization";
+			packageProductDependencies = (
+				9720FE32CFB77D7E0319A501 /* BrazeKit */,
+				96F76CB78E3FFBBBCDE87EBD /* BrazeUI */,
+				77C32D8D5EBCD917A23EE382 /* SDWebImage */,
+			);
+			productName = "ContentCardUI-Customization";
+			productReference = D65F1DF14BBFB716FC3B8EA8 /* ContentCardUI-Customization.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E59DB4201FEAE1A212979375 /* PushNotificationsContentExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 538A7D3F62B432A07C91FD40 /* Build configuration list for PBXNativeTarget "PushNotificationsContentExtension" */;
+			buildPhases = (
+				ACB52B0CE581070F5BA1A8E7 /* Sources */,
+				4E1BD2E76D5B08698C2D0853 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PushNotificationsContentExtension;
+			packageProductDependencies = (
+				5133F5A2D91882A4AE649D4D /* BrazePushStory */,
+			);
+			productName = PushNotificationsContentExtension;
+			productReference = A7B092ACAEC915379923328F /* PushNotificationsContentExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		FA78BE27C24F0E569EC66970 /* Location */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A8ABD7F2878F6639CC665C81 /* Build configuration list for PBXNativeTarget "Location" */;
+			buildPhases = (
+				F999DED082DF0D21B9D99519 /* Sources */,
+				54604C4E0A891CD6333FB438 /* Resources */,
+				FA7EB9315B4886B030BB5B6A /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Location;
+			packageProductDependencies = (
+				40864C1ED6466B40F23B72D8 /* BrazeKit */,
+				FCFA9573D5A8726847280A8C /* BrazeLocation */,
+			);
+			productName = Location;
+			productReference = 61323FF27FE35756D97CED2B /* Location.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FB86595E3B6C75F139579B9F /* PushNotifications-DelayedInitialization */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D9EE7B43AC80F2816939B0A1 /* Build configuration list for PBXNativeTarget "PushNotifications-DelayedInitialization" */;
+			buildPhases = (
+				2E9298E6079E1E9A45BA862E /* Sources */,
+				6C16BA823D2AAD90792E5F50 /* Resources */,
+				FA8B65B395F33BF05EA3D1E4 /* Frameworks */,
+				0BD8AA5D88A45C7AB829918C /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				239A9AB20D4E3282449F17EB /* PBXTargetDependency */,
+				1271D5C16E98A469C9160C38 /* PBXTargetDependency */,
+			);
+			name = "PushNotifications-DelayedInitialization";
+			packageProductDependencies = (
+				56B0C3BB439D22B39FD34A28 /* BrazeKit */,
+			);
+			productName = "PushNotifications-DelayedInitialization";
+			productReference = 2205604217E64D9BDCAB2FDF /* PushNotifications-DelayedInitialization.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D0C505F98E2813EFE5D58816 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					0642C7DCDAD9AB0330096707 = {
+						ProvisioningStyle = automatic;
+					};
+					0A1211FC31CA5DD9A5E1D18E = {
+						ProvisioningStyle = automatic;
+					};
+					1BB9C370026C39B3DBE54065 = {
+						ProvisioningStyle = automatic;
+					};
+					59B8633A44EBC4A918E17FBF = {
+						ProvisioningStyle = automatic;
+					};
+					67EDD4489E05F820AC5C4C72 = {
+						ProvisioningStyle = automatic;
+					};
+					6F0145EB7E39FDE6D8D6FD4C = {
+						ProvisioningStyle = automatic;
+					};
+					842A3D91E0A246B872DA9846 = {
+						ProvisioningStyle = automatic;
+					};
+					908A74E9B2A6D8455EB2933D = {
+						ProvisioningStyle = automatic;
+					};
+					BF81DFAFE8B8E3CB74955E60 = {
+						ProvisioningStyle = automatic;
+					};
+					C20A5C88D2F5943F57B53CEE = {
+						ProvisioningStyle = automatic;
+					};
+					C86DEA9CD6ED7E7E75358AD0 = {
+						ProvisioningStyle = automatic;
+					};
+					E59DB4201FEAE1A212979375 = {
+						ProvisioningStyle = automatic;
+					};
+					FA78BE27C24F0E569EC66970 = {
+						ProvisioningStyle = automatic;
+					};
+					FB86595E3B6C75F139579B9F = {
+						ProvisioningStyle = automatic;
+					};
+				};
+			};
+			buildConfigurationList = 121E4DAF0EB7FA3A0B03C3C0 /* Build configuration list for PBXProject "Examples-SwiftPM" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = D8CC2266D736859D7DD9A8FF;
+			packageReferences = (
+				9928D5150C45879A982BA1C6 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				8A7F72B8C3C2D68A209B1192 /* XCLocalSwiftPackageReference "/Users/daniel.hok/Desktop/code/swift-sdk/.build/braze/release/braze-swift-sdk" */,
+			);
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0642C7DCDAD9AB0330096707 /* Analytics */,
+				67EDD4489E05F820AC5C4C72 /* BannerUI */,
+				0A1211FC31CA5DD9A5E1D18E /* ContentCardUI */,
+				C86DEA9CD6ED7E7E75358AD0 /* ContentCardUI-Customization */,
+				908A74E9B2A6D8455EB2933D /* ContentCards-Custom-UI */,
+				1BB9C370026C39B3DBE54065 /* InAppMessageUI */,
+				BF81DFAFE8B8E3CB74955E60 /* InAppMessageUI-Customization */,
+				C20A5C88D2F5943F57B53CEE /* InAppMessages-Custom-UI */,
+				FA78BE27C24F0E569EC66970 /* Location */,
+				59B8633A44EBC4A918E17FBF /* PushNotifications-Automatic */,
+				FB86595E3B6C75F139579B9F /* PushNotifications-DelayedInitialization */,
+				6F0145EB7E39FDE6D8D6FD4C /* PushNotifications-Manual */,
+				E59DB4201FEAE1A212979375 /* PushNotificationsContentExtension */,
+				842A3D91E0A246B872DA9846 /* PushNotificationsServiceExtension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		54604C4E0A891CD6333FB438 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50D8D4EB19BF8DB20DF34B8D /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		61024293B1BC6D12325B3AEB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				949F18A735AE80D5213E51A1 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C16BA823D2AAD90792E5F50 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52CAA705E5A2A6B084470A6B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6EDCC3D6A15F3C94C51FCD3D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2E95C34F86FA357D6BCAE54 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		81A915DDC95E775F4BC5C01D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C19B7582791B96C003F1E05D /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		865BE7921091ADCB20B8EBC2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F97087EBFD4931AA7C9F3463 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9083F594F67E65EF33A64918 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				33C23221D1FD4E12233559C8 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		91A2E308EF9C5828E3BE39AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8FEC271CD3BBE8918EAC74D0 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B8FC3F5D81CD320A55B54135 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE620D05A5DCCA569EE55A19 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CFDC70E5773B7ADA1E2C99EF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF41216C1D111CE29716A956 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5167D4A5A5E5F48A41FBC7B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1706C805A425B9891F03C685 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FFEA367D978B9C156F3DDC89 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				132D504B0EABCACA4F5697AB /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0F4E3ECA66B0F7D180D317DF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE9B5583963142DD6C7E2B7F /* NotificationService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2DE3C693088803AF76B02FC7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B9FD0579C0BD5CB2E1C11C6D /* Credentials.m in Sources */,
+				D117EDCFC5FADDCD2F3C475F /* NotAvailableInObjC.m in Sources */,
+				3E6D81E2DD6BA6B5F8E30BAE /* ReadmeViewController.m in Sources */,
+				64E392623EFC0EDFCBA52E38 /* empty-file.swift in Sources */,
+				C20761A80E31DE7D15ADE19C /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2E9298E6079E1E9A45BA862E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2245F5622601D5013C6E5577 /* AppDelegate.m in Sources */,
+				B5C4502619ADB8C486E46AEC /* Credentials.m in Sources */,
+				EE3106CED8AA29A095639237 /* Readme.m in Sources */,
+				72B34E806548749A8D2BB495 /* ReadmeViewController.m in Sources */,
+				0D40BBCEFD7AE21423024F13 /* empty-file.swift in Sources */,
+				EAE5019C370440A40B31D2AC /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		717A47D1E0BBA35F584988D1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6C6496228FD5FEF34994381 /* AppDelegate.m in Sources */,
+				C610684B33610C4253D8CA2C /* AuthenticationManager.m in Sources */,
+				96DD3EF523919DE8E912D45A /* CheckoutViewController.m in Sources */,
+				36656D5D919225765A697238 /* Credentials.m in Sources */,
+				DA9105FC44F03B9C044F6C1B /* Readme.m in Sources */,
+				86FE98F6F784798BAD8E759E /* ReadmeViewController.m in Sources */,
+				83179E87F34EF8488F3C09EE /* empty-file.swift in Sources */,
+				3B5A9CCB48E3991920B2C446 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		87642D534ACB2BAB8E532FF1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9BF21EBB274A7B94D2B601CC /* AppDelegate.m in Sources */,
+				C29066DEB0CD5F8386A25B2C /* Credentials.m in Sources */,
+				BE2FFCF2524274DA78EA813E /* Readme.m in Sources */,
+				DDC02124E96821C3A8EB4B31 /* ReadmeViewController.m in Sources */,
+				C7D552BC12B80792646ED3B5 /* empty-file.swift in Sources */,
+				84B02A6E08D76AE5A66A561D /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		97924445A853B859FE3B47C9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E665BA6E1ECBC079DC8F962 /* AppDelegate.m in Sources */,
+				75230F2FAD54A48F6AAE5341 /* Credentials.m in Sources */,
+				A0289110223C950C43155634 /* FullScreenBannerViewController.m in Sources */,
+				F29E1A116AF3E52AE5210430 /* Readme.m in Sources */,
+				85961060173CC12347896B7C /* ReadmeViewController.m in Sources */,
+				CF598F420E2A091247934D57 /* WideBannerViewController.m in Sources */,
+				89759DEB80D4EEE3A9DFA3F7 /* empty-file.swift in Sources */,
+				B7ABA845C1D8F0EA259FE018 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A46B2EB718DACFE4899DAD66 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56A9503D2DE9A0187181B9AD /* AppDelegate.m in Sources */,
+				35B59884EE2548DE02C9953C /* CardsInfoViewController.m in Sources */,
+				DE94E8805837A99FC5630235 /* Credentials.m in Sources */,
+				BDE801705460564F94DE0F0D /* Readme.m in Sources */,
+				C0EB0E00F930078EBD44FFD4 /* ReadmeViewController.m in Sources */,
+				E40CF734FBAC13C6792F5DE5 /* empty-file.swift in Sources */,
+				9045C48A41E6C9FE7BF2DB50 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ACB52B0CE581070F5BA1A8E7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4484E207BCFD002822F2BB7D /* NotificationViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B99034C89893FC3E72B4CEA5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0ABA2C708B18F9BFB743F87 /* AppDelegate.m in Sources */,
+				35BF107E8A22715D1FBF05EB /* Credentials.m in Sources */,
+				9102B7E0F26046AD1FDE3D16 /* Readme.m in Sources */,
+				CBA72F5F963855C68A676FB6 /* ReadmeViewController.m in Sources */,
+				AA286BBF813DDDFA3A9E1440 /* empty-file.swift in Sources */,
+				7F18A6ABA418E714F2E9FC75 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEC03848E365E8C4311060A8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5DF2674CA83F6ECC633EDA99 /* Credentials.m in Sources */,
+				41CFC07655CF0A3FB6E2ADE2 /* NotAvailableInObjC.m in Sources */,
+				D9C6A59CE85BAB7EFE4861B0 /* ReadmeViewController.m in Sources */,
+				87C3CFDDFECB5F3B4477D98B /* empty-file.swift in Sources */,
+				97403331CA7F887B935DBC01 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EAD09AA7F529EC40DB5EB0AE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9582A148124B27B2FED8FA0C /* AppDelegate.m in Sources */,
+				09CEE69C09EA2F85F9BA7609 /* Credentials.m in Sources */,
+				C0BE8ED350B4792E68B0460F /* CustomInAppMessagePresenter.m in Sources */,
+				6D2A781F030467865F95A781 /* InAppMessageInfoViewController.m in Sources */,
+				0E8EDD9BB75CC896A60C2E6F /* Readme.m in Sources */,
+				F96C05B7AD7E6B52CA3F826D /* ReadmeViewController.m in Sources */,
+				F1E61D7B1116B3BC042B1750 /* empty-file.swift in Sources */,
+				9A4DB2119944DCC81C5561CF /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EEF022E2C366440FCCF362C0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				123944DA228A07A27CA8FE20 /* AppDelegate.m in Sources */,
+				54E8D58237B1B94EEBF67682 /* BRZGIFViewProvider+SDWebImage.m in Sources */,
+				04ABB1F6B9F73AAAC87714B4 /* Credentials.m in Sources */,
+				970E129EDC8F2E439C0C0823 /* Readme.m in Sources */,
+				A7D7689D324CFB54651FC94D /* ReadmeViewController.m in Sources */,
+				929CD2A8A23F56E66DB94112 /* empty-file.swift in Sources */,
+				5D3DC164C01F1693AB940603 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F999DED082DF0D21B9D99519 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5682AF0A97678D2E008636A0 /* AppDelegate.m in Sources */,
+				9AF111E606D01AE0A6083C4D /* Credentials.m in Sources */,
+				BBD9966C313CE224A9B7194F /* Readme.m in Sources */,
+				ECDB1592FF3F6BD7986C69FF /* ReadmeViewController.m in Sources */,
+				BCC0EAFB4BE6ACFA69A9729D /* empty-file.swift in Sources */,
+				3C39E7E58C01C8CE44D9BAC5 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB5C5DB7F3CC52A66733B1D4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1DA9FEF369A4E15D2B76215A /* AppDelegate.m in Sources */,
+				FD9823DF369C66F24A265598 /* BRZGIFViewProvider+SDWebImage.m in Sources */,
+				B36AD5F91B9F069E042F3CB5 /* Credentials.m in Sources */,
+				E57EF4D623F7C39F800DF8CB /* Readme.m in Sources */,
+				07995DC0FD113700D297A5AA /* ReadmeViewController.m in Sources */,
+				A993F9AB30617C5759D76985 /* empty-file.swift in Sources */,
+				FF4835E6FE65B5459E0B9BE0 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1271D5C16E98A469C9160C38 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E59DB4201FEAE1A212979375 /* PushNotificationsContentExtension */;
+			targetProxy = D0674C75EA71B668B5CCC002 /* PBXContainerItemProxy */;
+		};
+		1C92BA395149806D98697AB4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 842A3D91E0A246B872DA9846 /* PushNotificationsServiceExtension */;
+			targetProxy = 044FD4EA5C7C2510F9894F77 /* PBXContainerItemProxy */;
+		};
+		239A9AB20D4E3282449F17EB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 842A3D91E0A246B872DA9846 /* PushNotificationsServiceExtension */;
+			targetProxy = 6E0DAD4708E14D2DF0E10B8D /* PBXContainerItemProxy */;
+		};
+		630FAB23D8F49A0816EEA8E5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E59DB4201FEAE1A212979375 /* PushNotificationsContentExtension */;
+			targetProxy = 46563B80F6ABD54885B36AAE /* PBXContainerItemProxy */;
+		};
+		6D866338030C2F6C73A0811E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E59DB4201FEAE1A212979375 /* PushNotificationsContentExtension */;
+			targetProxy = E25578ACF01B53F0D60C8560 /* PBXContainerItemProxy */;
+		};
+		9D3BE18FEEC5320586F94DC9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 842A3D91E0A246B872DA9846 /* PushNotificationsServiceExtension */;
+			targetProxy = 64DBB81ED5D12FDEBFE282D1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		093A85E466B20FBC8CD86CF9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = automatic;
+				INFOPLIST_FILE = Sources/Analytics/Info.plist;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.braze.Analytics;
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator appletvos appletvsimulator xros xrsimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
+				TARGETED_DEVICE_FAMILY = "1,2,3,7";
+			};
+			name = Debug;
+		};
+		0B9E5DC01DEE1E1C670B4AE4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Sources/PushNotifications-Automatic/PushNotifications-Automatic.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = automatic;
+				INFOPLIST_FILE = "Sources/PushNotifications-Automatic/Info.plist";
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.braze.PushNotifications;
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+			};
+			name = Debug;
+		};
+		0E16DC639408818C18DA1706 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = automatic;
+				INFOPLIST_FILE = Sources/BannerUI/Info.plist;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.braze.BannerUI;
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+			};
+			name = Debug;
+		};
+		24337AEDDB9E06E25C8FD74E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Sources/PushNotifications-Manual/PushNotifications-Manual.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = automatic;
+				INFOPLIST_FILE = "Sources/PushNotifications-Manual/Info.plist";
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.braze.PushNotifications;
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+			};
+			name = Debug;
+		};
+		280BEA0B09453312D14AA55E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Sources/Location/Location.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = automatic;
+				INFOPLIST_FILE = Sources/Location/Info.plist;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.braze.Location;
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator appletvos appletvsimulator xros xrsimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
+				TARGETED_DEVICE_FAMILY = "1,2,3,7";
+			};
+			name = Release;
+		};
+		35E8D78DF517B11959723F4D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 5.0;
+				TVOS_DEPLOYMENT_TARGET = 12.0;
+				XROS_DEPLOYMENT_TARGET = 1.0;
+			};
+			name = Debug;
+		};
+		451A112F28EB569EB73418A4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Sources/PushNotifications-DelayedInitialization/PushNotifications-DelayedInitialization.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = automatic;
+				INFOPLIST_FILE = "Sources/PushNotifications-DelayedInitialization/Info.plist";
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.braze.PushNotifications;
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+			};
+			name = Debug;
+		};
+		4794CD48E35A801270C6F339 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = automatic;
+				INFOPLIST_FILE = "Sources/ContentCards-Custom-UI/Info.plist";
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.ContentCards-Custom-UI";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator appletvos appletvsimulator xros xrsimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
+				TARGETED_DEVICE_FAMILY = "1,2,3,7";
+			};
+			name = Release;
+		};
+		4A132652A20295B00590B16B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = automatic;
+				INFOPLIST_FILE = Sources/InAppMessageUI/Info.plist;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.braze.InAppMessageUI;
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+			};
+			name = Release;
+		};
+		582C70DAA75E87B5B1B59BCC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 5.0;
+				TVOS_DEPLOYMENT_TARGET = 12.0;
+				XROS_DEPLOYMENT_TARGET = 1.0;
+			};
+			name = Release;
+		};
+		618D314D94AB4F95C914E418 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = automatic;
+				INFOPLIST_FILE = "Sources/InAppMessages-Custom-UI/Info.plist";
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.InAppMessages-Custom-UI";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator appletvos appletvsimulator xros xrsimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
+				TARGETED_DEVICE_FAMILY = "1,2,3,7";
+			};
+			name = Debug;
+		};
+		6C12E2EAE507160B54525A5E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = automatic;
+				INFOPLIST_FILE = Sources/InAppMessageUI/Info.plist;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.braze.InAppMessageUI;
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+			};
+			name = Debug;
+		};
+		6FA9B6D2DB089AF5113C9B07 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Sources/PushNotifications-DelayedInitialization/PushNotifications-DelayedInitialization.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = automatic;
+				INFOPLIST_FILE = "Sources/PushNotifications-DelayedInitialization/Info.plist";
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.braze.PushNotifications;
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+			};
+			name = Release;
+		};
+		70F9E3F6FD43B08F0B613364 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Sources/PushNotifications-Automatic/PushNotifications-Automatic.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = automatic;
+				INFOPLIST_FILE = "Sources/PushNotifications-Automatic/Info.plist";
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.braze.PushNotifications;
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+			};
+			name = Release;
+		};
+		77B62EF1F4C4C0423DA1A598 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = automatic;
+				INFOPLIST_FILE = "Sources/ContentCards-Custom-UI/Info.plist";
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.ContentCards-Custom-UI";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator appletvos appletvsimulator xros xrsimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
+				TARGETED_DEVICE_FAMILY = "1,2,3,7";
+			};
+			name = Debug;
+		};
+		89DAA93D03A3D167791DE1EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Sources/Location/Location.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = automatic;
+				INFOPLIST_FILE = Sources/Location/Info.plist;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.braze.Location;
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator appletvos appletvsimulator xros xrsimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
+				TARGETED_DEVICE_FAMILY = "1,2,3,7";
+			};
+			name = Debug;
+		};
+		9D9A0BDA997D036EBEA9221C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = automatic;
+				INFOPLIST_FILE = "Sources/ContentCardUI-Customization/Info.plist";
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.ContentCardUI-Customization";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+			};
+			name = Debug;
+		};
+		9E13FBC998B0A5499C68208A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = automatic;
+				INFOPLIST_FILE = Sources/PushNotificationsServiceExtension/Info.plist;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.braze.PushNotifications.PushNotificationsServiceExtension;
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+			};
+			name = Release;
+		};
+		A6A715219F3001A92D10FDCE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = automatic;
+				INFOPLIST_FILE = "Sources/ContentCardUI-Customization/Info.plist";
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.ContentCardUI-Customization";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+			};
+			name = Release;
+		};
+		B2A94D46C4928B86BDB1F2AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = automatic;
+				INFOPLIST_FILE = "Sources/InAppMessageUI-Customization/Info.plist";
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.InAppMessageUI-Customization";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+			};
+			name = Debug;
+		};
+		B436B532CD385795FBD8A905 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = automatic;
+				INFOPLIST_FILE = Sources/ContentCardUI/Info.plist;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.braze.ContentCardUI;
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+			};
+			name = Debug;
+		};
+		B5AAF377CEFA3C925921A8AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Sources/PushNotifications-Manual/PushNotifications-Manual.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = automatic;
+				INFOPLIST_FILE = "Sources/PushNotifications-Manual/Info.plist";
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.braze.PushNotifications;
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+			};
+			name = Release;
+		};
+		B8ADD2CD0FBEB6948D6A067B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = automatic;
+				INFOPLIST_FILE = "Sources/InAppMessages-Custom-UI/Info.plist";
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.InAppMessages-Custom-UI";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator appletvos appletvsimulator xros xrsimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
+				TARGETED_DEVICE_FAMILY = "1,2,3,7";
+			};
+			name = Release;
+		};
+		B9FD2D94FC2BF1DFA9DDA644 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Sources/PushNotificationsContentExtension/PushNotificationsContentExtension.entitlements;
+				CODE_SIGN_STYLE = automatic;
+				INFOPLIST_FILE = Sources/PushNotificationsContentExtension/Info.plist;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.braze.PushNotifications.PushNotificationsContentExtension;
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+			};
+			name = Release;
+		};
+		BE47B129D3210EFFB3B5C0E3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Sources/PushNotificationsContentExtension/PushNotificationsContentExtension.entitlements;
+				CODE_SIGN_STYLE = automatic;
+				INFOPLIST_FILE = Sources/PushNotificationsContentExtension/Info.plist;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.braze.PushNotifications.PushNotificationsContentExtension;
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+			};
+			name = Debug;
+		};
+		C2A7EEE09BB48F72633D6BEB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = automatic;
+				INFOPLIST_FILE = Sources/ContentCardUI/Info.plist;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.braze.ContentCardUI;
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+			};
+			name = Release;
+		};
+		C5E70E219CFA85111DF5B129 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = automatic;
+				INFOPLIST_FILE = Sources/BannerUI/Info.plist;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.braze.BannerUI;
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+			};
+			name = Release;
+		};
+		EE68CEA71696509EBFD2C020 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = automatic;
+				INFOPLIST_FILE = Sources/Analytics/Info.plist;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.braze.Analytics;
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator appletvos appletvsimulator xros xrsimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
+				TARGETED_DEVICE_FAMILY = "1,2,3,7";
+			};
+			name = Release;
+		};
+		F83B82D7A7E5DB678B6196A6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = automatic;
+				INFOPLIST_FILE = Sources/PushNotificationsServiceExtension/Info.plist;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.braze.PushNotifications.PushNotificationsServiceExtension;
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+			};
+			name = Debug;
+		};
+		FDF551A632AD9FFB676FAA4D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = automatic;
+				INFOPLIST_FILE = "Sources/InAppMessageUI-Customization/Info.plist";
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.InAppMessageUI-Customization";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		109848605591551D72855DA7 /* Build configuration list for PBXNativeTarget "InAppMessages-Custom-UI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				618D314D94AB4F95C914E418 /* Debug */,
+				B8ADD2CD0FBEB6948D6A067B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		121E4DAF0EB7FA3A0B03C3C0 /* Build configuration list for PBXProject "Examples-SwiftPM" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				35E8D78DF517B11959723F4D /* Debug */,
+				582C70DAA75E87B5B1B59BCC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		331FD755F8963A911E13D83B /* Build configuration list for PBXNativeTarget "PushNotifications-Automatic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0B9E5DC01DEE1E1C670B4AE4 /* Debug */,
+				70F9E3F6FD43B08F0B613364 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		4C19E16B15D4B729583F0D3A /* Build configuration list for PBXNativeTarget "InAppMessageUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6C12E2EAE507160B54525A5E /* Debug */,
+				4A132652A20295B00590B16B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		4F7E20F26C98E081CA9378CE /* Build configuration list for PBXNativeTarget "ContentCardUI-Customization" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9D9A0BDA997D036EBEA9221C /* Debug */,
+				A6A715219F3001A92D10FDCE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		5181AF8DDEA182DF10C54652 /* Build configuration list for PBXNativeTarget "ContentCardUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B436B532CD385795FBD8A905 /* Debug */,
+				C2A7EEE09BB48F72633D6BEB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		538A7D3F62B432A07C91FD40 /* Build configuration list for PBXNativeTarget "PushNotificationsContentExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE47B129D3210EFFB3B5C0E3 /* Debug */,
+				B9FD2D94FC2BF1DFA9DDA644 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		5C9226DEFB56FCE86BDECA11 /* Build configuration list for PBXNativeTarget "BannerUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0E16DC639408818C18DA1706 /* Debug */,
+				C5E70E219CFA85111DF5B129 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		A6A1E4C76F43C48C764BB3A6 /* Build configuration list for PBXNativeTarget "InAppMessageUI-Customization" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B2A94D46C4928B86BDB1F2AF /* Debug */,
+				FDF551A632AD9FFB676FAA4D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		A8ABD7F2878F6639CC665C81 /* Build configuration list for PBXNativeTarget "Location" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				89DAA93D03A3D167791DE1EC /* Debug */,
+				280BEA0B09453312D14AA55E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		CD229DA33B161BD356A199E5 /* Build configuration list for PBXNativeTarget "PushNotifications-Manual" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				24337AEDDB9E06E25C8FD74E /* Debug */,
+				B5AAF377CEFA3C925921A8AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		D59FCEDC2DB34D2E4572B9E9 /* Build configuration list for PBXNativeTarget "Analytics" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				093A85E466B20FBC8CD86CF9 /* Debug */,
+				EE68CEA71696509EBFD2C020 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		D9EE7B43AC80F2816939B0A1 /* Build configuration list for PBXNativeTarget "PushNotifications-DelayedInitialization" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				451A112F28EB569EB73418A4 /* Debug */,
+				6FA9B6D2DB089AF5113C9B07 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		F15ACF9A562AD4BE837493B0 /* Build configuration list for PBXNativeTarget "ContentCards-Custom-UI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				77B62EF1F4C4C0423DA1A598 /* Debug */,
+				4794CD48E35A801270C6F339 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		FB6122990820F57E6DB4A7D6 /* Build configuration list for PBXNativeTarget "PushNotificationsServiceExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F83B82D7A7E5DB678B6196A6 /* Debug */,
+				9E13FBC998B0A5499C68208A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9928D5150C45879A982BA1C6 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.19.7;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		8A7F72B8C3C2D68A209B1192 /* XCLocalSwiftPackageReference "/Users/daniel.hok/Desktop/code/swift-sdk/.build/braze/release/braze-swift-sdk" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = "/Users/daniel.hok/Desktop/code/swift-sdk/.build/braze/release/braze-swift-sdk";
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0891F7D29EA51A994793513D /* BrazeUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = BrazeUI;
+		};
+		1587AFA62763A9B75CA01C6C /* BrazeKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = BrazeKit;
+		};
+		1BF6D20F4E3962FBB5B92AF3 /* BrazeKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = BrazeKit;
+		};
+		2DFFD8844A474098D6408946 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9928D5150C45879A982BA1C6 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+		40864C1ED6466B40F23B72D8 /* BrazeKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = BrazeKit;
+		};
+		47F3E12B1114B00B4CB70C60 /* BrazeNotificationService */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = BrazeNotificationService;
+		};
+		4EC00DCCE10936877006ED4B /* BrazeKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = BrazeKit;
+		};
+		5133F5A2D91882A4AE649D4D /* BrazePushStory */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = BrazePushStory;
+		};
+		56B0C3BB439D22B39FD34A28 /* BrazeKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = BrazeKit;
+		};
+		5FDBAD51FF3A992AEB226099 /* BrazeUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = BrazeUI;
+		};
+		624AA955B2621EE8B5A153AE /* BrazeUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = BrazeUI;
+		};
+		6406D8C02D350722AE48DE31 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9928D5150C45879A982BA1C6 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+		64EAC9A16C6BB0EA49C9157A /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9928D5150C45879A982BA1C6 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+		710652AF50043CF76221D1D8 /* BrazeKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = BrazeKit;
+		};
+		77C32D8D5EBCD917A23EE382 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9928D5150C45879A982BA1C6 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+		8603B741E7060A7D18612200 /* BrazeKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = BrazeKit;
+		};
+		8790507F4D5F35EB03D127E1 /* BrazeKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = BrazeKit;
+		};
+		96F76CB78E3FFBBBCDE87EBD /* BrazeUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = BrazeUI;
+		};
+		9720FE32CFB77D7E0319A501 /* BrazeKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = BrazeKit;
+		};
+		9BAE4406D94C39537917176F /* BrazeKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = BrazeKit;
+		};
+		B886221109B13C767819BA7C /* BrazeKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = BrazeKit;
+		};
+		E045FE65756A230024955AD5 /* BrazeKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = BrazeKit;
+		};
+		E8F0CDD2BA63A81551367410 /* BrazeUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = BrazeUI;
+		};
+		FCFA9573D5A8726847280A8C /* BrazeLocation */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = BrazeLocation;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = D0C505F98E2813EFE5D58816 /* Project object */;
+}
