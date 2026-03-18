@@ -1,3 +1,8 @@
+## 14.0.4
+
+##### Fixed
+- Fixes an issue where the configuration of push notification automation would be dropped upon every other re-initialization of the Braze instance.
+
 ## 14.0.3
 
 ##### Fixed
@@ -28,7 +33,7 @@
 
 ##### Added
 - Remote configuration now automatically refetches after SDK upgrades, keeping server defaults in sync and improving reliability after version changes.
-  
+
 ##### Fixed
 - Resolves an issue where long text in in-app message buttons would wrap to multiple lines.
   - These messages will now match the dashboard preview behavior of truncating long text.
