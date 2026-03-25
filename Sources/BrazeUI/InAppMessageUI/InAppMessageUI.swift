@@ -130,11 +130,35 @@ open class BrazeInAppMessageUI:
   public func dismiss(reason: Braze.InAppMessage.DismissalReason) {
     switch reason {
     case .wipeData, .changeUser:
-      // Clear internal state
+      // Clear internal state — must happen before dismissal so that no stale messages
+      // are re-presented via presentFollowup() or presentNext() during teardown.
       stack.removeAll()
       localAssetsCancellable = nil
       isProcessingClickAction = false
       followupMessage = nil
+
+      // Invalidate the dismiss timer immediately to prevent it from firing during or
+      // after the teardown (the normal path only invalidates in didDismiss()).
+      dismissTimer?.invalidate()
+      dismissTimer = nil
+
+      // Tear down the window synchronously. HTML in-app messages hold a WebView whose
+      // ScriptMessageHandler references the now-invalidated Braze context. Relying on
+      // the animated dismiss path leaves a window where the WebView can invoke its
+      // bridge handler against a stale context, causing EXC_BREAKPOINT.
+      // See: https://github.com/braze-inc/braze-swift-sdk/issues/191
+      if let window {
+        window.messageViewController?.messageView.dismiss(completion: nil)
+        window.rootViewController = nil
+        if #available(iOS 13.0, *) {
+          window.windowScene = nil
+        }
+        window.isHidden = true
+        self.window = nil
+        _ = try? resetAssetsDirectory()
+      }
+      return
+
     @unknown default:
       break
     }
