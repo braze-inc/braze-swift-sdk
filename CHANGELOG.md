@@ -1,3 +1,19 @@
+## 14.1.0
+
+##### Added
+- Adds support for Banner dismissal events.
+  - Adds an optional `onDismiss` closure to both [`BrazeBannerUI.BannerUIView`](https://braze-inc.github.io/braze-swift-sdk/documentation/brazeui/brazebannerui/banneruiview) (UIKit) and [`BrazeBannerUI.BannerView`](https://braze-inc.github.io/braze-swift-sdk/documentation/brazeui/brazebannerui/bannerview) (SwiftUI) for integrators to run custom logic when a banner is dismissed.
+    - By default, this closure is a no-op.
+- Improves the robustness of the SDK's internal state management.
+  - This release includes an internal refactor intended to make SDK behavior more consistent. No external API changes.
+- Adds error logging for Banners operations, providing actionable diagnostics for persistence failures and invalid banner states.
+
+##### Fixed
+- Improves robustness around push notification and deep link handling during delayed SDK initialization.
+- Fixes an issue where `Braze.FeatureFlags.subscribeToUpdates` would not trigger the update closure upon all refresh completions.
+  - All refresh completions, regardless of a success or error result, will now trigger the update closure. This change brings parity with the Android and Web SDKs.
+  - Previously, the update closure would not always trigger upon the completion of a refresh request, depending on whether the cached data had previously been reported.
+
 ## 14.0.4
 
 ##### Fixed
@@ -55,7 +71,7 @@
 ## 13.2.1
 
 ##### Fixed
-- Resolves an issue that where an accumulation of Banners pending requests could cause the host application to hang at app startup.
+- Resolves an issue where an accumulation of Banners pending requests could cause the host application to hang at app startup.
   - This fix performs additional cleanup to any existing requests that were accumulated from previous versions, so you do not need to do any manual cleanup.
 
 ## 13.2.0
@@ -66,14 +82,14 @@
 ## 13.1.0
 
 ##### Added
-- Adds support for Banner properties via new public methods for `Braze.Banner`.
-  - `Braze.Banner.stringProperty(key:)` for accessing `String` properties.
-  - `Braze.Banner.numberProperty(key:)` for accessing `Double` properties.
-  - `Braze.Banner.timestampProperty(key:)` for accessing `Int` Unix millisecond timestamp  properties.
-  - `Braze.Banner.booleanProperty(key:)` for accessing `Bool` properties.
-  - `Braze.Banner.imageProperty(key:)` for accessing image URL properties as `String`s.
-  - `Braze.Banner.jsonProperty(key:)` for accessing JSON properties as `[String:Any]` dictionaries.
-  - `Braze.Banner.jsonProperty<T: Decodable>(key:type:decoder)` for accessing JSON properties as values of any custom `Decodable` type.
+- Adds support for Banner properties via new public methods on `Braze.Banner` instances.
+  - `banner.stringProperty(key:)` for accessing `String` properties.
+  - `banner.numberProperty(key:)` for accessing `Double` properties.
+  - `banner.timestampProperty(key:)` for accessing `Int` Unix millisecond timestamp properties.
+  - `banner.booleanProperty(key:)` for accessing `Bool` properties.
+  - `banner.imageProperty(key:)` for accessing image URL properties as `String`s.
+  - `banner.jsonProperty(key:)` for accessing JSON properties as `[String:Any]` dictionaries.
+  - `banner.jsonProperty<T: Decodable>(key:type:decoder:)` for accessing JSON properties as values of any custom `Decodable` type.
 - The default client-side rate limiting values for Banners refresh has been increased. For more information on SDK rate limiting, please refer to the [Braze Developer Guide](https://www.braze.com/docs/developer_guide/sdk_integration/rate_limits#braze-sdk-rate-limits)
 
 ##### Fixed
@@ -92,8 +108,8 @@
   - Previously, the value of this configuration was not consumed by the SDK and the token was always attached to requests if it was present.
   - Now, the SDK will only attach the SDK authentication token to outgoing network requests when this configuration is enabled.
 - The setters for all properties of `Braze.FeatureFlag` and all properties of `Braze.Banner` have been made `private`. The properties of these classes are now read-only.
-- Removes the `Braze.Banner.id` property, which was deprecated in version `11.4.0`.
-  - Instead, use `Braze.Banner.trackingId` to read a banner's campaign tracking ID.
+- Removes the `banner.id` property, which was deprecated in version `11.4.0`.
+  - Instead, use `banner.trackingId` to read a banner's campaign tracking ID.
 
 ##### Added
 - Adds the boolean field `optional` to `BrazeSDKAuthError` to indicate if it is an optional authentication error.

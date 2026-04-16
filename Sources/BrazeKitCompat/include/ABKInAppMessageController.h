@@ -30,7 +30,7 @@ BRZ_DEPRECATED("renamed to 'BrazeInAppMessageUI' (BrazeUI module)")
  * This boolean determines if modal in-app messages will be dismissed when the user taps outside of the
  * in-app message.
  *
- * @discussion The default of this value is NO but can be overriden by setting the value of ABKEnableDismissModalOnOutsideTapKey in
+ * @discussion The default of this value is NO but can be overridden by setting the value of ABKEnableDismissModalOnOutsideTapKey in
  *             appboyOptions or in the Braze dictionary in your Info.plist file.
  */
 @property BOOL enableDismissModalOnOutsideTap;

@@ -11,7 +11,7 @@ extension BrazeBannerUI.BannerUIView {
         self?.logClick(buttonId: $0)
       },
       logError: { [weak self] in self?.logError(.webViewScript($0)) },
-      closeMessage: { [weak self] in self?.logError(.webViewFeatureNotAvailable) },
+      closeMessage: { [weak self] in self?.dismiss() },
       setBannerHeight: { [weak self] height in
         self?.processContentUpdates?(.success(.init(height: Double(height))))
       },
@@ -24,7 +24,7 @@ extension BrazeBannerUI.BannerUIView {
     .init(
       channel: .banner,
       logError: { [weak self] in self?.logError(.webViewScheme($0)) },
-      closeMessage: { [weak self] in self?.logError(.webViewFeatureNotAvailable) },
+      closeMessage: { [weak self] in self?.dismiss() },
       queryHandler: queryHandler,
       braze: self.braze
     )

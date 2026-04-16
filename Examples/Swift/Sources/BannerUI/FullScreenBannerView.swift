@@ -5,8 +5,6 @@ import SwiftUI
 @available(iOS 13.0, *)
 struct FullScreenBannerView: View {
 
-  static let bannerPlacementID = "sdk-test-1"
-
   @State var hasBannerForPlacement: Bool = false
   @State var contentHeight: CGFloat = 0
 
@@ -14,7 +12,7 @@ struct FullScreenBannerView: View {
     fullScreenView
       .onAppear {
         AppDelegate.braze?.banners.getBanner(
-          for: FullScreenBannerView.bannerPlacementID,
+          for: BannerUI.Constants.fullBannerPlacementID,
           { banner in
             hasBannerForPlacement = banner != nil
           }
@@ -28,23 +26,31 @@ struct FullScreenBannerView: View {
     if let braze = AppDelegate.braze,
       hasBannerForPlacement
     {
-      BrazeBannerUI.BannerView(
-        placementId: FullScreenBannerView.bannerPlacementID,
-        braze: braze,
-        processContentUpdates: { result in
-          switch result {
-          case .success(let updates):
-            if let height = updates.height {
-              self.contentHeight = height
-            }
-          case .failure(_):
-            return
-          }
-        }
-      )
+      sampleBannerView(braze: braze)
     } else {
       Text("An error occurred while loading the banner.")
     }
+  }
+
+  private func sampleBannerView(braze: Braze) -> BrazeBannerUI.BannerView {
+    var bannerView = BrazeBannerUI.BannerView(
+      placementId: BannerUI.Constants.fullBannerPlacementID,
+      braze: braze,
+      processContentUpdates: { result in
+        switch result {
+        case .success(let updates):
+          if let height = updates.height {
+            self.contentHeight = height
+          }
+        case .failure(_):
+          return
+        }
+      }
+    )
+    bannerView.onDismiss = { dismissedBanner in
+      print("Successfully dismissed banner: \(dismissedBanner.placementId)")
+    }
+    return bannerView
   }
 
 }

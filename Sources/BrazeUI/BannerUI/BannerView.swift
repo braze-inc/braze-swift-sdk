@@ -20,6 +20,9 @@
       let braze: Braze
       let processContentUpdates: ((Result<BrazeBannerUI.ContentUpdates, Swift.Error>) -> Void)?
 
+      /// A callback invoked whenever a banner is dismissed. Set this for custom behavior, such as additional analytics.
+      public var onDismiss: ((Braze.Banner) -> Void)?
+
       /// Initializes a SwiftUI-compatible version of the Braze Banner view.
       ///
       /// - Parameter placementId: The placement ID for the banner.
@@ -36,25 +39,26 @@
       }
 
       public func makeUIView(context: Context) -> BannerUIView {
-        BannerUIView(
+        let uiView = BannerUIView(
           placementId: self.placementId,
           braze: self.braze,
           processContentUpdates: self.processContentUpdates,
           impressionTracker: .shared
         )
+        uiView.onDismiss = self.onDismiss
+        return uiView
       }
 
       public func updateUIView(_ uiView: BannerUIView, context: Context) {
-        context.coordinator.didReceiveUpdate = { [weak uiView] result in
+        uiView.onDismiss = onDismiss
+        context.coordinator.didReceiveUpdate = { [weak uiView] event in
           guard let uiView else { return }
-          switch result {
-          case .success(let banner):
-            if let banner {
-              uiView.render(with: banner)
-            } else {
-              uiView.removeBannerContent()
-            }
-          case .failure(let error):
+          switch event {
+          case .render(let banner):
+            uiView.render(with: banner)
+          case .removeContent:
+            uiView.removeBannerContent()
+          case .error(let error):
             uiView.notifyError(error)
           }
         }
@@ -78,7 +82,7 @@
       public let placementId: String
       let impressionTracker: BrazeBannerUI.BannersImpressionTracker
 
-      var didReceiveUpdate: ((Result<Braze.Banner?, Swift.Error>) -> Void)?
+      var didReceiveUpdate: ((CoordinatorEvent) -> Void)?
 
       init(
         placementId: String,
@@ -89,15 +93,15 @@
       }
 
       public func render(with banner: BrazeKit.Braze.Banner) {
-        didReceiveUpdate?(.success(banner))
+        didReceiveUpdate?(.render(banner))
       }
 
       public func notifyError(_ error: Error) {
-        didReceiveUpdate?(.failure(error))
+        didReceiveUpdate?(.error(error))
       }
 
       public func removeBannerContent() {
-        didReceiveUpdate?(.success(nil))
+        didReceiveUpdate?(.removeContent)
       }
 
     }
@@ -109,6 +113,15 @@
       return coordinator
     }
 
+  }
+
+  @available(iOS 13.0, *)
+  extension BrazeBannerUI.BannerView {
+    enum CoordinatorEvent {
+      case render(Braze.Banner)
+      case removeContent
+      case error(Swift.Error)
+    }
   }
 
 #endif

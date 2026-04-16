@@ -3,8 +3,6 @@ import UIKit
 
 final class FullScreenBannerViewController: UIViewController {
 
-  static let bannerPlacementID = "sdk-test-1"
-
   var hasBannerForPlacement: Bool = false {
     didSet {
       self.bannerView.isHidden = !hasBannerForPlacement
@@ -14,7 +12,7 @@ final class FullScreenBannerViewController: UIViewController {
 
   lazy var bannerView: BrazeBannerUI.BannerUIView = {
     var bannerView = BrazeBannerUI.BannerUIView(
-      placementId: FullScreenBannerViewController.bannerPlacementID,
+      placementId: BannerUI.Constants.fullBannerPlacementID,
       braze: AppDelegate.braze!,
       processContentUpdates: { [weak self] result in
         // Update layout properties when banner content has finished loading.
@@ -30,6 +28,9 @@ final class FullScreenBannerViewController: UIViewController {
         }
       }
     )
+    bannerView.onDismiss = { dismissedBanner in
+      print("Successfully dismissed banner: \(dismissedBanner.placementId)")
+    }
 
     bannerView.translatesAutoresizingMaskIntoConstraints = false
     bannerView.isHidden = true
@@ -70,7 +71,7 @@ final class FullScreenBannerViewController: UIViewController {
       errorView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor),
     ])
 
-    AppDelegate.braze?.banners.getBanner(for: FullScreenBannerViewController.bannerPlacementID) {
+    AppDelegate.braze?.banners.getBanner(for: BannerUI.Constants.fullBannerPlacementID) {
       [weak self] banner in
       self?.hasBannerForPlacement = banner != nil
     }

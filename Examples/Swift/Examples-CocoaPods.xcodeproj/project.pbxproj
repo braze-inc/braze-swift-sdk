@@ -13,6 +13,7 @@
 		069F4D1FC2D1AAE0CF69F4C8 /* MockImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1099A7C7E5E89E130751B24C /* MockImage.swift */; };
 		06C97BF64E9A3B3D120DC5DA /* Readme.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4946E4B2E8F15E1A3241324 /* Readme.swift */; };
 		080BBDE75ABB2E0DADB67039 /* ReadmeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76740E64DEB7874C6DA73841 /* ReadmeViewController.swift */; };
+		08F8D39039F042B326A5C54C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1B5B141EE9DEB3C84D25CA /* Constants.swift */; };
 		09ACDDCCE6B523D8B4FE5B73 /* FullScreenBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D421408E341011D424067888 /* FullScreenBannerView.swift */; };
 		09B1343DC6C992FF28F227C4 /* ReadmeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76740E64DEB7874C6DA73841 /* ReadmeViewController.swift */; };
 		0C12495B170FB199C95069B4 /* PushNotificationsServiceExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 025C514A87C7682650C8F612 /* PushNotificationsServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -62,6 +63,7 @@
 		3378DAE43C5EDE386F72D7BB /* PushNotificationsServiceExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 025C514A87C7682650C8F612 /* PushNotificationsServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		345CA2282BFEFED98328C0C2 /* Readme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6992ACA4C973FAF6333EE4B2 /* Readme.swift */; };
 		34C9C566ACB7B6220C782866 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A56AB422F8DA782A8D2B6FD /* LaunchScreen.storyboard */; };
+		354F4162F0F6D50F88FA3C49 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1B5B141EE9DEB3C84D25CA /* Constants.swift */; };
 		356FD93DCAEAD68D24E91795 /* InAppMessageInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D93378C85712C1E5E9146B7 /* InAppMessageInfoViewController.swift */; };
 		37B50C8BB725C30297D605BB /* WideBannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E80E353EFF241ED8AB09692 /* WideBannerViewController.swift */; };
 		383D757BFC1CFD0BE5D70CAB /* MockImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1099A7C7E5E89E130751B24C /* MockImage.swift */; };
@@ -489,6 +491,7 @@
 		D421408E341011D424067888 /* FullScreenBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenBannerView.swift; sourceTree = "<group>"; };
 		D6742114C06FC93D4AA30B5B /* Readme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Readme.swift; sourceTree = "<group>"; };
 		D6D87B0B28882DFD35A2BE4B /* InAppMessageUI-Customization.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "InAppMessageUI-Customization.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE1B5B141EE9DEB3C84D25CA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		DE3608B9E460175A349CDB87 /* Analytics.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Analytics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB96485E099438DAB9547DF5 /* PushNotificationsContentExtension.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = PushNotificationsContentExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC4AEEA68D47995F66CD4034 /* ContentCardUI.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = ContentCardUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -688,6 +691,7 @@
 			isa = PBXGroup;
 			children = (
 				FA2A3D76B00A6BEA65421FEA /* AppDelegate.swift */,
+				DE1B5B141EE9DEB3C84D25CA /* Constants.swift */,
 				D421408E341011D424067888 /* FullScreenBannerView.swift */,
 				B20159671F23FF2158E99805 /* FullScreenBannerViewController.swift */,
 				3F3A14E86E6AA4CC7D8BFCEB /* Readme.swift */,
@@ -1874,6 +1878,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1EF554A50A1216254FFB5FB8 /* AppDelegate.swift in Sources */,
+				354F4162F0F6D50F88FA3C49 /* Constants.swift in Sources */,
 				728480514BDF1C6D66016875 /* Credentials.swift in Sources */,
 				09ACDDCCE6B523D8B4FE5B73 /* FullScreenBannerView.swift in Sources */,
 				64DFF75B22AADA180BF17F7A /* FullScreenBannerViewController.swift in Sources */,
@@ -2030,6 +2035,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				42F2573DBA38537BC54FC655 /* AppDelegate.swift in Sources */,
+				08F8D39039F042B326A5C54C /* Constants.swift in Sources */,
 				AA897BC8AB91D7E2A6AD5ABA /* Credentials.swift in Sources */,
 				C8BC827FA4FA2A49400C8556 /* FullScreenBannerView.swift in Sources */,
 				611DC86C902AEDEEB384BA42 /* FullScreenBannerViewController.swift in Sources */,

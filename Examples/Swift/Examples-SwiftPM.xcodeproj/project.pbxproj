@@ -86,6 +86,7 @@
 		9D904DF3F75EF5373B1618A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD82EF0D191847F89792884 /* AppDelegate.swift */; };
 		A37DA2DB71B7AD385059771C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19D0F1AEE6BC19D74B3B363 /* AppDelegate.swift */; };
 		A8393BDD4B926637374206B7 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAE9DDCCBE7557171C3574D /* Credentials.swift */; };
+		AA6083817F8675CCD50AA0BE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A003F067231BFCF99D9F5D /* Constants.swift */; };
 		AAEE2F6C6C2C63DE425798FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D73DD16728C7AD0A7EA662 /* AppDelegate.swift */; };
 		ABDD26A5B1458660253434E6 /* MockImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E59EF18571FF184E5965819 /* MockImage.swift */; };
 		AE50B86A636D3252537D8B88 /* ConfirmButtonSlideupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80C5976EE2C1D5CE55B90B5 /* ConfirmButtonSlideupView.swift */; };
@@ -267,6 +268,7 @@
 		B9D5BBC757BE390849FCDD52 /* ContentCards-Custom-UI.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "ContentCards-Custom-UI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBB1BAFFE38985F8A4C3C60A /* WideBannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WideBannerViewController.swift; sourceTree = "<group>"; };
 		C7097EB3ABED4921B719078C /* Readme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Readme.swift; sourceTree = "<group>"; };
+		C9A003F067231BFCF99D9F5D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CCAE9DDCCBE7557171C3574D /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
 		CCCC91596E91D51EABEC2401 /* Readme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Readme.swift; sourceTree = "<group>"; };
 		CE00D10FF658213E5A00188D /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
@@ -417,6 +419,7 @@
 			isa = PBXGroup;
 			children = (
 				6E8361A451688DDD9588B5C8 /* AppDelegate.swift */,
+				C9A003F067231BFCF99D9F5D /* Constants.swift */,
 				58144D9A782909488951B3C0 /* FullScreenBannerView.swift */,
 				1740BB61C34E6BCBDA6F3F06 /* FullScreenBannerViewController.swift */,
 				D903A056458272184BA387B0 /* Readme.swift */,
@@ -1022,7 +1025,7 @@
 			mainGroup = D8CC2266D736859D7DD9A8FF;
 			packageReferences = (
 				9928D5150C45879A982BA1C6 /* XCRemoteSwiftPackageReference "SDWebImage" */,
-				9AAC0831EC76AA4D24349809 /* XCLocalSwiftPackageReference "/Users/vagrant/git/.build/braze/release/14.0.4/38659/braze-swift-sdk" */,
+				338E4B5677E3172BD0A60CFD /* XCLocalSwiftPackageReference "/Users/vagrant/git/.build/braze/release/14.1.0/39042/braze-swift-sdk" */,
 			);
 			projectDirPath = "";
 			projectRoot = "";
@@ -1210,6 +1213,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5606EFC24899773A0167896E /* AppDelegate.swift in Sources */,
+				AA6083817F8675CCD50AA0BE /* Constants.swift in Sources */,
 				435184022629B52F5501E541 /* Credentials.swift in Sources */,
 				6EAC7E6B09832F4AE89EED28 /* FullScreenBannerView.swift in Sources */,
 				4E986F1ED04C2A28C3F0C90D /* FullScreenBannerViewController.swift in Sources */,
@@ -2257,9 +2261,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		9AAC0831EC76AA4D24349809 /* XCLocalSwiftPackageReference "/Users/vagrant/git/.build/braze/release/14.0.4/38659/braze-swift-sdk" */ = {
+		338E4B5677E3172BD0A60CFD /* XCLocalSwiftPackageReference "/Users/vagrant/git/.build/braze/release/14.1.0/39042/braze-swift-sdk" */ = {
 			isa = XCLocalSwiftPackageReference;
-			relativePath = "/Users/vagrant/git/.build/braze/release/14.0.4/38659/braze-swift-sdk";
+			relativePath = "/Users/vagrant/git/.build/braze/release/14.1.0/39042/braze-swift-sdk";
 		};
 /* End XCLocalSwiftPackageReference section */
 

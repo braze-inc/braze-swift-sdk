@@ -28,6 +28,7 @@
 		1EF13C28EE36D54A14EFDBC9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEF0FF04032299A31D37CDE4 /* Assets.xcassets */; };
 		262BE0798FC0AD0FE8DF90EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEF0FF04032299A31D37CDE4 /* Assets.xcassets */; };
 		293B3962C8D61CA48BDE7056 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CEC1A3A03568BC7B5FB442 /* Credentials.swift */; };
+		2BA7EF6A54B1484C9180CCEC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A166683F50ED9CE74BEB80BA /* Constants.swift */; };
 		2BC23851A958ED4FDF0003C5 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CEC1A3A03568BC7B5FB442 /* Credentials.swift */; };
 		2E7B629B9B167DE44FE5EF3A /* SDWebImage.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE6FAA10D6D23B01068CC18C /* SDWebImage.xcframework */; };
 		2F6788C2734C28C58568B144 /* FullScreenBannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434B671F0808365AC46FE830 /* FullScreenBannerViewController.swift */; };
@@ -447,6 +448,7 @@
 		99F5F7DADAE59DAF19615685 /* Readme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Readme.swift; sourceTree = "<group>"; };
 		9BD64137870DE7C6D6ECB508 /* Location.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Location.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D34CFD4F0F28B78BD6C416B /* Readme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Readme.swift; sourceTree = "<group>"; };
+		A166683F50ED9CE74BEB80BA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A44AB6CF753C2512EA4D110C /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
 		A5256781FE6611430C077175 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A9A04673678B1EEA9C7559C6 /* PushNotificationsServiceExtension.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = PushNotificationsServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -662,6 +664,7 @@
 			isa = PBXGroup;
 			children = (
 				256D73D7DFAD869BB17DE489 /* AppDelegate.swift */,
+				A166683F50ED9CE74BEB80BA /* Constants.swift */,
 				ABB2973236989E92EA82CB53 /* FullScreenBannerView.swift */,
 				434B671F0808365AC46FE830 /* FullScreenBannerViewController.swift */,
 				90811594EF13DF398BDD0B72 /* Readme.swift */,
@@ -1333,6 +1336,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				075FC91520C52D053CC8D39E /* AppDelegate.swift in Sources */,
+				2BA7EF6A54B1484C9180CCEC /* Constants.swift in Sources */,
 				76BCF8A496F9D39E19031EC7 /* Credentials.swift in Sources */,
 				DD3ABB6CF81334612F7FB881 /* FullScreenBannerView.swift in Sources */,
 				2F6788C2734C28C58568B144 /* FullScreenBannerViewController.swift in Sources */,

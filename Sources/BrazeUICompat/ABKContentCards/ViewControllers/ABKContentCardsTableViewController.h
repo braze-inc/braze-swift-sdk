@@ -52,7 +52,7 @@
  * This boolean determines if the Content Card will attempt to use dark theme colors, granted the device
  * is in dark mode.
  *
- * @discussion The default of this value is YES but can be overriden before the view controller is presented
+ * @discussion The default of this value is YES but can be overridden before the view controller is presented
  *             to ensure that the dark theme is disabled for any Content Card displayed.
  */
 @property (assign, nonatomic) BOOL enableDarkTheme;

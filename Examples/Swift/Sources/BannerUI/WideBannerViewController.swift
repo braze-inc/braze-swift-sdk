@@ -3,8 +3,6 @@ import UIKit
 
 final class WideBannerViewController: UIViewController {
 
-  static let bannerPlacementID = "sdk-test-2"
-
   var bannerHeightConstraint: NSLayoutConstraint?
 
   lazy var contentView: UILabel = {
@@ -17,7 +15,7 @@ final class WideBannerViewController: UIViewController {
 
   lazy var bannerView: BrazeBannerUI.BannerUIView = {
     var bannerView = BrazeBannerUI.BannerUIView(
-      placementId: WideBannerViewController.bannerPlacementID,
+      placementId: BannerUI.Constants.wideBannerPlacementID,
       braze: AppDelegate.braze!,
       processContentUpdates: { [weak self] result in
         // Update layout properties when banner content has finished loading.
@@ -28,7 +26,8 @@ final class WideBannerViewController: UIViewController {
           case .success(let updates):
             if let height = updates.height {
               self.bannerView.isHidden = false
-              self.bannerHeightConstraint?.constant = min(height, 80)
+              self.bannerHeightConstraint?.constant = min(
+                height, BannerUI.Constants.wideBannerMaxHeight)
             }
           case .failure(let error):
             return
@@ -36,6 +35,9 @@ final class WideBannerViewController: UIViewController {
         }
       }
     )
+    bannerView.onDismiss = { dismissedBanner in
+      print("Successfully dismissed banner: \(dismissedBanner.placementId)")
+    }
 
     bannerView.translatesAutoresizingMaskIntoConstraints = false
     bannerView.isHidden = true

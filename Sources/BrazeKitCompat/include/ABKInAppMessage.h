@@ -147,7 +147,7 @@ BRZ_DEPRECATED("renamed to 'Braze.InAppMessage'")
  * This boolean determines if the in-app message will attempt to use dark theme colors, granted the device
  * is in dark mode and the fields are present in the response.
  *
- * @discussion The default of this value is YES but can be overriden in `beforeInAppMessageDisplayed:`
+ * @discussion The default of this value is YES but can be overridden in `beforeInAppMessageDisplayed:`
  *             to ensure that the dark theme is disabled for any given in-app message.
  */
 @property (nonatomic, assign) BOOL enableDarkTheme;
@@ -162,7 +162,7 @@ BRZ_DEPRECATED("renamed to 'Braze.InAppMessage'")
  * An optional UIUserInterfaceStyle that can be used to force dark or light mode.
  *
  * @discussion The default value will not override OS settings but can
- *             be overriden in `beforeInAppMessageDisplayed:`
+ *             be overridden in `beforeInAppMessageDisplayed:`
  *             to ensure that the dark or light theme is used for any given in-app message.
  *             This property is of type NSInteger to avoid any iOS version dependencies.
  */

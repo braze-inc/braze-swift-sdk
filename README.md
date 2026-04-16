@@ -60,7 +60,7 @@ Xcode|16.0+ (16A242d)
 
 <!-- Table generated with https://www.tablesgenerator.com/markdown_tables -->
 
-|                                                                                                                             | iOS |     tvOS      | macCatatyst |   visionOS    |
+|                                                                                                                             | iOS |     tvOS      | macCatalyst |   visionOS    |
 |-----------------------------------------------------------------------------------------------------------------------------|:---:|:-------------:|:-----------:|:-------------:|
 | **BrazeKit**</br> _Main SDK library providing support for [analytics] and [push notifications]._                            |  ✅  | ✅<sup>1</sup> |      ✅      |       ✅       |
 | **BrazeUI**</br> _Braze-provided user interface library for [In-App Messages] and [Content Cards]._                         |  ✅  |      n/a      |      ✅      |       ✅       |

@@ -5,6 +5,7 @@ extension BrazeBannerUI {
   public enum Error: Swift.Error, Hashable {
     case noContextLogImpression
     case noContextLogClick
+    case noContextLogDismissed
     case noContextProcessClickAction
     case bannerHeightUnavailable
     case webViewNavigation(Braze.ErrorString)
@@ -28,6 +29,8 @@ extension BrazeBannerUI.Error {
       return "Cannot log impression for non-Braze banner."
     case .noContextLogClick:
       return "Cannot log click for non-Braze banner."
+    case .noContextLogDismissed:
+      return "Cannot log dismissed for non-Braze banner."
     case .noContextProcessClickAction:
       return "Cannot process click action for non-Braze banner."
     case .webViewNavigation(let error):

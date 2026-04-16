@@ -11,7 +11,7 @@ extension BrazeBannerUI {
     /// The placement ID of the Banner.
     public let placementId: String
 
-    let braze: Braze
+    weak var braze: Braze?
     let impressionTracker: BrazeBannerUI.BannersImpressionTracker
     let processContentUpdates:
       (@MainActor (Result<BrazeBannerUI.ContentUpdates, Swift.Error>) -> Void)?
@@ -40,6 +40,9 @@ extension BrazeBannerUI {
     /// Structs from `BrazeKit` cannot generate a proper Objective-C metaclass and will cause a crash if subclassed.
     lazy var queryHandlerWrapper: StructWrapper<Braze.WebViewBridge.QueryHandler> = .init(
       wrappedValue: webViewQueryHandler())
+
+    /// Optional callback invoked whenever a banner is dismissed. Set this for custom behavior, such as additional analytics.
+    public var onDismiss: ((Braze.Banner) -> Void)?
 
     /// Initializes and registers a Braze banner view.
     ///
@@ -363,6 +366,22 @@ extension BrazeBannerUI.BannerUIView {
       return
     }
     context.logClick(buttonId: buttonId)
+  }
+
+  /// Dismisses the banner and calls the onDismiss() callback.
+  func dismiss() {
+    guard let banner = banner else {
+      return
+    }
+    DispatchQueue.main.async { [weak self] in
+      self?.removeBannerContent()
+    }
+    if let context = banner.context {
+      context.logDismissed()
+    } else {
+      logError(BrazeBannerUI.Error.noContextLogDismissed)
+    }
+    self.onDismiss?(banner)
   }
 
   /// Determines if the banner view is currently visible and not occluded.

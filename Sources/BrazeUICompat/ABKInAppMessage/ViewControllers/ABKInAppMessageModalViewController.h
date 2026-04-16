@@ -7,7 +7,7 @@ NS_ASSUME_NONNULL_BEGIN
  * This boolean determines if the modal in-app message will be dismissed when the user taps outside of the
  * in-app message.
  *
- * @discussion The default of this value is NO but can be overriden by setting the value of ABKEnableDismissModalOnOutsideTapKey in
+ * @discussion The default of this value is NO but can be overridden by setting the value of ABKEnableDismissModalOnOutsideTapKey in
  *             appboyOptions or in the Braze dictionary in your Info.plist file.
  */
 @property (nonatomic, assign) BOOL enableDismissOnOutsideTap;

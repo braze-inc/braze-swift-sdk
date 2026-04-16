@@ -28,7 +28,7 @@ public final class BrazeUIResources: NSObject {
   /// The resources bundle.
   @objc
   public static let bundle: Bundle? = {
-    // Use overriden resources bundle
+    // Use overridden resources bundle
     if let overrideResourcesBundle {
       return overrideResourcesBundle
     }
