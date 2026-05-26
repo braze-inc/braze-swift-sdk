@@ -1,3 +1,18 @@
+## 14.2.0
+
+##### Added
+- Adds methods to observe all key events and errors in the ActivityKit API, enabling observation of real-time state and error events from the SDK's Live Activity lifecycle.
+  - Adds [`Braze.LiveActivities.UpdateEvent`](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/liveactivities-swift.class/updateevent), a new enum covering activity and token lifecycle events (e.g. `started`, `active`, `dismissed`, `stale`, `ended`, `contentUpdated`, `pushTokenUpdated`) as well as Braze SDK operation events (`trackingStarted`, `trackingResumed`, `pushTokenFlushed`).
+  - Adds [`Braze.LiveActivities.ErrorEvent`](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/liveactivities-swift.class/errorevent), a new enum covering observation failures, token registration failures (with `isTransient` for retry logic), `activityNotFound`, and `invalidPushTokenTag`.
+  - Adds [`subscribeToStateUpdates(_:)`](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/liveactivities-swift.class/subscribetostateupdates(_:)) and [`subscribeToErrors(_:)`](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/liveactivities-swift.class/subscribetoerrors(_:)) methods on `Braze.LiveActivities` to register callbacks for the above events. Both return a `Braze.Cancellable` to remove the subscription.
+  - For detailed usage, refer to the [Braze developer guide](https://www.braze.com/docs/developer_guide/live_notifications/live_activities/) or the [Live Activities tutorial](https://braze-inc.github.io/braze-swift-sdk/tutorials/braze/b4-live-activities).
+
+##### Fixed
+- Improves reliability of Live Activity push token updates during app background and foreground transitions, including cold start scenarios where push-to-start activities may not have received token updates.
+- Content cards now filter out invalid cards so users can still view remaining valid cards.
+  - Previously, if any of the cards were invalid in the content card sync, the entire sync would be dropped and no cards would be added.
+  - This update brings parity with the behavior on Android and Web.
+
 ## 14.1.0
 
 ##### Added
