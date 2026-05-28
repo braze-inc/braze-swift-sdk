@@ -1,3 +1,10 @@
+## 14.2.1
+
+##### Fixed
+- Improves the reliability of resuming the SDK's tracking of Live Activities when there are multiple active activity types.
+  - This improves the tracking of Live Activities when relaunching the app after it has been terminated.
+- Fixes a compilation issue introduced in 14.2.0 on Mac Catalyst targets caused by ActivityKit imports.
+
 ## 14.2.0
 
 ##### Added
