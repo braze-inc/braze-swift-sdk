@@ -9,6 +9,7 @@ extension InAppMessageView {
     let braze = controller?.message.context?.braze as? Braze
 
     return .init(
+      channel: .inAppMessage,
       logClick: { [weak self] in self?.logClick(buttonId: $0) },
       logError: { [weak self] in self?.logError(.webViewScript($0)) },
       closeMessage: closeMessage,

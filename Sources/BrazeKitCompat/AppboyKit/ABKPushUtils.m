@@ -12,7 +12,6 @@
 static NSString *const ABKApsPushPayloadKey = @"aps";
 static NSString *const ABKContentAvailablePushPayloadKey = @"content-available";
 static NSString *const ABKAppboyPushPayloadKey = @"ab";
-static NSString *const ABKSyncGeofencesPushPayloadKey = @"ab_sync_geos";
 static NSString *const ABKFetchTestTriggerPushPayloadKey =
     @"ab_push_fetch_test_triggers_key";
 static NSString *const ABKUninstallTrackingPushPayloadKey =
@@ -33,8 +32,7 @@ static NSString *const ABKContentCardPushPayloadKey = @"ab_cd";
 }
 
 + (BOOL)isAppboyInternalRemoteNotification:(NSDictionary *)userInfo {
-  return [self isUninstallTrackingRemoteNotification:userInfo] ||
-         [self isGeofencesSyncRemoteNotification:userInfo];
+  return [self isUninstallTrackingRemoteNotification:userInfo];
 }
 
 + (BOOL)isUninstallTrackingUserNotification:(UNNotificationResponse *)response {
@@ -45,16 +43,6 @@ static NSString *const ABKContentCardPushPayloadKey = @"ab_cd";
 
 + (BOOL)isUninstallTrackingRemoteNotification:(NSDictionary *)userInfo {
   return [userInfo[ABKUninstallTrackingPushPayloadKey] boolValue];
-}
-
-+ (BOOL)isGeofencesSyncUserNotification:(UNNotificationResponse *)response {
-  return [self isGeofencesSyncRemoteNotification:response.notification.request
-                                                     .content.userInfo];
-}
-
-+ (BOOL)isGeofencesSyncRemoteNotification:(NSDictionary *)userInfo {
-  NSDictionary *appboyDict = userInfo[ABKAppboyPushPayloadKey];
-  return [appboyDict[ABKSyncGeofencesPushPayloadKey] boolValue];
 }
 
 + (BOOL)isAppboySilentRemoteNotification:(NSDictionary *)userInfo {

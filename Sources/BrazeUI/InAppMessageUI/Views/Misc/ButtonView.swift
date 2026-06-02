@@ -157,17 +157,17 @@ extension BrazeInAppMessageUI {
 
     // MARK: - Layout
 
-      lazy var minWidthConstraint: NSLayoutConstraint = {
-        let constraint = anchors.width.greaterThanOrEqual(0)
-        constraint.priority = .defaultHigh
-        return constraint
-      }()
+    lazy var minWidthConstraint: NSLayoutConstraint = {
+      let constraint = anchors.width.greaterThanOrEqual(0)
+      constraint.priority = .defaultHigh
+      return constraint
+    }()
 
-      lazy var maxHeightConstraint: NSLayoutConstraint = {
-        let constraint = anchors.height.lessThanOrEqual(0)
-        constraint.priority = .defaultHigh
-        return constraint
-      }()
+    lazy var maxHeightConstraint: NSLayoutConstraint = {
+      let constraint = anchors.height.lessThanOrEqual(0)
+      constraint.priority = .defaultHigh
+      return constraint
+    }()
 
     open override var intrinsicContentSize: CGSize {
       CGSize(

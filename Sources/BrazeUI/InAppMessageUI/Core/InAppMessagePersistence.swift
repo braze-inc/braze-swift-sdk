@@ -2,7 +2,7 @@ import Foundation
 
 /// Persistence interface for HTML-based in-app messages.
 protocol InAppMessagePersistenceProtocol {
-  typealias WriteCompletion = (Result<URL, Error>) -> Void
+  typealias WriteCompletion = @Sendable (Result<URL, Error>) -> Void
 
   func write(
     content: Data,

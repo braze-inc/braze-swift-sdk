@@ -25,7 +25,7 @@ extension BrazeInAppMessageUI {
     }
 
     deinit {
-      isolatedMainActorDeinit { [id = ObjectIdentifier(self), keyboard] in
+      runOnMainActorIsolated { [id = ObjectIdentifier(self), keyboard] in
         keyboard.unsubscribe(identifier: id)
       }
     }

@@ -1,4 +1,4 @@
-import BrazeKit
+@_spi(Internal) import BrazeKit
 import WebKit
 
 extension WKWebViewConfiguration {
@@ -6,6 +6,7 @@ extension WKWebViewConfiguration {
   /// Returns a web view configuration equipped with Braze bridge scripting.
   ///
   /// - Parameter scriptMessageHandler: The script handler for executing bridge API methods.
+  @MainActor
   static func forBrazeBridge(scriptMessageHandler: WKScriptMessageHandler) -> WKWebViewConfiguration
   {
     let configuration = WKWebViewConfiguration()
@@ -19,7 +20,26 @@ extension WKWebViewConfiguration {
       name: ScriptMessageHandler.name
     )
 
+    // Track registration on the handler for deterministic regression detection
+    if let brazeHandler = scriptMessageHandler as? ScriptMessageHandler {
+      brazeHandler.setRegisteredContentController(configuration.userContentController)
+    }
+
     return configuration
+  }
+
+}
+
+extension WKUserContentController {
+
+  /// Cleanup `userContentController` because:
+  /// - It strongly retains its scripts and script message handlers
+  /// - It seems to outlive the configuration / web view instance
+  /// - Manual cleanup here ensures proper deallocation of those objects
+  @MainActor
+  func removeBrazeBridge() {
+    removeAllUserScripts()
+    removeScriptMessageHandler(forName: Braze.WebViewBridge.ScriptMessageHandler.name)
   }
 
 }

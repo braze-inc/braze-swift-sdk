@@ -65,29 +65,6 @@ BRZ_DEPRECATED("ABKPushUtils is not needed anymore.")
 + (BOOL)isUninstallTrackingRemoteNotification:(NSDictionary *)userInfo;
 
 /*!
- * @param response The UNNotificationResponse passed to userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler:.
- *
- * @return YES if the user notification was sent by Braze for syncing geofences.
- *
- * @discussion Geofence sync notifications are content-available silent notifications. You can use this method to ensure
- *             your app doesn't take any undesired or unnecessary actions upon receiving Braze's geofence sync notifications
- *             (e.g., pinging your server for content).
- */
-+ (BOOL)isGeofencesSyncUserNotification:(UNNotificationResponse *)response API_AVAILABLE(ios(10.0), macCatalyst(14.0));
-
-/*!
- * @param userInfo The userInfo dictionary passed to application:didReceiveRemoteNotification:fetchCompletionHandler:
- *                 or application:didReceiveRemoteNotification:.
- *
- * @return YES if the push notification was sent by Braze for syncing geofences.
- *
- * @discussion Geofence sync notifications are content-available silent notifications. You can use this method to ensure
- *             your app doesn't take any undesired or unnecessary actions upon receiving Braze's geofence sync notifications
- *             (e.g., pinging your server for content).
- */
-+ (BOOL)isGeofencesSyncRemoteNotification:(NSDictionary *)userInfo;
-
-/*!
  * @param userInfo The userInfo dictionary passed to application:didReceiveRemoteNotification:fetch​Completion​Handler:
  *
  * @return YES if the push notification was sent by Braze and is silent.

@@ -16,6 +16,7 @@ extension BrazeInAppMessageUI {
   /// The SDK provides a default conformance for `UITextView`. Custom implementations
   /// can conform to this protocol for specialized text rendering needs.
   ///
+  @MainActor
   protocol TextViewTarget: AnyObject {
     /// The attributed text content displayed by the text view.
     ///

@@ -29,7 +29,8 @@
     // Create handler
     BRZWebViewBridgeScriptMessageHandler *handler =
         [[BRZWebViewBridgeScriptMessageHandler alloc]
-            initWithLogClick:^(NSString *_Nullable buttonId) {
+            initWithChannel:@"inAppMessage"
+            logClick:^(NSString * _Nullable buttonId) {
               if (buttonId && buttonId.length > 0) {
                 [weakMessage logInAppMessageHTMLClickWithButtonID:buttonId];
               } else {

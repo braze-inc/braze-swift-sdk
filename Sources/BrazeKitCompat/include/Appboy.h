@@ -78,7 +78,7 @@ extern NSString *const ABKEnableGeofencesKey;
 extern NSString *const ABKDisableAutomaticGeofenceRequestsKey;
 
 /*!
- * This key can be set to an instance of a class that extends ABKIDFADelegate, which can be used to pass advertiser tracking information to to Braze.
+ * This key can be set to an instance of a class that extends ABKIDFADelegate, which can be used to pass advertiser tracking information to Braze.
  */
 extern NSString *const ABKIDFADelegateKey;
 
@@ -93,7 +93,7 @@ extern NSString *const ABKEndpointKey;
 extern NSString *const ABKURLDelegateKey;
 
 /*!
- * This can can be set to an instance of a class that conforms to the ABKImageDelegate protocol, allowing flexibility for using custom image libraries.
+ * This can be set to an instance of a class that conforms to the ABKImageDelegate protocol, allowing flexibility for using custom image libraries.
  */
 extern NSString *const ABKImageDelegateKey;
 
@@ -116,7 +116,7 @@ extern NSString *const ABKEnableDismissModalOnOutsideTapKey;
 extern NSString *const ABKEnableSDKAuthenticationKey;
 
 /*!
- * This key can can be set to an instance of a class that conforms to the ABKSdkAuthenticationDelegate protocol, allowing it to handle
+ * This key can be set to an instance of a class that conforms to the ABKSdkAuthenticationDelegate protocol, allowing it to handle
  * SDK Authentication errors. Setting this delegate will cause the delegate method `handleSdkAuthenticationError:` to get called in
  * the event of an SDK Authentication error.
  */

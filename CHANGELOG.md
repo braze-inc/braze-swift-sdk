@@ -1,3 +1,36 @@
+## 15.0.0
+
+##### Breaking
+- **Banners**: ``onDismiss`` now receives ``Braze/BannerDismissalEvent`` instead of ``Braze/Banner``.
+- Raises the Xcode version to 26.0 (17A324).
+- Raises the minimum Mac Catalyst deployment target from iOS 13 (macOS 10.15 Catalina) to iOS 16 (macOS 13 Ventura).
+  - Mac Catalyst users on macOS 12 Monterey or earlier are no longer supported.
+- Removes the ability to control whether the SDK prevents showing in-app messages to different users in certain edge cases.
+  - Removes the option to configure through `Braze.Configuration.preventInAppMessageDisplayForDifferentUser`.
+  - The SDK will now always behave as if this configuration option were set to true.
+- Updates the `Braze.WebViewBridge.ScriptMessageHandler` and `Braze.WebViewBridge.SchemeHandler` init to have non-optional `channel` parameter.
+
+##### Added
+- Logs configuration validation messages when `Braze.Configuration.devicePropertyAllowList` omits `pushEnabled` or `pushAuthStatus`.
+    - Both are required for push token registration and for push notifications to behave correctly.
+- Adds support for logging Braze [eCommerce recommended events](https://www.braze.com/docs/user_guide/data/activation/events/recommended_events/ecommerce_events).
+  - Creates the following new event types:
+    - `Braze.Ecommerce.ProductViewedEvent`
+    - `Braze.Ecommerce.CartUpdated.Replace` — full cart snapshot
+    - `Braze.Ecommerce.CartUpdated.Add` — incremental add
+    - `Braze.Ecommerce.CartUpdated.Remove` — incremental remove
+    - `Braze.Ecommerce.CheckoutStartedEvent`
+    - `Braze.Ecommerce.OrderPlacedEvent`
+  - Adds the following API: `Braze.logEcommerceEvent(_:)`
+  - Adds Objective-C compatible APIs:
+    - `-[Braze logEcommerceProductViewed:]`
+    - `-[Braze logEcommerceCartUpdated:]`
+    - `-[Braze logEcommerceCheckoutStarted:]`
+    - `-[Braze logEcommerceOrderPlaced:]`
+
+##### Fixed
+- Fixes a rare race condition where the app would become unresponsive when calling `changeUser` or `wipeData` while an HTML in-app message or banner was in the middle of displaying.
+
 ## 14.2.1
 
 ##### Fixed

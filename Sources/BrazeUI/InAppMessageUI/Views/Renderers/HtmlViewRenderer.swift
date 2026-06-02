@@ -50,22 +50,27 @@ final class HtmlViewRenderer: InAppMessageRenderer {
       return
     }
 
+    let expectedState = state
+    let readAccessBase = payload.baseURL
+
     persistence.write(
       content: data,
       named: fileName,
       in: payload.baseURL
     ) { [weak self] result in
-      guard let self else { return }
-      // Discard writes that were kicked off for older states.
-      guard self.lastState == state else { return }
+      DispatchQueue.main.async { [weak self] in
+        guard let renderer = self else { return }
+        // Discard writes that were kicked off for older states.
+        guard renderer.lastState == expectedState else { return }
 
-      switch result {
-      case .success(let url):
-        // Once the write succeeds, hand the file off to the web view.
-        self.loadWebView(at: url, allowingReadAccessTo: payload.baseURL)
-      case .failure(let error):
-        // Surface write failures so callers can dismiss and report.
-        self.onFailure(error)
+        switch result {
+        case .success(let url):
+          // Once the write succeeds, hand the file off to the web view.
+          renderer.loadWebView(at: url, allowingReadAccessTo: readAccessBase)
+        case .failure(let error):
+          // Surface write failures so callers can dismiss and report.
+          renderer.onFailure(error)
+        }
       }
     }
   }

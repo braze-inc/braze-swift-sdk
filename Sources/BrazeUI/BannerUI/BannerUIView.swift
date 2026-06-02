@@ -1,5 +1,5 @@
-import BrazeKit
-import UIKit
+@_spi(Internal) import BrazeKit
+@preconcurrency import UIKit
 @preconcurrency import WebKit
 
 extension BrazeBannerUI {
@@ -19,6 +19,9 @@ extension BrazeBannerUI {
     var webView: WKWebView?
     var banner: Braze.Banner?
     var hasContentLoaded: Bool = false
+
+    /// Tracks whether an intentional `loadHTMLString` call is in flight.
+    private var isLoadingContent: Bool = false
 
     private let notificationCenter: NotificationCenter
     private var foregroundObserver: NSObjectProtocol?
@@ -42,7 +45,9 @@ extension BrazeBannerUI {
       wrappedValue: webViewQueryHandler())
 
     /// Optional callback invoked whenever a banner is dismissed. Set this for custom behavior, such as additional analytics.
-    public var onDismiss: ((Braze.Banner) -> Void)?
+    ///
+    /// Receives a ``Braze/BannerDismissalEvent`` when the user dismisses the banner.
+    public var onDismiss: ((Braze.BannerDismissalEvent) -> Void)?
 
     /// Initializes and registers a Braze banner view.
     ///
@@ -93,22 +98,39 @@ extension BrazeBannerUI {
         object: nil,
         queue: .main
       ) { [weak self] _ in
-        self?.handleAppDidBecomeActive()
+        runOnMainActorIsolated { [weak self] in
+          self?.handleAppDidBecomeActive()
+        }
       }
     }
 
     deinit {
-      // Remove foreground observer (synchronous, safe outside MainActor)
-      if let observer = foregroundObserver {
-        notificationCenter.removeObserver(observer)
-      }
-
-      isolatedMainActorDeinit { [self] in
-        self.tearDownWebView()
+      runOnMainActorIsolated { [self] in
+        if let observer = foregroundObserver {
+          notificationCenter.removeObserver(observer)
+        }
+        self.detachWebViewBridge()
       }
     }
 
+    /// Prepares the underlying `WKWebView` for this banner view.
+    ///
+    /// This method is invoked on initialization and ensures the `WKWebView` is created and
+    /// configured with the Braze bridge. If a web view exists and is no longer attached to this
+    /// view, it will be removed and its bridge will be unregistered before creating a new one.
+    ///
+    /// - Important: This API is `@MainActor` and must only be called from the main thread.
+    @MainActor
     open func setupWebView() {
+      // Reuse the web view only if it's still attached to this view; otherwise, clean up
+      // the stale instance and build a new one.
+      if let existing = webView {
+        if existing.superview === self {
+          return
+        }
+        detachWebViewBridge()
+      }
+
       let configuration = WKWebViewConfiguration.forBrazeBridge(
         scriptMessageHandler: scriptMessageHandler)
       let webView = WKWebView(frame: .zero, configuration: configuration)
@@ -135,19 +157,25 @@ extension BrazeBannerUI {
       ])
     }
 
-    func tearDownWebView() {
-      // Cleanup userContentController because:
-      // - It strongly retains its scripts and script message handlers
-      // - It seems to outlive the configuration / web view instance
-      // - Manual cleanup here ensure proper deallocation of those objects
-      let userContentController = webView?.configuration.userContentController
-      userContentController?.removeAllUserScripts()
-      userContentController?.removeScriptMessageHandler(
-        forName: Braze.WebViewBridge.ScriptMessageHandler.name
-      )
-      self.subviews.forEach { ($0 as? WKWebView)?.removeFromSuperview() }
-      webView = nil
+    /// Removes the Braze bridge script and handler from the web view configuration. Call when
+    /// the banner context needs to be torn down so WebKit stops posting to the bridge while the
+    /// view may still be on screen.
+    ///
+    /// Also clears ``webView`` and removes it from this view so a later ``setupWebView()`` builds
+    /// a new bridged ``WKWebView``. Without this, ``setupWebView()`` would early-return while the
+    /// old web view was still embedded but unbridged.
+    ///
+    /// - Important: Must be called from the main thread; ``WKWebView`` / ``WKUserContentController``
+    ///   are main-thread-only.
+    @MainActor
+    public func detachWebViewBridge() {
+      guard let webView else { return }
+      webView.configuration.userContentController.removeBrazeBridge()
+      scriptMessageHandler.clearRegistration()
+      webView.removeFromSuperview()
+      self.webView = nil
       hasContentLoaded = false
+      isLoadingContent = false
     }
 
     required public init?(coder: NSCoder) {
@@ -177,6 +205,7 @@ extension BrazeBannerUI {
       }
 
       self.hasContentLoaded = false
+      self.isLoadingContent = true
       self.banner = banner
       DispatchQueue.main.async { [weak self] in
         self?.webView?.loadHTMLString(banner.html, baseURL: nil)
@@ -193,10 +222,12 @@ extension BrazeBannerUI {
       self.processContentUpdates?(.failure(error))
     }
 
-    /// Instructs the view to nullify and remove its existing Banner Card content.
-    public func removeBannerContent() {
+    /// Instructs the view to remove its existing banner content.
+    ///
+    /// - Parameter reason: The reason for removing banner content.
+    public func removeBannerContent(reason: Braze.Banner.RemovalReason) {
       self.banner = nil
-      self.tearDownWebView()
+      self.detachWebViewBridge()
       self.processContentUpdates?(.success(.init(height: 0)))
     }
 
@@ -235,7 +266,8 @@ extension BrazeBannerUI {
     }
 
     /// Handles app becoming active by refreshing banner content if WebView exists.
-    @objc private func handleAppDidBecomeActive() {
+    @objc
+    private func handleAppDidBecomeActive() {
       // Only reload content if the web view exists AND its content state is lost.
       if let banner = self.banner, self.webView != nil, !self.hasContentLoaded {
         render(with: banner, forceReload: true)
@@ -307,6 +339,18 @@ extension BrazeBannerUI.BannerUIView: WKNavigationDelegate {
     decidePolicyFor navigationAction: WKNavigationAction,
     decisionHandler: @escaping @MainActor (WKNavigationActionPolicy) -> Void
   ) {
+    // Always allow navigations we initiated via loadHTMLString. We check this before
+    // brazeShouldIntercept because a stale waitForLoadedState callback can set
+    // hasContentLoaded = true after render() resets it, which would otherwise cause
+    // decidePolicyFor to cancel our own reload.
+    // We also constrain to .other to avoid prematurely clearing the flag if a user-initiated
+    // navigation fires in the window between isLoadingContent = true and loadHTMLString executing.
+    if isLoadingContent && navigationAction.navigationType == .other {
+      isLoadingContent = false
+      decisionHandler(.allow)
+      return
+    }
+
     // Link was explicitly clicked by user.
     // Intercept the default web view navigation and handle within the SDK.
     if brazeShouldIntercept(navigationAction) && hasContentLoaded {
@@ -332,6 +376,7 @@ extension BrazeBannerUI.BannerUIView: WKNavigationDelegate {
   /// process under memory pressure (e.g., when app goes to background).
   public func webViewWebContentProcessDidTerminate(_ webView: WKWebView) {
     hasContentLoaded = false
+    isLoadingContent = false
 
     // Automatically reload content if we have a banner
     if let banner = self.banner {
@@ -374,14 +419,14 @@ extension BrazeBannerUI.BannerUIView {
       return
     }
     DispatchQueue.main.async { [weak self] in
-      self?.removeBannerContent()
+      self?.removeBannerContent(reason: .dismissal)
     }
     if let context = banner.context {
       context.logDismissed()
     } else {
       logError(BrazeBannerUI.Error.noContextLogDismissed)
     }
-    self.onDismiss?(banner)
+    self.onDismiss?(Braze.BannerDismissalEvent(banner: banner, viewPlacementId: placementId))
   }
 
   /// Determines if the banner view is currently visible and not occluded.

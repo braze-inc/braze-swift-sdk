@@ -29,8 +29,8 @@ public final class _OBJC_BRZGIFViewProvider: NSObject {
   }
 
   /// Creates a view able to display static and animated GIF images.
-  /// - Parameters:
-  ///   - url: The local file url for the image.
+  ///
+  /// The closure takes `url`, the local file url for the image.
   @objc
   public var view: @MainActor @Sendable (_ url: URL?) -> UIView {
     get { gifViewProvider.view }
@@ -38,9 +38,8 @@ public final class _OBJC_BRZGIFViewProvider: NSObject {
   }
 
   /// Updates the passed view with a new image at `url`.
-  /// - Parameters:
-  ///   - view: The view to update.
-  ///   - url: The local file url for the image.
+  ///
+  /// The closure takes `view`, the view to update, and `url`, the local file url for the image.
   @objc
   public var updateView: @MainActor @Sendable (_ view: UIView, _ url: URL?) -> Void {
     get { gifViewProvider.updateView }

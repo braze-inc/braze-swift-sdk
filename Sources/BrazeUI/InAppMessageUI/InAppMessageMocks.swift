@@ -132,7 +132,7 @@ import Foundation
         .mockPrimary,
       ]
     )
-    
+
     public static let mockOneButtonWithLongText = Self(
       data: .mock,
       language: "en-US",
@@ -143,7 +143,7 @@ import Foundation
         .mockLongTextPrimary
       ]
     )
-    
+
     public static let mockTwoButtonWithLongText = Self(
       data: .mock,
       language: "en-US",
@@ -646,6 +646,18 @@ import Foundation
     )
   }
 
+  // MARK: - Html
+
+  extension Braze.InAppMessage.Html {
+
+    public static let mock = Self(
+      data: .mock,
+      message: "<html></html>",
+      baseURL: nil
+    )
+
+  }
+
   // MARK: - Buttons
 
   extension Braze.InAppMessage.Button {
@@ -676,14 +688,14 @@ import Foundation
         )
       ]
     )
-    
+
     static let mockLongTextPrimary = Self(
       id: 1,
       text: "This is a really long button text that should truncate",
       clickAction: .none,
       themes: ["light": .primary]
     )
-    
+
     static let mockLongTextSecondary = Self(
       id: 0,
       text: "This is another long button text that should truncate",

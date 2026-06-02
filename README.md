@@ -47,10 +47,10 @@ See [the Braze Developer Guide](https://www.braze.com/docs/developer_guide/sdk_i
 Tool | Minimum Supported Version
 :----|:----
 iOS|12.0+
-Mac Catalyst|13.0+
+Mac Catalyst|16.0+
 tvOS|12.0+
 visionOS|1.0+
-Xcode|16.0+ (16A242d)
+Xcode|26.0+ (17A324)
 
 ## Package Managers
 - Swift Package Manager

@@ -7,6 +7,7 @@ extension BrazeInAppMessageUI {
   ///
   /// This protocol is specific to the modal text view's header/message structure.
   /// It uses the generic `TextViewTarget` protocol for the underlying text view abstraction.
+  @MainActor
   protocol ModalTextStyling {
     func apply(
       to textView: TextViewTarget,
@@ -18,6 +19,7 @@ extension BrazeInAppMessageUI {
   }
 
   /// Encapsulates the logic for styling and updating the text content of a `ModalTextView`.
+  @MainActor
   struct ModalTextStyler: ModalTextStyling {
     // MARK: - Layout Constants
 

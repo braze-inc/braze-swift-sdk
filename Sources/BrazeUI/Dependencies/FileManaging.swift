@@ -3,7 +3,7 @@ import Foundation
 /// Type-erased subset of `FileManager` used by BrazeUI components.
 ///
 /// Exposed as a protocol so tests can inject lightweight file-system doubles.
-protocol FileManaging {
+protocol FileManaging: Sendable {
   func createDirectory(
     at url: URL,
     withIntermediateDirectories: Bool,

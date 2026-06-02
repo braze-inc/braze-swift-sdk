@@ -1,7 +1,7 @@
 import Foundation
 import UIKit
 
-struct InAppMessageContentState: Equatable {
+struct InAppMessageContentState: Equatable, @unchecked Sendable {
 
   var messageId: String?
   var contentHash: String

@@ -1,4 +1,4 @@
-import BrazeKit
+@_spi(Internal) import BrazeKit
 import UIKit
 @preconcurrency import WebKit
 
@@ -185,17 +185,43 @@ extension BrazeInAppMessageUI {
     }
 
     deinit {
-      // Cleanup userContentController because it:
-      // - strongly retain its scripts and script message handlers
-      // - seems to outlive the configuration / web view instance
-      // - manual cleanup here ensure proper deallocation of those objects
-      isolatedMainActorDeinit { [webView] in
-        let userContentController = webView?.configuration.userContentController
-        userContentController?.removeAllUserScripts()
-        userContentController?.removeScriptMessageHandler(
-          forName: Braze.WebViewBridge.ScriptMessageHandler.name
-        )
+      runOnMainActorIsolated { [self] in
+        // Only capture scriptMessageHandler if webView exists (avoids initializing the lazy property
+        // during deallocation when the web view was never set up)
+        guard let webView else { return }
+        webView.configuration.userContentController.removeBrazeBridge()
+        scriptMessageHandler.clearRegistration()
       }
+    }
+
+    /// Removes the Braze bridge script and handler from the web view configuration (same as
+    /// `deinit`). Call when the IAM context is torn down before deallocation (e.g. user switch) so
+    /// WebKit stops posting to the bridge while the view may still be on screen.
+    ///
+    /// Also clears ``webView`` and removes it from this view so a later ``setupWebView()`` (e.g. when
+    /// this ``HtmlView`` is cached and presented again) builds a new bridged ``WKWebView``. Without
+    /// this, ``setupWebView()`` would early-return while the old web view was still embedded but
+    /// unbridged.
+    ///
+    /// - Important: Must be called from the main thread; ``WKWebView`` / ``WKUserContentController``
+    ///   are main-thread-only.
+    @MainActor
+    func detachWebViewBridge() {
+      guard let webView else { return }
+      webView.configuration.userContentController.removeBrazeBridge()
+      scriptMessageHandler.clearRegistration()
+      webView.removeFromSuperview()
+      self.webView = nil
+      resetPresentationLayoutStateForWebViewReplacement()
+    }
+
+    /// Clears one-shot presentation layout state so ``installPresentationConstraintsIfNeeded()`` can
+    /// run again after the ``WKWebView`` is replaced (e.g. ``detachWebViewBridge()`` or stale rebuild
+    /// in ``setupWebView()``).
+    @MainActor
+    private func resetPresentationLayoutStateForWebViewReplacement() {
+      presentationConstraintsInstalled = false
+      yConstraint = nil
     }
 
     // MARK: - Theme
@@ -314,7 +340,43 @@ extension BrazeInAppMessageUI {
 
     // MARK: - Helpers
 
+    /// Prepares the underlying `WKWebView` for this html in-app message.
+    ///
+    /// This method is invoked by ``present(completion:)`` and is responsible for creating and
+    /// configuring the `WKWebView` the first time the view is presented, then reusing that same
+    /// instance on subsequent presentations as long as it remains attached to this `HtmlView`.
+    ///
+    /// - Important: This API is `@MainActor` and must only be called from the main thread.
+    ///
+    /// When overriding this method, you should almost always call `super.setupWebView()` and
+    /// avoid creating additional `WKWebView` instances or re-registering the Braze bridge on a
+    /// different `WKUserContentController`. If the stored web view is no longer attached to this
+    /// view, it will be removed, its bridge will be unregistered, and a new web view will be
+    /// built to ensure the bridge and configuration remain valid across reuse.
+    @MainActor
     open func setupWebView() {
+      // A `WKScriptMessageHandler` instance may only be registered with one
+      // `WKUserContentController` at a time. `present(completion:)` can run more than once on the
+      // same `HtmlView` (e.g. re-presentation via `PresentationContext.customView`, or a cached
+      // view after dismiss). Re-calling `forBrazeBridge` would register the same lazy
+      // `scriptMessageHandler` again and trap inside WebKit (often reported as EXC_BREAKPOINT).
+      // Match `BannerUIView.render(with:)` which only builds the web view once.
+      //
+      // Reuse only when the stored web view is still the one we attached to this view; otherwise
+      // clear any stale/detached reference and build again (avoids skipping setup with a foreign
+      // or orphaned `WKWebView`).
+      if let existing = webView, existing.superview === self {
+        return
+      }
+
+      if let stale = webView {
+        stale.removeFromSuperview()
+        stale.configuration.userContentController.removeBrazeBridge()
+        scriptMessageHandler.clearRegistration()
+        self.webView = nil
+        resetPresentationLayoutStateForWebViewReplacement()
+      }
+
       // Configuration
       let configuration = WKWebViewConfiguration.forBrazeBridge(
         scriptMessageHandler: scriptMessageHandler)

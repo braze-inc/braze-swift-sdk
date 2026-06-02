@@ -7,18 +7,18 @@ Follow the instructions below for your preferred integration method to get start
 
 #### Swift Package Manager
 
-- Navigates to the `Swift` or `ObjC` directory
+- Navigate to the `Swift` or `ObjC` directory
 - Open `Examples-SwiftPM.xcodeproj`
 
 #### CocoaPods
 
-- Navigates to the `Swift` or `ObjC` directory
+- Navigate to the `Swift` or `ObjC` directory
 - Run `pod install`
 - Open `Examples-CocoaPods.xcworkspace`
 
 #### Manual Integration
 
-- Navigates to the `Swift` or `ObjC` directory
+- Navigate to the `Swift` or `ObjC` directory
 - Run `./manual-integration-setup.sh` to download the prebuilt Braze SDK
 - Open `Examples-Manual.xcodeproj`
 

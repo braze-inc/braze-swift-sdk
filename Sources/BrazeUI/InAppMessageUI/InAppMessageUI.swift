@@ -130,11 +130,32 @@ open class BrazeInAppMessageUI:
   public func dismiss(reason: Braze.InAppMessage.DismissalReason) {
     switch reason {
     case .wipeData, .changeUser:
-      // Clear internal state
+      // Invalidate the dismiss timer immediately so it cannot fire during or after teardown.
+      dismissTimer?.invalidate()
+      dismissTimer = nil
+
+      // Detach the HTML IAM WebView bridge before discarding contexts so WebKit stops delivering script messages.
+      window?.messageViewController?.messageView.html?.detachWebViewBridge()
+
+      // Discard IAM contexts before clearing presenter state.
+      window?.messageViewController?.message.context?.discard()
+      for message in stack {
+        message.context?.discard()
+      }
+      followupMessage?.context?.discard()
+
       stack.removeAll()
+      localAssetsCancellable?.cancel()
       localAssetsCancellable = nil
       isProcessingClickAction = false
       followupMessage = nil
+
+      // `InAppMessageView.didDismiss()` resets the assets directory, but it is only reached when a
+      // message window exists. During in-flight `withLocalAssets` (no window yet), clear the cache
+      // here so `wipeData` / `changeUser` teardown does not leave IAM files on disk.
+      if window == nil {
+        _ = try? resetAssetsDirectory()
+      }
     @unknown default:
       break
     }
@@ -205,7 +226,23 @@ open class BrazeInAppMessageUI:
     }
   }
 
+  private func teardownAfterInvalidContext() {
+    // Release any ongoing local assets work and reset the assets directory.
+    localAssetsCancellable?.cancel()
+    localAssetsCancellable = nil
+    _ = try? resetAssetsDirectory()
+  }
+
   func presentNow(message: Braze.InAppMessage) {
+    // If the Braze context was discarded while remote assets were resolving (e.g. `changeUser` /
+    // `wipeData` cleared presenter state), do not build UI or run delegate—avoids overlapping
+    // teardown with a new presentation.
+    if let messageContext = message.context, !messageContext.valid {
+      logError(for: messageContext, error: .messageContextInvalid)
+      teardownAfterInvalidContext()
+      return
+    }
+
     // Prepare / user customizations
     var context = PresentationContext(
       message: message,
@@ -432,6 +469,10 @@ open class BrazeInAppMessageUI:
 
   // MARK: - Assets
 
+  /// Asset directory lifecycle. Defaults to ``DefaultInAppMessageAssetWorkspace``; tests may assign
+  /// a custom ``InAppMessageAssetWorkspace`` (e.g. to avoid disk I/O).
+  internal var assetWorkspace: any InAppMessageAssetWorkspace = DefaultInAppMessageAssetWorkspace()
+
   /// Directory where all in-app message assets are stored.
   static func assetsDirectory() throws -> URL {
     try FileManager.default.url(
@@ -445,15 +486,7 @@ open class BrazeInAppMessageUI:
 
   @discardableResult
   func resetAssetsDirectory() throws -> URL {
-    let fileManager = FileManager.default
-    let assetsDirectory = try Self.assetsDirectory()
-
-    if fileManager.fileExists(atPath: assetsDirectory.path) {
-      try fileManager.removeItem(at: assetsDirectory)
-    }
-    try fileManager.createDirectory(at: assetsDirectory, withIntermediateDirectories: true)
-
-    return assetsDirectory
+    try assetWorkspace.resetAssetsDirectory()
   }
 
   // MARK: - Compat

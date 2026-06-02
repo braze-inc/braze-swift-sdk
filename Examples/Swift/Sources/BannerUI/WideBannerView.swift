@@ -43,8 +43,8 @@ struct WideBannerView: View {
         }
       }
     )
-    bannerView.onDismiss = { dismissedBanner in
-      print("Successfully dismissed banner: \(dismissedBanner.placementId)")
+    bannerView.onDismiss = { event in
+      print("Successfully dismissed banner: \(event.placementId ?? "")")
     }
     return bannerView
   }
