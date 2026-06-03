@@ -1,3 +1,9 @@
+## 15.0.1
+
+##### Fixed
+- Improves the stability of the SDK's internal state management, resolving a crash that would occur under low memory conditions.
+- [`getBanner`](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/banners-swift.class/getbanner(for:_:)) now returns the cached banner immediately even when the SDK is rate limited.
+
 ## 15.0.0
 
 ##### Breaking
