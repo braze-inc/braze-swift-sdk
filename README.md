@@ -5,10 +5,14 @@
 
 # Braze Swift SDK [![latest release](https://img.shields.io/github/v/tag/braze-inc/braze-swift-sdk?label=latest%20release&color=300266)](https://github.com/braze-inc/braze-swift-sdk/releases) [![Static Badge](https://img.shields.io/badge/DocC-801ed7)](https://braze-inc.github.io/braze-swift-sdk)
 
+To learn more, see the following resources:
+
 - [Braze User Guide](https://www.braze.com/docs/user_guide/introduction/ "Braze User Guide")
 - [Braze Developer Guide](https://www.braze.com/docs/developer_guide/sdk_integration/?sdktab=swift "Braze Developer Guide")
 
 ## Quickstart
+
+The following snippets show the minimum configuration required to add the Braze Swift SDK to your app.
 
 ``` swift
 // AppDelegate.swift
@@ -40,11 +44,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 AppDelegate.braze?.changeUser(userId: "Jane Doe")
 ```
 
-See [the Braze Developer Guide](https://www.braze.com/docs/developer_guide/sdk_integration/?sdktab=swift) for advanced integration options.
+For more information about advanced integration options, see the [Braze Developer Guide](https://www.braze.com/docs/developer_guide/sdk_integration/?sdktab=swift).
 
-## Version Support
+## Version support
 
-Tool | Minimum Supported Version
+The following table lists the minimum supported versions for tools used by the Braze Swift SDK.
+
+Tool | Minimum supported version
 :----|:----
 iOS|12.0+
 Mac Catalyst|16.0+
@@ -57,6 +63,8 @@ Xcode|26.0+ (17A324)
 - CocoaPods
 
 ## Libraries
+
+The following table describes each library in the Braze Swift SDK.
 
 <!-- Table generated with https://www.tablesgenerator.com/markdown_tables -->
 
@@ -94,7 +102,7 @@ Explore our [examples project](/Examples) which showcases multiple features' int
 
 ## Contact
 
-If you have questions, please contact [support@braze.com](mailto:support@braze.com).
+For questions, contact [support@braze.com](mailto:support@braze.com).
 
 [braze-inc/braze-swift-sdk]: https://github.com/braze-inc/braze-swift-sdk
 [braze-inc/braze-swift-sdk-prebuilt-static]: https://github.com/braze-inc/braze-swift-sdk-prebuilt-static

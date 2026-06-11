@@ -131,6 +131,16 @@ target 'BannerUI-visionOS' do
   pod 'BrazeUI'
 end
 
+target 'Banners-Custom-UI-iOS' do
+  platform :ios, '12.0'
+  pod 'BrazeKit'
+end
+
+target 'Banners-Custom-UI-visionOS' do
+  platform :visionos, '1.0'
+  pod 'BrazeKit'
+end
+
 target 'Location-iOS' do
   platform :ios, '12.0'
   pod 'BrazeKit'

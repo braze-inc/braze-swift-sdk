@@ -17,7 +17,13 @@ extension BrazeBannerUI {
       (@MainActor (Result<BrazeBannerUI.ContentUpdates, Swift.Error>) -> Void)?
 
     var webView: WKWebView?
-    var banner: Braze.Banner?
+    var banner: Braze.Banner? {
+      didSet {
+        banner?.context?._notifyDismissal = { [weak self] event in
+          self?.onDismiss?(event)
+        }
+      }
+    }
     var hasContentLoaded: Bool = false
 
     /// Tracks whether an intentional `loadHTMLString` call is in flight.
@@ -413,20 +419,19 @@ extension BrazeBannerUI.BannerUIView {
     context.logClick(buttonId: buttonId)
   }
 
-  /// Dismisses the banner and calls the onDismiss() callback.
+  /// Dismisses the banner.
+  ///
+  /// Analytics, cache removal, `onDismiss` callback, and `removeBannerContent` are all driven
+  /// by `context.dismiss()` via `_notifyDismissal` and `notifyPlacements(.dismissal)`.
+  /// Calling `removeBannerContent` here directly would duplicate the cleanup.
   func dismiss() {
-    guard let banner = banner else {
-      return
-    }
-    DispatchQueue.main.async { [weak self] in
-      self?.removeBannerContent(reason: .dismissal)
-    }
+    guard let banner = banner else { return }
     if let context = banner.context {
-      context.logDismissed()
+      context.dismiss()
     } else {
       logError(BrazeBannerUI.Error.noContextLogDismissed)
+      onDismiss?(Braze.BannerDismissalEvent(banner: banner, viewPlacementId: placementId))
     }
-    self.onDismiss?(Braze.BannerDismissalEvent(banner: banner, viewPlacementId: placementId))
   }
 
   /// Determines if the banner view is currently visible and not occluded.

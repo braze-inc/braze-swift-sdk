@@ -38,6 +38,12 @@ Follow the instructions below for your preferred integration method to get start
 - Demonstrates how to use the Braze provided Banners UI.
 - Related tutorial: [Banners UI](https://braze-inc.github.io/braze-swift-sdk/tutorials/braze/c4-bannersui).
 
+#### Banners-Custom-UI
+
+- iOS, visionOS, Mac Catalyst.
+- Swift, Objective-C.
+- Demonstrates how to implement a custom Banners UI using BrazeKit only, without BrazeUI.
+
 #### ContentCardUI
 
 - iOS, visionOS, Mac Catalyst.

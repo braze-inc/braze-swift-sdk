@@ -1,3 +1,22 @@
+## 15.1.0
+
+##### Added
+- Adds `dismiss()` to `Braze.Banner.Context` and `dismiss(using:)` to `Braze.Banner` to dismiss a banner when using a custom UI.
+  - Recommended to use `Braze.Banner.Context.dismiss`.
+  - Both methods must be called from the main thread.
+  - Calling either method fires the `onDismiss` callback on any registered `BrazeBannerPlacement` for that placement ID.
+  - Available in Objective-C as `-[BRZBannerContext dismiss]` and `-[BRZBanner dismissUsing:]`.
+- Adds example implementations for building a custom UI with banners.
+  - See [Support/Examples/Swift/Sources/Banners-Custom-UI/](Support/Examples/Swift/Sources/Banners-Custom-UI/) for a Swift example.
+  - See [Support/Examples/ObjC/Sources/Banners-Custom-UI/](Support/Examples/ObjC/Sources/Banners-Custom-UI/) for an Objective-C example.
+- Adds `Braze.ContentCards.getCachedContentCards(_:)`, `Braze.ContentCards.getUnviewedCards(_:)`, and `Braze.ContentCards.getLastUpdate(_:)` — asynchronous, callback-based getters that deliver on the main thread.
+  - Deprecates `Braze.ContentCards.cards`, `Braze.ContentCards.unviewedCards`, and `Braze.ContentCards.lastUpdate` in favor of the new getters.
+    - These properties will be removed in `17.0.0`.
+
+##### Fixed
+- Fixes a bug in the default Content Cards UI that would prevent image loading if multiple cards contained the same remote image URL. ([#176](https://github.com/braze-inc/braze-swift-sdk/issues/176))
+  - If multiple cards contained the same image URL, only the first card to finish loading would display the image, whereas all others would indefinitely display the loading spinner.
+
 ## 15.0.1
 
 ##### Fixed
@@ -18,7 +37,7 @@
 
 ##### Added
 - Logs configuration validation messages when `Braze.Configuration.devicePropertyAllowList` omits `pushEnabled` or `pushAuthStatus`.
-    - Both are required for push token registration and for push notifications to behave correctly.
+  - Both are required for push token registration and for push notifications to behave correctly.
 - Adds support for logging Braze [eCommerce recommended events](https://www.braze.com/docs/user_guide/data/activation/events/recommended_events/ecommerce_events).
   - Creates the following new event types:
     - `Braze.Ecommerce.ProductViewedEvent`

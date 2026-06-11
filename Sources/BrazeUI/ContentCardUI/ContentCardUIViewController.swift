@@ -30,6 +30,11 @@ extension BrazeContentCardUI {
     /// The current asynchronous image loading operations.
     var imageLoads: [URL: AsyncImageView.ImageLoad] = [:]
 
+    /// Cards waiting for each image URL
+    ///
+    /// Waiters are notified as a group when the load completes.
+    var imageLoadWaiterIDs: [URL: Set<String>] = [:]
+
     /// The content cards viewed in the current session, used to limit one impression event per card
     /// per feed instance.
     var viewedInFeedCardsIDs: Set<String> = []
@@ -556,44 +561,55 @@ extension BrazeContentCardUI {
 
       // Remote images
       guard let contextLoadImage = card.context?.loadImage else { return nil }
-      func load(_ imageURL: URL) -> AsyncImageView.ImageLoad {
-        let imageLoad: AsyncImageView.ImageLoad =
-          imageURL.isFileURL
-          ? .success(imageURL, imageSize(url: imageURL) ?? .zero)
-          : .loading(
-            contextLoadImage { [weak self] result in
-              guard let self else { return }
-              switch result {
-              case .success(let localURL):
-                let size = imageSize(url: localURL) ?? .zero
-                self.imageLoads[imageURL] = .success(localURL, size)
-                self.updateImageCell(card: card, imageLoad: .success(localURL, size))
-              case .failure(let error):
-                self.imageLoads[imageURL] = .failed(error)
-                self.updateImageCell(card: card, imageLoad: .failed(error))
-              }
+      func load() -> AsyncImageView.ImageLoad {
+        let imageLoad: AsyncImageView.ImageLoad = .loading(
+          contextLoadImage { [weak self] result in
+            guard let self else { return }
+            let finalLoad: AsyncImageView.ImageLoad
+            switch result {
+            case .success(let localURL):
+              finalLoad = .success(localURL, imageSize(url: localURL) ?? .zero)
+            case .failure(let error):
+              finalLoad = .failed(error)
             }
-          )
+            self.imageLoads[imageURL] = finalLoad
+            // Notify every card waiting on this URL, not just the one that started the load.
+            self.imageLoadWaiterIDs.removeValue(forKey: imageURL)?.forEach { cardID in
+              guard let waitingCard = self.card(id: cardID) else { return }
+              self.updateImageCell(card: waitingCard, imageLoad: finalLoad)
+            }
+          }
+        )
         imageLoads[imageURL] = imageLoad
         return imageLoad
       }
 
+      let imageLoad: AsyncImageView.ImageLoad
       switch imageLoads[imageURL] {
       case .none:
-        return load(imageURL)
-      case .failed where retry:
-        return load(imageURL)
-      case .some(let imageLoad):
-        return imageLoad
+        imageLoad = load()
+      case .some(.failed) where retry:
+        imageLoad = load()
+      case .some(let existing):
+        imageLoad = existing
       }
+
+      // Track this card so it is notified when the shared load completes.
+      if case .loading = imageLoad {
+        imageLoadWaiterIDs[imageURL, default: []].insert(card.id)
+      }
+      return imageLoad
     }
 
     func cancelLoadImage(card: Braze.ContentCard) {
-      guard let imageURL = card.imageURL,
-        let imageLoad = imageLoads[imageURL],
-        case .loading(let cancellable) = imageLoad
+      guard let imageURL = card.imageURL else { return }
+      imageLoadWaiterIDs[imageURL]?.remove(card.id)
+      // Keep the shared load alive while other cards are still waiting on it.
+      guard imageLoadWaiterIDs[imageURL]?.isEmpty == true,
+        case .loading(let cancellable) = imageLoads[imageURL]
       else { return }
       imageLoads[imageURL] = nil
+      imageLoadWaiterIDs[imageURL] = nil
       cancellable.cancel()
     }
 
@@ -646,7 +662,11 @@ extension BrazeContentCardUI {
       }
       lastUpdate = braze.contentCards.lastUpdate
       applyAttributes()
+      imageLoads.values.forEach {
+        if case .loading(let cancellable) = $0 { cancellable.cancel() }
+      }
       imageLoads = [:]
+      imageLoadWaiterIDs = [:]
       tableView.reloadData()
     }
 
