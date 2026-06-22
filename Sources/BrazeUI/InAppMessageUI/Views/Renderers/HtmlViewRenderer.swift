@@ -10,7 +10,20 @@ final class HtmlViewRenderer: InAppMessageRenderer {
   struct Payload {
     var html: String
     var baseURL: URL
+    /// When `true` the renderer uses `loadFileURL` so relative paths to on-disk assets resolve
+    /// correctly. When `false` it uses `loadHTMLString` with an https:// base URL so that
+    /// embedded iframes (e.g. YouTube) receive a valid Referer instead of a file:// origin.
+    var hasLocalAssets: Bool = false
   }
+
+  /// Synthetic https:// base URL passed to `loadHTMLString` for asset-free HTML IAMs.
+  ///
+  /// Giving the document an https:// origin ensures YouTube iframes (and similar embeds) receive a
+  /// valid Referer header. YouTube rejects `file://` origins on iOS with a player error.
+  ///
+  /// Matches the dummy domain Android uses in `loadDataWithBaseURL` for the same reason
+  /// (`WebContentUtils.ASSET_LOADER_DUMMY_DOMAIN = "iamcache.braze"`).
+  static let httpsBaseURL = URL(string: "https://iamcache.braze")
 
   private enum RendererError: Error {
     case encodingFailure
@@ -39,8 +52,8 @@ final class HtmlViewRenderer: InAppMessageRenderer {
     lastState = state
 
     // Fast path: if the file already exists, jump straight to rendering.
-    if let url = persistence.availableFileURL(named: fileName, in: payload.baseURL) {
-      loadWebView(at: url, allowingReadAccessTo: payload.baseURL)
+    if persistence.availableFileURL(named: fileName, in: payload.baseURL) != nil {
+      loadWebView(payload: payload)
       return
     }
 
@@ -51,7 +64,7 @@ final class HtmlViewRenderer: InAppMessageRenderer {
     }
 
     let expectedState = state
-    let readAccessBase = payload.baseURL
+    let savedPayload = payload
 
     persistence.write(
       content: data,
@@ -64,9 +77,8 @@ final class HtmlViewRenderer: InAppMessageRenderer {
         guard renderer.lastState == expectedState else { return }
 
         switch result {
-        case .success(let url):
-          // Once the write succeeds, hand the file off to the web view.
-          renderer.loadWebView(at: url, allowingReadAccessTo: readAccessBase)
+        case .success:
+          renderer.loadWebView(payload: savedPayload)
         case .failure(let error):
           // Surface write failures so callers can dismiss and report.
           renderer.onFailure(error)
@@ -75,8 +87,15 @@ final class HtmlViewRenderer: InAppMessageRenderer {
     }
   }
 
-  private func loadWebView(at url: URL, allowingReadAccessTo baseURL: URL) {
+  private func loadWebView(payload: Payload) {
     guard let webView = webViewProvider() else { return }
-    webView.loadFileURL(url, allowingReadAccessTo: baseURL)
+    if payload.hasLocalAssets {
+      webView.loadFileURL(
+        payload.baseURL.appendingPathComponent(fileName),
+        allowingReadAccessTo: payload.baseURL
+      )
+    } else {
+      webView.loadHTMLString(payload.html, baseURL: Self.httpsBaseURL)
+    }
   }
 }

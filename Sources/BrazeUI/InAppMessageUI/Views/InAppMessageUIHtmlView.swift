@@ -421,7 +421,8 @@ extension BrazeInAppMessageUI {
       // Build a payload representing the HTML content and target directory on disk.
       let payload = HtmlViewRenderer.Payload(
         html: messageWrapper.wrappedValue.message,
-        baseURL: baseURL
+        baseURL: baseURL,
+        hasLocalAssets: !messageWrapper.wrappedValue.assetURLs.isEmpty
       )
 
       // Delegate to the renderer so it can persist the HTML off the main thread and load it when ready.
@@ -479,6 +480,16 @@ extension BrazeInAppMessageUI.HtmlView: WKNavigationDelegate {
     decidePolicyFor navigationAction: WKNavigationAction,
     decisionHandler: @escaping (WKNavigationActionPolicy) -> Void
   ) {
+    // When `loadHTMLString` is called with our https:// base URL it fires a synthetic .other
+    // navigation to that URL. brazeShouldIntercept would treat any non-file https:// link as a
+    // user click and cancel it, so we explicitly pass this initial load through first.
+    if navigationAction.request.url?.host == HtmlViewRenderer.httpsBaseURL?.host,
+      navigationAction.navigationType == .other
+    {
+      decisionHandler(.allow)
+      return
+    }
+
     if brazeShouldIntercept(navigationAction) {
       decisionHandler(.cancel)
       processNavigationAction(

@@ -1,3 +1,12 @@
+## 15.2.0
+
+##### Added
+- Adds optional `subtotalValue`, `tax`, and `shipping` fields to `Braze.Ecommerce.OrderPlacedEvent`, all `Braze.Ecommerce.CartUpdated` variants (Replace / Add / Remove), and `Braze.Ecommerce.CheckoutStartedEvent`.
+  - Available in Objective-C on `BRZEcommerceOrderPlacedEvent`, `BRZEcommerceCartUpdatedEvent`, and `BRZEcommerceCheckoutStartedEvent`.
+
+##### Fixed
+- Fixes a video player configuration error for embedded YouTube videos in HTML in-app messages.
+
 ## 15.1.0
 
 ##### Added

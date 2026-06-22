@@ -102,7 +102,7 @@ Explore our [examples project](/Examples) which showcases multiple features' int
 
 ## Contact
 
-For questions, contact [support@braze.com](mailto:support@braze.com).
+For questions, contact Braze Technical Support for assistance.
 
 [braze-inc/braze-swift-sdk]: https://github.com/braze-inc/braze-swift-sdk
 [braze-inc/braze-swift-sdk-prebuilt-static]: https://github.com/braze-inc/braze-swift-sdk-prebuilt-static
