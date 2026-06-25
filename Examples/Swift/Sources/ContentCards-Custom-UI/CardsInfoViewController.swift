@@ -18,12 +18,21 @@ final class CardsInfoViewController: UITableViewController {
 
   // MARK: - Properties
 
-  let sections: [Section]
+  let braze: Braze
+  private var cards: [Braze.ContentCard] = []
+  private var sections: [Section] = []
+
+  // The subscription must be retained to keep it active.
+  // Cancelling it re-applies local analytics (viewed/clicked/removed) and notifies other subscribers.
+  private var subscription: Braze.Cancellable?
+
+  // Tracks cards already impressed in this presentation to avoid duplicate impression events.
+  private var impressedCardIDs: Set<String> = []
 
   // MARK: - Initialization
 
-  init(cards: [Braze.ContentCard]) {
-    sections = cards.enumerated().map { Self.cardSection(from: $1, index: $0) }
+  init(braze: Braze) {
+    self.braze = braze
     super.init(style: .grouped)
     title = "Content Cards Info"
     let doneButton = UIBarButtonItem(
@@ -39,7 +48,21 @@ final class CardsInfoViewController: UITableViewController {
     fatalError("init(coder:) has not been implemented")
   }
 
-  // MARK: - LifeCycle
+  // MARK: - Lifecycle
+
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    // Subscribe to content cards updates. Delivers an initial snapshot of cached cards
+    // immediately, then subsequent updates as cards change. Cancelling re-applies local
+    // analytics (viewed/clicked/removed) and notifies any remaining subscribers.
+    // Note: impressions, clicks, and dismissals do not trigger the subscription callback
+    subscription = braze.contentCards.subscribeToUpdates { [weak self] cards in
+      guard let self else { return }
+      self.cards = cards
+      self.sections = cards.enumerated().map { Self.cardSection(from: $1, index: $0) }
+      self.tableView.reloadData()
+    }
+  }
 
   @objc
   func dismissModal() {
@@ -86,6 +109,68 @@ final class CardsInfoViewController: UITableViewController {
     titleForHeaderInSection section: Int
   ) -> String? {
     sections[section].name
+  }
+
+  override func tableView(
+    _ tableView: UITableView,
+    viewForFooterInSection section: Int
+  ) -> UIView? {
+    let dismissButton = UIButton(type: .system)
+    dismissButton.setTitle("Log Dismissal", for: .normal)
+    dismissButton.tag = section
+    dismissButton.addTarget(self, action: #selector(logDismissal(_:)), for: .touchUpInside)
+
+    let clickButton = UIButton(type: .system)
+    clickButton.setTitle("Log Click", for: .normal)
+    clickButton.tag = section
+    clickButton.addTarget(self, action: #selector(logClick(_:)), for: .touchUpInside)
+
+    let stack = UIStackView(arrangedSubviews: [clickButton, dismissButton])
+    stack.axis = .vertical
+    stack.spacing = 8
+
+    let container = UIView()
+    container.addSubview(stack)
+    stack.translatesAutoresizingMaskIntoConstraints = false
+    NSLayoutConstraint.activate([
+      stack.centerXAnchor.constraint(equalTo: container.centerXAnchor),
+      stack.topAnchor.constraint(equalTo: container.topAnchor, constant: 8),
+      stack.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -8),
+    ])
+    return container
+  }
+
+  // Log an impression when the first row of each card section becomes visible.
+  // Deduplication prevents a second impression if the card scrolls off-screen and back.
+  override func tableView(
+    _ tableView: UITableView,
+    willDisplay cell: UITableViewCell,
+    forRowAt indexPath: IndexPath
+  ) {
+    guard indexPath.row == 0 else { return }
+    let card = cards[indexPath.section]
+    guard !impressedCardIDs.contains(card.id) else { return }
+    impressedCardIDs.insert(card.id)
+    card.context?.logImpression()
+  }
+
+  @objc
+  func logClick(_ sender: UIButton) {
+    let card = cards[sender.tag]
+    card.context?.logClick()
+    if let clickAction = card.clickAction {
+      card.context?.processClickAction(clickAction)
+    }
+    sender.setTitle("Log Click ✅", for: .normal)
+  }
+
+  @objc
+  func logDismissal(_ sender: UIButton) {
+    cards[sender.tag].context?.logDismissed()
+    sender.setTitle("Log Dismissal ✅", for: .normal)
+    // logDismissed marks the card locally but does not immediately trigger the subscription
+    // callback. In a production UI, you would also remove the card from your view here
+    // rather than waiting for the next update.
   }
 
   // MARK: - Helpers

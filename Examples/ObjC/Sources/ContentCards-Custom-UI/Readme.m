@@ -39,8 +39,11 @@ NSString *const readme = @"This sample demonstrates how to implement your own "
                          @"  - Content cards API usage\n"
                          @"  - Content cards custom UI presentation\n"
                          @"- CardsInfoViewController.{h,m}\n"
-                         @"  - UIViewController subclass presenting the "
-                         @"content cards data in a table view";
+                         @"  - UIViewController subclass presenting live content cards data in a table view.\n"
+                         @"  - Subscribes to content cards updates via subscribeToUpdates: to receive a\n"
+                         @"    cached snapshot immediately, then live updates as cards change.\n"
+                         @"  - Cancelling the subscription re-applies local analytics (viewed/clicked/removed)\n"
+                         @"    and notifies any remaining subscribers.";
 
 NSInteger const actionsCount = 5;
 

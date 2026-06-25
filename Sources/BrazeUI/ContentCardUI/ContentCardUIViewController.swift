@@ -169,15 +169,10 @@ extension BrazeContentCardUI {
 
       self.init(
         initialCards: braze.contentCards.cards,
-        refresh: { [weak braze] fulfill in
-          braze?.contentCards.requestRefresh { result in fulfill(result) }
-        },
-        subscribe: { [weak braze] update in
-          braze?.contentCards.subscribeToUpdates(update) ?? .empty
-        },
         lastUpdate: braze.contentCards.lastUpdate,
         attributes: attributes
       )
+      wireBraze(braze)
     }
 
     /// Creates and return a table view controller able to display content cards (for most use
@@ -433,9 +428,7 @@ extension BrazeContentCardUI {
     open func subscribeToUpdates() -> Braze.Cancellable? {
       subscribe? { [weak self] cards in
         guard let self else { return }
-        self.lastUpdate = Date()
-        self.cards = self.attributes.transform(cards)
-        self.tableView.reloadData()
+        self.applyNewCards(cards)
       }
     }
 
@@ -447,12 +440,16 @@ extension BrazeContentCardUI {
       refresh? { [weak self] result in
         guard let self else { return }
         if case .success(let cards) = result {
-          self.lastUpdate = Date()
-          self.cards = self.attributes.transform(cards)
-          self.tableView.reloadData()
+          self.applyNewCards(cards)
         }
         self.refreshControl?.endRefreshing()
       }
+    }
+
+    private func applyNewCards(_ newCards: [Braze.ContentCard]) {
+      lastUpdate = Date()
+      cards = attributes.transform(newCards)
+      tableView.reloadData()
     }
 
     // MARK: - Content Cards operations
@@ -652,8 +649,7 @@ extension BrazeContentCardUI {
 
     /// Updates the view controller and attach it to a new `Braze` instance.
     /// - Parameter braze: The new `Braze` instance.
-    open func updateWithBraze(_ braze: Braze) {
-      cards = attributes.transform(braze.contentCards.cards)
+    private func wireBraze(_ braze: Braze) {
       refresh = { [weak braze] fulfill in
         braze?.contentCards.requestRefresh { result in fulfill(result) }
       }
@@ -661,6 +657,11 @@ extension BrazeContentCardUI {
         braze?.contentCards.subscribeToUpdates(update) ?? .empty
       }
       lastUpdate = braze.contentCards.lastUpdate
+    }
+
+    open func updateWithBraze(_ braze: Braze) {
+      cards = attributes.transform(braze.contentCards.cards)
+      wireBraze(braze)
       applyAttributes()
       imageLoads.values.forEach {
         if case .loading(let cancellable) = $0 { cancellable.cancel() }

@@ -29,7 +29,13 @@
 
 @interface CardsInfoViewController ()
 
+@property(strong, nonatomic) Braze *braze;
+@property(strong, nonatomic) NSArray<BRZContentCardRaw *> *cards;
 @property(strong, nonatomic) NSArray<Section *> *sections;
+// Must be retained to keep subscription active; cancelling re-applies local analytics.
+@property(strong, nonatomic) BRZCancellable *subscription;
+// Tracks cards already impressed in this presentation to avoid duplicate impression events.
+@property(strong, nonatomic) NSMutableSet<NSString *> *impressedCardIDs;
 
 + (Section *)cardSectionFromCard:(BRZContentCardRaw *)card
                          atIndex:(NSInteger)index;
@@ -38,16 +44,13 @@
 
 @implementation CardsInfoViewController
 
-- (instancetype)initWithCards:(NSArray<BRZContentCardRaw *> *)cards {
+- (instancetype)initWithBraze:(Braze *)braze {
   self = [super initWithStyle:UITableViewStyleGrouped];
   if (self) {
-    NSMutableArray *sections = [NSMutableArray array];
-    for (NSInteger i = 0; i < cards.count; ++i) {
-      BRZContentCardRaw *card = cards[i];
-      [sections addObject:[CardsInfoViewController cardSectionFromCard:card
-                                                               atIndex:i]];
-    }
-    self.sections = [sections copy];
+    self.braze = braze;
+    self.cards = @[];
+    self.sections = @[];
+    self.impressedCardIDs = [NSMutableSet set];
 
     self.title = @"Content Cards Info";
 
@@ -61,6 +64,28 @@
     self.tableView.estimatedRowHeight = 44.0;
   }
   return self;
+}
+
+- (void)viewDidLoad {
+  [super viewDidLoad];
+  // Subscribe to content cards updates. Delivers an initial snapshot of cached cards
+  // immediately, then subsequent updates as cards change. Cancelling re-applies local
+  // analytics (viewed/clicked/removed) and notifies any remaining subscribers.
+  // Note: impressions, clicks, and dismissals do not trigger the subscription callback
+  __weak typeof(self) weakSelf = self;
+  self.subscription = [self.braze.contentCards
+      subscribeToUpdates:^(NSArray<BRZContentCardRaw *> *cards) {
+        typeof(self) strongSelf = weakSelf;
+        if (!strongSelf) return;
+        strongSelf.cards = cards;
+        NSMutableArray *sections = [NSMutableArray array];
+        for (NSInteger i = 0; i < cards.count; ++i) {
+          [sections addObject:[CardsInfoViewController cardSectionFromCard:cards[i]
+                                                                   atIndex:i]];
+        }
+        strongSelf.sections = [sections copy];
+        [strongSelf.tableView reloadData];
+      }];
 }
 
 - (void)dismissModal {
@@ -110,6 +135,68 @@
   return self.sections[section].name;
 }
 
+- (UIView *)tableView:(UITableView *)tableView
+    viewForFooterInSection:(NSInteger)section {
+  UIButton *dismissButton = [UIButton buttonWithType:UIButtonTypeSystem];
+  [dismissButton setTitle:@"Log Dismissal" forState:UIControlStateNormal];
+  dismissButton.tag = section;
+  [dismissButton addTarget:self
+                    action:@selector(logDismissal:)
+          forControlEvents:UIControlEventTouchUpInside];
+
+  UIButton *clickButton = [UIButton buttonWithType:UIButtonTypeSystem];
+  [clickButton setTitle:@"Log Click" forState:UIControlStateNormal];
+  clickButton.tag = section;
+  [clickButton addTarget:self
+                  action:@selector(logClick:)
+        forControlEvents:UIControlEventTouchUpInside];
+
+  UIStackView *stack = [[UIStackView alloc]
+      initWithArrangedSubviews:@[ clickButton, dismissButton ]];
+  stack.axis = UILayoutConstraintAxisVertical;
+  stack.spacing = 8;
+
+  UIView *container = [[UIView alloc] init];
+  [container addSubview:stack];
+  stack.translatesAutoresizingMaskIntoConstraints = NO;
+  [NSLayoutConstraint activateConstraints:@[
+    [stack.centerXAnchor constraintEqualToAnchor:container.centerXAnchor],
+    [stack.topAnchor constraintEqualToAnchor:container.topAnchor constant:8],
+    [stack.bottomAnchor constraintEqualToAnchor:container.bottomAnchor
+                                        constant:-8],
+  ]];
+  return container;
+}
+
+// Log an impression when the first row of each card section becomes visible.
+// Deduplication prevents a second impression if the card scrolls off-screen and back.
+- (void)tableView:(UITableView *)tableView
+    willDisplayCell:(UITableViewCell *)cell
+    forRowAtIndexPath:(NSIndexPath *)indexPath {
+  if (indexPath.row != 0) return;
+  BRZContentCardRaw *card = self.cards[indexPath.section];
+  if ([self.impressedCardIDs containsObject:card.identifier]) return;
+  [self.impressedCardIDs addObject:card.identifier];
+  [card.context logImpression];
+}
+
+- (void)logClick:(UIButton *)sender {
+  BRZContentCardRaw *card = self.cards[sender.tag];
+  [card.context logClick];
+  if (card.url != nil) {
+    [card.context processClickActionWithURL:card.url useWebView:card.useWebView];
+  }
+  [sender setTitle:@"Log Click ✅" forState:UIControlStateNormal];
+}
+
+- (void)logDismissal:(UIButton *)sender {
+  [self.cards[sender.tag].context logDismissed];
+  [sender setTitle:@"Log Dismissal ✅" forState:UIControlStateNormal];
+  // logDismissed marks the card locally but does not immediately trigger the subscription
+  // callback. In a production UI, you would also remove the card from your view here
+  // rather than waiting for the next update.
+}
+
 + (Section *)cardSectionFromCard:(BRZContentCardRaw *)card
                          atIndex:(NSInteger)index {
   NSMutableArray *fields = [NSMutableArray array];
@@ -141,14 +228,19 @@
   [fields addObject:[Field fieldWithName:@"domain" value:card.domain]];
   [fields addObject:[Field fieldWithName:@"url" value:card.url]];
   [fields addObject:[Field fieldWithName:@"useWebView"
-                                   value:@(card.useWebView)]];
-  [fields addObject:[Field fieldWithName:@"viewed" value:@(card.viewed)]];
+                                   value:card.useWebView ? @"true" : @"false"]];
+  [fields addObject:[Field fieldWithName:@"viewed"
+                                   value:card.viewed ? @"true" : @"false"]];
   [fields addObject:[Field fieldWithName:@"dismissible"
-                                   value:@(card.dismissible)]];
-  [fields addObject:[Field fieldWithName:@"removed" value:@(card.removed)]];
-  [fields addObject:[Field fieldWithName:@"pinned" value:@(card.pinned)]];
-  [fields addObject:[Field fieldWithName:@"clicked" value:@(card.clicked)]];
-  [fields addObject:[Field fieldWithName:@"test" value:@(card.test)]];
+                                   value:card.dismissible ? @"true" : @"false"]];
+  [fields addObject:[Field fieldWithName:@"removed"
+                                   value:card.removed ? @"true" : @"false"]];
+  [fields addObject:[Field fieldWithName:@"pinned"
+                                   value:card.pinned ? @"true" : @"false"]];
+  [fields addObject:[Field fieldWithName:@"clicked"
+                                   value:card.clicked ? @"true" : @"false"]];
+  [fields addObject:[Field fieldWithName:@"test"
+                                   value:card.test ? @"true" : @"false"]];
   [fields addObject:[Field fieldWithName:@"createdAt" value:@(card.createdAt)]];
   [fields addObject:[Field fieldWithName:@"expiresAt" value:@(card.expiresAt)]];
 

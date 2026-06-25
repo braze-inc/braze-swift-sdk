@@ -9,7 +9,11 @@ let readme =
     - Content cards API usage
     - Content cards custom UI presentation
   - CardsInfoViewController.swift:
-    - UIViewController subclass presenting the content cards data in a table view.
+    - UIViewController subclass presenting live content cards data in a table view.
+    - Subscribes to content cards updates via subscribeToUpdates(_:) to receive a
+      cached snapshot immediately, then live updates as cards change.
+    - Cancelling the subscription re-applies local analytics (viewed/clicked/removed)
+      and notifies any remaining subscribers.
   """
 
 @MainActor

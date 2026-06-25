@@ -1093,7 +1093,7 @@
 			mainGroup = D8CC2266D736859D7DD9A8FF;
 			packageReferences = (
 				9928D5150C45879A982BA1C6 /* XCRemoteSwiftPackageReference "SDWebImage" */,
-				DE40943D3C28014189D50706 /* XCLocalSwiftPackageReference "/Users/vagrant/git/.build/braze/release/15.2.0/39876/braze-swift-sdk" */,
+				66913012E7585B735553B424 /* XCLocalSwiftPackageReference "/Users/vagrant/git/.build/braze/release/16.0.0/39940/braze-swift-sdk" */,
 			);
 			projectDirPath = "";
 			projectRoot = "";
@@ -2406,9 +2406,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		DE40943D3C28014189D50706 /* XCLocalSwiftPackageReference "/Users/vagrant/git/.build/braze/release/15.2.0/39876/braze-swift-sdk" */ = {
+		66913012E7585B735553B424 /* XCLocalSwiftPackageReference "/Users/vagrant/git/.build/braze/release/16.0.0/39940/braze-swift-sdk" */ = {
 			isa = XCLocalSwiftPackageReference;
-			relativePath = "/Users/vagrant/git/.build/braze/release/15.2.0/39876/braze-swift-sdk";
+			relativePath = "/Users/vagrant/git/.build/braze/release/16.0.0/39940/braze-swift-sdk";
 		};
 /* End XCLocalSwiftPackageReference section */
 

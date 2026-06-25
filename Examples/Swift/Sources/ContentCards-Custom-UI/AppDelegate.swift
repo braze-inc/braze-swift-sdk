@@ -26,10 +26,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   // MARK: - Content Cards
 
   func printCurrentContentCards() {
+    let cards = AppDelegate.braze?.contentCards.cards ?? []
+    print("🃏 Found \(cards.count) cached content cards")
     // Print all the cards
-    print(AppDelegate.braze?.contentCards.cards ?? [])
+    print(cards)
 
-    guard let card = AppDelegate.braze?.contentCards.cards.first else { return }
+    guard let card = cards.first else { return }
 
     // Braze.ContentCard is an enum representing the different kind of content cards supported by
     // the Braze platform.
@@ -83,14 +85,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func printCurrentContentCardsRaw() {
     // Convert to `Braze.ContentCardRaw`
-    let rawCards = AppDelegate.braze?.contentCards.cards.map {
-      Braze.ContentCardRaw($0)
-    }
-
+    let rawCards =
+      AppDelegate.braze?.contentCards.cards.map {
+        Braze.ContentCardRaw($0)
+      } ?? []
+    print("🃏 Found \(rawCards.count) raw cached content cards")
     // Print all the cards
-    print(rawCards ?? [])
+    print(rawCards)
 
-    guard let cardRaw = rawCards?.first else { return }
+    guard let cardRaw = rawCards.first else { return }
 
     // Braze.ContentCardRaw is an Objective-C compatible NSObject subclass representing the
     // content card object, it matches the platform representation of the Content Card.
@@ -148,7 +151,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func presentContentCardsInfoViewController() {
     guard let braze = Self.braze else { return }
 
-    let viewController = CardsInfoViewController(cards: braze.contentCards.cards)
+    let viewController = CardsInfoViewController(braze: braze)
     let navigationController = UINavigationController(rootViewController: viewController)
     window?.rootViewController?.present(navigationController, animated: true)
   }

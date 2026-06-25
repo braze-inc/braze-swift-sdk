@@ -43,8 +43,10 @@ static Braze *_braze = nil;
 #pragma mark - Displaying Content Cards
 
 - (void)printCurrentContentCards {
+  NSArray *cards = AppDelegate.braze.contentCards.cards;
+  NSLog(@"🃏 Found %lu cached content cards", (unsigned long)cards.count);
   // Print all the cards
-  NSLog(@"%@", AppDelegate.braze.contentCards.cards);
+  NSLog(@"%@", cards);
 
   BRZContentCardRaw *cardRaw = AppDelegate.braze.contentCards.cards.firstObject;
   if (cardRaw == nil) {
@@ -99,7 +101,7 @@ static Braze *_braze = nil;
 
 - (void)presentContentCardsInfoViewController {
   CardsInfoViewController *viewController = [[CardsInfoViewController alloc]
-      initWithCards:AppDelegate.braze.contentCards.cards];
+      initWithBraze:AppDelegate.braze];
   UINavigationController *navigationController = [[UINavigationController alloc]
       initWithRootViewController:viewController];
   [self.window.rootViewController presentViewController:navigationController

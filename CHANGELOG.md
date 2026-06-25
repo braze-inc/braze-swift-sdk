@@ -1,3 +1,15 @@
+## 16.0.0
+
+##### Breaking
+- Updates to Content Cards behavior and reliability
+  - `braze.contentCards.cards` is now immediately updated after a card is marked as viewed, dismissed, or clicked via its `context`.
+    - Previously, these mutations were only visible in `braze.contentCards.cards` after the next server sync.
+  - Disabling Content Cards via `Braze.Configuration` now immediately clears `braze.contentCards.cards` and notifies `subscribeToUpdates` subscribers with an empty list.
+    - Previously, `braze.contentCards.cards` retained its last value and subscribers were not notified.
+
+##### Added
+- Adds `Braze.FeatureFlags.getAllFeatureFlags(_:)` — an asynchronous, callback-based getter that delivers cached feature flags on the main thread without blocking the calling thread.
+
 ## 15.2.0
 
 ##### Added
@@ -19,8 +31,6 @@
   - See [Support/Examples/Swift/Sources/Banners-Custom-UI/](Support/Examples/Swift/Sources/Banners-Custom-UI/) for a Swift example.
   - See [Support/Examples/ObjC/Sources/Banners-Custom-UI/](Support/Examples/ObjC/Sources/Banners-Custom-UI/) for an Objective-C example.
 - Adds `Braze.ContentCards.getCachedContentCards(_:)`, `Braze.ContentCards.getUnviewedCards(_:)`, and `Braze.ContentCards.getLastUpdate(_:)` — asynchronous, callback-based getters that deliver on the main thread.
-  - Deprecates `Braze.ContentCards.cards`, `Braze.ContentCards.unviewedCards`, and `Braze.ContentCards.lastUpdate` in favor of the new getters.
-    - These properties will be removed in `17.0.0`.
 
 ##### Fixed
 - Fixes a bug in the default Content Cards UI that would prevent image loading if multiple cards contained the same remote image URL. ([#176](https://github.com/braze-inc/braze-swift-sdk/issues/176))
