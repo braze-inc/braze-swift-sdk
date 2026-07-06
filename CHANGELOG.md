@@ -1,3 +1,33 @@
+## 17.0.0
+
+##### Breaking
+- `Braze.init` and `changeUser(userId:)` no longer block the calling thread.
+- The following properties now block the calling thread until the SDK has settled, ensuring they reflect the latest user state immediately after `changeUser` or `Braze.init`:
+  - `braze.user.id`
+  - `braze.deviceId`
+  - `braze.contentCards.cards`
+  - `braze.contentCards.unviewedCards`
+  - `braze.contentCards.lastUpdate`
+  - `braze.featureFlags.featureFlags`
+  - `braze.featureFlags.featureFlag(id:)`
+  - For UI and other latency-sensitive code paths, prefer the asynchronous getters (`getCachedContentCards(_:)`, `getUnviewedCards(_:)`, `getLastUpdate(_:)`, `getAllFeatureFlags(_:)`).
+- `braze.user.id` now returns `nil` after calling `wipeData()`.
+  - Previously, `braze.user.id` continued to return the last user ID after `wipeData()`.
+  - This matches the Swift SDK's behavior with that of the Android SDK.
+- `changeUser` now notifies `Braze.ContentCards.subscribeToUpdates(_:)` subscribers after a user switch, matching the existing Android SDK behavior.
+  - Previously, subscribers were not notified until the next Content Cards sync.
+- Removes the deprecated push-to-start token update API on `Braze.LiveActivities`.
+  - Removes the deprecated `Braze.LiveActivities.PushToStartTokenUpdate` enum and the `pushToStartTokenUpdatesStream` property.
+  - Use `subscribeToStateUpdates(_:)` instead, which delivers the push-to-start token lifecycle events (`UpdateEvent.ActivityType.pushToStartTokenRead`, `.pushToStartTokenFlushed`, `.pushToStartOptedOut`, `.pushToStartOptOutFlushed`) as part of the complete Live Activities lifecycle in a single subscription.
+
+##### Added
+- Adds non-blocking asynchronous accessors for user and device identifiers:
+  - `Braze.User.getId(_:)` and `Braze.User.getId() async` — deliver on the main thread.
+  - `Braze.getDeviceId(_:)` and `Braze.getDeviceId() async` — deliver on the main thread.
+  - ObjC bridges: `getIdWithCompletion:` and `getDeviceIdWithCompletion:`.
+  - Prefer these over the synchronous properties on the main thread or in `@MainActor` contexts.
+- Adds an `sdkDisabled` error on `Braze.ContentCards.requestRefresh(_:)`, `Braze.FeatureFlags.requestRefresh(_:)`, and `Braze.Banners.requestBannersRefresh(_:)`. When the SDK is disabled, these now invoke their completion handler with `.sdkDisabled` instead of leaving it uncalled.
+
 ## 16.0.0
 
 ##### Breaking
@@ -90,6 +120,11 @@
   - Adds [`Braze.LiveActivities.ErrorEvent`](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/liveactivities-swift.class/errorevent), a new enum covering observation failures, token registration failures (with `isTransient` for retry logic), `activityNotFound`, and `invalidPushTokenTag`.
   - Adds [`subscribeToStateUpdates(_:)`](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/liveactivities-swift.class/subscribetostateupdates(_:)) and [`subscribeToErrors(_:)`](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/liveactivities-swift.class/subscribetoerrors(_:)) methods on `Braze.LiveActivities` to register callbacks for the above events. Both return a `Braze.Cancellable` to remove the subscription.
   - For detailed usage, refer to the [Braze developer guide](https://www.braze.com/docs/developer_guide/live_notifications/live_activities/) or the [Live Activities tutorial](https://braze-inc.github.io/braze-swift-sdk/tutorials/braze/b4-live-activities).
+
+##### Deprecated
+- Deprecates the push-to-start token update API on `Braze.LiveActivities` in favor of the new `subscribeToStateUpdates(_:)` API.
+  - Deprecates the `Braze.LiveActivities.PushToStartTokenUpdate` enum and the `pushToStartTokenUpdatesStream` property.
+  - Use `subscribeToStateUpdates(_:)` instead, which delivers the push-to-start token lifecycle events (`UpdateEvent.ActivityType.pushToStartTokenRead`, `.pushToStartTokenFlushed`, `.pushToStartOptedOut`, `.pushToStartOptOutFlushed`) as part of the complete Live Activities lifecycle in a single subscription, covering the same information as the deprecated `PushToStartTokenUpdate` cases without the need to maintain a separate subscription.
 
 ##### Fixed
 - Improves reliability of Live Activity push token updates during app background and foreground transitions, including cold start scenarios where push-to-start activities may not have received token updates.
