@@ -1,3 +1,8 @@
+## Unreleased
+
+##### Fixed
+- Fixes the Modal and Modal Image in-app message close button exposing a touch target smaller than the 44×44pt minimum recommended by WCAG 2.5.8 (Target Size) and the Apple Human Interface Guidelines. The close button now enforces a 44pt minimum width and height while keeping the glyph visually centered.
+
 ## 17.0.0
 
 ##### Breaking
