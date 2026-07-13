@@ -58,8 +58,8 @@
   - Calling either method fires the `onDismiss` callback on any registered `BrazeBannerPlacement` for that placement ID.
   - Available in Objective-C as `-[BRZBannerContext dismiss]` and `-[BRZBanner dismissUsing:]`.
 - Adds example implementations for building a custom UI with banners.
-  - See [Support/Examples/Swift/Sources/Banners-Custom-UI/](Support/Examples/Swift/Sources/Banners-Custom-UI/) for a Swift example.
-  - See [Support/Examples/ObjC/Sources/Banners-Custom-UI/](Support/Examples/ObjC/Sources/Banners-Custom-UI/) for an Objective-C example.
+  - See [Swift Banners-Custom-UI example](https://github.com/braze-inc/braze-swift-sdk/tree/main/Examples/Swift/Sources/Banners-Custom-UI) for a Swift example.
+  - See [Objective-C Banners-Custom-UI example](https://github.com/braze-inc/braze-swift-sdk/tree/main/Examples/ObjC/Sources/Banners-Custom-UI) for an Objective-C example.
 - Adds `Braze.ContentCards.getCachedContentCards(_:)`, `Braze.ContentCards.getUnviewedCards(_:)`, and `Braze.ContentCards.getLastUpdate(_:)` — asynchronous, callback-based getters that deliver on the main thread.
 
 ##### Fixed
@@ -1096,7 +1096,7 @@
   - This archive contains the prebuilt xcframeworks and their associated resource bundles.
   - The content of this archive can be used to manually integrate the SDK.
 - Adds the `Examples-Manual.xcodeproj` showcasing how to integrate the SDK using the prebuilt release assets.
-- Adds support for Mac Catalyst for example applications, available at [Support/Examples/](./Support/Examples/README.md)
+- Adds support for Mac Catalyst for example applications, available at [Examples README](https://github.com/braze-inc/braze-swift-sdk/blob/main/Examples/README.md)
 - Adds support to convert from `Data` into an in-app message, content card, or news feed card via `decoding(json:)`.
 
 ## 5.8.1
@@ -1234,7 +1234,7 @@ To help migrate your app from the Appboy-iOS-SDK to our Swift SDK, this release 
     - `Braze`
     - `BrazeDelegate`
     - `BRZContentCardRaw`
-  - See our Objective-C [Examples](Examples/) project.
+  - See our Objective-C [Examples](https://github.com/braze-inc/braze-swift-sdk/tree/main/Examples) project.
 - Adds [`BrazeDelegate.braze(_:noMatchingTriggerForEvent:)`](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/brazedelegate/braze(_:nomatchingtriggerforevent:)-8rt7y) which is called if no Braze in-app message is triggered for a given event.
 
 ##### Changed
@@ -1283,7 +1283,7 @@ To help migrate your app from the Appboy-iOS-SDK to our Swift SDK, this release 
 
 ##### Added
 - Adds support for tvOS.
-  - See the schemes _Analytics-tvOS_ and _Location-tvOS_ in the [Examples](Examples/) project.
+  - See the schemes _Analytics-tvOS_ and _Location-tvOS_ in the [Examples](https://github.com/braze-inc/braze-swift-sdk/tree/main/Examples) project.
 
 ## 5.2.0
 
@@ -1310,7 +1310,7 @@ To help migrate your app from the Appboy-iOS-SDK to our Swift SDK, this release 
     - [BrazeLocation](https://cocoapods.org/pods/BrazeLocation)
     - [BrazeNotificationService](https://cocoapods.org/pods/BrazeNotificationService)
     - [BrazePushStory](https://cocoapods.org/pods/BrazePushStory)
-  - See [Examples/Podfile](Examples/Podfile) for example integration.
+  - See [Examples/Podfile](https://github.com/braze-inc/braze-swift-sdk/blob/main/Examples/Podfile) for example integration.
 - Adds `Braze.UIUtils.activeTopmostViewController` to get the topmost view controller that is currently being presented by the application.
 
 ## 5.0.1
