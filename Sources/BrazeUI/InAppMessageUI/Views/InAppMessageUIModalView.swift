@@ -403,6 +403,8 @@ extension BrazeInAppMessageUI {
 
         // Close button
         closeButton.anchors.height.equal(closeButton.anchors.width)
+        // Enforce the 44pt minimum touch target (WCAG 2.5.8 Target Size, Apple HIG).
+        closeButton.anchors.width.greaterThanOrEqual(44)
         closeButton.anchors.edges.pin(to: contentView.layoutMarginsGuide, alignment: .topTrailing)
 
         // Content view
