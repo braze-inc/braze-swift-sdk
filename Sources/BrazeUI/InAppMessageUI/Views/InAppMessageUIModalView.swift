@@ -403,6 +403,7 @@ extension BrazeInAppMessageUI {
 
         // Close button
         closeButton.anchors.height.equal(closeButton.anchors.width)
+        closeButton.anchors.width.greaterThanOrEqual(Self.closeButtonMinimumTouchTargetSize)
         closeButton.anchors.edges.pin(to: contentView.layoutMarginsGuide, alignment: .topTrailing)
 
         // Content view

@@ -1,3 +1,25 @@
+## 18.0.0
+
+##### Breaking
+- Renames `Braze.Ecommerce.ProductViewedEvent.typeIdentifiers` to `type` on Swift and Objective-C API surfaces.
+- Renames Live Activities push-to-start update events on `Braze.LiveActivities.UpdateEvent.ActivityType`, which are emitted when using `Braze.LiveActivities.subscribeToStateUpdates(_:)`:
+  - `pushToStartOptedOut` → `pushToStartUnregistered`
+  - `pushToStartOptOutFlushed` → `pushToStartUnregisterFlushed`
+
+##### Fixed
+- Fixes the touch target size on in-app message close buttons to match the minimum recommended size in the Apple Human Interface Guidelines.
+- Fixes a bug that prevented geofences from being registered with `CLLocationManager` when `automaticLocationCollection` was disabled.
+
+##### Added
+- Adds two new APIs to unregister the device's push token or push-to-start tokens from the current user's profile.
+  - [`braze.notifications.unregisterPush(completion:)`](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/notifications-swift.class/unregisterpush(completion:)) removes the standard push token. This is also available as `unregisterPush() async throws` and in Objective-C.
+  - [`braze.liveActivities.unregisterPushToStart(types:completion:)`](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/liveactivities-swift.class/unregisterpushtostart(types:completion:)) removes Live Activities push-to-start tokens for the given activity attribute types (default: remove all push-to-start tokens). This is also available as `unregisterPushToStart(types:) async throws` but supports Swift only.
+- Adds a new logout method to unregister the device's push token _and_ push-to-start tokens.
+  - [`braze.logout(completion:)`](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/logout(completion:)) removes the push token and push-to-start tokens (if available), and then wipes all local data and disables the SDK on success. This is also available as `logout() async throws` and in Objective-C.
+
+##### Deprecated
+- Deprecates [`braze.liveActivities.optOutPushToStart(type:)`](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/liveactivities-swift.class/optoutpushtostart(type:)) in favor of [`braze.liveActivities.unregisterPushToStart(types:completion:)`](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/liveactivities-swift.class/unregisterpushtostart(types:completion:)).
+
 ## 17.0.0
 
 ##### Breaking

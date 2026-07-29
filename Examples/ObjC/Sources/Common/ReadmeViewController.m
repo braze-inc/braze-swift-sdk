@@ -1,10 +1,71 @@
 #import "ReadmeViewController.h"
 #import "AppDelegate.h"
 #import "ReadmeAction.h"
+#import "ReadmeActionSection.h"
+#import "ReadmeTextField.h"
 
 extern NSString *const readme;
 extern ReadmeAction const actions[];
 extern NSInteger const actionsCount;
+
+#pragma mark - ReadmeTextFieldCell
+
+@interface ReadmeTextFieldCell : UITableViewCell
+
+@property(strong, nonatomic) UITextField *textField;
+@property(strong, nonatomic) UIButton *button;
+@property(copy, nonatomic) void (^onSubmit)(NSString *text);
+
+@end
+
+@implementation ReadmeTextFieldCell
+
+- (instancetype)initWithStyle:(UITableViewCellStyle)style
+              reuseIdentifier:(NSString *)reuseIdentifier {
+  self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+  if (self) {
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
+
+    _textField = [[UITextField alloc] init];
+    _textField.translatesAutoresizingMaskIntoConstraints = NO;
+    _textField.autocapitalizationType = UITextAutocapitalizationTypeNone;
+    _textField.autocorrectionType = UITextAutocorrectionTypeNo;
+    _textField.clearButtonMode = UITextFieldViewModeWhileEditing;
+    _textField.returnKeyType = UIReturnKeyDone;
+    [self.contentView addSubview:_textField];
+
+    _button = [UIButton buttonWithType:UIButtonTypeSystem];
+    _button.translatesAutoresizingMaskIntoConstraints = NO;
+    [_button addTarget:self
+                  action:@selector(submit)
+        forControlEvents:UIControlEventTouchUpInside];
+    [_button setContentHuggingPriority:UILayoutPriorityRequired
+                               forAxis:UILayoutConstraintAxisHorizontal];
+    [_button setContentCompressionResistancePriority:UILayoutPriorityRequired
+                                             forAxis:UILayoutConstraintAxisHorizontal];
+    [self.contentView addSubview:_button];
+
+    UILayoutGuide *margins = self.contentView.layoutMarginsGuide;
+    [NSLayoutConstraint activateConstraints:@[
+      [_textField.leadingAnchor constraintEqualToAnchor:margins.leadingAnchor],
+      [_textField.centerYAnchor constraintEqualToAnchor:self.contentView.centerYAnchor],
+      [_textField.trailingAnchor constraintEqualToAnchor:_button.leadingAnchor constant:-8],
+      [_button.trailingAnchor constraintEqualToAnchor:margins.trailingAnchor],
+      [_button.centerYAnchor constraintEqualToAnchor:self.contentView.centerYAnchor],
+      [self.contentView.heightAnchor constraintGreaterThanOrEqualToConstant:44],
+    ]];
+  }
+  return self;
+}
+
+- (void)submit {
+  if (self.onSubmit) {
+    self.onSubmit(self.textField.text ?: @"");
+  }
+  [self.textField resignFirstResponder];
+}
+
+@end
 
 @interface ReadmeViewController ()
 
@@ -47,18 +108,72 @@ extern NSInteger const actionsCount;
 
 #pragma mark - UITableViewDataSource
 
+- (NSInteger)textFieldSectionCount {
+  return readmeTextFields().count > 0 ? 1 : 0;
+}
+
+- (BOOL)isTextFieldSection:(NSInteger)section {
+  return [self textFieldSectionCount] > 0 && section == 0;
+}
+
+- (BOOL)isMainActionsSection:(NSInteger)section {
+  return section == [self textFieldSectionCount];
+}
+
+- (ReadmeActionSection *)extraSectionForSection:(NSInteger)section {
+  NSInteger index = section - [self textFieldSectionCount] - 1;
+  if (index < 0 || index >= (NSInteger)readmeActionSections().count) {
+    return nil;
+  }
+  return readmeActionSections()[index];
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+  return [self textFieldSectionCount] + 1 + readmeActionSections().count;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView
     numberOfRowsInSection:(NSInteger)section {
-  return actionsCount;
+  if ([self isTextFieldSection:section]) {
+    return readmeTextFields().count;
+  }
+  if ([self isMainActionsSection:section]) {
+    return actionsCount;
+  }
+  return [self extraSectionForSection:section].items.count;
 }
 
 - (NSString *)tableView:(UITableView *)tableView
     titleForHeaderInSection:(NSInteger)section {
-  return @"Actions";
+  if ([self isTextFieldSection:section]) {
+    return @"User";
+  }
+  if ([self isMainActionsSection:section]) {
+    return @"Actions";
+  }
+  return [self extraSectionForSection:section].title;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+  if ([self isTextFieldSection:indexPath.section]) {
+    NSString *const identifier = @"textFieldCellIdentifier";
+    ReadmeTextFieldCell *cell =
+        (ReadmeTextFieldCell *)[tableView dequeueReusableCellWithIdentifier:identifier];
+    if (!cell) {
+      cell = [[ReadmeTextFieldCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                        reuseIdentifier:identifier];
+    }
+    ReadmeTextField *row = readmeTextFields()[indexPath.row];
+    cell.textField.placeholder = row.placeholder;
+    [cell.button setTitle:row.buttonTitle forState:UIControlStateNormal];
+    __weak typeof(self) weakSelf = self;
+    cell.onSubmit = ^(NSString *text) {
+      row.action(text, weakSelf);
+    };
+    return cell;
+  }
+
   NSString *const identifier = @"cellIdentifier";
   UITableViewCell *cell =
       [tableView dequeueReusableCellWithIdentifier:identifier];
@@ -66,8 +181,15 @@ extern NSInteger const actionsCount;
     cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
                                   reuseIdentifier:identifier];
   }
-  cell.textLabel.text = actions[indexPath.row].title;
-  cell.detailTextLabel.text = actions[indexPath.row].subtitle;
+  if ([self isMainActionsSection:indexPath.section]) {
+    cell.textLabel.text = actions[indexPath.row].title;
+    cell.detailTextLabel.text = actions[indexPath.row].subtitle;
+  } else {
+    ReadmeActionItem *item =
+        [self extraSectionForSection:indexPath.section].items[indexPath.row];
+    cell.textLabel.text = item.title;
+    cell.detailTextLabel.text = item.subtitle;
+  }
   return cell;
 }
 
@@ -75,9 +197,25 @@ extern NSInteger const actionsCount;
 
 - (void)tableView:(UITableView *)tableView
     didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-  void (^action)(ReadmeViewController *) = actions[indexPath.row].action;
-  action(self);
+  if ([self isTextFieldSection:indexPath.section]) {
+    return;
+  }
+  if ([self isMainActionsSection:indexPath.section]) {
+    actions[indexPath.row].action(self);
+  } else {
+    [self extraSectionForSection:indexPath.section].items[indexPath.row].action(self);
+  }
   [tableView deselectRowAtIndexPath:indexPath animated:true];
+}
+
+#pragma mark - Text fields
+
+- (void)clearTextFields {
+  for (UITableViewCell *cell in self.tableView.visibleCells) {
+    if ([cell isKindOfClass:[ReadmeTextFieldCell class]]) {
+      ((ReadmeTextFieldCell *)cell).textField.text = nil;
+    }
+  }
 }
 
 #pragma mark - Lazy Properties Instanciation

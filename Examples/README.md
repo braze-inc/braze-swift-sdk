@@ -133,6 +133,13 @@ Follow the instructions below for your preferred integration method to get start
   - [Rich Push Notifications](https://braze-inc.github.io/braze-swift-sdk/tutorials/braze/b2-rich-push-notifications).
   - [Push Stories](https://braze-inc.github.io/braze-swift-sdk/tutorials/braze/b3-push-stories).
 
+#### PushLogout
+
+- iOS, visionOS, Mac Catalyst.
+- Swift, Objective-C.
+- Demonstrates the Push Logout APIs: `unregisterPush`, `unregisterPushToStart` (Swift only) and `logout`.
+- Also demonstrates `changeUser` and reading the SDK `deviceId`.
+
 #### PushNotifications-DelayedInitialization
 
 - iOS, visionOS, Mac Catalyst.

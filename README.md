@@ -89,7 +89,7 @@ The following table describes each library in the Braze Swift SDK.
 
 ## Examples
 
-Explore our [examples project](/Examples) which showcases multiple features' integrations.
+Explore our [examples project](/Examples), which showcases sample integrations for multiple features.
 
 ## Alternative Repositories
 
@@ -98,7 +98,7 @@ Explore our [examples project](/Examples) which showcases multiple features' int
 | → **Sources and Static XCFrameworks** |                    [braze-inc/braze-swift-sdk] |                   ✓ |
 | Static XCFrameworks                   |    [braze-inc/braze-swift-sdk-prebuilt-static] |                   ✗ |
 | Dynamic XCFrameworks                  |   [braze-inc/braze-swift-sdk-prebuilt-dynamic] |                   ✗ |
-| Mergeable XCFrameworks (early access) | [braze-inc/braze-swift-sdk-prebuilt-mergeable] |                   ✗ |
+| Mergeable XCFrameworks                | [braze-inc/braze-swift-sdk-prebuilt-mergeable] |                   ✗ |
 
 ## Contact
 

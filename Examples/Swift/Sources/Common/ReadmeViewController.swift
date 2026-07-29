@@ -3,7 +3,13 @@ import UIKit
 @MainActor
 final class ReadmeViewController: UITableViewController {
 
-  let actions: [(String, String, @MainActor (ReadmeViewController) -> Void)]
+  let textFieldRows: [ReadmeTextFieldRow]
+
+  private enum Section {
+    case textFields
+    case actions(title: String, rows: [(String, String, @MainActor (ReadmeViewController) -> Void)])
+  }
+  private let sections: [Section]
 
   let readmeTextView: UITextView = {
     let textView = UITextView()
@@ -36,7 +42,18 @@ final class ReadmeViewController: UITableViewController {
   }()
 
   init(readme: String, actions: [(String, String, @MainActor (ReadmeViewController) -> Void)]) {
-    self.actions = actions
+    self.textFieldRows = readmeTextFieldRows
+
+    var sections: [Section] = []
+    if !readmeTextFieldRows.isEmpty {
+      sections.append(.textFields)
+    }
+    sections.append(.actions(title: "Actions", rows: actions))
+    for section in readmeActionSections {
+      sections.append(.actions(title: section.title, rows: section.actions))
+    }
+    self.sections = sections
+
     super.init(style: .grouped)
 
     // Set title
@@ -74,35 +91,131 @@ final class ReadmeViewController: UITableViewController {
 
   // MARK: - UITableViewDataSource
 
+  override func numberOfSections(in tableView: UITableView) -> Int {
+    sections.count
+  }
+
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    actions.count
+    switch sections[section] {
+    case .textFields: return textFieldRows.count
+    case .actions(_, let rows): return rows.count
+    }
   }
 
   override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String?
   {
-    "Actions"
+    switch sections[section] {
+    case .textFields: return "User"
+    case .actions(let title, _): return title
+    }
   }
 
   override func tableView(
     _ tableView: UITableView,
     cellForRowAt indexPath: IndexPath
   ) -> UITableViewCell {
-    let identifier = "cellIdentifier"
-    let cell =
-      tableView.dequeueReusableCell(withIdentifier: identifier)
-      ?? UITableViewCell(style: .subtitle, reuseIdentifier: identifier)
-    cell.textLabel?.text = actions[indexPath.row].0
-    cell.detailTextLabel?.text = actions[indexPath.row].1
-    cell.detailTextLabel?.numberOfLines = 0
-    return cell
+    switch sections[indexPath.section] {
+    case .textFields:
+      let identifier = "textFieldCellIdentifier"
+      let cell =
+        tableView.dequeueReusableCell(withIdentifier: identifier) as? ReadmeTextFieldCell
+        ?? ReadmeTextFieldCell(style: .default, reuseIdentifier: identifier)
+      let row = textFieldRows[indexPath.row]
+      cell.configure(placeholder: row.placeholder, buttonTitle: row.buttonTitle) {
+        [weak self] text in
+        guard let self else { return }
+        row.action(text, self)
+      }
+      return cell
+
+    case .actions(_, let rows):
+      let identifier = "cellIdentifier"
+      let cell =
+        tableView.dequeueReusableCell(withIdentifier: identifier)
+        ?? UITableViewCell(style: .subtitle, reuseIdentifier: identifier)
+      cell.textLabel?.text = rows[indexPath.row].0
+      cell.detailTextLabel?.text = rows[indexPath.row].1
+      cell.detailTextLabel?.numberOfLines = 0
+      return cell
+    }
   }
 
   // MARK: - UITableViewDelegate
 
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    let action = actions[indexPath.row].2
-    action(self)
+    guard case .actions(_, let rows) = sections[indexPath.section] else { return }
+    rows[indexPath.row].2(self)
     tableView.deselectRow(at: indexPath, animated: true)
+  }
+
+  // MARK: - Text fields
+
+  /// Clears the text of all text field rows.
+  func clearTextFields() {
+    for case let cell as ReadmeTextFieldCell in tableView.visibleCells {
+      cell.clear()
+    }
+  }
+}
+
+// MARK: - ReadmeTextFieldCell
+
+private final class ReadmeTextFieldCell: UITableViewCell {
+
+  private let textField = UITextField()
+  private let button = UIButton(type: .system)
+  private var onSubmit: (@MainActor (String) -> Void)?
+
+  override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+    super.init(style: style, reuseIdentifier: reuseIdentifier)
+    selectionStyle = .none
+
+    textField.autocapitalizationType = .none
+    textField.autocorrectionType = .no
+    textField.clearButtonMode = .whileEditing
+    textField.returnKeyType = .done
+    textField.translatesAutoresizingMaskIntoConstraints = false
+
+    button.translatesAutoresizingMaskIntoConstraints = false
+    button.addTarget(self, action: #selector(submit), for: .touchUpInside)
+    button.setContentHuggingPriority(.required, for: .horizontal)
+    button.setContentCompressionResistancePriority(.required, for: .horizontal)
+
+    contentView.addSubview(textField)
+    contentView.addSubview(button)
+
+    let margins = contentView.layoutMarginsGuide
+    NSLayoutConstraint.activate([
+      textField.leadingAnchor.constraint(equalTo: margins.leadingAnchor),
+      textField.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+      textField.trailingAnchor.constraint(equalTo: button.leadingAnchor, constant: -8),
+      button.trailingAnchor.constraint(equalTo: margins.trailingAnchor),
+      button.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+      contentView.heightAnchor.constraint(greaterThanOrEqualToConstant: 44),
+    ])
+  }
+
+  required init?(coder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
+  }
+
+  func configure(
+    placeholder: String,
+    buttonTitle: String,
+    onSubmit: @escaping @MainActor (String) -> Void
+  ) {
+    textField.placeholder = placeholder
+    button.setTitle(buttonTitle, for: .normal)
+    self.onSubmit = onSubmit
+  }
+
+  @objc private func submit() {
+    onSubmit?(textField.text ?? "")
+    textField.resignFirstResponder()
+  }
+
+  func clear() {
+    textField.text = nil
   }
 }
 

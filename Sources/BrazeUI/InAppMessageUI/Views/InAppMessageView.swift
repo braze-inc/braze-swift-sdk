@@ -53,6 +53,10 @@ public protocol InAppMessageView: UIView {
 
 extension InAppMessageView {
 
+  /// The minimum width/height a close button's touch target must occupy to meet the 44x44pt
+  /// minimum recommended by the Apple Human Interface Guidelines.
+  public static var closeButtonMinimumTouchTargetSize: Double { 44 }
+
   /// The initial accessibility element.
   ///
   /// If assigned, VoiceOver will focus on this element when the message view is presented.
