@@ -574,7 +574,10 @@ static NSString *const ABKPersistentDataPlistEndpointKey = @"Endpoint";
   NSMutableArray<BRZDeviceProperty *> *deviceProperties =
       [NSMutableArray array];
   if (allowList & ABKDeviceOptionResolution) {
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
     [deviceProperties addObject:BRZDeviceProperty.resolution];
+#pragma GCC diagnostic pop
   }
   if (allowList & ABKDeviceOptionCarrier) {
     [deviceProperties addObject:BRZDeviceProperty.carrier];

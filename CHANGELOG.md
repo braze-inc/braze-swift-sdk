@@ -1,3 +1,20 @@
+## 18.1.0
+
+##### Fixed
+- Fixes an issue where `ImageOnly` Content Cards with a blank (but present) image url would be discarded as invalid. 
+  - These cards are now displayed as blank cards, matching the Android SDK's behavior.
+- Fixes an issue where aliases and other events could be dropped if logged before a session started.
+- Fixes an issue where device info (timezone, locale, model, OS version) could be missing on new profiles if it was sent before a session started. The SDK now waits and sends that info with the session.
+
+##### Added
+- Adds `@MainActor` annotation to `Braze.Notifications.subscribeToUpdates(_:)` closure parameter to properly enforce Swift 6 strict concurrency checking.
+- Adds `Braze.Banner.RemovalReason.expired`, passed to `BrazeBannerPlacement.removeBannerContent(reason:)` when a banner is removed from the local cache after expiring.
+
+##### Deprecated
+- Deprecates [`Braze.Configuration.useUUIDAsDeviceId`](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/configuration-swift.class/useuuidasdeviceid), which will be removed in a future major release (20.0.0). Once removed, the SDK will always use a randomly generated UUID as the device ID.
+  - After configuration is removed, device IDs previously persisted from the `identifierForVendor` (IDFV) continue to be respected until local persistence is cleared and device ID becomes UUID-based.
+- Deprecates `Braze.Configuration.DeviceProperty.resolution` (and its Objective-C equivalent `BRZDeviceProperty.resolution`), which will be removed in a future major release (20.0.0). This field is not used by the SDK or Braze backend.
+
 ## 18.0.0
 
 ##### Breaking
