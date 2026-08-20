@@ -1,3 +1,19 @@
+## 18.2.0
+
+##### Added
+- Adds the following public protocols that mirror each module's public API:
+  - [`Braze.CoreModule`](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/coremodule) - the top-level `Braze` instance.
+  - [`Braze.UserModule`](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/usermodule) - `Braze.User`
+  - [`Braze.NotificationsModule`](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/notificationsmodule) - `Braze.Notifications`
+  - [`Braze.LiveActivitiesModule`](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/liveactivitiesmodule) - `Braze.LiveActivities`
+  - [`Braze.FeatureFlagsModule`](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/featureflagsmodule) - `Braze.FeatureFlags`
+  - [`Braze.ContentCardsModule`](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/contentcardsmodule) - `Braze.ContentCards`
+  - [`Braze.BannersModule`](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/bannersmodule) - `Braze.Banners`
+  - These public modules support both Swift and Objective-C, except for `Braze.LiveActivitiesModule` which is Swift-only.
+
+##### Deprecated
+- Deprecates all public symbols in `BrazeKitCompat` and `BrazeUICompat`, which will be removed in a future major release. Use `BrazeKit` (and `BrazeUI` for UI components) instead.
+
 ## 18.1.0
 
 ##### Fixed

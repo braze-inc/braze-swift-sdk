@@ -1,10 +1,17 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+#if __has_include(<BrazeKitCompat/BrazePreprocessor.h>)
+  #import <BrazeKitCompat/BrazePreprocessor.h>
+#else
+  #import "BrazePreprocessor.h"
+#endif
+
 typedef NS_ENUM(NSInteger, ABKChannel);
 
 #define ABK_CGFLT_EQ(lhs, rhs) (fabs(lhs - rhs) < 10 * FLT_EPSILON * fabs(lhs + rhs))
 
+BRZ_DEPRECATED("ABKUIUtils is not needed anymore; its functionality is internal to 'BrazeUI'")
 @interface ABKUIUtils : NSObject
 
 /*!

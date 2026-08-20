@@ -3,6 +3,12 @@
 #import "ABKInAppMessageWindowController.h"
 #import "ABKInAppMessageWindow.h"
 
+#if __has_include(<BrazeKitCompat/BrazePreprocessor.h>)
+  #import <BrazeKitCompat/BrazePreprocessor.h>
+#else
+  #import "BrazePreprocessor.h"
+#endif
+
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
 
@@ -53,6 +59,7 @@ static double const InAppMessageAnimationDuration = 0.4;
  * nil as well. At that point, the in-app message window's retainer count will drop to 0 and the
  * system will clean it out from the UIApplication's windows array.
  */
+BRZ_DEPRECATED("renamed to 'BrazeInAppMessageUI.ViewController'")
 @interface ABKInAppMessageWindowController : UIViewController <UIGestureRecognizerDelegate>
 
 /*!

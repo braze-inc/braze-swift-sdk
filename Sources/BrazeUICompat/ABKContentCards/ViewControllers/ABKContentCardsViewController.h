@@ -1,6 +1,13 @@
 #import <UIKit/UIKit.h>
 #import "ABKContentCardsTableViewController.h"
 
+#if __has_include(<BrazeKitCompat/BrazePreprocessor.h>)
+  #import <BrazeKitCompat/BrazePreprocessor.h>
+#else
+  #import "BrazePreprocessor.h"
+#endif
+
+BRZ_DEPRECATED("renamed to 'BrazeContentCardUI.ModalViewController'")
 @interface ABKContentCardsViewController : UINavigationController
 
 /*!

@@ -1,10 +1,17 @@
 #import "ABKBaseContentCardCell.h"
 
+#if __has_include(<BrazeKitCompat/BrazePreprocessor.h>)
+  #import <BrazeKitCompat/BrazePreprocessor.h>
+#else
+  #import "BrazePreprocessor.h"
+#endif
+
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
 
 @class ABKCaptionedImageContentCard;
 
+BRZ_DEPRECATED("renamed to 'BrazeContentCardUI.CaptionedImageCell'")
 @interface ABKCaptionedImageContentCardCell : ABKBaseContentCardCell
 
 @property (class, nonatomic) UIColor *titleLabelColor;

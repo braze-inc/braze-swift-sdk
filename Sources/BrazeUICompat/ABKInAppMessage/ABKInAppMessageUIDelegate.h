@@ -2,6 +2,12 @@
 #import <WebKit/WebKit.h>
 #import "ABKInAppMessageViewController.h"
 
+#if __has_include(<BrazeKitCompat/BrazePreprocessor.h>)
+  #import <BrazeKitCompat/BrazePreprocessor.h>
+#else
+  #import "BrazePreprocessor.h"
+#endif
+
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
 
@@ -15,6 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 /*!
  * The in-app message UI delegate allows you to control the display and behavior of the Braze in-app message.
  */
+BRZ_DEPRECATED("renamed to 'BrazeInAppMessageUIDelegate'")
 @protocol ABKInAppMessageUIDelegate <NSObject>
 
 @optional

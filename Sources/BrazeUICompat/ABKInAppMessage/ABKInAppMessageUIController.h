@@ -14,9 +14,16 @@
   #import "ABKInAppMessageUIControlling.h"
 #endif
 
+#if __has_include(<BrazeKitCompat/BrazePreprocessor.h>)
+  #import <BrazeKitCompat/BrazePreprocessor.h>
+#else
+  #import "BrazePreprocessor.h"
+#endif
+
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
 
+BRZ_DEPRECATED("renamed to 'BrazeInAppMessageUI'")
 @interface ABKInAppMessageUIController : NSObject <ABKInAppMessageUIControlling, BrazeInAppMessagePresenter>
 
 /*!

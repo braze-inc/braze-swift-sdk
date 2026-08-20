@@ -1,16 +1,24 @@
 #import <UIKit/UIKit.h>
 
+#if __has_include(<BrazeKitCompat/BrazePreprocessor.h>)
+  #import <BrazeKitCompat/BrazePreprocessor.h>
+#else
+  #import "BrazePreprocessor.h"
+#endif
+
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
 
 @class ABKContentCard;
 
+BRZ_DEPRECATED("superseded by automatic cell sizing in 'BrazeContentCardUI.ViewController'")
 @protocol ABKBaseContentCardCellDelegate <NSObject>
 
 - (void)cellRequestSizeUpdate:(UITableViewCell *)cell;
 
 @end
 
+BRZ_DEPRECATED("renamed to 'BrazeContentCardUI.Cell'")
 @interface ABKBaseContentCardCell : UITableViewCell
 
 /*!
