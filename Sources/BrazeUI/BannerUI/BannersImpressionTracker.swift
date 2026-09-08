@@ -1,152 +1,156 @@
-import BrazeKit
-import Foundation
+#if canImport(WebKit)
 
-extension BrazeBannerUI.BannersImpressionTracker {
+  import BrazeKit
+  import Foundation
 
-  /// The shared impression tracker for banners.
-  static let shared = BrazeBannerUI.BannersImpressionTracker()
+  extension BrazeBannerUI.BannersImpressionTracker {
 
-}
+    /// The shared impression tracker for banners.
+    static let shared = BrazeBannerUI.BannersImpressionTracker()
 
-// MARK: - Banners Impression Tracker
+  }
 
-extension BrazeBannerUI {
+  // MARK: - Banners Impression Tracker
 
-  /// The default implementation of impression tracking for Braze banners.
-  @MainActor
-  open class BannersImpressionTracker {
+  extension BrazeBannerUI {
 
-    public var visibilityTracker: VisibilityTracker<String>? {
-      get { lock.sync { _visibilityTracker } }
-      set { lock.sync { _visibilityTracker = newValue } }
-    }
-    private var _visibilityTracker: VisibilityTracker<String>?
+    /// The default implementation of impression tracking for Braze banners.
+    @MainActor
+    open class BannersImpressionTracker {
 
-    /// Whether the impression tracker is currently running.
-    var isCurrentlyTracking: Bool {
-      get { lock.sync { _isCurrentlyTracking } }
-      set { lock.sync { _isCurrentlyTracking = newValue } }
-    }
-    private var _isCurrentlyTracking: Bool = false
+      public var visibilityTracker: VisibilityTracker<String>? {
+        get { lock.sync { _visibilityTracker } }
+        set { lock.sync { _visibilityTracker = newValue } }
+      }
+      private var _visibilityTracker: VisibilityTracker<String>?
 
-    /// Banner views currently tracked for impression logging.
-    ///
-    /// Banner views are tracked and managed with their banner tracking IDs.
-    var trackedBanners: NSMapTable<NSString, BrazeBannerUI.BannerUIView> {
-      get { lock.sync { _trackedBanners } }
-      set { lock.sync { _trackedBanners = newValue } }
-    }
-    private var _trackedBanners: NSMapTable<NSString, BrazeBannerUI.BannerUIView> = .init(
-      keyOptions: .copyIn,
-      valueOptions: .weakMemory
-    )
+      /// Whether the impression tracker is currently running.
+      var isCurrentlyTracking: Bool {
+        get { lock.sync { _isCurrentlyTracking } }
+        set { lock.sync { _isCurrentlyTracking = newValue } }
+      }
+      private var _isCurrentlyTracking: Bool = false
 
-    // Session
+      /// Banner views currently tracked for impression logging.
+      ///
+      /// Banner views are tracked and managed with their banner tracking IDs.
+      var trackedBanners: NSMapTable<NSString, BrazeBannerUI.BannerUIView> {
+        get { lock.sync { _trackedBanners } }
+        set { lock.sync { _trackedBanners = newValue } }
+      }
+      private var _trackedBanners: NSMapTable<NSString, BrazeBannerUI.BannerUIView> = .init(
+        keyOptions: .copyIn,
+        valueOptions: .weakMemory
+      )
 
-    /// The Braze cancellable watching the current session.
-    var sessionSubscriber: Braze.Cancellable? {
-      get { lock.sync { _sessionSubscriber } }
-      set { lock.sync { _sessionSubscriber = newValue } }
-    }
-    private var _sessionSubscriber: Braze.Cancellable?
+      // Session
 
-    /// The banner tracking IDs that have been viewed this session.
-    var viewedInSessionBanners: Set<String> {
-      get { lock.sync { _viewedInSessionBanners } }
-      set { lock.sync { _viewedInSessionBanners = newValue } }
-    }
-    private var _viewedInSessionBanners: Set<String> = []
+      /// The Braze cancellable watching the current session.
+      var sessionSubscriber: Braze.Cancellable? {
+        get { lock.sync { _sessionSubscriber } }
+        set { lock.sync { _sessionSubscriber = newValue } }
+      }
+      private var _sessionSubscriber: Braze.Cancellable?
 
-    /// The lock guarding the properties.
-    private let lock = NSRecursiveLock()
+      /// The banner tracking IDs that have been viewed this session.
+      var viewedInSessionBanners: Set<String> {
+        get { lock.sync { _viewedInSessionBanners } }
+        set { lock.sync { _viewedInSessionBanners = newValue } }
+      }
+      private var _viewedInSessionBanners: Set<String> = []
 
-    /// Starts observing session updates to reset banner impressions.
-    ///
-    /// - Parameter braze: The Braze instance.
-    public func startSessionTracking(with braze: Braze) {
-      sessionSubscriber = braze.subscribeToSessionUpdates { [weak self] event in
-        guard let self else { return }
+      /// The lock guarding the properties.
+      private let lock = NSRecursiveLock()
 
-        switch event {
-        case .started:
-          self.startVisibilityTracking()
-        case .ended:
-          self.viewedInSessionBanners = []
-          self.stopVisibilityTracking()
-        @unknown default:
-          break
+      /// Starts observing session updates to reset banner impressions.
+      ///
+      /// - Parameter braze: The Braze instance.
+      public func startSessionTracking(with braze: Braze) {
+        sessionSubscriber = braze.subscribeToSessionUpdates { [weak self] event in
+          guard let self else { return }
+
+          switch event {
+          case .started:
+            self.startVisibilityTracking()
+          case .ended:
+            self.viewedInSessionBanners = []
+            self.stopVisibilityTracking()
+          @unknown default:
+            break
+          }
         }
       }
+
+      /// Register a Banner view for visibility tracking.
+      ///
+      /// - Parameter view: The Braze banner view.
+      public func trackView(_ view: BrazeBannerUI.BannerUIView) {
+        guard let trackingId = view.banner?.trackingId,
+          !viewedInSessionBanners.contains(trackingId)
+        else { return }
+
+        trackedBanners.setObject(view, forKey: trackingId as NSString)
+        startVisibilityTracking()
+      }
+
+      /// Starts visibility and session tracking if tracking is not already running.
+      func startVisibilityTracking() {
+        guard !isCurrentlyTracking else { return }
+
+        isCurrentlyTracking = true
+        visibilityTracker = VisibilityTracker<String>(
+          interval: 0.1,
+          visibleIdentifiers: bannerTrackingIdentifiers,
+          visibleForInterval: logBannerImpression
+        )
+        visibilityTracker?.start()
+      }
+
+      /// Stops visibility and session tracking.
+      ///
+      /// Aim to minimize operations whenever there are no longer any banners eligible for tracking.
+      func stopVisibilityTracking() {
+        guard isCurrentlyTracking else { return }
+
+        isCurrentlyTracking = false
+        visibilityTracker?.stop()
+        visibilityTracker = nil
+      }
     }
 
-    /// Register a Banner view for visibility tracking.
-    ///
-    /// - Parameter view: The Braze banner view.
-    public func trackView(_ view: BrazeBannerUI.BannerUIView) {
-      guard let trackingId = view.banner?.trackingId,
-        !viewedInSessionBanners.contains(trackingId)
+  }
+
+  // MARK: - VisibilityTracker methods
+
+  extension BrazeBannerUI.BannersImpressionTracker {
+
+    func bannerTrackingIdentifiers() -> [String] {
+      return trackedBanners.keyEnumerator().allObjects.compactMap { key in
+        guard let nsStringKey = key as? NSString,
+          let view = trackedBanners.object(forKey: nsStringKey)
+        else {
+          return nil
+        }
+        return view.isCurrentlyVisible() ? nsStringKey as String : nil
+      }
+    }
+
+    func logBannerImpression(trackingId: String) {
+      guard let bannerView = trackedBanners.object(forKey: trackingId as NSString),
+        let actualTrackingId = bannerView.banner?.trackingId,
+        !viewedInSessionBanners.contains(actualTrackingId)
       else { return }
 
-      trackedBanners.setObject(view, forKey: trackingId as NSString)
-      startVisibilityTracking()
-    }
+      bannerView.logImpression()
+      viewedInSessionBanners.insert(actualTrackingId)
 
-    /// Starts visibility and session tracking if tracking is not already running.
-    func startVisibilityTracking() {
-      guard !isCurrentlyTracking else { return }
-
-      isCurrentlyTracking = true
-      visibilityTracker = VisibilityTracker<String>(
-        interval: 0.1,
-        visibleIdentifiers: bannerTrackingIdentifiers,
-        visibleForInterval: logBannerImpression
-      )
-      visibilityTracker?.start()
-    }
-
-    /// Stops visibility and session tracking.
-    ///
-    /// Aim to minimize operations whenever there are no longer any banners eligible for tracking.
-    func stopVisibilityTracking() {
-      guard isCurrentlyTracking else { return }
-
-      isCurrentlyTracking = false
-      visibilityTracker?.stop()
-      visibilityTracker = nil
-    }
-  }
-
-}
-
-// MARK: - VisibilityTracker methods
-
-extension BrazeBannerUI.BannersImpressionTracker {
-
-  func bannerTrackingIdentifiers() -> [String] {
-    return trackedBanners.keyEnumerator().allObjects.compactMap { key in
-      guard let nsStringKey = key as? NSString,
-        let view = trackedBanners.object(forKey: nsStringKey)
-      else {
-        return nil
+      // All banners that were visible are already tracked
+      let allKeys = trackedBanners.keyEnumerator().allObjects.compactMap { $0 as? String }
+      if viewedInSessionBanners.elementsEqual(allKeys) {
+        stopVisibilityTracking()
       }
-      return view.isCurrentlyVisible() ? nsStringKey as String : nil
     }
+
   }
 
-  func logBannerImpression(trackingId: String) {
-    guard let bannerView = trackedBanners.object(forKey: trackingId as NSString),
-      let actualTrackingId = bannerView.banner?.trackingId,
-      !viewedInSessionBanners.contains(actualTrackingId)
-    else { return }
-
-    bannerView.logImpression()
-    viewedInSessionBanners.insert(actualTrackingId)
-
-    // All banners that were visible are already tracked
-    let allKeys = trackedBanners.keyEnumerator().allObjects.compactMap { $0 as? String }
-    if viewedInSessionBanners.elementsEqual(allKeys) {
-      stopVisibilityTracking()
-    }
-  }
-
-}
+#endif

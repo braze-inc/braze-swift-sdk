@@ -1,100 +1,104 @@
-import BrazeKit
-import UIKit
+#if !os(tvOS)
 
-extension BrazeContentCardUI {
+  import BrazeKit
+  import UIKit
 
-  /// The Content Card cell which displays Classic cards.
-  open class ClassicCell: Cell {
+  extension BrazeContentCardUI {
 
-    /// The type identifier.
-    public static let identifier = "BrazeContentCardUI.ClassicCell"
+    /// The Content Card cell which displays Classic cards.
+    open class ClassicCell: Cell {
 
-    // MARK: - Initialization
+      /// The type identifier.
+      public static let identifier = "BrazeContentCardUI.ClassicCell"
 
-    /// Initializes the content card cell passing `style` and `reuseIdentifier` to the `super`
-    /// implementation.
-    public override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-      super.init(style: style, reuseIdentifier: reuseIdentifier)
+      // MARK: - Initialization
 
-      // View hierarchy
-      let textStack = TextStack()
-      self.textStack = textStack
-      container.addSubview(textStack)
+      /// Initializes the content card cell passing `style` and `reuseIdentifier` to the `super`
+      /// implementation.
+      public override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
 
-      installInternalConstraints()
-      applyAttributes(attributes)
-    }
+        // View hierarchy
+        let textStack = TextStack()
+        self.textStack = textStack
+        container.addSubview(textStack)
 
-    /// Does not support interface-builder / storyboards.
-    @available(*, unavailable)
-    required public init?(coder: NSCoder) {
-      fatalError("init(coder:) has not been implemented")
-    }
+        installInternalConstraints()
+        applyAttributes(attributes)
+      }
 
-    // MARK: - Layout
+      /// Does not support interface-builder / storyboards.
+      @available(*, unavailable)
+      required public init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+      }
 
-    /// The text stack edges constraints, unset until ``installInternalConstraints()`` is executed.
-    open var textStackContraints: [NSLayoutConstraint]!
+      // MARK: - Layout
 
-    open override func installInternalConstraints() {
-      super.installInternalConstraints()
-      textStackContraints = textStack?.anchors.edges.pin()
-    }
+      /// The text stack edges constraints, unset until ``installInternalConstraints()`` is executed.
+      open var textStackContraints: [NSLayoutConstraint]!
 
-    // MARK: - Card Update
+      open override func installInternalConstraints() {
+        super.installInternalConstraints()
+        textStackContraints = textStack?.anchors.edges.pin()
+      }
 
-    /// Updates the cell with the passed classic content card.
-    /// - Parameter card: The content card to display.
-    open func set(card: Braze.ContentCard.Classic) {
-      textStack?.titleLabel.text = card.title
-      textStack?.descriptionLabel.text = card.description
-      textStack?.domainLabel.text = card.domain
-      textStack?.domainHidden = card.domain == nil || card.domain == ""
+      // MARK: - Card Update
 
-      // Accessibility
-      textStack?.addAccessibilityAltText()
-      applyAccessibilityLanguage(card.language)
+      /// Updates the cell with the passed classic content card.
+      /// - Parameter card: The content card to display.
+      open func set(card: Braze.ContentCard.Classic) {
+        textStack?.titleLabel.text = card.title
+        textStack?.descriptionLabel.text = card.description
+        textStack?.domainLabel.text = card.domain
+        textStack?.domainHidden = card.domain == nil || card.domain == ""
 
-      pinIndicator.isHidden = !card.pinned
-      unviewedIndicator.isHidden = card.viewed
+        // Accessibility
+        textStack?.addAccessibilityAltText()
+        applyAccessibilityLanguage(card.language)
 
-      highlightable = card.clickAction != .none
-    }
+        pinIndicator.isHidden = !card.pinned
+        unviewedIndicator.isHidden = card.viewed
 
-    open override func applyAttributes(_ attributes: Attributes) {
-      super.applyAttributes(attributes)
+        highlightable = card.clickAction != .none
+      }
 
-      let padding = attributes.padding
-      textStackContraints[0].constant = padding.left
-      textStackContraints[1].constant = -padding.right
-      textStackContraints[2].constant = padding.top
-      textStackContraints[3].constant = -padding.bottom
+      open override func applyAttributes(_ attributes: Attributes) {
+        super.applyAttributes(attributes)
+
+        let padding = attributes.padding
+        textStackContraints[0].constant = padding.left
+        textStackContraints[1].constant = -padding.right
+        textStackContraints[2].constant = padding.top
+        textStackContraints[3].constant = -padding.bottom
+      }
+
     }
 
   }
 
-}
+  // MARK: - Previews
 
-// MARK: - Previews
+  #if UI_PREVIEWS
 
-#if UI_PREVIEWS
+    import SwiftUI
 
-  import SwiftUI
-
-  struct ClassicCell_Previews: PreviewProvider {
-    static let cards: [Braze.ContentCard] = [
-      .classic(.mockPinned),
-      .classic(.mockUnviewed),
-      .classic(.mockViewed),
-      .classic(.mockDomain),
-      .classic(.mockShort),
-      .classic(.mockLong),
-      .classic(.mockExtraLong),
-    ]
-    static var previews: some View {
-      BrazeContentCardUI.ViewController(initialCards: cards)
-        .preview()
+    struct ClassicCell_Previews: PreviewProvider {
+      static let cards: [Braze.ContentCard] = [
+        .classic(.mockPinned),
+        .classic(.mockUnviewed),
+        .classic(.mockViewed),
+        .classic(.mockDomain),
+        .classic(.mockShort),
+        .classic(.mockLong),
+        .classic(.mockExtraLong),
+      ]
+      static var previews: some View {
+        BrazeContentCardUI.ViewController(initialCards: cards)
+          .preview()
+      }
     }
-  }
+
+  #endif
 
 #endif

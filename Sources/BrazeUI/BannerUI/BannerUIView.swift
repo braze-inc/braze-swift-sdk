@@ -1,463 +1,467 @@
-@_spi(Internal) import BrazeKit
-@preconcurrency import UIKit
-@preconcurrency import WebKit
+#if canImport(WebKit)
 
-extension BrazeBannerUI {
+  @_spi(Internal) import BrazeKit
+  @preconcurrency import UIKit
+  @preconcurrency import WebKit
 
-  /// A UIKit-compatible version of the Braze banner view.
-  @objc(BRZBannerUIView)
-  open class BannerUIView: UIView, BrazeBannerPlacement {
+  extension BrazeBannerUI {
 
-    /// The placement ID of the Banner.
-    public let placementId: String
+    /// A UIKit-compatible version of the Braze banner view.
+    @objc(BRZBannerUIView)
+    open class BannerUIView: UIView, BrazeBannerPlacement {
 
-    weak var braze: Braze?
-    let impressionTracker: BrazeBannerUI.BannersImpressionTracker
-    let processContentUpdates:
-      (@MainActor (Result<BrazeBannerUI.ContentUpdates, Swift.Error>) -> Void)?
+      /// The placement ID of the Banner.
+      public let placementId: String
 
-    var webView: WKWebView?
-    var banner: Braze.Banner? {
-      didSet {
-        banner?.context?._notifyDismissal = { [weak self] event in
-          self?.onDismiss?(event)
+      weak var braze: Braze?
+      let impressionTracker: BrazeBannerUI.BannersImpressionTracker
+      let processContentUpdates:
+        (@MainActor (Result<BrazeBannerUI.ContentUpdates, Swift.Error>) -> Void)?
+
+      var webView: WKWebView?
+      var banner: Braze.Banner? {
+        didSet {
+          banner?.context?._notifyDismissal = { [weak self] event in
+            self?.onDismiss?(event)
+          }
         }
       }
-    }
-    var hasContentLoaded: Bool = false
+      var hasContentLoaded: Bool = false
 
-    /// Tracks whether an intentional `loadHTMLString` call is in flight.
-    private var isLoadingContent: Bool = false
+      /// Tracks whether an intentional `loadHTMLString` call is in flight.
+      private var isLoadingContent: Bool = false
 
-    private let notificationCenter: NotificationCenter
-    private var foregroundObserver: NSObjectProtocol?
+      private let notificationCenter: NotificationCenter
+      private var foregroundObserver: NSObjectProtocol?
 
-    public lazy var scriptMessageHandler: Braze.WebViewBridge.ScriptMessageHandler =
-      webViewScriptMessageHandler()
-    public lazy var schemeHandler: Braze.WebViewBridge.SchemeHandler = webViewSchemeHandler()
-    public var queryHandler: Braze.WebViewBridge.QueryHandler {
-      get {
-        queryHandlerWrapper.wrappedValue
+      public lazy var scriptMessageHandler: Braze.WebViewBridge.ScriptMessageHandler =
+        webViewScriptMessageHandler()
+      public lazy var schemeHandler: Braze.WebViewBridge.SchemeHandler = webViewSchemeHandler()
+      public var queryHandler: Braze.WebViewBridge.QueryHandler {
+        get {
+          queryHandlerWrapper.wrappedValue
+        }
+        set {
+          queryHandlerWrapper.wrappedValue = newValue
+        }
       }
-      set {
-        queryHandlerWrapper.wrappedValue = newValue
+
+      /// Wrapper for the `QueryHandler` object.
+      ///
+      /// Structs from `BrazeKit` cannot generate a proper Objective-C metaclass and will cause a crash if subclassed.
+      lazy var queryHandlerWrapper: StructWrapper<Braze.WebViewBridge.QueryHandler> = .init(
+        wrappedValue: webViewQueryHandler())
+
+      /// Optional callback invoked whenever a banner is dismissed. Set this for custom behavior, such as additional analytics.
+      ///
+      /// Receives a ``Braze/BannerDismissalEvent`` when the user dismisses the banner.
+      public var onDismiss: ((Braze.BannerDismissalEvent) -> Void)?
+
+      /// Initializes and registers a Braze banner view.
+      ///
+      /// - Parameter placementId: The placement ID of the banner.
+      /// - Parameter braze: The Braze instance.
+      /// - Parameter processContentUpdates: A closure that provides the updated properties of the banner view after content has finished rendering.
+      public convenience init(
+        placementId: String,
+        braze: Braze,
+        processContentUpdates: (
+          @MainActor (Result<BrazeBannerUI.ContentUpdates, Swift.Error>) -> Void
+        )? = nil
+      ) {
+        self.init(
+          placementId: placementId,
+          braze: braze,
+          processContentUpdates: processContentUpdates,
+          impressionTracker: .shared,
+          notificationCenter: .default
+        )
+
+        braze.banners.registerView(self)
+        impressionTracker.startSessionTracking(with: braze)
       }
+
+      /// Internal default initializer without auto-registration.
+      init(
+        placementId: String,
+        braze: Braze,
+        processContentUpdates: (
+          @MainActor (Result<BrazeBannerUI.ContentUpdates, Swift.Error>) -> Void
+        )? = nil,
+        impressionTracker: BrazeBannerUI.BannersImpressionTracker,
+        notificationCenter: NotificationCenter = .default
+      ) {
+        self.placementId = placementId
+        self.braze = braze
+        self.processContentUpdates = processContentUpdates
+        self.impressionTracker = impressionTracker
+        self.notificationCenter = notificationCenter
+
+        super.init(frame: .zero)
+        setupWebView()
+
+        // Add foreground observer to refresh content when app becomes active
+        foregroundObserver = notificationCenter.addObserver(
+          forName: UIApplication.didBecomeActiveNotification,
+          object: nil,
+          queue: .main
+        ) { [weak self] _ in
+          runOnMainActorIsolated { [weak self] in
+            self?.handleAppDidBecomeActive()
+          }
+        }
+      }
+
+      deinit {
+        runOnMainActorIsolated { [self] in
+          if let observer = foregroundObserver {
+            notificationCenter.removeObserver(observer)
+          }
+          self.detachWebViewBridge()
+        }
+      }
+
+      /// Prepares the underlying `WKWebView` for this banner view.
+      ///
+      /// This method is invoked on initialization and ensures the `WKWebView` is created and
+      /// configured with the Braze bridge. If a web view exists and is no longer attached to this
+      /// view, it will be removed and its bridge will be unregistered before creating a new one.
+      ///
+      /// - Important: This API is `@MainActor` and must only be called from the main thread.
+      @MainActor
+      open func setupWebView() {
+        // Reuse the web view only if it's still attached to this view; otherwise, clean up
+        // the stale instance and build a new one.
+        if let existing = webView {
+          if existing.superview === self {
+            return
+          }
+          detachWebViewBridge()
+        }
+
+        let configuration = WKWebViewConfiguration.forBrazeBridge(
+          scriptMessageHandler: scriptMessageHandler)
+        let webView = WKWebView(frame: .zero, configuration: configuration)
+        webView.navigationDelegate = self
+        webView.clipsToBounds = true
+        webView.scrollView.isScrollEnabled = false
+        // Prevents the status bar from pushing down the web view's content when scrolling on Flutter.
+        webView.scrollView.contentInsetAdjustmentBehavior = .never
+        webView.isOpaque = false
+
+        if #available(iOS 16.4, macOS 13.3, *) {
+          webView.isInspectable = true
+        }
+
+        self.webView = webView
+        self.addSubview(webView)
+
+        webView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+          webView.topAnchor.constraint(equalTo: self.topAnchor),
+          webView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+          webView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+          webView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+        ])
+      }
+
+      /// Removes the Braze bridge script and handler from the web view configuration. Call when
+      /// the banner context needs to be torn down so WebKit stops posting to the bridge while the
+      /// view may still be on screen.
+      ///
+      /// Also clears ``webView`` and removes it from this view so a later ``setupWebView()`` builds
+      /// a new bridged ``WKWebView``. Without this, ``setupWebView()`` would early-return while the
+      /// old web view was still embedded but unbridged.
+      ///
+      /// - Important: Must be called from the main thread; ``WKWebView`` / ``WKUserContentController``
+      ///   are main-thread-only.
+      @MainActor
+      public func detachWebViewBridge() {
+        guard let webView else { return }
+        webView.configuration.userContentController.removeBrazeBridge()
+        scriptMessageHandler.clearRegistration()
+        webView.removeFromSuperview()
+        self.webView = nil
+        hasContentLoaded = false
+        isLoadingContent = false
+      }
+
+      required public init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+      }
+
+      /// Renders the banner content into the view.
+      ///
+      /// - Parameter banner: The Braze banner model.
+      open func render(with banner: Braze.Banner) {
+        render(with: banner, forceReload: false)
+      }
+
+      /// Internal method that handles the actual rendering logic.
+      ///
+      /// - Parameter banner: The Braze banner model.
+      /// - Parameter forceReload: If true, reloads content even if HTML hasn't changed.
+      func render(with banner: Braze.Banner, forceReload: Bool) {
+        if self.webView == nil {
+          setupWebView()
+        }
+
+        // Only reload if banner content has changed to avoid unnecessary WebView navigations
+        guard forceReload || self.banner?.html != banner.html else {
+          self.banner = banner
+          return
+        }
+
+        self.hasContentLoaded = false
+        self.isLoadingContent = true
+        self.banner = banner
+        DispatchQueue.main.async { [weak self] in
+          self?.webView?.loadHTMLString(banner.html, baseURL: nil)
+        }
+      }
+
+      /// Processes errors encountered during loading.
+      ///
+      /// - Parameter error: The error object.
+      open func notifyError(_ error: Swift.Error) {
+        if let brazeError = error as? BrazeBannerUI.Error {
+          logError(brazeError)
+        }
+        self.processContentUpdates?(.failure(error))
+      }
+
+      /// Instructs the view to remove its existing banner content.
+      ///
+      /// - Parameter reason: The reason for removing banner content.
+      public func removeBannerContent(reason: Braze.Banner.RemovalReason) {
+        self.banner = nil
+        self.detachWebViewBridge()
+        self.processContentUpdates?(.success(.init(height: 0)))
+      }
+
+      /// Logs an error related to the banner.
+      ///
+      /// - Parameter error: The banner UI error.
+      open func logError(_ error: BrazeBannerUI.Error) {
+        banner?.context?.logError(error)
+          ?? print("[BrazeUI]", error.flattened)
+      }
+
+      open func processNavigationAction(_ navigationAction: WKNavigationAction) {
+        guard let url = navigationAction.request.url else { return }
+
+        // Process as a Braze bridge action.
+        if let action = schemeHandler.action(url: url) {
+          schemeHandler.process(action: action, url: url)
+          return
+        }
+
+        // Process as a Braze click action.
+        let clickAction = queryHandler.processBannerURL(url)
+        process(clickAction: clickAction)
+      }
+
+      public func process(
+        clickAction: Braze.Banner.ClickAction,
+        target: Any? = nil
+      ) {
+        guard let context = banner?.context else {
+          logError(.noContextProcessClickAction)
+          return
+        }
+
+        context.processClickAction(clickAction, target: target)
+      }
+
+      /// Handles app becoming active by refreshing banner content if WebView exists.
+      @objc
+      private func handleAppDidBecomeActive() {
+        // Only reload content if the web view exists AND its content state is lost.
+        if let banner = self.banner, self.webView != nil, !self.hasContentLoaded {
+          render(with: banner, forceReload: true)
+        }
+      }
+
     }
 
-    /// Wrapper for the `QueryHandler` object.
-    ///
-    /// Structs from `BrazeKit` cannot generate a proper Objective-C metaclass and will cause a crash if subclassed.
-    lazy var queryHandlerWrapper: StructWrapper<Braze.WebViewBridge.QueryHandler> = .init(
-      wrappedValue: webViewQueryHandler())
+  }
 
-    /// Optional callback invoked whenever a banner is dismissed. Set this for custom behavior, such as additional analytics.
-    ///
-    /// Receives a ``Braze/BannerDismissalEvent`` when the user dismisses the banner.
-    public var onDismiss: ((Braze.BannerDismissalEvent) -> Void)?
+  // MARK: - Public Initializers
+
+  extension BrazeBannerUI.BannerUIView {
 
     /// Initializes and registers a Braze banner view.
     ///
     /// - Parameter placementId: The placement ID of the banner.
     /// - Parameter braze: The Braze instance.
     /// - Parameter processContentUpdates: A closure that provides the updated properties of the banner view after content has finished rendering.
+    @objc
+    @available(swift, obsoleted: 0.0.1)
     public convenience init(
       placementId: String,
       braze: Braze,
-      processContentUpdates: (
-        @MainActor (Result<BrazeBannerUI.ContentUpdates, Swift.Error>) -> Void
-      )? = nil
+      processContentUpdates: ((BrazeBannerUI.ContentUpdates?, Error?) -> Void)? = nil
     ) {
+      var resultClosure: ((Result<BrazeBannerUI.ContentUpdates, Swift.Error>) -> Void)?
+      if let processContentUpdates {
+        resultClosure = { result in
+          switch result {
+          case .success(let updates):
+            processContentUpdates(updates, nil)
+          case .failure(let error):
+            processContentUpdates(nil, error)
+          }
+        }
+      }
       self.init(
         placementId: placementId,
         braze: braze,
-        processContentUpdates: processContentUpdates,
-        impressionTracker: .shared,
-        notificationCenter: .default
+        processContentUpdates: resultClosure
       )
-
-      braze.banners.registerView(self)
-      impressionTracker.startSessionTracking(with: braze)
     }
 
-    /// Internal default initializer without auto-registration.
-    init(
-      placementId: String,
-      braze: Braze,
-      processContentUpdates: (
-        @MainActor (Result<BrazeBannerUI.ContentUpdates, Swift.Error>) -> Void
-      )? = nil,
-      impressionTracker: BrazeBannerUI.BannersImpressionTracker,
-      notificationCenter: NotificationCenter = .default
+  }
+
+  // MARK: - WKNavigationDelegate
+
+  extension BrazeBannerUI.BannerUIView: WKNavigationDelegate {
+
+    /// This method triggers when the `WKWebView` finishes loading the content.
+    ///
+    /// Note that web views don't start loading until the user has scrolled to it.
+    open func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+      // Drag and drop interaction handler does not exist until the message is loaded.
+      webView.disableDragAndDrop()
+      // Disable selection by inserting CSS
+      webView.disableSelection()
+      // Start tracking the view after it has successfully loaded.
+      webView.waitForLoadedState(scriptMessageHandler) { [weak self] in
+        guard let self else { return }
+        self.impressionTracker.trackView(self)
+        self.hasContentLoaded = true
+      }
+    }
+
+    public func webView(
+      _ webView: WKWebView,
+      decidePolicyFor navigationAction: WKNavigationAction,
+      decisionHandler: @escaping @MainActor (WKNavigationActionPolicy) -> Void
     ) {
-      self.placementId = placementId
-      self.braze = braze
-      self.processContentUpdates = processContentUpdates
-      self.impressionTracker = impressionTracker
-      self.notificationCenter = notificationCenter
+      // Always allow navigations we initiated via loadHTMLString. We check this before
+      // brazeShouldIntercept because a stale waitForLoadedState callback can set
+      // hasContentLoaded = true after render() resets it, which would otherwise cause
+      // decidePolicyFor to cancel our own reload.
+      // We also constrain to .other to avoid prematurely clearing the flag if a user-initiated
+      // navigation fires in the window between isLoadingContent = true and loadHTMLString executing.
+      if isLoadingContent && navigationAction.navigationType == .other {
+        isLoadingContent = false
+        decisionHandler(.allow)
+        return
+      }
 
-      super.init(frame: .zero)
-      setupWebView()
-
-      // Add foreground observer to refresh content when app becomes active
-      foregroundObserver = notificationCenter.addObserver(
-        forName: UIApplication.didBecomeActiveNotification,
-        object: nil,
-        queue: .main
-      ) { [weak self] _ in
-        runOnMainActorIsolated { [weak self] in
-          self?.handleAppDidBecomeActive()
-        }
+      // Link was explicitly clicked by user.
+      // Intercept the default web view navigation and handle within the SDK.
+      if brazeShouldIntercept(navigationAction) && hasContentLoaded {
+        decisionHandler(.cancel)
+        processNavigationAction(navigationAction)
+      } else {
+        // Pass to web view to let system handle it.
+        decisionHandler(.allow)
       }
     }
 
-    deinit {
-      runOnMainActorIsolated { [self] in
-        if let observer = foregroundObserver {
-          notificationCenter.removeObserver(observer)
-        }
-        self.detachWebViewBridge()
-      }
+    public func webView(
+      _ webView: WKWebView,
+      didFail navigation: WKNavigation!,
+      withError error: Error
+    ) {
+      notifyError(
+        BrazeBannerUI.Error.webViewNavigation(.init(error))
+      )
     }
 
-    /// Prepares the underlying `WKWebView` for this banner view.
-    ///
-    /// This method is invoked on initialization and ensures the `WKWebView` is created and
-    /// configured with the Braze bridge. If a web view exists and is no longer attached to this
-    /// view, it will be removed and its bridge will be unregistered before creating a new one.
-    ///
-    /// - Important: This API is `@MainActor` and must only be called from the main thread.
-    @MainActor
-    open func setupWebView() {
-      // Reuse the web view only if it's still attached to this view; otherwise, clean up
-      // the stale instance and build a new one.
-      if let existing = webView {
-        if existing.superview === self {
-          return
-        }
-        detachWebViewBridge()
-      }
-
-      let configuration = WKWebViewConfiguration.forBrazeBridge(
-        scriptMessageHandler: scriptMessageHandler)
-      let webView = WKWebView(frame: .zero, configuration: configuration)
-      webView.navigationDelegate = self
-      webView.clipsToBounds = true
-      webView.scrollView.isScrollEnabled = false
-      // Prevents the status bar from pushing down the web view's content when scrolling on Flutter.
-      webView.scrollView.contentInsetAdjustmentBehavior = .never
-      webView.isOpaque = false
-
-      if #available(iOS 16.4, macOS 13.3, *) {
-        webView.isInspectable = true
-      }
-
-      self.webView = webView
-      self.addSubview(webView)
-
-      webView.translatesAutoresizingMaskIntoConstraints = false
-      NSLayoutConstraint.activate([
-        webView.topAnchor.constraint(equalTo: self.topAnchor),
-        webView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-        webView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-        webView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-      ])
-    }
-
-    /// Removes the Braze bridge script and handler from the web view configuration. Call when
-    /// the banner context needs to be torn down so WebKit stops posting to the bridge while the
-    /// view may still be on screen.
-    ///
-    /// Also clears ``webView`` and removes it from this view so a later ``setupWebView()`` builds
-    /// a new bridged ``WKWebView``. Without this, ``setupWebView()`` would early-return while the
-    /// old web view was still embedded but unbridged.
-    ///
-    /// - Important: Must be called from the main thread; ``WKWebView`` / ``WKUserContentController``
-    ///   are main-thread-only.
-    @MainActor
-    public func detachWebViewBridge() {
-      guard let webView else { return }
-      webView.configuration.userContentController.removeBrazeBridge()
-      scriptMessageHandler.clearRegistration()
-      webView.removeFromSuperview()
-      self.webView = nil
+    /// Handles WebView process termination, which occurs when iOS terminates the WebView
+    /// process under memory pressure (e.g., when app goes to background).
+    public func webViewWebContentProcessDidTerminate(_ webView: WKWebView) {
       hasContentLoaded = false
       isLoadingContent = false
-    }
 
-    required public init?(coder: NSCoder) {
-      fatalError("init(coder:) has not been implemented")
-    }
-
-    /// Renders the banner content into the view.
-    ///
-    /// - Parameter banner: The Braze banner model.
-    open func render(with banner: Braze.Banner) {
-      render(with: banner, forceReload: false)
-    }
-
-    /// Internal method that handles the actual rendering logic.
-    ///
-    /// - Parameter banner: The Braze banner model.
-    /// - Parameter forceReload: If true, reloads content even if HTML hasn't changed.
-    func render(with banner: Braze.Banner, forceReload: Bool) {
-      if self.webView == nil {
-        setupWebView()
-      }
-
-      // Only reload if banner content has changed to avoid unnecessary WebView navigations
-      guard forceReload || self.banner?.html != banner.html else {
-        self.banner = banner
-        return
-      }
-
-      self.hasContentLoaded = false
-      self.isLoadingContent = true
-      self.banner = banner
-      DispatchQueue.main.async { [weak self] in
-        self?.webView?.loadHTMLString(banner.html, baseURL: nil)
-      }
-    }
-
-    /// Processes errors encountered during loading.
-    ///
-    /// - Parameter error: The error object.
-    open func notifyError(_ error: Swift.Error) {
-      if let brazeError = error as? BrazeBannerUI.Error {
-        logError(brazeError)
-      }
-      self.processContentUpdates?(.failure(error))
-    }
-
-    /// Instructs the view to remove its existing banner content.
-    ///
-    /// - Parameter reason: The reason for removing banner content.
-    public func removeBannerContent(reason: Braze.Banner.RemovalReason) {
-      self.banner = nil
-      self.detachWebViewBridge()
-      self.processContentUpdates?(.success(.init(height: 0)))
-    }
-
-    /// Logs an error related to the banner.
-    ///
-    /// - Parameter error: The banner UI error.
-    open func logError(_ error: BrazeBannerUI.Error) {
-      banner?.context?.logError(error)
-        ?? print("[BrazeUI]", error.flattened)
-    }
-
-    open func processNavigationAction(_ navigationAction: WKNavigationAction) {
-      guard let url = navigationAction.request.url else { return }
-
-      // Process as a Braze bridge action.
-      if let action = schemeHandler.action(url: url) {
-        schemeHandler.process(action: action, url: url)
-        return
-      }
-
-      // Process as a Braze click action.
-      let clickAction = queryHandler.processBannerURL(url)
-      process(clickAction: clickAction)
-    }
-
-    public func process(
-      clickAction: Braze.Banner.ClickAction,
-      target: Any? = nil
-    ) {
-      guard let context = banner?.context else {
-        logError(.noContextProcessClickAction)
-        return
-      }
-
-      context.processClickAction(clickAction, target: target)
-    }
-
-    /// Handles app becoming active by refreshing banner content if WebView exists.
-    @objc
-    private func handleAppDidBecomeActive() {
-      // Only reload content if the web view exists AND its content state is lost.
-      if let banner = self.banner, self.webView != nil, !self.hasContentLoaded {
-        render(with: banner, forceReload: true)
-      }
-    }
-
-  }
-
-}
-
-// MARK: - Public Initializers
-
-extension BrazeBannerUI.BannerUIView {
-
-  /// Initializes and registers a Braze banner view.
-  ///
-  /// - Parameter placementId: The placement ID of the banner.
-  /// - Parameter braze: The Braze instance.
-  /// - Parameter processContentUpdates: A closure that provides the updated properties of the banner view after content has finished rendering.
-  @objc
-  @available(swift, obsoleted: 0.0.1)
-  public convenience init(
-    placementId: String,
-    braze: Braze,
-    processContentUpdates: ((BrazeBannerUI.ContentUpdates?, Error?) -> Void)? = nil
-  ) {
-    var resultClosure: ((Result<BrazeBannerUI.ContentUpdates, Swift.Error>) -> Void)?
-    if let processContentUpdates {
-      resultClosure = { result in
-        switch result {
-        case .success(let updates):
-          processContentUpdates(updates, nil)
-        case .failure(let error):
-          processContentUpdates(nil, error)
+      // Automatically reload content if we have a banner
+      if let banner = self.banner {
+        DispatchQueue.main.async { [weak self] in
+          self?.render(with: banner, forceReload: true)
         }
       }
     }
-    self.init(
-      placementId: placementId,
-      braze: braze,
-      processContentUpdates: resultClosure
-    )
+
   }
 
-}
+  // MARK: - Impression Logging
 
-// MARK: - WKNavigationDelegate
+  @objc
+  extension BrazeBannerUI.BannerUIView {
 
-extension BrazeBannerUI.BannerUIView: WKNavigationDelegate {
-
-  /// This method triggers when the `WKWebView` finishes loading the content.
-  ///
-  /// Note that web views don't start loading until the user has scrolled to it.
-  open func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-    // Drag and drop interaction handler does not exist until the message is loaded.
-    webView.disableDragAndDrop()
-    // Disable selection by inserting CSS
-    webView.disableSelection()
-    // Start tracking the view after it has successfully loaded.
-    webView.waitForLoadedState(scriptMessageHandler) { [weak self] in
-      guard let self else { return }
-      self.impressionTracker.trackView(self)
-      self.hasContentLoaded = true
-    }
-  }
-
-  public func webView(
-    _ webView: WKWebView,
-    decidePolicyFor navigationAction: WKNavigationAction,
-    decisionHandler: @escaping @MainActor (WKNavigationActionPolicy) -> Void
-  ) {
-    // Always allow navigations we initiated via loadHTMLString. We check this before
-    // brazeShouldIntercept because a stale waitForLoadedState callback can set
-    // hasContentLoaded = true after render() resets it, which would otherwise cause
-    // decidePolicyFor to cancel our own reload.
-    // We also constrain to .other to avoid prematurely clearing the flag if a user-initiated
-    // navigation fires in the window between isLoadingContent = true and loadHTMLString executing.
-    if isLoadingContent && navigationAction.navigationType == .other {
-      isLoadingContent = false
-      decisionHandler(.allow)
-      return
+    /// Logs an impression for the banner.
+    open func logImpression() {
+      guard let context = banner?.context else {
+        logError(BrazeBannerUI.Error.noContextLogImpression)
+        return
+      }
+      context.logImpression()
     }
 
-    // Link was explicitly clicked by user.
-    // Intercept the default web view navigation and handle within the SDK.
-    if brazeShouldIntercept(navigationAction) && hasContentLoaded {
-      decisionHandler(.cancel)
-      processNavigationAction(navigationAction)
-    } else {
-      // Pass to web view to let system handle it.
-      decisionHandler(.allow)
+    /// Logs a click for the banner.
+    ///
+    /// - Parameter buttonId: The optional button identifier.
+    open func logClick(buttonId: String?) {
+      guard let context = banner?.context else {
+        logError(BrazeBannerUI.Error.noContextLogClick)
+        return
+      }
+      context.logClick(buttonId: buttonId)
     }
-  }
 
-  public func webView(
-    _ webView: WKWebView,
-    didFail navigation: WKNavigation!,
-    withError error: Error
-  ) {
-    notifyError(
-      BrazeBannerUI.Error.webViewNavigation(.init(error))
-    )
-  }
-
-  /// Handles WebView process termination, which occurs when iOS terminates the WebView
-  /// process under memory pressure (e.g., when app goes to background).
-  public func webViewWebContentProcessDidTerminate(_ webView: WKWebView) {
-    hasContentLoaded = false
-    isLoadingContent = false
-
-    // Automatically reload content if we have a banner
-    if let banner = self.banner {
-      DispatchQueue.main.async { [weak self] in
-        self?.render(with: banner, forceReload: true)
+    /// Dismisses the banner.
+    ///
+    /// Analytics, cache removal, `onDismiss` callback, and `removeBannerContent` are all driven
+    /// by `context.dismiss()` via `_notifyDismissal` and `notifyPlacements(.dismissal)`.
+    /// Calling `removeBannerContent` here directly would duplicate the cleanup.
+    func dismiss() {
+      guard let banner = banner else { return }
+      if let context = banner.context {
+        context.dismiss()
+      } else {
+        logError(BrazeBannerUI.Error.noContextLogDismissed)
+        onDismiss?(Braze.BannerDismissalEvent(banner: banner, viewPlacementId: placementId))
       }
     }
-  }
 
-}
-
-// MARK: - Impression Logging
-
-@objc
-extension BrazeBannerUI.BannerUIView {
-
-  /// Logs an impression for the banner.
-  open func logImpression() {
-    guard let context = banner?.context else {
-      logError(BrazeBannerUI.Error.noContextLogImpression)
-      return
-    }
-    context.logImpression()
-  }
-
-  /// Logs a click for the banner.
-  ///
-  /// - Parameter buttonId: The optional button identifier.
-  open func logClick(buttonId: String?) {
-    guard let context = banner?.context else {
-      logError(BrazeBannerUI.Error.noContextLogClick)
-      return
-    }
-    context.logClick(buttonId: buttonId)
-  }
-
-  /// Dismisses the banner.
-  ///
-  /// Analytics, cache removal, `onDismiss` callback, and `removeBannerContent` are all driven
-  /// by `context.dismiss()` via `_notifyDismissal` and `notifyPlacements(.dismissal)`.
-  /// Calling `removeBannerContent` here directly would duplicate the cleanup.
-  func dismiss() {
-    guard let banner = banner else { return }
-    if let context = banner.context {
-      context.dismiss()
-    } else {
-      logError(BrazeBannerUI.Error.noContextLogDismissed)
-      onDismiss?(Braze.BannerDismissalEvent(banner: banner, viewPlacementId: placementId))
-    }
-  }
-
-  /// Determines if the banner view is currently visible and not occluded.
-  ///
-  /// - Returns: Whether the banner is currently in view.
-  open func isCurrentlyVisible() -> Bool {
-    guard let window = self.window, !self.isHidden else {
-      return false
-    }
-
-    // Iteratively check if any superviews are hidden.
-    var superview = self.superview
-    while let view = superview {
-      if view.isHidden {
+    /// Determines if the banner view is currently visible and not occluded.
+    ///
+    /// - Returns: Whether the banner is currently in view.
+    open func isCurrentlyVisible() -> Bool {
+      guard let window = self.window, !self.isHidden else {
         return false
       }
-      superview = view.superview
+
+      // Iteratively check if any superviews are hidden.
+      var superview = self.superview
+      while let view = superview {
+        if view.isHidden {
+          return false
+        }
+        superview = view.superview
+      }
+
+      let viewFrame = self.convert(self.bounds, to: window)
+      let intersection = viewFrame.intersection(window.bounds)
+      if intersection.isNull {
+        return false
+      }
+
+      return window.bounds.intersects(viewFrame)
     }
 
-    let viewFrame = self.convert(self.bounds, to: window)
-    let intersection = viewFrame.intersection(window.bounds)
-    if intersection.isNull {
-      return false
-    }
-
-    return window.bounds.intersects(viewFrame)
   }
 
-}
+#endif

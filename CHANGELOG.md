@@ -1,3 +1,12 @@
+## 18.2.1
+
+##### Fixed
+- Fixes a bug on HTML in-app messages without asset URLs that would present an error modal when clicking the close button.
+  - This issue was introduced in the `15.2.0` release.
+- Fixes an issue where custom attributes written just as a session starts could miss the follow-up `/api/v3/data` request.
+- Fixes an issue where data requests could be sent prematurely during app launch before data was properly loaded.
+  - The updated behavior now matches that of the Android SDK.
+
 ## 18.2.0
 
 ##### Added
@@ -17,7 +26,7 @@
 ## 18.1.0
 
 ##### Fixed
-- Fixes an issue where `ImageOnly` Content Cards with a blank (but present) image url would be discarded as invalid. 
+- Fixes an issue where `ImageOnly` Content Cards with a blank (but present) image url would be discarded as invalid.
   - These cards are now displayed as blank cards, matching the Android SDK's behavior.
 - Fixes an issue where aliases and other events could be dropped if logged before a session started.
 - Fixes an issue where device info (timezone, locale, model, OS version) could be missing on new profiles if it was sent before a session started. The SDK now waits and sends that info with the session.

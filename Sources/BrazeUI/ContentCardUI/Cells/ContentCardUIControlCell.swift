@@ -1,26 +1,30 @@
-import UIKit
+#if !os(tvOS)
 
-extension BrazeContentCardUI {
+  import UIKit
 
-  /// The Content Card cell used for Control cards.
-  open class ControlCell: UITableViewCell {
+  extension BrazeContentCardUI {
 
-    /// The type identifier.
-    public static let identifier = "BrazeContentCardUI.ControlCell"
+    /// The Content Card cell used for Control cards.
+    open class ControlCell: UITableViewCell {
 
-    /// Initializes the content card cell passing `style` and `reuseIdentifier` to the `super`
-    /// implementation.
-    public override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-      super.init(style: style, reuseIdentifier: reuseIdentifier)
-      backgroundColor = .clear
-    }
+      /// The type identifier.
+      public static let identifier = "BrazeContentCardUI.ControlCell"
 
-    /// Does not support interface-builder / storyboards.
-    @available(*, unavailable)
-    public required init?(coder: NSCoder) {
-      fatalError("init(coder:) has not been implemented")
+      /// Initializes the content card cell passing `style` and `reuseIdentifier` to the `super`
+      /// implementation.
+      public override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        backgroundColor = .clear
+      }
+
+      /// Does not support interface-builder / storyboards.
+      @available(*, unavailable)
+      public required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+      }
+
     }
 
   }
 
-}
+#endif

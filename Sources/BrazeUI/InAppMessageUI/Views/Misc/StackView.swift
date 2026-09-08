@@ -1,41 +1,45 @@
-import UIKit
+#if !os(tvOS)
 
-extension BrazeInAppMessageUI {
+  import UIKit
 
-  /// A `UIStackView` wrapper view.
-  ///
-  /// Before iOS 14, `UIStackView` uses a non-rendering `CATransformLayer` instead of a classic
-  /// `CALayer` (see [tweet](https://archive.md/t0AIh)). This wrapper view allow to set the layer's
-  /// properties on pre-iOS 14 devices
-  public final class StackView: UIView {
+  extension BrazeInAppMessageUI {
 
-    /// The inner stack view.
-    public let stack = UIStackView()
+    /// A `UIStackView` wrapper view.
+    ///
+    /// Before iOS 14, `UIStackView` uses a non-rendering `CATransformLayer` instead of a classic
+    /// `CALayer` (see [tweet](https://archive.md/t0AIh)). This wrapper view allow to set the layer's
+    /// properties on pre-iOS 14 devices
+    public final class StackView: UIView {
 
-    /// The inner stack autolayout position constraints.
-    public var stackPositionConstraints: [NSLayoutConstraint]!
+      /// The inner stack view.
+      public let stack = UIStackView()
 
-    public override var intrinsicContentSize: CGSize {
-      stack.intrinsicContentSize
-    }
+      /// The inner stack autolayout position constraints.
+      public var stackPositionConstraints: [NSLayoutConstraint]!
 
-    override init(frame: CGRect) {
-      super.init(frame: frame)
-      addSubview(stack)
-      layoutMargins = .zero
-      stackPositionConstraints = stack.anchors.edges.pin(to: self.layoutMarginsGuide)
-    }
+      public override var intrinsicContentSize: CGSize {
+        stack.intrinsicContentSize
+      }
 
-    /// See `UIStackView/init(arrangedSubviews:)`.
-    convenience init(arrangedSubviews subviews: [UIView]) {
-      self.init(frame: .zero)
-      subviews.forEach { stack.addArrangedSubview($0) }
-    }
+      override init(frame: CGRect) {
+        super.init(frame: frame)
+        addSubview(stack)
+        layoutMargins = .zero
+        stackPositionConstraints = stack.anchors.edges.pin(to: self.layoutMarginsGuide)
+      }
 
-    required init(coder: NSCoder) {
-      fatalError("init(coder:) has not been implemented")
+      /// See `UIStackView/init(arrangedSubviews:)`.
+      convenience init(arrangedSubviews subviews: [UIView]) {
+        self.init(frame: .zero)
+        subviews.forEach { stack.addArrangedSubview($0) }
+      }
+
+      required init(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+      }
+
     }
 
   }
 
-}
+#endif

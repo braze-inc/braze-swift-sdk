@@ -1,56 +1,60 @@
-import BrazeKit
-import UIKit
+#if !os(tvOS)
 
-extension BrazeInAppMessageUI {
+  import BrazeKit
+  import UIKit
 
-  /// The view for control in-app messages.
-  ///
-  /// Control in-app messages are automatically dismissed as soon as they are presented.
-  open class ControlView: UIView, InAppMessageView {
+  extension BrazeInAppMessageUI {
 
-    /// The control in-app message.
-    public var message: Braze.InAppMessage.Control {
-      get { messageWrapper.wrappedValue }
-      set {
-        messageWrapper.wrappedValue = newValue
+    /// The view for control in-app messages.
+    ///
+    /// Control in-app messages are automatically dismissed as soon as they are presented.
+    open class ControlView: UIView, InAppMessageView {
+
+      /// The control in-app message.
+      public var message: Braze.InAppMessage.Control {
+        get { messageWrapper.wrappedValue }
+        set {
+          messageWrapper.wrappedValue = newValue
+        }
       }
-    }
 
-    /// Internal wrapper for the control in-app message.
-    let messageWrapper: StructWrapper<Braze.InAppMessage.Control>
+      /// Internal wrapper for the control in-app message.
+      let messageWrapper: StructWrapper<Braze.InAppMessage.Control>
 
-    /// Creates and returns a control in-app message view.
-    /// - Parameter message: The message.
-    public init(message: Braze.InAppMessage.Control) {
-      self.messageWrapper = .init(wrappedValue: message)
-      super.init(frame: .zero)
-    }
+      /// Creates and returns a control in-app message view.
+      /// - Parameter message: The message.
+      public init(message: Braze.InAppMessage.Control) {
+        self.messageWrapper = .init(wrappedValue: message)
+        super.init(frame: .zero)
+      }
 
-    @available(*, unavailable)
-    public required init?(coder: NSCoder) {
-      fatalError("init(coder:) has not been implemented")
-    }
+      @available(*, unavailable)
+      public required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+      }
 
-    public var presented: Bool = false
+      public var presented: Bool = false
 
-    public func present(completion: (() -> Void)? = nil) {
-      willPresent()
-      presented = true
-      logImpression()
-      completion?()
-      didPresent()
+      public func present(completion: (() -> Void)? = nil) {
+        willPresent()
+        presented = true
+        logImpression()
+        completion?()
+        didPresent()
 
-      // Dismiss directly
-      dismiss()
-    }
+        // Dismiss directly
+        dismiss()
+      }
 
-    public func dismiss(completion: (() -> Void)? = nil) {
-      willDismiss()
-      presented = false
-      completion?()
-      didDismiss()
+      public func dismiss(completion: (() -> Void)? = nil) {
+        willDismiss()
+        presented = false
+        completion?()
+        didDismiss()
+      }
+
     }
 
   }
 
-}
+#endif

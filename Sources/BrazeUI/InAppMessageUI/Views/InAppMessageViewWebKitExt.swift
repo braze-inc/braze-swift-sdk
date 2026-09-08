@@ -1,42 +1,50 @@
-import BrazeKit
-import WebKit
+#if !os(tvOS)
 
-extension InAppMessageView {
+  #if canImport(WebKit)
 
-  /// Creates and returns a script message handler implementing the Braze JavaScript bridge api.
-  public func webViewScriptMessageHandler() -> Braze.WebViewBridge.ScriptMessageHandler {
-    let closeMessage: () -> Void = { [weak self] in self?.dismiss(completion: nil) }
-    let braze = controller?.message.context?.braze as? Braze
+    import BrazeKit
+    import WebKit
 
-    return .init(
-      channel: .inAppMessage,
-      logClick: { [weak self] in self?.logClick(buttonId: $0) },
-      logError: { [weak self] in self?.logError(.webViewScript($0)) },
-      closeMessage: closeMessage,
-      braze: braze
-    )
-  }
+    extension InAppMessageView {
 
-  /// Creates and returns a custom scheme handler implementing the logic for scheme-based actions.
-  public func webViewSchemeHandler() -> Braze.WebViewBridge.SchemeHandler {
-    let closeMessage: () -> Void = { [weak self] in self?.dismiss(completion: nil) }
-    let braze = controller?.message.context?.braze as? Braze
+      /// Creates and returns a script message handler implementing the Braze JavaScript bridge api.
+      public func webViewScriptMessageHandler() -> Braze.WebViewBridge.ScriptMessageHandler {
+        let closeMessage: () -> Void = { [weak self] in self?.dismiss(completion: nil) }
+        let braze = controller?.message.context?.braze as? Braze
 
-    return .init(
-      channel: .inAppMessage,
-      logError: { [weak self] in self?.logError(.webViewScheme($0)) },
-      closeMessage: closeMessage,
-      queryHandler: webViewQueryHandler(),
-      braze: braze
-    )
-  }
+        return .init(
+          channel: .inAppMessage,
+          logClick: { [weak self] in self?.logClick(buttonId: $0) },
+          logError: { [weak self] in self?.logError(.webViewScript($0)) },
+          closeMessage: closeMessage,
+          braze: braze
+        )
+      }
 
-  /// Creates and returns an url query handler implementing the logic for query-based actions.
-  public func webViewQueryHandler() -> Braze.WebViewBridge.QueryHandler {
-    .init(
-      logClick: { [weak self] in self?.logClick(buttonId: $0) },
-      logError: { [weak self] in self?.logError(.webViewQuery($0)) }
-    )
-  }
+      /// Creates and returns a custom scheme handler implementing the logic for scheme-based actions.
+      public func webViewSchemeHandler() -> Braze.WebViewBridge.SchemeHandler {
+        let closeMessage: () -> Void = { [weak self] in self?.dismiss(completion: nil) }
+        let braze = controller?.message.context?.braze as? Braze
 
-}
+        return .init(
+          channel: .inAppMessage,
+          logError: { [weak self] in self?.logError(.webViewScheme($0)) },
+          closeMessage: closeMessage,
+          queryHandler: webViewQueryHandler(),
+          braze: braze
+        )
+      }
+
+      /// Creates and returns an url query handler implementing the logic for query-based actions.
+      public func webViewQueryHandler() -> Braze.WebViewBridge.QueryHandler {
+        .init(
+          logClick: { [weak self] in self?.logClick(buttonId: $0) },
+          logError: { [weak self] in self?.logError(.webViewQuery($0)) }
+        )
+      }
+
+    }
+
+  #endif
+
+#endif

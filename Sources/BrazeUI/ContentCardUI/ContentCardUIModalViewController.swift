@@ -1,106 +1,110 @@
-import BrazeKit
-import UIKit
+#if !os(tvOS)
 
-extension BrazeContentCardUI {
+  import BrazeKit
+  import UIKit
 
-  /// Wraps ``ViewController`` in a `UINavigationController` with a _Done_ button for modal
-  /// presentation.
-  @objc(BRZContentCardUIModalViewController)
-  open class ModalViewController: UINavigationController {
+  extension BrazeContentCardUI {
 
-    // MARK: - Properties
+    /// Wraps ``ViewController`` in a `UINavigationController` with a _Done_ button for modal
+    /// presentation.
+    @objc(BRZContentCardUIModalViewController)
+    open class ModalViewController: UINavigationController {
 
-    @objc
-    public let viewController: ViewController
+      // MARK: - Properties
 
-    // MARK: - Initialization
+      @objc
+      public let viewController: ViewController
 
-    /// Creates and return a table view controller displaying the latest content cards fetched by
-    /// the Braze SDK.
-    ///
-    /// - Parameters:
-    ///   - braze: The Braze instance.
-    ///   - attributes: An attributes struct allowing customization of the table view controller
-    ///                 and its cells.
-    ///   - title: The navigation bar title (default: `""`).
-    public init(
-      braze: Braze,
-      attributes: ViewController.Attributes? = nil,
-      title: String = ""
-    ) {
-      let attributes = attributes ?? .defaults
+      // MARK: - Initialization
 
-      viewController = .init(braze: braze, attributes: attributes)
-      viewController.title = title
-      super.init(rootViewController: viewController)
-    }
+      /// Creates and return a table view controller displaying the latest content cards fetched by
+      /// the Braze SDK.
+      ///
+      /// - Parameters:
+      ///   - braze: The Braze instance.
+      ///   - attributes: An attributes struct allowing customization of the table view controller
+      ///                 and its cells.
+      ///   - title: The navigation bar title (default: `""`).
+      public init(
+        braze: Braze,
+        attributes: ViewController.Attributes? = nil,
+        title: String = ""
+      ) {
+        let attributes = attributes ?? .defaults
 
-    /// Creates and returns a table view controller able to display content cards.
-    ///
-    /// For most use cases, prefer using ``BrazeContentCardUI/ModalViewController/init(braze:attributes:title:)``
-    /// instead.
-    ///
-    /// - Parameters:
-    ///   - initialCards: The initial Content Cards displayed.
-    ///   - refresh: An optional closure implementing the refresh logic. `nil` disables pull to
-    ///              refresh.
-    ///   - subscribe: An optional closure implementing the subscription to new cards logic. `nil`
-    ///                disables automatic updates.
-    ///   - lastUpdate: The last time the content cards were updated.
-    ///   - attributes: An attributes struct allowing customization of the table view controller
-    ///                 and its cells.
-    ///   - title: The navigation bar title (default: `""`)
-    public init(
-      initialCards: [Braze.ContentCard],
-      refresh: ((@escaping (Result<[Braze.ContentCard], Error>) -> Void) -> Void)? = nil,
-      subscribe: ((@escaping ([Braze.ContentCard]) -> Void) -> Braze.Cancellable)? = nil,
-      lastUpdate: Date? = nil,
-      attributes: ViewController.Attributes? = nil,
-      title: String = ""
-    ) {
-      let attributes = attributes ?? .defaults
+        viewController = .init(braze: braze, attributes: attributes)
+        viewController.title = title
+        super.init(rootViewController: viewController)
+      }
 
-      viewController = .init(
-        initialCards: initialCards,
-        refresh: refresh,
-        subscribe: subscribe,
-        lastUpdate: lastUpdate,
-        attributes: attributes
-      )
-      viewController.title = title
-      super.init(rootViewController: viewController)
-    }
+      /// Creates and returns a table view controller able to display content cards.
+      ///
+      /// For most use cases, prefer using ``BrazeContentCardUI/ModalViewController/init(braze:attributes:title:)``
+      /// instead.
+      ///
+      /// - Parameters:
+      ///   - initialCards: The initial Content Cards displayed.
+      ///   - refresh: An optional closure implementing the refresh logic. `nil` disables pull to
+      ///              refresh.
+      ///   - subscribe: An optional closure implementing the subscription to new cards logic. `nil`
+      ///                disables automatic updates.
+      ///   - lastUpdate: The last time the content cards were updated.
+      ///   - attributes: An attributes struct allowing customization of the table view controller
+      ///                 and its cells.
+      ///   - title: The navigation bar title (default: `""`)
+      public init(
+        initialCards: [Braze.ContentCard],
+        refresh: ((@escaping (Result<[Braze.ContentCard], Error>) -> Void) -> Void)? = nil,
+        subscribe: ((@escaping ([Braze.ContentCard]) -> Void) -> Braze.Cancellable)? = nil,
+        lastUpdate: Date? = nil,
+        attributes: ViewController.Attributes? = nil,
+        title: String = ""
+      ) {
+        let attributes = attributes ?? .defaults
 
-    /// Does not support interface-builder / storyboards.
-    @available(*, unavailable)
-    required public init?(coder: NSCoder) {
-      fatalError("init(coder:) has not been implemented")
-    }
+        viewController = .init(
+          initialCards: initialCards,
+          refresh: refresh,
+          subscribe: subscribe,
+          lastUpdate: lastUpdate,
+          attributes: attributes
+        )
+        viewController.title = title
+        super.init(rootViewController: viewController)
+      }
 
-    /// See ``init(braze:attributes:title:)``.
-    @objc
-    @available(*, unavailable)
-    public init() {
-      // This init exists only to override the ObjC `NSObject.init` and disable it.
-      fatalError("init is not available")
-    }
+      /// Does not support interface-builder / storyboards.
+      @available(*, unavailable)
+      required public init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+      }
 
-    // MARK: - LifeCycle
+      /// See ``init(braze:attributes:title:)``.
+      @objc
+      @available(*, unavailable)
+      public init() {
+        // This init exists only to override the ObjC `NSObject.init` and disable it.
+        fatalError("init is not available")
+      }
 
-    open override func viewDidLoad() {
-      super.viewDidLoad()
-      viewController.navigationItem.rightBarButtonItem = UIBarButtonItem(
-        barButtonSystemItem: .done,
-        target: self,
-        action: #selector(dismissModal)
-      )
-    }
+      // MARK: - LifeCycle
 
-    @objc
-    open func dismissModal() {
-      dismiss(animated: true)
+      open override func viewDidLoad() {
+        super.viewDidLoad()
+        viewController.navigationItem.rightBarButtonItem = UIBarButtonItem(
+          barButtonSystemItem: .done,
+          target: self,
+          action: #selector(dismissModal)
+        )
+      }
+
+      @objc
+      open func dismissModal() {
+        dismiss(animated: true)
+      }
+
     }
 
   }
 
-}
+#endif

@@ -137,131 +137,139 @@ extension String {
 
 }
 
-extension UIColor {
+// The colors, `brazeResolvedColor`, and `UICornerCurve` init below back Content Cards / in-app
+// message cell styling, both of which are unavailable on tvOS (see `ContentCardUI` and
+// `InAppMessageUI`), and reference system colors (`.systemGray2`, `.systemGroupedBackground`,
+// etc.) and `UICornerCurve` that don't exist on tvOS.
+#if !os(tvOS)
 
-  static var brazeTableViewBackgroundColor: UIColor {
-    #if os(visionOS)
-      return .systemGroupedBackground
-    #else
-      if #available(iOS 13.0, *) {
+  extension UIColor {
+
+    static var brazeTableViewBackgroundColor: UIColor {
+      #if os(visionOS)
         return .systemGroupedBackground
-      } else {
-        return .groupTableViewBackground
-      }
-    #endif
-  }
-
-  static var brazeCellBackgroundColor: UIColor {
-    if #available(iOS 13.0, *) {
-      return .secondarySystemGroupedBackground
-    } else {
-      return .white
-    }
-  }
-
-  static var brazeCellBorderColor: UIColor {
-    if #available(iOS 13.0, *) {
-      return .systemGray5
-    } else {
-      return UIColor(white: 0.88, alpha: 1)
-    }
-  }
-
-  static var brazeCellShadowColor: UIColor {
-    if #available(iOS 13.0, *) {
-      return UIColor { traits in
-        switch traits.userInterfaceStyle {
-        case .dark:
-          return .systemGray6
-        default:
-          return .systemGray2
+      #else
+        if #available(iOS 13.0, *) {
+          return .systemGroupedBackground
+        } else {
+          return .groupTableViewBackground
         }
+      #endif
+    }
+
+    static var brazeCellBackgroundColor: UIColor {
+      if #available(iOS 13.0, *) {
+        return .secondarySystemGroupedBackground
+      } else {
+        return .white
       }
-    } else {
-      return UIColor(white: 0.7, alpha: 1)
     }
-  }
 
-  static var brazeCellHighlightColor: UIColor {
-    if #available(iOS 13.0, *) {
-      return .systemGray4
-    } else {
-      return UIColor(red: 0.82, green: 0.82, blue: 0.84, alpha: 1)
+    static var brazeCellBorderColor: UIColor {
+      if #available(iOS 13.0, *) {
+        return .systemGray5
+      } else {
+        return UIColor(white: 0.88, alpha: 1)
+      }
     }
-  }
 
-  static var brazeCellImageBackgroundColor: UIColor {
-    return .clear
-  }
-
-  static var brazeRetryButtonColor: UIColor {
-    if #available(iOS 13.0, *) {
-      return .secondarySystemFill
-    } else {
-      return UIColor(red: 0.87, green: 0.87, blue: 0.89, alpha: 1.00)
+    static var brazeCellShadowColor: UIColor {
+      if #available(iOS 13.0, *) {
+        return UIColor { traits in
+          switch traits.userInterfaceStyle {
+          case .dark:
+            return .systemGray6
+          default:
+            return .systemGray2
+          }
+        }
+      } else {
+        return UIColor(white: 0.7, alpha: 1)
+      }
     }
-  }
 
-  static var brazeLabel: UIColor {
-    if #available(iOS 13.0, *) {
-      return .label
-    } else {
-      return .black
+    static var brazeCellHighlightColor: UIColor {
+      if #available(iOS 13.0, *) {
+        return .systemGray4
+      } else {
+        return UIColor(red: 0.82, green: 0.82, blue: 0.84, alpha: 1)
+      }
     }
-  }
 
-}
-
-extension UIColor {
-
-  func brazeResolvedColor(with traitCollection: UITraitCollection) -> UIColor {
-    if #available(iOS 13.0, *) {
-      return self.resolvedColor(with: traitCollection)
-    } else {
-      return self
+    static var brazeCellImageBackgroundColor: UIColor {
+      return .clear
     }
-  }
 
-}
-
-extension CGColor {
-
-  static func brazeCellBorderColor(_ traits: UITraitCollection) -> CGColor {
-    if #available(iOS 13.0, *) {
-      return UIColor.brazeCellBorderColor.resolvedColor(with: traits).cgColor
-    } else {
-      return UIColor.brazeCellBorderColor.cgColor
+    static var brazeRetryButtonColor: UIColor {
+      if #available(iOS 13.0, *) {
+        return .secondarySystemFill
+      } else {
+        return UIColor(red: 0.87, green: 0.87, blue: 0.89, alpha: 1.00)
+      }
     }
-  }
 
-}
-
-extension UIGestureRecognizer {
-
-  /// Cancels the gesture recognizer.
-  func cancel() {
-    guard isEnabled else { return }
-    isEnabled = false
-    isEnabled = true
-  }
-
-}
-
-@available(iOS 17.0, *)
-extension UICornerCurve {
-
-  init(layerCornerCurve: CALayerCornerCurve) {
-    switch layerCornerCurve {
-    case .continuous:
-      self = .continuous
-    case .circular:
-      self = .circular
-    default:
-      self = .continuous
+    static var brazeLabel: UIColor {
+      if #available(iOS 13.0, *) {
+        return .label
+      } else {
+        return .black
+      }
     }
+
   }
 
-}
+  extension UIColor {
+
+    func brazeResolvedColor(with traitCollection: UITraitCollection) -> UIColor {
+      if #available(iOS 13.0, *) {
+        return self.resolvedColor(with: traitCollection)
+      } else {
+        return self
+      }
+    }
+
+  }
+
+  extension CGColor {
+
+    static func brazeCellBorderColor(_ traits: UITraitCollection) -> CGColor {
+      if #available(iOS 13.0, *) {
+        return UIColor.brazeCellBorderColor.resolvedColor(with: traits).cgColor
+      } else {
+        return UIColor.brazeCellBorderColor.cgColor
+      }
+    }
+
+  }
+
+  extension UIGestureRecognizer {
+
+    /// Cancels the gesture recognizer.
+    func cancel() {
+      guard isEnabled else { return }
+      isEnabled = false
+      isEnabled = true
+    }
+
+  }
+
+  @available(iOS 17.0, *)
+  extension UICornerCurve {
+
+    init(layerCornerCurve: CALayerCornerCurve) {
+      switch layerCornerCurve {
+      case .continuous:
+        self = .continuous
+      case .circular:
+        self = .circular
+      default:
+        self = .continuous
+      }
+    }
+
+  }
+
+#endif
 
 extension UIEdgeInsets {
 

@@ -1,135 +1,139 @@
-import BrazeKit
-import UIKit
+#if !os(tvOS)
 
-extension BrazeContentCardUI {
+  import BrazeKit
+  import UIKit
 
-  /// The Content Card cell which displays Classic Image cards.
-  open class ClassicImageCell: ImageCell {
+  extension BrazeContentCardUI {
 
-    /// The type identifier.
-    public static let identifier = "BrazeContentCardUI.ClassicImageCell"
+    /// The Content Card cell which displays Classic Image cards.
+    open class ClassicImageCell: ImageCell {
 
-    // MARK: - Views
+      /// The type identifier.
+      public static let identifier = "BrazeContentCardUI.ClassicImageCell"
 
-    /// The horizontal stack view containing the image and the text stack.
-    open var cardStack: UIStackView = {
-      let stack = UIStackView()
-      stack.axis = .horizontal
-      stack.spacing = 12
-      stack.alignment = .top
-      return stack
-    }()
+      // MARK: - Views
 
-    // MARK: - Initialization
+      /// The horizontal stack view containing the image and the text stack.
+      open var cardStack: UIStackView = {
+        let stack = UIStackView()
+        stack.axis = .horizontal
+        stack.spacing = 12
+        stack.alignment = .top
+        return stack
+      }()
 
-    /// Initializes the content card cell passing `style` and `reuseIdentifier` to the `super`
-    /// implementation.
-    public override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-      super.init(style: style, reuseIdentifier: reuseIdentifier)
+      // MARK: - Initialization
 
-      // View hierachy
-      let textStack = TextStack()
-      self.textStack = textStack
+      /// Initializes the content card cell passing `style` and `reuseIdentifier` to the `super`
+      /// implementation.
+      public override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
 
-      contentImageView.fixedAspectRatio = 1.0
-      contentImageView.activityIndicator.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
+        // View hierachy
+        let textStack = TextStack()
+        self.textStack = textStack
 
-      cardStack.addArrangedSubview(contentImageView)
-      cardStack.addArrangedSubview(textStack)
-      container.addSubview(cardStack)
+        contentImageView.fixedAspectRatio = 1.0
+        contentImageView.activityIndicator.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
 
-      installInternalConstraints()
-      applyAttributes(attributes)
-    }
+        cardStack.addArrangedSubview(contentImageView)
+        cardStack.addArrangedSubview(textStack)
+        container.addSubview(cardStack)
 
-    /// Does not support interface-builder / storyboards.
-    @available(*, unavailable)
-    required public init?(coder: NSCoder) {
-      fatalError("init(coder:) has not been implemented")
-    }
+        installInternalConstraints()
+        applyAttributes(attributes)
+      }
 
-    // MARK: - Layout
+      /// Does not support interface-builder / storyboards.
+      @available(*, unavailable)
+      required public init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+      }
 
-    /// The horizontal stack edges constraints, unset until ``installInternalConstraints()`` is
-    /// executed.
-    open var cardStackConstraints: [NSLayoutConstraint]!
+      // MARK: - Layout
 
-    /// The classic image size constraints, unset until ``installInternalConstraints()`` is
-    /// executed.
-    open var classicImageSize: [NSLayoutConstraint]!
+      /// The horizontal stack edges constraints, unset until ``installInternalConstraints()`` is
+      /// executed.
+      open var cardStackConstraints: [NSLayoutConstraint]!
 
-    open override func installInternalConstraints() {
-      super.installInternalConstraints()
-      classicImageSize = contentImageView.anchors.size.equal(CGSize(width: 10, height: 10))
-      cardStackConstraints = cardStack.anchors.edges.pin()
-    }
+      /// The classic image size constraints, unset until ``installInternalConstraints()`` is
+      /// executed.
+      open var classicImageSize: [NSLayoutConstraint]!
 
-    // MARK: - Card Update
+      open override func installInternalConstraints() {
+        super.installInternalConstraints()
+        classicImageSize = contentImageView.anchors.size.equal(CGSize(width: 10, height: 10))
+        cardStackConstraints = cardStack.anchors.edges.pin()
+      }
 
-    /// Updates the cell with the passed classic image content card.
-    /// - Parameters:
-    ///   - card: The content card to display.
-    ///   - imageLoad: The current image load state.
-    open func set(card: Braze.ContentCard.ClassicImage, imageLoad: AsyncImageView.ImageLoad?) {
-      contentImageView.imageLoad = imageLoad
+      // MARK: - Card Update
 
-      contentImageView.imageView.addAccessibilityAltText(card.imageAltText)
+      /// Updates the cell with the passed classic image content card.
+      /// - Parameters:
+      ///   - card: The content card to display.
+      ///   - imageLoad: The current image load state.
+      open func set(card: Braze.ContentCard.ClassicImage, imageLoad: AsyncImageView.ImageLoad?) {
+        contentImageView.imageLoad = imageLoad
 
-      textStack?.titleLabel.text = card.title
-      textStack?.descriptionLabel.text = card.description
-      textStack?.domainLabel.text = card.domain
-      textStack?.domainHidden = card.domain == nil || card.domain == ""
+        contentImageView.imageView.addAccessibilityAltText(card.imageAltText)
 
-      // Accessibility
-      textStack?.addAccessibilityAltText()
-      applyAccessibilityLanguage(card.language)
+        textStack?.titleLabel.text = card.title
+        textStack?.descriptionLabel.text = card.description
+        textStack?.domainLabel.text = card.domain
+        textStack?.domainHidden = card.domain == nil || card.domain == ""
 
-      pinIndicator.isHidden = !card.pinned
-      unviewedIndicator.isHidden = card.viewed
+        // Accessibility
+        textStack?.addAccessibilityAltText()
+        applyAccessibilityLanguage(card.language)
 
-      highlightable = card.clickAction != .none
-    }
+        pinIndicator.isHidden = !card.pinned
+        unviewedIndicator.isHidden = card.viewed
 
-    open override func applyAttributes(_ attributes: Attributes) {
-      super.applyAttributes(attributes)
+        highlightable = card.clickAction != .none
+      }
 
-      let padding = attributes.padding
-      cardStackConstraints[0].constant = padding.left
-      cardStackConstraints[1].constant = -padding.right
-      cardStackConstraints[2].constant = padding.top
-      cardStackConstraints[3].constant = -padding.bottom
+      open override func applyAttributes(_ attributes: Attributes) {
+        super.applyAttributes(attributes)
 
-      contentImageView.imageCornerRadius = attributes.classicImageCornerRadius
-      classicImageSize[0].constant = attributes.classicImageSize.width
-      classicImageSize[1].constant = attributes.classicImageSize.height
+        let padding = attributes.padding
+        cardStackConstraints[0].constant = padding.left
+        cardStackConstraints[1].constant = -padding.right
+        cardStackConstraints[2].constant = padding.top
+        cardStackConstraints[3].constant = -padding.bottom
 
-      cardStack.spacing = attributes.classicImageTextSpacing
+        contentImageView.imageCornerRadius = attributes.classicImageCornerRadius
+        classicImageSize[0].constant = attributes.classicImageSize.width
+        classicImageSize[1].constant = attributes.classicImageSize.height
+
+        cardStack.spacing = attributes.classicImageTextSpacing
+      }
+
     }
 
   }
 
-}
+  // MARK: - Previews
 
-// MARK: - Previews
+  #if UI_PREVIEWS
 
-#if UI_PREVIEWS
+    import SwiftUI
 
-  import SwiftUI
-
-  struct ClassicImageCell_Previews: PreviewProvider {
-    static let cards: [Braze.ContentCard] = [
-      .classicImage(.mockPinned),
-      .classicImage(.mockUnviewed),
-      .classicImage(.mockViewed),
-      .classicImage(.mockDomain),
-      .classicImage(.mockShort),
-      .classicImage(.mockLong),
-      .classicImage(.mockExtraLong),
-    ]
-    static var previews: some View {
-      BrazeContentCardUI.ViewController(initialCards: cards)
-        .preview()
+    struct ClassicImageCell_Previews: PreviewProvider {
+      static let cards: [Braze.ContentCard] = [
+        .classicImage(.mockPinned),
+        .classicImage(.mockUnviewed),
+        .classicImage(.mockViewed),
+        .classicImage(.mockDomain),
+        .classicImage(.mockShort),
+        .classicImage(.mockLong),
+        .classicImage(.mockExtraLong),
+      ]
+      static var previews: some View {
+        BrazeContentCardUI.ViewController(initialCards: cards)
+          .preview()
+      }
     }
-  }
+
+  #endif
 
 #endif

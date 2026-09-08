@@ -1,6 +1,10 @@
 import Foundation
 import UIKit
 
+#if os(iOS) || os(macOS) || os(visionOS)
+  import WebKit
+#endif
+
 #if DEBUG
 
   extension URL {
@@ -61,7 +65,7 @@ import UIKit
 
         // Draw text
         let font: UIFont
-        if #available(iOS 13.0, *) {
+        if #available(iOS 13.0, tvOS 13.0, *) {
           font = UIFont.monospacedSystemFont(ofSize: textSize, weight: .regular)
         } else {
           font = UIFont(name: "Courier", size: textSize)!
@@ -95,12 +99,78 @@ import UIKit
 
   }
 
-  class MockCustomInAppMessageView: UIView, InAppMessageView {
-    var presented: Bool = true
+  #if !os(tvOS)
+    class MockCustomInAppMessageView: UIView, InAppMessageView {
+      var presented: Bool = true
 
-    func present(completion: (() -> Void)?) {}
+      func present(completion: (() -> Void)?) {}
 
-    func dismiss(completion: (() -> Void)?) {}
-  }
+      func dismiss(completion: (() -> Void)?) {}
+    }
+  #endif
+
+  #if os(iOS) || os(macOS) || os(visionOS)
+
+    // MARK: - WebKit Mocks
+
+    /// Holds permanent strong references to mock WebKit objects for the lifetime of the test process.
+    ///
+    /// Mocks like ``MockFrameInfo`` and ``MockNavigationAction`` subclass WebKit types but never run a
+    /// real WebKit initializer, so their internal WebKit state is left uninitialized. `-[WKFrameInfo dealloc]` (and related destructors) unconditionally release that internal state, which crashes in `CFRelease`.
+    /// Retaining the mocks here prevents them from being deallocated during the test run,
+    /// so the crashing destructor never executes.
+    private enum MockWebKitObjectRetainer {
+      private static let lock = NSLock()
+      nonisolated(unsafe) private static var objects: [AnyObject] = []
+
+      static func retain(_ object: AnyObject) {
+        lock.lock()
+        defer { lock.unlock() }
+        objects.append(object)
+      }
+    }
+
+    final class MockNavigationDelegate: NSObject, WKNavigationDelegate {}
+
+    final class MockNavigationAction: WKNavigationAction {
+      override var request: URLRequest { _request }
+      private let _request: URLRequest
+
+      override var sourceFrame: WKFrameInfo { _sourceFrame }
+      private let _sourceFrame: WKFrameInfo
+
+      override var targetFrame: WKFrameInfo? { _targetFrame }
+      private let _targetFrame: WKFrameInfo?
+
+      override var navigationType: WKNavigationType { _navigationType }
+      private let _navigationType: WKNavigationType
+
+      init(
+        request: URLRequest,
+        sourceFrame: WKFrameInfo = MockFrameInfo(isMainFrame: true),
+        targetFrame: WKFrameInfo? = nil,
+        navigationType: WKNavigationType = .linkActivated
+      ) {
+        self._request = request
+        self._sourceFrame = sourceFrame
+        self._targetFrame = targetFrame
+        self._navigationType = navigationType
+        super.init()
+        MockWebKitObjectRetainer.retain(self)
+      }
+    }
+
+    final class MockFrameInfo: WKFrameInfo {
+      override var isMainFrame: Bool { _isMainFrame }
+      private let _isMainFrame: Bool
+
+      init(isMainFrame: Bool) {
+        self._isMainFrame = isMainFrame
+        super.init()
+        MockWebKitObjectRetainer.retain(self)
+      }
+    }
+
+  #endif
 
 #endif

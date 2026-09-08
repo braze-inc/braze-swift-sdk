@@ -1,18 +1,22 @@
-import UIKit
+#if !os(tvOS)
 
-extension BrazeContentCardUI {
+  import UIKit
 
-  /// A Content Card cell subclass providing a pre-configured image view.
-  open class ImageCell: Cell {
+  extension BrazeContentCardUI {
 
-    /// The image view used to display the content card image.
-    open var contentImageView: AsyncImageView = {
-      let imageView = AsyncImageView()
-      imageView.backgroundColor = .brazeCellImageBackgroundColor
-      imageView.tintColor = .brazeRetryButtonColor
-      return imageView
-    }()
+    /// A Content Card cell subclass providing a pre-configured image view.
+    open class ImageCell: Cell {
+
+      /// The image view used to display the content card image.
+      open var contentImageView: AsyncImageView = {
+        let imageView = AsyncImageView()
+        imageView.backgroundColor = .brazeCellImageBackgroundColor
+        imageView.tintColor = .brazeRetryButtonColor
+        return imageView
+      }()
+
+    }
 
   }
 
-}
+#endif
