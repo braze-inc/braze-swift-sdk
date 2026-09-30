@@ -92,13 +92,11 @@ static NSString * const ABKUIPodIAMBundleName = @"AppboyUI.InAppMessage.bundle";
 }
 
 + (UIWindow *)activeApplicationWindow {
-  if (@available(iOS 13.0, tvOS 13.0, *)) {
-    UIWindow *window = [self selectApplicationWindow:ABKUIUtils.activeWindowScene.windows];
-    if (window) {
-      return window;
-    }
+  UIWindow *window = [self selectApplicationWindow:ABKUIUtils.activeWindowScene.windows];
+  if (window) {
+    return window;
   }
-  
+
   return [self selectApplicationWindow:[self application].windows];
 }
 
@@ -221,21 +219,17 @@ static NSString * const ABKUIPodIAMBundleName = @"AppboyUI.InAppMessage.bundle";
 }
 
 + (UIInterfaceOrientation)getInterfaceOrientation {
-  if (@available(iOS 13.0, *)) {
-    UIWindowScene *windowScene = ABKUIUtils.activeWindowScene;
-    if (windowScene) {
-      return windowScene.interfaceOrientation;
-    }
+  UIWindowScene *windowScene = ABKUIUtils.activeWindowScene;
+  if (windowScene) {
+    return windowScene.interfaceOrientation;
   }
   return UIApplication.sharedApplication.statusBarOrientation;
 }
 
 + (CGSize)getStatusBarSize {
-  if (@available(iOS 13.0, *)) {
-    UIWindowScene *windowScene = ABKUIUtils.activeWindowScene;
-    if (windowScene) {
-      return windowScene.statusBarManager.statusBarFrame.size;
-    }
+  UIWindowScene *windowScene = ABKUIUtils.activeWindowScene;
+  if (windowScene) {
+    return windowScene.statusBarManager.statusBarFrame.size;
   }
   return UIApplication.sharedApplication.statusBarFrame.size;
 }
@@ -249,18 +243,14 @@ static NSString * const ABKUIPodIAMBundleName = @"AppboyUI.InAppMessage.bundle";
   }
 
 #if !TARGET_OS_TV
-  if (@available(iOS 13.0, *)) {
-    // Crashes if either darkColor or lightColor is nil
-    return [UIColor colorWithDynamicProvider:^UIColor * _Nonnull(UITraitCollection * _Nonnull traitCollection) {
-      if (traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
-        return darkColor;
-      } else {
-        return lightColor;
-      }
-    }];
-  } else {
-    return lightColor;
-  }
+  // Crashes if either darkColor or lightColor is nil
+  return [UIColor colorWithDynamicProvider:^UIColor * _Nonnull(UITraitCollection * _Nonnull traitCollection) {
+    if (traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
+      return darkColor;
+    } else {
+      return lightColor;
+    }
+  }];
 #else
   return lightColor;
 #endif
@@ -301,41 +291,16 @@ static NSString * const ABKUIPodIAMBundleName = @"AppboyUI.InAppMessage.bundle";
 }
 
 + (UIFont *)preferredFontForTextStyle:(UIFontTextStyle)textStyle weight:(UIFontWeight)weight {
-  if (@available(iOS 11.0, tvOS 11.0, *)) {
-    UIFontMetrics *metrics = [UIFontMetrics metricsForTextStyle:textStyle];
-    UIFontDescriptor *descriptor = [UIFontDescriptor preferredFontDescriptorWithTextStyle:textStyle];
-    UIFont *font = [UIFont systemFontOfSize:descriptor.pointSize weight:weight];
-    return [metrics scaledFontForFont:font];
-  } else {
-    // https://apple.co/3snncd9 (Large / Default)
-    static dispatch_once_t once;
-    static NSDictionary *textStyleMap;
-    dispatch_once(&once, ^{
-      textStyleMap = @{
-        UIFontTextStyleTitle1: @(28.0),
-        UIFontTextStyleTitle2: @(22.0),
-        UIFontTextStyleTitle3: @(20.0),
-        UIFontTextStyleHeadline: @(17.0),
-        UIFontTextStyleBody: @(17.0),
-        UIFontTextStyleCallout: @(16.0),
-        UIFontTextStyleSubheadline: @(15.0),
-        UIFontTextStyleFootnote: @(13.0),
-        UIFontTextStyleCaption1: @(12.0),
-        UIFontTextStyleCaption2: @(11.0)
-      };
-    });
-
-    return [UIFont systemFontOfSize:[textStyleMap[textStyle] doubleValue]
-                             weight:weight];
-  }
+  UIFontMetrics *metrics = [UIFontMetrics metricsForTextStyle:textStyle];
+  UIFontDescriptor *descriptor = [UIFontDescriptor preferredFontDescriptorWithTextStyle:textStyle];
+  UIFont *font = [UIFont systemFontOfSize:descriptor.pointSize weight:weight];
+  return [metrics scaledFontForFont:font];
 }
 
 + (void)enableAdjustsFontForContentSizeCategory:(id)label {
-  if (@available(iOS 10.0, tvOS 10.0, *)) {
-    id<UIContentSizeCategoryAdjusting> adjustableLabel = label;
-    if ([adjustableLabel respondsToSelector:@selector(setAdjustsFontForContentSizeCategory:)]) {
-      adjustableLabel.adjustsFontForContentSizeCategory = YES;
-    }
+  id<UIContentSizeCategoryAdjusting> adjustableLabel = label;
+  if ([adjustableLabel respondsToSelector:@selector(setAdjustsFontForContentSizeCategory:)]) {
+    adjustableLabel.adjustsFontForContentSizeCategory = YES;
   }
 }
 

@@ -48,16 +48,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         animated: true
       )
     case .swiftUI:
-      if #available(iOS 13.0, *) {
-        let controller = BannerPlacementController(
-          placementId: BannersCustomUI.Constants.placementID
-        )
-        let view = BannerView(controller: controller)
-        navigationController.pushViewController(
-          UIHostingController(rootView: view),
-          animated: true
-        )
-      }
+      let controller = BannerPlacementController(
+        placementId: BannersCustomUI.Constants.placementID
+      )
+      let view = BannerView(controller: controller)
+      navigationController.pushViewController(
+        UIHostingController(rootView: view),
+        animated: true
+      )
     }
   }
 

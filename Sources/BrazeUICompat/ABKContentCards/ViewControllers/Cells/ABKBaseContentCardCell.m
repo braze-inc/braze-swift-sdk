@@ -24,11 +24,7 @@ static CGFloat AppboyCardLineSpacing = 1.2;
   // View
   UIView *rootView = [[UIView alloc] init];
   rootView.translatesAutoresizingMaskIntoConstraints = NO;
-  if (@available(iOS 13.0, *)) {
-    rootView.backgroundColor = [UIColor systemBackgroundColor];
-  } else {
-    rootView.backgroundColor = [UIColor whiteColor];
-  }
+  rootView.backgroundColor = [UIColor systemBackgroundColor];
 
   // - Border
   UIColor *lightBorderColor = [UIColor colorWithWhite:(224.0 / 255.0) alpha:1.0];

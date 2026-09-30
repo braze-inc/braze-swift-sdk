@@ -44,10 +44,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     case .uiKit:
       navigationController.pushViewController(FullScreenBannerViewController(), animated: true)
     case .swiftUI:
-      if #available(iOS 13.0, *) {
-        let hostingController = UIHostingController(rootView: FullScreenBannerView())
-        navigationController.pushViewController(hostingController, animated: true)
-      }
+      let hostingController = UIHostingController(rootView: FullScreenBannerView())
+      navigationController.pushViewController(hostingController, animated: true)
     }
   }
 
@@ -60,10 +58,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     case .uiKit:
       navigationController.pushViewController(WideBannerViewController(), animated: true)
     case .swiftUI:
-      if #available(iOS 13.0, *) {
-        let hostingController = UIHostingController(rootView: WideBannerView())
-        navigationController.pushViewController(hostingController, animated: true)
-      }
+      let hostingController = UIHostingController(rootView: WideBannerView())
+      navigationController.pushViewController(hostingController, animated: true)
     }
   }
 

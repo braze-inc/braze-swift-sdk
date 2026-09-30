@@ -131,25 +131,19 @@ static CGFloat const ABKContentCardsCellEstimatedHeight = 400.0f;
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  if (@available(iOS 13.0, *)) {
-    if (self.enableDarkTheme) {
-      // This value will respect the system UI style of dark or light mode
-      self.overrideUserInterfaceStyle = UIUserInterfaceStyleUnspecified;
-    } else {
-      self.overrideUserInterfaceStyle = UIUserInterfaceStyleLight;
-    }
+  if (self.enableDarkTheme) {
+    // This value will respect the system UI style of dark or light mode
+    self.overrideUserInterfaceStyle = UIUserInterfaceStyleUnspecified;
+  } else {
+    self.overrideUserInterfaceStyle = UIUserInterfaceStyleLight;
   }
 
   if (!self.usesStoryboard) {
     self.emptyFeedLabel.text = [self localizedAppboyContentCardsString:@"Appboy.content-cards.no-card.text"];
 
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    
-    if (@available(iOS 13.0, *)) {
-      self.view.backgroundColor = [UIColor systemGroupedBackgroundColor];
-    } else {
-      self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
-    }
+
+    self.view.backgroundColor = [UIColor systemGroupedBackgroundColor];
 
     [self registerTableViewCellClasses];
 

@@ -388,9 +388,7 @@ static NSInteger const KeyWindowRetryMaxCount = 10;
   self.slideAwayTimer = nil;
 
   self.inAppMessageWindow.rootViewController = nil;
-  if (@available(iOS 13.0, *)) {
-    self.inAppMessageWindow.windowScene = nil;
-  }
+  self.inAppMessageWindow.windowScene = nil;
   self.inAppMessageWindow = nil;
   [[NSNotificationCenter defaultCenter] postNotificationName:ABKNotificationInAppMessageWindowDismissed
                                                       object:self
@@ -465,12 +463,10 @@ static NSInteger const KeyWindowRetryMaxCount = 10;
  */
 - (ABKInAppMessageWindow *)createInAppMessageWindow {
   ABKInAppMessageWindow *window;
-  
-  if (@available(iOS 13.0, *)) {
-    UIWindowScene *windowScene = ABKUIUtils.activeWindowScene;
-    if (windowScene) {
-      window = [[ABKInAppMessageWindow alloc] initWithWindowScene:windowScene];
-    }
+
+  UIWindowScene *windowScene = ABKUIUtils.activeWindowScene;
+  if (windowScene) {
+    window = [[ABKInAppMessageWindow alloc] initWithWindowScene:windowScene];
   }
   
   if (!window) {

@@ -25,15 +25,6 @@
       /// Use ``BrazeInAppMessageUI/presentNext()`` to display the message at the top of the stack.
       case reenqueue
 
-      /// Has identical behavior to ``BrazeInAppMessageUI/DisplayChoice/reenqueue``.
-      ///
-      /// This option has been deprecated and will be removed in a future update.
-      /// Please use ``BrazeInAppMessageUI/DisplayChoice/reenqueue`` instead.
-      @available(*, deprecated, renamed: "reenqueue")
-      public static var later: Self {
-        .reenqueue
-      }
-
       /// The in-app message is discarded.
       case discard
     }

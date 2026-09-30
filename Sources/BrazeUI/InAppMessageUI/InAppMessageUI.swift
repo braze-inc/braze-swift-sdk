@@ -257,9 +257,7 @@
         windowLevel: .normal,
         preferencesProxy: Braze.UIUtils.activeTopmostViewController
       )
-      if #available(iOS 13.0, tvOS 13.0, *) {
-        context.windowScene = Braze.UIUtils.activeWindowScene
-      }
+      context.windowScene = Braze.UIUtils.activeWindowScene
       delegate?.inAppMessage(self, prepareWith: &context)
 
       // Creates view hierarchy
@@ -311,7 +309,7 @@
           return
         }
       #else
-        if #available(iOS 13.0, tvOS 13.0, *), let windowScene = context.windowScene {
+        if let windowScene = context.windowScene {
           window = Window(windowScene: windowScene)
         } else {
           window = Window(frame: UIScreen.main.bounds)
@@ -336,16 +334,11 @@
 
       // Display
       #if os(iOS)
-        if #available(iOS 15.0, *) {
-          // - Use animation block to animate the status bar hidden state
-          UIView.animate(withDuration: message.animateIn ? 0.25 : 0) {
-            // - Use `isHidden` instead of `makeKeyAndVisible` to defer the choice of hiding the keyboard
-            //   to the message view. See `InAppMessageView/makeKey`. `isHidden` just displays the window
-            //   without touching the first responder.
-            window.isHidden = false
-          }
-        } else {
-          // - No animation block before iOS 15.0, it has undesired side effects
+        // - Use animation block to animate the status bar hidden state
+        UIView.animate(withDuration: message.animateIn ? 0.25 : 0) {
+          // - Use `isHidden` instead of `makeKeyAndVisible` to defer the choice of hiding the keyboard
+          //   to the message view. See `InAppMessageView/makeKey`. `isHidden` just displays the window
+          //   without touching the first responder.
           window.isHidden = false
         }
       #elseif os(visionOS)

@@ -66,7 +66,6 @@
         public var cornerRadius = 8.0
 
         /// The content view corner curve.
-        @available(iOS 13.0, *)
         public var cornerCurve: CALayerCornerCurve {
           get { CALayerCornerCurve(rawValue: _cornerCurve) }
           set { _cornerCurve = newValue.rawValue }
@@ -172,10 +171,8 @@
         contentView.layer.cornerRadius = attributes.cornerRadius
 
         // Corner curve
-        if #available(iOS 13.0, *) {
-          shadowView.layer.cornerCurve = attributes.cornerCurve
-          contentView.layer.cornerCurve = attributes.cornerCurve
-        }
+        shadowView.layer.cornerCurve = attributes.cornerCurve
+        contentView.layer.cornerCurve = attributes.cornerCurve
 
         // Shadow
         shadowView.shadow = attributes.shadow
@@ -531,7 +528,6 @@
   #if UI_PREVIEWS
     import SwiftUI
 
-    @available(iOS 13.0, *)
     struct ModalView_Previews: PreviewProvider {
       typealias ModalView = BrazeInAppMessageUI.ModalView
 

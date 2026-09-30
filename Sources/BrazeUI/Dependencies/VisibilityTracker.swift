@@ -107,11 +107,7 @@
 
     private func createDisplayLink() -> CADisplayLink {
       let displayLink = CADisplayLink(target: self, selector: #selector(brazeDisplayLinkTick))
-      if #available(iOS 15.0, *) {
-        displayLink.preferredFrameRateRange = .init(minimum: 10, maximum: 20, preferred: 15)
-      } else {
-        displayLink.preferredFramesPerSecond = 15
-      }
+      displayLink.preferredFrameRateRange = .init(minimum: 10, maximum: 20, preferred: 15)
       return displayLink
     }
   }

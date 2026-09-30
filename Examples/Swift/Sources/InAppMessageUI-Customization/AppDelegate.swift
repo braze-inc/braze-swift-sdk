@@ -46,10 +46,8 @@ extension AppDelegate: BrazeInAppMessageUIDelegate {
       attributes?.imageSize = CGSize(width: 65, height: 65)
       attributes?.cornerRadius = 20
       attributes?.imageCornerRadius = 10
-      if #available(iOS 13.0, *) {
-        attributes?.cornerCurve = .continuous
-        attributes?.imageCornerCurve = .continuous
-      }
+      attributes?.cornerCurve = .continuous
+      attributes?.imageCornerCurve = .continuous
       context.attributes?.slideup = attributes
     }
 
@@ -78,10 +76,8 @@ extension AppDelegate: BrazeInAppMessageUIDelegate {
       attributes.imageSize = CGSize(width: 65, height: 65)
       attributes.cornerRadius = 20
       attributes.imageCornerRadius = 10
-      if #available(iOS 13.0, *) {
-        attributes.cornerCurve = .continuous
-        attributes.imageCornerCurve = .continuous
-      }
+      attributes.cornerCurve = .continuous
+      attributes.imageCornerCurve = .continuous
       context.customView = ConfirmButtonSlideupView(message: slideup, attributes: attributes)
       */
     }
@@ -92,9 +88,7 @@ extension AppDelegate: BrazeInAppMessageUIDelegate {
       attributes?.headerFont = UIFont(name: "AmericanTypewriter-Bold", size: 20)!
       attributes?.messageFont = UIFont(name: "AmericanTypewriter", size: 17)!
       attributes?.cornerRadius = 20
-      if #available(iOS 13.0, *) {
-        attributes?.cornerCurve = .continuous
-      }
+      attributes?.cornerCurve = .continuous
       context.attributes?.modal = attributes
     }
 
@@ -113,9 +107,7 @@ extension AppDelegate: BrazeInAppMessageUIDelegate {
     if customization == "modal-image-attributes" {
       var attributes = context.attributes?.modalImage
       attributes?.cornerRadius = 20
-      if #available(iOS 13.0, *) {
-        attributes?.cornerCurve = .continuous
-      }
+      attributes?.cornerCurve = .continuous
       context.attributes?.modalImage = attributes
     }
 
@@ -130,9 +122,7 @@ extension AppDelegate: BrazeInAppMessageUIDelegate {
       attributes?.headerFont = UIFont(name: "AmericanTypewriter-Bold", size: 20)!
       attributes?.messageFont = UIFont(name: "AmericanTypewriter", size: 17)!
       attributes?.cornerRadius = 20
-      if #available(iOS 13.0, *) {
-        attributes?.cornerCurve = .continuous
-      }
+      attributes?.cornerCurve = .continuous
       context.attributes?.full = attributes
     }
 
@@ -145,9 +135,7 @@ extension AppDelegate: BrazeInAppMessageUIDelegate {
     if customization == "full-image-attributes" {
       var attributes = context.attributes?.fullImage
       attributes?.cornerRadius = 20
-      if #available(iOS 13.0, *) {
-        attributes?.cornerCurve = .continuous
-      }
+      attributes?.cornerCurve = .continuous
       context.attributes?.fullImage = attributes
     }
 

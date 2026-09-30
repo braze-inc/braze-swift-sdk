@@ -46,7 +46,6 @@
         public var cornerRadius = 8.0
 
         /// The content view corner curve.
-        @available(iOS 13.0, *)
         public var cornerCurve: CALayerCornerCurve {
           get { CALayerCornerCurve(rawValue: _cornerCurve) }
           set { _cornerCurve = newValue.rawValue }
@@ -226,9 +225,7 @@
         modalViewAttrs.headerFont = attributes.headerFont
         modalViewAttrs.messageFont = attributes.messageFont
         modalViewAttrs.cornerRadius = attributes.cornerRadius
-        if #available(iOS 13.0, *) {
-          modalViewAttrs.cornerCurve = attributes.cornerCurve
-        }
+        modalViewAttrs.cornerCurve = attributes.cornerCurve
         modalViewAttrs.shadow = attributes.shadow
         modalViewAttrs.minWidth = attributes.minWidth
         modalViewAttrs.maxWidth = attributes.maxWidth
@@ -293,7 +290,6 @@
   #if UI_PREVIEWS
     import SwiftUI
 
-    @available(iOS 14.0, *)
     struct FullView_Previews: PreviewProvider {
       typealias FullView = BrazeInAppMessageUI.FullView
 

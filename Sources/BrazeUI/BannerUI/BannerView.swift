@@ -13,7 +13,6 @@
 
     /// A SwiftUI-compatible version of the Braze banner view.
     @MainActor
-    @available(iOS 13.0, *)
     public struct BannerView: UIViewRepresentable {
 
       let placementId: String
@@ -72,7 +71,6 @@
 
   // MARK: - Coordinator
 
-  @available(iOS 13.0, *)
   extension BrazeBannerUI.BannerView {
 
     /// The types of updates that can be received by the banner view.

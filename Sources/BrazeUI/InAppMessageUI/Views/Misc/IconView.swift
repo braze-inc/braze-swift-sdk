@@ -166,7 +166,6 @@
   #if UI_PREVIEWS
     import SwiftUI
 
-    @available(iOS 13.0, *)
     struct IconView_Previews: PreviewProvider {
       typealias IconView = BrazeInAppMessageUI.IconView
 

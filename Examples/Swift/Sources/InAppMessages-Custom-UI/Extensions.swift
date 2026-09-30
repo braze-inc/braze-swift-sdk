@@ -20,9 +20,7 @@ extension Encodable {
     let encoder = JSONEncoder()
     encoder.outputFormatting = .prettyPrinted
     encoder.outputFormatting.insert(.sortedKeys)
-    if #available(iOS 13.0, tvOS 13.0, *) {
-      encoder.outputFormatting.insert(.withoutEscapingSlashes)
-    }
+    encoder.outputFormatting.insert(.withoutEscapingSlashes)
 
     guard let data = try? encoder.encode(self),
       let prettyPrinted = String(data: data, encoding: .utf8)
@@ -40,9 +38,7 @@ extension Dictionary where Key == String, Value == Any {
   func prettyPrint() -> String {
     var options: JSONSerialization.WritingOptions = .prettyPrinted
     options.insert(.sortedKeys)
-    if #available(iOS 13.0, tvOS 13.0, *) {
-      options.insert(.withoutEscapingSlashes)
-    }
+    options.insert(.withoutEscapingSlashes)
 
     guard let data = try? JSONSerialization.data(withJSONObject: self, options: options),
       let prettyPrinted = String(data: data, encoding: .utf8)

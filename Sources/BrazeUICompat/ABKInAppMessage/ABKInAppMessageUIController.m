@@ -111,9 +111,7 @@
     windowController.supportedOrientationMask = self.supportedOrientationMask;
     windowController.preferredOrientation = self.preferredOrientation;
     self.inAppMessageWindowController = windowController;
-    if (@available(iOS 13.0, *)) {
-      inAppMessageViewController.overrideUserInterfaceStyle = inAppMessage.overrideUserInterfaceStyle;
-    }
+    inAppMessageViewController.overrideUserInterfaceStyle = inAppMessage.overrideUserInterfaceStyle;
     [self.inAppMessageWindowController displayInAppMessageViewWithAnimation:inAppMessage.animateIn];
   }
 }

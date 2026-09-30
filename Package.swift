@@ -6,9 +6,9 @@ let package = Package(
   name: "braze-swift-sdk",
   defaultLocalization: "en",
   platforms: [
-    .iOS(.v12),
-    .macCatalyst(.v13),
-    .tvOS(.v12),
+    .iOS(.v15),
+    .macCatalyst(.v16),
+    .tvOS(.v15),
     .visionOS(.v1)
   ],
   products: [
@@ -49,8 +49,8 @@ let package = Package(
   targets: [
     .binaryTarget(
       name: "BrazeKit",
-      url: "https://github.com/braze-inc/braze-swift-sdk/releases/download/18.2.1/BrazeKit.zip",
-      checksum: "0bf283d0059fc50b4c77be2e68a5175d3db6fa146656ceb8f50335db3c1d8c01"
+      url: "https://github.com/braze-inc/braze-swift-sdk/releases/download/19.0.0/BrazeKit.zip",
+      checksum: "2bb60f74e4f22f7caf94ea1cb235f7cc42f3749e69eead5567833d98046ebf50"
     ),
     .target(
       name: "BrazeUI",
@@ -61,18 +61,18 @@ let package = Package(
     ),
     .binaryTarget(
       name: "BrazeLocation",
-      url: "https://github.com/braze-inc/braze-swift-sdk/releases/download/18.2.1/BrazeLocation.zip",
-      checksum: "4af22138a5d7ff30906eea4d89cfa36dfae785973b3fe4e898e8e3a35dfe1ffb"
+      url: "https://github.com/braze-inc/braze-swift-sdk/releases/download/19.0.0/BrazeLocation.zip",
+      checksum: "bd9938e246c227d63a4b7be18fac29a6fc690ba13c9a1ea715fabb063780aa5f"
     ),
     .binaryTarget(
       name: "BrazeNotificationService",
-      url: "https://github.com/braze-inc/braze-swift-sdk/releases/download/18.2.1/BrazeNotificationService.zip",
-      checksum: "f60d0e53b19b859a52c9427cc5bf59e000ab29302561f1433903cfc5cd45a0d7"
+      url: "https://github.com/braze-inc/braze-swift-sdk/releases/download/19.0.0/BrazeNotificationService.zip",
+      checksum: "1344e385386fe6770eefd810459c9858e728d25eff0f07a9445c073b3345a265"
     ),
     .binaryTarget(
       name: "BrazePushStory",
-      url: "https://github.com/braze-inc/braze-swift-sdk/releases/download/18.2.1/BrazePushStory.zip",
-      checksum: "d189dcbc1b5fbadfcc803d9e06397004035c415b99e213e0439947fed1399610"
+      url: "https://github.com/braze-inc/braze-swift-sdk/releases/download/19.0.0/BrazePushStory.zip",
+      checksum: "1e78fc6bae859d88dfdcbd2cffd8e6726e8104dcca20c3dc5d62e1f8be672a88"
     ),
     .target(
       name: "BrazeKitCompat",

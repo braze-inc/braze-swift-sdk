@@ -55,7 +55,6 @@
         public var imageCornerRadius = 0.0
 
         /// The image view corner curve.
-        @available(iOS 13.0, *)
         public var imageCornerCurve: CALayerCornerCurve {
           get { CALayerCornerCurve(rawValue: _imageCornerCurve) }
           set { _imageCornerCurve = newValue.rawValue }
@@ -69,7 +68,6 @@
         public var cornerRadius = 15.0
 
         /// The content view corner curve.
-        @available(iOS 13.0, *)
         public var cornerCurve: CALayerCornerCurve {
           get { CALayerCornerCurve(rawValue: _cornerCurve) }
           set { _cornerCurve = newValue.rawValue }
@@ -162,10 +160,8 @@
         // Corner radius + corner curve
         shadowView.layer.cornerRadius = attributes.cornerRadius
         contentView.layer.cornerRadius = attributes.cornerRadius
-        if #available(iOS 13.0, *) {
-          shadowView.layer.cornerCurve = attributes.cornerCurve
-          contentView.layer.cornerCurve = attributes.cornerCurve
-        }
+        shadowView.layer.cornerCurve = attributes.cornerCurve
+        contentView.layer.cornerCurve = attributes.cornerCurve
         if #available(iOS 17.0, *) {
           contentView.hoverStyle?.shape = .rect(
             cornerRadius: attributes.cornerRadius,
@@ -190,9 +186,7 @@
         } else {
           graphicView?.layer.cornerRadius = 0
         }
-        if #available(iOS 13.0, *) {
-          graphicView?.layer.cornerCurve = attributes.imageCornerCurve
-        }
+        graphicView?.layer.cornerCurve = attributes.imageCornerCurve
 
         setNeedsLayout()
         layoutIfNeeded()
@@ -715,7 +709,6 @@
   #if UI_PREVIEWS
     import SwiftUI
 
-    @available(iOS 13.0, *)
     struct SlideupView_Previews: PreviewProvider {
       typealias SlideupView = BrazeInAppMessageUI.SlideupView
 

@@ -34,10 +34,8 @@
 
         super.init(frame: .zero)
 
-        if #available(iOS 15.0, visionOS 1.0, *) {
-          configuration = .filled()
-          configuration?.cornerStyle = .fixed
-        }
+        configuration = .filled()
+        configuration?.cornerStyle = .fixed
 
         setTitle(button.text, for: .normal)
         titleLabel?.adjustsFontForContentSizeCategory = true
@@ -135,18 +133,12 @@
       ///
       /// This is called automatically whenever ``attributes-swift.property`` is updated.
       open func applyAttributes() {
-        if #available(iOS 15.0, visionOS 1.0, *) {
-          configuration?.contentInsets = attributes.padding.directionalEdgeInsets
-          configuration?.titleLineBreakMode = .byTruncatingTail
-          configuration?.titleTextAttributesTransformer = .init { [attributes] inc in
-            var out = inc
-            out.font = attributes.font
-            return out
-          }
-        } else {
-          contentEdgeInsets = attributes.padding
-          titleLabel?.font = attributes.font
-          titleLabel?.lineBreakMode = .byTruncatingTail
+        configuration?.contentInsets = attributes.padding.directionalEdgeInsets
+        configuration?.titleLineBreakMode = .byTruncatingTail
+        configuration?.titleTextAttributesTransformer = .init { [attributes] inc in
+          var out = inc
+          out.font = attributes.font
+          return out
         }
         layer.borderWidth = attributes.borderWidth
         layer.cornerRadius = attributes.cornerRadius
@@ -187,17 +179,8 @@
       ///
       /// This is called automatically whenever the trait collection is updated.
       open func applyTheme() {
-        if #available(iOS 15.0, visionOS 1.0, *) {
-          configuration?.baseForegroundColor = theme.textColor.uiColor
-          configuration?.baseBackgroundColor = theme.backgroundColor.uiColor
-        } else {
-          setTitleColor(theme.textColor.uiColor, for: .normal)
-          setBackgroundImage(theme.backgroundColor.image, for: .normal)
-          setBackgroundImage(
-            theme.backgroundColor.adjustingBrightness(by: -0.08).image,
-            for: .highlighted
-          )
-        }
+        configuration?.baseForegroundColor = theme.textColor.uiColor
+        configuration?.baseBackgroundColor = theme.backgroundColor.uiColor
         layer.borderColor = theme.borderColor.uiColor.cgColor
       }
 
@@ -219,7 +202,6 @@
   #if UI_PREVIEWS
     import SwiftUI
 
-    @available(iOS 13.0, *)
     struct Button_Previews: PreviewProvider {
       typealias ButtonView = BrazeInAppMessageUI.ButtonView
 

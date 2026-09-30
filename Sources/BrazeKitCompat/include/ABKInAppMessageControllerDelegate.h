@@ -21,7 +21,6 @@ NS_ASSUME_NONNULL_BEGIN
 typedef NS_ENUM(NSInteger, ABKInAppMessageDisplayChoice) {
   ABKDisplayInAppMessageNow,
   ABKReenqueueInAppMessage,
-  ABKDisplayInAppMessageLater __deprecated_enum_msg("ABKDisplayInAppMessageLater is deprecated. Please use `ABKReenqueueInAppMessage` instead.") = ABKReenqueueInAppMessage,
   ABKDiscardInAppMessage
 };
 

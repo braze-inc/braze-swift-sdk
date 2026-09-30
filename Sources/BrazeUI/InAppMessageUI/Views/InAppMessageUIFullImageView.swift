@@ -35,7 +35,6 @@
         public var cornerRadius = 8.0
 
         /// The content view corner curve.
-        @available(iOS 13.0, *)
         public var cornerCurve: CALayerCornerCurve {
           get { CALayerCornerCurve(rawValue: _cornerCurve) }
           set { _cornerCurve = newValue.rawValue }
@@ -180,9 +179,7 @@
         modalImageAttrs.margin = attributes.margin
         modalImageAttrs.padding = attributes.padding
         modalImageAttrs.cornerRadius = attributes.cornerRadius
-        if #available(iOS 13.0, *) {
-          modalImageAttrs.cornerCurve = attributes.cornerCurve
-        }
+        modalImageAttrs.cornerCurve = attributes.cornerCurve
         modalImageAttrs.shadow = attributes.shadow
         modalImageAttrs.minWidth = attributes.minWidth
         modalImageAttrs.maxWidth = attributes.maxWidth
@@ -238,7 +235,6 @@
   #if UI_PREVIEWS
     import SwiftUI
 
-    @available(iOS 13.0, *)
     struct FullImageView_Previews: PreviewProvider {
       typealias FullImageView = BrazeInAppMessageUI.FullImageView
 

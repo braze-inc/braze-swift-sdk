@@ -76,22 +76,11 @@
 }
 
 + (void)openURL:(NSURL *)url {
-  if (@available(iOS 13.0, *)) {
-    UIWindowScene *windowScene = ABKUIUtils.activeWindowScene;
-    if (windowScene) {
-      [windowScene openURL:url options:nil completionHandler:nil];
-      return;
-    }
-  }
-
-  /*
-  if (@available(iOS 10.0, *)) {
-    [[UIApplication sharedApplication] openURL:url options:@{} completionHandler:nil];
+  UIWindowScene *windowScene = ABKUIUtils.activeWindowScene;
+  if (windowScene) {
+    [windowScene openURL:url options:nil completionHandler:nil];
     return;
   }
-
-  [[UIApplication sharedApplication] openURL:url];
-  */
 
   [[UIApplication sharedApplication] openURL:url options:@{} completionHandler:nil];
 }

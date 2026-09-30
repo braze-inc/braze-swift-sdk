@@ -96,10 +96,8 @@ final class CardsInfoViewController: UITableViewController {
     cell.indentationLevel = field.indentation
 
     cell.textLabel?.numberOfLines = 0
-    if #available(iOS 13.0, tvOS 13.0, *) {
-      cell.textLabel?.font = .monospacedSystemFont(ofSize: 13, weight: .regular)
-      cell.detailTextLabel?.font = .monospacedSystemFont(ofSize: 13, weight: .regular)
-    }
+    cell.textLabel?.font = .monospacedSystemFont(ofSize: 13, weight: .regular)
+    cell.detailTextLabel?.font = .monospacedSystemFont(ofSize: 13, weight: .regular)
 
     return cell
   }

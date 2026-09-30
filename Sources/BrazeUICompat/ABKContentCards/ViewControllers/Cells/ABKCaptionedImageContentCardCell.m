@@ -19,11 +19,7 @@ static UIColor *_linkLabelColor = nil;
 
 + (UIColor *)titleLabelColor {
   if (_titleLabelColor == nil) {
-    if (@available(iOS 13.0, *)) {
-      _titleLabelColor = [UIColor labelColor];
-    } else {
-      _titleLabelColor = [UIColor blackColor];
-    }
+    _titleLabelColor = [UIColor labelColor];
   }
   return _titleLabelColor;
 }
@@ -34,11 +30,7 @@ static UIColor *_linkLabelColor = nil;
 
 + (UIColor *)descriptionLabelColor {
   if (_descriptionLabelColor == nil) {
-    if (@available(iOS 13.0, *)) {
-      _descriptionLabelColor = [UIColor labelColor];
-    } else {
-      _descriptionLabelColor = [UIColor blackColor];
-    }
+    _descriptionLabelColor = [UIColor labelColor];
   }
   return _descriptionLabelColor;
 }
@@ -49,11 +41,7 @@ static UIColor *_linkLabelColor = nil;
 
 + (UIColor *)linkLabelColor {
   if (_linkLabelColor == nil) {
-    if (@available(iOS 13.0, *)) {
-      _linkLabelColor = [UIColor linkColor];
-    } else {
-      _linkLabelColor = [UIColor systemBlueColor];
-    }
+    _linkLabelColor = [UIColor linkColor];
   }
   return _linkLabelColor;
 }

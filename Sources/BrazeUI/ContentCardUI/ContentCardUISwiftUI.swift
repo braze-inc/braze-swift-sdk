@@ -12,7 +12,6 @@
     import UIKit
 
     /// A SwiftUI view which displays Braze Content Cards.
-    @available(iOS 13.0, *)
     @MainActor
     public struct ContentCardsView: UIViewControllerRepresentable {
 
@@ -72,7 +71,6 @@
 
     }
 
-    @available(iOS 13.0, *)
     extension ContentCardsView {
 
       public final class Coordinator: BrazeContentCardUIViewControllerDelegate {

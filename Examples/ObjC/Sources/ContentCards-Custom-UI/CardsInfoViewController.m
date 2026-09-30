@@ -118,12 +118,10 @@
   cell.indentationLevel = field.indentation;
 
   cell.textLabel.numberOfLines = 0;
-  if (@available(iOS 13.0, tvOS 13.0, *)) {
-    cell.textLabel.font =
-        [UIFont monospacedSystemFontOfSize:13 weight:UIFontWeightRegular];
-    cell.detailTextLabel.font =
-        [UIFont monospacedSystemFontOfSize:13 weight:UIFontWeightRegular];
-  }
+  cell.textLabel.font =
+      [UIFont monospacedSystemFontOfSize:13 weight:UIFontWeightRegular];
+  cell.detailTextLabel.font =
+      [UIFont monospacedSystemFontOfSize:13 weight:UIFontWeightRegular];
 
   return cell;
 }

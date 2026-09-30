@@ -17,7 +17,7 @@ BRZ_DEPRECATED("ABKUIUtils is not needed anymore; its functionality is internal 
 /*!
  * The currently active UIWindowScene.
  */
-@property (class, nonatomic, readonly) UIWindowScene *activeWindowScene API_AVAILABLE(ios(13.0));
+@property (class, nonatomic, readonly) UIWindowScene *activeWindowScene;
 
 /*!
  * The currently active application UIWindow.

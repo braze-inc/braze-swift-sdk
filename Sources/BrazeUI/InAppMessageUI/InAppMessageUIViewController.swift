@@ -253,7 +253,6 @@
         preferencesProxy?.preferredScreenEdgesDeferringSystemGestures ?? []
       }
 
-      @available(iOS 14.0, *)
       open override var prefersPointerLocked: Bool {
         preferencesProxy?.prefersPointerLocked ?? false
       }

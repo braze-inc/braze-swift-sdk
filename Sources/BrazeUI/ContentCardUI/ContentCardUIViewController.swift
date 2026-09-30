@@ -152,9 +152,7 @@
         emptyStateLabel.textColor = attributes.emptyStateMessageColor
 
         // EnableDarkTheme
-        if #available(iOS 13, *) {
-          overrideUserInterfaceStyle = attributes.enableDarkTheme ? .unspecified : .light
-        }
+        overrideUserInterfaceStyle = attributes.enableDarkTheme ? .unspecified : .light
       }
 
       // MARK: Initialization
@@ -656,7 +654,22 @@
           braze?.contentCards.requestRefresh { result in fulfill(result) }
         }
         subscribe = { [weak braze] update in
-          braze?.contentCards.subscribeToUpdates(update) ?? .empty
+          braze?.contentCards.subscribeToEvents { event in
+            switch event {
+            case .cacheReplay(let snapshot), .cacheLoad(let snapshot):
+              update(snapshot.cards)
+            // A dismissal notifies no subscriber at all before `subscribeToEvents` existed, and
+            // `cardDismissed(_:indexPath:)` already removes the row it originated. Re-applying the
+            // snapshot would compete with that mutation. A dismissal logged outside this feed
+            // therefore leaves a visible feed untouched, unchanged from before.
+            case .dataUpdated(_, .clientAction):
+              break
+            case .dataUpdated(let snapshot, _):
+              update(snapshot.cards)
+            case .impressionEvent, .clickEvent, .dismissEvent, .error:
+              break
+            }
+          } ?? .empty
         }
         lastUpdate = braze.contentCards.lastUpdate
       }
@@ -681,7 +694,6 @@
   #if UI_PREVIEWS
     import SwiftUI
 
-    @available(iOS 13.0, *)
     struct BrazeContentCardUIViewController_Previews: PreviewProvider {
 
       static let cards: [Braze.ContentCard] = [

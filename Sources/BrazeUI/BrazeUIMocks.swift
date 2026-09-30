@@ -64,12 +64,7 @@ import UIKit
         }
 
         // Draw text
-        let font: UIFont
-        if #available(iOS 13.0, tvOS 13.0, *) {
-          font = UIFont.monospacedSystemFont(ofSize: textSize, weight: .regular)
-        } else {
-          font = UIFont(name: "Courier", size: textSize)!
-        }
+        let font: UIFont = .monospacedSystemFont(ofSize: textSize, weight: .regular)
         let style = NSMutableParagraphStyle()
         style.alignment = .center
         style.minimumLineHeight = frame.height / 2 + textSize / 2

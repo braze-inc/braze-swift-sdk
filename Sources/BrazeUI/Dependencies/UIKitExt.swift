@@ -149,51 +149,31 @@ extension String {
       #if os(visionOS)
         return .systemGroupedBackground
       #else
-        if #available(iOS 13.0, *) {
-          return .systemGroupedBackground
-        } else {
-          return .groupTableViewBackground
-        }
+        return .systemGroupedBackground
       #endif
     }
 
     static var brazeCellBackgroundColor: UIColor {
-      if #available(iOS 13.0, *) {
-        return .secondarySystemGroupedBackground
-      } else {
-        return .white
-      }
+      .secondarySystemGroupedBackground
     }
 
     static var brazeCellBorderColor: UIColor {
-      if #available(iOS 13.0, *) {
-        return .systemGray5
-      } else {
-        return UIColor(white: 0.88, alpha: 1)
-      }
+      .systemGray5
     }
 
     static var brazeCellShadowColor: UIColor {
-      if #available(iOS 13.0, *) {
-        return UIColor { traits in
-          switch traits.userInterfaceStyle {
-          case .dark:
-            return .systemGray6
-          default:
-            return .systemGray2
-          }
+      UIColor { traits in
+        switch traits.userInterfaceStyle {
+        case .dark:
+          return .systemGray6
+        default:
+          return .systemGray2
         }
-      } else {
-        return UIColor(white: 0.7, alpha: 1)
       }
     }
 
     static var brazeCellHighlightColor: UIColor {
-      if #available(iOS 13.0, *) {
-        return .systemGray4
-      } else {
-        return UIColor(red: 0.82, green: 0.82, blue: 0.84, alpha: 1)
-      }
+      .systemGray4
     }
 
     static var brazeCellImageBackgroundColor: UIColor {
@@ -201,19 +181,11 @@ extension String {
     }
 
     static var brazeRetryButtonColor: UIColor {
-      if #available(iOS 13.0, *) {
-        return .secondarySystemFill
-      } else {
-        return UIColor(red: 0.87, green: 0.87, blue: 0.89, alpha: 1.00)
-      }
+      .secondarySystemFill
     }
 
     static var brazeLabel: UIColor {
-      if #available(iOS 13.0, *) {
-        return .label
-      } else {
-        return .black
-      }
+      .label
     }
 
   }
@@ -221,11 +193,7 @@ extension String {
   extension UIColor {
 
     func brazeResolvedColor(with traitCollection: UITraitCollection) -> UIColor {
-      if #available(iOS 13.0, *) {
-        return self.resolvedColor(with: traitCollection)
-      } else {
-        return self
-      }
+      self.resolvedColor(with: traitCollection)
     }
 
   }
@@ -233,11 +201,7 @@ extension String {
   extension CGColor {
 
     static func brazeCellBorderColor(_ traits: UITraitCollection) -> CGColor {
-      if #available(iOS 13.0, *) {
-        return UIColor.brazeCellBorderColor.resolvedColor(with: traits).cgColor
-      } else {
-        return UIColor.brazeCellBorderColor.cgColor
-      }
+      UIColor.brazeCellBorderColor.resolvedColor(with: traits).cgColor
     }
 
   }

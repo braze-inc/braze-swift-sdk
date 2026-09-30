@@ -22,20 +22,14 @@ final class ReadmeViewController: UITableViewController {
 
     #if os(iOS)
       textView.textContainerInset = UIEdgeInsets(top: 16, left: 16, bottom: 0, right: 16)
-      if #available(iOS 13.0, *) {
-        textView.font = .monospacedSystemFont(ofSize: 12, weight: .regular)
-      }
+      textView.font = .monospacedSystemFont(ofSize: 12, weight: .regular)
     #elseif os(tvOS)
       textView.textContainerInset = UIEdgeInsets(
         top: 0, left: 16 * 6, bottom: 16 * 4, right: 16 * 6)
-      if #available(tvOS 13.0, *) {
-        textView.font = .monospacedSystemFont(ofSize: 30, weight: .regular)
-      }
+      textView.font = .monospacedSystemFont(ofSize: 30, weight: .regular)
     #elseif os(visionOS)
       textView.textContainerInset = UIEdgeInsets(top: 0, left: 16, bottom: 16, right: 16)
-      if #available(tvOS 13.0, *) {
-        textView.font = .monospacedSystemFont(ofSize: 20, weight: .regular)
-      }
+      textView.font = .monospacedSystemFont(ofSize: 20, weight: .regular)
     #endif
 
     return textView
@@ -227,7 +221,6 @@ private var _window: UIWindow? = {
   let navigationController = UINavigationController(rootViewController: readmeViewController)
 
   @MainActor
-  @available(iOS 13.0, tvOS 13.0, *)
   func getWindowFromScene() -> UIWindow? {
     // Get active window scene or fallback to the first scene
     let windowScene =

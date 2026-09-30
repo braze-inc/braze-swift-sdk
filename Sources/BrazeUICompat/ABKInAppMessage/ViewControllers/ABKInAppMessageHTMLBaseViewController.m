@@ -66,13 +66,6 @@ static NSString *const ABKHTMLInAppJavaScriptExtension = @"js";
   WKWebViewConfiguration *webViewConfiguration = [[WKWebViewConfiguration alloc] init];
   webViewConfiguration.allowsInlineMediaPlayback = YES;
   webViewConfiguration.suppressesIncrementalRendering = YES;
-  /*
-  if (@available(iOS 10.0, *)) {
-    webViewConfiguration.mediaTypesRequiringUserActionForPlayback = WKAudiovisualMediaTypeAll;
-  } else {
-    webViewConfiguration.requiresUserActionForMediaPlayback = YES;
-  }
-  */
   webViewConfiguration.mediaTypesRequiringUserActionForPlayback = WKAudiovisualMediaTypeAll;
 
   ABKInAppMessageWindowController *parentViewController =
@@ -96,10 +89,8 @@ static NSString *const ABKHTMLInAppJavaScriptExtension = @"js";
   // Handle resizing during orientation changes
   self.webView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 
-  if (@available(iOS 11.0, *)) {
-    // Cover status bar when showing HTML IAMs
-    [self.webView.scrollView setContentInsetAdjustmentBehavior:UIScrollViewContentInsetAdjustmentNever];
-  }
+  // Cover status bar when showing HTML IAMs
+  [self.webView.scrollView setContentInsetAdjustmentBehavior:UIScrollViewContentInsetAdjustmentNever];
   if (((ABKInAppMessageHTMLBase *)self.inAppMessage).assetsLocalDirectoryPath != nil) {
     NSFileManager *fileManager = NSFileManager.defaultManager;
     NSURL *localPath = ((ABKInAppMessageHTMLBase *)self.inAppMessage).assetsLocalDirectoryPath;

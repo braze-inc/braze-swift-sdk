@@ -23,18 +23,12 @@
 
     /// The windows for which the keyboard can be displayed.
     var windows: [UIWindow] {
-      if #available(iOS 13.0, tvOS 13.0, *) {
-        return
-          UIApplication.shared
-          .connectedScenes
-          .lazy
-          .compactMap { $0 as? UIWindowScene }
-          .first { $0.activationState == .foregroundActive }?
-          .windows ?? []
-      } else {
-        return UIApplication.shared
-          .windows
-      }
+      UIApplication.shared
+        .connectedScenes
+        .lazy
+        .compactMap { $0 as? UIWindowScene }
+        .first { $0.activationState == .foregroundActive }?
+        .windows ?? []
     }
 
     /// The subscriptions dictionary.

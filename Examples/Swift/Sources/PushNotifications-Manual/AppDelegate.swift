@@ -110,11 +110,7 @@ extension AppDelegate: @preconcurrency UNUserNotificationCenterDelegate {
       braze.notifications.handleForegroundNotification(notification: notification)
     }
 
-    if #available(iOS 14, *) {
-      completionHandler([.list, .banner])
-    } else {
-      completionHandler(.alert)
-    }
+    completionHandler([.list, .banner])
   }
 
 }

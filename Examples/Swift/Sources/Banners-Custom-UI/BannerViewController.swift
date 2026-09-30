@@ -57,15 +57,11 @@ final class BannerViewController: UIViewController, BrazeBannerPlacement {
 
   private lazy var loadingView: UIActivityIndicatorView = {
     let view: UIActivityIndicatorView
-#if os(visionOS)
-    view = UIActivityIndicatorView(style: .medium)
-#else
-    if #available(iOS 13.0, *) {
+    #if os(visionOS)
       view = UIActivityIndicatorView(style: .medium)
-    } else {
-      view = UIActivityIndicatorView(style: .gray)
-    }
-#endif
+    #else
+      view = UIActivityIndicatorView(style: .medium)
+    #endif
     view.translatesAutoresizingMaskIntoConstraints = false
     return view
   }()

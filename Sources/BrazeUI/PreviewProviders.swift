@@ -12,7 +12,6 @@
     ///           to low priorities (default: `false`).
     ///   - layout: A layout closure executed after the previous parameters have been applied.
     /// - Returns: A SwiftUI previews compatible view.
-    @available(iOS 13.0, *)
     func preview(
       pin: UILayoutPriority? = nil,
       center: UILayoutPriority? = nil,
@@ -79,7 +78,6 @@
 
   extension UIViewController {
 
-    @available(iOS 13.0, *)
     func preview() -> some View {
       struct Wrapper: UIViewControllerRepresentable {
         typealias UIViewControllerType = UIViewController

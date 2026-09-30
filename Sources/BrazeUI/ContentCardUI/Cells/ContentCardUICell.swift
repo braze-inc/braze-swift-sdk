@@ -42,7 +42,6 @@
         public var cornerRadius: Double = 3
 
         /// The corner curve.
-        @available(iOS 13.0, *)
         public var cornerCurve: CALayerCornerCurve {
           get { CALayerCornerCurve(rawValue: _cornerCurve) }
           set { _cornerCurve = newValue.rawValue }
@@ -172,10 +171,8 @@
         // Corners
         containerBackground.layer.cornerRadius = attributes.cornerRadius
         container.layer.cornerRadius = attributes.cornerRadius
-        if #available(iOS 13.0, *) {
-          containerBackground.layer.cornerCurve = attributes.cornerCurve
-          container.layer.cornerCurve = attributes.cornerCurve
-        }
+        containerBackground.layer.cornerCurve = attributes.cornerCurve
+        container.layer.cornerCurve = attributes.cornerCurve
 
         // Shadow
         (containerBackground as? ShadowView)?.shadow = attributes.shadow

@@ -71,9 +71,7 @@ class FullWidthSlideupView: BrazeInAppMessageUI.SlideupView {
     super.applyAttributes()
     backgroundView.shadow = attributes.shadow
     backgroundView.layer.cornerRadius = attributes.cornerRadius
-    if #available(iOS 13.0, *) {
-      backgroundView.layer.cornerCurve = attributes.cornerCurve
-    }
+    backgroundView.layer.cornerCurve = attributes.cornerCurve
     if #available(iOS 17.0, *) {
       backgroundView.hoverStyle?.shape = .rect(cornerRadius: attributes.cornerRadius)
     }

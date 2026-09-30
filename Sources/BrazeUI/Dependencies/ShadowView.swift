@@ -65,9 +65,7 @@
     }
 
     open override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-      guard #available(iOS 13.0, *),
-        traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection)
-      else {
+      guard traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection) else {
         return
       }
       drawShadow()

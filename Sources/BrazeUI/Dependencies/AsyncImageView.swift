@@ -86,12 +86,7 @@
     }()
 
     public let activityIndicator: UIActivityIndicatorView = {
-      let indicator: UIActivityIndicatorView
-      if #available(iOS 13.0, *) {
-        indicator = UIActivityIndicatorView(style: .large)
-      } else {
-        indicator = UIActivityIndicatorView()
-      }
+      let indicator = UIActivityIndicatorView(style: .large)
       indicator.hidesWhenStopped = true
       return indicator
     }()

@@ -231,7 +231,8 @@
         // MARK: - Theme
 
         #if !os(visionOS)
-          open override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+          open override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?)
+          {
             super.traitCollectionDidChange(previousTraitCollection)
             attributes.onTheme?(self)
           }
@@ -580,7 +581,8 @@
         completionHandler: @escaping () -> Void
       ) {
         presentAlert(message: message) {
-          $0.addAction(.init(title: "Close", style: .default, handler: { _ in completionHandler() }))
+          $0.addAction(
+            .init(title: "Close", style: .default, handler: { _ in completionHandler() }))
         }
       }
 
@@ -593,7 +595,8 @@
         presentAlert(message: message) {
           $0.addAction(
             .init(title: "Cancel", style: .cancel, handler: { _ in completionHandler(false) }))
-          $0.addAction(.init(title: "OK", style: .default, handler: { _ in completionHandler(true) }))
+          $0.addAction(
+            .init(title: "OK", style: .default, handler: { _ in completionHandler(true) }))
         }
       }
 

@@ -1,3 +1,26 @@
+## 19.0.0
+
+##### Breaking
+- Raises the minimum platform OS versions to allow SDK compatibility with Xcode 27, which enforces the following new minimum versions:
+  - iOS 12.0 -> iOS 15.0
+  - tvOS 12.0 -> tvOS 15.0
+- Removes deprecated `BrazeInAppMessageUI.DisplayChoice.later` in favor of `BrazeInAppMessageUI.DisplayChoice.reenqueue`.
+
+##### Added
+- [`requestBannersRefresh`](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/banners-swift.class/requestbannersrefresh(placementids:_:fileid:line:)) now merges into the existing banner cache instead of replacing it entirely. Only the requested placement IDs are affected; other cached banners are untouched, and a requested placement with no banner in the response is removed from the cache.
+- Adds `featureDisabled` and `cacheEvicted` to [`Braze.Banner.RemovalReason`](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/banner/removalreason).
+  - `featureDisabled` is passed to `removeBannerContent(reason:)` when the server configuration disables Banners and clears the local cache. Previously this teardown reported no reason.
+  - `cacheEvicted` is passed when a banner is discarded to stay within the on-device cache size budget.
+- Adds `subscribeToEvents(_:)` and `eventsStream` on `Braze.Banners`, `Braze.ContentCards`, and `Braze.FeatureFlags` for cache replays, data updates, errors, and flushed analytics.
+- Adds support for `immediate` triggers, which display an In-App Message as soon as it's received.
+
+##### Changed
+- Content Cards, Banners, and Feature Flags no longer automatically retry a non-429 4xx response, an invalid API key, or a sync response the SDK cannot decode.
+- `subscribeToEvents` reports one `clientError` with `doNotRetry` for those failures. HTTP 429, server errors, network failures, and SDK authentication errors still retry up to 15 times.
+
+##### Deprecated
+- Deprecates `subscribeToUpdates(_:)` and the dictionary-based `bannersStream` / `cardsStream` / `featureFlagsStream` properties in favor of `subscribeToEvents(_:)` and `eventsStream`.
+
 ## 18.2.1
 
 ##### Fixed
@@ -6,6 +29,8 @@
 - Fixes an issue where custom attributes written just as a session starts could miss the follow-up `/api/v3/data` request.
 - Fixes an issue where data requests could be sent prematurely during app launch before data was properly loaded.
   - The updated behavior now matches that of the Android SDK.
+- Fixes an issue where the SDK could log an internal "invalid metadata" error during the expected window at app launch before device identity was loaded.
+- Fixes an issue where string values nested inside `logCustomEvent`/`logPurchase` properties were truncated to 255 characters. Only top-level property values are subject to this limit now.
 
 ## 18.2.0
 

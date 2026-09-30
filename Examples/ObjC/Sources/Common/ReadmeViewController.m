@@ -229,16 +229,12 @@ extern NSInteger const actionsCount;
 #if TARGET_OS_IOS || TARGET_OS_VISION
     [textView setEditable:NO];
     textView.textContainerInset = UIEdgeInsetsMake(16, 16, 0, 16);
-    if (@available(iOS 13.0, *)) {
-      textView.font = [UIFont monospacedSystemFontOfSize:12
-                                                  weight:UIFontWeightRegular];
-    }
+    textView.font = [UIFont monospacedSystemFontOfSize:12
+                                                weight:UIFontWeightRegular];
 #elif TARGET_OS_TV
     textView.textContainerInset = UIEdgeInsetsMake(0, 16 * 6, 16 * 4, 16 * 6);
-    if (@available(tvOS 13.0, *)) {
-      textView.font = [UIFont monospacedSystemFontOfSize:30
-                                                  weight:UIFontWeightRegular];
-    }
+    textView.font = [UIFont monospacedSystemFontOfSize:30
+                                                weight:UIFontWeightRegular];
 #endif
 
     _readmeTextView = textView;

@@ -4,7 +4,6 @@ import WebKit
 
 // MARK: - BannerPlacementController
 
-@available(iOS 13.0, *)
 @MainActor
 final class BannerPlacementController: NSObject, ObservableObject, BrazeBannerPlacement {
 
@@ -57,40 +56,37 @@ final class BannerPlacementController: NSObject, ObservableObject, BrazeBannerPl
 
 // MARK: - BannerView
 
-@available(iOS 13.0, *)
 struct BannerView: View {
 
   @ObservedObject var controller: BannerPlacementController
 
   var body: some View {
-    if #available(iOS 15.0, *) {
-      Group {
-        if let banner = controller.banner, !banner.isControl {
-          VStack(spacing: 0) {
-            BannerWebView(banner: banner)
-            HStack(spacing: 16) {
-              Button("Dismiss") {
-                // context.dismiss() fires the SDK's onDismiss callback, which invokes the
-                // BrazeBannerPlacement.onDismiss closure with dismissal event details.
-                banner.context?.dismiss()
-                // Tear down the banner content from the placement.
-                controller.removeBannerContent(reason: .dismissal)
-              }
-              .frame(maxWidth: .infinity)
-              Button("Log Click") {
-                banner.context?.logClick(buttonId: nil)
-              }
-              .frame(maxWidth: .infinity)
+    Group {
+      if let banner = controller.banner, !banner.isControl {
+        VStack(spacing: 0) {
+          BannerWebView(banner: banner)
+          HStack(spacing: 16) {
+            Button("Dismiss") {
+              // context.dismiss() fires the SDK's onDismiss callback, which invokes the
+              // BrazeBannerPlacement.onDismiss closure with dismissal event details.
+              banner.context?.dismiss()
+              // Tear down the banner content from the placement.
+              controller.removeBannerContent(reason: .dismissal)
             }
-            .padding()
+            .frame(maxWidth: .infinity)
+            Button("Log Click") {
+              banner.context?.logClick(buttonId: nil)
+            }
+            .frame(maxWidth: .infinity)
           }
-        } else if controller.hasError {
-          Text("No banner available for this placement.")
-            .multilineTextAlignment(.center)
-            .padding()
-        } else {
-          ProgressView()
+          .padding()
         }
+      } else if controller.hasError {
+        Text("No banner available for this placement.")
+          .multilineTextAlignment(.center)
+          .padding()
+      } else {
+        ProgressView()
       }
     }
   }
@@ -99,7 +95,6 @@ struct BannerView: View {
 
 // MARK: - BannerWebView
 
-@available(iOS 13.0, *)
 private struct BannerWebView: UIViewRepresentable {
 
   let banner: Braze.Banner

@@ -52,9 +52,9 @@ The following table lists the minimum supported versions for tools used by the B
 
 Tool | Minimum supported version
 :----|:----
-iOS|12.0+
+iOS|15.0+
 Mac Catalyst|16.0+
-tvOS|12.0+
+tvOS|15.0+
 visionOS|1.0+
 Xcode|26.0+ (17A324)
 

@@ -93,7 +93,6 @@
 
       /// The window scene used to present the message (default: current active window scene).
       @objc
-      @available(iOS 13.0, tvOS 13.0, *)
       public var windowScene: UIWindowScene? {
         get { _windowScene as? UIWindowScene }
         set { _windowScene = newValue }
@@ -133,9 +132,7 @@
 
         super.init()
 
-        if #available(iOS 13.0, tvOS 13.0, *) {
-          self.windowScene = context.windowScene
-        }
+        self.windowScene = context.windowScene
       }
 
       /// Default initializer.
@@ -160,9 +157,7 @@
 
         super.init()
 
-        if #available(iOS 13.0, tvOS 13.0, *),
-          let windowScene = windowScene as? UIWindowScene
-        {
+        if let windowScene = windowScene as? UIWindowScene {
           self.windowScene = windowScene
         }
       }
@@ -185,9 +180,7 @@
       self.windowLevel = presentationContextRaw.windowLevel
       self.preferencesProxy = presentationContextRaw.preferencesProxy
 
-      if #available(iOS 13.0, tvOS 13.0, *) {
-        self.windowScene = presentationContextRaw.windowScene
-      }
+      self.windowScene = presentationContextRaw.windowScene
     }
 
   }

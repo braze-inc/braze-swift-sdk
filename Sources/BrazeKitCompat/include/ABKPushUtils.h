@@ -19,7 +19,7 @@ BRZ_DEPRECATED("ABKPushUtils is not needed anymore.")
  *
  * @return YES if the user notification was sent from Braze servers.
  */
-+ (BOOL)isAppboyUserNotification:(UNNotificationResponse *)response API_AVAILABLE(ios(10.0), macCatalyst(14.0));
++ (BOOL)isAppboyUserNotification:(UNNotificationResponse *)response;
 
 /*!
  * @param userInfo The userInfo dictionary passed to application:didReceiveRemoteNotification:fetch​Completion​Handler:
@@ -50,7 +50,7 @@ BRZ_DEPRECATED("ABKPushUtils is not needed anymore.")
  *             your app doesn't take any undesired or unnecessary actions upon receiving Braze's uninstall tracking notifications
  *             (e.g., pinging your server for content).
  */
-+ (BOOL)isUninstallTrackingUserNotification:(UNNotificationResponse *)response API_AVAILABLE(ios(10.0), macCatalyst(14.0));
++ (BOOL)isUninstallTrackingUserNotification:(UNNotificationResponse *)response;
 
 /*!
  * @param userInfo The userInfo dictionary passed to application:didReceiveRemoteNotification:fetchCompletionHandler:
@@ -92,7 +92,7 @@ BRZ_DEPRECATED("ABKPushUtils is not needed anymore.")
 /*!
  * @return A set of the default UNNotificationCategories used by Braze.
  */
-+ (NSSet<UNNotificationCategory *> *)getAppboyUNNotificationCategorySet API_AVAILABLE(ios(10.0), macCatalyst(14.0)) BRZ_DEPRECATED("renamed to 'Braze.Notifications.categories'.");
++ (NSSet<UNNotificationCategory *> *)getAppboyUNNotificationCategorySet BRZ_DEPRECATED("renamed to 'Braze.Notifications.categories'.");
 
 + (NSSet<UIUserNotificationCategory *> *)getAppboyUIUserNotificationCategorySet __deprecated_msg("Please use `getAppboyUNNotificationCategorySet` instead.");
 

@@ -2,7 +2,6 @@ import BrazeKit
 import BrazeUI
 import SwiftUI
 
-@available(iOS 13.0, *)
 struct FullScreenBannerView: View {
 
   @State var hasBannerForPlacement: Bool = false

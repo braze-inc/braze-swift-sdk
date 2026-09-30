@@ -16,9 +16,7 @@ static NSString *const LocalizedNoConnectionKey = @"Appboy.no-connection.message
   self.view = self.webView;
 
 #if !TARGET_OS_TV
-  if (@available(iOS 15.0, *)) {
-    self.view.backgroundColor = UIColor.systemGroupedBackgroundColor;
-  }
+  self.view.backgroundColor = UIColor.systemGroupedBackgroundColor;
 #endif
 
   [self setupProgressBar];

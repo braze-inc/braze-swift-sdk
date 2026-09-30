@@ -121,12 +121,8 @@ static Braze *_braze = nil;
        willPresentNotification:(UNNotification *)notification
          withCompletionHandler:
              (void (^)(UNNotificationPresentationOptions))completionHandler {
-  if (@available(iOS 14, *)) {
-    completionHandler(UNNotificationPresentationOptionList |
-                      UNNotificationPresentationOptionBanner);
-  } else {
-    completionHandler(UNNotificationPresentationOptionAlert);
-  }
+  completionHandler(UNNotificationPresentationOptionList |
+                    UNNotificationPresentationOptionBanner);
 }
 
 @end

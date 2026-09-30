@@ -121,9 +121,7 @@
 
       _ = try? ui.resetAssetsDirectory()
 
-      if #available(iOS 13.0, *) {
-        ui.window?.windowScene = nil
-      }
+      ui.window?.windowScene = nil
       ui.window = nil
 
       #if !os(visionOS)

@@ -51,18 +51,12 @@ extension AppDelegate {
     // Customize the cell attributes to customize the cell
     attributes.cellAttributes.cornerRadius = 20
     attributes.cellAttributes.classicImageCornerRadius = 10
-    if #available(iOS 13.0, *) {
-      attributes.cellAttributes.cornerCurve = .continuous
-    }
+    attributes.cellAttributes.cornerCurve = .continuous
 
     attributes.cellAttributes.titleFont = UIFont(name: "AvenirNext-Heavy", size: 18)!
     attributes.cellAttributes.descriptionFont = UIFont(name: "BradleyHandITCTT-Bold", size: 16)!
     attributes.cellAttributes.domainFont = UIFont(name: "TimesNewRomanPSMT", size: 12)!
-    if #available(iOS 13.0, *) {
-      attributes.cellAttributes.domainColor = .secondaryLabel
-    } else {
-      attributes.cellAttributes.domainColor = .gray
-    }
+    attributes.cellAttributes.domainColor = .secondaryLabel
     attributes.cellAttributes.highlightColor = .systemGreen.withAlphaComponent(0.8)
 
     let viewController = BrazeContentCardUI.ViewController(
@@ -78,9 +72,7 @@ extension AppDelegate {
     BrazeContentCardUI.ViewController.Attributes.defaults.cellAttributes.cornerRadius = 40
     BrazeContentCardUI.ViewController.Attributes.defaults.cellAttributes.classicImageCornerRadius =
       10
-    if #available(iOS 13.0, *) {
-      BrazeContentCardUI.ViewController.Attributes.defaults.cellAttributes.cornerCurve = .continuous
-    }
+    BrazeContentCardUI.ViewController.Attributes.defaults.cellAttributes.cornerCurve = .continuous
 
     BrazeContentCardUI.ViewController.Attributes.defaults.cellAttributes.titleFont = UIFont(
       name: "AvenirNext-Heavy", size: 18)!
@@ -88,11 +80,7 @@ extension AppDelegate {
       name: "BradleyHandITCTT-Bold", size: 16)!
     BrazeContentCardUI.ViewController.Attributes.defaults.cellAttributes.domainFont = UIFont(
       name: "TimesNewRomanPSMT", size: 12)!
-    if #available(iOS 13.0, *) {
-      BrazeContentCardUI.ViewController.Attributes.defaults.cellAttributes.domainColor = .green
-    } else {
-      BrazeContentCardUI.ViewController.Attributes.defaults.cellAttributes.domainColor = .gray
-    }
+    BrazeContentCardUI.ViewController.Attributes.defaults.cellAttributes.domainColor = .green
     BrazeContentCardUI.ViewController.Attributes.defaults.cellAttributes.highlightColor =
       .systemGreen.withAlphaComponent(0.8)
 
@@ -210,11 +198,7 @@ extension AppDelegate {
 
     attributes.emptyStateMessage = "This is a custom empty state message"
     attributes.emptyStateMessageFont = .preferredFont(forTextStyle: .title1)
-    if #available(iOS 13.0, *) {
-      attributes.emptyStateMessageColor = .secondaryLabel
-    } else {
-      attributes.emptyStateMessageColor = .lightGray
-    }
+    attributes.emptyStateMessageColor = .secondaryLabel
 
     let viewController = BrazeContentCardUI.ViewController(initialCards: [], attributes: attributes)
     viewController.title = "Empty State"
@@ -235,9 +219,7 @@ extension AppDelegate {
     // This is necessary to stylize the `title` text, which is set off of
     // `viewController`, but is actually situated under `navigationController.navigationBar`
     // in the view hierarchy.
-    if #available(iOS 13.0, *) {
-      navigationController.navigationBar.overrideUserInterfaceStyle = .light
-    }
+    navigationController.navigationBar.overrideUserInterfaceStyle = .light
     navigationController.pushViewController(viewController, animated: true)
   }
 

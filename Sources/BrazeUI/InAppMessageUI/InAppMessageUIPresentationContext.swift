@@ -84,7 +84,6 @@
       public var windowLevel: UIWindow.Level = .normal
 
       /// The window scene used to present the message (default: current active window scene).
-      @available(iOS 13.0, tvOS 13.0, *)
       public var windowScene: UIWindowScene? {
         get { _windowScene as? UIWindowScene }
         set { _windowScene = newValue }

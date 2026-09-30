@@ -607,7 +607,7 @@ didReceiveRemoteNotification:(NSDictionary *)notification
  */
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center
 didReceiveNotificationResponse:(UNNotificationResponse *)response
-         withCompletionHandler:(nullable void (^)(void))completionHandler NS_AVAILABLE_IOS(10_0);
+         withCompletionHandler:(nullable void (^)(void))completionHandler;
 
 /*!
  * @param pushAuthGranted The boolean value passed in from completionHandler in UNUserNotificationCenter's
