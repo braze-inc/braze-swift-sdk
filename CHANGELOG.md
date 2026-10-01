@@ -5,9 +5,9 @@
   - iOS 12.0 -> iOS 15.0
   - tvOS 12.0 -> tvOS 15.0
 - Removes deprecated `BrazeInAppMessageUI.DisplayChoice.later` in favor of `BrazeInAppMessageUI.DisplayChoice.reenqueue`.
+- [`requestBannersRefresh`](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/banners-swift.class/requestbannersrefresh(placementids:_:fileid:line:)) now merges into the existing banner cache instead of replacing it entirely. Only the requested placement IDs are affected; other cached banners are untouched, and a requested placement with no banner in the response is removed from the cache.
 
 ##### Added
-- [`requestBannersRefresh`](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/banners-swift.class/requestbannersrefresh(placementids:_:fileid:line:)) now merges into the existing banner cache instead of replacing it entirely. Only the requested placement IDs are affected; other cached banners are untouched, and a requested placement with no banner in the response is removed from the cache.
 - Adds `featureDisabled` and `cacheEvicted` to [`Braze.Banner.RemovalReason`](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/banner/removalreason).
   - `featureDisabled` is passed to `removeBannerContent(reason:)` when the server configuration disables Banners and clears the local cache. Previously this teardown reported no reason.
   - `cacheEvicted` is passed when a banner is discarded to stay within the on-device cache size budget.
