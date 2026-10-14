@@ -1,3 +1,21 @@
+## 19.1.0
+
+##### Fixed
+- Fixes missing dashboard key-value pairs on iOS push notifications without deep links.
+- Fixes the behavior in [`braze.notifications.unregisterPush(completion:)`](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/notifications-swift.class/unregisterpush(completion:)) and [`braze.logout(completion:)`](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/logout(completion:)) where the unregistration would fail if the app had been restarted since the token was registered.
+- Fixes video push attachments (such as MP4) not showing a thumbnail in the compact notification on iOS 26.5 and later.
+- Fixes a crash caused by accessing an internal timer that had already been released from memory. This could occur when the device reported several network status changes in quick succession.
+- The following APIs now report a success when no push token is locally stored in the SDK. No request will be sent in this case:
+  - [`braze.notifications.unregisterPush(completion:)`](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/notifications-swift.class/unregisterpush(completion:))
+  - [`braze.liveActivities.unregisterPushToStart(types:completion:)`](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/liveactivities-swift.class/unregisterpushtostart(types:completion:))
+  - [`braze.logout(completion:)`](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/logout(completion:))
+
+##### Added
+- Adds a public [`extras`](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/notifications-swift.class/payload/extras) property on `Braze.Notifications.Payload` containing key-value pairs.
+
+##### Deprecated
+- Deprecates `Braze.PushUnregistrationError.noPushToken` and `Braze.PushUnregistrationError.noPushToStartTokens`. They will be removed in BrazeKit 21.0.0.
+
 ## 19.0.0
 
 ##### Breaking
@@ -85,7 +103,7 @@
   - [`braze.logout(completion:)`](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/logout(completion:)) removes the push token and push-to-start tokens (if available), and then wipes all local data and disables the SDK on success. This is also available as `logout() async throws` and in Objective-C.
 
 ##### Deprecated
-- Deprecates [`braze.liveActivities.optOutPushToStart(type:)`](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/liveactivities-swift.class/optoutpushtostart(type:)) in favor of [`braze.liveActivities.unregisterPushToStart(types:completion:)`](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/liveactivities-swift.class/unregisterpushtostart(types:completion:)).
+- Deprecates [`braze.liveActivities.optOutPushToStart(type:)`](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/liveactivities-swift.class/optoutpushtostart(type:)) in favor of [`braze.liveActivities.unregisterPushToStart(types:completion:)`](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit/braze/liveactivities-swift.class/unregisterpushtostart(types:completion:)). `optOutPushToStart(type:)` will be removed in 20.0.0.
 
 ## 17.0.0
 
