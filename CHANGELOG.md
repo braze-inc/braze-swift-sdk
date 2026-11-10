@@ -1,3 +1,23 @@
+## 19.2.0
+
+##### Fixed
+- Fixes a race condition that would result in new event subscriptions not being registered. This could occur when the SDK was disabled and re-enabled in quick succession.
+
+##### Added
+- Adds an optional `catalogName` parameter to `Braze.Ecommerce.ProductViewedEvent` to specify the catalog for back-in-stock and price-drop subscriptions.
+  - Available in Objective-C on `BRZEcommerceProductViewedEvent`.
+- Adds support for triggering in-app messages based on whether an array or object custom event / purchase property exists.
+- Adds `Braze.Configuration.Logger.redactSecrets` to control whether secrets are redacted from SDK logs. The default is `false`.
+  - Available in Objective-C on `BRZConfigurationLogger`.
+  - When `true`, SDK logs redact the API key, SDK Authentication signatures, JWTs, cookies, and push tokens.
+- Adds the `.warning` and `.verbose` cases to `Braze.Configuration.Logger.Level`.
+  - Available in Objective-C as `BRZLoggerLevelWarning` and `BRZLoggerLevelVerbose`.
+  - Rate-limit logs will move from `.error` to `.warning` in 21.0.0.
+  - The default `Braze.Configuration.Logger.level` will change from `.error` to `.info` in 21.0.0.
+
+##### Changed
+- HTTP request and response logs now print a one-line summary at `.debug`. Headers and bodies print at `.verbose`.
+
 ## 19.1.0
 
 ##### Fixed

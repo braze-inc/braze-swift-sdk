@@ -4,34 +4,78 @@
 
   extension BrazeInAppMessageUI {
 
+    /// The errors reported by the in-app message UI.
     public enum Error: Swift.Error, Hashable {
+
+      /// An impression cannot be logged because the message is not a Braze message.
       case noContextLogImpression
+
+      /// A click cannot be logged because the message is not a Braze message.
       case noContextLogClick
+
+      /// A click action cannot be processed because the message is not a Braze message.
       case noContextProcessClickAction
+
+      /// The click action contains Braze actions that are invalid, so the message is not displayed.
       case invalidBrazeActions
+
+      /// The push primer is invalid.
       case invalidPushPrimer
 
+      /// The raw message could not be converted to a typed message.
       case rawToTypedConversion(Braze.ErrorString)
 
+      /// The in-app message UI was called from a thread other than the main thread.
       case noMainThread
+
+      /// The message view is invalid, so the message is discarded.
       case noMessageView
+
+      /// The application has no root view controller to present from.
       case noAppRootViewController
+
+      /// The Font Awesome font could not be loaded, so icons render incorrectly.
       case noFontAwesome
+
+      /// The message does not support the current orientation or size classes.
       case noMatchingOrientation
+
+      /// No window scene is available to present the message in.
       case noWindowScene
+
+      /// An image or other asset required by the message failed to load.
       case assetsFailure(Braze.ErrorString)
+
+      /// The message constraints are invalid or missing.
       case invalidConstraints
+
+      /// The message was triggered for a user who is no longer the current user.
       case triggeredUserCurrentUserMismatch(
         messageId: String?, currentUser: String?, previousUser: String?)
 
+      /// Another message is already presented.
+      /// The associated value indicates whether the message was pushed to the top of the stack.
       case otherMessagePresented(push: Bool)
+
+      /// The presentation context is invalid, so the message is discarded and removed from the stack.
       case messageContextInvalid
 
+      /// The HTML message has no base URL.
       case htmlNoBaseURL
+
+      /// The HTML message could not be written to disk.
       case htmlFileWrite(Braze.ErrorString)
+
+      /// The HTML message failed to load in the web view.
       case webViewNavigation(Braze.ErrorString)
+
+      /// The web view bridge received an invalid script message.
       case webViewScript(Braze.WebViewBridge.ScriptMessageHandler.Error)
+
+      /// The web view bridge received an invalid scheme request.
       case webViewScheme(Braze.WebViewBridge.SchemeHandler.Error)
+
+      /// The web view bridge received an invalid query.
       case webViewQuery(Braze.WebViewBridge.QueryHandler.Error)
     }
 

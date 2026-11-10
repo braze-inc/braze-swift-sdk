@@ -80,9 +80,13 @@
       case error(Swift.Error)
     }
 
-    // Since SwiftUI views are structs, neither they nor their underlying UIViews are retained in memory.
-    // The coordinator is the only reference that persists throughout the view lifecycle.
-    // We implement it as the `BrazeBannerPlacement` to receive updates from the platform.
+    /// The object that receives banner updates for a ``BannerView``.
+    ///
+    /// SwiftUI creates it implicitly through ``BannerView/makeCoordinator()``.
+    ///
+    /// - Note: Since SwiftUI views are structs, neither they nor their underlying UIViews are retained in memory.
+    /// The coordinator is the only reference that persists throughout the view lifecycle.
+    /// It is implemented as the `BrazeBannerPlacement` to receive updates from the platform.
     @MainActor
     public class Coordinator: NSObject, BrazeBannerPlacement {
 

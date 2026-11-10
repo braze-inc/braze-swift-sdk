@@ -3,6 +3,7 @@
   import BrazeKit
   import Foundation
 
+  /// The Objective-C counterpart of ``BrazeContentCardUIViewControllerDelegate``.
   @objc(BrazeContentCardUIViewControllerDelegate)
   public protocol _OBJC_BrazeContentCardUIViewControllerDelegate: AnyObject {
 

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 77;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -972,6 +972,8 @@
 			dependencies = (
 			);
 			name = "ContentCardUI-Customization-iOS";
+			packageProductDependencies = (
+			);
 			productName = "ContentCardUI-Customization-iOS";
 			productReference = B65615CB6F044C414CAF1654 /* ContentCardUI-Customization.app */;
 			productType = "com.apple.product-type.application";
@@ -991,6 +993,8 @@
 				2B9EC2EB932D8F6D22AB97F1 /* PBXTargetDependency */,
 			);
 			name = "PushNotifications-Automatic-visionOS";
+			packageProductDependencies = (
+			);
 			productName = "PushNotifications-Automatic-visionOS";
 			productReference = C4899C134FF6B31F1A51075B /* PushNotifications-Automatic.app */;
 			productType = "com.apple.product-type.application";
@@ -1007,6 +1011,8 @@
 			dependencies = (
 			);
 			name = "Banners-Custom-UI-iOS";
+			packageProductDependencies = (
+			);
 			productName = "Banners-Custom-UI-iOS";
 			productReference = 7ABD5F10F54E6FE3C317B055 /* Banners-Custom-UI.app */;
 			productType = "com.apple.product-type.application";
@@ -1023,6 +1029,8 @@
 			dependencies = (
 			);
 			name = "InAppMessages-Custom-UI-iOS";
+			packageProductDependencies = (
+			);
 			productName = "InAppMessages-Custom-UI-iOS";
 			productReference = 05A5CB32692A4493359A70F2 /* InAppMessages-Custom-UI.app */;
 			productType = "com.apple.product-type.application";
@@ -1039,6 +1047,8 @@
 			dependencies = (
 			);
 			name = "PushLogout-visionOS";
+			packageProductDependencies = (
+			);
 			productName = "PushLogout-visionOS";
 			productReference = C0C7A798B3C62E65915A2C59 /* PushLogout.app */;
 			productType = "com.apple.product-type.application";
@@ -1055,6 +1065,8 @@
 			dependencies = (
 			);
 			name = "PushNotificationsContentExtension-iOS";
+			packageProductDependencies = (
+			);
 			productName = "PushNotificationsContentExtension-iOS";
 			productReference = 2F8034AC1A6839C07DF75941 /* PushNotificationsContentExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
@@ -1071,6 +1083,8 @@
 			dependencies = (
 			);
 			name = "ContentCards-Custom-UI-tvOS";
+			packageProductDependencies = (
+			);
 			productName = "ContentCards-Custom-UI-tvOS";
 			productReference = C78E0B5A5D52F990511A4091 /* ContentCards-Custom-UI.app */;
 			productType = "com.apple.product-type.application";
@@ -1087,6 +1101,8 @@
 			dependencies = (
 			);
 			name = "Analytics-visionOS";
+			packageProductDependencies = (
+			);
 			productName = "Analytics-visionOS";
 			productReference = 0D27FC50D2EF457F536B1D05 /* Analytics.app */;
 			productType = "com.apple.product-type.application";
@@ -1103,6 +1119,8 @@
 			dependencies = (
 			);
 			name = "InAppMessageUI-visionOS";
+			packageProductDependencies = (
+			);
 			productName = "InAppMessageUI-visionOS";
 			productReference = 60B1CC850FE69D2A04A3E43B /* InAppMessageUI.app */;
 			productType = "com.apple.product-type.application";
@@ -1119,6 +1137,8 @@
 			dependencies = (
 			);
 			name = "InAppMessageUI-Customization-iOS";
+			packageProductDependencies = (
+			);
 			productName = "InAppMessageUI-Customization-iOS";
 			productReference = D6D87B0B28882DFD35A2BE4B /* InAppMessageUI-Customization.app */;
 			productType = "com.apple.product-type.application";
@@ -1135,6 +1155,8 @@
 			dependencies = (
 			);
 			name = "Location-tvOS";
+			packageProductDependencies = (
+			);
 			productName = "Location-tvOS";
 			productReference = 34DB46A770028DFE645A3AE4 /* Location.app */;
 			productType = "com.apple.product-type.application";
@@ -1151,6 +1173,8 @@
 			dependencies = (
 			);
 			name = "InAppMessages-Custom-UI-tvOS";
+			packageProductDependencies = (
+			);
 			productName = "InAppMessages-Custom-UI-tvOS";
 			productReference = FE50398A21EB6A33EE9874A2 /* InAppMessages-Custom-UI.app */;
 			productType = "com.apple.product-type.application";
@@ -1167,6 +1191,8 @@
 			dependencies = (
 			);
 			name = "PushNotificationsServiceExtension-iOS";
+			packageProductDependencies = (
+			);
 			productName = "PushNotificationsServiceExtension-iOS";
 			productReference = 025C514A87C7682650C8F612 /* PushNotificationsServiceExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
@@ -1186,6 +1212,8 @@
 				438AAAA4398E1EDE2DBD8FAB /* PBXTargetDependency */,
 			);
 			name = "PushNotifications-Automatic-iOS";
+			packageProductDependencies = (
+			);
 			productName = "PushNotifications-Automatic-iOS";
 			productReference = BDC50080223D78243A47D144 /* PushNotifications-Automatic.app */;
 			productType = "com.apple.product-type.application";
@@ -1202,6 +1230,8 @@
 			dependencies = (
 			);
 			name = "Location-visionOS";
+			packageProductDependencies = (
+			);
 			productName = "Location-visionOS";
 			productReference = 227EA100A48140FD8FA720EE /* Location.app */;
 			productType = "com.apple.product-type.application";
@@ -1221,6 +1251,8 @@
 				9739ED7E2562B39A93A7582A /* PBXTargetDependency */,
 			);
 			name = "PushNotifications-Manual-iOS";
+			packageProductDependencies = (
+			);
 			productName = "PushNotifications-Manual-iOS";
 			productReference = 9D290FE7C76209E0E0A24FDA /* PushNotifications-Manual.app */;
 			productType = "com.apple.product-type.application";
@@ -1240,6 +1272,8 @@
 				4B3CE886632813307CEF4B8F /* PBXTargetDependency */,
 			);
 			name = "PushNotifications-DelayedInitialization-iOS";
+			packageProductDependencies = (
+			);
 			productName = "PushNotifications-DelayedInitialization-iOS";
 			productReference = F50B74B9EF809701B466BF97 /* PushNotifications-DelayedInitialization.app */;
 			productType = "com.apple.product-type.application";
@@ -1256,6 +1290,8 @@
 			dependencies = (
 			);
 			name = "ContentCardUI-Customization-visionOS";
+			packageProductDependencies = (
+			);
 			productName = "ContentCardUI-Customization-visionOS";
 			productReference = 5F1C55A6DB347D541B2CCE35 /* ContentCardUI-Customization.app */;
 			productType = "com.apple.product-type.application";
@@ -1275,6 +1311,8 @@
 				0042C8997658C02018935054 /* PBXTargetDependency */,
 			);
 			name = "PushNotifications-Manual-visionOS";
+			packageProductDependencies = (
+			);
 			productName = "PushNotifications-Manual-visionOS";
 			productReference = F3C2ED512ED12F090A1DC54C /* PushNotifications-Manual.app */;
 			productType = "com.apple.product-type.application";
@@ -1291,6 +1329,8 @@
 			dependencies = (
 			);
 			name = "BannerUI-visionOS";
+			packageProductDependencies = (
+			);
 			productName = "BannerUI-visionOS";
 			productReference = 14BBB11A8EAB3794FCB52C38 /* BannerUI.app */;
 			productType = "com.apple.product-type.application";
@@ -1307,6 +1347,8 @@
 			dependencies = (
 			);
 			name = "InAppMessageUI-iOS";
+			packageProductDependencies = (
+			);
 			productName = "InAppMessageUI-iOS";
 			productReference = 7127ABB9B4C02043D02B278E /* InAppMessageUI.app */;
 			productType = "com.apple.product-type.application";
@@ -1323,6 +1365,8 @@
 			dependencies = (
 			);
 			name = "Analytics-iOS";
+			packageProductDependencies = (
+			);
 			productName = "Analytics-iOS";
 			productReference = 9E2B80BBE3951963FBA6BBD3 /* Analytics.app */;
 			productType = "com.apple.product-type.application";
@@ -1339,6 +1383,8 @@
 			dependencies = (
 			);
 			name = "PushNotificationsServiceExtension-visionOS";
+			packageProductDependencies = (
+			);
 			productName = "PushNotificationsServiceExtension-visionOS";
 			productReference = 72614321094796ABD86A5AA6 /* PushNotificationsServiceExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
@@ -1355,6 +1401,8 @@
 			dependencies = (
 			);
 			name = "Location-iOS";
+			packageProductDependencies = (
+			);
 			productName = "Location-iOS";
 			productReference = 6832319B66FB76CAA84519FA /* Location.app */;
 			productType = "com.apple.product-type.application";
@@ -1371,6 +1419,8 @@
 			dependencies = (
 			);
 			name = "ContentCardUI-iOS";
+			packageProductDependencies = (
+			);
 			productName = "ContentCardUI-iOS";
 			productReference = EC4AEEA68D47995F66CD4034 /* ContentCardUI.app */;
 			productType = "com.apple.product-type.application";
@@ -1387,6 +1437,8 @@
 			dependencies = (
 			);
 			name = "InAppMessageUI-Customization-visionOS";
+			packageProductDependencies = (
+			);
 			productName = "InAppMessageUI-Customization-visionOS";
 			productReference = 46D4E58713FF2E6C2F76BB0D /* InAppMessageUI-Customization.app */;
 			productType = "com.apple.product-type.application";
@@ -1403,6 +1455,8 @@
 			dependencies = (
 			);
 			name = "PushLogout-iOS";
+			packageProductDependencies = (
+			);
 			productName = "PushLogout-iOS";
 			productReference = 9DEE40F136AEDED4CE3463A4 /* PushLogout.app */;
 			productType = "com.apple.product-type.application";
@@ -1419,6 +1473,8 @@
 			dependencies = (
 			);
 			name = "InAppMessages-Custom-UI-visionOS";
+			packageProductDependencies = (
+			);
 			productName = "InAppMessages-Custom-UI-visionOS";
 			productReference = FCE4295F977362ED7183C4CF /* InAppMessages-Custom-UI.app */;
 			productType = "com.apple.product-type.application";
@@ -1435,6 +1491,8 @@
 			dependencies = (
 			);
 			name = "ContentCards-Custom-UI-visionOS";
+			packageProductDependencies = (
+			);
 			productName = "ContentCards-Custom-UI-visionOS";
 			productReference = 552EA65890BB8DAA0D631388 /* ContentCards-Custom-UI.app */;
 			productType = "com.apple.product-type.application";
@@ -1454,6 +1512,8 @@
 				65BBB54523E83B58A60298BE /* PBXTargetDependency */,
 			);
 			name = "PushNotifications-DelayedInitialization-visionOS";
+			packageProductDependencies = (
+			);
 			productName = "PushNotifications-DelayedInitialization-visionOS";
 			productReference = 30A0DFD80FCA5043A1BEE12E /* PushNotifications-DelayedInitialization.app */;
 			productType = "com.apple.product-type.application";
@@ -1470,6 +1530,8 @@
 			dependencies = (
 			);
 			name = "ContentCards-Custom-UI-iOS";
+			packageProductDependencies = (
+			);
 			productName = "ContentCards-Custom-UI-iOS";
 			productReference = 8854CADF86F02FA64B2CC3F1 /* ContentCards-Custom-UI.app */;
 			productType = "com.apple.product-type.application";
@@ -1486,6 +1548,8 @@
 			dependencies = (
 			);
 			name = "PushNotificationsContentExtension-visionOS";
+			packageProductDependencies = (
+			);
 			productName = "PushNotificationsContentExtension-visionOS";
 			productReference = EB96485E099438DAB9547DF5 /* PushNotificationsContentExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
@@ -1502,6 +1566,8 @@
 			dependencies = (
 			);
 			name = "Banners-Custom-UI-visionOS";
+			packageProductDependencies = (
+			);
 			productName = "Banners-Custom-UI-visionOS";
 			productReference = F0FA55F444C1E3E19C0EF5F2 /* Banners-Custom-UI.app */;
 			productType = "com.apple.product-type.application";
@@ -1518,6 +1584,8 @@
 			dependencies = (
 			);
 			name = "ContentCardUI-visionOS";
+			packageProductDependencies = (
+			);
 			productName = "ContentCardUI-visionOS";
 			productReference = F90C9DB8B3DF39E04E70DAAB /* ContentCardUI.app */;
 			productType = "com.apple.product-type.application";
@@ -1534,6 +1602,8 @@
 			dependencies = (
 			);
 			name = "BannerUI-iOS";
+			packageProductDependencies = (
+			);
 			productName = "BannerUI-iOS";
 			productReference = 6CD4675CD37E8D52090B309D /* BannerUI.app */;
 			productType = "com.apple.product-type.application";
@@ -1550,6 +1620,8 @@
 			dependencies = (
 			);
 			name = "Analytics-tvOS";
+			packageProductDependencies = (
+			);
 			productName = "Analytics-tvOS";
 			productReference = DE3608B9E460175A349CDB87 /* Analytics.app */;
 			productType = "com.apple.product-type.application";
@@ -1674,7 +1746,6 @@
 				};
 			};
 			buildConfigurationList = 1D61EB4EA4EACDE551DB7D19 /* Build configuration list for PBXProject "Examples-CocoaPods" */;
-			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -1682,6 +1753,9 @@
 				en,
 			);
 			mainGroup = 5F61F41FECA7453CB4C2C3CA;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 944D5C0BF6DC0B28ACDA2036 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (

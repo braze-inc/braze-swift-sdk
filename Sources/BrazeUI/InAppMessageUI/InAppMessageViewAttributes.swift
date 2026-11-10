@@ -4,6 +4,7 @@
 
   extension BrazeInAppMessageUI {
 
+    /// The customizable attributes of an in-app message view, one case per message type.
     public enum ViewAttributes: Sendable {
       case slideup(SlideupView.Attributes)
       case modal(ModalView.Attributes)

@@ -4,16 +4,37 @@
 
   extension BrazeBannerUI {
 
+    /// The errors reported by the banner UI.
     public enum Error: Swift.Error, Hashable {
+
+      /// An impression cannot be logged because the banner is not a Braze banner.
       case noContextLogImpression
+
+      /// A click cannot be logged because the banner is not a Braze banner.
       case noContextLogClick
+
+      /// A dismissal cannot be logged because the banner is not a Braze banner.
       case noContextLogDismissed
+
+      /// A click action cannot be processed because the banner is not a Braze banner.
       case noContextProcessClickAction
+
+      /// The banner content reported a height of zero or no height.
       case bannerHeightUnavailable
+
+      /// The banner HTML failed to load in the web view.
       case webViewNavigation(Braze.ErrorString)
+
+      /// The web view bridge received an invalid script message.
       case webViewScript(Braze.WebViewBridge.ScriptMessageHandler.Error)
+
+      /// The web view bridge received an invalid scheme request.
       case webViewScheme(Braze.WebViewBridge.SchemeHandler.Error)
+
+      /// The web view bridge received an invalid query.
       case webViewQuery(Braze.WebViewBridge.QueryHandler.Error)
+
+      /// The banner requested a web view bridge method that banners do not support.
       case webViewFeatureNotAvailable
     }
 

@@ -5,8 +5,8 @@
 
   extension BrazeInAppMessageUI {
 
-    // A view displaying modal and full in-app messages' header and message according the Braze's
-    // specs.
+    /// A view displaying modal and full in-app messages' header and message according the Braze's
+    /// specs.
     public final class ModalTextView: UIScrollView {
 
       /// The view's header string.

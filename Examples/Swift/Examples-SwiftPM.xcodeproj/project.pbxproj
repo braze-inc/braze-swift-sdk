@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 77;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -1162,7 +1162,6 @@
 				};
 			};
 			buildConfigurationList = 121E4DAF0EB7FA3A0B03C3C0 /* Build configuration list for PBXProject "Examples-SwiftPM" */;
-			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -1170,10 +1169,13 @@
 				en,
 			);
 			mainGroup = D8CC2266D736859D7DD9A8FF;
+			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				9928D5150C45879A982BA1C6 /* XCRemoteSwiftPackageReference "SDWebImage" */,
-				B17EC80F4873D0F4C1E326ED /* XCLocalSwiftPackageReference "/Users/vagrant/git/.build/braze/release/19.1.0/41337/braze-swift-sdk" */,
+				9856D9FA189A7220F9A948D0 /* XCLocalSwiftPackageReference "/Users/vagrant/git/.build/braze/release/19.2.0/41558/braze-swift-sdk" */,
 			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = CD535985A50FFC8EDE928813 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -2577,6 +2579,13 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCLocalSwiftPackageReference section */
+		9856D9FA189A7220F9A948D0 /* XCLocalSwiftPackageReference "/Users/vagrant/git/.build/braze/release/19.2.0/41558/braze-swift-sdk" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = "/Users/vagrant/git/.build/braze/release/19.2.0/41558/braze-swift-sdk";
+		};
+/* End XCLocalSwiftPackageReference section */
+
 /* Begin XCRemoteSwiftPackageReference section */
 		9928D5150C45879A982BA1C6 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
 			isa = XCRemoteSwiftPackageReference;
@@ -2587,13 +2596,6 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCLocalSwiftPackageReference section */
-		B17EC80F4873D0F4C1E326ED /* XCLocalSwiftPackageReference "/Users/vagrant/git/.build/braze/release/19.1.0/41337/braze-swift-sdk" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = "/Users/vagrant/git/.build/braze/release/19.1.0/41337/braze-swift-sdk";
-		};
-/* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
 		0891F7D29EA51A994793513D /* BrazeUI */ = {

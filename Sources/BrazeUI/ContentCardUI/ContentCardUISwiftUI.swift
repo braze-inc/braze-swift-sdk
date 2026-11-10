@@ -73,6 +73,10 @@
 
     extension ContentCardsView {
 
+      /// The object that forwards Content Card click actions from the view controller to
+      /// ``ContentCardsView``.
+      ///
+      /// SwiftUI creates it implicitly through ``ContentCardsView/makeCoordinator()``.
       public final class Coordinator: BrazeContentCardUIViewControllerDelegate {
 
         weak var braze: Braze?
